@@ -1,22 +1,22 @@
 
-CSL 5.2 README
+CSL 6.0 README
 
 This directory contains the source code and documentation for the  CREATE Signal 
 Library (CSL, pronounced "sizzle," previously called the  CREATE Oscillator, CO). 
-CSL is being developed at the Center for Research in Electronic Art Technology 
+CSL was developed at the Center for Research in Electronic Art Technology 
 (CREATE) and the Graduate Program in Media Arts and Technology (MAT) at the 
 University of California, Santa Barbara (UCSB). It is a work in progress.
 
-This is release 5.2, November, 2012.
+This is release 6.0, April, 2020.
 
 The home page for CSL is http://FASTLabInc.com/CSL.
 
 CSL is known to work on Mac OSX, many flavors of UNIX/Linux, iPhones, and (with 
 limited features) on MS-Windows. To get started quickly, build the JUCE demo app
 and use the combo boxes at the bottom to select among the tests, whose source code
-is all in the Tests folder. For the Mac, use the XCode project in the CSL_JUCE/Builds/MacOSX 
-folder; for Linux, use the premake script in the Linux folder. Both assume JUCE 2.0 is 
-already installed and compiled.
+is all in the Tests folder. For the Mac, use the XCode project in the CSL_JUCE/
+Builds/MacOSX folder; for Linux, use the premake script in the Linux folder. 
+Both assume JUCE 6.0 is already installed and compiled.
 
 About CSL
 
@@ -50,7 +50,7 @@ To compile the sources, you will need to create the links in the CSL/Includes fo
 to do this, open a UNIX shell (terminal, or DOS prompt) and execute the commands,
 
 ### change to the Includes folder
-	cd ~/Code/CSL/CSL/Includes
+	cd ~/Code/CSL6/Src/Includes
 
 ### make symbolic links from the include files to this folder
 	./remake
@@ -65,29 +65,21 @@ work with a little bit of tweaking; all the really unstable code has been remove
 
 Platform Requirements
 
-	MacOS X: OS x 10.5 or newer with Xcode 3
+	MacOS X: OS x 10.13 or newer with Xcode
 
-	Linux: Tested on Ubuntu 9.04 with X11-libs, ALSA, Freetype, pthreads, openGL/GLUT
+	Linux: Tested on Ubuntu 16.04 with X11-libs, ALSA, Freetype, pthreads, openGL/GLUT
 
-	MS-windows: Tested on XP with DirectX 9, ASIO4All, ASIO SDK
-
-	All: JUCE 2.0
-
+	All: JUCE 6.0
 
 Linking with the CSL Libraries
 
 To link CSL programs, you'll need the following packages installed on your machine:
   Either
-	JUCE: Cross-platform everything -- http://www.rawmaterialsoftware.com
-	Note that we use a version of the JUCE 1.50 libraries with a few extra hooks;
-	see the CSL download page and install the changed C++ files in 
-	{JUCE}/src/juce_appframework/audio/audio_file_formats.
-
+	JUCE: Cross-platform everything -- http://www.juce.com
   OR
 	Cross-platform audio I/O: PortAudio (http://www.portaudio.com) V19 or newer;
 	Cross-platform MIDI I/O: PortMIDI (http://www-2.cs.cmu.edu/~music/portmusic);
-	Cross-platform sound file I/O: libsndfile 
-	(http://www.zip.com.au/~erikd/libsndfile) V1.04 or newer; 
+	Cross-platform sound file I/O: libsndfile (http://www.zip.com.au/~erikd/libsndfile) V1.04 or newer; 
 	Fast Fourier Transform: FFTW (http://www.fftw.org) package V3.X;
 
 Note that you can use "vanilla" JUCE for the GUI and IO, but libSndFile for sound file 
@@ -98,9 +90,9 @@ The auralizer (obsolete) also requires
 	(cd CyberX3D; ./bootstrap; ./configure; make)
 
 To use OpenSoundControl (OSC) with CSL, you'll need liblo (http://liblo.sourceforge.net/), 
-which is included in  the CSL source folder.
+which is included in the CSL libraries folder.
 
-The CREATE CSL web site includes pre-compiled versions of these libraries for 
+The CSL web site includes pre-compiled versions of these libraries for 
 Mac OS X and MS-Windows.
 
 If you use FFTW (rather than FFTReal),it needs to be compiled in the way described 
@@ -110,10 +102,11 @@ in Sources/Spectral.h.
 CSL JUCE demo
 
 Building CSL
+	Use the JUCE projucer with the file ~/CSL/Build/CSL6.jucer
 
-	On a Mac: ~/CSL/MacOSX/CSL_JUCE.xcodeproj
-	On MS-Windows: ~/CSL/Windows/VS8/CSL.sln
-	On Linux: cd ~/CSL/Linux; ./runpremake; make
+	On a Mac: ~/CSL/Builds/MacOSX/CSL_JUCE.xcodeproj
+	On MS-Windows: ~/CSL/Builds/Windows/VS8/CSL.sln
+	On Linux: cd ~/CSL/Builds/Linux; ./runpremake; make
 
 The new standard way of running CSL programs is using the JUCE GUI. 
 Take a look at the projects for Mac/Linux/Windows; we create a window with a couple 
@@ -313,9 +306,6 @@ Documentation
 
 See the PDF files in the Doc/ directory. (RTFM)
 
-For further information, please join the CSL mailing list at
-	http://create.ucsb.edu/mailman/listinfo/CSL
-
 See the file COPYRIGHT for the list of authors and UC copy-left.
 
-stp et al. @ CREATE.UCSB.edu - January, 1998 - November, 2012
+stp et al. - January, 1998 - November, 2012 - April, 2020

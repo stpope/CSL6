@@ -113,9 +113,9 @@ void testAMFMEnvs() {
 /// Demonstrate an ADSR
 
 void testADSR2() {
-	float duration = 3.0;		// total dur
-	float attack = 0.06;		// att time
-	float decay = 0.1;			// dec time
+	float duration = 3.0;	// total dur
+	float attack = 0.02;		// att time
+	float decay = 0.03;		// dec time
 	float sustain = 0.1;		// sust value
 	float release = 1.5;		// release time
 	ADSR adsr(duration, attack, decay, sustain, release);		// constructor
@@ -182,8 +182,8 @@ void testRandFreqEnv() {
 
 UnitGenerator * createRandFreqEnvPatch(float dur) {
 	Osc * vox = new Osc;						// declare an oscillator
-	RandEnvelope * a_env = new RandEnvelope(4, 0.5, 0.5, 0.5); // ampl env = random (frq, amp, off, step)
-	RandEnvelope * f_env = new RandEnvelope(3, 80, 200, 40); // freq env = random (frq, amp, off, step)
+	RandEnvelope * a_env = new RandEnvelope(4, 0.5, 0.5, 0.5);      // ampl env = random (frq, amp, off, step)
+	RandEnvelope * f_env = new RandEnvelope(3, 80, 200, 40);        // freq env = random (frq, amp, off, step)
 	Osc * lfo = new Osc(fRandM(0.3, 0.6), 1, 0, fRandM(0, CSL_PI)); // LFO with rand frq/phase
 	Panner * pan = new Panner(*vox, *lfo);		// stereo panner
 	vox->setFrequency(*f_env);					// set the carrier's frequency

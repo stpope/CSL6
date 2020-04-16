@@ -1,16 +1,16 @@
 
 CSL AUTHORSHIP AND COPYRIGHT NOTICE
 
-CSL (pron. "sizzle") is the CREATE Signal Library Version 5.2.
+CSL (pron. "sizzle") is the CREATE Signal Library Version 6.0.
 
 For documentation, see the "README" file and the "Doc" directory.
 
 The CSL Web page is,
 	http://FASTLabInc.com/CSL
 
-Design and and kernel code 1998-2012 by Stephen T. Pope and Chandrasekhar Ramakrishnan, 
+Design and and kernel code 1998-2020 by Stephen T. Pope and Chandrasekhar Ramakrishnan, 
 with significant contributions from (in chronological order, * = major contributor):
-	Brent Lehman, 
+	Brent Lehman*, 
 	Doug McCoy*, 
 	Larry Miller, 
 	Derek Piasecki, 
@@ -27,7 +27,7 @@ with significant contributions from (in chronological order, * = major contribut
 	Jorge Castellanos*,
 	Graham Wakefield*,
 	Florian Hollerweger,
-	Will Wolcott,
+	Will Wolcott*,
 	Charlie Roberts*,
 	and others,
 all at the Center for Research in Electronic Art Technology (CREATE) and the 
@@ -38,7 +38,7 @@ Contact: Stephen Pope (stephen@FASTLabInc.com)
 
 ------------------------------------------------------------------------------------
 
-Copyright (C) 1998-2009. The Regents of the University of California (REGENTS). 
+Copyright (C) 1998-2020. The Regents of the University of California (REGENTS). 
 All Rights Reserved.
 
 Permission to use, copy, modify, distribute, and distribute modified versions

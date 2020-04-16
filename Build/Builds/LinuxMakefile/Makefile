@@ -68,69 +68,69 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS_APP := \
-  $(JUCE_OBJDIR)/Main_bcf3b081.o \
-  $(JUCE_OBJDIR)/CSL_AbstComponent_bcf738ba.o \
-  $(JUCE_OBJDIR)/CSL_TestComponent_5e484c6a.o \
-  $(JUCE_OBJDIR)/JCSL_Widgets_edb9ebca.o \
-  $(JUCE_OBJDIR)/CSL_Core_233c1c07.o \
-  $(JUCE_OBJDIR)/CGestalt_8d21190c.o \
-  $(JUCE_OBJDIR)/Envelope_7c9ae5de.o \
-  $(JUCE_OBJDIR)/Granulator_266c0e13.o \
-  $(JUCE_OBJDIR)/KarplusString_418f94a3.o \
-  $(JUCE_OBJDIR)/Noise_d4000816.o \
-  $(JUCE_OBJDIR)/Oscillator_b434346e.o \
-  $(JUCE_OBJDIR)/SHARC_67e00f59.o \
-  $(JUCE_OBJDIR)/SimpleSines_6641a3b0.o \
-  $(JUCE_OBJDIR)/Spectral_75380172.o \
-  $(JUCE_OBJDIR)/WaveShaper_2ba15c18.o \
-  $(JUCE_OBJDIR)/Window_cbe0a43e.o \
-  $(JUCE_OBJDIR)/BinaryOp_4646f343.o \
-  $(JUCE_OBJDIR)/Clipper_e0f4feb6.o \
-  $(JUCE_OBJDIR)/Convolver_a601bd5b.o \
-  $(JUCE_OBJDIR)/Convolver2_1a560401.o \
-  $(JUCE_OBJDIR)/Filters_ef714fe4.o \
-  $(JUCE_OBJDIR)/FIR_731983f8.o \
-  $(JUCE_OBJDIR)/Freeverb_1410fa8c.o \
-  $(JUCE_OBJDIR)/InOut_ae67fdd2.o \
-  $(JUCE_OBJDIR)/Mixer_55899df2.o \
-  $(JUCE_OBJDIR)/JUCEIO_bd3dc2af.o \
-  $(JUCE_OBJDIR)/FileIO_c148421e.o \
-  $(JUCE_OBJDIR)/SoundFile_d1377e39.o \
-  $(JUCE_OBJDIR)/SoundFileJ_572a92fb.o \
-  $(JUCE_OBJDIR)/OSC_support_2c0695d.o \
-  $(JUCE_OBJDIR)/MIDIIOJ_6af2ca91.o \
-  $(JUCE_OBJDIR)/SpatialAudio_a3316143.o \
-  $(JUCE_OBJDIR)/SimplePanner_78e50941.o \
-  $(JUCE_OBJDIR)/DistanceSimulator_1070d1e8.o \
-  $(JUCE_OBJDIR)/SpatialPanner_87d024db.o \
-  $(JUCE_OBJDIR)/SpatialSource_270ace98.o \
-  $(JUCE_OBJDIR)/SpeakerLayout_9ac7c762.o \
-  $(JUCE_OBJDIR)/VBAP_1e628c08.o \
-  $(JUCE_OBJDIR)/Binaural_2d8d95e8.o \
-  $(JUCE_OBJDIR)/BinauralDB_241b2ea6.o \
-  $(JUCE_OBJDIR)/Ambisonic_647dfddc.o \
-  $(JUCE_OBJDIR)/AmbisonicPanner_1386d99a.o \
-  $(JUCE_OBJDIR)/AmbisonicUtilities_18b3c558.o \
-  $(JUCE_OBJDIR)/Instrument_f4f81701.o \
-  $(JUCE_OBJDIR)/AdditiveInstrument_2f4c54ed.o \
-  $(JUCE_OBJDIR)/BasicFMInstrument_53b5d86c.o \
-  $(JUCE_OBJDIR)/SndFileInstrument_cc5c7d7c.o \
-  $(JUCE_OBJDIR)/BlockResizer_4547786d.o \
-  $(JUCE_OBJDIR)/CPoint_20ad81a9.o \
-  $(JUCE_OBJDIR)/FFT_Wrapper_c5ae5f76.o \
-  $(JUCE_OBJDIR)/FFTReal_372ce380.o \
-  $(JUCE_OBJDIR)/RingBuffer_57a8b84c.o \
-  $(JUCE_OBJDIR)/ThreadUtilities_a8ca0c2e.o \
-  $(JUCE_OBJDIR)/Variable_68ba43f8.o \
-  $(JUCE_OBJDIR)/fft_N_de5b8eb1.o \
-  $(JUCE_OBJDIR)/Test_Audio_f712740e.o \
-  $(JUCE_OBJDIR)/Test_Control_3bae0d55.o \
-  $(JUCE_OBJDIR)/Test_Effects_5fac67a.o \
-  $(JUCE_OBJDIR)/Test_Envelopes_ed289adb.o \
-  $(JUCE_OBJDIR)/Test_Oscillators_c6e83f4b.o \
-  $(JUCE_OBJDIR)/Test_Panners_55d0104d.o \
-  $(JUCE_OBJDIR)/Test_Sources_9dea9e30.o \
-  $(JUCE_OBJDIR)/Test_Support_33929ec7.o \
+  $(JUCE_OBJDIR)/Main_327962f6.o \
+  $(JUCE_OBJDIR)/CSL_TestComponent_39710015.o \
+  $(JUCE_OBJDIR)/JCSL_Widgets_66b4593f.o \
+  $(JUCE_OBJDIR)/CGestalt_9c2a54f4.o \
+  $(JUCE_OBJDIR)/CSL_Core_324557ef.o \
+  $(JUCE_OBJDIR)/Oscillator_77c68f86.o \
+  $(JUCE_OBJDIR)/Window_8a4c4b56.o \
+  $(JUCE_OBJDIR)/Envelope_4eb926f6.o \
+  $(JUCE_OBJDIR)/Granulator_e9fe692b.o \
+  $(JUCE_OBJDIR)/KarplusString_2626428b.o \
+  $(JUCE_OBJDIR)/Noise_24771dfe.o \
+  $(JUCE_OBJDIR)/OscillatorBL_c11f7290.o \
+  $(JUCE_OBJDIR)/SHARC_b8572541.o \
+  $(JUCE_OBJDIR)/SimpleSines_14faab98.o \
+  $(JUCE_OBJDIR)/Spectral_4756428a.o \
+  $(JUCE_OBJDIR)/WaveShaper_ef33b730.o \
+  $(JUCE_OBJDIR)/BinaryOp_f4fffb2b.o \
+  $(JUCE_OBJDIR)/Clipper_a48759ce.o \
+  $(JUCE_OBJDIR)/Convolver_ce69b273.o \
+  $(JUCE_OBJDIR)/Convolver2_feecb1e9.o \
+  $(JUCE_OBJDIR)/Filters_b303aafc.o \
+  $(JUCE_OBJDIR)/FIR_31852b10.o \
+  $(JUCE_OBJDIR)/Freeverb_c2ca0274.o \
+  $(JUCE_OBJDIR)/InOut_80863eea.o \
+  $(JUCE_OBJDIR)/Mixer_27a7df0a.o \
+  $(JUCE_OBJDIR)/JUCEIO_2b3c0c97.o \
+  $(JUCE_OBJDIR)/SoundFile_dc120b51.o \
+  $(JUCE_OBJDIR)/SoundFileJ_a7a1a8e3.o \
+  $(JUCE_OBJDIR)/FileIO_2f468c06.o \
+  $(JUCE_OBJDIR)/MIDIIOJ_bcbdbda9.o \
+  $(JUCE_OBJDIR)/OSC_support_c12c1075.o \
+  $(JUCE_OBJDIR)/SimplePanner_b5228329.o \
+  $(JUCE_OBJDIR)/SpatialAudio_df6edb2b.o \
+  $(JUCE_OBJDIR)/SpatialPanner_d341e7f3.o \
+  $(JUCE_OBJDIR)/SpatialSource_727c91b0.o \
+  $(JUCE_OBJDIR)/DistanceSimulator_f89b4900.o \
+  $(JUCE_OBJDIR)/SpeakerLayout_e6398a7a.o \
+  $(JUCE_OBJDIR)/VBAP_cca19b20.o \
+  $(JUCE_OBJDIR)/Binaural_15b80d00.o \
+  $(JUCE_OBJDIR)/BinauralDB_ab843fbe.o \
+  $(JUCE_OBJDIR)/Ambisonic_ebe70ef4.o \
+  $(JUCE_OBJDIR)/AmbisonicPanner_e7b4b8b2.o \
+  $(JUCE_OBJDIR)/AmbisonicUtilities_9ed06f40.o \
+  $(JUCE_OBJDIR)/Instrument_a3372619.o \
+  $(JUCE_OBJDIR)/AdditiveInstrument_1776cc05.o \
+  $(JUCE_OBJDIR)/BasicFMInstrument_df541e54.o \
+  $(JUCE_OBJDIR)/SndFileInstrument_57fac364.o \
+  $(JUCE_OBJDIR)/Variable_2c4c9f10.o \
+  $(JUCE_OBJDIR)/BlockResizer_f3868785.o \
+  $(JUCE_OBJDIR)/CPoint_f2cbc2c1.o \
+  $(JUCE_OBJDIR)/fft_N_2ed2a499.o \
+  $(JUCE_OBJDIR)/FFT_Wrapper_aa450d5e.o \
+  $(JUCE_OBJDIR)/FFTReal_a8d6c568.o \
+  $(JUCE_OBJDIR)/RingBuffer_8010ad64.o \
+  $(JUCE_OBJDIR)/ThreadUtilities_e5078616.o \
+  $(JUCE_OBJDIR)/Test_Support_f724f9df.o \
+  $(JUCE_OBJDIR)/Test_Sources_617cf948.o \
+  $(JUCE_OBJDIR)/Test_Oscillators_75274e63.o \
+  $(JUCE_OBJDIR)/Test_Envelopes_15908ff3.o \
+  $(JUCE_OBJDIR)/Test_Audio_c930b526.o \
+  $(JUCE_OBJDIR)/Test_Effects_c98d2192.o \
+  $(JUCE_OBJDIR)/Test_Panners_19626b65.o \
+  $(JUCE_OBJDIR)/Test_Control_ff40686d.o \
   $(JUCE_OBJDIR)/include_juce_audio_basics_8a4e984a.o \
   $(JUCE_OBJDIR)/include_juce_audio_devices_63111d02.o \
   $(JUCE_OBJDIR)/include_juce_audio_formats_15f82001.o \
@@ -158,319 +158,319 @@ $(JUCE_OUTDIR)/$(JUCE_TARGET_APP) : $(OBJECTS_APP) $(RESOURCES)
 	-$(V_AT)mkdir -p $(JUCE_OUTDIR)
 	$(V_AT)$(CXX) -o $(JUCE_OUTDIR)/$(JUCE_TARGET_APP) $(OBJECTS_APP) $(JUCE_LDFLAGS) $(JUCE_LDFLAGS_APP) $(RESOURCES) $(TARGET_ARCH)
 
-$(JUCE_OBJDIR)/Main_bcf3b081.o: ../../../JUCE/Main.cpp
+$(JUCE_OBJDIR)/Main_327962f6.o: ../../../Src/JUCE/Main.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Main.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/CSL_AbstComponent_bcf738ba.o: ../../../JUCE/CSL_AbstComponent.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling CSL_AbstComponent.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/CSL_TestComponent_5e484c6a.o: ../../../JUCE/CSL_TestComponent.cpp
+$(JUCE_OBJDIR)/CSL_TestComponent_39710015.o: ../../../Src/JUCE/CSL_TestComponent.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling CSL_TestComponent.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/JCSL_Widgets_edb9ebca.o: ../../../JUCE/JCSL_Widgets.cpp
+$(JUCE_OBJDIR)/JCSL_Widgets_66b4593f.o: ../../../Src/JUCE/JCSL_Widgets.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling JCSL_Widgets.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/CSL_Core_233c1c07.o: ../../../CSL/Kernel/CSL_Core.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling CSL_Core.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/CGestalt_8d21190c.o: ../../../CSL/Kernel/CGestalt.cpp
+$(JUCE_OBJDIR)/CGestalt_9c2a54f4.o: ../../../Src/Kernel/CGestalt.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling CGestalt.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Envelope_7c9ae5de.o: ../../../CSL/Sources/Envelope.cpp
+$(JUCE_OBJDIR)/CSL_Core_324557ef.o: ../../../Src/Kernel/CSL_Core.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Envelope.cpp"
+	@echo "Compiling CSL_Core.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Granulator_266c0e13.o: ../../../CSL/Sources/Granulator.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Granulator.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/KarplusString_418f94a3.o: ../../../CSL/Sources/KarplusString.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling KarplusString.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Noise_d4000816.o: ../../../CSL/Sources/Noise.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Noise.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Oscillator_b434346e.o: ../../../CSL/Sources/Oscillator.cpp
+$(JUCE_OBJDIR)/Oscillator_77c68f86.o: ../../../Src/Sources/Oscillator.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Oscillator.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/SHARC_67e00f59.o: ../../../CSL/Sources/SHARC.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling SHARC.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/SimpleSines_6641a3b0.o: ../../../CSL/Sources/SimpleSines.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling SimpleSines.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Spectral_75380172.o: ../../../CSL/Sources/Spectral.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Spectral.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/WaveShaper_2ba15c18.o: ../../../CSL/Sources/WaveShaper.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling WaveShaper.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Window_cbe0a43e.o: ../../../CSL/Sources/Window.cpp
+$(JUCE_OBJDIR)/Window_8a4c4b56.o: ../../../Src/Sources/Window.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Window.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/BinaryOp_4646f343.o: ../../../CSL/Processors/BinaryOp.cpp
+$(JUCE_OBJDIR)/Envelope_4eb926f6.o: ../../../Src/Sources/Envelope.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Envelope.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Granulator_e9fe692b.o: ../../../Src/Sources/Granulator.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Granulator.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/KarplusString_2626428b.o: ../../../Src/Sources/KarplusString.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling KarplusString.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Noise_24771dfe.o: ../../../Src/Sources/Noise.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Noise.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/OscillatorBL_c11f7290.o: ../../../Src/Sources/OscillatorBL.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling OscillatorBL.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/SHARC_b8572541.o: ../../../Src/Sources/SHARC.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling SHARC.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/SimpleSines_14faab98.o: ../../../Src/Sources/SimpleSines.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling SimpleSines.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Spectral_4756428a.o: ../../../Src/Sources/Spectral.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Spectral.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/WaveShaper_ef33b730.o: ../../../Src/Sources/WaveShaper.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling WaveShaper.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/BinaryOp_f4fffb2b.o: ../../../Src/Processors/BinaryOp.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling BinaryOp.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Clipper_e0f4feb6.o: ../../../CSL/Processors/Clipper.cpp
+$(JUCE_OBJDIR)/Clipper_a48759ce.o: ../../../Src/Processors/Clipper.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Clipper.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Convolver_a601bd5b.o: ../../../CSL/Processors/Convolver.cpp
+$(JUCE_OBJDIR)/Convolver_ce69b273.o: ../../../Src/Processors/Convolver.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Convolver.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Convolver2_1a560401.o: ../../../CSL/Processors/Convolver2.cpp
+$(JUCE_OBJDIR)/Convolver2_feecb1e9.o: ../../../Src/Processors/Convolver2.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Convolver2.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Filters_ef714fe4.o: ../../../CSL/Processors/Filters.cpp
+$(JUCE_OBJDIR)/Filters_b303aafc.o: ../../../Src/Processors/Filters.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Filters.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/FIR_731983f8.o: ../../../CSL/Processors/FIR.cpp
+$(JUCE_OBJDIR)/FIR_31852b10.o: ../../../Src/Processors/FIR.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling FIR.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Freeverb_1410fa8c.o: ../../../CSL/Processors/Freeverb.cpp
+$(JUCE_OBJDIR)/Freeverb_c2ca0274.o: ../../../Src/Processors/Freeverb.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Freeverb.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/InOut_ae67fdd2.o: ../../../CSL/Processors/InOut.cpp
+$(JUCE_OBJDIR)/InOut_80863eea.o: ../../../Src/Processors/InOut.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling InOut.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Mixer_55899df2.o: ../../../CSL/Processors/Mixer.cpp
+$(JUCE_OBJDIR)/Mixer_27a7df0a.o: ../../../Src/Processors/Mixer.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Mixer.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/JUCEIO_bd3dc2af.o: ../../../CSL/IO/JUCEIO.cpp
+$(JUCE_OBJDIR)/JUCEIO_2b3c0c97.o: ../../../Src/IO/JUCEIO.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling JUCEIO.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/FileIO_c148421e.o: ../../../CSL/IO/FileIO.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling FileIO.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/SoundFile_d1377e39.o: ../../../CSL/IO/SoundFile.cpp
+$(JUCE_OBJDIR)/SoundFile_dc120b51.o: ../../../Src/IO/SoundFile.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling SoundFile.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/SoundFileJ_572a92fb.o: ../../../CSL/IO/SoundFileJ.cpp
+$(JUCE_OBJDIR)/SoundFileJ_a7a1a8e3.o: ../../../Src/IO/SoundFileJ.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling SoundFileJ.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/OSC_support_2c0695d.o: ../../../CSL/IO/OSC_support.cpp
+$(JUCE_OBJDIR)/FileIO_2f468c06.o: ../../../Src/IO/FileIO.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling OSC_support.cpp"
+	@echo "Compiling FileIO.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/MIDIIOJ_6af2ca91.o: ../../../CSL/IO/MIDIIOJ.cpp
+$(JUCE_OBJDIR)/MIDIIOJ_bcbdbda9.o: ../../../Src/IO/MIDIIOJ.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling MIDIIOJ.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/SpatialAudio_a3316143.o: ../../../CSL/Spatializers/SpatialAudio.cpp
+$(JUCE_OBJDIR)/OSC_support_c12c1075.o: ../../../Src/IO/OSC_support.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling SpatialAudio.cpp"
+	@echo "Compiling OSC_support.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/SimplePanner_78e50941.o: ../../../CSL/Spatializers/SimplePanner.cpp
+$(JUCE_OBJDIR)/SimplePanner_b5228329.o: ../../../Src/Spatializers/SimplePanner.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling SimplePanner.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/DistanceSimulator_1070d1e8.o: ../../../CSL/Spatializers/DistanceSimulator.cpp
+$(JUCE_OBJDIR)/SpatialAudio_df6edb2b.o: ../../../Src/Spatializers/SpatialAudio.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling DistanceSimulator.cpp"
+	@echo "Compiling SpatialAudio.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/SpatialPanner_87d024db.o: ../../../CSL/Spatializers/SpatialPanner.cpp
+$(JUCE_OBJDIR)/SpatialPanner_d341e7f3.o: ../../../Src/Spatializers/SpatialPanner.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling SpatialPanner.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/SpatialSource_270ace98.o: ../../../CSL/Spatializers/SpatialSource.cpp
+$(JUCE_OBJDIR)/SpatialSource_727c91b0.o: ../../../Src/Spatializers/SpatialSource.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling SpatialSource.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/SpeakerLayout_9ac7c762.o: ../../../CSL/Spatializers/SpeakerLayout.cpp
+$(JUCE_OBJDIR)/DistanceSimulator_f89b4900.o: ../../../Src/Spatializers/DistanceSimulator.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling DistanceSimulator.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/SpeakerLayout_e6398a7a.o: ../../../Src/Spatializers/SpeakerLayout.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling SpeakerLayout.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/VBAP_1e628c08.o: ../../../CSL/Spatializers/VBAP/VBAP.cpp
+$(JUCE_OBJDIR)/VBAP_cca19b20.o: ../../../Src/Spatializers/VBAP/VBAP.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling VBAP.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Binaural_2d8d95e8.o: ../../../CSL/Spatializers/Binaural/Binaural.cpp
+$(JUCE_OBJDIR)/Binaural_15b80d00.o: ../../../Src/Spatializers/Binaural/Binaural.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Binaural.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/BinauralDB_241b2ea6.o: ../../../CSL/Spatializers/Binaural/BinauralDB.cpp
+$(JUCE_OBJDIR)/BinauralDB_ab843fbe.o: ../../../Src/Spatializers/Binaural/BinauralDB.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling BinauralDB.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Ambisonic_647dfddc.o: ../../../CSL/Spatializers/Ambisonic/Ambisonic.cpp
+$(JUCE_OBJDIR)/Ambisonic_ebe70ef4.o: ../../../Src/Spatializers/Ambisonic/Ambisonic.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Ambisonic.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/AmbisonicPanner_1386d99a.o: ../../../CSL/Spatializers/Ambisonic/AmbisonicPanner.cpp
+$(JUCE_OBJDIR)/AmbisonicPanner_e7b4b8b2.o: ../../../Src/Spatializers/Ambisonic/AmbisonicPanner.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling AmbisonicPanner.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/AmbisonicUtilities_18b3c558.o: ../../../CSL/Spatializers/Ambisonic/AmbisonicUtilities.cpp
+$(JUCE_OBJDIR)/AmbisonicUtilities_9ed06f40.o: ../../../Src/Spatializers/Ambisonic/AmbisonicUtilities.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling AmbisonicUtilities.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Instrument_f4f81701.o: ../../../CSL/Instruments/Instrument.cpp
+$(JUCE_OBJDIR)/Instrument_a3372619.o: ../../../Src/Instruments/Instrument.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Instrument.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/AdditiveInstrument_2f4c54ed.o: ../../../CSL/Instruments/AdditiveInstrument.cpp
+$(JUCE_OBJDIR)/AdditiveInstrument_1776cc05.o: ../../../Src/Instruments/AdditiveInstrument.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling AdditiveInstrument.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/BasicFMInstrument_53b5d86c.o: ../../../CSL/Instruments/BasicFMInstrument.cpp
+$(JUCE_OBJDIR)/BasicFMInstrument_df541e54.o: ../../../Src/Instruments/BasicFMInstrument.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling BasicFMInstrument.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/SndFileInstrument_cc5c7d7c.o: ../../../CSL/Instruments/SndFileInstrument.cpp
+$(JUCE_OBJDIR)/SndFileInstrument_57fac364.o: ../../../Src/Instruments/SndFileInstrument.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling SndFileInstrument.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/BlockResizer_4547786d.o: ../../../CSL/Utilities/BlockResizer.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling BlockResizer.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/CPoint_20ad81a9.o: ../../../CSL/Utilities/CPoint.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling CPoint.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/FFT_Wrapper_c5ae5f76.o: ../../../CSL/Utilities/FFT_Wrapper.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling FFT_Wrapper.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/FFTReal_372ce380.o: ../../../CSL/Utilities/FFTReal.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling FFTReal.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/RingBuffer_57a8b84c.o: ../../../CSL/Utilities/RingBuffer.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling RingBuffer.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/ThreadUtilities_a8ca0c2e.o: ../../../CSL/Utilities/ThreadUtilities.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling ThreadUtilities.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Variable_68ba43f8.o: ../../../CSL/Utilities/Variable.cpp
+$(JUCE_OBJDIR)/Variable_2c4c9f10.o: ../../../Src/Utilities/Variable.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Variable.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/fft_N_de5b8eb1.o: ../../../CSL/Utilities/fft_N.c
+$(JUCE_OBJDIR)/BlockResizer_f3868785.o: ../../../Src/Utilities/BlockResizer.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling BlockResizer.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/CPoint_f2cbc2c1.o: ../../../Src/Utilities/CPoint.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling CPoint.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/fft_N_2ed2a499.o: ../../../Src/Utilities/fft_N.c
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling fft_N.c"
 	$(V_AT)$(CC) $(JUCE_CFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Test_Audio_f712740e.o: ../../../CSL/Tests/Test_Audio.cpp
+$(JUCE_OBJDIR)/FFT_Wrapper_aa450d5e.o: ../../../Src/Utilities/FFT_Wrapper.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Audio.cpp"
+	@echo "Compiling FFT_Wrapper.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Test_Control_3bae0d55.o: ../../../CSL/Tests/Test_Control.cpp
+$(JUCE_OBJDIR)/FFTReal_a8d6c568.o: ../../../Src/Utilities/FFTReal.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Control.cpp"
+	@echo "Compiling FFTReal.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Test_Effects_5fac67a.o: ../../../CSL/Tests/Test_Effects.cpp
+$(JUCE_OBJDIR)/RingBuffer_8010ad64.o: ../../../Src/Utilities/RingBuffer.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Effects.cpp"
+	@echo "Compiling RingBuffer.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Test_Envelopes_ed289adb.o: ../../../CSL/Tests/Test_Envelopes.cpp
+$(JUCE_OBJDIR)/ThreadUtilities_e5078616.o: ../../../Src/Utilities/ThreadUtilities.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Envelopes.cpp"
+	@echo "Compiling ThreadUtilities.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Test_Oscillators_c6e83f4b.o: ../../../CSL/Tests/Test_Oscillators.cpp
+$(JUCE_OBJDIR)/Test_Support_f724f9df.o: ../../../Src/Tests/Test_Support.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Oscillators.cpp"
+	@echo "Compiling Test_Support.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Test_Panners_55d0104d.o: ../../../CSL/Tests/Test_Panners.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Panners.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Test_Sources_9dea9e30.o: ../../../CSL/Tests/Test_Sources.cpp
+$(JUCE_OBJDIR)/Test_Sources_617cf948.o: ../../../Src/Tests/Test_Sources.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Test_Sources.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/Test_Support_33929ec7.o: ../../../CSL/Tests/Test_Support.cpp
+$(JUCE_OBJDIR)/Test_Oscillators_75274e63.o: ../../../Src/Tests/Test_Oscillators.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Support.cpp"
+	@echo "Compiling Test_Oscillators.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Test_Envelopes_15908ff3.o: ../../../Src/Tests/Test_Envelopes.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Envelopes.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Test_Audio_c930b526.o: ../../../Src/Tests/Test_Audio.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Audio.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Test_Effects_c98d2192.o: ../../../Src/Tests/Test_Effects.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Effects.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Test_Panners_19626b65.o: ../../../Src/Tests/Test_Panners.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Panners.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Test_Control_ff40686d.o: ../../../Src/Tests/Test_Control.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Control.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/include_juce_audio_basics_8a4e984a.o: ../../JuceLibraryCode/include_juce_audio_basics.cpp

@@ -6,191 +6,190 @@
               cppLanguageStandard="11">
   <MAINGROUP id="jXFksT" name="CSL6Demo">
     <GROUP id="{CD46DFF1-513B-42A4-7BD9-60F397C84D06}" name="Demo_GUI">
-      <FILE id="HQ30vJ" name="Main.cpp" compile="1" resource="0" file="/Content/Code/CSL/JUCE/Main.cpp"/>
-      <FILE id="g8IUYk" name="CSL_AbstComponent.h" compile="0" resource="0"
-            file="/Content/Code/CSL/JUCE/CSL_AbstComponent.h"/>
-      <FILE id="ARvxKH" name="CSL_AbstComponent.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/JUCE/CSL_AbstComponent.cpp"/>
-      <FILE id="wR501b" name="CSL_TestComponent.h" compile="0" resource="0"
-            file="/Content/Code/CSL/JUCE/CSL_TestComponent.h"/>
-      <FILE id="GZoihM" name="CSL_TestComponent.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/JUCE/CSL_TestComponent.cpp"/>
-      <FILE id="uatC3q" name="JCSL_Widgets.h" compile="0" resource="0" file="/Content/Code/CSL/JUCE/JCSL_Widgets.h"/>
-      <FILE id="izVSct" name="JCSL_Widgets.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/JUCE/JCSL_Widgets.cpp"/>
+      <FILE id="TRpwAG" name="Main.cpp" compile="1" resource="0" file="../Src/JUCE/Main.cpp"/>
+      <FILE id="UHkpNo" name="CSL_TestComponent.h" compile="0" resource="0"
+            file="../Src/JUCE/CSL_TestComponent.h"/>
+      <FILE id="IZo2Wm" name="CSL_TestComponent.cpp" compile="1" resource="0"
+            file="../Src/JUCE/CSL_TestComponent.cpp"/>
+      <FILE id="QdT0GI" name="JCSL_Widgets.h" compile="0" resource="0" file="../Src/JUCE/JCSL_Widgets.h"/>
+      <FILE id="bXuU2D" name="JCSL_Widgets.cpp" compile="1" resource="0"
+            file="../Src/JUCE/JCSL_Widgets.cpp"/>
     </GROUP>
     <GROUP id="{A0BDBF32-EBAC-4D17-4D44-8CCC6FF3D237}" name="Kernel">
-      <FILE id="vraMZ6" name="CSL_Types.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Kernel/CSL_Types.h"/>
-      <FILE id="wHEgy8" name="CSL_Exceptions.h" compile="0" resource="0"
-            file="/Content/Code/CSL/CSL/Kernel/CSL_Exceptions.h"/>
-      <FILE id="lQ2NCR" name="CSL_Includes.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Kernel/CSL_Includes.h"/>
-      <FILE id="rmX5jL" name="CSL_Core.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Kernel/CSL_Core.h"/>
-      <FILE id="svpye4" name="CSL_Core.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Kernel/CSL_Core.cpp"/>
-      <FILE id="kx8fOf" name="CGestalt.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Kernel/CGestalt.h"/>
-      <FILE id="pyXNEN" name="CGestalt.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Kernel/CGestalt.cpp"/>
+      <FILE id="Md5IO5" name="CSL_Types.h" compile="0" resource="0" file="../Src/Kernel/CSL_Types.h"/>
+      <FILE id="Oy07OU" name="CSL_Exceptions.h" compile="0" resource="0"
+            file="../Src/Kernel/CSL_Exceptions.h"/>
+      <FILE id="frq8jD" name="CSL_Includes.h" compile="0" resource="0" file="../Src/Kernel/CSL_Includes.h"/>
+      <FILE id="ZcIrPR" name="CGestalt.h" compile="0" resource="0" file="../Src/Kernel/CGestalt.h"/>
+      <FILE id="sMxFMk" name="CGestalt.cpp" compile="1" resource="0" file="../Src/Kernel/CGestalt.cpp"/>
+      <FILE id="R1yHTk" name="CSL_Core.h" compile="0" resource="0" file="../Src/Kernel/CSL_Core.h"/>
+      <FILE id="hgQONm" name="CSL_Core.cpp" compile="1" resource="0" file="../Src/Kernel/CSL_Core.cpp"/>
     </GROUP>
     <GROUP id="{2C5A88B5-88C9-003E-1E80-2C50AB773E86}" name="Sources">
-      <FILE id="g7CECv" name="Envelope.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/Envelope.h"/>
-      <FILE id="mFHmeh" name="Envelope.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Sources/Envelope.cpp"/>
-      <FILE id="xXfI3c" name="Granulator.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/Granulator.h"/>
-      <FILE id="R5jC3I" name="Granulator.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Sources/Granulator.cpp"/>
-      <FILE id="wwbOrD" name="KarplusString.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/KarplusString.h"/>
-      <FILE id="UGXEsO" name="KarplusString.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Sources/KarplusString.cpp"/>
-      <FILE id="Fwtojl" name="Noise.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/Noise.h"/>
-      <FILE id="SgMR3c" name="Noise.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Sources/Noise.cpp"/>
-      <FILE id="fT3Lxe" name="Oscillator.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/Oscillator.h"/>
-      <FILE id="tcBm9U" name="Oscillator.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Sources/Oscillator.cpp"/>
-      <FILE id="xhTI5f" name="SHARC.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/SHARC.h"/>
-      <FILE id="GYMbEq" name="SHARC.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Sources/SHARC.cpp"/>
-      <FILE id="p1Ythb" name="SimpleSines.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/SimpleSines.h"/>
-      <FILE id="sFKKXY" name="SimpleSines.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Sources/SimpleSines.cpp"/>
-      <FILE id="SWENpq" name="Spectral.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/Spectral.h"/>
-      <FILE id="jYnySc" name="Spectral.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Sources/Spectral.cpp"/>
-      <FILE id="L4vNy3" name="WaveShaper.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/WaveShaper.h"/>
-      <FILE id="YPE4Xg" name="WaveShaper.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Sources/WaveShaper.cpp"/>
-      <FILE id="ehdHz1" name="Window.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Sources/Window.h"/>
-      <FILE id="kKYOt4" name="Window.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Sources/Window.cpp"/>
+      <FILE id="vSa8VH" name="Oscillator.h" compile="0" resource="0" file="../Src/Sources/Oscillator.h"/>
+      <FILE id="H7E2Yt" name="Oscillator.cpp" compile="1" resource="0" file="../Src/Sources/Oscillator.cpp"/>
+      <FILE id="MkWqP8" name="Window.h" compile="0" resource="0" file="../Src/Sources/Window.h"/>
+      <FILE id="wdo3Yw" name="Window.cpp" compile="1" resource="0" file="../Src/Sources/Window.cpp"/>
+      <FILE id="doE7OE" name="Envelope.h" compile="0" resource="0" file="../Src/Sources/Envelope.h"/>
+      <FILE id="HyrhEK" name="Envelope.cpp" compile="1" resource="0" file="../Src/Sources/Envelope.cpp"/>
+      <FILE id="UfUlr9" name="Granulator.h" compile="0" resource="0" file="../Src/Sources/Granulator.h"/>
+      <FILE id="Kj9nln" name="Granulator.cpp" compile="1" resource="0" file="../Src/Sources/Granulator.cpp"/>
+      <FILE id="nbbJfz" name="KarplusString.h" compile="0" resource="0" file="../Src/Sources/KarplusString.h"/>
+      <FILE id="cqRE7T" name="KarplusString.cpp" compile="1" resource="0"
+            file="../Src/Sources/KarplusString.cpp"/>
+      <FILE id="nfdACa" name="Noise.h" compile="0" resource="0" file="../Src/Sources/Noise.h"/>
+      <FILE id="NlI8Ad" name="Noise.cpp" compile="1" resource="0" file="../Src/Sources/Noise.cpp"/>
+      <FILE id="iVXAOW" name="OscillatorBL.h" compile="0" resource="0" file="../Src/Sources/OscillatorBL.h"/>
+      <FILE id="zmdnmj" name="OscillatorBL.cpp" compile="1" resource="0"
+            file="../Src/Sources/OscillatorBL.cpp"/>
+      <FILE id="yCHlHv" name="SHARC.h" compile="0" resource="0" file="../Src/Sources/SHARC.h"/>
+      <FILE id="SpKFDj" name="SHARC.cpp" compile="1" resource="0" file="../Src/Sources/SHARC.cpp"/>
+      <FILE id="xhCice" name="SimpleSines.h" compile="0" resource="0" file="../Src/Sources/SimpleSines.h"/>
+      <FILE id="VoMtuZ" name="SimpleSines.cpp" compile="1" resource="0" file="../Src/Sources/SimpleSines.cpp"/>
+      <FILE id="tdZNyy" name="Spectral.h" compile="0" resource="0" file="../Src/Sources/Spectral.h"/>
+      <FILE id="ayMkbx" name="Spectral.cpp" compile="1" resource="0" file="../Src/Sources/Spectral.cpp"/>
+      <FILE id="e4mMKQ" name="WaveShaper.h" compile="0" resource="0" file="../Src/Sources/WaveShaper.h"/>
+      <FILE id="CORZld" name="WaveShaper.cpp" compile="1" resource="0" file="../Src/Sources/WaveShaper.cpp"/>
     </GROUP>
     <GROUP id="{3ECC2DD6-C6E2-06C0-0967-FDAFC38A3C60}" name="Processors">
-      <FILE id="JwXx0w" name="BinaryOp.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Processors/BinaryOp.h"/>
-      <FILE id="qFbZzz" name="BinaryOp.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Processors/BinaryOp.cpp"/>
-      <FILE id="zpb93x" name="Clipper.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Processors/Clipper.h"/>
-      <FILE id="fmwze1" name="Clipper.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Processors/Clipper.cpp"/>
-      <FILE id="RiT9p7" name="Convolver.h" compile="0" resource="0" file="../CSL/Processors/Convolver.h"/>
-      <FILE id="sqEEVY" name="Convolver.cpp" compile="1" resource="0" file="../CSL/Processors/Convolver.cpp"/>
-      <FILE id="JzaK8h" name="Convolver2.h" compile="0" resource="0" file="../CSL/Processors/Convolver2.h"/>
-      <FILE id="Ty5lR3" name="Convolver2.cpp" compile="1" resource="0" file="../CSL/Processors/Convolver2.cpp"/>
-      <FILE id="PXr3CC" name="Filters.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Processors/Filters.h"/>
-      <FILE id="nLZHuU" name="Filters.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Processors/Filters.cpp"/>
-      <FILE id="AL0xJj" name="FIR.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Processors/FIR.h"/>
-      <FILE id="eHOn1W" name="FIR.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Processors/FIR.cpp"/>
-      <FILE id="Wpkaij" name="Freeverb.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Processors/Freeverb.h"/>
-      <FILE id="y0ow9T" name="Freeverb.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Processors/Freeverb.cpp"/>
-      <FILE id="n9BRet" name="InOut.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Processors/InOut.h"/>
-      <FILE id="JCGjb9" name="InOut.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Processors/InOut.cpp"/>
-      <FILE id="lzSmfa" name="Mixer.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Processors/Mixer.h"/>
-      <FILE id="uw9ieJ" name="Mixer.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Processors/Mixer.cpp"/>
+      <FILE id="yMb8Jl" name="BinaryOp.h" compile="0" resource="0" file="../Src/Processors/BinaryOp.h"/>
+      <FILE id="bT8bNA" name="BinaryOp.cpp" compile="1" resource="0" file="../Src/Processors/BinaryOp.cpp"/>
+      <FILE id="Y4pLCl" name="Clipper.h" compile="0" resource="0" file="../Src/Processors/Clipper.h"/>
+      <FILE id="hmIA7E" name="Clipper.cpp" compile="1" resource="0" file="../Src/Processors/Clipper.cpp"/>
+      <FILE id="TvjLBQ" name="Convolver.h" compile="0" resource="0" file="../Src/Processors/Convolver.h"/>
+      <FILE id="m4eQV8" name="Convolver.cpp" compile="1" resource="0" file="../Src/Processors/Convolver.cpp"/>
+      <FILE id="JltPxf" name="Convolver2.h" compile="0" resource="0" file="../Src/Processors/Convolver2.h"/>
+      <FILE id="DDHpkm" name="Convolver2.cpp" compile="1" resource="0" file="../Src/Processors/Convolver2.cpp"/>
+      <FILE id="xXUZyH" name="Filters.h" compile="0" resource="0" file="../Src/Processors/Filters.h"/>
+      <FILE id="cnG9p7" name="Filters.cpp" compile="1" resource="0" file="../Src/Processors/Filters.cpp"/>
+      <FILE id="FNUqIK" name="FIR.h" compile="0" resource="0" file="../Src/Processors/FIR.h"/>
+      <FILE id="jFfGTF" name="FIR.cpp" compile="1" resource="0" file="../Src/Processors/FIR.cpp"/>
+      <FILE id="jBqhOh" name="Freeverb.h" compile="0" resource="0" file="../Src/Processors/Freeverb.h"/>
+      <FILE id="x1zvNX" name="Freeverb.cpp" compile="1" resource="0" file="../Src/Processors/Freeverb.cpp"/>
+      <FILE id="o4dEVl" name="InOut.h" compile="0" resource="0" file="../Src/Processors/InOut.h"/>
+      <FILE id="WY0Qt7" name="InOut.cpp" compile="1" resource="0" file="../Src/Processors/InOut.cpp"/>
+      <FILE id="w81WA9" name="Mixer.h" compile="0" resource="0" file="../Src/Processors/Mixer.h"/>
+      <FILE id="Q6zjGv" name="Mixer.cpp" compile="1" resource="0" file="../Src/Processors/Mixer.cpp"/>
     </GROUP>
     <GROUP id="{067B1879-5FB2-A7EF-325C-62C86C2B847A}" name="IO">
-      <FILE id="I4WTv0" name="JUCEIO.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/IO/JUCEIO.h"/>
-      <FILE id="c3qb2S" name="JUCEIO.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/IO/JUCEIO.cpp"/>
-      <FILE id="cXiWpZ" name="FileIO.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/IO/FileIO.h"/>
-      <FILE id="ao4F6O" name="FileIO.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/IO/FileIO.cpp"/>
-      <FILE id="o8rUZ8" name="SoundFile.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/IO/SoundFile.h"/>
-      <FILE id="t50L9z" name="SoundFile.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/IO/SoundFile.cpp"/>
-      <FILE id="xgTGR5" name="SoundFileJ.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/IO/SoundFileJ.h"/>
-      <FILE id="J0nfdG" name="SoundFileJ.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/IO/SoundFileJ.cpp"/>
-      <FILE id="jv1BiK" name="OSC_support.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/IO/OSC_support.h"/>
-      <FILE id="k9V1VN" name="OSC_support.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/IO/OSC_support.cpp"/>
-      <FILE id="Oz5fKk" name="MIDIIOJ.h" compile="0" resource="0" file="../CSL/IO/MIDIIOJ.h"/>
-      <FILE id="ItmJA1" name="MIDIIOJ.cpp" compile="1" resource="0" file="../CSL/IO/MIDIIOJ.cpp"/>
+      <FILE id="gJelaA" name="JUCEIO.h" compile="0" resource="0" file="../Src/IO/JUCEIO.h"/>
+      <FILE id="etxJCR" name="JUCEIO.cpp" compile="1" resource="0" file="../Src/IO/JUCEIO.cpp"/>
+      <FILE id="GORtOf" name="SoundFile.h" compile="0" resource="0" file="../Src/IO/SoundFile.h"/>
+      <FILE id="FQ5c5X" name="SoundFile.cpp" compile="1" resource="0" file="../Src/IO/SoundFile.cpp"/>
+      <FILE id="T6cU87" name="SoundFileJ.h" compile="0" resource="0" file="../Src/IO/SoundFileJ.h"/>
+      <FILE id="shw7Rg" name="SoundFileJ.cpp" compile="1" resource="0" file="../Src/IO/SoundFileJ.cpp"/>
+      <FILE id="LVvaCp" name="FileIO.h" compile="0" resource="0" file="../Src/IO/FileIO.h"/>
+      <FILE id="nemaoC" name="FileIO.cpp" compile="1" resource="0" file="../Src/IO/FileIO.cpp"/>
+      <FILE id="FeXIs1" name="MIDIIOJ.h" compile="0" resource="0" file="../Src/IO/MIDIIOJ.h"/>
+      <FILE id="OqMpur" name="MIDIIOJ.cpp" compile="1" resource="0" file="../Src/IO/MIDIIOJ.cpp"/>
+      <FILE id="nrlkGw" name="OSC_support.h" compile="0" resource="0" file="../Src/IO/OSC_support.h"/>
+      <FILE id="aBLHwu" name="OSC_support.cpp" compile="1" resource="0" file="../Src/IO/OSC_support.cpp"/>
     </GROUP>
     <GROUP id="{BFE37947-C5E0-136A-2F81-06303D834B09}" name="Spatializers">
-      <FILE id="VVEb2A" name="SpatialAudio.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Spatializers/SpatialAudio.h"/>
-      <FILE id="zNtcis" name="SpatialAudio.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Spatializers/SpatialAudio.cpp"/>
-      <FILE id="c2pbrV" name="SimplePanner.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Spatializers/SimplePanner.h"/>
-      <FILE id="jEGYW1" name="SimplePanner.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Spatializers/SimplePanner.cpp"/>
-      <FILE id="m2PMFX" name="DistanceSimulator.h" compile="0" resource="0"
-            file="/Content/Code/CSL/CSL/Spatializers/DistanceSimulator.h"/>
-      <FILE id="USgJH9" name="DistanceSimulator.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Spatializers/DistanceSimulator.cpp"/>
-      <FILE id="DuQOfG" name="SpatialPanner.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Spatializers/SpatialPanner.h"/>
-      <FILE id="kSaUEw" name="SpatialPanner.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Spatializers/SpatialPanner.cpp"/>
-      <FILE id="ynxf4A" name="SpatialSource.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Spatializers/SpatialSource.h"/>
-      <FILE id="ziNh2S" name="SpatialSource.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Spatializers/SpatialSource.cpp"/>
-      <FILE id="KQnzJU" name="SpeakerLayout.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Spatializers/SpeakerLayout.h"/>
-      <FILE id="C3KVuA" name="SpeakerLayout.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Spatializers/SpeakerLayout.cpp"/>
+      <FILE id="IYURql" name="SimplePanner.h" compile="0" resource="0" file="../Src/Spatializers/SimplePanner.h"/>
+      <FILE id="jHvCTB" name="SimplePanner.cpp" compile="1" resource="0"
+            file="../Src/Spatializers/SimplePanner.cpp"/>
+      <FILE id="gDl6to" name="SpatialAudio.h" compile="0" resource="0" file="../Src/Spatializers/SpatialAudio.h"/>
+      <FILE id="t8xwQf" name="SpatialAudio.cpp" compile="1" resource="0"
+            file="../Src/Spatializers/SpatialAudio.cpp"/>
+      <FILE id="pHlJ61" name="SpatialPanner.cpp" compile="1" resource="0"
+            file="../Src/Spatializers/SpatialPanner.cpp"/>
+      <FILE id="Cx7aKN" name="SpatialPanner.h" compile="0" resource="0" file="../Src/Spatializers/SpatialPanner.h"/>
+      <FILE id="paVODR" name="SpatialSource.cpp" compile="1" resource="0"
+            file="../Src/Spatializers/SpatialSource.cpp"/>
+      <FILE id="kBy7xW" name="SpatialSource.h" compile="0" resource="0" file="../Src/Spatializers/SpatialSource.h"/>
+      <FILE id="jO1f76" name="DistanceSimulator.h" compile="0" resource="0"
+            file="../Src/Spatializers/DistanceSimulator.h"/>
+      <FILE id="c3KxoR" name="DistanceSimulator.cpp" compile="1" resource="0"
+            file="../Src/Spatializers/DistanceSimulator.cpp"/>
+      <FILE id="KKTCPr" name="SpeakerLayout.h" compile="0" resource="0" file="../Src/Spatializers/SpeakerLayout.h"/>
+      <FILE id="BcrmUK" name="SpeakerLayout.cpp" compile="1" resource="0"
+            file="../Src/Spatializers/SpeakerLayout.cpp"/>
       <GROUP id="{D875D549-6A4E-AADD-288A-8C89A323CFED}" name="VBAP">
-        <FILE id="OMeo7F" name="VBAP.h" compile="0" resource="0" file="../CSL/Spatializers/VBAP/VBAP.h"/>
-        <FILE id="B72cdO" name="VBAP.cpp" compile="1" resource="0" file="../CSL/Spatializers/VBAP/VBAP.cpp"/>
+        <FILE id="n1X8TM" name="VBAP.h" compile="0" resource="0" file="../Src/Spatializers/VBAP/VBAP.h"/>
+        <FILE id="UbGGB4" name="VBAP.cpp" compile="1" resource="0" file="../Src/Spatializers/VBAP/VBAP.cpp"/>
       </GROUP>
       <GROUP id="{60DC31FF-BC6E-CFEA-9D2A-F0D154EB524D}" name="Binaural">
-        <FILE id="GlVfwV" name="Binaural.h" compile="0" resource="0" file="../CSL/Spatializers/Binaural/Binaural.h"/>
-        <FILE id="l9AB4o" name="Binaural.cpp" compile="1" resource="0" file="../CSL/Spatializers/Binaural/Binaural.cpp"/>
-        <FILE id="ESkOUO" name="BinauralDB.h" compile="0" resource="0" file="../CSL/Spatializers/Binaural/BinauralDB.h"/>
-        <FILE id="HvGhPb" name="BinauralDB.cpp" compile="1" resource="0" file="../CSL/Spatializers/Binaural/BinauralDB.cpp"/>
+        <FILE id="brUCS3" name="Binaural.h" compile="0" resource="0" file="../Src/Spatializers/Binaural/Binaural.h"/>
+        <FILE id="EIxMD5" name="Binaural.cpp" compile="1" resource="0" file="../Src/Spatializers/Binaural/Binaural.cpp"/>
+        <FILE id="zOId70" name="BinauralDB.h" compile="0" resource="0" file="../Src/Spatializers/Binaural/BinauralDB.h"/>
+        <FILE id="BTGVHT" name="BinauralDB.cpp" compile="1" resource="0" file="../Src/Spatializers/Binaural/BinauralDB.cpp"/>
       </GROUP>
       <GROUP id="{22B36A54-3321-53C6-1722-5811B3659784}" name="Ambisonic">
-        <FILE id="wSO7RF" name="Ambisonic.h" compile="0" resource="0" file="../CSL/Spatializers/Ambisonic/Ambisonic.h"/>
-        <FILE id="i0zqOt" name="Ambisonic.cpp" compile="1" resource="0" file="../CSL/Spatializers/Ambisonic/Ambisonic.cpp"/>
-        <FILE id="ijYqqt" name="AmbisonicPanner.h" compile="0" resource="0"
-              file="../CSL/Spatializers/Ambisonic/AmbisonicPanner.h"/>
-        <FILE id="gT25WP" name="AmbisonicPanner.cpp" compile="1" resource="0"
-              file="../CSL/Spatializers/Ambisonic/AmbisonicPanner.cpp"/>
-        <FILE id="dgaLUr" name="AmbisonicUtilities.h" compile="0" resource="0"
-              file="../CSL/Spatializers/Ambisonic/AmbisonicUtilities.h"/>
-        <FILE id="OfIfGQ" name="AmbisonicUtilities.cpp" compile="1" resource="0"
-              file="../CSL/Spatializers/Ambisonic/AmbisonicUtilities.cpp"/>
+        <FILE id="jxWn3s" name="Ambisonic.h" compile="0" resource="0" file="../Src/Spatializers/Ambisonic/Ambisonic.h"/>
+        <FILE id="VGlb03" name="Ambisonic.cpp" compile="1" resource="0" file="../Src/Spatializers/Ambisonic/Ambisonic.cpp"/>
+        <FILE id="Pz77aD" name="AmbisonicPanner.h" compile="0" resource="0"
+              file="../Src/Spatializers/Ambisonic/AmbisonicPanner.h"/>
+        <FILE id="jISCVX" name="AmbisonicPanner.cpp" compile="1" resource="0"
+              file="../Src/Spatializers/Ambisonic/AmbisonicPanner.cpp"/>
+        <FILE id="FSnNnw" name="AmbisonicUtilities.h" compile="0" resource="0"
+              file="../Src/Spatializers/Ambisonic/AmbisonicUtilities.h"/>
+        <FILE id="fRRz4t" name="AmbisonicUtilities.cpp" compile="1" resource="0"
+              file="../Src/Spatializers/Ambisonic/AmbisonicUtilities.cpp"/>
       </GROUP>
     </GROUP>
     <GROUP id="{DF74CEAD-B508-8B90-D4DE-49A97387A1D7}" name="Instruments">
-      <FILE id="WQ4HR8" name="Accessor.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Instruments/Accessor.h"/>
-      <FILE id="VWJo7U" name="Instrument.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Instruments/Instrument.h"/>
-      <FILE id="EwaJmh" name="Instrument.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Instruments/Instrument.cpp"/>
-      <FILE id="mpk5XI" name="AdditiveInstrument.h" compile="0" resource="0"
-            file="/Content/Code/CSL/CSL/Instruments/AdditiveInstrument.h"/>
-      <FILE id="seZOua" name="AdditiveInstrument.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Instruments/AdditiveInstrument.cpp"/>
-      <FILE id="kT9Dw2" name="BasicFMInstrument.h" compile="0" resource="0"
-            file="/Content/Code/CSL/CSL/Instruments/BasicFMInstrument.h"/>
-      <FILE id="oCnO8Y" name="BasicFMInstrument.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Instruments/BasicFMInstrument.cpp"/>
-      <FILE id="D92Nmd" name="SndFileInstrument.h" compile="0" resource="0"
-            file="/Content/Code/CSL/CSL/Instruments/SndFileInstrument.h"/>
-      <FILE id="AmyTZF" name="SndFileInstrument.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Instruments/SndFileInstrument.cpp"/>
+      <FILE id="IUWh2W" name="Accessor.h" compile="0" resource="0" file="../Src/Instruments/Accessor.h"/>
+      <FILE id="maiGdL" name="Instrument.h" compile="0" resource="0" file="../Src/Instruments/Instrument.h"/>
+      <FILE id="jbgDKD" name="Instrument.cpp" compile="1" resource="0" file="../Src/Instruments/Instrument.cpp"/>
+      <FILE id="opr2wR" name="AdditiveInstrument.h" compile="0" resource="0"
+            file="../Src/Instruments/AdditiveInstrument.h"/>
+      <FILE id="mfX8Sl" name="AdditiveInstrument.cpp" compile="1" resource="0"
+            file="../Src/Instruments/AdditiveInstrument.cpp"/>
+      <FILE id="ETwhPE" name="BasicFMInstrument.h" compile="0" resource="0"
+            file="../Src/Instruments/BasicFMInstrument.h"/>
+      <FILE id="NNrrWY" name="BasicFMInstrument.cpp" compile="1" resource="0"
+            file="../Src/Instruments/BasicFMInstrument.cpp"/>
+      <FILE id="iyIJXb" name="SndFileInstrument.h" compile="0" resource="0"
+            file="../Src/Instruments/SndFileInstrument.h"/>
+      <FILE id="q0MFSA" name="SndFileInstrument.cpp" compile="1" resource="0"
+            file="../Src/Instruments/SndFileInstrument.cpp"/>
     </GROUP>
     <GROUP id="{4313D830-F250-BC20-5A97-09D2EF3D5596}" name="Utilities">
-      <FILE id="mFEBJ6" name="CSL_All.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Utilities/CSL_All.h"/>
-      <FILE id="q2LXkp" name="BlockResizer.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Utilities/BlockResizer.h"/>
-      <FILE id="HdHR6C" name="BlockResizer.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Utilities/BlockResizer.cpp"/>
-      <FILE id="NsRH9m" name="CPoint.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Utilities/CPoint.h"/>
-      <FILE id="WKZQ6O" name="CPoint.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Utilities/CPoint.cpp"/>
-      <FILE id="N3i3pj" name="FFT_Wrapper.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Utilities/FFT_Wrapper.h"/>
-      <FILE id="XtmUJC" name="FFT_Wrapper.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Utilities/FFT_Wrapper.cpp"/>
-      <FILE id="DQPUrD" name="FFTReal.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Utilities/FFTReal.h"/>
-      <FILE id="uYvPM4" name="FFTReal.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Utilities/FFTReal.cpp"/>
-      <FILE id="LT4z8z" name="RingBuffer.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Utilities/RingBuffer.h"/>
-      <FILE id="QIpLWI" name="RingBuffer.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Utilities/RingBuffer.cpp"/>
-      <FILE id="fkMLUL" name="ThreadUtilities.h" compile="0" resource="0"
-            file="/Content/Code/CSL/CSL/Utilities/ThreadUtilities.h"/>
-      <FILE id="SWrQEn" name="ThreadUtilities.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Utilities/ThreadUtilities.cpp"/>
-      <FILE id="WhuFg1" name="Variable.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Utilities/Variable.h"/>
-      <FILE id="ZJfiGB" name="Variable.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Utilities/Variable.cpp"/>
-      <FILE id="O2EfSu" name="fft_N.c" compile="1" resource="0" file="../CSL/Utilities/fft_N.c"/>
+      <FILE id="dIV0b1" name="Variable.h" compile="0" resource="0" file="../Src/Utilities/Variable.h"/>
+      <FILE id="hkJgvs" name="Variable.cpp" compile="1" resource="0" file="../Src/Utilities/Variable.cpp"/>
+      <FILE id="oWUCNP" name="BlockResizer.h" compile="0" resource="0" file="../Src/Utilities/BlockResizer.h"/>
+      <FILE id="XDPK95" name="BlockResizer.cpp" compile="1" resource="0"
+            file="../Src/Utilities/BlockResizer.cpp"/>
+      <FILE id="iFBc3u" name="CPoint.h" compile="0" resource="0" file="../Src/Utilities/CPoint.h"/>
+      <FILE id="pDIsWw" name="CPoint.cpp" compile="1" resource="0" file="../Src/Utilities/CPoint.cpp"/>
+      <FILE id="sXcnc6" name="fft_N.h" compile="0" resource="0" file="../Src/Utilities/fft_N.h"/>
+      <FILE id="LKv1QG" name="fft_N.c" compile="1" resource="0" file="../Src/Utilities/fft_N.c"/>
+      <FILE id="myhBMy" name="FFT_Wrapper.h" compile="0" resource="0" file="../Src/Utilities/FFT_Wrapper.h"/>
+      <FILE id="hKsKcv" name="FFT_Wrapper.cpp" compile="1" resource="0" file="../Src/Utilities/FFT_Wrapper.cpp"/>
+      <FILE id="BTPkrK" name="FFTReal.h" compile="0" resource="0" file="../Src/Utilities/FFTReal.h"/>
+      <FILE id="T5gTUH" name="FFTReal.cpp" compile="1" resource="0" file="../Src/Utilities/FFTReal.cpp"/>
+      <FILE id="RJ7jVD" name="RingBuffer.h" compile="0" resource="0" file="../Src/Utilities/RingBuffer.h"/>
+      <FILE id="lhC3iS" name="RingBuffer.cpp" compile="1" resource="0" file="../Src/Utilities/RingBuffer.cpp"/>
+      <FILE id="tQxKBj" name="ThreadUtilities.h" compile="0" resource="0"
+            file="../Src/Utilities/ThreadUtilities.h"/>
+      <FILE id="oFnklb" name="ThreadUtilities.cpp" compile="1" resource="0"
+            file="../Src/Utilities/ThreadUtilities.cpp"/>
     </GROUP>
     <GROUP id="{394135AB-14D1-01C5-4FB3-F94679F43343}" name="Tests">
-      <FILE id="ajxRfD" name="FilterData.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Tests/FilterData.h"/>
-      <FILE id="unGx3Y" name="Test_Audio.cpp" compile="1" resource="0" file="/Content/Code/CSL/CSL/Tests/Test_Audio.cpp"/>
-      <FILE id="JHPDfJ" name="Test_Control.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Tests/Test_Control.cpp"/>
-      <FILE id="mVPsyX" name="Test_Effects.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Tests/Test_Effects.cpp"/>
-      <FILE id="pfbHol" name="Test_Envelopes.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Tests/Test_Envelopes.cpp"/>
-      <FILE id="f37sKt" name="Test_Oscillators.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Tests/Test_Oscillators.cpp"/>
-      <FILE id="OWjncR" name="Test_Panners.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Tests/Test_Panners.cpp"/>
-      <FILE id="PtbZcZ" name="Test_Sources.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Tests/Test_Sources.cpp"/>
-      <FILE id="Za50EX" name="Test_Support.cpp" compile="1" resource="0"
-            file="/Content/Code/CSL/CSL/Tests/Test_Support.cpp"/>
-      <FILE id="E6lVqu" name="Test_Support.h" compile="0" resource="0" file="/Content/Code/CSL/CSL/Tests/Test_Support.h"/>
+      <FILE id="x9meZX" name="FilterData.h" compile="0" resource="0" file="../Src/Tests/FilterData.h"/>
+      <FILE id="b9hWZe" name="Test_Support.h" compile="0" resource="0" file="../Src/Tests/Test_Support.h"/>
+      <FILE id="LdjbHI" name="Test_Support.cpp" compile="1" resource="0"
+            file="../Src/Tests/Test_Support.cpp"/>
+      <FILE id="j9DY1c" name="Test_Sources.cpp" compile="1" resource="0"
+            file="../Src/Tests/Test_Sources.cpp"/>
+      <FILE id="OGGG7a" name="Test_Oscillators.cpp" compile="1" resource="0"
+            file="../Src/Tests/Test_Oscillators.cpp"/>
+      <FILE id="nEzXe6" name="Test_Envelopes.cpp" compile="1" resource="0"
+            file="../Src/Tests/Test_Envelopes.cpp"/>
+      <FILE id="sF0zj8" name="Test_Audio.cpp" compile="1" resource="0" file="../Src/Tests/Test_Audio.cpp"/>
+      <FILE id="MnqXMV" name="Test_Effects.cpp" compile="1" resource="0"
+            file="../Src/Tests/Test_Effects.cpp"/>
+      <FILE id="TGj8Za" name="Test_Panners.cpp" compile="1" resource="0"
+            file="../Src/Tests/Test_Panners.cpp"/>
+      <FILE id="LFpEBW" name="Test_Control.cpp" compile="1" resource="0"
+            file="../Src/Tests/Test_Control.cpp"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI JUCE_DEBUG"
-               microphonePermissionNeeded="1" extraCompilerFlags="-I../../../CSL/Includes -I/usr/local/include -w"
-               extraLinkerFlags="-L/usr/local/lib -lsndfile -lfftw3f">
+               microphonePermissionNeeded="1" extraCompilerFlags="-I../../../Src/Includes -I/usr/local/include -w"
+               extraLinkerFlags="-L/usr/local/lib -lsndfile -lfftw3f -llo">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="CSL6Demo"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="CSL6Demo" linkTimeOptimisation="1"/>

@@ -132,7 +132,7 @@
 	#define CSL_DATA_DIR "..\\..\\..\\CSL_Data\\"	///< folder where the CSL data can be found
 	#define CSL_INIT_FILE "..\\..\\..\\csl.ini"		///< where to store the CSL init file
 #else
-	#define CSL_DATA_DIR "~/Code/CSL/CSL_Data/"		///< folder where the CSL data can be found
+	#define CSL_DATA_DIR "~/Code/CSL/Data/"		///< folder where the CSL data can be found
 	#define CSL_INIT_FILE "~/.cslrc"				///< where to store the CSL init file
 	#define DO_TIMING								///< Gather performance timing (not on Windows)
 #endif

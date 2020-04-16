@@ -26,14 +26,14 @@
 /// Apply a glissando and swell to a sine oscillator with LineSegments
 
 void testSweep() {
-	Osc vox;								// wave-table oscillator
-	LineSegment gliss(5, 40, 1000);			// freq line (dur val1, val2)
-	LineSegment swell(5, 0.000001, 0.8);	// ampl line
-	vox.setFrequency(gliss);				// apply freq function
-	vox.setScale(swell);					// apply ampl function
+	Osc vox;								    // wave-table oscillator
+	LineSegment gliss(5, 40, 5000);		    // freq line (dur val1, val2)
+	LineSegment swell(5, 0.000001, 0.8);	    // ampl line
+	vox.setFrequency(gliss);				    // apply freq function
+	vox.setScale(swell);					    // apply ampl function
 //	vox.dump();
 	logMsg("playing swept sin with line segment...");
-	runTest(vox, 5);						// play vox for 5 seconds
+	runTest(vox, 5);						    // play vox for 5 seconds
 	logMsg("done.\n");
 }
 
@@ -46,7 +46,7 @@ void testSimpleSines() {
 	logMsg("playing simple sin...");
 	runTest(sineOsc);						// call the test function that runs this for a few seconds
 	logMsg("sin done.");
-	SineAsPhased sineOsc2(freq);			// create a sine-as-phased oscillator
+	SineAsPhased sineOsc2(freq);			    // create a sine-as-phased oscillator
 	sineOsc2.dump();
 	logMsg("playing sin-as-phased...");
 	runTest(sineOsc2);						// call the test function that runs this for a few seconds

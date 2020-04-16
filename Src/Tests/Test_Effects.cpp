@@ -53,17 +53,17 @@ void testFIR() {
 //	double weight[] = { 5, 50 };						// weights for error (ripple) in the 2 bands
 //	FilterSpecification fs(40, 2, freq, resp, weight);	// 40 taps, 3 bands
 					// BPF test
-	double resp[] = { 0, 1, 0 };						// amplitudes in the 3 freq bands (i.e., band-pass)
-	double freq[] = { 0, 200, 250, 500, 600, 44100 };	// corner freqs of the pass and stop bands
-	double weight[] = { 10, 2, 10 };					// weights for error (ripple) in the 3 bands
-	FilterSpecification fs(70, 3, freq, resp, weight);// 70 taps (70-step IR), 3 bands
+	double resp[] = { 0., 1., 0. };					       // amplitudes in the 3 freq bands (i.e., band-pass)
+	double freq[] = { 0., 200., 250., 500., 600., 44100. };  // corner freqs of the pass and stop bands
+	double weight[] = { 10., 2., 10. };					   // weights for error (ripple) in the 3 bands
+	FilterSpecification fs(70, 3, freq, resp, weight);      // 70 taps (70-step IR), 3 bands
 
-//	double resp[] = { 0, 1, 0, 1, 0 };					// amplitudes in the 5 freq bands (i.e., band-pass)
+//	double resp[] = { 0, 1, 0, 1, 0 };					        // amplitudes in the 5 freq bands (i.e., band-pass)
 //	double freq[] = { 0, 200, 250, 500, 600, 1000, 1200, 2000, 2400, 22050 };	// corner freqs of the pass and stop bands
-//	double weight[] = { 10, 5, 10, 5, 10 };			// weights for error (ripple) in the 3 bands
-//	FilterSpecification fs(200, 5, freq, resp, weight);	// 200 taps (64-step IR), 5 bands
+//	double weight[] = { 10, 5, 10, 5, 10 };			        // weights for error (ripple) in the 3 bands
+//	FilterSpecification fs(200, 5, freq, resp, weight);	        // 200 taps (64-step IR), 5 bands
 
-	PinkNoise noise;								// the sound source
+	PinkNoise noise;								    // the sound source
 	FIR vox(noise, fs);								// create the filter
 	vox.print_taps();								// print the filter taps
 

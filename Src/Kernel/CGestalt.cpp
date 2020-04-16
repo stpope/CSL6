@@ -69,7 +69,7 @@ unsigned CGestalt::screenHeight() { return sScreenHeight; }							///< current s
 // handle dataFolder paths relative to "~"
 
 string CGestalt::dataFolder()	{
-	if ((mDataFolder.size() > 0) && (mDataFolder[0] == '~')) {	// find '~' in folder name
+	if ((mDataFolder.size() > 0) && (mDataFolder[0] == '~')) {	    // find '~' in folder name
 		string ans(getenv("HOME"));								// UNIX code here
 		if (mDataFolder.size() > 1)
 			ans = ans + mDataFolder.substr(1);

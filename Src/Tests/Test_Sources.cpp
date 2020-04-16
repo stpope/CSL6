@@ -398,7 +398,7 @@ void test_ifft() {
 	vox.setBinMagPhase(4, 0.08, 0);
 	vox.setBinMagPhase(6, 0.04, 0);
 	vox.setBinMagPhase(8, 0.02, 0);
-//	vox.setBinMagPhase(5, 0.1, 0);				// 5th bin = 440 Hz?
+//	vox.setBinMagPhase(5, 0.1, 0);				    // 5th bin = 440 Hz?
 	logMsg("playing IFFT...");
 	runTest(vox);
 	logMsg("IFFT done.");
@@ -408,14 +408,14 @@ void test_ifft() {
 
 void test_vector_ifft() {
 	float dur = 8.0f;
-	IFFT vox1, vox2;							// create ifft players
+	IFFT vox1, vox2;							    // create ifft players
 	
-	vox1.setBinMagPhase(4, 0.25, 0);			// set different harmonics
+	vox1.setBinMagPhase(4, 0.25, 0);			    // set different harmonics
 	vox1.setBinMagPhase(6, 0.25, 0);
 	LineSegment env1(dur, 1, 0.0001);
 	MulOp mul1(vox1, env1);						// use a MulOp
 
-	vox2.setBinMagPhase(5, 0.25, 0);			// for the 2nd IFFT
+	vox2.setBinMagPhase(5, 0.25, 0);			    // for the 2nd IFFT
 	vox2.setBinMagPhase(9, 0.25, 0);
 	LineSegment env2(dur, 0.0001, 1);
 	MulOp mul2(vox2, env2);
