@@ -1,0 +1,27 @@
+0   com.FASTLab.CSLApp            	0x0001809c csl::WavetableOscillator::nextBuffer(csl::Buffer&, unsigned int) + 908 (Oscillator.cpp:143)
+1   com.FASTLab.CSLApp            	0x00007811 csl::UnitGenerator::nextBuffer(csl::Buffer&) + 97 (CSL_Core.cpp:414)
+2   com.FASTLab.CSLApp            	0x000081c2 csl::Effect::pullInput(unsigned int) + 98 (CSL_Core.cpp:537)
+3   com.FASTLab.CSLApp            	0x00035711 csl::Panner::nextBuffer(csl::Buffer&) + 337 (Mixer.cpp:220)
+4   com.FASTLab.CSLApp            	0x0003e26b csl::Instrument::nextBuffer(csl::Buffer&) + 27 (Instrument.cpp:43)
+5   com.FASTLab.CSLApp            	0x0003479b csl::Mixer::nextBuffer(csl::Buffer&) + 139 (Mixer.cpp:106)
+6   com.FASTLab.CSLApp            	0x000081c2 csl::Effect::pullInput(unsigned int) + 98 (CSL_Core.cpp:537)
+7   com.FASTLab.CSLApp            	0x000090c2 csl::Splitter::nextBuffer(csl::Buffer&) + 306 (CSL_Core.cpp:818)
+8   com.FASTLab.CSLApp            	0x0000810a csl::Effect::pullInput(csl::Buffer&) + 106 (CSL_Core.cpp:552)
+9   com.FASTLab.CSLApp            	0x000395bc csl::Freeverb::nextBuffer(csl::Buffer&, unsigned int) + 44 (Freeverb.cpp:183)
+10  com.FASTLab.CSLApp            	0x00007811 csl::UnitGenerator::nextBuffer(csl::Buffer&) + 97 (CSL_Core.cpp:414)
+11  com.FASTLab.CSLApp            	0x0000a341 csl::Joiner::nextBuffer(csl::Buffer&) + 337 (CSL_Core.cpp:850)
+12  com.FASTLab.CSLApp            	0x0003955b csl::Stereoverb::nextBuffer(csl::Buffer&) + 27 (Freeverb.cpp:260)
+13  com.FASTLab.CSLApp            	0x00008d64 csl::IO::pullInput(csl::Buffer&, float*) + 132 (CSL_Core.cpp:1042)
+14  com.FASTLab.CSLApp            	0x00054a59 CSLServerComponent::audioDeviceIOCallback(float const**, int, float**, int, int) + 969 (CSL_ServerComponent.cpp:359)
+15  com.FASTLab.CSLApp            	0x001711fb juce::AudioDeviceManager::audioDeviceIOCallbackInt(float const**, int, float**, int, int) + 363
+16  com.FASTLab.CSLApp            	0x001c30d6 juce::CoreAudioInternal::audioIOProc(unsigned long, AudioTimeStamp const*, AudioBufferList const*, 
+												AudioTimeStamp const*, AudioBufferList*, AudioTimeStamp const*, void*) + 1174
+17  ....audio_hijack_server.hermes	0x0049ab0f AudioDeviceIOCallback + 79
+18  com.apple.audio.CoreAudio     	0x91196b08 HP_IOProc::Call(AudioTimeStamp const&, AudioTimeStamp const&, AudioBufferList const*, AudioTimeStamp const&, AudioBufferList*) + 374
+19  com.apple.audio.CoreAudio     	0x9119686e IOA_Device::CallIOProcs(AudioTimeStamp const&, AudioTimeStamp const&, AudioTimeStamp const&) + 370
+20  com.apple.audio.CoreAudio     	0x9119666a HP_IOThread::PerformIO(AudioTimeStamp const&, double) + 620
+21  com.apple.audio.CoreAudio     	0x91193a56 HP_IOThread::WorkLoop() + 2506
+22  com.apple.audio.CoreAudio     	0x91193087 HP_IOThread::ThreadEntry(HP_IOThread*) + 17
+23  com.apple.audio.CoreAudio     	0x91192f9e CAPThread::Entry(CAPThread*) + 140
+24  libSystem.B.dylib             	0x98e31f39 _pthread_start + 345
+25  libSystem.B.dylib             	0x98e31dbe thread_start + 34

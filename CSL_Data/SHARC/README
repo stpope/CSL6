@@ -1,0 +1,438 @@
+
+                             SHARC TIMBRE DATABASE
+                                       
+
+
+Written and maintained by Gregory J. Sandell
+Sussex University, U.K.
+Release 0.921("beta"), November 1994
+World Wide Web URL: ftp://ftp.ep.susx.ac.uk/pub/sandell/SHARC.homepage.html.
+
+   
+   
+Contents of this README file
+
+     * WHAT IS SHARC? 
+     * INSTALLATION INSTRUCTIONS, AVAILABILITY, AUTHOR INFORMATION 
+     * PERMISSIONS 
+     * CONTENTS 
+     * INFORMATION ABOUT THE SOURCE SOUNDS 
+     * HOW IS THIS DATA USEFUL? 
+     * ONLINE PLOTS OF DATA FOR WWW USERS 
+     * HOW THE ANALYSES WERE DONE 
+     * ORGANISATION OF THE DIRECTORIES 
+     * A BRIEF HISTORY OF THIS PROJECT 
+     * VERSION INFORMATION 
+     * BUGS, INACCURACIES, WISHLIST 
+       
+WHAT IS SHARC?
+
+   SHARC is a database of musical timbre information by Gregory Sandell.
+   It stands for "Sandell Harmonic Archive." People for whom this dataset
+   may be useful are Acousticians, Psychoacousticians, researchers in
+   Music Percepion and Cognition, researchers in Digital Signal
+   Processing, Music Theorists, and Musicologists.
+   
+   Over 1300 different notes have been analysed. Complete chromatic runs
+   from the standard playing range of essentially all the non-percussive
+   instruments of the modern orchestra have been included; for example,
+   individual analyses of 32 different oboe notes (the chromatic scale
+   from the pitches a#3 to f6) are available.
+   
+   For each note, a short portion corresponding to the sustain or "steady
+   state" portion of the tone was selected and analysed with a Fourier
+   analysis. Each analysis consists of a list of amplitudes and phases
+   for all the note's harmonics in the range 0-10,000 Hz. 
+   
+   The source of the musical notes were the orchestral tones from the
+   McGill University Master Samples (MUMS) Compact Discs. These are
+   digital recordings of live musical performers.
+   
+INSTALLATION INSTRUCTIONS, AVAILABILITY, AUTHOR INFORMATION
+
+   So far I distribute SHARC strictly via the internet, i.e. ftp. From
+   the time to time new versions of SHARC will be announced on the USENET
+   bulletin boards comp.music and comp.dsp and the distributed email
+   lists AUDITORY, SIGSOUND or music-research. Each version of SHARC is
+   identified by a version number. If you are wondering if there have
+   been any updates since you last downloaded SHARC, get the latest
+   version of the documentation (i.e. the README file) via ftp or WWW
+   (instructions elsewhere) and compare numbers. A history of versions is
+   contained in this document under the section "VERSION INFORMATION". If
+   you wish, you may send me email asking to be kept informed about
+   SHARC, and I will try to send announcements to you. Your comments are
+   most welcome, especially now, as they will have the most impact on the
+   nature of the database. Send email to sandell@epunix.sussex.ac.uk.
+   
+   Here are instructions for installing the archive on a UNIX platform. 
+     * Go to the directory where you want to install SHARC. You will need
+       about 10 free megabytes to perform the installation. Once
+       finished, the archive will occupy 4.5 megabytes space. 
+     * ftp to ftp.ep.susx.ac.uk 
+     * Enter user name "anonymous" and give your full email address as a
+       password 
+     * Type "binary" to set the transfer to binary mode 
+     * Type "get sharc.tar.Z" 
+     * When the file is finished transferring (it is about 0.8 megabytes
+       large), leave ftp by typing "quit" 
+     * Type "uncompress sharc.tar.Z". The result of this is that
+       sharc.tar.Z will be replaced by sharc.tar 
+     * Type "tar xf sharc.tar". This will put the archive in a directory
+       called "sharc". 
+     * Dispose of the sharc.tar file (type "rm sharc.tar") to reclaim
+       about 4.5 megabytes space. 
+       
+   Gregory J. Sandell is a research fellow in the Hearing Research Group
+   at the University of Sussex Experimental Psychology department in the
+   U.K. Starting April 1995 I will be at Parmly Hearing Institute at
+   Loyola University in Chicago, IL (USA), but my Sussex email address
+   (sandell@epunix.sussex.ac.uk) will remain active for a while. 
+   
+PERMISSIONS
+
+   The data contained in this directory are available for free with the
+   following restrictions: 
+     * 1. It may be used and shared on a non-profit basis only. You may
+       not sell it for money or use it for trade; you may not bundle it
+       with a commercial product or use it to attract customers to buy a
+       product. 
+     * 2. It must be identified as "SHARC" with Gregory Sandell
+       identified as its author.
+       
+   The author appreciates proper acknowledgement when this data is
+   referred to in published papers. 
+   
+CONTENTS
+
+   The database consists of 39 directories, each corresponding to a
+   particular instrument. Each directory consists of separate files for
+   each note analysed for that instrument. The instruments are:
+   
+
+Bach_trumpet          bass_clarinet         altoflute_vibrato     
+Bb_clarinet           bass_trombone         piccolo
+CB                    bassflute_vibrato     trombone
+CB_martele            bassoon               trombone_muted
+CB_muted              tuba                  violin_vibrato
+CB_pizz               cello_martele         viola_martele
+C_trumpet             cello_muted_vibrato   viola_muted_vibrato 
+C_trumpet_muted       cello_pizzicato       viola_pizzicato 
+Eb_clarinet           cello_vibrato         viola_vibrato 
+English_horn          contrabass_clarinet   violin_martele 
+French_horn           contrabassoon         violin_muted_vibrato 
+French_horn_muted     flute_vibrato         violin_pizzicato
+alto_trombone         oboe                  violinensemb
+
+   
+   
+INFORMATION ABOUT THE SOURCE SOUNDS
+
+   The McGill University Master Samples (MUMS) is a library of compact
+   discs made and sold by Frank Opolko and Joel Wapnick of McGill
+   University. To obtain the CDs or obtain information about them, write
+   to:
+   
+Joel Wapnick
+McGill University
+Faculty of Music
+555 Sherbrooke Street West
+Montrel, Quebec
+Canada H3A 1E3
+phone: (514) 398-4548
+email:  CXJW@MUSICA.MCGILL.CA (Joel Wapnick)
+
+   The naming of instruments, the organisation of the directories, and
+   the information in each directory's CONTENTS files reflects the
+   contents of the MUMS CDs as precisely as possible. I would like to
+   gratefully acknowledge the permission of the makers of MUMS use their
+   product in this manner. Other than customer, I have no financial
+   relationship to MUMS or McGill University.
+   
+HOW IS THIS DATA USEFUL?
+
+   One of the most important aspects of a musical instrument sound that
+   determines its timbre is the spectrum of its steady state portion.
+   Other critical features are the rapid spectral changes at attack and
+   decay time, and slowly varying changes in spectrum during the steady
+   state. The fact that timbre depends so critically on the latter three
+   aspects makes the study of timbre a challenge, because of the
+   increased complexity of including the temporal dimension. To create a
+   database of all the instruments of the orchestra with complete
+   spectrotemporal descriptions of individual notes is not currently
+   feasible, not as an archive to be shared through current network
+   means, at least; several gigabytes, or a few CD-ROM discs would be
+   required. A library of steady state spectra, however, is feasable.
+   
+   Admittedly, the study of steady state spectra is nothing new. However,
+   prior to the use of computer analysis of sound, spectral analyses were
+   expensive and hard-won operations; the unfortunate practice of
+   analysing one note and drawing conclusions about the entire
+   instrument's timbre was sometimes seen in manuals of acoustics from
+   that time. The balance struck in this collection between economy of
+   representation (steady state spectra) and completeness (complete
+   chromatic scales for each instrument) offers researchers new
+   opportunity for timbral discovery. Specifically, it puts the study of
+   the "macro timbre" of an instrument, i.e. its spectral content of its
+   entire pitch range, within the grasp of the researcher. 
+   
+   Some of the ways in which this data might be used are: 
+     * Calculating the spectral centroids of the notes, and plotting this
+       as estimated "brightness" over the range of the instrument. 
+     * Similarly, a algorithm for estimating "roughness" or acoustic
+       dissonance may be applied to compare one note or instrument to
+       another. 
+     * Because the information on the relative amplitude of notes is
+       available (in each instrument's CONTENTS file), one can form
+       hypotheses about the dynamic nature of an instrument's performing
+       range. 
+     * Spectra may be combined to simulate harmonies; dissonances of
+       combined spectra could be calculated, and the database searched to
+       find, for example, the most consonant example of a semitone
+       interval, or the most dissonant perfect fifth. 
+     * These analyses might be the basis for a particular orchestration
+       used by a composer; or, they could be used by Music Theorists and
+       Musicologists for analysis of orchestration. 
+     * Acousticians may with to test propositions such as the claim that
+       the oboe and English horn possesses "formants." 
+       
+   Perhaps most important of all is that users of this database
+   understand how to interpret this data correctly. For users with
+   backgrounds in acoustics and Digital Signal Processing, the section
+   HOW THE ANALYSES WERE DONE may be sufficient; for others, the
+   implications of this approach are more explicitly spelled out below.
+   For each note analysed, the user should keep in mind that: 
+     * The portion of the tone which has been analysed has been very
+       carefully selected for "representativeness", but nevertheless the
+       analysis represents the spectrum of the note at single, brief
+       moment in time. 
+     * While this data, by itself, cannot be used to synthesise realistic
+       sounding musical instruments, it does represent a real moment in
+       time from the instrument, and a resynthesis of the waveform from
+       this data will faithfully reproduce that moment. Although such
+       moments are usually rather flat and "electronic" sounding, there
+       are many occasions in which the steady state alone produces a
+       quite recognisable musical instrument sound. Wind instruments are
+       a frequent example. In fact, with a few added features (such as
+       adding a characteristic attack-sustain-decay-release envelope to
+       the sound), I have even been able to generate a tone that can
+       "fool the listener." However, as a general rule, this will be very
+       poor strategy for musical instrument tone synthesis. 
+     * Any given note, say, a flute c4, is by no means the "final word"
+       on the spectrum of a flute c4. There are an infinite number of
+       ways a flute c4 can be played, and the instance of it on the MUMS
+       CD represents only one manner of playing from a particular player,
+       instrument, and recording conditions. There are some who take a
+       rather pessimistic stance and believe that, because of the
+       infinite number of possibile performances of a note, there is no
+       use to having information on a single note. I believe that so long
+       as one interprets the data appropriately, data on one note is far
+       better than data on no notes at all. 
+       
+ONLINE PLOTS OF DATA FOR WWW USERS
+
+   If you are a World Wide Web user you can look at plots of the data.
+   Currently plots of centroids for all notes for each instrument are
+   available. To get to them, connect to the SHARC homepage,
+   ftp://ftp.ep.susx.ac.uk/pub/sandell/SHARC.homepage.html.
+   
+HOW THE ANALYSES WERE DONE
+
+   For each analysed note, the objective was to provide Fourier spectra
+   for a portion of the tone that was maximally "representative" of the
+   steady portion of the tone.
+   
+   Tremendous care was taken in finding a "representative" portion of
+   each note. The procedure was as follows: 
+     * 1. The samples for the note were taken from the CD and put in a
+       computer sound file. Only one of the CD's stereo channels were
+       saved. Leading and trailing silence was removed. The sampling rate
+       of the file (44100) was converted to 22050. 
+     * 2. The sound file was analysed with a Phase Vocoder. 
+     * 3. The longest continuous stretch of time in which the note was at
+       75% or more of its maximum amplitude was identified from the PV
+       information. This located the steady portion of the tone. 
+     * 4. An average spectrum was calculated from all the PV frames
+       identified in step 3. Then least squares was used to find the
+       actual PV frame most closely resembling this average spectrum. The
+       point in time corresponding to this PV frame was designated the
+       "representative point".
+       
+   Analysis then proceded as follows: 
+     * 1. A chunk of samples corresponding to five periods of the nominal
+       fundamental (ie. according to the equal-tempered frequency of the
+       note) were taken from the sound file, from a point in time
+       symmetrically about the "representative point". 
+     * 2. Autocorrelation was used to estimate the actual fundamental
+       frequency of the sample chunk. Once determined, the chunk was
+       trimmed to four periods of this fundamental. The starting point of
+       the four periods was selected to be at a zero crossing. 
+     * 3. The length of the sample chunk was changed to the next largest
+       power of two by the method of bandlimited interpolation. This step
+       was taken to make it possible to use an FFT. 
+     * 4. The sample chunk was Hamming-windowed. 
+     * 5. The samples were analysed with an FFT, and the real and
+       imaginary values converted to power spectra in decibels. In order
+       to save only partials at harmonic multiples of the fundamental,
+       only every fourth bin was saved (because the sample chunk
+       contained not just one period, but four). All bins greater than 10
+       kHz were discarded.
+       
+ORGANISATION OF THE DIRECTORIES
+
+   Each instrument has its own directory; within each directory is a
+   separate file for each of the notes that were available for analysis.
+   The organisation is such that in order to interpret each individual
+   note file completely, you need to reference a file titled "CONTENTS"
+   within the same directory. The individual note files have N rows,
+   where N is the number of harmonics for that note (all possible
+   harmonics below 10 kHz are included). There are two columns, one for
+   the amplitudes (given in decibels relative to the amplitude of the
+   loudest harmonic for that note) and one for the phases (-PI to +PI).
+   The frequencies of the harmonics are integer multiples of the note's
+   fundamental. The actual frequencies of the harmonics are simply the
+   row number multiplied by the fundamental frequency for that note (as
+   found in the "CONTENTS" file).
+   
+   The CONTENTS file contains a line containing information about each of
+   the notes in the directory. There are twelve columns in each line.
+   Here is an example of a few lines from such a file:
+   
+
+a#3  46  43  6367  233.082  231.496  2  8  1  3.080  2.124 1316.400
+ b3  47  40  5719  246.942  246.369  2  8  2  3.240  1.213 1319.500
+ c4  48  38  5374  261.626  261.721  2  8  3  3.347  1.068 1305.770
+
+   
+   
+   The meanings of the twelve columns are: 
+     * Column 1: The pitch (which identifies what file in the directory
+       this line refers to). The pitch naming system is the Acoustical
+       Society of America standard, i.e. c4 = middle C. 
+     * Column 2: The note number of this pitch (where c4 = 48) 
+     * Column 3: Number of harmonics in the file (hence the number of
+       lines as well) 
+     * Column 4: The maximum absolute value of the sample segment used in
+       the analysis of this tone (i.e. the raw samples as read off of the
+       CD). This is useful for comparing the levels between notes. The
+       possible range of samples on a CD are, of course, -32767 to 32768.
+     * Column 5: The nominal fundamental frequency for the pitch,
+       according to equal-tempered tuning. 
+     * Column 6: The actual fundamental frequency, as measured from the
+       samples for this tone. 
+     * Column 7: Volume number of the McGill University Master Samples
+       (MUMS) CDs from which this note comes 
+     * Column 8: MUMS track number 
+     * Column 9: MUMS index number 
+     * Column 10: Total duration (in seconds) of the performed note on
+       the CD, from onset to end of decay. 
+     * Column 11: The point in time (in seconds), relative to the onset
+       of the note, from which the analysis was taken. 
+     * Column 12: the Spectral centroid in hertz 
+       
+A BRIEF HISTORY OF THIS PROJECT
+
+   I began this project while a PhD student at Northwestern University
+   (USA) in 1990. All the orchestral tones from the MUMS CDs were
+   analysed. I reported on the project at the 1991 International Computer
+   Music Conference in Montreal (Sandell, 1991, "A library of orchestral
+   instrument spectra," Proceedings of the 1991 International Computer
+   Music Conference, 98-101), but this data was never made publically
+   available.
+   
+   After a few years of looking at the data and thinking of ways in which
+   the project could have been done better, and after finding a way in
+   which to automate the task using a CD-ROM drive, I re-did the entire
+   project from scratch. This was done in 1993-94 at Sussex University.
+   
+   I would like to acknowledge the support of the graduate school of
+   Northwestern University for a Dissertation Year Grant that helped fund
+   the original project. 
+   
+VERSION INFORMATION
+
+   Version 0.90 ("beta", November 1994) was the first-ever release. SHARC
+   will remain a "beta" version for a while until I get sorted out the
+   final name of the archive, the internet location or URL, availability
+   of the database from a US ftp site, the availability of online
+   graphics to view the database, and adding more instruments. In
+   general, a new version number means that something in the actual
+   distribution (i.e. sharc.tar.Z) has changed. 
+     * 0.90 (Nov 21 1994) First release 
+     * 0.91 (Nov 22 1994) GIFS of centroids added 
+     * 0.92 (Dec 16 1994) Error in all the CONTENTS files fixed: all the
+       pitch numbers were off by one (too high) 
+     * 0.921 (Jan 3 1995) Individual C_muted_trumpet file names changed
+       from Ctp_note.spect to Ctpmute_note.spect. (Trivial change!) 
+       
+BUGS, INACCURACIES, WISHLIST
+
+     * Bug: The autocorrelation method was not always successful in
+       determining the fundamental frequency. The pizzicato and marcato
+       string notes in particular seemed to pose the biggest problem. The
+       most serious errors of this sort have been fixed, but a few modest
+       errors (fundamentals off by several Hertz) remain to be corrected.
+       In several cases the problem was due to a strong resonance or
+       vibration from an open string that produced a second tone that
+       competed with the nominal tone, or noisiness in the note such as a
+       prominent bow scraping sound. 
+     * Unfortunate: This previous point highlights the fact that the
+       analysis approach used in SHARC assumes all the instruments to
+       produce harmonic spectra. Obviously this is not true in the case
+       of the strings, in which the vibration of other strings may be an
+       essential part of the timbre of the note in question.
+       Inharmonicities in instruments can also occur when a strong native
+       resonance for the particular instrument is active. The choice to
+       save only harmonic information was made because 
+          + The vast majority of instruments do not evince strong
+            inharmonic partials 
+          + A Fourier analysis will show energy at frequency locations
+            that are not harmonic partials for any instrument;
+            accepting or rejecting a given inharmonic partial requires an
+            ad hoc decision. Because of the large size of this database,
+            this sort of attention to individual notes is not feasable. 
+          + I wanted to avoid having multiple formats for the files (one
+            for harmonic notes, another for inharmonic notes) 
+     * Unfortunate: Because the MUMS CDs are occasionally lacking a note
+       in an instruments chromatic series (e.g. tuba e2), spectral
+       analyses for these notes are also missing in SHARC. 
+     * Warning: I have no idea how the MUMS engineers set the level from
+       one day to the next over the course of the recordings. I have a
+       hunch that, within one chromatic scale for each instrument, the
+       same level and mike placement was used. Otherwise all bets are
+       off: different instruments may have had different levels and mike
+       placements, so it would be wise to practice caution in comparing
+       the levels across instruments (which you can do by consulting the
+       CONTENTS files for each instrument). 
+     * Unfortunate: many files contain more harmonics than necessary
+       because they include harmonics that fall below the minimum for the
+       possible dynamic range. For example, as the CONTENTS file for the
+       bassoon shows, the maximum sample for the pitch a#1 was 3791,
+       corresponding to a 71.6 dB dynamic range. Several of the harmonics
+       (31 out of 171) in bsn_a#1.spect fall below this value. A future
+       version may eliminate these values, resulting in a significant
+       space savings. 
+     * Unfortunate: the cutoff frequency adopted for SHARC, 10kHz has the
+       result of there being as few as three harmonics for some of the
+       highest pitches in the collection. In many cases, however, the
+       energy above such high frequency partials is negligable. One
+       notable exception to this, however, is the muted trumpet, which
+       has quite strong harmonics all the way out to 20kHz. A future
+       version may include an addendum for these high harmonics. 
+     * Unfortunate: although all spectra are normalised with respect to
+       the most intense harmonic of the note, one may obtain absolute
+       amplitudes for the partials (with respect to the level of the MUMS
+       recordings) by consulting column 4 of the CONTENTS files. The
+       reason I chose to normalise all of the spectra is because one need
+       only find the partial with an amplitude of 0 dB to identify the
+       strongest partial in the note. Nevertheless, this makes finding
+       the absolute amplitudes of the partials a bit messy. 
+     * Wish: A few instruments that I am analysing have not made their
+       way into SHARC yet, but will soon: these include piano, celesta,
+       harp, and some early instruments (all from MUMS). 
+     * Wish: I plan to make graphic plots of the data available on the
+       World Wide Web. Part of this will come very soon. Later, when
+       advances in the Web make it possible, I hope to have a "graphical
+       timbre server" where users are able to make individual requests
+       for certain types of plots. 
+       
+    Gregory J. Sandell (sandell@epunix.sussex.ac.uk)

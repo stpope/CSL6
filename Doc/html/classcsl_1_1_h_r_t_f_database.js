@@ -1,0 +1,27 @@
+var classcsl_1_1_h_r_t_f_database =
+[
+    [ "~HRTFDatabase", "classcsl_1_1_h_r_t_f_database.html#a9e4d319cafabbbeba949b5f1bbd19507", null ],
+    [ "HRTFDatabase", "classcsl_1_1_h_r_t_f_database.html#a8742b0718a554090498312201ffd4abd", null ],
+    [ "Database", "classcsl_1_1_h_r_t_f_database.html#ac86b18aa8294f2a235f88a74c59072c7", null ],
+    [ "Destroy", "classcsl_1_1_h_r_t_f_database.html#a441373cfd2b0d565b50c6dd97e1f7699", null ],
+    [ "Reload", "classcsl_1_1_h_r_t_f_database.html#ac2bbe146b3e367085238d81e8da9b503", null ],
+    [ "convertDB", "classcsl_1_1_h_r_t_f_database.html#a9136cb2226ebfcfd135fb4b952419c0d", null ],
+    [ "numHRTFs", "classcsl_1_1_h_r_t_f_database.html#a7a4815c4565635faf0ebb498928b7fff", null ],
+    [ "windowSize", "classcsl_1_1_h_r_t_f_database.html#a256486e4cf6d949c8e3c74c3d9b80710", null ],
+    [ "hrtfLength", "classcsl_1_1_h_r_t_f_database.html#ab92574774e74abee7426bb1ab88062a5", null ],
+    [ "hrirLength", "classcsl_1_1_h_r_t_f_database.html#a19baf6e65adfbee1694406229ef958ae", null ],
+    [ "numBlocks", "classcsl_1_1_h_r_t_f_database.html#ac4a172bff067df4d486fa79bf1f58a09", null ],
+    [ "hrtfAt", "classcsl_1_1_h_r_t_f_database.html#a8a1fcf67178aa986d54d36af3045ec99", null ],
+    [ "hrtfAt", "classcsl_1_1_h_r_t_f_database.html#adcac5952743f34655cc21794cfe59922", null ],
+    [ "dump", "classcsl_1_1_h_r_t_f_database.html#a877e62050638cd5d5134fe49a8f15e98", null ],
+    [ "size", "classcsl_1_1_h_r_t_f_database.html#a200e0c02e8ffa259fa6270793064ae55", null ],
+    [ "storeToDB", "classcsl_1_1_h_r_t_f_database.html#af59206152880777bd1bdb234c5f0e37a", null ],
+    [ "loadFromFolder", "classcsl_1_1_h_r_t_f_database.html#a2f0feb36ef6e070506c0620199b4d9c5", null ],
+    [ "loadFromFile", "classcsl_1_1_h_r_t_f_database.html#aee81ed2d96cbe71f4b1176fe464906c2", null ],
+    [ "loadFromDB", "classcsl_1_1_h_r_t_f_database.html#a997cbb9c17cd80c6aa7044363d95cb22", null ],
+    [ "mHRTFVector", "classcsl_1_1_h_r_t_f_database.html#af676f8bbab7772eaa8efe714e6e0fd35", null ],
+    [ "mWindowSize", "classcsl_1_1_h_r_t_f_database.html#a9ad5c2a844d103e656cdaed7b5ef4964", null ],
+    [ "mHRTFLength", "classcsl_1_1_h_r_t_f_database.html#a6da53217a0a2f614a52f44cce2f81539", null ],
+    [ "mHRIRLength", "classcsl_1_1_h_r_t_f_database.html#ada9979ffa019c915d304ededcdb972cd", null ],
+    [ "mDatabase", "classcsl_1_1_h_r_t_f_database.html#a7ccf6dd149a9caa296dd39aef49166e0", null ]
+];
