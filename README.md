@@ -2,26 +2,26 @@
 CSL 6.0 README
 
 This directory contains the source code and documentation for the  CREATE Signal 
-Library (CSL, pronounced "sizzle," previously called the  CREATE Oscillator, CO). 
+Library (CSL, pronounced "sizzle," previously called the  CREATE Oscillator or CO). 
 CSL was developed at the Center for Research in Electronic Art Technology 
 (CREATE) and the Graduate Program in Media Arts and Technology (MAT) at the 
-University of California, Santa Barbara (UCSB). It is a work in progress.
+University of California, Santa Barbara (UCSB) starting in the late 1990s.
 
 This is release 6.0, April, 2020.
 
 The home page for CSL is http://FASTLabInc.com/CSL.
 
-CSL is known to work on Mac OSX, many flavors of UNIX/Linux, iPhones, and (with 
-limited features) on MS-Windows. To get started quickly, build the JUCE demo app
+CSL is known to work on Mac OSX, many flavors of UNIX/Linux, iPhones, Android and
+MS-Windows. To get started quickly, build the JUCE demo app (documented elsewhere)
 and use the combo boxes at the bottom to select among the tests, whose source code
-is all in the Tests folder. For the Mac, use the XCode project in the CSL_JUCE/
-Builds/MacOSX folder; for Linux, use the premake script in the Linux folder. 
-Both assume JUCE 6.0 is already installed and compiled.
+is all in the Src/Tests folder. For the Mac, use the XCode project in the 
+Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder. 
+Both assume JUCE 6.0 is already installed.
 
 About CSL
 
-CSL is a C++ class library, to use it, you write and compile C++ programs like 
-the ones in the CSL/Tests directory. These programs will generally use the CSL 
+CSL is a C++ class library; to use it, you write and compile C++ programs like 
+the ones in the Src/Tests directory. These programs will generally use the CSL 
 class library, and may read input files or respond to in-coming MIDI or OSC 
 commands. CSL apps can run stand-alone as servers, or have interactive GUIs, or be 
 plug-ins to out-board signal processing tools.
@@ -31,22 +31,23 @@ development tools of their platforms, e.g., Xcode on the Mac, Eclipse on Linux, 
 Visual Studio on MS-Windows) who also know some software sound synthesis language 
 such as Csound or SuperCollider (see Curtis Roads' "Computer Music Tutorial").
 
-CSL assumes it's installed in the folder ~/Code/CSL; there are some default settings 
-in CSL/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
-The system assumes JUCE is in ~/Code/juce (../juce from the root of the CSL hierarchy).
+Some of the code assumes it's installed in ~/Code/CSL; there are some default settings 
+in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
+The system assumes JUCE is in ~/Code/JUCE6 (../JUCE6 from the root of the CSL hierarchy).
 
-The best way to get started is to look at the Doxygen-generated API documentation in 
-	./Doc/html.zip
+The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
+(2) look at the Doxygen-generated API documentation in 
+	Doc/html.zip
 
-You can untar this file to get the full HTML doc and to print out and study the files,
-	CSL/Kernel/CSL_Types.h (note the system defaults here)
-	CSL/Kernel/CSL_Core.h (the kernel classes are here)
+You can unzip this file to get the full HTML doc; you might also want to study the files,
+	Src/Kernel/CSL_Types.h (note the system defaults here)
+	Src/Kernel/CSL_Core.h (the kernel classes are here)
 and 
-	CSL/Sources/SimpleSines.{h,cpp} (a tutorial for writing unit generators)
+	Src/Sources/SimpleSines.{h,cpp} (a tutorial for writing unit generators)
 or
-	CSL/Tests/TestSources.cpp (or any of the other tests)
+	Src/Tests/TestSources.cpp (or any of the other tests)
 
-To compile the sources, you will need to create the links in the CSL/Includes folder; 
+To compile the sources, you will need to create the links in the Src/Includes folder; 
 to do this, open a UNIX shell (terminal, or DOS prompt) and execute the commands,
 
 ### change to the Includes folder
@@ -59,16 +60,16 @@ to do this, open a UNIX shell (terminal, or DOS prompt) and execute the commands
 	remake.bat
 
 Note that the release contains a number of files that have not been ported to the 
-newest framework; these are generally in subdirectories called "OLD" and may well 
+newest framework; these are generally in subdirectories called "Old" and may well 
 work with a little bit of tweaking; all the really unstable code has been removed.
 
 
-Platform Requirements
+Platform Requirements (tested on these platforms)
 
-	MacOS X: OS x 10.13 or newer with Xcode
-
-	Linux: Tested on Ubuntu 16.04 with X11-libs, ALSA, Freetype, pthreads, openGL/GLUT
-
+	MacOS: OSX 10.13 or newer with Xcode
+	Linux: Tested on Ubuntu 19 with X11-libs, ALSA, Freetype, etc.
+	MS-windows: Tested on Win7 with ASIO
+	iOS, Android: recent releases and toolchains
 	All: JUCE 6.0
 
 Linking with the CSL Libraries
@@ -76,43 +77,33 @@ Linking with the CSL Libraries
 To link CSL programs, you'll need the following packages installed on your machine:
   Either
 	JUCE: Cross-platform everything -- http://www.juce.com
-  OR
-	Cross-platform audio I/O: PortAudio (http://www.portaudio.com) V19 or newer;
+  OR these or similar libraries
+	Cross-platform audio I/O: PortAudio (http://www.portaudio.com) V19 or equivalent;
 	Cross-platform MIDI I/O: PortMIDI (http://www-2.cs.cmu.edu/~music/portmusic);
-	Cross-platform sound file I/O: libsndfile (http://www.zip.com.au/~erikd/libsndfile) V1.04 or newer; 
+	Cross-platform sound file I/O: libsndfile 
+		(http://www.zip.com.au/~erikd/libsndfile) V1.04 or newer; 
 	Fast Fourier Transform: FFTW (http://www.fftw.org) package V3.X;
 
-Note that you can use "vanilla" JUCE for the GUI and IO, but libSndFile for sound file 
-API if you don't want to patch your JUCE (compile-time option -DUSE_LSND).
-
-The auralizer (obsolete) also requires 
-	VRML parser: libcX3D (http://www.cybergarage.org/vrml/cx3d/cx3dcc/index.html)
-	(cd CyberX3D; ./bootstrap; ./configure; make)
-
 To use OpenSoundControl (OSC) with CSL, you'll need liblo (http://liblo.sourceforge.net/), 
-which is included in the CSL libraries folder.
+which is included in the Src/Libs folder.
 
-The CSL web site includes pre-compiled versions of these libraries for 
-Mac OS X and MS-Windows.
-
-If you use FFTW (rather than FFTReal),it needs to be compiled in the way described 
+If you use FFTW (rather than FFTReal), it needs to be compiled in the way described 
 in Sources/Spectral.h.
 
 
 CSL JUCE demo
 
 Building CSL
-	Use the JUCE projucer with the file ~/CSL/Build/CSL6.jucer
+	Use the JUCE projucer with the file ~/CSL6/CSL6.jucer
 
-	On a Mac: ~/CSL/Builds/MacOSX/CSL_JUCE.xcodeproj
-	On MS-Windows: ~/CSL/Builds/Windows/VS8/CSL.sln
-	On Linux: cd ~/CSL/Builds/Linux; ./runpremake; make
+	On a Mac: Builds/MacOSX/CSL6Demo.xcodeproj
+	On MS-Windows: Builds/VisualStudio2015
+	On Linux: Builds/LinuxMakefiles; make
 
-The new standard way of running CSL programs is using the JUCE GUI. 
+The standard way of running interactive CSL programs is using the JUCE GUI. 
 Take a look at the projects for Mac/Linux/Windows; we create a window with a couple 
 of VU meters and oscilloscopes and combo boxes to select a test suite and specific test 
-to run. Note that you need JUCE V 1.50 or newer, and that we use several extensions 
-to the sound file I/O classes that can be grabbed from the CSL download site.
+to run. There's a demo GUI cheat sheet in the Doc folder.
 
 Here's the JUCE demo GUI's Menu List
 
@@ -204,7 +195,7 @@ Audio Tests  -  Test_Audio.cpp
           Input listener	Demonstrate recording input listener
 
 
-The source code for all these tests is in the CSL/Tests directory (and in a"Test" 
+The source code for all these tests is in the Src/Tests directory (and in a"Test" 
 file group in the IDE); it's a good way to learn CSL to run the JUCE demo in an 
 XCode/Eclipse/VisualStudio debugger and set breakpoints in the test functions 
 while using the GUI.
@@ -230,14 +221,14 @@ Source Code Organization
 The subdirectories of CSL are reflected in the project file categories:
 
 	- Tests - Test/demo main() driver functions
-	- Kernel - Bufers and FrameStreams
+	- Kernel - Buffers, UnitGenerators and all the other core classes
 	- Sources - Oscillators, noise, envelopes, PhysMod
 	- Processors - Operators, filters, mixers, panners
 	- IO - IO drivers and LAN streaming
 	- Utilities - Thread and buffer support classes
 	- Instruments - OSC/MIDI instrument wrappers
 	- Spatializers - Panners and spatializers
-	- Doc - a few published papers, Doxygen doc, README, etc.
+	- Doc - published papers, Doxygen doc, etc.
 	- Data - Test sounds, HRTF data, etc.
 
 Reading the source
@@ -282,7 +273,7 @@ Compile-time options
 SoundFile type:
 	USE_JSND - use the JUCE-based sound file class (requires only JUCE)
 	USE_LSND - use libSndFile-based sound file class (supports many file types)
-	USE_CASND - use the CoreAudio version (runs on iPhone)
+	USE_CASND - use the CoreAudio version (used on iOS)
 
 FFT implementation
 	USE_FFTW - use FFTW 3 (faster but complicated to build)
@@ -304,8 +295,10 @@ Main function to use
 
 Documentation
 
-See the PDF files in the Doc/ directory. (RTFM)
+See the PDF and HTML files in the Doc/ directory. (RTFM)
 
 See the file COPYRIGHT for the list of authors and UC copy-left.
 
 stp et al. - January, 1998 - November, 2012 - April, 2020
+
+Contact: stephen@heaveneverywhere.com
