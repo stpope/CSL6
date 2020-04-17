@@ -1,0 +1,127 @@
+.TH "lo_arg" 3 "Thu Apr 16 2020" "Version 0.31" "liblo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lo_arg \- 
+.PP
+Union used to read values from incoming messages\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int32_t \fBi\fP"
+.br
+.ti -1c
+.RI "int32_t \fBi32\fP"
+.br
+.ti -1c
+.RI "int64_t \fBh\fP"
+.br
+.ti -1c
+.RI "int64_t \fBi64\fP"
+.br
+.ti -1c
+.RI "float \fBf\fP"
+.br
+.ti -1c
+.RI "float \fBf32\fP"
+.br
+.ti -1c
+.RI "double \fBd\fP"
+.br
+.ti -1c
+.RI "double \fBf64\fP"
+.br
+.ti -1c
+.RI "char \fBs\fP"
+.br
+.ti -1c
+.RI "char \fBS\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBc\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBm\fP [4]"
+.br
+.ti -1c
+.RI "\fBlo_timetag\fP \fBt\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "} \fBblob\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Union used to read values from incoming messages\&. 
+
+Types can generally be read using argv[n]->t where n is the argument number and t is the type character, with the exception of strings and symbols which must be read with &argv[n]->t\&. 
+.PP
+Definition at line 104 of file lo_osc_types\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "struct { \&.\&.\&. }   lo_arg::blob"
+Blob 
+.SS "unsigned char lo_arg::c"
+Standard C, 8 bit, char\&. 
+.PP
+Definition at line 127 of file lo_osc_types\&.h\&.
+.SS "double lo_arg::d"
+64 bit IEEE-754 double\&. 
+.PP
+Definition at line 118 of file lo_osc_types\&.h\&.
+.SS "float lo_arg::f"
+32 bit IEEE-754 float\&. 
+.PP
+Definition at line 114 of file lo_osc_types\&.h\&.
+.SS "float lo_arg::f32"
+32 bit IEEE-754 float\&. 
+.PP
+Definition at line 116 of file lo_osc_types\&.h\&.
+.SS "double lo_arg::f64"
+64 bit IEEE-754 double\&. 
+.PP
+Definition at line 120 of file lo_osc_types\&.h\&.
+.SS "int64_t lo_arg::h"
+64 bit signed integer\&. 
+.PP
+Definition at line 110 of file lo_osc_types\&.h\&.
+.SS "int32_t lo_arg::i"
+32 bit signed integer\&. 
+.PP
+Definition at line 106 of file lo_osc_types\&.h\&.
+.SS "int32_t lo_arg::i32"
+32 bit signed integer\&. 
+.PP
+Definition at line 108 of file lo_osc_types\&.h\&.
+.SS "int64_t lo_arg::i64"
+64 bit signed integer\&. 
+.PP
+Definition at line 112 of file lo_osc_types\&.h\&.
+.SS "uint8_t lo_arg::m[4]"
+A 4 byte MIDI packet\&. 
+.PP
+Definition at line 129 of file lo_osc_types\&.h\&.
+.SS "char lo_arg::s"
+Standard C, NULL terminated string\&. 
+.PP
+Definition at line 122 of file lo_osc_types\&.h\&.
+.SS "char lo_arg::S"
+Standard C, NULL terminated, string\&. Used in systems which distinguish strings and symbols\&. 
+.PP
+Definition at line 125 of file lo_osc_types\&.h\&.
+.SS "\fBlo_timetag\fP lo_arg::t"
+OSC TimeTag value\&. 
+.PP
+Definition at line 131 of file lo_osc_types\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for liblo from the source code\&.

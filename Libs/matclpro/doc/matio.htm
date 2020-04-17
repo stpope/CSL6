@@ -1,0 +1,77 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Matrix I/O operators</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="matfunc.htm">Prev</a> |
+<a href="manual.htm">Up</a> |
+Next
+</h6>
+
+<h2>Matrix I/O operators</h2>
+
+<p>
+The following I/O operators are available for the matrix class.
+</p>
+
+<pre><code>1. istream& <a href="#e1">operator&gt;&gt;</a> (istream&amp; is, valarray&lt;T&gt;&amp; v);
+2. istream&amp; <a href="#e2">operator&gt;&gt;</a> (istream&amp; is, matrix&lt;T&gt;&amp; m);
+
+3. ostream&amp; <a href="#e3">operator&lt;&lt;</a> (ostream&amp; os, const valarray&lt;T&gt;&amp; v);
+4. ostream&amp; <a href="#e4">operator&lt;&lt;</a> (ostream&amp; os, const matrix&lt;T&gt;&amp; m);
+
+</code></pre>
+
+<p>
+<ol>
+<li><a name="e1"></a>Use operator <i>&gt;&gt;</i> to read a <i>valarray</i> 
+vector or row/column of a matrix object from a input stream like <i>cin</i> or a file.
+</li><br><br>
+
+<li><a name="e2"></a>Use operator <i>&gt;&gt;</i> to read a matrix object 
+from a input stream like <i>cin</i> or a file.
+</li><br><br>
+
+<li><a name="e3"></a>Use operator <i>&lt;&lt;</i> to write a <i>valarray</i> 
+vector or row/column of a matrix object to a output stream like <i>cout</i> 
+or a file.
+</li><br><br>
+
+<li><a name="e4"></a>Use operator <i>&lt;&lt;</i> to write a matrix object to 
+a output stream like <i>cout</i> or a file.
+</li><br><br>
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;double&gt; Matrix;
+typedef std::valarray&lt;double&gt; Vector;
+
+using std::cin;
+using std::cout;
+
+Matrix A(4,4);
+Vector V(4);
+size_t i=1,j=2;
+
+cin &gt;&gt; A[i][j];          // Read Aij th element from standard input
+cin &gt;&gt; A.diag()[1];      // Read the 2nd diagonal element of matrix A
+
+cin &gt;&gt; A[i];             // Read the i th row of matrix A
+cin &gt;&gt; A(j);             // Read the j th column of matrix A
+cin &gt;&gt; A.diag();         // Read the diagonal elements of matrix A
+
+cout &lt;&lt; A(i,j);          // Write Aij th element to standard output
+cout &lt;&lt; A.diag()[1];     // Write the 2nd diagonal element of matrix A
+cout &lt;&lt; A[i];            // Write the i th row of matrix A
+cout &lt;&lt; A(j);            // Write the j th column of matrix A
+cout &lt;&lt; A.diag();        // Write the diagonal elements of matrix A
+
+</code></pre>
+
+</body>
+</html>

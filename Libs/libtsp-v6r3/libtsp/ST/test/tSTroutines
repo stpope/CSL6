@@ -1,0 +1,208 @@
+#!/bin/sh
+
+# Test ST routines
+#
+# $Id: tSTroutines 1.26 1999/06/17 libtsp-v6r3 $
+
+echo ""
+echo "========== tSTcatMax"
+tSTcatMax 5 abc xy
+tSTcatMax 5 abc ""
+tSTcatMax 5 "" xy
+tSTcatMax 5 ab ""
+tSTcatMax 5 abcde ""
+tSTcatMax 5 "" xyz12
+tSTcatMax 5 abc xyz			2>&1
+tSTcatMax 5 abcdef "" 			2>&1
+tSTcatMax 5 abcdef xy			2>&1
+tSTcatMax 5 "" xyz123 			2>&1
+tSTcatMax 5 ab xyz123 			2>&1
+
+echo ""
+echo "========== tSTcopyMax"
+tSTcopyMax 5 abcd
+tSTcopyMax 5 abcde
+tSTcopyMax 5 abcdef			2>&1
+
+echo ""
+echo "========== tSTcopyNMax"
+tSTcopyNMax 3 5 ab
+tSTcopyNMax 3 5 abc
+tSTcopyNMax 3 5 abcd
+tSTcopyNMax 5 3 abcd			2>&1
+
+echo ""
+echo "========== tSTdecNxxx"
+tSTdecNxxx D 1 1 "23.1"
+tSTdecNxxx D 1 1 "-23.1"
+tSTdecNxxx D 1 1 "1e50"
+tSTdecNxxx D 1 1 "-1e50"
+tSTdecNxxx D 1 1 "1e1000"		2>&1
+tSTdecNxxx D 1 1 "-1e1000"		2>&1
+tSTdecNxxx D 1 1 "1e-50"
+tSTdecNxxx D 1 1 "-1e-50"
+tSTdecNxxx D 1 1 "1e-1000"		2>&1
+tSTdecNxxx D 1 1 "-1e-1000"		2>&1
+tSTdecNxxx D 1 1 "0"
+tSTdecNxxx F 1 1 "23.1"
+tSTdecNxxx F 1 1 "-23.1"
+tSTdecNxxx F 1 1 "1e50"			2>&1
+tSTdecNxxx F 1 1 "-1e50"		2>&1
+tSTdecNxxx F 1 1 "1e-50"		2>&1
+tSTdecNxxx F 1 1 "-1e-50"		2>&1
+tSTdecNxxx F 1 1 "0"
+tSTdecNxxx I 1 1 "23"
+tSTdecNxxx I 1 1 "-23"
+tSTdecNxxx I 1 1 "0"
+tSTdecNxxx I 1 1 10000000000		2>&1
+tSTdecNxxx I 1 1 -10000000000		2>&1
+tSTdecNxxx I 1 1 "23.1"			2>&1
+tSTdecNxxx I 1 1 "-23.1"		2>&1
+tSTdecNxxx L 1 1 "23"
+tSTdecNxxx L 1 1 "-23"
+tSTdecNxxx L 1 1 "0"
+tSTdecNxxx L 1 1 10000000000		2>&1
+tSTdecNxxx L 1 1 -10000000000		2>&1
+tSTdecNxxx L 1 1 "23.1"			2>&1
+tSTdecNxxx L 1 1 "-23.1"		2>&1
+
+tSTdecNxxx I 1 1 ""			2>&1
+tSTdecNxxx I 1 1 " 23 aaa"		2>&1
+tSTdecNxxx I 0 3 ""
+tSTdecNxxx I 0 3 "11"
+tSTdecNxxx I 0 3 "11,"			2>&1
+tSTdecNxxx I 1 3 "11"
+tSTdecNxxx I 1 3 "11 22"
+tSTdecNxxx I 1 3 "11 22 33"
+tSTdecNxxx I 1 3 "11 22 33 44"		2>&1
+tSTdecNxxx I 1 3 "11 aa 33"		2>&1
+tSTdecNxxx I 1 3 "11aa 22bb"		2>&1
+
+echo ""
+echo "========== tSTdecPair"
+tSTdecPair Irange ""			2>&1
+tSTdecPair Irange ":"			2>&1
+tSTdecPair Irange "11:"			2>&1
+tSTdecPair Irange ":11"			2>&1
+tSTdecPair Irange "11"
+tSTdecPair Irange "11 : 22"
+tSTdecPair Irange "11 : 22 : 33"	2>&1
+tSTdecPair Irange "11:22 33"		2>&1
+tSTdecPair Irange "aa : 22"		2>&1
+tSTdecPair Irange "11aa : 22"		2>&1
+tSTdecPair Irange "1.1"			2>&1
+tSTdecPair Irange "1:2.2"		2>&1
+
+tSTdecPair Lrange ""			2>&1
+tSTdecPair Lrange ":"			2>&1
+tSTdecPair Lrange "11:"			2>&1
+tSTdecPair Lrange ":11"			2>&1
+tSTdecPair Lrange "11"
+tSTdecPair Lrange " 11 : 22 "
+
+tSTdecPair Ifrac ""			2>&1
+tSTdecPair Ifrac "/"			2>&1
+tSTdecPair Ifrac "11/"			2>&1
+tSTdecPair Ifrac "/11"			2>&1
+tSTdecPair Ifrac "11"
+tSTdecPair Ifrac "11/12"
+tSTdecPair Ifrac "44.1/8"		2>&1
+tSTdecPair Ifrac "aa"			2>&1
+
+tSTdecPair Dfrac ""			2>&1
+tSTdecPair Dfrac "/"			2>&1
+tSTdecPair Dfrac "11/"			2>&1
+tSTdecPair Dfrac "/11"			2>&1
+tSTdecPair Dfrac "11"
+tSTdecPair Dfrac "44.1/8.3"
+
+echo ""
+echo "========== tSTfindToken"
+tSTfindToken '	' ',' '' 2
+tSTfindToken '' ',' '' 0
+tSTfindToken ' a = b c, d ' ',' '""()' 0
+tSTfindToken ' a = b c, d ' ',' '""()' 1
+tSTfindToken ' a = b c, d ' ',' '""()' 2
+tSTfindToken ' a = "b (c, d)", (e,f) ' ',' '""()' 2
+tSTfindToken ' a : b :' ':' '' 1
+
+echo ""
+echo "========== tSTkeyMatch"
+tSTkeyMatch "abc"
+tSTkeyMatch "abcd"
+tSTkeyMatch "abcde"
+tSTkeyMatch "abcdex"
+tSTkeyMatch "ab"
+tSTkeyMatch "abC"
+tSTkeyMatch " abc"
+tSTkeyMatch "abcx"
+tSTkeyMatch "h"
+tSTkeyMatch "ha"
+tSTkeyMatch "dest"
+tSTkeyMatch "destr"
+tSTkeyMatch "destro"
+tSTkeyMatch "destroy"
+tSTkeyMatch "destroye"
+tSTkeyMatch		# NULL string
+tSTkeyMatch ""		# empty string
+
+echo ""
+echo "========== tSTkeyXpar"
+tSTkeyXpar 'first = "abc"'
+tSTkeyXpar 'fir="abc'
+
+echo ""
+echo "========== tSTtrim"
+tSTtrim ""
+tSTtrim "   "
+tSTtrim "a"
+tSTtrim "ab"
+tSTtrim "ab   "
+tSTtrim "abc"
+tSTtrim "abc  "
+tSTtrim "  abcd"
+tSTtrim " abc  "
+
+echo ""
+echo "========== tSTunQuote"
+tSTunQuote 'abc' ''
+tSTunQuote '"abc"def"' '""'
+tSTunQuote 'x(abd)x' '()xx'
+tSTunQuote abcdef '""'
+
+echo ""
+echo "========== tSTstrDots"
+tSTstrDots "It was the best of times, it was the worst" 60
+tSTstrDots "It was the best of times, it was the worst" 40
+tSTstrDots "It was the best of times, it was the worst" 20
+tSTstrDots "It was the best of times, it was the worst" 10
+tSTstrDots "It was the best of times, it was the worst" 4
+tSTstrDots "Address http://www.TSP.EE.McGill.CA/software.html" 30
+tSTstrDots "It was the best of times, it was the worst" 21
+
+echo ""
+echo "========== tSTstrLC"
+tSTstrLC
+tSTstrLC "xXyY"
+
+echo ""
+echo "========== tSTstrstrNM"
+tSTstrstrNM 5 3 abcdefghi cdexx
+tSTstrstrNM 5 3 abcdefghi defxx
+tSTstrstrNM 5 3 abcde bcd
+tSTstrstrNM 5 3 abcd bcd
+tSTstrstrNM 5 1 abcd c
+
+echo ""
+echo "========== tSTtrimNMax"
+tSTtrimNMax 3 5 "   "
+tSTtrimNMax 3 5 ab
+tSTtrimNMax 3 5 "ab   "
+tSTtrimNMax 3 5 abc
+tSTtrimNMax 3 5 "abc  "
+tSTtrimNMax 3 5 abcd
+tSTtrimNMax 5 3 abcd			2>&1
+
+echo ""
+echo "========== tsscanf"
+tsscanf

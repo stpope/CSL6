@@ -1,0 +1,42 @@
+.TH VRiPrint 3tsp "TSP (libtsp/VR)"
+.SH Routine
+.in +4n
+.ti -4n
+void VRiPrint (FILE *fp, const char Header[], const int x[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Print an integer array along with a header text
+.in -4n
+.SH Description
+This routine prints the values of an int array along with an identifying
+header.
+.SH Parameters
+.in +4n
+.ti -4n
+ -> FILE *fp
+.br
+File pointer for the output.  If fp is NULL, no printing occurs.
+.ti -4n
+ -> const char Header[]
+.br
+Character string for the header.  The header line is omitted if the
+header string is empty.
+.ti -4n
+ -> const int x[]
+.br
+Array of N ints
+.ti -4n
+ -> int N
+.br
+Number of elements in x
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.5  2003/05/09
+.SH See Also
+VRdPrint,
+VRfPrint,
+VRlPrint,
+libtsp

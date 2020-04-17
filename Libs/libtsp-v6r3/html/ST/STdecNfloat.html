@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - STdecNfloat</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>STdecNfloat</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int STdecNfloat (const char String[], int Nmin, int Nmax, float Fval[],
+int *N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Decode float values (variable number)
+</DL>
+<H4>Description</H4>
+This routine decodes a string containing numeric data.  Multiple data items
+data items in the string are separated by commas or white-space (as defined
+by the isspace routine).  The decoded data is stored as float values.  If
+the number of data values in the string is less than a given minimum number
+or a decoding error is detected, an error message is printed and an error
+indication is returned.  A warning messages is printed if extra data follows
+the requested values (this data is ignored).
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int STdecNfloat
+<DD>
+Error status,
+<PRE>
+  0 - no error
+  1 - error, too few values or data format error
+  2 - warning, data values too large or too small
+</PRE>
+<DT>
+ -&gt; const char String[]
+<DD>
+Input string
+<DT>
+ -&gt; int Nmin
+<DD>
+Minimum number of values to be read (may be zero)
+<DT>
+ -&gt; int Nmax
+<DD>
+Maximum number of values to be read
+<DT>
+&lt;-  float Fval[]
+<DD>
+Array of Nmax elements used to store the decoded values.  Only the first
+N values are modified.
+<DT>
+&lt;-  int *N
+<DD>
+Actual number of values decoded.  In the case of an error, N indicates
+the number of values successfully decoded.  In that case, N may be less
+than Nmin.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.22  2003/05/09
+<H4>See Also</H4>
+<A HREF="STdec1float.html">STdec1float</A>,
+<A HREF="STdecNdouble.html">STdecNdouble</A>,
+<A HREF="STdecNint.html">STdecNint</A>,
+<A HREF="STdecNlong.html">STdecNlong</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

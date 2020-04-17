@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - UTsysMsg</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>UTsysMsg</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void UTsysMsg (const char Warnmsg[], ...)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Print user and system warning messages
+</DL>
+<H4>Description</H4>
+This routine prints the system error message corresponding to the last system
+error encountered.  It first prints a user supplied text, and then prints
+the system error message.  Messages are written to stderr (standard error).
+<P>
+The system error message is printed using perror.  The preamble to the system
+error message is either the name of this routine or the string supplied to
+UTsetProg.  An example of the use of this routine is as follows.
+<PRE>
+  UTsetProg ("XXProg");
+  ...
+  fp = fopen (Fname, ...);
+  if (fp == NULL)
+    UTsysMsg ("XXProc - Cannot open file \"%s\"", Fname);
+</PRE>
+If fopen fails, a typical output to stderr would be:
+<PRE>
+  XXProc - Cannot open file "abc"
+  XXProg: No such file or directory
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; const char Warnmsg[]
+<DD>
+Character string to be printed.  This string can contain optional
+formatting codes.  The arguments corresponding to the formatting codes
+appear at the end of the argument list.  The input string should not
+normally have a terminating newline character, since this routine
+supplies a newline.
+<DT>
+ -&gt; &lt;args...&gt;
+<DD>
+Arguments corresponding to the formatting codes.  The format string and
+the variable number of arguments is passed on to the system routine
+vprintf.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.8  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

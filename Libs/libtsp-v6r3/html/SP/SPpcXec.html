@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - SPpcXec</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>SPpcXec</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void SPpcXec (const float pc[], float ec[], int Np)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Convert predictor coefficients to prediction error filter coefficients
+</DL>
+<H4>Description</H4>
+The error filter coefficients are related to the predictor filter
+coefficients by,
+<PRE>
+  ec[0]  = 1
+  ec[1]  = -pc[0]
+        ...
+  ec[Np] = -pc[Np-1]
+</PRE>
+<P>
+Predictor coefficients are usually expressed algebraically as vectors with
+1-offset indexing.  The correspondence to the 0-offset C-arrays is as
+follows.
+<PRE>
+  p(1) &lt;==&gt; pc[0]       predictor coefficient corresponding to lag 1
+  p(i) &lt;==&gt; pc[i-1]     1 &lt;= i &lt; Np
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; const float pc[]
+<DD>
+Vector of predictor coefficients (Np values).  These are the coefficients
+of the predictor filter, with pc[0] being the predictor coefficient
+corresponding to lag 1, and pc[Np-1] corresponding to lag Np.
+<DT>
+&lt;-  float ec[]
+<DD>
+Prediction error (residual) filter coefficients (Np + 1 values)
+<DT>
+ -&gt; int Np
+<DD>
+Number of predictor coefficients (Np can be zero)
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.9  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - MAfPrint</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>MAfPrint</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void MAfPrint (FILE *fp, const char Header[], const float *A[], int Nrow,
+int Ncol)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Print a float matrix along with a header text
+</DL>
+<H4>Description</H4>
+This routine prints the values of a float matrix along with an identifying
+header.  No printing occurs if the file pointer is NULL.  The values for each
+row of the matrix are printed 5 to a line, with each row starting on a new
+line.
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; FILE *fp
+<DD>
+File pointer for the output.  If fp is NULL, no printing occurs.
+<DT>
+ -&gt; const char Header[]
+<DD>
+Character string for the header.  This routine supplies a terminating
+newline.  The header line is omitted if the header string is empty.
+<DT>
+ -&gt; const float *A[]
+<DD>
+Pointer to an array of row pointers.  A is interpreted as an N by M
+matrix.  Note that with ANSI C, if the actual parameter is not declared
+to have the const attribute, an explicit cast to (const float **) is
+required.
+<DT>
+ -&gt; int Nrow
+<DD>
+Number of rows in the matrix
+<DT>
+ -&gt; int Ncol
+<DD>
+Number of elements in each row (number of columns)
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.20  2003/05/09
+<H4>See Also</H4>
+<A HREF="MAdPrint.html">MAdPrint</A>,
+<A HREF="MAiPrint.html">MAiPrint</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

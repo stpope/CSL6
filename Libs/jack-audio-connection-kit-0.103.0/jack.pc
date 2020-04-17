@@ -1,0 +1,10 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: jack
+Description: the Jack Audio Connection Kit: a low-latency synchronous callback-based media server
+Version: 0.103.0
+Libs: -L${libdir} -ljack -lpthread -framework CoreAudio -framework CoreServices -framework AudioUnit
+Cflags: -I${includedir}

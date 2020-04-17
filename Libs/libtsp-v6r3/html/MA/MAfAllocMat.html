@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - MAfAllocMat</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>MAfAllocMat</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+float **MAfAllocMat (int Nrow, int Ncol)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Allocate a matrix of float values
+</DL>
+<H4>Description</H4>
+This routine allocates a matrix of float values.  The returned value is
+a pointer to an array of pointers to the rows of the matrix.  The calling
+routine can treat the returned value as a two-dimensional matrix of float
+values.  Consider the invocation
+<PRE>
+  float **A;
+  int Nrow, Ncol;
+  ...
+  A = MAfAllocMat (Nrow, Ncol);
+</PRE>
+Then A[i][j] is a matrix of float values for 0 &lt;= i &lt; Nrow and
+0 &lt;= j &lt; Ncol.  The routine MAfAllocMat allocates an array of Nrow pointers
+and a contiguous block of memory sufficient to hold the Nrow*Ncol float
+values.  Each pointer is initialized to point to a row of the matrix.  A[0]
+is a pointer to the first row (Ncol float values) (and to the full matrix of
+Nrow*Ncol float values).  A[1] points to the next row (Ncol elements beyond
+A[0]), and so on.
+<P>
+The space allocated by this routine should be deallocated using the routine
+MAfFreeMat.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  float **MAfAllocMat
+<DD>
+Returned pointer to array of row pointers
+<DT>
+ -&gt; int Nrow
+<DD>
+Number of rows for the matrix
+<DT>
+ -&gt; int Ncol
+<DD>
+Number of elements in each row (number of columns)
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.8  2003/05/09
+<H4>See Also</H4>
+<A HREF="MAdAllocMat.html">MAdAllocMat</A>,
+<A HREF="MAfFreeMat.html">MAfFreeMat</A>,
+<A HREF="MAfSubMat.html">MAfSubMat</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,60 @@
+.TH MSdLocate 3tsp "TSP (libtsp/MS)"
+.SH Routine
+.in +4n
+.ti -4n
+int MSdLocate (double x, const double T[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Binary search in a table
+.in -4n
+.SH Description
+This function searches a table for the interval which contains a given input
+value.  Index i indicates that the value lies between T[i-1] and T[i].  A
+binary search is used to determine the interval.
+.PP
+The region index takes on values from 0 to N.  If N is equal to zero, the
+region index is set to zero.  Otherwise, the index is determined as follows.
+Note that the number of regions is one larger than the number of table
+values.
+.ft CW
+.nf
+.ne 3
+ index         input value
+   0                 x < T[0]
+   1         T[0] <= x < T[1]
+   2         T[1] <= x < T[2]
+  ...              ...
+   i       T[i-1] <= x < T[i]
+  ...              ...
+  N-1      T[N-2] <= x < T[N-1]
+   N       T[N-1] <= x
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int MSdLocate
+.br
+Output region index of the quantizer region containing the input value x.
+MSdLocate takes on values from 0 to N.
+.ti -4n
+ -> double x
+.br
+Value to be quantized
+.ti -4n
+ -> const double T[]
+.br
+Table of N values which delimit the N regions.  These levels must
+be in ascending order.
+.ti -4n
+ -> int N
+.br
+Number of table values
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.2  2003/05/09
+.SH See Also
+libtsp

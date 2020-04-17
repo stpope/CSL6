@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - MAfSubMat</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>MAfSubMat</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+float **MAfSubMat (const float *A[], int n, int m, int Nrow)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Set up pointers to a submatrix of a matrix of float values
+</DL>
+<H4>Description</H4>
+This routine allocates an array of row pointers.  These pointers access a
+submatrix of a previously allocated matrix.  The returned value is a pointer
+to an array of pointers to the rows of the submatrix.  The calling routine
+can treat the returned value as a two-dimensional matrix of float values.
+Consider the invocation
+<PRE>
+  float **A;
+  float **sA;
+  ...
+  A = MAfAllocMat (Nrow, Ncol);
+  sA = MAfSubMat ((const float **) A, n, m, Nrow-n);
+      ...  now sA[0][0] == A[n][m]
+</PRE>
+Then sA[i][j] is a matrix of float values for 0 &lt;= i &lt; N-n and
+0 &lt;= j &lt; Ncol-m.  The array of pointers to the submatrix should be
+deallocated using the routine UTfree.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  float **MAfSubMat
+<DD>
+Returned pointer to array of row pointers for the submatrix
+<DT>
+ -&gt; const float *A[]
+<DD>
+A is an array of pointers to the rows of an N by N matrix.  Note that
+with ANSI C, if the actual parameter is not declared to have the const
+attribute, an explicit cast to (const float **) is required.
+<DT>
+ -&gt; int n
+<DD>
+Index for the first row of the submatrix
+<DT>
+ -&gt; int m
+<DD>
+Index for the first column of the submatrix
+<DT>
+ -&gt; int Nrow
+<DD>
+Number of rows in the submatrix
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.8  2003/05/09
+<H4>See Also</H4>
+<A HREF="MAfAllocMat.html">MAfAllocMat</A>,
+<A HREF="../UT/UTfree.html">UTfree</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

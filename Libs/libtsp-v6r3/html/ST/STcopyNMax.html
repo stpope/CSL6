@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - STcopyNMax</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>STcopyNMax</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int STcopyNMax (const char Si[], char So[], int N, int Maxchar)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Copy N characters characters to a string
+</DL>
+<H4>Description</H4>
+This routine is used to copy min(N, strlen(Si)) characters from the input
+input string to the output string.  If min(N, strlen(Si) is greater than
+Maxchar, a string is truncated at that point and a warning message is
+printed.
+<H4>Parameters</H4>
+<P>
+<PRE>
+    Number of characters in the output string
+</PRE>
+<DL>
+<DT>
+ -&gt; const char Si[]
+<DD>
+Input character string
+<DT>
+&lt;-  char So[]
+<DD>
+Output character string.  This string is always null terminated, with
+at most Maxchar characters not including the terminating null character.
+<DT>
+ -&gt; int N
+<DD>
+Number of characters to be transferred
+<DT>
+ -&gt; int Maxchar
+<DD>
+Maximum number of characters (not including the terminating null
+character) to be placed in So.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.20  2003/05/09
+<H4>See Also</H4>
+<A HREF="STcatMax.html">STcatMax</A>,
+<A HREF="STcopyMax.html">STcopyMax</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

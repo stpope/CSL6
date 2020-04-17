@@ -1,0 +1,45 @@
+.TH VRdDotProd 3tsp "TSP (libtsp/VR)"
+.SH Routine
+.in +4n
+.ti -4n
+double VRdDotProd (const double x1[], const double x2[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Dot product of two double arrays
+.in -4n
+.SH Description
+This routine calculates the dot product of two double arrays x1 and x2.
+.ft CW
+.nf
+.ne 3
+               N-1
+  VRfDotProd = SUM x1[i] * x2[i] .
+               i=0
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+<-  double VRfDotProd
+.br
+Dot product
+.ti -4n
+ -> const double x1[]
+.br
+Input array (N elements)
+.ti -4n
+ -> const double x2[]
+.br
+Input array (N elements)
+.ti -4n
+ -> int N
+.br
+Number of elements in the arrays (may be zero)
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.2  2003/05/09
+.SH See Also
+libtsp

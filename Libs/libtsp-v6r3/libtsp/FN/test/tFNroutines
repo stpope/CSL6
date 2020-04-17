@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# Test FN routines
+#
+# $Id: tFNroutines 1.7 1998/07/06 libtsp-v6r3 $
+
+echo ""
+echo "========== tFNgcd"
+tFNgcd 0 0
+tFNgcd 0 55
+tFNgcd 55 0
+tFNgcd 55 55
+tFNgcd 1 55
+tFNgcd 55 1
+tFNgcd 55 5
+tFNgcd 5 55
+tFNgcd -5 55
+tFNgcd -5 -55
+tFNgcd 5 -55
+tFNgcd 6 55
+tFNgcd 6 56
+
+echo ""
+echo "========== tFNxxx"
+tFNxxx B 0
+tFNxxx B 0.5
+tFNxxx B 10
+tFNxxx B 20
+tFNxxx B -0.5
+tFNxxx S 0
+tFNxxx S -1
+tFNxxx S 1
+tFNxxx S 0.5
+tFNxxx S -0.5
+tFNxxx S 3
+tFNxxx S 3.5
+tFNxxx S -3.5
+
+echo ""
+echo "========== tFNiLog2"
+tFNiLog2 8
+tFNiLog2 0			2>&1
+tFNiLog2 1025
+tFNiLog2 1024
+tFNiLog2 1023
+tFNiLog2 1
+tFNiLog2 32768

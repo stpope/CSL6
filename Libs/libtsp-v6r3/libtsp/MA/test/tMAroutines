@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Test MA routines
+#
+# $Id: tMAroutines 1.4 1998/07/06 libtsp-v6r3 $
+
+echo ""
+echo "========== tMAfChSolve"
+tMAfChSolve 1 0 0  -3 10 0  2 -5 6  2 4 -7
+
+echo ""
+echo "========== tMAfxxQuad"
+tMAfxxQuad 1 0 0  0 1 0  0 0 1   1 2 3
+tMAfxxQuad 4 2 1  2 4 2  1 2 4   3 5 7
+
+echo ""
+echo "========== tMAfPrint"
+tMAfPrint
+
+echo ""
+echo "========== tMAfTPSolve"
+tMAfTpSolve 1 0 0  2 4 -7
+tMAfTpSolve 2 1 1  2 4 -7
+tMAfTpSolve 1 .5 .2  .5 .2 .1	# Example from Golub and Van Loan
+tMAfTpSolve 1 .5 .2  4 -1 3	# Example from Golub and Van Loan

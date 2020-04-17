@@ -1,0 +1,69 @@
+
+========== tMAfChSolve
+Input matrix:
+            1            0            0
+           -3           10            0
+            2           -5            6
+Input vector:
+            2            4           -7
+Solution vector:
+          137           31          -21
+
+========== tMAfxxQuad
+Input matrix:
+            1            0            0
+            0            1            0
+            0            0            1
+Input vector:
+            1            2            3
+MAfSyQuad : 14
+MAfSyBilin: 14
+MAfTpQuad : 14
+Input matrix:
+            4            2            1
+            2            4            2
+            1            2            4
+Input vector:
+            3            5            7
+MAfSyQuad : 574
+MAfSyBilin: 574
+MAfTpQuad : 574
+
+========== tMAfPrint
+Matrix A[23][2]:
+   6.9315e+05        2e-05        3e-05        4e-05        5e-05
+     6.9315e+05   3.1416e+07       0.0003       0.0004       0.0005
+       1.5708e+08       0.0002       0.0003       0.0004       0.0005
+          7.854e+08       0.0002       0.0003       0.0004       0.0005
+               0.0001       0.0002       0.0003
+        1e-05        2e-05        3e-05        4e-05        5e-05
+         0.0001       0.0002       0.0003       0.0004       0.0005
+           0.0001       0.0002       0.0003       0.0004       0.0005
+             0.0001       0.0002       0.0003       0.0004       0.0005
+               0.0001       0.0002       0.0003
+
+========== tMAfTPSolve
+Input matrix (first row):
+            1            0            0
+Input vector:
+            2            4           -7
+Solution vector:
+            2            4           -7
+Input matrix (first row):
+            2            1            1
+Input vector:
+            2            4           -7
+Solution vector:
+         2.25         4.25        -6.75
+Input matrix (first row):
+            1          0.5          0.2
+Input vector:
+          0.5          0.2          0.1
+Solution vector:
+      0.53571    -0.085714     0.035714
+Input matrix (first row):
+            1          0.5          0.2
+Input vector:
+            4           -1            3
+Solution vector:
+       6.3393      -6.7143       5.0893

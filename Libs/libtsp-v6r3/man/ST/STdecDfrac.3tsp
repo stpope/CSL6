@@ -1,0 +1,42 @@
+.TH STdecDfrac 3tsp "TSP (libtsp/ST)"
+.SH Routine
+.in +4n
+.ti -4n
+int STdecDfrac (const char String[], double *Dval1, double *Dval2)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Decode a ratio specification of two double values
+.in -4n
+.SH Description
+This routine decodes a string specifying a ratio of double values.  The
+ratio is specified in the form "V" or "V1/V2", for example "-23.1 / 45".
+Optional white-space (as defined by isspace) can surround the values.  For
+the case of a single value V, this is equivalent to the ratio "V/1".  If an
+error is encountered, neither output value is set.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int STdecRfrac
+.br
+Error status, 0 for no error, 1 for error
+.ti -4n
+ -> const char String[]
+.br
+Input string
+.ti -4n
+<-  double *Dval1
+.br
+First value
+.ti -4n
+<-  double *Dval2
+.br
+Second value
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.7  2003/05/09
+.SH See Also
+STdecIfrac,
+libtsp

@@ -1,0 +1,194 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - AFopnRead</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>AFopnRead</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+AFILE *AFopnRead (const char Fname[], long int *Nsamp, long int *Nchan,
+double *Sfreq, FILE *fpinfo)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Open an audio file for reading
+</DL>
+<H4>Description</H4>
+This routine opens an audio file for reading.  The companion routine
+AFreadData reads data from the file.  Routine AFclose should be used to
+close the file.
+<P>
+This routine reads the audio file header and optionally prints the header
+information.  Several file header formats are supported.  For files with
+no header or an unrecognized header, the file format can be declared by
+calling routine AFsetNHpar.  A banner identifying the audio file and its
+parameters is printed.
+<P>
+<DL>
+<DT>
+AU audio file:
+<DD>
+8-bit mu-law, 8-bit A-law, 8-bit integer, 16-bit integer, 24-bit integer,
+32-bit integer, 32-bit IEEE floating-point, and 64-bit IEEE floating-point
+data formats are supported.
+<DT>
+WAVE file:
+<DD>
+8-bit mu-law, 8-bit A-law, offset-binary 1-bit to 8-bit integer, 9-bit to
+32-bit integer, 32-bit IEEE floating-point, and 64-bit IEEE floating-point
+data formats are supported.
+<DT>
+AIFF or AIFF-C sound file:
+<DD>
+8-bit mu-law, 8-bit A-law, 1-bit to 32-bit integer,  32-bit IEEE
+floating-point, and 64-bit IEEE floating-point data formats are supported.
+<DT>
+NIST SPHERE audio file:
+<DD>
+8-bit mu-law and 16-bit integer data formats are supported.
+<DT>
+IRCAM soundfile:
+<DD>
+8-bit mu-law, 8-bit A-law, 8-bit integer, 16-bit integer, 32-bit integer,
+and 32-bit floating-point data formats are supported.
+<DT>
+ESPS sampled data feature file:
+<DD>
+16-bit integer, 32-bit integer, 32-bit floating-point, and 64-bit
+floating-point data formats are supported.
+<DT>
+SPPACK sampled data file:
+<DD>
+8-bit mu-law, 8-bit A-law and 16-bit integer data formats are supported.
+<DT>
+INRS-Telecommunications audio file:
+<DD>
+16-bit integer format is supported.
+<DT>
+Cadence SPW Signal file:
+<DD>
+8-bit integer, 16-bit integer, 32-bit floating-point, 64-point
+floating-point, and text formats are supported.
+<DT>
+CSL NSP file:
+<DD>
+16-bit integer format is supported.
+<DT>
+Text audio file:
+<DD>
+Data in character format (usually representing 16-bit integer values).
+<DT>
+Headerless audio file:
+<DD>
+The data format is specified by calling routine AFsetNHpar.
+</DL>
+<P>
+For the fixed point file data representations, read operations return data
+values as follows.  The scaling factor shown below is applied to the data in
+the file to give an output in the range [-1, +1).
+<PRE>
+   data format     file data values              scaling factor
+  8-bit mu-law    [-32,124, +32,124]              1/32768
+  8-bit A-law     [-32,256, +32,256]              1/32768
+  8-bit integer   [-128, +127]                    1/256
+  16-bit integer  [-32,768, +32,767]              1/32768
+  24-bit integer  [-8,388,608, +8,388,607]        1/8388608
+  32-bit integer  [-2,147,483,648, 2,147,483,647] 1/2147483648
+</PRE>
+Floating-point data in the input audio file are scaled by unity.
+<P>
+<DL>
+<DT>
+File type determination:
+<DD>
+The default behaviour is to determine the file type from the header of the
+input file.  However this requires look-ahead and is not possible with
+files that are not random access (for instance a file stream from a pipe).
+For both random access and sequential access files, the file type can be
+specified explicitly with a call to routine AFsetFileType, obviating the
+need to determine the file type from the header.
+</DL>
+<P>
+<DL>
+<DT>
+Number of samples:
+<DD>
+In some types of audio file types, the number of samples is specified in
+the file header.  In others, the number of samples is known only if the
+file size can be determined, specifically if the file random access.  For
+input from a stream which does not allow random access (for instance a file
+stream from a pipe), the file size cannot be determined for those files
+without that information in the file header.
+<PRE>
+                  no. samples
+ file type         in header
+ AU                  yes
+ WAVE                yes
+ AIFF or AIFF-C      yes
+ NIST SPHERE         yes
+ IRCAM               no
+ ESPS                yes
+ SPPACK              yes
+ INRS-Telecom        no
+ Cadence SPW         no
+ CSL NSP             yes
+ Text file           no
+ Headerless          no
+</PRE>
+<DT>
+Notes:
+<DT>
+- Some AU audio files and some ESPS audio files do not specify the number of
+samples.
+<DT>
+- AIFF/AIFF-C files with a perverse header cannot be opened for non-random
+access.
+</DL>
+<P>
+On encountering an error, the default behaviour is to print an error message
+and halt execution.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  AFILE *AFopnRead
+<DD>
+Audio file pointer for the audio file
+<DT>
+ -&gt; const char Fname[]
+<DD>
+Character string specifying the file name
+<DT>
+&lt;-  long int *Nsamp
+<DD>
+Total number of samples in the file (all channels)
+<DT>
+&lt;-  long int *Nchan
+<DD>
+Number of channels
+<DT>
+&lt;-  double *Sfreq
+<DD>
+Sampling frequency
+<DT>
+ -&gt; FILE *fpinfo
+<DD>
+File pointer for printing audio file information.  If fpinfo is not NULL,
+information about the audio file is printed on the stream selected by
+fpinfo.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.4  2005/11/16
+<H4>See Also</H4>
+<A HREF="AFclose.html">AFclose</A>,
+<A HREF="AFdReadData.html">AFdReadData</A>,
+<A HREF="AFfReadData.html">AFfReadData</A>,
+<A HREF="AFsetNHpar.html">AFsetNHpar</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,469 @@
+\hypertarget{transport_8h}{
+\section{transport.h File Reference}
+\label{transport_8h}\index{transport.h@{transport.h}}
+}
+{\tt \#include $<$jack/types.h$>$}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structjack__position__t}{jack\_\-position\_\-t}
+\item 
+struct \hyperlink{structjack__transport__info__t}{jack\_\-transport\_\-info\_\-t}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{transport_8h_118dd34d62d7f7d431175ff45c1af057}{JACK\_\-POSITION\_\-MASK}~(Jack\-Position\-BBT$|$Jack\-Position\-Timecode$|$Jack\-BBTFrame\-Offset$|$Jack\-Audio\-Video\-Ratio$|$Jack\-Video\-Frame\-Offset)
+\item 
+\#define \hyperlink{transport_8h_f7125a46166ff434f28937ecd7b084ba}{EXTENDED\_\-TIME\_\-INFO}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef uint64\_\-t \hyperlink{transport_8h_35b13d418f3a4f572b3ea5849b6282f7}{jack\_\-unique\_\-t}
+\item 
+typedef int($\ast$ \hyperlink{transport_8h_f4c569c9992093c75a1c5f1a5de6cbe4}{Jack\-Sync\-Callback} )(\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t} state, \hyperlink{structjack__position__t}{jack\_\-position\_\-t} $\ast$pos, void $\ast$arg)
+\item 
+typedef void($\ast$ \hyperlink{transport_8h_60d88b9ed314f198a7487ec0e68796ee}{Jack\-Timebase\-Callback} )(\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t} state, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} nframes, \hyperlink{structjack__position__t}{jack\_\-position\_\-t} $\ast$pos, int new\_\-pos, void $\ast$arg)
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t} \{ \hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f733866566fe3891dbba7d3cdda2b7fef1793}{Jack\-Transport\-Stopped} =  0, 
+\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f733807b572e2dbc92cf006e07cc23befaece}{Jack\-Transport\-Rolling} =  1, 
+\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338ea1397a7fda5bfc61774e930c3c77e51}{Jack\-Transport\-Looping} =  2, 
+\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f733826f99f6e435fe2f37ffce708fe128d12}{Jack\-Transport\-Starting} =  3
+ \}
+\item 
+enum \hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b7}{jack\_\-position\_\-bits\_\-t} \{ \par
+\hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b79d43421a1013121f3e5b65bf86ed712f}{Jack\-Position\-BBT} =  0x10, 
+\hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b7871c3b3c8ef74248711ee8add0209010}{Jack\-Position\-Timecode} =  0x20, 
+\hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b731781dfdcf365a367ce4e4493a72f84d}{Jack\-BBTFrame\-Offset} =  0x40, 
+\hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b73211fd9ea3a5f8408d6171530565d6cb}{Jack\-Audio\-Video\-Ratio} =  0x80, 
+\par
+\hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b75f3ce481750c4ea70d79ae99db9150ca}{Jack\-Video\-Frame\-Offset} =  0x100
+ \}
+\item 
+enum \hyperlink{transport_8h_25433447d7aa9851e5af2c1b55f8da63}{jack\_\-transport\_\-bits\_\-t} \{ \par
+\hyperlink{transport_8h_25433447d7aa9851e5af2c1b55f8da638c57505d5045e8a743a79b85b0e03bd8}{Jack\-Transport\-State} =  0x1, 
+\hyperlink{transport_8h_25433447d7aa9851e5af2c1b55f8da63c38e9c08cca2dbb78a68b527807e11bd}{Jack\-Transport\-Position} =  0x2, 
+\hyperlink{transport_8h_25433447d7aa9851e5af2c1b55f8da63be136aaab6d8140c26d031efd1d8d044}{Jack\-Transport\-Loop} =  0x4, 
+\hyperlink{transport_8h_25433447d7aa9851e5af2c1b55f8da6346dac22c6cf7117ee942353433e8be05}{Jack\-Transport\-SMPTE} =  0x8, 
+\par
+\hyperlink{transport_8h_25433447d7aa9851e5af2c1b55f8da637ef5579dd5d21ddb672fa6ad1bbc122d}{Jack\-Transport\-BBT} =  0x10
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{transport_8h_8af92380c73fd3172052ddc55234b441}{jack\_\-release\_\-timebase} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+int \hyperlink{transport_8h_9cbc318eb60e557e6cec6c4cea7a35b7}{jack\_\-set\_\-sync\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{transport_8h_f4c569c9992093c75a1c5f1a5de6cbe4}{Jack\-Sync\-Callback} sync\_\-callback, void $\ast$arg)
+\item 
+int \hyperlink{transport_8h_be5ea947e49e241aac32ddf7ed675b37}{jack\_\-set\_\-sync\_\-timeout} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{types_8h_71d1a1356a36ae1f9e60b4361e21905e}{jack\_\-time\_\-t} timeout)
+\item 
+int \hyperlink{transport_8h_d1d237a74417e8b4a4bc7894afefc1cb}{jack\_\-set\_\-timebase\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, int conditional, \hyperlink{transport_8h_60d88b9ed314f198a7487ec0e68796ee}{Jack\-Timebase\-Callback} timebase\_\-callback, void $\ast$arg)
+\item 
+int \hyperlink{transport_8h_683f8877d18010277fd4e1b0b658e075}{jack\_\-transport\_\-locate} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} frame)
+\item 
+\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t} \hyperlink{transport_8h_376e441203bc73d3c99c6e31ca193638}{jack\_\-transport\_\-query} (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{structjack__position__t}{jack\_\-position\_\-t} $\ast$pos)
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{transport_8h_7ae5fab6dd8319de8a0098f0fe13385e}{jack\_\-get\_\-current\_\-transport\_\-frame} (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+int \hyperlink{transport_8h_382c2e6712699b1a2f821f83e02c2d54}{jack\_\-transport\_\-reposition} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{structjack__position__t}{jack\_\-position\_\-t} $\ast$pos)
+\item 
+void \hyperlink{transport_8h_6c868184c830c2e84b7ea4d04ab1aba9}{jack\_\-transport\_\-start} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+void \hyperlink{transport_8h_797ceccf2d97c571d2ba986e9dfc4519}{jack\_\-transport\_\-stop} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+void \hyperlink{transport_8h_84542d303215c8dcfec80f2f7700c255}{jack\_\-get\_\-transport\_\-info} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{structjack__transport__info__t}{jack\_\-transport\_\-info\_\-t} $\ast$tinfo)
+\item 
+void \hyperlink{transport_8h_8dcb2d34ae812a1ef141beb7f2f57879}{jack\_\-set\_\-transport\_\-info} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{structjack__transport__info__t}{jack\_\-transport\_\-info\_\-t} $\ast$tinfo)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{transport_8h_f7125a46166ff434f28937ecd7b084ba}{
+\index{transport.h@{transport.h}!EXTENDED_TIME_INFO@{EXTENDED\_\-TIME\_\-INFO}}
+\index{EXTENDED_TIME_INFO@{EXTENDED\_\-TIME\_\-INFO}!transport.h@{transport.h}}
+\subsubsection[EXTENDED\_\-TIME\_\-INFO]{\setlength{\rightskip}{0pt plus 5cm}\#define EXTENDED\_\-TIME\_\-INFO}}
+\label{transport_8h_f7125a46166ff434f28937ecd7b084ba}
+
+
+\hypertarget{transport_8h_118dd34d62d7f7d431175ff45c1af057}{
+\index{transport.h@{transport.h}!JACK_POSITION_MASK@{JACK\_\-POSITION\_\-MASK}}
+\index{JACK_POSITION_MASK@{JACK\_\-POSITION\_\-MASK}!transport.h@{transport.h}}
+\subsubsection[JACK\_\-POSITION\_\-MASK]{\setlength{\rightskip}{0pt plus 5cm}\#define JACK\_\-POSITION\_\-MASK~(Jack\-Position\-BBT$|$Jack\-Position\-Timecode$|$Jack\-BBTFrame\-Offset$|$Jack\-Audio\-Video\-Ratio$|$Jack\-Video\-Frame\-Offset)}}
+\label{transport_8h_118dd34d62d7f7d431175ff45c1af057}
+
+
+all valid position bits 
+
+\subsection{Typedef Documentation}
+\hypertarget{transport_8h_35b13d418f3a4f572b3ea5849b6282f7}{
+\index{transport.h@{transport.h}!jack_unique_t@{jack\_\-unique\_\-t}}
+\index{jack_unique_t@{jack\_\-unique\_\-t}!transport.h@{transport.h}}
+\subsubsection[jack\_\-unique\_\-t]{\setlength{\rightskip}{0pt plus 5cm}typedef uint64\_\-t \hyperlink{transport_8h_35b13d418f3a4f572b3ea5849b6282f7}{jack\_\-unique\_\-t}}}
+\label{transport_8h_35b13d418f3a4f572b3ea5849b6282f7}
+
+
+Unique ID (opaque) \hypertarget{transport_8h_f4c569c9992093c75a1c5f1a5de6cbe4}{
+\index{transport.h@{transport.h}!JackSyncCallback@{JackSyncCallback}}
+\index{JackSyncCallback@{JackSyncCallback}!transport.h@{transport.h}}
+\subsubsection[JackSyncCallback]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ \hyperlink{transport_8h_f4c569c9992093c75a1c5f1a5de6cbe4}{Jack\-Sync\-Callback})(\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t} state, \hyperlink{structjack__position__t}{jack\_\-position\_\-t} $\ast$pos, void $\ast$arg)}}
+\label{transport_8h_f4c569c9992093c75a1c5f1a5de6cbe4}
+
+
+Prototype for the {\em sync\_\-callback\/} defined by slow-sync clients. When the client is active, this callback is invoked just before \hyperlink{simple__client_8c_ec08ae186cb5b9cb1ba57ea741d55b23}{process()} in the same thread. This occurs once after registration, then subsequently whenever some client requests a new position, or the transport enters the \hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f733826f99f6e435fe2f37ffce708fe128d12}{Jack\-Transport\-Starting} state. This realtime function must not wait.
+
+The transport {\em state\/} will be:
+
+\begin{itemize}
+\item \hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f733866566fe3891dbba7d3cdda2b7fef1793}{Jack\-Transport\-Stopped} when a new position is requested;\item \hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f733826f99f6e435fe2f37ffce708fe128d12}{Jack\-Transport\-Starting} when the transport is waiting to start;\item \hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f733807b572e2dbc92cf006e07cc23befaece}{Jack\-Transport\-Rolling} when the timeout has expired, and the position is now a moving target.\end{itemize}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em state}]current transport state. \item[{\em pos}]new transport position. \item[{\em arg}]the argument supplied by \hyperlink{transport_8h_9cbc318eb60e557e6cec6c4cea7a35b7}{jack\_\-set\_\-sync\_\-callback()}.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE (non-zero) when ready to roll. \end{Desc}
+\hypertarget{transport_8h_60d88b9ed314f198a7487ec0e68796ee}{
+\index{transport.h@{transport.h}!JackTimebaseCallback@{JackTimebaseCallback}}
+\index{JackTimebaseCallback@{JackTimebaseCallback}!transport.h@{transport.h}}
+\subsubsection[JackTimebaseCallback]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ \hyperlink{transport_8h_60d88b9ed314f198a7487ec0e68796ee}{Jack\-Timebase\-Callback})(\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t} state, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} nframes, \hyperlink{structjack__position__t}{jack\_\-position\_\-t} $\ast$pos, int new\_\-pos, void $\ast$arg)}}
+\label{transport_8h_60d88b9ed314f198a7487ec0e68796ee}
+
+
+Prototype for the {\em timebase\_\-callback\/} used to provide extended position information. Its output affects all of the following process cycle. This realtime function must not wait.
+
+This function is called immediately after \hyperlink{simple__client_8c_ec08ae186cb5b9cb1ba57ea741d55b23}{process()} in the same thread whenever the transport is rolling, or when any client has requested a new position in the previous cycle. The first cycle after \hyperlink{transport_8h_d1d237a74417e8b4a4bc7894afefc1cb}{jack\_\-set\_\-timebase\_\-callback()} is also treated as a new position, or the first cycle after \hyperlink{jack_8h_c7dc9d6132b8331ab500cdb593b8de11}{jack\_\-activate()} if the client had been inactive.
+
+The timebase master may not use its {\em pos\/} argument to set {\em pos-$>$frame\/}. To change position, use \hyperlink{transport_8h_382c2e6712699b1a2f821f83e02c2d54}{jack\_\-transport\_\-reposition()} or \hyperlink{transport_8h_683f8877d18010277fd4e1b0b658e075}{jack\_\-transport\_\-locate()}. These functions are realtime-safe, the {\em timebase\_\-callback\/} can call them directly.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em state}]current transport state. \item[{\em nframes}]number of frames in current period. \item[{\em pos}]address of the position structure for the next cycle; {\em pos-$>$frame\/} will be its frame number. If {\em new\_\-pos\/} is FALSE, this structure contains extended position information from the current cycle. If TRUE, it contains whatever was set by the requester. The {\em timebase\_\-callback's\/} task is to update the extended information here. \item[{\em new\_\-pos}]TRUE (non-zero) for a newly requested {\em pos\/}, or for the first cycle after the {\em timebase\_\-callback\/} is defined. \item[{\em arg}]the argument supplied by \hyperlink{transport_8h_d1d237a74417e8b4a4bc7894afefc1cb}{jack\_\-set\_\-timebase\_\-callback()}. \end{description}
+\end{Desc}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{transport_8h_2c97bd120f26ce62aba5c2692b4482b7}{
+\index{transport.h@{transport.h}!jack_position_bits_t@{jack\_\-position\_\-bits\_\-t}}
+\index{jack_position_bits_t@{jack\_\-position\_\-bits\_\-t}!transport.h@{transport.h}}
+\subsubsection[jack\_\-position\_\-bits\_\-t]{\setlength{\rightskip}{0pt plus 5cm}enum \hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b7}{jack\_\-position\_\-bits\_\-t}}}
+\label{transport_8h_2c97bd120f26ce62aba5c2692b4482b7}
+
+
+Optional struct \hyperlink{structjack__position__t}{jack\_\-position\_\-t} fields. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{JackPositionBBT@{JackPositionBBT}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackPositionBBT@{JackPositionBBT}}\item[{\em 
+\hypertarget{transport_8h_2c97bd120f26ce62aba5c2692b4482b79d43421a1013121f3e5b65bf86ed712f}{
+Jack\-Position\-BBT}
+\label{transport_8h_2c97bd120f26ce62aba5c2692b4482b79d43421a1013121f3e5b65bf86ed712f}
+}]Bar, Beat, Tick \index{JackPositionTimecode@{JackPositionTimecode}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackPositionTimecode@{JackPositionTimecode}}\item[{\em 
+\hypertarget{transport_8h_2c97bd120f26ce62aba5c2692b4482b7871c3b3c8ef74248711ee8add0209010}{
+Jack\-Position\-Timecode}
+\label{transport_8h_2c97bd120f26ce62aba5c2692b4482b7871c3b3c8ef74248711ee8add0209010}
+}]External timecode \index{JackBBTFrameOffset@{JackBBTFrameOffset}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackBBTFrameOffset@{JackBBTFrameOffset}}\item[{\em 
+\hypertarget{transport_8h_2c97bd120f26ce62aba5c2692b4482b731781dfdcf365a367ce4e4493a72f84d}{
+Jack\-BBTFrame\-Offset}
+\label{transport_8h_2c97bd120f26ce62aba5c2692b4482b731781dfdcf365a367ce4e4493a72f84d}
+}]Frame offset of BBT information \index{JackAudioVideoRatio@{JackAudioVideoRatio}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackAudioVideoRatio@{JackAudioVideoRatio}}\item[{\em 
+\hypertarget{transport_8h_2c97bd120f26ce62aba5c2692b4482b73211fd9ea3a5f8408d6171530565d6cb}{
+Jack\-Audio\-Video\-Ratio}
+\label{transport_8h_2c97bd120f26ce62aba5c2692b4482b73211fd9ea3a5f8408d6171530565d6cb}
+}]audio frames per video frame \index{JackVideoFrameOffset@{JackVideoFrameOffset}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackVideoFrameOffset@{JackVideoFrameOffset}}\item[{\em 
+\hypertarget{transport_8h_2c97bd120f26ce62aba5c2692b4482b75f3ce481750c4ea70d79ae99db9150ca}{
+Jack\-Video\-Frame\-Offset}
+\label{transport_8h_2c97bd120f26ce62aba5c2692b4482b75f3ce481750c4ea70d79ae99db9150ca}
+}]frame offset of first video frame \end{description}
+\end{Desc}
+
+\hypertarget{transport_8h_25433447d7aa9851e5af2c1b55f8da63}{
+\index{transport.h@{transport.h}!jack_transport_bits_t@{jack\_\-transport\_\-bits\_\-t}}
+\index{jack_transport_bits_t@{jack\_\-transport\_\-bits\_\-t}!transport.h@{transport.h}}
+\subsubsection[jack\_\-transport\_\-bits\_\-t]{\setlength{\rightskip}{0pt plus 5cm}enum \hyperlink{transport_8h_25433447d7aa9851e5af2c1b55f8da63}{jack\_\-transport\_\-bits\_\-t}}}
+\label{transport_8h_25433447d7aa9851e5af2c1b55f8da63}
+
+
+Optional struct \hyperlink{structjack__transport__info__t}{jack\_\-transport\_\-info\_\-t} fields.
+
+\begin{Desc}
+\item[See also:]\hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b7}{jack\_\-position\_\-bits\_\-t}. \end{Desc}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{JackTransportState@{JackTransportState}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackTransportState@{JackTransportState}}\item[{\em 
+\hypertarget{transport_8h_25433447d7aa9851e5af2c1b55f8da638c57505d5045e8a743a79b85b0e03bd8}{
+Jack\-Transport\-State}
+\label{transport_8h_25433447d7aa9851e5af2c1b55f8da638c57505d5045e8a743a79b85b0e03bd8}
+}]Transport state \index{JackTransportPosition@{JackTransportPosition}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackTransportPosition@{JackTransportPosition}}\item[{\em 
+\hypertarget{transport_8h_25433447d7aa9851e5af2c1b55f8da63c38e9c08cca2dbb78a68b527807e11bd}{
+Jack\-Transport\-Position}
+\label{transport_8h_25433447d7aa9851e5af2c1b55f8da63c38e9c08cca2dbb78a68b527807e11bd}
+}]Frame number \index{JackTransportLoop@{JackTransportLoop}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackTransportLoop@{JackTransportLoop}}\item[{\em 
+\hypertarget{transport_8h_25433447d7aa9851e5af2c1b55f8da63be136aaab6d8140c26d031efd1d8d044}{
+Jack\-Transport\-Loop}
+\label{transport_8h_25433447d7aa9851e5af2c1b55f8da63be136aaab6d8140c26d031efd1d8d044}
+}]Loop boundaries (ignored) \index{JackTransportSMPTE@{JackTransportSMPTE}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackTransportSMPTE@{JackTransportSMPTE}}\item[{\em 
+\hypertarget{transport_8h_25433447d7aa9851e5af2c1b55f8da6346dac22c6cf7117ee942353433e8be05}{
+Jack\-Transport\-SMPTE}
+\label{transport_8h_25433447d7aa9851e5af2c1b55f8da6346dac22c6cf7117ee942353433e8be05}
+}]SMPTE (ignored) \index{JackTransportBBT@{JackTransportBBT}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackTransportBBT@{JackTransportBBT}}\item[{\em 
+\hypertarget{transport_8h_25433447d7aa9851e5af2c1b55f8da637ef5579dd5d21ddb672fa6ad1bbc122d}{
+Jack\-Transport\-BBT}
+\label{transport_8h_25433447d7aa9851e5af2c1b55f8da637ef5579dd5d21ddb672fa6ad1bbc122d}
+}]Bar, Beat, Tick \end{description}
+\end{Desc}
+
+\hypertarget{transport_8h_499ffea77b03cce9c647d7b5065f7338}{
+\index{transport.h@{transport.h}!jack_transport_state_t@{jack\_\-transport\_\-state\_\-t}}
+\index{jack_transport_state_t@{jack\_\-transport\_\-state\_\-t}!transport.h@{transport.h}}
+\subsubsection[jack\_\-transport\_\-state\_\-t]{\setlength{\rightskip}{0pt plus 5cm}enum \hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t}}}
+\label{transport_8h_499ffea77b03cce9c647d7b5065f7338}
+
+
+Transport states. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{JackTransportStopped@{JackTransportStopped}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackTransportStopped@{JackTransportStopped}}\item[{\em 
+\hypertarget{transport_8h_499ffea77b03cce9c647d7b5065f733866566fe3891dbba7d3cdda2b7fef1793}{
+Jack\-Transport\-Stopped}
+\label{transport_8h_499ffea77b03cce9c647d7b5065f733866566fe3891dbba7d3cdda2b7fef1793}
+}]Transport halted \index{JackTransportRolling@{JackTransportRolling}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackTransportRolling@{JackTransportRolling}}\item[{\em 
+\hypertarget{transport_8h_499ffea77b03cce9c647d7b5065f733807b572e2dbc92cf006e07cc23befaece}{
+Jack\-Transport\-Rolling}
+\label{transport_8h_499ffea77b03cce9c647d7b5065f733807b572e2dbc92cf006e07cc23befaece}
+}]Transport playing \index{JackTransportLooping@{JackTransportLooping}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackTransportLooping@{JackTransportLooping}}\item[{\em 
+\hypertarget{transport_8h_499ffea77b03cce9c647d7b5065f7338ea1397a7fda5bfc61774e930c3c77e51}{
+Jack\-Transport\-Looping}
+\label{transport_8h_499ffea77b03cce9c647d7b5065f7338ea1397a7fda5bfc61774e930c3c77e51}
+}]For OLD\_\-TRANSPORT, now ignored \index{JackTransportStarting@{JackTransportStarting}!transport.h@{transport.h}}\index{transport.h@{transport.h}!JackTransportStarting@{JackTransportStarting}}\item[{\em 
+\hypertarget{transport_8h_499ffea77b03cce9c647d7b5065f733826f99f6e435fe2f37ffce708fe128d12}{
+Jack\-Transport\-Starting}
+\label{transport_8h_499ffea77b03cce9c647d7b5065f733826f99f6e435fe2f37ffce708fe128d12}
+}]Waiting for sync ready \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{transport_8h_7ae5fab6dd8319de8a0098f0fe13385e}{
+\index{transport.h@{transport.h}!jack_get_current_transport_frame@{jack\_\-get\_\-current\_\-transport\_\-frame}}
+\index{jack_get_current_transport_frame@{jack\_\-get\_\-current\_\-transport\_\-frame}!transport.h@{transport.h}}
+\subsubsection[jack\_\-get\_\-current\_\-transport\_\-frame]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} jack\_\-get\_\-current\_\-transport\_\-frame (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{transport_8h_7ae5fab6dd8319de8a0098f0fe13385e}
+
+
+Return an estimate of the current transport frame, including any time elapsed since the last transport positional update.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure \end{description}
+\end{Desc}
+\hypertarget{transport_8h_84542d303215c8dcfec80f2f7700c255}{
+\index{transport.h@{transport.h}!jack_get_transport_info@{jack\_\-get\_\-transport\_\-info}}
+\index{jack_get_transport_info@{jack\_\-get\_\-transport\_\-info}!transport.h@{transport.h}}
+\subsubsection[jack\_\-get\_\-transport\_\-info]{\setlength{\rightskip}{0pt plus 5cm}void jack\_\-get\_\-transport\_\-info (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{structjack__transport__info__t}{jack\_\-transport\_\-info\_\-t} $\ast$ {\em tinfo})}}
+\label{transport_8h_84542d303215c8dcfec80f2f7700c255}
+
+
+Gets the current transport info structure (deprecated).
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure. \item[{\em tinfo}]current transport info structure. The \char`\"{}valid\char`\"{} field describes which fields contain valid data.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000005}{Deprecated}]This is for compatibility with the earlier transport interface. Use \hyperlink{transport_8h_376e441203bc73d3c99c6e31ca193638}{jack\_\-transport\_\-query()}, instead.\end{Desc}
+\begin{Desc}
+\item[Precondition:]Must be called from the process thread. \end{Desc}
+\hypertarget{transport_8h_8af92380c73fd3172052ddc55234b441}{
+\index{transport.h@{transport.h}!jack_release_timebase@{jack\_\-release\_\-timebase}}
+\index{jack_release_timebase@{jack\_\-release\_\-timebase}!transport.h@{transport.h}}
+\subsubsection[jack\_\-release\_\-timebase]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-release\_\-timebase (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{transport_8h_8af92380c73fd3172052ddc55234b441}
+
+
+Called by the timebase master to release itself from that responsibility.
+
+If the timebase master releases the timebase or leaves the JACK graph for any reason, the JACK engine takes over at the start of the next process cycle. The transport state does not change. If rolling, it continues to play, with frame numbers as the only available position information.
+
+\begin{Desc}
+\item[See also:]\hyperlink{transport_8h_d1d237a74417e8b4a4bc7894afefc1cb}{jack\_\-set\_\-timebase\_\-callback}\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code. \end{Desc}
+\hypertarget{transport_8h_9cbc318eb60e557e6cec6c4cea7a35b7}{
+\index{transport.h@{transport.h}!jack_set_sync_callback@{jack\_\-set\_\-sync\_\-callback}}
+\index{jack_set_sync_callback@{jack\_\-set\_\-sync\_\-callback}!transport.h@{transport.h}}
+\subsubsection[jack\_\-set\_\-sync\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-sync\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{transport_8h_f4c569c9992093c75a1c5f1a5de6cbe4}{Jack\-Sync\-Callback} {\em sync\_\-callback}, void $\ast$ {\em arg})}}
+\label{transport_8h_9cbc318eb60e557e6cec6c4cea7a35b7}
+
+
+Register (or unregister) as a slow-sync client, one that cannot respond immediately to transport position changes.
+
+The {\em sync\_\-callback\/} will be invoked at the first available opportunity after its registration is complete. If the client is currently active this will be the following process cycle, otherwise it will be the first cycle after calling \hyperlink{jack_8h_c7dc9d6132b8331ab500cdb593b8de11}{jack\_\-activate()}. After that, it runs according to the \hyperlink{transport_8h_f4c569c9992093c75a1c5f1a5de6cbe4}{Jack\-Sync\-Callback} rules. Clients that don't set a {\em sync\_\-callback\/} are assumed to be ready immediately any time the transport wants to start.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure. \item[{\em sync\_\-callback}]is a realtime function that returns TRUE when the client is ready. Setting {\em sync\_\-callback\/} to NULL declares that this client no longer requires slow-sync processing. \item[{\em arg}]an argument for the {\em sync\_\-callback\/} function.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code. \end{Desc}
+\hypertarget{transport_8h_be5ea947e49e241aac32ddf7ed675b37}{
+\index{transport.h@{transport.h}!jack_set_sync_timeout@{jack\_\-set\_\-sync\_\-timeout}}
+\index{jack_set_sync_timeout@{jack\_\-set\_\-sync\_\-timeout}!transport.h@{transport.h}}
+\subsubsection[jack\_\-set\_\-sync\_\-timeout]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-sync\_\-timeout (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{types_8h_71d1a1356a36ae1f9e60b4361e21905e}{jack\_\-time\_\-t} {\em timeout})}}
+\label{transport_8h_be5ea947e49e241aac32ddf7ed675b37}
+
+
+Set the timeout value for slow-sync clients.
+
+This timeout prevents unresponsive slow-sync clients from completely halting the transport mechanism. The default is two seconds. When the timeout expires, the transport starts rolling, even if some slow-sync clients are still unready. The {\em sync\_\-callbacks\/} of these clients continue being invoked, giving them a chance to catch up.
+
+\begin{Desc}
+\item[See also:]\hyperlink{transport_8h_9cbc318eb60e557e6cec6c4cea7a35b7}{jack\_\-set\_\-sync\_\-callback}\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure. \item[{\em timeout}]is delay (in microseconds) before the timeout expires.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code. \end{Desc}
+\hypertarget{transport_8h_d1d237a74417e8b4a4bc7894afefc1cb}{
+\index{transport.h@{transport.h}!jack_set_timebase_callback@{jack\_\-set\_\-timebase\_\-callback}}
+\index{jack_set_timebase_callback@{jack\_\-set\_\-timebase\_\-callback}!transport.h@{transport.h}}
+\subsubsection[jack\_\-set\_\-timebase\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-timebase\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, int {\em conditional}, \hyperlink{transport_8h_60d88b9ed314f198a7487ec0e68796ee}{Jack\-Timebase\-Callback} {\em timebase\_\-callback}, void $\ast$ {\em arg})}}
+\label{transport_8h_d1d237a74417e8b4a4bc7894afefc1cb}
+
+
+Register as timebase master for the JACK subsystem.
+
+The timebase master registers a callback that updates extended position information such as beats or timecode whenever necessary. Without this extended information, there is no need for this function.
+
+There is never more than one master at a time. When a new client takes over, the former {\em timebase\_\-callback\/} is no longer called. Taking over the timebase may be done conditionally, so it fails if there was a master already.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure. \item[{\em conditional}]non-zero for a conditional request. \item[{\em timebase\_\-callback}]is a realtime function that returns position information. \item[{\em arg}]an argument for the {\em timebase\_\-callback\/} function.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item 0 on success;\item EBUSY if a conditional request fails because there was already a timebase master;\item other non-zero error code. \end{itemize}
+\end{Desc}
+\hypertarget{transport_8h_8dcb2d34ae812a1ef141beb7f2f57879}{
+\index{transport.h@{transport.h}!jack_set_transport_info@{jack\_\-set\_\-transport\_\-info}}
+\index{jack_set_transport_info@{jack\_\-set\_\-transport\_\-info}!transport.h@{transport.h}}
+\subsubsection[jack\_\-set\_\-transport\_\-info]{\setlength{\rightskip}{0pt plus 5cm}void jack\_\-set\_\-transport\_\-info (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{structjack__transport__info__t}{jack\_\-transport\_\-info\_\-t} $\ast$ {\em tinfo})}}
+\label{transport_8h_8dcb2d34ae812a1ef141beb7f2f57879}
+
+
+Set the transport info structure (deprecated).
+
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000006}{Deprecated}]This function still exists for compatibility with the earlier transport interface, but it does nothing. Instead, define a \hyperlink{transport_8h_60d88b9ed314f198a7487ec0e68796ee}{Jack\-Timebase\-Callback}. \end{Desc}
+\hypertarget{transport_8h_683f8877d18010277fd4e1b0b658e075}{
+\index{transport.h@{transport.h}!jack_transport_locate@{jack\_\-transport\_\-locate}}
+\index{jack_transport_locate@{jack\_\-transport\_\-locate}!transport.h@{transport.h}}
+\subsubsection[jack\_\-transport\_\-locate]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-transport\_\-locate (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} {\em frame})}}
+\label{transport_8h_683f8877d18010277fd4e1b0b658e075}
+
+
+Reposition the transport to a new frame number.
+
+May be called at any time by any client. The new position takes effect in two process cycles. If there are slow-sync clients and the transport is already rolling, it will enter the \hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f733826f99f6e435fe2f37ffce708fe128d12}{Jack\-Transport\-Starting} state and begin invoking their {\em sync\_\-callbacks\/} until ready. This function is realtime-safe.
+
+\begin{Desc}
+\item[See also:]\hyperlink{transport_8h_382c2e6712699b1a2f821f83e02c2d54}{jack\_\-transport\_\-reposition}, \hyperlink{transport_8h_9cbc318eb60e557e6cec6c4cea7a35b7}{jack\_\-set\_\-sync\_\-callback}\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure. \item[{\em frame}]frame number of new transport position.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if valid request, non-zero otherwise. \end{Desc}
+\hypertarget{transport_8h_376e441203bc73d3c99c6e31ca193638}{
+\index{transport.h@{transport.h}!jack_transport_query@{jack\_\-transport\_\-query}}
+\index{jack_transport_query@{jack\_\-transport\_\-query}!transport.h@{transport.h}}
+\subsubsection[jack\_\-transport\_\-query]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t} jack\_\-transport\_\-query (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{structjack__position__t}{jack\_\-position\_\-t} $\ast$ {\em pos})}}
+\label{transport_8h_376e441203bc73d3c99c6e31ca193638}
+
+
+Query the current transport state and position.
+
+This function is realtime-safe, and can be called from any thread. If called from the process thread, {\em pos\/} corresponds to the first frame of the current cycle and the state returned is valid for the entire cycle.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure. \item[{\em pos}]pointer to structure for returning current transport position; {\em pos-$>$valid\/} will show which fields contain valid data. If {\em pos\/} is NULL, do not return position information.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Current transport state. \end{Desc}
+\hypertarget{transport_8h_382c2e6712699b1a2f821f83e02c2d54}{
+\index{transport.h@{transport.h}!jack_transport_reposition@{jack\_\-transport\_\-reposition}}
+\index{jack_transport_reposition@{jack\_\-transport\_\-reposition}!transport.h@{transport.h}}
+\subsubsection[jack\_\-transport\_\-reposition]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-transport\_\-reposition (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{structjack__position__t}{jack\_\-position\_\-t} $\ast$ {\em pos})}}
+\label{transport_8h_382c2e6712699b1a2f821f83e02c2d54}
+
+
+Request a new transport position.
+
+May be called at any time by any client. The new position takes effect in two process cycles. If there are slow-sync clients and the transport is already rolling, it will enter the \hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f733826f99f6e435fe2f37ffce708fe128d12}{Jack\-Transport\-Starting} state and begin invoking their {\em sync\_\-callbacks\/} until ready. This function is realtime-safe.
+
+\begin{Desc}
+\item[See also:]\hyperlink{transport_8h_683f8877d18010277fd4e1b0b658e075}{jack\_\-transport\_\-locate}, \hyperlink{transport_8h_9cbc318eb60e557e6cec6c4cea7a35b7}{jack\_\-set\_\-sync\_\-callback}\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure. \item[{\em pos}]requested new transport position.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if valid request, EINVAL if position structure rejected. \end{Desc}
+\hypertarget{transport_8h_6c868184c830c2e84b7ea4d04ab1aba9}{
+\index{transport.h@{transport.h}!jack_transport_start@{jack\_\-transport\_\-start}}
+\index{jack_transport_start@{jack\_\-transport\_\-start}!transport.h@{transport.h}}
+\subsubsection[jack\_\-transport\_\-start]{\setlength{\rightskip}{0pt plus 5cm}void jack\_\-transport\_\-start (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{transport_8h_6c868184c830c2e84b7ea4d04ab1aba9}
+
+
+Start the JACK transport rolling.
+
+Any client can make this request at any time. It takes effect no sooner than the next process cycle, perhaps later if there are slow-sync clients. This function is realtime-safe.
+
+\begin{Desc}
+\item[See also:]\hyperlink{transport_8h_9cbc318eb60e557e6cec6c4cea7a35b7}{jack\_\-set\_\-sync\_\-callback}\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure. \end{description}
+\end{Desc}
+\hypertarget{transport_8h_797ceccf2d97c571d2ba986e9dfc4519}{
+\index{transport.h@{transport.h}!jack_transport_stop@{jack\_\-transport\_\-stop}}
+\index{jack_transport_stop@{jack\_\-transport\_\-stop}!transport.h@{transport.h}}
+\subsubsection[jack\_\-transport\_\-stop]{\setlength{\rightskip}{0pt plus 5cm}void jack\_\-transport\_\-stop (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{transport_8h_797ceccf2d97c571d2ba986e9dfc4519}
+
+
+Stop the JACK transport.
+
+Any client can make this request at any time. It takes effect on the next process cycle. This function is realtime-safe.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]the JACK client structure. \end{description}
+\end{Desc}

@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - FIfWinKaiser</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>FIfWinKaiser</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void FIfWinKaiser (float win[], int N, double alpha)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Generate a Kaiser window
+</DL>
+<H4>Description</H4>
+A Kaiser window is specified by the following equation in continuous time,
+<PRE>
+         0 ,                         x &lt; -1
+</PRE>
+<P>
+<PRE>
+         I0(a sqrt(1 - x^2)
+  w(x) = ------------------ ,  -1 &lt;= x &lt;= 1
+               I0(a)
+</PRE>
+<P>
+<PRE>
+         0                      1 &lt;  x
+</PRE>
+This window sits on a pedestal of height 1/I0(a).  The discrete-time window
+of length N is obtained by setting x = 2n/(N-1)-1, for 0 &lt;= n &lt; N.
+<P>
+The parameter a (alpha) determines the shape of the window, with increasing
+a giving a larger mainlobe width.  For a=0, the window is a rectangular.  For
+a = 5.4414, the window has the same mainlobe width as a Hamming window.
+<P>
+<DL>
+<DT>
+Reference:
+</DL>
+J. F. Kaiser, "Nonrecursive digital filter design using the I0-sinh window
+function", Proc. 1974 IEEE Int. Symp. on Circuits and Syst., pp. 20-23,
+April 1974.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  float win[]
+<DD>
+Array containing the window values
+<DT>
+ -&gt; int N
+<DD>
+Number of window values
+<DT>
+ -&gt; double alpha
+<DD>
+Window parameter
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.11  2003/05/09
+<H4>See Also</H4>
+<A HREF="FIKaiserLPF.html">FIKaiserLPF</A>,
+<A HREF="FIfWinHCos.html">FIfWinHCos</A>,
+<A HREF="FIfWinHamm.html">FIfWinHamm</A>,
+<A HREF="FIfWinRCos.html">FIfWinRCos</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

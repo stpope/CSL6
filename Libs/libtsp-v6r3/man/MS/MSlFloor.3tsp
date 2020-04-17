@@ -1,0 +1,37 @@
+.TH MSlFloor 3tsp "TSP (libtsp/MS)"
+.SH Routine
+.in +4n
+.ti -4n
+long int MSlFloor (long int n, long int m)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Floor function for the ratio of two long ints
+.in -4n
+.SH Description
+This routine calculates the floor function of the ratio n/m.  It returns the
+smallest integer that is less than or equal to the quotient.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  long int MSlFloor
+.br
+Returned integer value
+.ti -4n
+ -> long int n
+.br
+Input value (numerator)
+.ti -4n
+ -> long int m
+.br
+Input value (denominator)
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.3  2003/05/09
+.SH See Also
+MSiCeil,
+MSiFloor,
+MSlCeil,
+libtsp

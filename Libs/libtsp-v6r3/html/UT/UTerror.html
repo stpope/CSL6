@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - UTerror</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>UTerror</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void UTerror (const char Errmsg[], ...)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Print user and system error messages, stop with error status set
+</DL>
+<H4>Description</H4>
+This routine first prints a user supplied text.  It then prints the system
+error message corresponding to the last system error encountered.  Messages
+are written to stderr (standard error).  Execution is terminated and the
+exit status is set to EXIT_FAILURE.  Normally this routine is called after a
+system routine has returned an error condition.
+<P>
+The system error message is printed using perror.  The preamble to the system
+error message is either the name of this routine or the string supplied to
+UTsetProg.  An example of the use of this routine is as follows.
+<PRE>
+  UTsetProg ("XXProg");
+  ...
+  fp = fopen (Fname, ...);
+  if (fp == NULL)
+    UTerror ("XXProc: Cannot open file \"%s\"", Fname);
+</PRE>
+If fopen fails, a typical output to stderr would be:
+<PRE>
+  XXProc: Cannot open file "abc"
+  XXProg: No such file or directory
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; const char Errmsg[]
+<DD>
+Character string to be printed.  This string can contain optional
+formatting codes.  The arguments corresponding to the formatting codes
+appear at the end of the argument list.  The input string should not
+normally have a terminating newline character, since this routine
+supplies a newline.
+<DT>
+ -&gt; &lt;args...&gt;
+<DD>
+Arguments corresponding to the formatting codes.  The format string and
+the variable number of arguments is passed on to the system routine
+vprintf.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.27  2003/05/09
+<H4>See Also</H4>
+<A HREF="UThalt.html">UThalt</A>,
+<A HREF="UTwarn.html">UTwarn</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

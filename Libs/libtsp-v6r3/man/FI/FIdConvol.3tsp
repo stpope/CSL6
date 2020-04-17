@@ -1,0 +1,69 @@
+.TH FIdConvol 3tsp "TSP (libtsp/FI)"
+.SH Routine
+.in +4n
+.ti -4n
+void FIdConvol (const double x[], double y[], int Nout, const double h[],
+int Ncof)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Filter a signal with an FIR filter
+.in -4n
+.SH Description
+The procedure convolves a set of filter coefficients with an array of data.
+The input array is x[.].  The first lmem = Ncof-1 samples of x[.] are past
+inputs.  The first output point is calculated with filter coefficient h[0]
+aligned with x[lmem].  The last output point is calculated with h[0] aligned
+with x[lmem+(Nout-1)].
+.PP
+The output array can share storage with the input array, with the output data
+overlaying the input data.  Consider an array x[] with lmem+Nout elements.
+The first lmem elements are past input samples; the next Nout values are new
+input samples.  To share input/output storage, invoke this routine as
+.ft CW
+.nf
+.ne 3
+  FIconvol (x, x, Nout, h, Ncof)
+.fi
+.ft P
+On return, the first Nout elements of x[] are the output values.  The last
+lmem elements are the past input values needed for the next invocation of
+FIconvol.
+.SH Parameters
+.in +4n
+.ti -4n
+ -> const double x[]
+.br
+Input array of data.  Let lmem=Ncof-1.  The first output point point is
+calculated as follows
+.ft CW
+.nf
+.ne 3
+  y[0] = h[0]*x[lmem] + h[1]*x[lmem-1] + h[2]*x[lmem-2] + ...
+.fi
+.ft P
+The array x must have lmem+((Nout-1))+1 elements.
+.ti -4n
+<-  double y[]
+.br
+Output array of samples.  The order of operations is such that this array
+can share storage with the array x.
+.ti -4n
+ -> int Nout
+.br
+Number of output samples to be calculated
+.ti -4n
+ -> const double h[]
+.br
+Array of Ncof filter coefficients
+.ti -4n
+ -> int Ncof
+.br
+Number of filter coefficients
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.1  2005/02/01
+.SH See Also
+libtsp

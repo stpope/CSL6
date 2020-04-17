@@ -1,0 +1,59 @@
+.TH AFsetSpeaker 3tsp "TSP (libtsp/AF)"
+.SH Routine
+.in +4n
+.ti -4n
+int AFsetSpeaker (const char String[])
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Set defaults for loudspeaker spacial positions
+.in -4n
+.SH Description
+This routine sets the default mapping of output channels to speaker
+positions.  The spacial positions of the loudspeakers are specified as a
+list of comma and/or white-space separated locations from the list below.
+.ft CW
+.nf
+.ne 3
+  "FL"  - Front Left
+  "FR"  - Front Right
+  "FC"  - Front Center
+  "LF"  - Low Frequency
+  "BL"  - Back Left
+  "BR"  - Back Right
+  "FLC" - Front Left of Center
+  "FRC" - Front Right of Center
+  "BC"  - Back Center
+  "SL"  - Side Left
+  "SR"  - Side Right
+  "TC"  - Top Center
+  "TFL" - Top Front Left
+  "TFC" - Top Front Center
+  "TFR" - Top Front Right
+  "TBL" - Top Back Lefty
+  "TBC" - Top Back Center
+  "TBR" - Top Back Right
+  "-"   - none
+.fi
+.ft P
+A speaker position can be associated with only one channel.  Only WAVE files
+store the speaker locations in the file header.  In the case of WAVE files,
+the subset of spacial positions must appear in the order given above.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int AFsetSpeaker
+.br
+Error flag, zero for no error
+.ti -4n
+ -> const char String[]
+.br
+String containing the list of speaker positions
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.2  2003/05/09
+.SH See Also
+AFopnWrite,
+libtsp

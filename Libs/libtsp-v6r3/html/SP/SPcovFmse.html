@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - SPcovFmse</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>SPcovFmse</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double SPcovFmse (const float h[], double Ed, const float *R[],
+const float r[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Find the mean-square error for a filter (covariance specified)
+</DL>
+<H4>Description</H4>
+This function calculates the mean-square error for a linear estimation
+problem.  Consider a filter with N coefficients, with coefficient h(i)
+corresponding to lag D(i).  The filter output is
+<PRE>
+         N-1
+  y(k) = SUM h(i) x(k-D(i)) ,
+         i=0
+</PRE>
+where x(i) is the input signal.  The filter error is
+<P>
+<PRE>
+  e(k) = d(k) - y(k) ,
+</PRE>
+<P>
+where d(k) is the desired signal.  The mean-square filtering error can be
+expressed as
+<P>
+<PRE>
+  ferr = Ed - 2 h'r + h'R h .
+</PRE>
+<P>
+The mean-square value Ed, matrix R and vector p are defined as follows
+<P>
+<PRE>
+      Ed = E[d(k)^2]
+  R(i,j) = E[x(k-D(i)) x(k-D(j))],  for 0 &lt;= i,j &lt; N,
+    r(i) = E[d(k) x(k-D(i))],       for 0 &lt;= i &lt; N.
+</PRE>
+<P>
+The expectation operator E[.] is often replaced by a sum over k over a finite
+interval.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  double SPcovFmse
+<DD>
+Resultant filter error energy
+<DT>
+ -&gt; const float h[]
+<DD>
+N element vector of filter coefficients.  Coefficient h[i] is the filter
+coefficient corresponding to lag N1+i.
+<DT>
+ -&gt; double Ed
+<DD>
+Signal energy for the desired signal
+<DT>
+ -&gt; const float *R[]
+<DD>
+R is an array of pointers to the rows of an N by N positive definite
+correlation matrix.  Only the lower triangular portion of R is accessed.
+Note that with ANSI C, if the actual parameter is not declared to have
+the const attribute, an explicit cast to (const float **) is required.      -&gt; const float r[]
+N element vector of cross-correlation values
+<DT>
+ -&gt; int N
+<DD>
+Number of filter coefficients
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.5  2003/05/09
+<H4>See Also</H4>
+<A HREF="SPcovFilt.html">SPcovFilt</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

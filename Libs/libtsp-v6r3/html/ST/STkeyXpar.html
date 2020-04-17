@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - STkeyXpar</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>STkeyXpar</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int STkeyXpar (const char Line[], const char Delims[], const char Quotes[],
+const char *KeyTable[], char Par[])
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Decode keywords and return parameter values
+</DL>
+<H4>Description</H4>
+This routine decodes a keyword and returns the associated parameter value
+from a line of text.  Each parameter specification line contains information
+of the following form.
+<PRE>
+  &lt;keyword&gt; &lt;sep&gt; &lt;value&gt;
+</PRE>
+The value string is separated from the keyword by a character from a set of
+delimiter characters.  The allowable keywords are specified in a keyword
+table.  This routine finds the index of the keyword match and returns the
+value associated with the keyword as a string.
+<P>
+Whitespace before and after the keyword and the value is ignored. The entire
+value may be optionally enclosed in quotes.  The quotes are removed before
+the value is returned.
+<P>
+The format of the keyword table entries is described in the documentation for
+routine STkeyMatch.  This routine prints a warning message if the keyword
+does not match an entry in the keyword table.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int STkeyXpar
+<DD>
+Index of the matched keyword.  This value is set to -1 if no match is
+found.
+<PRE>
+  -1 - No match
+   0 - Match to the first keyword
+   1 - Match to the second keyword
+       ...
+</PRE>
+<DT>
+ -&gt; const char Line[]
+<DD>
+Input text line
+<DT>
+ -&gt; const char Delims[]
+<DD>
+Character string specifying delimiter characters
+<DT>
+ -&gt; const char Quotes[]
+<DD>
+Character string specifying pairs of quote characters (the left and
+right quote characters).  In the part of the input string between a
+matched pair of quote characters, any other characters, including quote
+characters other than from the active pair, are treated as ordinary
+characters.  Up to 5 pairs of quote characters can be specified.  A zero
+length string indicates that quote characters should not to be
+recognized.
+<DT>
+ -&gt; const char *KeyTable[]
+<DD>
+Pointer array with pointers to the keyword strings.  The end of the
+keyword table is signalled with a NULL pointer.  Note that with ANSI C,
+if the actual parameter is not declared to have the const attribute, an
+explicit cast to (const char **) is required.
+<DT>
+&lt;-  char Par[]
+<DD>
+Parameter value associated with the decoded keyword.  This array should
+allow for room for as many characters as are in the input line.  This
+string can be the same string as Line.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.16  2003/05/09
+<H4>See Also</H4>
+<A HREF="STfindToken.html">STfindToken</A>,
+<A HREF="STkeyMatch.html">STkeyMatch</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

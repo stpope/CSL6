@@ -1,0 +1,242 @@
+
+========== tFIgdelFIR
+tFIgdelFIR - group delay = 2.33262
+tFIgdelFIR - group delay = 6.26401
+tFIgdelFIR - group delay = 5.20641
+tFIgdelFIR - group delay = 14.4714
+tFIgdelFIR - group delay = 15
+
+========== tFIgdelIIR
+tFIgdelIIR - group delay = 120.271
+tFIgdelIIR - group delay = 10.3666
+
+========== tFIxKaiserLPF
+Kaiser LPF (d):
+   -0.0013273    0.0023963    0.0062361            0    -0.013439
+      -0.011561     0.015778     0.034502            0    -0.064206
+        -0.056902     0.089836      0.29969          0.4      0.29969
+           0.089836    -0.056902    -0.064206            0     0.034502
+             0.015778    -0.011561    -0.013439            0    0.0062361
+    0.0023963   -0.0013273
+Kaiser LPF (f):
+   -0.0013273    0.0023963    0.0062361            0    -0.013439
+      -0.011561     0.015778     0.034502            0    -0.064206
+        -0.056902     0.089836      0.29969          0.4      0.29969
+           0.089836    -0.056902    -0.064206            0     0.034502
+             0.015778    -0.011561    -0.013439            0    0.0062361
+    0.0023963   -0.0013273
+
+========== tFIxConvol
+x:
+            0            0            1            1            1
+h:
+            5            5            5
+x * h:
+            5           10           15            1            1
+----- ----- ----- -----
+x:
+            0            0            1            1            1
+h:
+            5            5            5
+x * h:
+            5           10           15            1            1
+
+========== tFIxWinXXX
+FIdWinHamm: generalized Hamming window
+         0.08      0.21473         0.54      0.86527            1
+        0.86527         0.54      0.21473         0.08
+FIdWinHamm: generalized Hamming window
+         0.08      0.25319      0.64236      0.95445      0.95445
+        0.64236      0.25319         0.08
+FIdWinHamm: generalized Hamming window
+            0      0.14645          0.5      0.85355            1
+        0.85355          0.5      0.14645            0
+FIdWinHamm: generalized Hamming window
+            1            1            1            1            1
+FIfWinHamm: generalized Hamming window:
+         0.08      0.21473         0.54      0.86527            1
+        0.86527         0.54      0.21473         0.08
+FIfWinHamm: generalized Hamming window:
+         0.08      0.25319      0.64236      0.95445      0.95445
+        0.64236      0.25319         0.08
+FIfWinHamm: generalized Hamming window:
+            0      0.14645          0.5      0.85355            1
+        0.85355          0.5      0.14645            0
+FIfWinHamm: generalized Hamming window:
+            1            1            1            1            1
+FIfWinRCos: Raised Cosine window:
+         0.25         0.75            1            1            1
+              1            1         0.75         0.25
+FIfWinRCos: Raised Cosine window:
+         0.25         0.75            1            1            1
+              1         0.75         0.25
+FIfWinRCos: Raised Cosine window:
+            1            1            1            1            1
+FIdWinKaiser: Kaiser window:
+            1            1            1            1            1
+              1            1            1            1
+FIdWinKaiser: Kaiser window:
+      0.43868      0.65264      0.83476      0.95698            1
+        0.95698      0.83476      0.65264      0.43868
+FIdWinKaiser: Kaiser window:
+      0.78985      0.88957      0.95945      0.99545      0.99545
+        0.95945      0.88957      0.78985
+FIdWinKaiser: Kaiser window:
+     0.036711      0.23054      0.55285      0.86802            1
+        0.86802      0.55285      0.23054     0.036711
+FIfWinKaiser: Kaiser window:
+            1            1            1            1            1
+              1            1            1            1
+FIfWinKaiser: Kaiser window:
+      0.43868      0.65264      0.83476      0.95698            1
+        0.95698      0.83476      0.65264      0.43868
+FIfWinKaiser: Kaiser window:
+      0.78985      0.88957      0.95945      0.99545      0.99545
+        0.95945      0.88957      0.78985
+FIfWinKaiser: Kaiser window:
+     0.036711      0.23054      0.55285      0.86802            1
+        0.86802      0.55285      0.23054     0.036711
+FIfWinHCos: Hamming/Cosine window:
+         0.08     0.085957      0.10367      0.13269      0.17226
+        0.22135      0.27869       0.3428      0.41202      0.48455
+          0.55852      0.63201      0.70312         0.77      0.83092
+            0.88431      0.92879      0.96319      0.98663      0.99851
+                    1      0.91355      0.66913      0.30902
+
+========== tFIxReadFilt
+===== ===== ===== ======
+ Filter file: --path--/test/test.cof
+   FIR filter (direct form)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 4
+FIdReadFilt: type = 1
+Filter coefficients:
+          0.5            1          1.5            2
+----- ----- ----- -----
+ Filter file: --path--/test/test.cof
+   FIR filter (direct form)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 4
+FIfReadFilt: type = 1
+Filter coefficients:
+          0.5            1          1.5            2
+===== ===== ===== ======
+STdec1val - Data format error: "xx"
+FLdReadTF: Data format error, line 3
+----- ----- ----- -----
+STdec1val - Data format error: "xx"
+FLfReadTF: Data format error, line 3
+===== ===== ===== ======
+ Filter file: --path--/test/test.cof
+   IIR filter (cascade biquad sections)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 5  (1 section)
+FIdReadFilt: type = 2
+Filter coefficients:
+          0.5            1          1.5            2          2.5
+----- ----- ----- -----
+ Filter file: --path--/test/test.cof
+   IIR filter (cascade biquad sections)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 5  (1 section)
+FIfReadFilt: type = 2
+Filter coefficients:
+          0.5            1          1.5            2          2.5
+===== ===== ===== ======
+FIdReadFilt: IIR filter: No. coef. must be a multiple of 5
+----- ----- ----- -----
+FIfReadFilt: IIR filter: No. coef. must be a multiple of 5
+===== ===== ===== ======
+ Filter file: --path--/test/test.cof
+   Analog filter (cascade biquad sections)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 5
+FIdReadFilt: type = 5
+Filter coefficients:
+          0.5            1          1.5            2            2
+----- ----- ----- -----
+ Filter file: --path--/test/test.cof
+   Analog filter (cascade biquad sections)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 5
+FIfReadFilt: type = 5
+Filter coefficients:
+          0.5            1          1.5            2            2
+===== ===== ===== ======
+ Filter file: --path--/test/test.cof
+   Undefined filter type  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 4
+FIdReadFilt: type = 0
+Filter coefficients:
+          0.5            1          1.5            2
+----- ----- ----- -----
+ Filter file: --path--/test/test.cof
+   Undefined filter type  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 4
+FIfReadFilt: type = 0
+Filter coefficients:
+          0.5            1          1.5            2
+===== ===== ===== ======
+ Filter file: --path--/test/test.cof
+   FIR filter (direct form, symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 3
+FIdReadFilt: type = 1
+Filter coefficients:
+          0.5            1          0.5
+----- ----- ----- -----
+ Filter file: --path--/test/test.cof
+   FIR filter (direct form, symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 3
+FIfReadFilt: type = 1
+Filter coefficients:
+          0.5            1          0.5
+===== ===== ===== ======
+ Filter file: --path--/test/test.cof
+   FIR filter (direct form, symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 4
+FIdReadFilt: type = 1
+Filter coefficients:
+          0.5            1            1          0.5
+----- ----- ----- -----
+ Filter file: --path--/test/test.cof
+   FIR filter (direct form, symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 4
+FIfReadFilt: type = 1
+Filter coefficients:
+          0.5            1            1          0.5
+===== ===== ===== ======
+ Filter file: --path--/test/test.cof
+   FIR filter (direct form, anti-symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 3
+FIdReadFilt: type = 1
+Filter coefficients:
+          0.5            0         -0.5
+----- ----- ----- -----
+ Filter file: --path--/test/test.cof
+   FIR filter (direct form, anti-symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 3
+FIfReadFilt: type = 1
+Filter coefficients:
+          0.5            0         -0.5
+===== ===== ===== ======
+ Filter file: --path--/test/test.cof
+   Window coefficients (direct form, symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 3
+FIdReadFilt: type = 4
+Filter coefficients:
+          0.5            1          0.5
+----- ----- ----- -----
+ Filter file: --path--/test/test.cof
+   Window coefficients (direct form, symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 3
+FIfReadFilt: type = 4
+Filter coefficients:
+          0.5            1          0.5
+===== ===== ===== ======
+ Filter file: --path--/test/test.cof
+   All-pole filter (direct form, symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 3
+FIdReadFilt: type = 3
+Filter coefficients:
+          0.5            1          0.5
+----- ----- ----- -----
+ Filter file: --path--/test/test.cof
+   All-pole filter (direct form, symmetric)  YYYY-MM-dd hh:mm:ss UTC
+   Number of coefficients: 3
+FIfReadFilt: type = 3
+Filter coefficients:
+          0.5            1          0.5

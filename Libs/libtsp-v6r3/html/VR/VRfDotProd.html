@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - VRfDotProd</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>VRfDotProd</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double VRfDotProd (const float x1[], const float x2[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Dot product of two float arrays (double result)
+</DL>
+<H4>Description</H4>
+This routine calculates the dot product of two float arrays x1 and x2.  The
+dot product is calculated internally as a double and returned as a double
+value.
+<PRE>
+               N-1
+  VRfDotProd = SUM x1[i] * x2[i] .
+               i=0
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  double VRfDotProd
+<DD>
+Dot product
+<DT>
+ -&gt; const float x1[]
+<DD>
+Input array (N elements)
+<DT>
+ -&gt; const float x2[]
+<DD>
+Input array (N elements)
+<DT>
+ -&gt; int N
+<DD>
+Number of elements in the arrays (may be zero)
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.5  2003/05/09
+<H4>See Also</H4>
+<A HREF="VRfDiffSq.html">VRfDiffSq</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

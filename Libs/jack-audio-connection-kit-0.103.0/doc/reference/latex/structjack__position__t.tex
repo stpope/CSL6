@@ -1,0 +1,202 @@
+\hypertarget{structjack__position__t}{
+\section{jack\_\-position\_\-t Struct Reference}
+\label{structjack__position__t}\index{jack_position_t@{jack\_\-position\_\-t}}
+}
+{\tt \#include $<$transport.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{transport_8h_35b13d418f3a4f572b3ea5849b6282f7}{jack\_\-unique\_\-t} \hyperlink{structjack__position__t_fef5d4c26b71fff9dc90704599fa27c5}{unique\_\-1}
+\item 
+\hyperlink{types_8h_71d1a1356a36ae1f9e60b4361e21905e}{jack\_\-time\_\-t} \hyperlink{structjack__position__t_edb03a0d7fde02d2a6f0470bdce6e92a}{usecs}
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__position__t_74278f5e2398691cd7a0854aeeb3ae4c}{frame\_\-rate}
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__position__t_dcf3e36ee8115282aad46485cab6a4be}{frame}
+\item 
+\hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b7}{jack\_\-position\_\-bits\_\-t} \hyperlink{structjack__position__t_9f7d0ee82b6a6ca7ddeae841f3253059}{valid}
+\item 
+int32\_\-t \hyperlink{structjack__position__t_37b51d194a7513e45b56f6524f2d51f2}{bar}
+\item 
+int32\_\-t \hyperlink{structjack__position__t_ed6966981beb595bd0a50e4371805dec}{beat}
+\item 
+int32\_\-t \hyperlink{structjack__position__t_e5e5c0754f1e26bf915455e21cf2eba5}{tick}
+\item 
+double \hyperlink{structjack__position__t_221202600540df269a7b86ff7061b7eb}{bar\_\-start\_\-tick}
+\item 
+float \hyperlink{structjack__position__t_95db8c9493cb07af52d4d2fe851c52af}{beats\_\-per\_\-bar}
+\item 
+float \hyperlink{structjack__position__t_aa2956fbbf561096f9e38ab6350bdb20}{beat\_\-type}
+\item 
+double \hyperlink{structjack__position__t_fd4513bf48d81882ed9af87dd400a9db}{ticks\_\-per\_\-beat}
+\item 
+double \hyperlink{structjack__position__t_348d88736ba362cf12317ec1f8af00ea}{beats\_\-per\_\-minute}
+\item 
+double \hyperlink{structjack__position__t_683f56a64ae2e6252300b510a6781423}{frame\_\-time}
+\item 
+double \hyperlink{structjack__position__t_5cf2de1a44101fdf59c134587f56520d}{next\_\-time}
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__position__t_8c66921efbae8beda14f18a6d3c7f13d}{bbt\_\-offset}
+\item 
+float \hyperlink{structjack__position__t_8a4d89aeb03ef8d47f65c19f577d84d9}{audio\_\-frames\_\-per\_\-video\_\-frame}
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__position__t_c512bcb7a53efd8cb8fe7874ff9a8a81}{video\_\-offset}
+\item 
+int32\_\-t \hyperlink{structjack__position__t_f81dd503d4fca757b4140cdf57b530dc}{padding} \mbox{[}7\mbox{]}
+\item 
+\hyperlink{transport_8h_35b13d418f3a4f572b3ea5849b6282f7}{jack\_\-unique\_\-t} \hyperlink{structjack__position__t_bcfabeff4d1c57da319ddd4ee12b7071}{unique\_\-2}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Struct for transport position information. 
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structjack__position__t_8a4d89aeb03ef8d47f65c19f577d84d9}{
+\index{jack_position_t@{jack\_\-position\_\-t}!audio_frames_per_video_frame@{audio\_\-frames\_\-per\_\-video\_\-frame}}
+\index{audio_frames_per_video_frame@{audio\_\-frames\_\-per\_\-video\_\-frame}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[audio\_\-frames\_\-per\_\-video\_\-frame]{\setlength{\rightskip}{0pt plus 5cm}float \hyperlink{structjack__position__t_8a4d89aeb03ef8d47f65c19f577d84d9}{jack\_\-position\_\-t::audio\_\-frames\_\-per\_\-video\_\-frame}}}
+\label{structjack__position__t_8a4d89aeb03ef8d47f65c19f577d84d9}
+
+
+number of audio frames per video frame. Should be assumed zero if Jack\-Audio\-Video\-Ratio is not set. If Jack\-Audio\-Video\-Ratio is set and the value is zero, no video data exists within the JACK graph \hypertarget{structjack__position__t_37b51d194a7513e45b56f6524f2d51f2}{
+\index{jack_position_t@{jack\_\-position\_\-t}!bar@{bar}}
+\index{bar@{bar}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[bar]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t \hyperlink{structjack__position__t_37b51d194a7513e45b56f6524f2d51f2}{jack\_\-position\_\-t::bar}}}
+\label{structjack__position__t_37b51d194a7513e45b56f6524f2d51f2}
+
+
+current bar \hypertarget{structjack__position__t_221202600540df269a7b86ff7061b7eb}{
+\index{jack_position_t@{jack\_\-position\_\-t}!bar_start_tick@{bar\_\-start\_\-tick}}
+\index{bar_start_tick@{bar\_\-start\_\-tick}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[bar\_\-start\_\-tick]{\setlength{\rightskip}{0pt plus 5cm}double \hyperlink{structjack__position__t_221202600540df269a7b86ff7061b7eb}{jack\_\-position\_\-t::bar\_\-start\_\-tick}}}
+\label{structjack__position__t_221202600540df269a7b86ff7061b7eb}
+
+
+\hypertarget{structjack__position__t_8c66921efbae8beda14f18a6d3c7f13d}{
+\index{jack_position_t@{jack\_\-position\_\-t}!bbt_offset@{bbt\_\-offset}}
+\index{bbt_offset@{bbt\_\-offset}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[bbt\_\-offset]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__position__t_8c66921efbae8beda14f18a6d3c7f13d}{jack\_\-position\_\-t::bbt\_\-offset}}}
+\label{structjack__position__t_8c66921efbae8beda14f18a6d3c7f13d}
+
+
+frame offset for the BBT fields (the given bar, beat, and tick values actually refer to a time frame\_\-offset frames before the start of the cycle), should be assumed to be 0 if Jack\-BBTFrame\-Offset is not set. If Jack\-BBTFrame\-Offset is set and this value is zero, the BBT time refers to the first frame of this cycle. If the value is positive, the BBT time refers to a frame that many frames before the start of the cycle. \hypertarget{structjack__position__t_ed6966981beb595bd0a50e4371805dec}{
+\index{jack_position_t@{jack\_\-position\_\-t}!beat@{beat}}
+\index{beat@{beat}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[beat]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t \hyperlink{structjack__position__t_ed6966981beb595bd0a50e4371805dec}{jack\_\-position\_\-t::beat}}}
+\label{structjack__position__t_ed6966981beb595bd0a50e4371805dec}
+
+
+current beat-within-bar \hypertarget{structjack__position__t_aa2956fbbf561096f9e38ab6350bdb20}{
+\index{jack_position_t@{jack\_\-position\_\-t}!beat_type@{beat\_\-type}}
+\index{beat_type@{beat\_\-type}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[beat\_\-type]{\setlength{\rightskip}{0pt plus 5cm}float \hyperlink{structjack__position__t_aa2956fbbf561096f9e38ab6350bdb20}{jack\_\-position\_\-t::beat\_\-type}}}
+\label{structjack__position__t_aa2956fbbf561096f9e38ab6350bdb20}
+
+
+time signature \char`\"{}denominator\char`\"{} \hypertarget{structjack__position__t_95db8c9493cb07af52d4d2fe851c52af}{
+\index{jack_position_t@{jack\_\-position\_\-t}!beats_per_bar@{beats\_\-per\_\-bar}}
+\index{beats_per_bar@{beats\_\-per\_\-bar}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[beats\_\-per\_\-bar]{\setlength{\rightskip}{0pt plus 5cm}float \hyperlink{structjack__position__t_95db8c9493cb07af52d4d2fe851c52af}{jack\_\-position\_\-t::beats\_\-per\_\-bar}}}
+\label{structjack__position__t_95db8c9493cb07af52d4d2fe851c52af}
+
+
+time signature \char`\"{}numerator\char`\"{} \hypertarget{structjack__position__t_348d88736ba362cf12317ec1f8af00ea}{
+\index{jack_position_t@{jack\_\-position\_\-t}!beats_per_minute@{beats\_\-per\_\-minute}}
+\index{beats_per_minute@{beats\_\-per\_\-minute}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[beats\_\-per\_\-minute]{\setlength{\rightskip}{0pt plus 5cm}double \hyperlink{structjack__position__t_348d88736ba362cf12317ec1f8af00ea}{jack\_\-position\_\-t::beats\_\-per\_\-minute}}}
+\label{structjack__position__t_348d88736ba362cf12317ec1f8af00ea}
+
+
+\hypertarget{structjack__position__t_dcf3e36ee8115282aad46485cab6a4be}{
+\index{jack_position_t@{jack\_\-position\_\-t}!frame@{frame}}
+\index{frame@{frame}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[frame]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__position__t_dcf3e36ee8115282aad46485cab6a4be}{jack\_\-position\_\-t::frame}}}
+\label{structjack__position__t_dcf3e36ee8115282aad46485cab6a4be}
+
+
+frame number, always present \hypertarget{structjack__position__t_74278f5e2398691cd7a0854aeeb3ae4c}{
+\index{jack_position_t@{jack\_\-position\_\-t}!frame_rate@{frame\_\-rate}}
+\index{frame_rate@{frame\_\-rate}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[frame\_\-rate]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__position__t_74278f5e2398691cd7a0854aeeb3ae4c}{jack\_\-position\_\-t::frame\_\-rate}}}
+\label{structjack__position__t_74278f5e2398691cd7a0854aeeb3ae4c}
+
+
+current frame rate (per second) \hypertarget{structjack__position__t_683f56a64ae2e6252300b510a6781423}{
+\index{jack_position_t@{jack\_\-position\_\-t}!frame_time@{frame\_\-time}}
+\index{frame_time@{frame\_\-time}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[frame\_\-time]{\setlength{\rightskip}{0pt plus 5cm}double \hyperlink{structjack__position__t_683f56a64ae2e6252300b510a6781423}{jack\_\-position\_\-t::frame\_\-time}}}
+\label{structjack__position__t_683f56a64ae2e6252300b510a6781423}
+
+
+current time in seconds \hypertarget{structjack__position__t_5cf2de1a44101fdf59c134587f56520d}{
+\index{jack_position_t@{jack\_\-position\_\-t}!next_time@{next\_\-time}}
+\index{next_time@{next\_\-time}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[next\_\-time]{\setlength{\rightskip}{0pt plus 5cm}double \hyperlink{structjack__position__t_5cf2de1a44101fdf59c134587f56520d}{jack\_\-position\_\-t::next\_\-time}}}
+\label{structjack__position__t_5cf2de1a44101fdf59c134587f56520d}
+
+
+next sequential frame\_\-time (unless repositioned) \hypertarget{structjack__position__t_f81dd503d4fca757b4140cdf57b530dc}{
+\index{jack_position_t@{jack\_\-position\_\-t}!padding@{padding}}
+\index{padding@{padding}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[padding]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t \hyperlink{structjack__position__t_f81dd503d4fca757b4140cdf57b530dc}{jack\_\-position\_\-t::padding}\mbox{[}7\mbox{]}}}
+\label{structjack__position__t_f81dd503d4fca757b4140cdf57b530dc}
+
+
+\hypertarget{structjack__position__t_e5e5c0754f1e26bf915455e21cf2eba5}{
+\index{jack_position_t@{jack\_\-position\_\-t}!tick@{tick}}
+\index{tick@{tick}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[tick]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t \hyperlink{structjack__position__t_e5e5c0754f1e26bf915455e21cf2eba5}{jack\_\-position\_\-t::tick}}}
+\label{structjack__position__t_e5e5c0754f1e26bf915455e21cf2eba5}
+
+
+current tick-within-beat \hypertarget{structjack__position__t_fd4513bf48d81882ed9af87dd400a9db}{
+\index{jack_position_t@{jack\_\-position\_\-t}!ticks_per_beat@{ticks\_\-per\_\-beat}}
+\index{ticks_per_beat@{ticks\_\-per\_\-beat}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[ticks\_\-per\_\-beat]{\setlength{\rightskip}{0pt plus 5cm}double \hyperlink{structjack__position__t_fd4513bf48d81882ed9af87dd400a9db}{jack\_\-position\_\-t::ticks\_\-per\_\-beat}}}
+\label{structjack__position__t_fd4513bf48d81882ed9af87dd400a9db}
+
+
+\hypertarget{structjack__position__t_fef5d4c26b71fff9dc90704599fa27c5}{
+\index{jack_position_t@{jack\_\-position\_\-t}!unique_1@{unique\_\-1}}
+\index{unique_1@{unique\_\-1}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[unique\_\-1]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{transport_8h_35b13d418f3a4f572b3ea5849b6282f7}{jack\_\-unique\_\-t} \hyperlink{structjack__position__t_fef5d4c26b71fff9dc90704599fa27c5}{jack\_\-position\_\-t::unique\_\-1}}}
+\label{structjack__position__t_fef5d4c26b71fff9dc90704599fa27c5}
+
+
+unique ID \hypertarget{structjack__position__t_bcfabeff4d1c57da319ddd4ee12b7071}{
+\index{jack_position_t@{jack\_\-position\_\-t}!unique_2@{unique\_\-2}}
+\index{unique_2@{unique\_\-2}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[unique\_\-2]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{transport_8h_35b13d418f3a4f572b3ea5849b6282f7}{jack\_\-unique\_\-t} \hyperlink{structjack__position__t_bcfabeff4d1c57da319ddd4ee12b7071}{jack\_\-position\_\-t::unique\_\-2}}}
+\label{structjack__position__t_bcfabeff4d1c57da319ddd4ee12b7071}
+
+
+unique ID \hypertarget{structjack__position__t_edb03a0d7fde02d2a6f0470bdce6e92a}{
+\index{jack_position_t@{jack\_\-position\_\-t}!usecs@{usecs}}
+\index{usecs@{usecs}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[usecs]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_71d1a1356a36ae1f9e60b4361e21905e}{jack\_\-time\_\-t} \hyperlink{structjack__position__t_edb03a0d7fde02d2a6f0470bdce6e92a}{jack\_\-position\_\-t::usecs}}}
+\label{structjack__position__t_edb03a0d7fde02d2a6f0470bdce6e92a}
+
+
+monotonic, free-rolling \hypertarget{structjack__position__t_9f7d0ee82b6a6ca7ddeae841f3253059}{
+\index{jack_position_t@{jack\_\-position\_\-t}!valid@{valid}}
+\index{valid@{valid}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[valid]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{transport_8h_2c97bd120f26ce62aba5c2692b4482b7}{jack\_\-position\_\-bits\_\-t} \hyperlink{structjack__position__t_9f7d0ee82b6a6ca7ddeae841f3253059}{jack\_\-position\_\-t::valid}}}
+\label{structjack__position__t_9f7d0ee82b6a6ca7ddeae841f3253059}
+
+
+which other fields are valid \hypertarget{structjack__position__t_c512bcb7a53efd8cb8fe7874ff9a8a81}{
+\index{jack_position_t@{jack\_\-position\_\-t}!video_offset@{video\_\-offset}}
+\index{video_offset@{video\_\-offset}!jack_position_t@{jack\_\-position\_\-t}}
+\subsubsection[video\_\-offset]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__position__t_c512bcb7a53efd8cb8fe7874ff9a8a81}{jack\_\-position\_\-t::video\_\-offset}}}
+\label{structjack__position__t_c512bcb7a53efd8cb8fe7874ff9a8a81}
+
+
+audio frame at which the first video frame in this cycle occurs. Should be assumed to be 0 if Jack\-Video\-Frame\-Offset is not set. If Jack\-Video\-Frame\-Offset is set, but the value is zero, there is no video frame within this cycle. 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{transport_8h}{transport.h}\end{CompactItemize}

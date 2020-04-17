@@ -1,0 +1,29 @@
+.TH FLprompt 3tsp "TSP (libtsp/FL)"
+.SH Routine
+.in +4n
+.ti -4n
+void FLprompt (const char Prompt[]);
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Print a prompt
+.in -4n
+.SH Description
+This routine prints a prompt string if both standard output and standard
+input are terminals.
+.SH Parameters
+.in +4n
+.ti -4n
+ -> const char Prompt[]
+.br
+Prompt string.  This string is printed to standard output if both
+standard output and standard input are terminals.  If Prompt is NULL, no
+prompt is printed.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.13  2003/05/09
+.SH See Also
+FLreadLine,
+libtsp

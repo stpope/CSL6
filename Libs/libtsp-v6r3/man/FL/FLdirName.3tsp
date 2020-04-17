@@ -1,0 +1,63 @@
+.TH FLdirName 3tsp "TSP (libtsp/FL)"
+.SH Routine
+.in +4n
+.ti -4n
+int FLdirName (const char Fname[], char Bname[])
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Return all but the last component of a file path
+.in -4n
+.SH Description
+This routine takes a file path specification and returns all but the
+right-most component of the file name.  Components are separated by "/"
+characters.  If no "/" character appears in the name, an empty string is
+returned.  For Windows, the directory separator character is "\\".
+.PP
+Examples:
+.ft CW
+.nf
+.ne 3
+   "abc/def"      => "abc"
+   "abc/def/"     => "abc/def"
+   "abc/bcd/def"  => "abc/bcd"
+   "/abc/def"     => "/abc"
+   "/abc/bcd/def" => "/abc/bcd"
+   "./def"        => "."
+   "def"          => ""
+.fi
+.ft P
+Special cases:
+.ft CW
+.nf
+.ne 3
+   "/def"         => "/"
+   "/"            => "/"
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int FLdirName
+.br
+Number of characters in the output string
+.ti -4n
+ -> const char Fname[]
+.br
+Input character string with the path name
+.ti -4n
+<-  char Bname[]
+.br
+Output string with the all but the last path name component.  This string
+at most FILENAME_MAX characters long including the terminating null
+character.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.22  2003/05/09
+.SH See Also
+FLbaseName,
+FLdefName,
+FLexpHome,
+libtsp

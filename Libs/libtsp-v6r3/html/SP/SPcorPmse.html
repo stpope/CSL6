@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - SPcorPmse</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>SPcorPmse</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double SPcorPmse (const float pc[], const float rxx[], int Np)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Calculate the mean-square prediction error
+</DL>
+<H4>Description</H4>
+This function calculates the mean-square prediction error for a linear
+predictor.  Consider a linear predictor with Np coefficients,
+<PRE>
+          Np
+  y(k) = SUM p(i) x(k-i) ,
+         i=1
+</PRE>
+where x(k) is the input signal.  The prediction error is
+<P>
+<PRE>
+  e(k) = x(k) - y(k) .
+</PRE>
+<P>
+The mean-square prediction error is E[e(k)^2] or in vector-matrix notation
+<P>
+<PRE>
+  E = Ex - 2 p'r + p'R p ,
+</PRE>
+<P>
+The mean-square value Ex, matrix R and vector p are defined as follows
+<PRE>
+      Ex = E[x(k)^2]
+  R(i,j) = E[x(k-i) x(k-j)],  for 1 &lt;= i,j &lt;= Np,
+    r(i) = E[x(k) x(k-i)],    for 1 &lt;= i &lt;= Np.
+</PRE>
+<P>
+For this routine, the matrix R must be symmetric and Toeplitz.  Then
+<P>
+<PRE>
+  R(i,j) = rxx(|i-j|)
+    r(i) = rxx(i)
+</PRE>
+<P>
+Predictor coefficients are usually expressed algebraically as vectors with
+1-offset indexing.  The correspondence to the 0-offset C-arrays is as
+follows.
+<PRE>
+  p(1) &lt;==&gt; pc[0]       predictor coefficient corresponding to lag 1
+  p(i) &lt;==&gt; pc[i-1]     1 &lt;= i &lt; Np
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  double SPcorPmse
+<DD>
+Resultant mean-square prediction error
+<DT>
+ -&gt; const float pc[]
+<DD>
+Np element vector of predictor coefficients.  Coefficient pc[i] is the
+predictor coefficient corresponding to lag i+1.
+<DT>
+ -&gt; const float rxx[]
+<DD>
+Np+1 element vector of autocorrelation values.  Element rxx[i] is the
+autocorrelation at lag i.
+<DT>
+-&gt;  int Np
+<DD>
+Number of predictor coefficients
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.6  2003/05/09
+<H4>See Also</H4>
+<A HREF="SPcorXpc.html">SPcorXpc</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,53 @@
+<html>
+<head>
+   <link rel=stylesheet href="styles.css" type="text/css">
+   <title>Usage Notes</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="manual.htm">Prev</a> |
+<a href="index.htm">Up</a> |
+Next</a>
+</h6>
+
+<h2>Usage Notes</h2>
+
+<p>
+Following are few tips for not-so-experienced C++ programmers on how to use this matrix class in their programs. Experienced programmers may skip this page.
+
+<ol>
+
+<li>
+Declare matrix variables in your program only when you need them, i.e., just before using them in your program, and always provide the required row and column numbers in the constructor (except when you are initializing them from another matrix variable). This is because memory for the matrix objects is always allocated on free store using <i>new</i> operator. Note that a matrix variable only holds a pointer to this memory block and occupies only 4-bytes on 32-bit systems.
+</li>
+
+<br><br>
+
+<li>
+Do not use &quot;<i>resize()</i>&quot; method to change the size of a matrix object as this is often unnecessary. Declare the matrix object with right row and column numbers when you have these values in your program. Note that you can always assign a matrix object to another one even if they are not of the same size.
+</li>
+
+<br><br>
+
+<li>
+Please always remember that matrix calculations are inherently computationally expensive. Try to avoid unnecessary / repeated matrix calculations in your program. Also try to write expressions that involves matrix objects in optimal way in your program. If you are in doubt about it, step through the source code in your debugger to find out how it works. However, note that the compiler will expand many inline functions when optimization is enabled.
+</li>
+
+<br><br>
+
+<li>
+Build the debug version of your program with exception enabled, by defining the constant <i>RANGE_CHECK_</i>, to catch common out-of-range errors. You can disable this feature for the release build of your application. Note that matrix class does not throw any exception on its own if this constant is not defined.
+</li>
+
+<br><br>
+
+<li>
+Don't forget to enable optimization when building the release version of your program. There can be 2-3 times increase in speed when compiler optimizations are enable in building your program. The exact value will depend both on your program as well as the compiler that you are using.
+</li>
+
+</ol>
+</p>
+
+</body>
+</html>

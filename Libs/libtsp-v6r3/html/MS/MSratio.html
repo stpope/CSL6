@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - MSratio</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>MSratio</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void MSratio (double Val, long int *N, long int *D, double tol,
+long int MaxN, long int MaxD)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Find a ratio of integers approximation to a floating point value
+</DL>
+<H4>Description</H4>
+A continued fraction expansion approximation to a given floating point
+value is calculated iteratively.  At successive stages in the expansion,
+the approximation error for the convergents alternates in sign but with
+diminishing magnitude.  The expansion is terminated when either two
+conditions is satisfied.
+<DL>
+<DT>
+1: The magnitude of either the numerator or the denominator of the
+approximation is larger than a given limit.  If so, the secondary
+convergents are tested to see if one provides a smaller error than
+backing off to the convergent from the previous iteration.
+<DT>
+2: The absolute value of the difference between the approximation (N/D) and
+the given number is less than a specified value (tol).
+</DL>
+If the input value is exactly a ratio of integers, this routine will find
+those integers if tol is set to zero, and MaxN and MaxD are appropriately
+large.
+<P>
+Consider that case that the iteration is stopped by either the numerator
+exceeding MaxN or the denominator exceeding MaxD.  The resulting fraction
+N/D is the fraction nearest Val amongst those fractions with numerator and
+denominator not exceeding the given limits.
+<P>
+<DL>
+<DT>
+References:
+</DL>
+R. B. J. T. Allenby and E. J. Redfern, "Introduction to Number Theory with
+Computing", Edward Arnold, 1989.
+<P>
+I. Niven and H. S. Zuckerman, "An Introduction to the Theory of Numbers",
+4th ed., John Wiley &amp; Sons, 1980.
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; double Val
+<DD>
+Value to be approximated.  This value should have a magnitude between
+1/MaxD and MaxN.
+<DT>
+&lt;-  long int N
+<DD>
+Numerator in the rational approximation to Val.  N is negative if Val is
+negative.
+<DT>
+&lt;-  long int D
+<DD>
+Denominator in the rational approximation to Val.
+<DT>
+ -&gt; double tol
+<DD>
+Error tolerance used to terminate the approximation
+<DT>
+ -&gt; long int MaxN
+<DD>
+Maximum value for N.  This value should be at least floor(|Val|).
+<DT>
+ -&gt; long int MaxD
+<DD>
+Maximum value for D.  This value should be at least floor(1/|Val|).
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.7  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

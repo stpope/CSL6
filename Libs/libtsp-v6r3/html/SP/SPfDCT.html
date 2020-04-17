@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - SPfDCT</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>SPfDCT</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void SPfDCT (float x[], int N, int Ifn)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Calculate the discrete cosine transform
+</DL>
+<H4>Description</H4>
+This routine calculates the discrete cosine transform (DCT) or the inverse
+DCT of N data values using a complex N/2 point fast Fourier transform
+algorithm.  This routine performs the calculation in place, that is the
+output data replaces the input data.  The DCT is defined as,
+<P>
+<PRE>
+              N-1            pi (2n+1) k
+  X(k) = C(k) SUM x(n) * cos(-----------) ,
+              n=0               2N
+</PRE>
+<P>
+<PRE>
+  where C(k) = 1       for k=0,
+             = sqrt(2) for k=1,2,...,N-1.
+</PRE>
+<P>
+The inverse DCT is defined as,
+<P>
+<PRE>
+         1  N-1                 pi (2n+1) k
+  x(n) = -  SUM C(k)*X(k) * cos(-----------) .
+         N  k=0                     2N
+</PRE>
+<P>
+<DL>
+<DT>
+Reference:
+<DD>
+M. J. Narasimha and A. M. Peterson, "On the computation of the Discrete
+Cosine Transform", IEEE Trans. Communications, vol. COM-26, June 1978,
+pp. 934-936.
+</DL>
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-&gt; float x[]
+<DD>
+For the forward transform, this is an array of data samples on input and
+the array of DCT coefficients on output.  For the inverse transform, this
+is an array of DCT coefficients on input and the data samples on output.
+<DT>
+ -&gt; int N
+<DD>
+Number of points in the transform (a power of 2)
+<DT>
+ -&gt; int Ifn
+<DD>
+Input parameter, equal to +1 for the DCT, equal to -1 for the inverse DCT
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.13  2003/05/09
+<H4>See Also</H4>
+<A HREF="SPfRFFT.html">SPfRFFT</A>,
+<A HREF="SPfCFFT.html">SPfCFFT</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,197 @@
+.TH UTgetOption 3tsp "TSP (libtsp/UT)"
+.SH Routine
+.in +4n
+.ti -4n
+int UTgetOption (int *Index, int argc, const char *argv[],
+const char *OptTable[], const char *OptArg[])
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Decode command line options and arguments
+.in -4n
+.SH Description
+This routine decodes command line options, returning option values and other
+(non-option) argument strings.  Typically this routine is used to decode Unix
+style command options and to return argument strings.  An example of a Unix
+command line is as follows.
+.ft CW
+.nf
+.ne 3
+  command -x -f name --delay=30 argA argB.
+.fi
+.ft P
+Each of the items in the command line, including the command itself, appears
+in an array of strings.  This routine compares the elements of the command
+line after the command name for a match to a table of option keywords.
+Options normally have a leading "-" character.
+.PP
+The table of keywords contains entries which can specify the minimum length
+needed for a match with an optional "*" character.
+.in +4n
+.ti -4n
+-d
+.br
+This form specifies that an exact match to "-d" is required.  The "-"
+character is just treated as an ordinary character for the match.
+.ti -4n
+--d*elay
+.br
+This form specifies that the option must match the first three characters
+and optionally match additional characters.  For instance, "--d" matches
+as does "--del", but not "--dx".
+.in -4n
+.PP
+The need for an option value is signalled in two ways.
+.in +4n
+.ti -4n
+-d#
+.br
+The presence of the trailing "#" indicates that the option can either
+directly follow the option as in "-d30" or in the next argument as in
+"-d" followed by "30" in the next argument.
+.ti -4n
+--d*elay=
+.br
+The presence of the trailing "=" indicates that the option can either
+follow the option, separated by a '=' character as in "--del=30" or in
+the next argument as in "--del" followed by "30" in the next argument.
+.in -4n
+.PP
+The keywords are searched in order.  Keywords can contain a second asterisk
+can be used to indicate that characters after this point need not match.
+.PP
+Errors detected by this routine result in an error message being printed and
+an error code being returned.
+.in +4n
+.ti -4n
+Invalid option:
+.br
+If all keywords in the list of option keywords start with a "-"
+character, then any argument with a leading "-", followed by one or
+more characters and not matching any of the options causes an error
+condition.  This means that ordinary arguments (non-option) cannot start
+with a "-" if the first option keyword starts with a "-".
+.ti -4n
+Missing option value:
+.br
+If an option requires a value, and none is supplied, an error is
+reported.  Such an error can only happen if the option is the last item
+in the list of arguments, since in other cases the item after the option
+will be picked up as the option value.
+.in -4n
+.PP
+The results of the option scan are communicated to the calling program via
+the pointer OptArg.  OptArg is a pointer to a pointer to a null terminated
+strings (substrings of the strings in argv).  The interpretation of these
+strings is given by the return code.  When this routine is called in a
+loop, the OptArg strings are returned in the same order as the options and
+arguments appeared in argv.  The OptArg pointer can be NULL.  This is the
+case for an option with no option value.  Each call to UTgetOption returns
+at most one option or argument.
+.PP
+Return codes:
+.ft CW
+.nf
+.ne 3
+  -2 - Error detected, invalid option or missing value
+  -1 - Normal end of processing
+   0 - Argument string, not an option.
+   n - Option specified by the n'th keyword, n >= 1.
+.fi
+.ft P
+For the non-negative return codes, the argument string or the option value
+string are pointed to by OptArg.  OptArg will be NULL for an option for which
+no option value is allowed.
+.PP
+The use of this routine is illustrated in the following program fragment.
+.ft CW
+.nf
+.ne 3
+  static const char *OptTable[] = {
+    "-d#", "--d*elay=",
+    "-p", "--p*rint",
+    NULL};
+
+  void main (int argc, const char *argv[])
+  {
+    const char *OptArg;
+    int Index;
+    int n;
+
+    Index = 1;
+    while (Index < argc) {
+      n = UTgetOption (&Index, argc, argv, OptTable, &OptArg);
+      switch (n) {
+      case 0:
+        ... process non-option OptArg
+        break;
+      case 1:
+      case 2:
+        ... process option 1 (-d or --delay)
+        break;
+      case 3:
+      case 4:
+        ... process option 2 (-p or --print)
+        break;
+      default:
+        ... error
+      }
+    }
+  }
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int UTgetOptions
+.br
+Status code,
+.ft CW
+.nf
+.ne 3
+   -2 - Error, invalid option or missing value
+   -1 - End of arguments/options
+    0 - Argument value
+  >=1 - Option code
+.fi
+.ft P
+.ti -4n
+<-> int *Index
+.br
+Integer used internally for saving the state of the search.  It is the
+index of the next element of argv to be examined.  This value should be
+saved from call to call.  Note that the index may be incremented by zero
+(error detected), one or two (option followed by a value in the next
+element of argv).  The initial value of Index should be one.
+.ti -4n
+ -> int argc
+.br
+Number of argument strings in argv
+.ti -4n
+ -> const char *argv[]
+.br
+Pointers to option/argument strings.  Note that with ANSI C, if the
+actual parameter is not declared to have the const attribute, an explicit
+cast to (const char **) is required.
+.ti -4n
+ -> const char *OptTable[]
+.br
+Pointers to the option keywords.  The end of the keyword table is
+signalled by a NULL pointer.  Note that with ANSI C, if the actual
+parameter is not declared to have the const attribute, an explicit cast
+to (const char **) is required.
+.ti -4n
+<-  const char *OptArg[]
+.br
+Argument/option string.  For an argument or an option taking a value,
+this is a pointer to a null terminated substring string in argv.  If the
+decoded option does not take a value, this pointer will be NULL.  Note
+that with ANSI C, if the actual parameter is not declared to have the
+const attribute, an explict cast to (const char **) is required.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.31  2003/05/09
+.SH See Also
+libtsp

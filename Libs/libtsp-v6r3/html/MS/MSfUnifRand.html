@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - MSfUnifRand</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>MSfUnifRand</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double MSfUnifRand (void)
+<DT>
+void MSrandSeed (int seed)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Generate a uniformly distributed pseudo-random value
+<DT>
+Reseed the uniform pseudo-random value
+</DL>
+<H4>Description</H4>
+This routine generates uniformly distributed pseudo-random numbers.  The
+multiplicative congruential method is used to generate integer pseudo-random
+numbers, is = (a*is) % m.  The values a=16807 and m=2147483647 are used.
+These values have been shown to give good results.  Further, the values
+generated are shuffled to give better serial correlation properties.  The
+pseudo-random number generation routine is self initializing, but if a
+different sequence of pseudo-random values is desired, the routine MSrandSeed
+can be used to supply a starting (seed) value.
+<P>
+<DL>
+<DT>
+Reference:
+<DD>
+W. H. Press, S. A. Teukolsky, W. T. Vetterling, B. P. Flannery,
+"Numerical Recipes in C" (2nd ed.) (p. 280), Cambridge University Press,
+1992.
+</DL>
+<H4>Parameters</H4>
+<DL>
+<DT>
+MSfUnifRand:
+<DT>
+&lt;-  double MSfUnifRand
+<DD>
+Uniform deviate with values between 0 and 1, exclusive of the end points.
+<DT>
+MSrandSeed:
+<DT>
+ -&gt; int seed
+<DD>
+Seed value.  A positive seed value sets the pseudo-random generation to a
+new sequence.  A zero value sets the actual seed to a value based on the
+current time.  The default sequence can be restarted by setting the seed
+value to 12345.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.18  2003/05/09
+<H4>See Also</H4>
+<A HREF="MSfGaussRand.html">MSfGaussRand</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

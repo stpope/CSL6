@@ -1,0 +1,39 @@
+
+========== tFNgcd
+FNgcd: gcd (0,0) -> 0
+FNgcd: gcd (0,55) -> 55
+FNgcd: gcd (55,0) -> 55
+FNgcd: gcd (55,55) -> 55
+FNgcd: gcd (1,55) -> 1
+FNgcd: gcd (55,1) -> 1
+FNgcd: gcd (55,5) -> 5
+FNgcd: gcd (5,55) -> 5
+FNgcd: gcd (-5,55) -> 5
+FNgcd: gcd (-5,-55) -> 5
+FNgcd: gcd (5,-55) -> 5
+FNgcd: gcd (6,55) -> 1
+FNgcd: gcd (6,56) -> 2
+
+========== tFNxxx
+FNbessI0: 0 -> 1
+FNbessI0: 0.5 -> 1.06348
+FNbessI0: 10 -> 2815.72
+FNbessI0: 20 -> 4.35583e+07
+FNbessI0: -0.5 -> 1.06348
+FNsinc: 0 -> 1
+FNsinc: -1 -> 0
+FNsinc: 1 -> 0
+FNsinc: 0.5 -> 0.63662
+FNsinc: -0.5 -> 0.63662
+FNsinc: 3 -> 0
+FNsinc: 3.5 -> -0.0909457
+FNsinc: -3.5 -> -0.0909457
+
+========== tFNiLog2
+FNiLog2: 8 -> 3
+FNiLog2: Non-positive input value
+FNiLog2: 1025 -> 11
+FNiLog2: 1024 -> 10
+FNiLog2: 1023 -> 10
+FNiLog2: 1 -> 0
+FNiLog2: 32768 -> 15

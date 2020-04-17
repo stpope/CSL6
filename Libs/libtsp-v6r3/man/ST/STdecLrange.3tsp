@@ -1,0 +1,42 @@
+.TH STdecLrange 3tsp "TSP (libtsp/ST)"
+.SH Routine
+.in +4n
+.ti -4n
+int STdecLrange (const char String[], long int *Lval1, long int *Lval2)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Decode a range specification for long integer values
+.in -4n
+.SH Description
+This routine decodes a string specifying a range of long integer values.  The
+range is specified in the form "Lv" or "Lv1:Lv2", for example "-23 : 45".
+Optional white-space (as defined by isspace) can surround the values.  For
+the case of a single value Lv, this is equivalent to the range "Lv:Lv".  If
+an error is encountered, neither output value is set.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int STdecIrange
+.br
+Error status, 0 for no error, 1 for error
+.ti -4n
+ -> const char String[]
+.br
+Input string
+.ti -4n
+<-  long int *Lval1
+.br
+First value
+.ti -4n
+<-  long int *Lval2
+.br
+Second value
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.7  2003/05/09
+.SH See Also
+STdecIrange,
+libtsp

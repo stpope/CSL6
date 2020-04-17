@@ -1,0 +1,16 @@
+Determining if the function __RTTI___ exists in the Crun failed with the following output:
+Change Dir: /Content/Code/CSL_Libs/taglib-1.7/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6df25/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_6df25.dir/build.make CMakeFiles/cmTC_6df25.dir/build
+Building C object CMakeFiles/cmTC_6df25.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Qunused-arguments -DCHECK_FUNCTION_EXISTS=__RTTI___ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk   -o CMakeFiles/cmTC_6df25.dir/CheckFunctionExists.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.9/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6df25
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6df25.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -Qunused-arguments -DCHECK_FUNCTION_EXISTS=__RTTI___ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/X11/lib -L/usr/local/lib -L/opt/local/lib  CMakeFiles/cmTC_6df25.dir/CheckFunctionExists.c.o  -o cmTC_6df25 -lCrun 
+ld: library not found for -lCrun
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_6df25] Error 1
+make: *** [cmTC_6df25/fast] Error 2
+
+

@@ -1,0 +1,140 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Utility methods</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="matdcmp.htm">Prev</a> |
+<a href="manual.htm">Up</a> |
+<a href="matfunc.htm">Next</a>
+</h6>
+
+<h2>Utility methods</h2>
+
+<p>
+The following utility methods are available in the matrix class.
+</p>
+
+<pre><code>1. size_t <a href="#m1">size</a> () const;
+2. size_t <a href="#m2">typesize</a> () const;
+
+3. size_t <a href="#m3">rowno</a> () const;
+4. size_t <a href="#m4">colno</a> () const;
+
+5. T <a href="#m5">sum</a> () const;
+6. T <a href="#m6">min</a> () const;
+7. T <a href="#m7">max</a> () const;
+8. T <a href="#m8">trace</a> (int i=0) const;
+
+9. void <a href="#m9">resize</a> (size_t nRow, size_t nCol);
+10. void <a href="#m10">free</a> ();
+
+11. void <a href="#m11">null</a> ();
+12. void <a href="#m12">unit</a> ();
+13. void <a href="#m13">rand</a> (int rmin=-1, int rmax=1, int rseed=0);
+
+14. matrix&lt;T&gt; <a href="#m14">adj</a> () const;
+15. T <a href="#m15">cofact</a> (size_t row, size_t col) const;
+16. T <a href="#m16">det</a> () const;
+17. T <a href="#m17">cond</a> () const;
+18. size_t <a href="#m18">rank</a> () const;
+
+19. T <a href="#m19">norm1</a> () const;
+20. T <a href="#m20">norm2</a> () const;
+21. T <a href="#m21">normI</a> () const;
+22. T <a href="#m22">normF</a> () const;
+
+23. matrix&lt;T&gt; <a href="#m23">apply</a> (T (*fn)(T v)) const;
+24. matrix&lt;T&gt; <a href="#m24">apply</a> (T (*fn)(const T&amp; v)) const;
+25. matrix&lt;T&gt; <a href="#m25">apply</a> (T (*fn)(size_t i, size_t j, T v)) const;
+26. matrix&lt;T&gt; <a href="#m26">apply</a> (T (*fn)(size_t i, size_t j, const T&amp; v)) const;
+
+</code></pre>
+
+<p>
+<ol>
+<li><a name="m1"></a>Returns the number of elements in a matrix object.</li><br><br>
+
+<li><a name="m2"></a>Returns the type size of the matrix elements.</li><br><br>
+
+<li><a name="m3"></a>Returns the row number of a matrix.</li><br><br>
+
+<li><a name="m4"></a>Returns the column number of a matrix.</li><br><br>
+
+<li><a name="m5"></a>Returns the sum of all elements of a matrix.</li><br><br>
+
+<li><a name="m6"></a>Returns the minimum value of all matrix elements.</li><br><br>
+
+<li><a name="m7"></a>Returns the maximum value of all matrix elements.</li><br><br>
+
+<li><a name="m8"></a>Returns the sum of diagonal elements of a matrix. The default diagonal is the main diagonal of the matrix.</li><br><br>
+
+<li><a name="m9"></a>Resizes a matrix to a <i>nRow</i> by <i>nCol</i> matrix. It is provided only for completeness, and you do not normally need to use this function.</li><br><br>
+
+<li><a name="m10"></a>Frees the memory associated with a matrix object and sets its size as zero by zero matrix. Note that you can't use a zero size matrix in any operation.</li><br><br>
+
+<li><a name="m11"></a>Sets all elements of a matrix equal to zero.</li><br><br>
+
+<li><a name="m12"></a>Sets the matrix as a unit matrix, i.e., its main diagonal elements will be equal to 1.0 and the rest zero.</li><br><br>
+
+<li><a name="m13"></a>Generates a random number matrix. By default the random numbers will be in the range of -1.0 to 1.0, but you can provide a different minimum and maximum range, as well as the initial seed value for the random number generator.</li><br><br>
+
+<li><a name="m14"></a>Returns the adjoin of a matrix. This is an expensive operation and only of academic interest.</li><br><br>
+
+<li><a name="m15"></a>Returns the cofactor of <i>i</i>th row and <i>j</i>th column of a matrix.</li><br><br>
+
+<li><a name="m16"></a>Returns the determinant of a matrix.</li><br><br>
+
+<li><a name="m17"></a>Returns the condition number of a matrix.</li><br><br>
+
+<li><a name="m18"></a>Returns the rank of a matrix.</li><br><br>
+
+<li><a name="m19"></a>Returns the one norm of a matrix.</li><br><br>
+
+<li><a name="m20"></a>Returns the two norm of a matrix.</li><br><br>
+
+<li><a name="m21"></a>Returns the infinity norm of a matrix.</li><br><br>
+
+<li><a name="m22"></a>Returns the Frobenius norm of a matrix.</li><br><br>
+
+<li><a name="m23"></a>Applies the function <i>fn</i> to all elements of a matrix and returns the new matrix object.</li><br><br>
+
+<li><a name="m24"></a>Applies the function <i>fn</i> to all elements of a matrix and returns the new matrix object.</li><br><br>
+
+<li><a name="m25"></a>Applies the function <i>fn</i> to all elements of a matrix and returns the new matrix object.</li><br><br>
+
+<li><a name="m26"></a>Applies the function <i>fn</i> to all elements of a matrix and returns the new matrix object.</li><br><br>
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;double&gt; Matrix;
+
+Matrix A(6,4);
+double x;
+size_t i,j;
+
+A.rand( 100);           // Generates a random matrix with elements 0 to 100
+
+i = A.size();           // i = 6 x 4 = 24
+j = A.rowno();          // Row number equal to 6
+j = A.colno();          // Column number equal to 4
+
+A.resize( 4, 4);        // Resize the matrix to a 4 x 4 one
+x = A.sum();            // Sum of all elements
+x = A.trace(-1);        // Sum of the diagonal elements just below the main diagonal
+
+x = A.det();            // Determinant of A
+x = A.cond();           // Condition number of A
+x = A.normF();          // Frobenius norm of A
+
+Matrix B = A.apply(sin);// Apply <i>sin</i> function to A
+A.unit();               // A is now a unit matrix
+
+</code></pre>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: sndfile
+Description: A library for reading and writing audio files
+Requires: 
+Version: 1.0.28
+Libs: -L${libdir} -lsndfile
+Libs.private: -L/opt/local/lib -lFLAC -L/opt/local/lib -logg -L/opt/local/lib -lvorbis -L/opt/local/lib -lvorbisenc  
+Cflags: -I${includedir} 

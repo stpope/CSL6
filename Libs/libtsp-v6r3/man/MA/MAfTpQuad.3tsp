@@ -1,0 +1,51 @@
+.TH MAfTpQuad 3tsp "TSP (libtsp/MA)"
+.SH Routine
+.in +4n
+.ti -4n
+double MAfTpQuad (const float R[], const float x[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Calculate a quadratic form for a symmetric Toeplitz matrix
+.in -4n
+.SH Description
+This routine calculates a quadratic form S = x'R x, where x is a vector and
+R is a symmetric Toeplitz matrix,
+.ft CW
+.nf
+.ne 3
+      N-1 N-1
+  S = SUM SUM x(i) R(i,j) x(j) .
+      i=0 j=0
+.fi
+.ft P
+The elements of the matrix R are constant down diagonals, R(i,j) = R(|i-h|).
+In this routine R is specified by its first column or row.  The result is
+accumulated as a double value and returned as a double value.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  double MAfTpQuad
+.br
+Resultant value
+.ti -4n
+ -> const float R[]
+.br
+First column (or row) of the symmetric Toeplitz matrix (N values)
+.ti -4n
+ -> const float x[]
+.br
+Vector of N values
+.ti -4n
+ -> int N
+.br
+Number of elements in x and R
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.3  2003/05/09
+.SH See Also
+MAfSyBilin,
+MAfSyQuad,
+libtsp

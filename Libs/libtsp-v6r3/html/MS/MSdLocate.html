@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - MSdLocate</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>MSdLocate</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int MSdLocate (double x, const double T[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Binary search in a table
+</DL>
+<H4>Description</H4>
+This function searches a table for the interval which contains a given input
+value.  Index i indicates that the value lies between T[i-1] and T[i].  A
+binary search is used to determine the interval.
+<P>
+The region index takes on values from 0 to N.  If N is equal to zero, the
+region index is set to zero.  Otherwise, the index is determined as follows.
+Note that the number of regions is one larger than the number of table
+values.
+<PRE>
+ index         input value
+   0                 x &lt; T[0]
+   1         T[0] &lt;= x &lt; T[1]
+   2         T[1] &lt;= x &lt; T[2]
+  ...              ...
+   i       T[i-1] &lt;= x &lt; T[i]
+  ...              ...
+  N-1      T[N-2] &lt;= x &lt; T[N-1]
+   N       T[N-1] &lt;= x
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int MSdLocate
+<DD>
+Output region index of the quantizer region containing the input value x.
+MSdLocate takes on values from 0 to N.
+<DT>
+ -&gt; double x
+<DD>
+Value to be quantized
+<DT>
+ -&gt; const double T[]
+<DD>
+Table of N values which delimit the N regions.  These levels must
+be in ascending order.
+<DT>
+ -&gt; int N
+<DD>
+Number of table values
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.2  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

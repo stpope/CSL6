@@ -1,0 +1,41 @@
+.TH FLbaseName 3tsp "TSP (libtsp/FL)"
+.SH Routine
+.in +4n
+.ti -4n
+int FLbaseName (const char Fname[], char Bname[])
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Return the last component of a file path
+.in -4n
+.SH Description
+This routine takes a file path specification and returns the rightmost
+component.  Components are separated by "/" characters.  If no "/" character
+appears in the path, the input path name is returned.  For Windows, the
+directory separator character is "\\".
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int FLbaseName
+.br
+Number of characters in the output string
+.ti -4n
+ -> const char Fname[]
+.br
+Input character string with the path name
+.ti -4n
+<-  char Bname[]
+.br
+Output string with the last path name component.  This string is at most
+FILENAME_MAX characters long including the terminating null character.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.20  2003/05/09
+.SH See Also
+FLdirName,
+FLdefName,
+FLextName,
+FLpreName,
+libtsp

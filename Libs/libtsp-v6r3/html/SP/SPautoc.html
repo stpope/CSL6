@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - SPautoc</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>SPautoc</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void SPautoc (const float x[], int Nx, float cor[], int Nt)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Calculate the autocorrelation for a data sequence
+</DL>
+<H4>Description</H4>
+This routine calculate the autocorrelation for a given data vector.
+<PRE>
+           Nx-1-i
+  cor[i] =  SUM  x[k] * x[k+i] , for 0 &lt;= i &lt; Nt.
+            k=0
+</PRE>
+<P>
+This routine requires
+<PRE>
+  (Nt+1)*(Nx+Nt/2) multiplies and
+  (Nt+1)*(Nx+Nt/2) adds.
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; const float x[]
+<DD>
+Input data vector with Nx elements
+<DT>
+ -&gt; int Nx
+<DD>
+Number of data points
+<DT>
+&lt;-  float cor[]
+<DD>
+Autocorrelation vector with Nt elements.  The element cor[i] is the
+autocorrelation with lag i.
+<DT>
+ -&gt; int Nt
+<DD>
+Number of autocorrelation terms
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.8  2003/05/09
+<H4>See Also</H4>
+<A HREF="SPcorXpc.html">SPcorXpc</A>,
+<A HREF="SPcovar.html">SPcovar</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

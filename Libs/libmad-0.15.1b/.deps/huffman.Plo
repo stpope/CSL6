@@ -1,0 +1,7 @@
+huffman.lo: huffman.c config.h global.h huffman.h
+
+config.h:
+
+global.h:
+
+huffman.h:

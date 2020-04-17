@@ -1,0 +1,67 @@
+.TH SPlsfXpc 3tsp "TSP (libtsp/SP)"
+.SH Routine
+.in +4n
+.ti -4n
+void SPlsfXpc (const float lsf[], float pc[], int Np)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Convert LSF's to predictor coefficients
+.in -4n
+.SH Description
+This routine converts a vector of line spectral frequencies to the
+corresponding vector of predictor coefficients.  The LSF's are the
+frequencies (angles) corresponding to roots on the unit circle.  These roots
+are the roots of two polynomials, one symmetric, the other anti-symmetric.
+The odd-numbered LSF's specify roots of one polynomial, while the even-
+numbered LSF's specify the roots of the other polynomial.  The polynomials
+are formed by the polynomial multiplication of the factors representing
+conjugate pairs of roots.  The predictor coefficients are formed by the
+addition of the two polynomials.
+.PP
+Line spectral frequencies and predictor coefficients are usually expressed
+algebraically as vectors with one-offset indexing.  The correspondence to the
+zero-offset C-arrays is as follows.
+.ft CW
+.nf
+.ne 3
+  l(1) <==> lsf[0]       first (lowest frequency) line spectral frequency
+  l(i) <==> lsf[i-1]     1 <= i < Np
+  p(1) <==> pc[0]        predictor coefficient corresponding to lag 1
+  p(i) <==> pc[i-1]      1 <= i < Np
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+ -> const float lsf[]
+.br
+Array of Np line spectral frequencies.  Each line spectral frequency lies
+in the range 0 to pi.  If the LSF's are well-ordered (ascending order),
+the resulting predictor corresponds to a minimum phase prediction error
+filter.
+.ti -4n
+ -> int Np
+.br
+Number of coefficients (at most 50)
+.ti -4n
+<-  float pc[]
+.br
+Output array of Np predictor coefficients.  These are the coefficients
+of the predictor filter, with pc[0] being the predictor coefficient
+corresponding to lag 1, and pc[Np-1] corresponding to lag Np.
+.ti -4n
+ -> int Np
+.br
+Number of coefficients (at most 50)
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.21  2003/05/09
+.SH See Also
+SPcepXpc,
+SPcorXpc,
+SPecXpc,
+SPrcXpc,
+libtsp

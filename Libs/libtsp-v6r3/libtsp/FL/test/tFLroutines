@@ -1,0 +1,272 @@
+#!/bin/sh
+
+# Test FL routines
+#
+# $Id: tFLroutines 1.24 2005/02/01 libtsp-v6r3 $
+
+if [ "$USER" = "" ]; then
+  USER=$USERNAME
+fi
+
+echo ""
+echo "========== tFLbackup"
+fname=temporaryfile
+touch $fname
+tFLbackup $fname	2>&1 
+ls ${fname}*
+rm -f $fname ${fname}~
+
+fname=temporaryfile.xxxx
+fnameb=${fname}~
+touch $fname
+touch $fnameb
+chmod u-w $fnameb
+tFLbackup $fname	2>&1	# move on top of existing readonly file
+ls ${fname}*
+rm -f $fname $fnameb
+
+fname=tempf
+fnameb=${fname}~
+touch $fname
+ln -s $fname $fnameb
+tFLbackup $fname	2>&1	# backup link (should kill link)
+ls ${fname}*
+rm -f $fname $fnameb
+
+tFLbackup ./		2>&1	# directory
+if [ -f /bin/sh ]; then
+  tFLbackup /bin/sh	2>&1	# no permission
+fi
+tFLbackup /dev/tty		# device
+tFLbackup XxXxYx		# file does not exist
+
+echo ""
+echo "========== tFLdefName"
+tFLdefName abc/def xxx/yyy
+tFLdefName def xxx/yyy
+tFLdefName abc/ xxx/yyy
+tFLdefName abc /
+
+echo ""
+echo "========== tFLexist"
+tFLexist XxXxXx		# file does not exist
+tFLexist /dev		# directory
+tFLexist /dev/tty	# device
+tFLexist Makefile
+fname=tempf
+fnamel=${fname}l
+fnamell=${fnamel}l
+touch $fname
+ln -s $fname $fnamel
+ln -s $fnamel $fnamell
+tFLexist $fname
+tFLexist $fnamel		# link to regular file
+tFLexist $fnamell
+rm -f $fname $fnamel $fnamell
+
+echo ""
+echo "========== tFLexpHome (expect system dependencies)"
+# Cygwin expands unquoted tildes, e.g. in ~/abc but not in ~xxx/abc
+tFLexpHome "~"
+tFLexpHome "~${USER}"
+tFLexpHome "~${USER}/abc/def"
+tFLexpHome "~/abc/def"
+tFLexpHome ""
+tFLexpHome abc/def
+tFLexpHome "~junk"
+tFLexpHome "~junk/abc/def"
+
+echo ""
+echo "========== tFLxReadData"
+cat << EoF > test.dat
+! data values
+0.5
+1.0 1.5 ! xxxx
+
+2.0
+EoF
+echo "===== ===== ===== ======"
+tFLxReadData FLdReadData test.dat	# test ignore comments and blank lines
+echo "----- ----- ----- -----"
+tFLxReadData FLfReadData test.dat
+echo "----- ----- ----- -----"
+rm -rf test.dat
+
+cat << EoF > test.dat
+! data values
+0.5
+1.0 1.5 xxxx
+
+2.0
+EoF
+echo "===== ===== ===== ======"
+tFLxReadData FLdReadData test.dat 2>&1	# test bad data value
+echo "----- ----- ----- -----"
+tFLxReadData FLfReadData test.dat 2>&1
+rm -rf test.dat
+
+cat << EoF > test.dat
+0.5 1.0 1.5 2.0 2.5 3.0
+EoF
+echo "===== ===== ===== ======"
+tFLxReadData FLdReadData test.dat 2>&1	# test too many data items
+echo "----- ----- ----- -----"
+tFLxReadData FLfReadData test.dat 2>&1
+rm -rf test.dat
+
+cat << EoF > test.dat
+0.5 1.0 1.5 2.0 2.5
+xx
+EoF
+echo "===== ===== ===== ======"
+tFLxReadData FLdReadData test.dat 2>&1	# test too many lines
+echo "----- ----- ----- -----"
+tFLxReadData FLfReadData test.dat 2>&1	# test too many lines
+rm -rf test.dat
+
+echo ""
+echo "========== tFLfWriteData"
+echo "===== ===== ===== ======"
+tFLxWriteData FLdWriteData test.dat 1.1 2.2 3.3 4.4 5.5
+cat test.dat
+rm -rf test.dat
+echo "----- ----- ----- -----"
+tFLxWriteData FLfWriteData test.dat 1.1 2.2 3.3 4.4 5.5
+cat test.dat
+rm -rf test.dat
+
+echo ""
+echo "========== tFLgetRec"
+
+cat > test.dat << EoF
+abc !xxxx
+abd\\
+def\\
+abc #xxxx
+abd\\def
+EoF
+
+tFLgetRec test.dat "!#" "\\" 2
+echo ""
+tFLgetRec test.dat "!#" "\\" 1
+echo ""
+tFLgetRec test.dat "!#" "\\" 0
+rm -f test.dat
+
+# Create a file with no newline for the last data item
+echo "563" | dd ibs=1 count=3 2>/dev/null 1>fstdout
+(cat <<EoF; cat fstdout) > test.dat
+356
+ 571.3 
+ 	-444.2 
+EoF
+rm -f fstdout
+
+tFLgetRec test.dat "" "" 0
+rm -f test.dat
+
+echo ""
+echo "========== tFLfullName"
+tFLfullName ""
+tFLfullName /xx
+tFLfullName /xx/yy
+tFLfullName xx
+tFLfullName xx/yy
+tFLfullName "~${USER}/edit/..//xx"	# should leave ~ part intact
+
+echo ""
+echo "========== tFLhomeDir (expect system dependencies)"
+tFLhomeDir ""
+tFLhomeDir root
+tFLhomeDir ${USER}
+tFLhomeDir junk
+tFLhomeDir root
+
+echo ""
+echo "========== tFLpathList"
+PLIST=".:$PATH"
+export PLIST
+tFLpathList xxx/yyy ""
+tFLpathList xxx/yyy "$PLIST"
+tFLpathList ls ""
+tFLpathList ls "xxx:zzz"
+tFLpathList ls '$PLIST'
+
+echo ""
+echo "========== tFLreadLine"
+tFLreadLine "Prompt > " << EoF
+line 1
+line 2
+EoF
+
+echo ""
+echo "========== tFLseekterm"
+echo ""
+echo "-        stdin from pipe"
+echo "xxx"  | tFLseekterm "stdin"		2>&1	# pipe
+echo ""
+echo "--       stdout to pipe"
+(tFLseekterm "stdout" | cat > /dev/null)	2>&1
+echo ""
+echo "---      stdin from terminal"
+tFLseekterm "stdin"				2>&1	# terminal
+echo ""
+echo "----     stdout to terminal"
+tFLseekterm "/dev/tty"				2>&1
+echo ""
+echo "-----    stdin redirected from file"
+tFLseekterm "stdin" < tFLseekterm.c		2>&1	# file
+echo ""
+echo "------   stdout redirected to file"
+(tFLseekterm "stdout" > xxx.tmp)		2>&1
+rm -f xxx.tmp
+
+echo "========== tFLxxxDate (expect time zone differences)"
+# The test files were created on a Unix system
+# with times of 12:00 UTC in Feb and 12:00 UTC in Aug
+# They were then transferred (using tar/WinZip) to a Windows system (EDT)
+tFLxxxDate DS-1990-02-02-1200UTC
+tFLxxxDate DS-1990-08-08-1200UTC
+
+echo ""
+echo "========== tFLxxxName"
+tFLxxxName ""
+tFLxxxName xx
+tFLxxxName ./xx
+tFLxxxName xx/yy/
+tFLxxxName /xx/yy/
+tFLxxxName xx/yy.ex
+tFLxxxName xx/yy/zz
+tFLxxxName /
+tFLxxxName /xx
+tFLxxxName /xx/yy.ex
+tFLxxxName /xx/yy.ab.ex
+tFLxxxName /xx/yy/zz
+
+echo ""
+echo "========== tFLjoinNames"
+tFLjoinNames "" xxx/yyy
+tFLjoinNames abc/def ""
+tFLjoinNames abc/def xxx/yyy
+tFLjoinNames abc/def/ xxx/yyy
+tFLjoinNames / xxx/yyy
+tFLjoinNames abc/def /xxx/yyy
+tFLjoinNames abc/def/ /xxx/yyy
+
+echo ""
+echo "========== tFLpathList (expect system dependencies)"
+tFLpathList "~/.emacs" ""
+tFLpathList .emacs "~"
+tFLpathList "~${USER}/.emacs" ""
+tFLpathList .emacs "~${USER}"
+
+echo ""
+echo "========== tFLfileSize"
+tFLfileSize DS.tar
+
+echo ""
+echo "========== tgetpwnam"
+# For an unknown user, Cygwin will return the password structure
+# for a default user
+tgetpwnam "$USER"
+tgetpwnam "XxXxXx"

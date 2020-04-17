@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - STdecDfrac</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>STdecDfrac</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int STdecDfrac (const char String[], double *Dval1, double *Dval2)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Decode a ratio specification of two double values
+</DL>
+<H4>Description</H4>
+This routine decodes a string specifying a ratio of double values.  The
+ratio is specified in the form "V" or "V1/V2", for example "-23.1 / 45".
+Optional white-space (as defined by isspace) can surround the values.  For
+the case of a single value V, this is equivalent to the ratio "V/1".  If an
+error is encountered, neither output value is set.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int STdecRfrac
+<DD>
+Error status, 0 for no error, 1 for error
+<DT>
+ -&gt; const char String[]
+<DD>
+Input string
+<DT>
+&lt;-  double *Dval1
+<DD>
+First value
+<DT>
+&lt;-  double *Dval2
+<DD>
+Second value
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.7  2003/05/09
+<H4>See Also</H4>
+<A HREF="STdecIfrac.html">STdecIfrac</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

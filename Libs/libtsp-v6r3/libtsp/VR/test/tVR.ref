@@ -1,0 +1,357 @@
+
+========== tVRx2y
+x1:
+            1            2            3
+x2:
+            1            2            3
+VRdAdd
+            2            4            6
+----- ----- ----- -----
+x1:
+            1            2            3
+x2:
+            1            2            3
+VRfAdd
+            2            4            6
+----- ----- ----- -----
+VRfAmpldB: Negative input amplitude
+----- ----- ----- -----
+Input data:
+            0        1e-05
+VRfAdB
+         -inf         -100
+----- ----- ----- -----
+Input data:
+        1e-05       0.0001        0.001         0.01          0.1
+              1           10          100         1000
+VRfAdB
+         -100          -80          -60          -40          -20
+              0           20           40           60
+----- ----- ----- -----
+Input data:
+            1            2            3
+VRdCopy
+            1            2            3
+----- ----- ----- -----
+Input data:
+            1            2            3
+VRfCopy
+            1            2            3
+----- ----- ----- -----
+Input data:
+            1            2            3            2            1
+VRdCorSym: 1
+----- ----- ----- -----
+Input data:
+            1            2            2            1
+VRdCorSym: 1
+----- ----- ----- -----
+Input data:
+            1            2           -2           -1
+VRdCorSym: -1
+----- ----- ----- -----
+Input data:
+            1            2            0           -2           -1
+VRdCorSym: -1
+----- ----- ----- -----
+Input data:
+            1            2            3            2            2
+VRdCorSym: 0.954545
+----- ----- ----- -----
+Input data:
+            0            0            0            0
+VRdCorSym: 0
+----- ----- ----- -----
+Input data:
+            0            0            0            0            0
+VRdCorSym: 0
+----- ----- ----- -----
+Input data:
+            1            2            3            2            1
+VRfCorSym: 1
+----- ----- ----- -----
+Input data:
+            1            2            2            1
+VRfCorSym: 1
+----- ----- ----- -----
+Input data:
+            1            2           -2           -1
+VRfCorSym: -1
+----- ----- ----- -----
+Input data:
+            1            2            0           -2           -1
+VRfCorSym: -1
+----- ----- ----- -----
+Input data:
+            1            2            3            2            2
+VRfCorSym: 0.954545
+----- ----- ----- -----
+Input data:
+            0            0            0            0
+VRfCorSym: 0
+----- ----- ----- -----
+Input data:
+            0            0            0            0            0
+VRfCorSym: 0
+----- ----- ----- -----
+x1:
+            1            2            3
+x2:
+            1            1            1
+VRfDiff
+            0            1            2
+----- ----- ----- -----
+x1:
+            1            2            3
+x2:
+            3            2            1
+VRdDotProd: 10
+----- ----- ----- -----
+x1:
+            1            2            3
+x2:
+            1            2            3
+VRdDotProd: 14
+----- ----- ----- -----
+x1:
+            1            2            3
+x2:
+            3            2            1
+VRfDotProd: 10
+----- ----- ----- -----
+x1:
+            1            2            3
+x2:
+            1            2            3
+VRfDotProd: 14
+----- ----- ----- -----
+x1:
+            1            3
+x2:
+            1            2            3            4            5
+              6
+VRdLinInc
+            1          1.4          1.8          2.2          2.6
+              3
+----- ----- ----- -----
+Input data:
+        1e-05       0.0001        0.001         0.01          0.1
+              1           10          100         1000
+VRfLog10
+           -5           -4           -3           -2           -1
+              0            1            2            3
+----- ----- ----- -----
+VRfLog10: Negative input value(s)
+----- ----- ----- -----
+Input data:
+            5            4            6            1            2
+              3
+VRfMin: 1
+----- ----- ----- -----
+Input data:
+            5            4            6            1            2
+              3
+VRfMax: 6
+----- ----- ----- -----
+x1:
+            1            2            3
+x2:
+            1            2            3
+VRdMult
+            1            4            9
+----- ----- ----- -----
+x1:
+            1            2            3
+x2:
+            1            2            3
+VRfMult
+            1            4            9
+----- ----- ----- -----
+Input data:
+           -5           -4           -3           -2           -1
+              0            1            2            3            4
+                5
+VRfPow10
+        1e-05       0.0001        0.001         0.01          0.1
+              1           10          100         1000        10000
+            1e+05
+----- ----- ----- -----
+Input data:
+        -1000
+VRfPow10
+            0
+----- ----- ----- -----
+Input data:
+         1000
+VRfPow10
+          inf
+----- ----- ----- -----
+Input data:
+            1            2            3
+VRfRev
+            3            2            1
+----- ----- ----- -----
+Input data:
+            1            2            3            4
+VRfRev
+            4            3            2            1
+----- ----- ----- -----
+Input data:
+           10           -2            3            4            5
+              6            7            8
+VRdRFFTMSq
+          100           40           58           80           25
+----- ----- ----- -----
+Input data:
+           10            2            3            4           -5
+              6           -7
+VRdRFFTMSq
+          100           29           45           65
+----- ----- ----- -----
+x1:
+            3
+x2:
+            1            2            3
+VRdScale
+            3            6            9
+----- ----- ----- -----
+x1:
+            3
+x2:
+            1            2            3
+VRfScale
+            3            6            9
+----- ----- ----- -----
+x1:
+            4
+x2:
+            1            2            3
+VRdSet
+            4            4            4
+----- ----- ----- -----
+x1:
+            4
+x2:
+            1            2            3
+VRfSet
+            4            4            4
+----- ----- ----- -----
+Input data:
+            1            2            3            4            5
+VRfSum: 15
+----- ----- ----- -----
+x1:
+            1
+x2:
+            1            2            2
+VRdSymPart
+          1.5            2          1.5
+----- ----- ----- -----
+x1:
+           -1
+x2:
+            1            2            2
+VRdSymPart
+         -0.5            0          0.5
+----- ----- ----- -----
+x1:
+
+x2:
+            1            2            3
+VRdZero
+            0            0            0
+----- ----- ----- -----
+x1:
+
+x2:
+            1            2            3
+VRfZero
+            0            0            0
+
+========== tVRxShift
+VRfShift: Input data:
+            1            2            3            4            5
+          Output data:
+            1            2            3            4            5
+----- ----- ----- -----
+VRfShift: Input data:
+            1            2            3            4            5
+          Output data:
+            1            2            1            2            3
+----- ----- ----- -----
+VRfShift: Input data:
+            1            2            3            4            5
+          Output data:
+            3            4            5            4            5
+----- ----- ----- -----
+VRfShift: Input data:
+            1            2            3            4            5
+          Output data:
+            1            2            3            4            5
+----- ----- ----- -----
+VRfShift: Input data:
+            1            2            3            4            5
+          Output data:
+            1            2            3            4            5
+----- ----- ----- -----
+VRdShift: Input data:
+            1            2            3            4            5
+          Output data:
+            1            2            3            4            5
+----- ----- ----- -----
+VRdShift: Input data:
+            1            2            3            4            5
+          Output data:
+            1            2            1            2            3
+----- ----- ----- -----
+VRdShift: Input data:
+            1            2            3            4            5
+          Output data:
+            3            4            5            4            5
+----- ----- ----- -----
+VRdShift: Input data:
+            1            2            3            4            5
+          Output data:
+            1            2            3            4            5
+----- ----- ----- -----
+VRdShift: Input data:
+            1            2            3            4            5
+          Output data:
+            1            2            3            4            5
+
+========== tVRswapBytes
+VRswapBytes: Invalid data element size
+----- ----- ----- -----
+input:
+            1            2            4            8           16
+             32           64          128
+swapped:
+            1            2            4            8           16
+             32           64          128
+swapped again:
+            1            2            4            8           16
+             32           64          128
+----- ----- ----- -----
+input:
+            1            4           16           64          256
+           1024         4096
+swapped:
+          256         1024         4096        16384            1
+              4           16
+swapped again:
+            1            4           16           64          256
+           1024         4096
+----- ----- ----- -----
+input:
+            1           16          256         4096        65536
+swapped:
+   1.6777e+07   2.6844e+08        65536   1.0486e+06          256
+swapped again:
+            1           16          256         4096        65536
+----- ----- ----- -----
+input:
+      0.11111      0.22222      0.55556
+swapped:
+  2.3231e+154  2.3231e+154  1.1826e-175
+swapped again:
+      0.11111      0.22222      0.55556

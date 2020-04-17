@@ -1,0 +1,8 @@
+rtppollthread.lo: rtppollthread.cpp rtppollthread.h rtpconfig.h \
+ rtpconfig_unix.h
+
+rtppollthread.h:
+
+rtpconfig.h:
+
+rtpconfig_unix.h:

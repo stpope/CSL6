@@ -1,0 +1,46 @@
+.TH FLdReadData 3tsp "TSP (libtsp/FL)"
+.SH Routine
+.in +4n
+.ti -4n
+int FLdReadData (const char Fname[], int MaxNval, float x[])
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Read numeric data in text form from a file
+.in -4n
+.SH Description
+This procedure reads floating point numeric data from a file.  The file
+contains data in text form.  Data fields are free format, with data values
+separated by white-space (as defined by isspace).  Zero or more data values
+can appear in each line of input.  Commas can also be used to separate data
+values, but only within a line, i.e. a comma should not appear at the end of
+a line.  A "!" character marks the beginning of a comment that extends to the
+end of the line.
+.PP
+This routine prints an error message and halts execution on detection of an
+error.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int FLfReadData
+.br
+Number of values returned
+.ti -4n
+ -> const char Fname[]
+.br
+File name
+.ti -4n
+ -> int MaxNval
+.br
+Maximum number of values to be returned
+.ti -4n
+<-  double x[]
+.br
+Array of output values
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.1  2005/02/01
+.SH See Also
+libtsp

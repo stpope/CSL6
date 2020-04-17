@@ -1,0 +1,99 @@
+\hypertarget{group__pp}{\section{Prettyprinting functions}
+\label{group__pp}\index{Prettyprinting functions@{Prettyprinting functions}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__pp_ga97e508300ee8b57d4ba1f20a1c4d0235}{lo\+\_\+bundle\+\_\+pp} (\hyperlink{lo__types_8h_a96254950ad34e9cfbf8a6613fc74025b}{lo\+\_\+bundle} b)
+\begin{DoxyCompactList}\small\item\em Pretty-\/print a lo\+\_\+bundle object. \end{DoxyCompactList}\item 
+void \hyperlink{group__pp_ga5fa7f79f6f490d9a462d6cd894df3b76}{lo\+\_\+message\+\_\+pp} (\hyperlink{lo__types_8h_ad126083c98d941f00eb72d1690b38d63}{lo\+\_\+message} m)
+\begin{DoxyCompactList}\small\item\em Pretty-\/print a lo\+\_\+message object. \end{DoxyCompactList}\item 
+void \hyperlink{group__pp_ga1699678a3a2d4221bb55fa2e05326ef0}{lo\+\_\+arg\+\_\+pp} (\hyperlink{group__liblo_ga11838c576b0197c255ce805fd7434736}{lo\+\_\+type} type, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Pretty-\/print a set of typed arguments. \end{DoxyCompactList}\item 
+void \hyperlink{group__pp_ga31b1944c9f06645d87bdffbf769a1945}{lo\+\_\+server\+\_\+pp} (\hyperlink{lo__types_8h_a59067bf50cf8abb4371da6f03c9036c9}{lo\+\_\+server} s)
+\begin{DoxyCompactList}\small\item\em Pretty-\/print a lo\+\_\+server object. \end{DoxyCompactList}\item 
+void \hyperlink{group__pp_ga220be2c9f4cfe4516ebcb5c4687a2b9f}{lo\+\_\+method\+\_\+pp} (\hyperlink{lo__types_8h_a66faedf5da13231d8c0166870477dce5}{lo\+\_\+method} m)
+\begin{DoxyCompactList}\small\item\em Pretty-\/print a lo\+\_\+method object. \end{DoxyCompactList}\item 
+void \hyperlink{group__pp_ga1ea3369b4cf60368cba3336682afcaad}{lo\+\_\+method\+\_\+pp\+\_\+prefix} (\hyperlink{lo__types_8h_a66faedf5da13231d8c0166870477dce5}{lo\+\_\+method} m, const char $\ast$p)
+\begin{DoxyCompactList}\small\item\em Pretty-\/print a lo\+\_\+method object, but prepend a given prefix to all field names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+These functions all print an A\+S\+C\+I\+I representation of their argument to stdout. Useful for debugging. 
+
+\subsection{Function Documentation}
+\hypertarget{group__pp_ga1699678a3a2d4221bb55fa2e05326ef0}{\index{Prettyprinting functions@{Prettyprinting functions}!lo\+\_\+arg\+\_\+pp@{lo\+\_\+arg\+\_\+pp}}
+\index{lo\+\_\+arg\+\_\+pp@{lo\+\_\+arg\+\_\+pp}!Prettyprinting functions@{Prettyprinting functions}}
+\subsubsection[{lo\+\_\+arg\+\_\+pp}]{\setlength{\rightskip}{0pt plus 5cm}void lo\+\_\+arg\+\_\+pp (
+\begin{DoxyParamCaption}
+\item[{{\bf lo\+\_\+type}}]{type, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{group__pp_ga1699678a3a2d4221bb55fa2e05326ef0}
+
+
+Pretty-\/print a set of typed arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A type string in the form provided to \hyperlink{group__liblo_gafa4253874f97c2c16254ac57d2b7c987}{lo\+\_\+send()}. \\
+\hline
+{\em data} & An O\+S\+C data pointer, like that provided in the lo\+\_\+method\+\_\+handler. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pp_ga97e508300ee8b57d4ba1f20a1c4d0235}{\index{Prettyprinting functions@{Prettyprinting functions}!lo\+\_\+bundle\+\_\+pp@{lo\+\_\+bundle\+\_\+pp}}
+\index{lo\+\_\+bundle\+\_\+pp@{lo\+\_\+bundle\+\_\+pp}!Prettyprinting functions@{Prettyprinting functions}}
+\subsubsection[{lo\+\_\+bundle\+\_\+pp}]{\setlength{\rightskip}{0pt plus 5cm}void lo\+\_\+bundle\+\_\+pp (
+\begin{DoxyParamCaption}
+\item[{{\bf lo\+\_\+bundle}}]{b}
+\end{DoxyParamCaption}
+)}}\label{group__pp_ga97e508300ee8b57d4ba1f20a1c4d0235}
+
+
+Pretty-\/print a lo\+\_\+bundle object. 
+
+\hypertarget{group__pp_ga5fa7f79f6f490d9a462d6cd894df3b76}{\index{Prettyprinting functions@{Prettyprinting functions}!lo\+\_\+message\+\_\+pp@{lo\+\_\+message\+\_\+pp}}
+\index{lo\+\_\+message\+\_\+pp@{lo\+\_\+message\+\_\+pp}!Prettyprinting functions@{Prettyprinting functions}}
+\subsubsection[{lo\+\_\+message\+\_\+pp}]{\setlength{\rightskip}{0pt plus 5cm}void lo\+\_\+message\+\_\+pp (
+\begin{DoxyParamCaption}
+\item[{{\bf lo\+\_\+message}}]{m}
+\end{DoxyParamCaption}
+)}}\label{group__pp_ga5fa7f79f6f490d9a462d6cd894df3b76}
+
+
+Pretty-\/print a lo\+\_\+message object. 
+
+\hypertarget{group__pp_ga220be2c9f4cfe4516ebcb5c4687a2b9f}{\index{Prettyprinting functions@{Prettyprinting functions}!lo\+\_\+method\+\_\+pp@{lo\+\_\+method\+\_\+pp}}
+\index{lo\+\_\+method\+\_\+pp@{lo\+\_\+method\+\_\+pp}!Prettyprinting functions@{Prettyprinting functions}}
+\subsubsection[{lo\+\_\+method\+\_\+pp}]{\setlength{\rightskip}{0pt plus 5cm}void lo\+\_\+method\+\_\+pp (
+\begin{DoxyParamCaption}
+\item[{{\bf lo\+\_\+method}}]{m}
+\end{DoxyParamCaption}
+)}}\label{group__pp_ga220be2c9f4cfe4516ebcb5c4687a2b9f}
+
+
+Pretty-\/print a lo\+\_\+method object. 
+
+\hypertarget{group__pp_ga1ea3369b4cf60368cba3336682afcaad}{\index{Prettyprinting functions@{Prettyprinting functions}!lo\+\_\+method\+\_\+pp\+\_\+prefix@{lo\+\_\+method\+\_\+pp\+\_\+prefix}}
+\index{lo\+\_\+method\+\_\+pp\+\_\+prefix@{lo\+\_\+method\+\_\+pp\+\_\+prefix}!Prettyprinting functions@{Prettyprinting functions}}
+\subsubsection[{lo\+\_\+method\+\_\+pp\+\_\+prefix}]{\setlength{\rightskip}{0pt plus 5cm}void lo\+\_\+method\+\_\+pp\+\_\+prefix (
+\begin{DoxyParamCaption}
+\item[{{\bf lo\+\_\+method}}]{m, }
+\item[{const char $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{group__pp_ga1ea3369b4cf60368cba3336682afcaad}
+
+
+Pretty-\/print a lo\+\_\+method object, but prepend a given prefix to all field names. 
+
+\hypertarget{group__pp_ga31b1944c9f06645d87bdffbf769a1945}{\index{Prettyprinting functions@{Prettyprinting functions}!lo\+\_\+server\+\_\+pp@{lo\+\_\+server\+\_\+pp}}
+\index{lo\+\_\+server\+\_\+pp@{lo\+\_\+server\+\_\+pp}!Prettyprinting functions@{Prettyprinting functions}}
+\subsubsection[{lo\+\_\+server\+\_\+pp}]{\setlength{\rightskip}{0pt plus 5cm}void lo\+\_\+server\+\_\+pp (
+\begin{DoxyParamCaption}
+\item[{{\bf lo\+\_\+server}}]{s}
+\end{DoxyParamCaption}
+)}}\label{group__pp_ga31b1944c9f06645d87bdffbf769a1945}
+
+
+Pretty-\/print a lo\+\_\+server object. 
+

@@ -1,0 +1,41 @@
+.TH VRfPow10 3tsp "TSP (libtsp/VR)"
+.SH Routine
+.in +4n
+.ti -4n
+void VRfPow10 (const float x[], float y[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Find 10 raised to the power of each element of an array
+.in -4n
+.SH Description
+This routine finds the anti-logarithm (base 10) for each element of an array.
+For each element in the input array, the output is given as
+.ft CW
+.nf
+.ne 3
+  y[i] = 10 ^ (x[i]),  0 <= i < N.
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+ -> const float x[]
+.br
+Input array (N elements)
+.ti -4n
+<-  float y[]
+.br
+Output array (N elements).  The output array can be the same as the input
+array.
+.ti -4n
+ -> int N
+.br
+Number of elements in the arrays (may be zero)
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.8  2003/05/09
+.SH See Also
+libtsp

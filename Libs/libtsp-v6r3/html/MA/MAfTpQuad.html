@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - MAfTpQuad</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>MAfTpQuad</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double MAfTpQuad (const float R[], const float x[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Calculate a quadratic form for a symmetric Toeplitz matrix
+</DL>
+<H4>Description</H4>
+This routine calculates a quadratic form S = x'R x, where x is a vector and
+R is a symmetric Toeplitz matrix,
+<PRE>
+      N-1 N-1
+  S = SUM SUM x(i) R(i,j) x(j) .
+      i=0 j=0
+</PRE>
+The elements of the matrix R are constant down diagonals, R(i,j) = R(|i-h|).
+In this routine R is specified by its first column or row.  The result is
+accumulated as a double value and returned as a double value.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  double MAfTpQuad
+<DD>
+Resultant value
+<DT>
+ -&gt; const float R[]
+<DD>
+First column (or row) of the symmetric Toeplitz matrix (N values)
+<DT>
+ -&gt; const float x[]
+<DD>
+Vector of N values
+<DT>
+ -&gt; int N
+<DD>
+Number of elements in x and R
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.3  2003/05/09
+<H4>See Also</H4>
+<A HREF="MAfSyBilin.html">MAfSyBilin</A>,
+<A HREF="MAfSyQuad.html">MAfSyQuad</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

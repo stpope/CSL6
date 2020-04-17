@@ -1,0 +1,45 @@
+<html>
+<head>
+   <link rel=stylesheet href="styles.css" type="text/css">
+   <title>Overview</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="contact.htm">Prev</a> |
+<a href="index.htm">Up</a> |
+<a href="manual.htm">Next</a>
+</h6>
+
+<h2>Overview</h2>
+
+<p>
+The Matrix TCL Pro is written as a template class and has been tested with <b>float</b>, <b>double</b>, <b>long double</b>, <b>complex&lt;float&gt;</b>, <b>complex&lt;double&gt;</b>, and <b>complex&lt;long double&gt;</b> types. It may also be used with other third party floating-point type of classes. However, most of the matrix operations are not supported for integer types. We have tested this class with matrices of size up to 1000 x 1000 without any problem on computers with Intel processor. Note that this is a normal dense matrix library package.
+</p>
+
+<p>
+We have used many optimization techniques in designing this class library.  Some of them are explained below:
+
+<ul>
+
+<li>
+<b>Copy-on-write:</b> Memory for matrix objects is always allocated from heap using <i>new</i> operator. A matrix object itself only stores a pointer to this memory. When copying a matrix object, the copy constructor of the matrix class does not actually copy the matrix object. It merely increases the reference count of the matrix object and then shares the same memory between two matrix objects. This sharing of the memory between two matrix objects will continue until one of them gets modified or deleted. This technique virtually eliminates the unnecessary copying the matrix objects. Since many matrix operations require creation and assignment of the temporary matrix objects, this technique reduces both the computing time and memory usage, particularly for large matrices.
+</li>
+
+<br><br>
+
+<li>
+<b>Caching of temporary matrix object:</b> Matrix calculations often require allocation and deletion of temporary matrix objects in quick succession. To speed up this process and reduce calls to <i>new</i> and <i>delete</i> operators, this class maintains a small cache of temporary matrix objects. That means when a matrix object is deleted, i.e., it goes out-of-scope, the memory is not immediately returned to the system, but is kept in a small cache. Next time when a request for new matrix object will come, this matrix object will be returned from the cache. This technique reduces matrix allocation/deletion time, as well as memory fragmentation, particularly for repeated matrix calculations in a loop. The default size for this cache is 4 matrix objects and is determined by the constant <i>MAX_MATRIX_CACHE</i>. To change the size of this cache, you need to define this constant to some other integer value before including the header file &lt;cmatrix&gt; in your program.
+</li>
+
+<br><br>
+
+<li>
+<b>Inline temporary helper class:</b> We have defined some temporary inline classes to access/modify elements within a matrix object efficiently. Note that you do not need to use them explicitly in your program. The compiler will eliminate most of their code through inline expansion, when optimization is enabled, and will generate object code close to as if you are working with a C-array.
+</li>
+
+</ul>
+</p>
+
+</body>
+</html>

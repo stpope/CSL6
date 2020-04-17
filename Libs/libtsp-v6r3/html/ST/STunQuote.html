@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - STunQuote</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>STunQuote</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int STunQuote (const char Si[], const char Quotes[], char So[])
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Copy a string, removing outer quote characters
+</DL>
+<H4>Description</H4>
+This routine processes a quoted string.  Any outer paired quotes are removed.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int STunQuote
+<DD>
+Number of characters in the output string
+<DT>
+ -&gt; const char Si[]
+<DD>
+Input character string
+<DT>
+ -&gt; const char Quotes[]
+<DD>
+Character string specifying pairs of quote characters (the left and right
+quote characters).  A zero length string indicates that quote characters
+should not to be recognized.
+<DT>
+&lt;-  char So[]
+<DD>
+Output character string.  This string should provide for at least as many
+characters as the input string.  This routine accepts Si = So, in which
+case the output string overlays the input string.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.4  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

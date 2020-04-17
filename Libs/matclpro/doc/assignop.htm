@@ -1,0 +1,95 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Assignment and computed assignment operators</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="submat.htm">Prev</a> |
+<a href="manual.htm">Up</a> |
+<a href="unaryop.htm">Next</a>
+</h6>
+
+<h2>Assignment and computed assignment operators</h2>
+
+<p>
+The following assignment and computed assignment operators are available for the matrix class objects.
+</p>
+
+<pre><code>1. matrix&lt;T&gt;&amp; <a href="#o1">operator=</a> (const matrix&lt;T&gt;& <i>m</i>);
+2. matrix&lt;T&gt;&amp; <a href="#o2">operator=</a> (const T& <i>e</i>);
+3. template &lt;class X&gt; matrix&lt;T&gt;&amp; <a href="#o3">operator=</a> (const matrix&lt;X&gt;&amp; <i>m</i>);
+
+4. matrix&lt;T&gt;&amp; <a href="#o4">operator+=</a> (const matrix&lt;T&gt;&amp; <i>m</i>);
+5. matrix&lt;T&gt;&amp; <a href="#o5">operator-=</a> (const matrix&lt;T&gt;&amp; <i>m</i>);
+6. matrix&lt;T&gt;&amp; <a href="#o6">operator*=</a> (const matrix&lt;T&gt;&amp; <i>m</i>);
+7. matrix&lt;T&gt;&amp; <a href="#o7">operator/=</a> (const matrix&lt;T&gt;&amp; <i>m</i>);
+8. matrix&lt;T&gt;&amp; <a href="#o8">operator*=</a> (const T&amp; <i>e</i>);
+9. matrix&lt;T&gt;&amp; <a href="#o9">operator/=</a> (const T&amp; <i>e</i>);
+
+</code></pre>
+
+<h4>Parameter</h4>
+
+<p>
+<dl>
+<dt><i>m</i></dt>
+<dd>A matrix object.</dd>
+
+<dt><i>e</i></dt>
+<dd>A number of type T.</dd>
+</dl>
+</p>
+
+<p>
+<ol>
+<li><a name="o1">Assigns the matrix <i>m</i> to the left-hand side matrix. The size of the matrices need not be equal.</li><br><br>
+
+<li><a name="o2">Assigns the value of <i>e</i> to all elements of the left-hand side matrix.</li><br><br>
+
+<li><a name="o3">Assigns the matrix <i>m</i> of type X to the left hand-side matrix. The compiler must have member template support for this operator to work.</li><br><br>
+
+<li><a name="o4">Adds the matrix <i>m</i> to the left-hand side matrix. The matrices must be equal in row and column size, otherwise this operator throws <i>invalid_argument</i> exception if range checking is enabled.
+</li><br><br>
+
+<li><a name="o5">Subtracts the matrix <i>m</i> from the left-hand side matrix. The matrices must be equal in row and column size, otherwise, this operator throws <i>invalid_argument</i> exception if range checking is enabled.</li><br><br>
+
+<li><a name="o6">Multiply the matrix <i>m</i> to the left-hand side matrix. The column number of left-hand side matrix must be equal to row number of right-hand side matrix, otherwise, this operator throws <i>invalid_argument</i> exception if range checking is enabled.</li><br><br>
+
+<li><a name="o7">Performs a simulated division by multiplying the inverse of the matrix <i>m</i> to the left-hand side matrix. The column number of left-hand side matrix must be equal to row number of right-hand side matrix, and the right-hand side matrix must be non-singular. This operator may throw <i>invalid_argument</i> or <i>runtime_error</i> exception.
+</li><br><br>
+
+<li><a name="o8">Multiplies all elements of the left-hand side matrix by <i>e</i>.</li><br><br>
+
+<li><a name="o9">Divides all elements of the left-hand side matrix by <i>e</i>.</li><br><br>
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;double&gt;    dMatrix;
+typedef std::complex&lt;double&gt;        dComplex;
+typedef techsoft::matrix&lt;dComplex&gt;  cdMatrix;
+
+dMatrix A, B(3,3);
+cdMatrix CA(3,3);
+
+B.rand();
+A = B;
+A = 0.0;
+
+CA = A;		// Requires member template support
+
+CA += CA;
+
+A *= 3.0;
+A /= 2;
+
+A -= B;
+A *= B;
+A /= B;
+
+</code></pre>
+</body>
+</html>

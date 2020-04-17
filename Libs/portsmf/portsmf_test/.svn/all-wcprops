@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/portmedia/!svn/ver/96/portsmf/trunk/portsmf_test
+END
+Makefile.osx
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/portmedia/!svn/ver/84/portsmf/trunk/portsmf_test/Makefile.osx
+END
+test.gro
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/portmedia/!svn/ver/84/portsmf/trunk/portsmf_test/test.gro
+END
+test2.gro
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/portmedia/!svn/ver/84/portsmf/trunk/portsmf_test/test2.gro
+END
+portsmf_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/portmedia/!svn/ver/96/portsmf/trunk/portsmf_test/portsmf_test.cpp
+END
+test5.gro
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/portmedia/!svn/ver/84/portsmf/trunk/portsmf_test/test5.gro
+END
+portsmf_test.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/portmedia/!svn/ver/85/portsmf/trunk/portsmf_test/portsmf_test.vcproj
+END
+scale.gro
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/portmedia/!svn/ver/84/portsmf/trunk/portsmf_test/scale.gro
+END

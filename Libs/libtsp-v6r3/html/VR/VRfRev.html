@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - VRfRev</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>VRfRev</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void VRfRev (const float x[], float y[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Reverse the order of the elements of an array
+</DL>
+<H4>Description</H4>
+This routine reverses the order of an array,
+<PRE>
+  y[i] = x[N-i-1],  for i from 0 to N-1.
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; const float x[]
+<DD>
+Input array (N elements)
+<DT>
+&lt;-  float y[]
+<DD>
+Output array (N elements).  The output array can be the same as the input
+array.
+<DT>
+ -&gt; int N
+<DD>
+Number of elements in the arrays (may be zero)
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.5  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

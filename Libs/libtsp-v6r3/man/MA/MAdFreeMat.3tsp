@@ -1,0 +1,27 @@
+.TH MAdFreeMat 3tsp "TSP (libtsp/MA)"
+.SH Routine
+.in +4n
+.ti -4n
+void MAdFreeMat (double *A[])
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Free an allocated double matrix
+.in -4n
+.SH Description
+This routine frees the space occupied by a double matrix.  This routine frees
+up space allocated by routine MAdAllocMat.
+.SH Parameters
+.in +4n
+.ti -4n
+ -> double *A[]
+.br
+Pointer to an array of row pointers.  If A is NULL, no action is taken.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.9  2003/05/09
+.SH See Also
+MAdAllocMat,
+libtsp

@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - FLdate</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>FLdate</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+char *FLdate (const char Fname[], int format)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Find the last modification time for a file (by name)
+</DL>
+<H4>Description</H4>
+This routine finds the last modified time for a given file.  This time is
+returned as a date/time string in one of a number of standard formats.  If
+the file does not exist or is in a directory which is not reachable, an empty
+string is returned.
+<P>
+<PRE>
+ Format  Example                      time zone    typical length
+   0    Sun Sep 16 01:03:52 1973      local time   24 + null
+   1    Sun Sep 16 01:03:52 EST 1973  local time   28* + null
+   2    1994-01-23 09:59:53 EST       local time   23* + null
+   3    1994-01-23 14:59:53 UTC       GMT          23 + null
+             (*) the time zone length can vary
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  char *FLdate
+<DD>
+Pointer to a character string for the date and time.  This is a pointer
+to an internal static storage area; each call to this routine overlays
+this storage.
+<DT>
+ -&gt; const char Fname[]
+<DD>
+Input character string specifying the file name
+<DT>
+ -&gt; int format
+<DD>
+Date / time format code, taking on values from 0 to 3
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.18  2003/05/09
+<H4>See Also</H4>
+<A HREF="FLfileDate.html">FLfileDate</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

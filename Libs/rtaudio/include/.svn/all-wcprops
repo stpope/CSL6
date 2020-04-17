@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svnroot/rtaudio/!svn/ver/16/trunk/include
+END
+asiodrvr.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/rtaudio/!svn/ver/16/trunk/include/asiodrvr.h
+END
+asiodrivers.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/rtaudio/!svn/ver/16/trunk/include/asiodrivers.h
+END
+asiosys.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/rtaudio/!svn/ver/16/trunk/include/asiosys.h
+END
+ginclude.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/rtaudio/!svn/ver/16/trunk/include/ginclude.h
+END
+iasiothiscallresolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/rtaudio/!svn/ver/16/trunk/include/iasiothiscallresolver.h
+END
+asio.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svnroot/rtaudio/!svn/ver/16/trunk/include/asio.h
+END
+dsound.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/rtaudio/!svn/ver/16/trunk/include/dsound.h
+END
+iasiodrv.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/rtaudio/!svn/ver/16/trunk/include/iasiodrv.h
+END
+asiolist.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/rtaudio/!svn/ver/16/trunk/include/asiolist.cpp
+END
+soundcard.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/rtaudio/!svn/ver/16/trunk/include/soundcard.h
+END
+asiodrivers.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/rtaudio/!svn/ver/16/trunk/include/asiodrivers.cpp
+END
+iasiothiscallresolver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/rtaudio/!svn/ver/16/trunk/include/iasiothiscallresolver.cpp
+END
+asio.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/rtaudio/!svn/ver/16/trunk/include/asio.cpp
+END
+asiolist.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/rtaudio/!svn/ver/16/trunk/include/asiolist.h
+END

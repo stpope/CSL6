@@ -1,0 +1,24 @@
+body,th,td  { font-size:80%; font-family:"Verdana,sans-serif"; }
+pre,code    { font-size:110%; font-family:"Lucida Sans Typewriter,Courier New,monospace"; }
+
+body        { background-color:#FFFFFF; } 
+a:link, A:visited, A:active { text-decoration: none }
+a:link	    { color: #0000FF; } 
+a:active    { color: #FF33CC; }
+a:visited   { color: #800080; }
+a:hover     { color: #FF5F00; text-decoration: underline; }
+
+h1	    { font-size:161%; }
+h2	    { font-size:148%; }
+h3	    { font-size:122%; }
+h4	    { font-size:109%; }
+h5	    { font-size:96%; }
+h1,h2,h3,h4,h5	{ font-weight:bold; font-family:"Tahoma,Verdana,sans-serif"; margin:0.4em }
+
+li,p     { text-align: justify }
+
+p,pre  { margin:0.8em,0.5em,1.0em; }
+pre	    { padding:1em,1em,0; background-color:#EAF0FF; } 
+dl	    { margin-top:0; }
+dt	    { margin:0.8em,0.5em,0; }
+dd	    { margin:0,0.5em; padding:0,0,0,24pt; }

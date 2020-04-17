@@ -1,0 +1,41 @@
+\hypertarget{deprecated}{}\section{Deprecated List}\label{deprecated}
+\label{deprecated__deprecated000004}
+\hypertarget{deprecated__deprecated000004}{}
+ \begin{description}
+\item[Class \hyperlink{structjack__transport__info__t}{jack\_\-transport\_\-info\_\-t} ]This is for compatibility with the earlier transport interface. Use the \hyperlink{structjack__position__t}{jack\_\-position\_\-t} struct, instead. \end{description}
+
+
+\label{deprecated__deprecated000003}
+\hypertarget{deprecated__deprecated000003}{}
+ \begin{description}
+\item[Global \hyperlink{jack_8h_fe90d892429267872e213823cbed0d84}{jack\_\-engine\_\-takeover\_\-timebase} ]This function still exists for compatibility with the earlier transport interface, but it does nothing. Instead, see \hyperlink{transport_8h}{transport.h} and use \hyperlink{transport_8h_d1d237a74417e8b4a4bc7894afefc1cb}{jack\_\-set\_\-timebase\_\-callback()}.
+
+\end{description}
+
+
+\label{deprecated__deprecated000002}
+\hypertarget{deprecated__deprecated000002}{}
+ \begin{description}
+\item[Global \hyperlink{jack_8h_013232493892e3a0eaf5f2498388118c}{jack\_\-internal\_\-client\_\-close} ]Please use \hyperlink{intclient_8h_03ffbdaae16521490f39230acbaf65c0}{jack\_\-internal\_\-client\_\-load()}. \end{description}
+
+
+\label{deprecated__deprecated000001}
+\hypertarget{deprecated__deprecated000001}{}
+ \begin{description}
+\item[Global \hyperlink{jack_8h_1baf4fbdc7de21679a2f26931cba2e86}{jack\_\-internal\_\-client\_\-new} ]Please use \hyperlink{intclient_8h_03ffbdaae16521490f39230acbaf65c0}{jack\_\-internal\_\-client\_\-load()}.
+
+\end{description}
+
+
+\label{deprecated__deprecated000005}
+\hypertarget{deprecated__deprecated000005}{}
+ \begin{description}
+\item[Global \hyperlink{transport_8h_84542d303215c8dcfec80f2f7700c255}{jack\_\-get\_\-transport\_\-info} ]This is for compatibility with the earlier transport interface. Use \hyperlink{transport_8h_376e441203bc73d3c99c6e31ca193638}{jack\_\-transport\_\-query()}, instead.
+
+\end{description}
+
+
+\label{deprecated__deprecated000006}
+\hypertarget{deprecated__deprecated000006}{}
+ \begin{description}
+\item[Global \hyperlink{transport_8h_8dcb2d34ae812a1ef141beb7f2f57879}{jack\_\-set\_\-transport\_\-info} ]This function still exists for compatibility with the earlier transport interface, but it does nothing. Instead, define a \hyperlink{transport_8h_60d88b9ed314f198a7487ec0e68796ee}{Jack\-Timebase\-Callback}. \end{description}

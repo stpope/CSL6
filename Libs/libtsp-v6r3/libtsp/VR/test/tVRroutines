@@ -1,0 +1,157 @@
+#!/bin/sh
+
+# Test VR routines
+#
+# $Id: tVRroutines 1.18 2005/02/01 libtsp-v6r3 $
+
+echo ""
+echo "========== tVRx2y"
+tVRx2y VRdAdd 1 2 3 // 1 2 3
+echo "----- ----- ----- -----"
+tVRx2y VRfAdd 1 2 3 // 1 2 3
+
+echo "----- ----- ----- -----"
+tVRx2y VRfAdB -1 1e-5				2>&1
+echo "----- ----- ----- -----"
+tVRx2y VRfAdB 0 1e-5				2>&1
+echo "----- ----- ----- -----"
+tVRx2y VRfAdB 1e-5 1e-4 1e-3 1e-2 0.1 1 10 100 1000
+
+echo "----- ----- ----- -----"
+tVRx2y VRdCopy 1 2 3
+echo "----- ----- ----- -----"
+tVRx2y VRfCopy 1 2 3
+
+echo "----- ----- ----- -----"
+tVRx2y VRdCorSym 1 2 3 2 1
+echo "----- ----- ----- -----"
+tVRx2y VRdCorSym 1 2 2 1
+echo "----- ----- ----- -----"
+tVRx2y VRdCorSym 1 2 -2 -1
+echo "----- ----- ----- -----"
+tVRx2y VRdCorSym 1 2 0 -2 -1
+echo "----- ----- ----- -----"
+tVRx2y VRdCorSym 1 2 3 2 2
+echo "----- ----- ----- -----"
+tVRx2y VRdCorSym 0 0 0 0
+echo "----- ----- ----- -----"
+tVRx2y VRdCorSym 0 0 0 0 0
+echo "----- ----- ----- -----"
+tVRx2y VRfCorSym 1 2 3 2 1
+echo "----- ----- ----- -----"
+tVRx2y VRfCorSym 1 2 2 1
+echo "----- ----- ----- -----"
+tVRx2y VRfCorSym 1 2 -2 -1
+echo "----- ----- ----- -----"
+tVRx2y VRfCorSym 1 2 0 -2 -1
+echo "----- ----- ----- -----"
+tVRx2y VRfCorSym 1 2 3 2 2
+echo "----- ----- ----- -----"
+tVRx2y VRfCorSym 0 0 0 0
+echo "----- ----- ----- -----"
+tVRx2y VRfCorSym 0 0 0 0 0
+
+echo "----- ----- ----- -----"
+tVRx2y VRfDiff 1 2 3 // 1 1 1
+
+echo "----- ----- ----- -----"
+tVRx2y VRdDotProd 1 2 3 // 3 2 1
+echo "----- ----- ----- -----"
+tVRx2y VRdDotProd 1 2 3 // 1 2 3
+echo "----- ----- ----- -----"
+tVRx2y VRfDotProd 1 2 3 // 3 2 1
+echo "----- ----- ----- -----"
+tVRx2y VRfDotProd 1 2 3 // 1 2 3
+
+echo "----- ----- ----- -----"
+tVRx2y VRdLinInc 1 3 // 1 2 3 4 5 6
+
+echo "----- ----- ----- -----"
+tVRx2y VRfLog10 1e-5 1e-4 1e-3 1e-2 0.1 1 10 100 1000
+echo "----- ----- ----- -----"
+tVRx2y VRfLog10 1 -1					2>&1
+
+echo "----- ----- ----- -----"
+tVRx2y VRfMin 5 4 6 1 2 3
+
+echo "----- ----- ----- -----"
+tVRx2y VRfMax 5 4 6 1 2 3
+
+echo "----- ----- ----- -----"
+tVRx2y VRdMult 1 2 3 // 1 2 3
+echo "----- ----- ----- -----"
+tVRx2y VRfMult 1 2 3 // 1 2 3
+
+echo "----- ----- ----- -----"
+tVRx2y VRfPow10 -5 -4 -3 -2 -1 0 1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRx2y VRfPow10 -1000
+echo "----- ----- ----- -----"
+tVRx2y VRfPow10 +1000
+
+echo "----- ----- ----- -----"
+tVRx2y VRfRev 1 2 3
+echo "----- ----- ----- -----"
+tVRx2y VRfRev 1 2 3 4
+
+echo "----- ----- ----- -----"
+tVRx2y VRdRFFTMSq 10 -2 3 4 5 6 7 8
+echo "----- ----- ----- -----"
+tVRx2y VRdRFFTMSq 10 2 3 4 -5 6 -7
+
+echo "----- ----- ----- -----"
+tVRx2y VRdScale 3 // 1 2 3
+echo "----- ----- ----- -----"
+tVRx2y VRfScale 3 // 1 2 3
+
+echo "----- ----- ----- -----"
+tVRx2y VRdSet 4 // 1 2 3
+echo "----- ----- ----- -----"
+tVRx2y VRfSet 4 // 1 2 3
+
+echo "----- ----- ----- -----"
+tVRx2y VRfSum 1 2 3 4 5
+
+echo "----- ----- ----- -----"
+tVRx2y VRdSymPart 1 // 1 2 2
+echo "----- ----- ----- -----"
+tVRx2y VRdSymPart -1 // 1 2 2
+
+echo "----- ----- ----- -----"
+tVRx2y VRdZero // 1 2 3
+echo "----- ----- ----- -----"
+tVRx2y VRfZero // 1 2 3
+
+echo ""
+echo "========== tVRxShift"
+tVRxShift VRfShift  0   1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRxShift VRfShift -2   1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRxShift VRfShift  2   1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRxShift VRfShift  5   1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRxShift VRfShift -5   1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRxShift VRdShift  0   1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRxShift VRdShift -2   1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRxShift VRdShift  2   1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRxShift VRdShift  5   1 2 3 4 5
+echo "----- ----- ----- -----"
+tVRxShift VRdShift -5   1 2 3 4 5
+
+echo ""
+echo "========== tVRswapBytes"
+tVRswapBytes 3			2>&1
+echo "----- ----- ----- -----"
+tVRswapBytes 1 1 2 4 8 16 32 64 128
+echo "----- ----- ----- -----"
+tVRswapBytes 2 1 4 16 64 256 1024 4096
+echo "----- ----- ----- -----"
+tVRswapBytes 4 1 16 256 4096 65536
+echo "----- ----- ----- -----"
+tVRswapBytes 8 0.1111111 0.2222222 0.5555555

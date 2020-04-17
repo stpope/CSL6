@@ -1,0 +1,25 @@
+TagLib Installation
+===================
+
+TagLib uses the CMake build system. As a user, you will most likely want to
+build TagLib in release mode and install it into a system-wide location.
+This can be done using the following commands:
+
+  cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_RELEASE_TYPE=Release .
+  make
+  sudo make install
+
+Some file formats in TagLib are not enabled by default, you can compile
+support for MP4 and WMA using the following options:
+
+  cmake -DWITH_MP4=ON -DWITH_ASF=ON [...]
+
+If you want to run the test suite to make sure TagLib works properly on your
+system, you need to have cppunit installed. The test suite has a custom target
+in the build system, so you can run the tests using make:
+
+  make check
+
+See http://www.cmake.org/cmake/help/runningcmake.html for generic help on
+running CMake.
+

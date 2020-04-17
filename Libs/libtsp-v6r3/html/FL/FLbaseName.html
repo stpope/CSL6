@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - FLbaseName</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>FLbaseName</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int FLbaseName (const char Fname[], char Bname[])
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Return the last component of a file path
+</DL>
+<H4>Description</H4>
+This routine takes a file path specification and returns the rightmost
+component.  Components are separated by "/" characters.  If no "/" character
+appears in the path, the input path name is returned.  For Windows, the
+directory separator character is "\".
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int FLbaseName
+<DD>
+Number of characters in the output string
+<DT>
+ -&gt; const char Fname[]
+<DD>
+Input character string with the path name
+<DT>
+&lt;-  char Bname[]
+<DD>
+Output string with the last path name component.  This string is at most
+FILENAME_MAX characters long including the terminating null character.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.20  2003/05/09
+<H4>See Also</H4>
+<A HREF="FLdirName.html">FLdirName</A>,
+<A HREF="FLdefName.html">FLdefName</A>,
+<A HREF="FLextName.html">FLextName</A>,
+<A HREF="FLpreName.html">FLpreName</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

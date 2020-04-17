@@ -1,0 +1,56 @@
+.TH AFsetFileType 3tsp "TSP (libtsp/AF)"
+.SH Routine
+.in +4n
+.ti -4n
+int AFsetFileType (const char String[])
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Set the input audio file type
+.in -4n
+.SH Description
+This routine sets the audio file type.  This file type is checked when
+reading audio files.  Explicitly setting the audio file type bypasses the
+need for a check for file type from the file header.
+.ft CW
+.nf
+.ne 3
+  "auto"      - determine the input file type from the file header
+  "AU" or "au" - AU audio file
+  "WAVE" or "wave" - WAVE file
+  "AIFF" or "aiff" - AIFF or AIFF-C sound file
+  "noheader"  - headerless (non-standard or no header) audio file
+  "SPHERE"    - NIST SPHERE audio file
+  "ESPS"      - ESPS sampled data feature file
+  "IRCAM"     - IRCAM soundfile
+  "SPPACK"    - SPPACK file
+  "INRS"      - INRS-Telecom audio file
+  "SPW"       - Comdisco SPW Signal file
+  "CSL" or "NSP" - CSL NSP file
+  "text"      - Text audio file
+.fi
+.ft P
+.PP
+If the input string contains has a leading '$', the string is assumed to
+specify the name of an environment variable after the '$'.  This routine
+uses the value of this environment variable to determine the parameters.
+For instance, if this routine is called as AFsetFileType("$AF_FILETYPE"),
+this routine would look for the parameter string in environment variable
+AF_FILETYPE.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int AFsetFileType
+.br
+Error code, zero for no error
+.ti -4n
+ -> const char String[]
+.br
+String with the input file type
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.16  2003/05/09
+.SH See Also
+libtsp

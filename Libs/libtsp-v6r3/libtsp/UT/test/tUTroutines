@@ -1,0 +1,139 @@
+#!/bin/sh
+
+# Test UT routines
+#
+# $Id: tUTroutines 1.25 2006/06/06 libtsp-v6r3 $
+
+echo ""
+echo "========== tUTerror"
+tUTerror		2>&1
+
+echo ""
+echo "========== tUTgetOption"
+# NB if redirected to a file, the error messages may not arrive in order
+tUTgetOption				# No arguments
+  echo "--"
+tUTgetOption -a=				2>&1	# Invalid argt
+  echo "--"
+tUTgetOption xxx yyy -a -ba			2>&1	# Invalid 4th arg
+  echo "--"
+tUTgetOption -a -ab -b				2>&1	# Invalid 2nd arg
+  echo "--"
+tUTgetOption --del=			# Empty = value
+  echo "--"
+tUTgetOption --del				2>&1	# Missing = value
+  echo "--"
+tUTgetOption -lim3				2>&1	# Invalid arg
+  echo "--"
+tUTgetOption -limit3
+  echo "--"
+tUTgetOption -limi 3
+  echo "--"
+tUTgetOption -limits3			# value is "s3"
+  echo "--"
+tUTgetOption --lim=3
+  echo "--"
+tUTgetOption --limi=3
+  echo "--"
+tUTgetOption --limits 3
+  echo "--"
+tUTgetOption -d					2>&1	# Missing # value
+  echo "--"
+tUTgetOption --d=20 --dela=25 --delay=30 --d 35 --del 40 --delay 45 -d50 -d 55
+  echo "--"
+tUTgetOption -d=25 -- --delay -d30	# Test "--" (stop interpreting)
+  echo "--"
+tUTgetOption -a -			# Test "-" (ordinary argument)
+  echo "--"
+tUTgetOption --help		2>&1
+  echo "--"
+tUTgetOption -v
+
+echo ""
+echo "========== tUTbyteOrder"
+tUTbyteOrder
+
+echo ""
+echo "========== tUTcheckIEEE"
+tUTcheckIEEE
+
+echo ""
+echo "========== tUTdecOption"
+tUTdecOption ""		""
+tUTdecOption ""		"*abc"
+tUTdecOption ""		"*"
+tUTdecOption ""		"a"
+tUTdecOption ""		"abc"
+tUTdecOption "a"	""
+tUTdecOption "a"	"a"
+tUTdecOption "a"	"a*bc"
+tUTdecOption "ab"	"a*bc"
+tUTdecOption "abc"	"a*bc"
+tUTdecOption "abcd"	"a*bc"
+tUTdecOption "ab*c"	"a*b*c"
+echo ""
+tUTdecOption ""		"#"
+tUTdecOption "33"	"#"
+tUTdecOption "33"	"*abc#"
+tUTdecOption "33"	"a#"
+tUTdecOption "33"	"abc#"
+tUTdecOption "a33"	"a#"
+tUTdecOption "a33"	"a*bc#"
+tUTdecOption "ab33"	"a*b#"
+tUTdecOption "ab33"	"a*bc#"
+tUTdecOption "abc33"	"a*bc#"
+echo ""
+tUTdecOption "a=33"	"a="
+tUTdecOption "ab=33"	"ab="
+tUTdecOption "a=33"	"ab="
+tUTdecOption "a=33"	"a*bc="
+tUTdecOption "ab=33"	"a*bc="
+tUTdecOption "a"	"a="
+tUTdecOption "a"	"a*bc="
+tUTdecOption "ab"	"a*bc="
+
+echo ""
+echo "========== tUTdate (date/time: `date -u +'%Y-%m-%d %H:%M:%S UTC'`)"
+tUTdate
+
+echo ""
+echo "========== tUTuserName"
+tUTuserName
+
+echo ""
+echo "========== tUTtypes"
+tUTtypes
+
+echo ""
+echo "========== tUTctime"
+tUTctime 0
+
+# gcc under SunOS 5.3 gives the wrong UTC value in the following case
+echo ""
+tUTctime 800000000
+
+echo ""
+echo "========== tUTxIEEE80"
+tUTxIEEE80 0
+tUTxIEEE80 -0
+tUTxIEEE80 infinity
+tUTxIEEE80 -infinity
+tUTxIEEE80 HUGE_VAL
+tUTxIEEE80 -HUGE_VAL
+tUTxIEEE80 NaN
+tUTxIEEE80 0.5
+tUTxIEEE80 3.333333333333333e-20
+tUTxIEEE80 -3.333333333333333e-20
+tUTxIEEE80 2e-308
+tUTxIEEE80 8000
+tUTxIEEE80 44100
+
+echo ""
+echo "========== tNaN"
+tNaN					2>&1
+
+echo ""
+echo "========== tcpp"
+tcpp
+
+exit 0

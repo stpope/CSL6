@@ -1,0 +1,48 @@
+.TH "lo_osc_types.h" 3 "Thu Apr 16 2020" "Version 0.31" "liblo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lo_osc_types.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBlo_timetag\fP"
+.br
+.RI "\fIA structure to store OSC TimeTag values\&. \fP"
+.ti -1c
+.RI "union \fBlo_arg\fP"
+.br
+.RI "\fIUnion used to read values from incoming messages\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBLO_TT_IMMEDIATE\fP   ((\fBlo_timetag\fP){0U,1U})"
+.br
+.RI "\fIA timetag constant representing 'now'\&. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBlo_element_type\fP { \fBLO_ELEMENT_MESSAGE\fP = 1, \fBLO_ELEMENT_BUNDLE\fP = 2 }"
+.br
+.RI "\fIAn enumeration of bundle element types liblo can handle\&. \fP"
+.ti -1c
+.RI "enum \fBlo_type\fP { \fBLO_INT32\fP = 'i', \fBLO_FLOAT\fP = 'f', \fBLO_STRING\fP = 's', \fBLO_BLOB\fP = 'b', \fBLO_INT64\fP = 'h', \fBLO_TIMETAG\fP = 't', \fBLO_DOUBLE\fP = 'd', \fBLO_SYMBOL\fP = 'S', \fBLO_CHAR\fP = 'c', \fBLO_MIDI\fP = 'm', \fBLO_TRUE\fP = 'T', \fBLO_FALSE\fP = 'F', \fBLO_NIL\fP = 'N', \fBLO_INFINITUM\fP = 'I' }"
+.br
+.RI "\fIAn enumeration of the OSC types liblo can send and receive\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A liblo header defining OSC-related types and constants\&. 
+.PP
+Definition in file \fBlo_osc_types\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for liblo from the source code\&.

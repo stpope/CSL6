@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - UThalt</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>UThalt</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void UThalt (const char Errmsg[], ...)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Print an error message, stop with error status set
+</DL>
+<H4>Description</H4>
+This routine prints an error message to stderr (standard error) and then
+terminates execution with exit status set to EXIT_FAILURE.  An example of the
+use of this routine is as follows.
+<PRE>
+  UThalt ("%s: Invalid option", PROGRAM);
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; const char Errmsg[]
+<DD>
+Character string to be printed.  This string can contain optional
+formatting codes.  The arguments corresponding to the formatting codes
+appear at the end of the argument list.  The input string should not
+normally have a terminating newline character, since this routine
+supplies a newline.
+<DT>
+ -&gt; &lt;args...&gt;
+<DD>
+Arguments corresponding to the formatting codes.  The format string and
+the variable number of arguments is passed on to the system routine
+vprintf.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.22  2003/05/09
+<H4>See Also</H4>
+<A HREF="UTerror.html">UTerror</A>,
+<A HREF="UTwarn.html">UTwarn</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,124 @@
+.TH SPpcXcep 3tsp "TSP (libtsp/SP)"
+.SH Routine
+.in +4n
+.ti -4n
+void SPpcXcep (const float pc[], int Np, float cep[], int Ncep)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Convert predictor coefficients to cepstral coefficients
+.in -4n
+.SH Description
+This routine calculates cepstral coefficients corresponding to a set of
+predictor coefficients.  Consider the prediction error filter A(z),
+.PP
+.ft CW
+.nf
+.ne 3
+              Np       -k
+  A(z) = 1 - SUM p(k) z  .
+             k=1
+.fi
+.ft P
+.PP
+The power spectrum corresponding to the all-pole LPC filter is
+.PP
+.ft CW
+.nf
+.ne 3
+  S(w) = g^2 / |A(w)|^2 ,
+.fi
+.ft P
+.PP
+where A(w) is short-hand notation for A(exp(jw)).  The power spectrum is
+the Fourier transform of the (infinite) set of autocorrelation coefficients
+The cepstrum for the autocorrelation coefficients is given by the inverse
+Fourier transform of the log power spectrum. Equivalently the cepstral
+coefficients are the Fourier series coefficients of the (periodic) log power
+spectrum,
+.PP
+.ft CW
+.nf
+.ne 3
+  ln[S(w)] = 2 ln[g] - ln[|A(w)|^2]
+.fi
+.ft P
+.PP
+.ft CW
+.nf
+.ne 3
+              inf
+           =  SUM  c(k) exp(-jkw) .
+             k=-inf
+.fi
+.ft P
+.PP
+The cepstral coefficients are symmetric, c(-k) = c(k).  For a minimum-phase
+A(z), the integral of ln[|A(w)|^2] is zero.  The coefficient c(0) is then the
+average of the log power spectrum, c(0) = 2 ln[g].  In this routine, g is
+assumed to be unity, giving c(0) = 0.  An expression for the other cepstral
+coefficients is obtained by expanding the ln[A(w)] in a Laurent series and
+taking the derivatives.  This gives the recursion
+.PP
+.ft CW
+.nf
+.ne 3
+                1  n-1
+  c(n) = p(n) + -  SUM (n-k) c(n-k) p(k),  n=1,2,... .
+                n  k=1
+.fi
+.ft P
+.PP
+This routine returns the first Ncep cepstral coefficients.
+.PP
+.in +4n
+.ti -4n
+Reference:
+.br
+J. D. Markel and A. H. Gray, Jr., "Linear Prediction of Speech",
+Springer-Verlag, 1976.
+.in -4n
+.PP
+Predictor coefficients are usually expressed algebraically as vectors with
+1-offset indexing.  The correspondence to the 0-offset C-arrays is as
+follows.
+.ft CW
+.nf
+.ne 3
+  p(1) <==> pc[0]       predictor coefficient corresponding to lag 1
+  p(i) <==> pc[i-1]     1 <= i < Np
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+ -> const float pc[]
+.br
+Vector of predictor coefficients (Np values).  These are the coefficients
+of the predictor filter, with pc[0] being the predictor coefficient
+corresponding to lag 1, and pc[Np-1] corresponding to lag Np.
+.ti -4n
+ -> int Np
+.br
+Number of predictor coefficients
+.ti -4n
+<-  float cep[]
+.br
+Cepstral coefficients (Ncep values).  The first cepstral coefficient
+cep[0] corresponds to the zero quefrency term and is always returned
+with the value zero.
+.ti -4n
+ -> int Ncep
+.br
+Number of cepstral coefficients (including cep[0])
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.9  2003/05/09
+.SH See Also
+SPpcXcor,
+SPpcXec,
+SPpcXlsf,
+SPpcXrc,
+libtsp

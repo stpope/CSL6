@@ -1,0 +1,342 @@
+
+========== tSTcatMax
+STcatMax: "abcxy"
+STcatMax: "abc"
+STcatMax: "xy"
+STcatMax: "ab"
+STcatMax: "abcde"
+STcatMax: "xyz12"
+STcatMax - String truncated: "abcxy..."
+STcatMax: "abcxy"
+STcatMax - String truncated: "abcde..."
+STcatMax: "abcde"
+STcatMax - String truncated: "abcde..."
+STcatMax: "abcde"
+STcatMax - String truncated: "xyz12..."
+STcatMax: "xyz12"
+STcatMax - String truncated: "abxyz..."
+STcatMax: "abxyz"
+
+========== tSTcopyMax
+STcopyMax: "abcd"
+STcopyMax: "abcde"
+STcopyMax - String truncated: "abcde..."
+STcopyMax: "abcde"
+
+========== tSTcopyNMax
+STcopyNMax: "ab"
+STcopyNMax: "abc"
+STcopyNMax: "abc"
+STcopyNMax - String truncated: "abc..."
+STcopyNMax: "abc"
+
+========== tSTdecNxxx
+STdecNdouble: input |23.1|, min = 1, max = 1 -> return value = 0
+  data values:
+         23.1
+STdecNdouble: input |-23.1|, min = 1, max = 1 -> return value = 0
+  data values:
+        -23.1
+STdecNdouble: input |1e50|, min = 1, max = 1 -> return value = 0
+  data values:
+        1e+50
+STdecNdouble: input |-1e50|, min = 1, max = 1 -> return value = 0
+  data values:
+       -1e+50
+STdec1val - Value too large: "1e1000"
+STdecNdouble: input |1e1000|, min = 1, max = 1 -> return value = 2
+  data values:
+          inf
+STdec1val - Value too large: "-1e1000"
+STdecNdouble: input |-1e1000|, min = 1, max = 1 -> return value = 2
+  data values:
+         -inf
+STdecNdouble: input |1e-50|, min = 1, max = 1 -> return value = 0
+  data values:
+        1e-50
+STdecNdouble: input |-1e-50|, min = 1, max = 1 -> return value = 0
+  data values:
+       -1e-50
+STdec1val - Value too small: "1e-1000"
+STdecNdouble: input |1e-1000|, min = 1, max = 1 -> return value = 2
+  data values:
+            0
+STdec1val - Value too small: "-1e-1000"
+STdecNdouble: input |-1e-1000|, min = 1, max = 1 -> return value = 2
+  data values:
+           -0
+STdecNdouble: input |0|, min = 1, max = 1 -> return value = 0
+  data values:
+            0
+STdecNfloat: input |23.1|, min = 1, max = 1 -> return value = 0
+  data values:
+         23.1
+STdecNfloat: input |-23.1|, min = 1, max = 1 -> return value = 0
+  data values:
+        -23.1
+STdec1val - Value too large: "1e50"
+STdecNfloat: input |1e50|, min = 1, max = 1 -> return value = 2
+  data values:
+   3.4028e+38
+STdec1val - Value too large: "-1e50"
+STdecNfloat: input |-1e50|, min = 1, max = 1 -> return value = 2
+  data values:
+  -3.4028e+38
+STdec1val - Value too small: "1e-50"
+STdecNfloat: input |1e-50|, min = 1, max = 1 -> return value = 2
+  data values:
+            0
+STdec1val - Value too small: "-1e-50"
+STdecNfloat: input |-1e-50|, min = 1, max = 1 -> return value = 2
+  data values:
+            0
+STdecNfloat: input |0|, min = 1, max = 1 -> return value = 0
+  data values:
+            0
+STdecNint: input |23|, min = 1, max = 1 -> return value = 0
+  data values:
+           23
+STdecNint: input |-23|, min = 1, max = 1 -> return value = 0
+  data values:
+          -23
+STdecNint: input |0|, min = 1, max = 1 -> return value = 0
+  data values:
+            0
+STdec1val - Value too large: "10000000000"
+STdecNint: input |10000000000|, min = 1, max = 1 -> return value = 2
+  data values:
+   2147483647
+STdec1val - Value too large: "-10000000000"
+STdecNint: input |-10000000000|, min = 1, max = 1 -> return value = 2
+  data values:
+  -2147483648
+STdec1val - Data format error: "23.1"
+STdecNint: input |23.1|, min = 1, max = 1 -> return value = 1
+STdec1val - Data format error: "-23.1"
+STdecNint: input |-23.1|, min = 1, max = 1 -> return value = 1
+STdecNlong: input |23|, min = 1, max = 1 -> return value = 0
+  data values:
+           23
+STdecNlong: input |-23|, min = 1, max = 1 -> return value = 0
+  data values:
+          -23
+STdecNlong: input |0|, min = 1, max = 1 -> return value = 0
+  data values:
+            0
+STdec1val - Value too large: "10000000000"
+STdecNlong: input |10000000000|, min = 1, max = 1 -> return value = 2
+  data values:
+   2147483647
+STdec1val - Value too large: "-10000000000"
+STdecNlong: input |-10000000000|, min = 1, max = 1 -> return value = 2
+  data values:
+  -2147483648
+STdec1val - Data format error: "23.1"
+STdecNlong: input |23.1|, min = 1, max = 1 -> return value = 1
+STdec1val - Data format error: "-23.1"
+STdecNlong: input |-23.1|, min = 1, max = 1 -> return value = 1
+STdecNval - Empty data string
+STdecNint: input ||, min = 1, max = 1 -> return value = 1
+STdecNval - Extra data ignored
+STdecNint: input | 23 aaa|, min = 1, max = 1 -> return value = 0
+  data values:
+           23
+STdecNint: input ||, min = 0, max = 3 -> return value = 0
+STdecNint: input |11|, min = 0, max = 3 -> return value = 0
+  data values:
+           11
+STdecNval - Empty data string
+STdecNint: input |11,|, min = 0, max = 3 -> return value = 1
+  data values:
+           11
+STdecNint: input |11|, min = 1, max = 3 -> return value = 0
+  data values:
+           11
+STdecNint: input |11 22|, min = 1, max = 3 -> return value = 0
+  data values:
+           11           22
+STdecNint: input |11 22 33|, min = 1, max = 3 -> return value = 0
+  data values:
+           11           22           33
+STdecNval - Extra data ignored
+STdecNint: input |11 22 33 44|, min = 1, max = 3 -> return value = 0
+  data values:
+           11           22           33
+STdec1val - Data format error: "aa"
+STdecNint: input |11 aa 33|, min = 1, max = 3 -> return value = 1
+  data values:
+           11
+STdec1val - Data format error: "11aa"
+STdecNint: input |11aa 22bb|, min = 1, max = 3 -> return value = 1
+
+========== tSTdecPair
+STdecIrange - Data format error: ""
+STdecIrange: status = 1, Values: 888 : 999
+STdecIrange - Data format error: ":"
+STdecIrange: status = 1, Values: 888 : 999
+STdecIrange - Data format error: "11:"
+STdecIrange: status = 1, Values: 888 : 999
+STdecIrange - Data format error: ":11"
+STdecIrange: status = 1, Values: 888 : 999
+STdecIrange: status = 0, Values: 11 : 11
+STdecIrange: status = 0, Values: 11 : 22
+STdec1val - Data format error: "22 : 33"
+STdecIrange: status = 1, Values: 888 : 999
+STdec1val - Data format error: "22 33"
+STdecIrange: status = 1, Values: 888 : 999
+STdec1val - Data format error: "aa"
+STdecIrange: status = 1, Values: 888 : 999
+STdec1val - Data format error: "11aa"
+STdecIrange: status = 1, Values: 888 : 999
+STdec1val - Data format error: "1.1"
+STdecIrange: status = 1, Values: 888 : 999
+STdec1val - Data format error: "2.2"
+STdecIrange: status = 1, Values: 888 : 999
+STdecLrange - Data format error: ""
+STdecLrange: status = 1, Values: 888 : 999
+STdecLrange - Data format error: ":"
+STdecLrange: status = 1, Values: 888 : 999
+STdecLrange - Data format error: "11:"
+STdecLrange: status = 1, Values: 888 : 999
+STdecLrange - Data format error: ":11"
+STdecLrange: status = 1, Values: 888 : 999
+STdecLrange: status = 0, Values: 11 : 11
+STdecLrange: status = 0, Values: 11 : 22
+STdecIfrac - Data format error: ""
+STdecIfrac: Status = 1, Values: 888 / 999
+STdecIfrac - Data format error: "/"
+STdecIfrac: Status = 1, Values: 888 / 999
+STdecIfrac - Data format error: "11/"
+STdecIfrac: Status = 1, Values: 888 / 999
+STdecIfrac - Data format error: "/11"
+STdecIfrac: Status = 1, Values: 888 / 999
+STdecIfrac: Status = 0, Values: 11 / 1
+STdecIfrac: Status = 0, Values: 11 / 12
+STdec1val - Data format error: "44.1"
+STdecIfrac: Status = 1, Values: 888 / 999
+STdec1val - Data format error: "aa"
+STdecIfrac: Status = 1, Values: 888 / 999
+STdecDfrac - Data format error: ""
+STdecDfrac: status = 1, Values: 888 / 999
+STdecDfrac - Data format error: "/"
+STdecDfrac: status = 1, Values: 888 / 999
+STdecDfrac - Data format error: "11/"
+STdecDfrac: status = 1, Values: 888 / 999
+STdecDfrac - Data format error: "/11"
+STdecDfrac: status = 1, Values: 888 / 999
+STdecDfrac: status = 0, Values: 11 / 1
+STdecDfrac: status = 0, Values: 44.1 / 8.3
+
+========== tSTfindToken
+string: |	|
+  Delims: |,|, Quotes: ||, WSFlag: 2
+  Token: ||
+string: ||
+  Delims: |,|, Quotes: ||, WSFlag: 0
+  Token: ||
+string: | a = b c, d |
+  Delims: |,|, Quotes: |""()|, WSFlag: 0
+  Token: | a = b c|
+  Token: | d |
+string: | a = b c, d |
+  Delims: |,|, Quotes: |""()|, WSFlag: 1
+  Token: |a = b c|
+  Token: |d|
+string: | a = b c, d |
+  Delims: |,|, Quotes: |""()|, WSFlag: 2
+  Token: |a|
+  Token: |=|
+  Token: |b|
+  Token: |c|
+  Token: |d|
+string: | a = "b (c, d)", (e,f) |
+  Delims: |,|, Quotes: |""()|, WSFlag: 2
+  Token: |a|
+  Token: |=|
+  Token: |"b (c, d)"|
+  Token: |(e,f)|
+string: | a : b :|
+  Delims: |:|, Quotes: ||, WSFlag: 1
+  Token: |a|
+  Token: |b|
+  Token: ||
+
+========== tSTkeyMatch
+String "abc" matches key 3, abc*de*f
+String "abcd" matches key 3, abc*de*f
+String "abcde" matches key 3, abc*de*f
+String "abcdex" matches key 3, abc*de*f
+String "ab" matches key 4, **well
+String "abC" matches key 4, **well
+String " abc" matches key 4, **well
+String "abcx" matches key 4, **well
+String "h" matches key 1, h
+String "ha" matches key 4, **well
+String "dest" matches key 4, **well
+String "destr" matches key 0, destr*oy
+String "destro" matches key 0, destr*oy
+String "destroy" matches key 0, destr*oy
+String "destroye" matches key 4, **well
+String "(null)", no match
+String "" matches key 4, **well
+
+========== tSTkeyXpar
+tSTkeyXpar: fir*st = abc
+tSTkeyXpar: fir*st = "abc
+
+========== tSTtrim
+STtrim: "" (0 chars)
+STtrim: "" (0 chars)
+STtrim: "a" (1 chars)
+STtrim: "ab" (2 chars)
+STtrim: "ab" (2 chars)
+STtrim: "abc" (3 chars)
+STtrim: "abc" (3 chars)
+STtrim: "abcd" (4 chars)
+STtrim: "abc" (3 chars)
+
+========== tSTunQuote
+STunQuote: "abc"
+STunQuote: "abc"def"
+STunQuote: "(abd)"
+STunQuote: "abcdef"
+
+========== tSTstrDots
+STstrDots: "It was the best of times, it was the worst"
+STstrDots: "It was the best of times, it was the ..."
+STstrDots: "It was the best ..."
+STstrDots: "It was ..."
+STstrDots: "It w"
+STstrDots: "Address http://www.TSP.EE.M..."
+STstrDots: "It ??was the best ..."
+
+========== tSTstrLC
+STstrLC:
+    A  =>  a      B  =>  b      C  =>  c      D  =>  d  
+    E  =>  e      F  =>  f      G  =>  g      H  =>  h  
+    I  =>  i      J  =>  j      K  =>  k      L  =>  l  
+    M  =>  m      N  =>  n      O  =>  o      P  =>  p  
+    Q  =>  q      R  =>  r      S  =>  s      T  =>  t  
+    U  =>  u      V  =>  v      W  =>  w      X  =>  x  
+    Y  =>  y      Z  =>  z  
+STstrLC: xXyY => xxyy (4 chars)
+
+========== tSTstrstrNM
+STstrstrNM: match at offset 2
+STstrstrNM: no match
+STstrstrNM: match at offset 1
+STstrstrNM: match at offset 1
+STstrstrNM: match at offset 2
+
+========== tSTtrimNMax
+STtrimNMax: ""
+STtrimNMax: "ab"
+STtrimNMax: "ab"
+STtrimNMax: "abc"
+STtrimNMax: "abc"
+STtrimNMax: "abc"
+STcopyNMax - String truncated: "abc..."
+STtrimNMax: "abc"
+
+========== tsscanf
+sscanf OK

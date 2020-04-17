@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - STdec1double</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>STdec1double</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int STdec1double (const char String[], double *Dval)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Decode a double value
+</DL>
+<H4>Description</H4>
+This routine decodes a string containing a numeric value.  The decoded datum
+is stored as a double value.  If a decoding error is detected, a warning
+message is printed and error status is set.  A warning messages is printed
+if extra data follows the requested value (this data is ignored).
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int STdec1double
+<DD>
+Error status,
+<PRE>
+  0 - no error
+  1 - error, too few values or data format error
+  2 - warning, data values too large or too small
+</PRE>
+<DT>
+ -&gt; const char String[]
+<DD>
+Input string
+<DT>
+&lt;-  double *Dval
+<DD>
+Returned value.  This value is not changed if an error status is
+returned.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.5  2003/05/09
+<H4>See Also</H4>
+<A HREF="STdec1float.html">STdec1float</A>,
+<A HREF="STdec1int.html">STdec1int</A>,
+<A HREF="STdec1long.html">STdec1long</A>,
+<A HREF="STdecNdouble.html">STdecNdouble</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - AFdWriteData</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>AFdWriteData</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int AFdWriteData (AFILE *AFp, const double Dbuff[], int Nval)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Write data to an audio file (double input values)
+</DL>
+<H4>Description</H4>
+This routine writes a specified number of samples to an audio file.  The
+double input data is converted to the audio file data representation.  The
+file data representation is set on opening the file with routine AFopnWrite.
+This routine writes data sequentially to the file.  A warning message is
+printed if the input values exceed the dynamic range of the file data
+representation.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int AFdWriteData
+<DD>
+Number of samples written
+<DT>
+ -&gt; AFILE *AFp
+<DD>
+Audio file pointer for an audio file opened by AFopnWrite
+<DT>
+ -&gt; const double Dbuff[]
+<DD>
+Array of doubles with Nval samples
+<DT>
+ -&gt; int Nval
+<DD>
+Number of samples to be written
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.3  2003/05/13
+<H4>See Also</H4>
+<A HREF="AFfWriteData.html">AFfWriteData</A>,
+<A HREF="AFopnWrite.html">AFopnWrite</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

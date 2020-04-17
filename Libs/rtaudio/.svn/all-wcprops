@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svnroot/rtaudio/!svn/ver/45/trunk
+END
+rtaudio-config.in
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/rtaudio/!svn/ver/33/trunk/rtaudio-config.in
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/rtaudio/!svn/ver/44/trunk/configure
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/rtaudio/!svn/ver/33/trunk/Makefile.in
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/rtaudio/!svn/ver/44/trunk/configure.ac
+END
+RtError.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/rtaudio/!svn/ver/16/trunk/RtError.h
+END
+install
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svnroot/rtaudio/!svn/ver/36/trunk/install
+END
+RtAudio.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/rtaudio/!svn/ver/45/trunk/RtAudio.cpp
+END
+RtAudio.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/rtaudio/!svn/ver/45/trunk/RtAudio.h
+END
+readme
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svnroot/rtaudio/!svn/ver/36/trunk/readme
+END

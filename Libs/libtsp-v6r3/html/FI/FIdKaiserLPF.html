@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - FIdKaiserLPF</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>FIdKaiserLPF</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void FIdKaiserLPF (double h[], int N, double Fc, double alpha)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Generate a Kaiser windowed lowpass filter
+</DL>
+<H4>Description</H4>
+This routine calculates the impulse response of a symmetric lowpass filter
+which is obtained by applying a Kaiser window to a sin(x)/x function.
+Consider the continuous-time version of this response
+<PRE>
+                     sin(2 pi Fc t)
+  h(t) = Kw(t/T, a)  -------------- ,
+                          pi t
+</PRE>
+where Kw(t/T,a) is a Kaiser window with parameter a, spanning -T &lt;= t &lt;= T.
+The cutoff of the lowpass filter is Fc.  The gain of the filter is set to
+approximate unity in the passband.  If it is desired to have the peak
+value of the time response equal to unity, h(t) must be divided by 2*Fc.
+<P>
+The discrete-time impulse response of length N is obtained by setting the
+sampling rate to one; t = n - T and T = (N-1)/2.  The cutoff frequency Fc
+is then a normalized frequency.
+<P>
+The parameter a (alpha) determines the shape of the window, with increasing
+a giving a wider transition region but better stopband attenuation.  The
+tradeoff is shown in the following table.
+<PRE>
+   stopband     a    transition   passband
+  attenuation         width D      ripple
+     30 dB    2.210     1.536    +/- 0.270 dB
+     40 dB    3.384     2.228    +/- 0.0864 dB
+     50 dB    4.538     2.926    +/- 0.0274 dB
+     60 dB    5.658     3.621    +/- 0.00868 dB
+     70 dB    6.764     4.317    +/- 0.00275 dB
+     80 dB    7.865     5.015    +/- 0.00089 dB
+     90 dB    8.960     5.712    +/- 0.00027 dB
+    100 dB   10.056     6.408    +/- 0.00009 dB
+</PRE>
+The transition width parameter D = (N-1) dF, where dF is the normalized
+transition width.
+<P>
+<DL>
+<DT>
+Example:
+</DL>
+Consider a lowpass filter with a 90 dB stopband attenuation to be used for
+interpolation by a factor of 8.  The cutoff frequency is then 0.5/8 = 0.0625.
+The transition bandwidth should be less than 10 % of the cutoff frequency,
+giving dF = 0.00625.  The 90 dB attenuation is reached for a = 8.960.
+This gives D = 5.712.  Then N &gt;= D/dF + 1, giving N = 915.  This is a long
+filter because of the narrow transition region and high attenuation
+specification, but in fact, for interpolation only 1/8 of these samples are
+used at any one time.
+<P>
+<DL>
+<DT>
+References:
+</DL>
+J. F. Kaiser, "Nonrecursive digital filter design using the I0-sinh window
+function", Proc. 1974 IEEE Int. Symp. on Circuits and Syst., pp. 20-23,
+April 1974.
+<P>
+A. Antoniou, Digital Filters: Analysis, Design and Applications, 2nd ed.,
+McGraw-Hill, 1993.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  double h[]
+<DD>
+Array containing the impulse response samples.  The reference point in
+the array is at offset (N-1)/2.
+<DT>
+ -&gt; int N
+<DD>
+Number of impulse response samples
+<DT>
+ -&gt; double Fc
+<DD>
+Lowpass filter cutoff (normalized frequency, 0 to 1/2)
+<DT>
+ -&gt; double alpha
+<DD>
+Kaiser window parameter
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.1  2005/02/01
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

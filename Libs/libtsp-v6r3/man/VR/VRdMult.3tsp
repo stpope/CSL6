@@ -1,0 +1,45 @@
+.TH VRdMult 3tsp "TSP (libtsp/VR)"
+.SH Routine
+.in +4n
+.ti -4n
+void VRdMult (const double x1[], const double x2[], double y[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Element-by-element product of two double arrays
+.in -4n
+.SH Description
+This routine calculates the product of corresponding elements of two double
+arrays,
+.ft CW
+.nf
+.ne 3
+  y[i] = x1[i] * x2[i],  0 <= i < N.
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+ -> const double x1[]
+.br
+Input array (N elements)
+.ti -4n
+ -> const double x2[]
+.br
+Input array (N elements)
+.ti -4n
+<-  double y[]
+.br
+Output array (N elements).  The output array can be the same as either
+of the input arrays.
+.ti -4n
+ -> int N
+.br
+Number of elements in the arrays (may be zero)
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.2  2003/05/09
+.SH See Also
+libtsp

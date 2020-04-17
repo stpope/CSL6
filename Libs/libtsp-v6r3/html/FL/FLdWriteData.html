@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - FLdWriteData</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>FLdWriteData</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void FLdWriteData (const char Fname[], const double x[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Write a double array in text form to a file
+</DL>
+<H4>Description</H4>
+This routine writes double data to a named file.  The float data is written
+to the file as text, with one data value to a line.
+<P>
+The intended use of this routine is to write data to a file in a form that
+can be edited or imported into other programs.  An example would be to write
+data that can be easily imported into MATLAB, using the MATLAB load command.
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; const char Fname[]
+<DD>
+File name for the data
+<DT>
+ -&gt; const double x[]
+<DD>
+Array of N doubles
+<DT>
+ -&gt; int N
+<DD>
+Number of elements in x
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.3  2005/02/01
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

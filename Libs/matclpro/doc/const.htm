@@ -1,0 +1,128 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Matrix constructors and destructor</title>
+</head>
+<body>
+
+<h6 align=right>
+Prev |
+<a href="manual.htm">Up</a> |
+<a href="submat.htm">Next</a>
+</h6>
+
+<h2>Constructors and destructor</h2>
+
+<p>
+The following constructors are available for the matrix class.
+</p>
+
+<pre><code>1. <a href="#c1">matrix</a> ();
+2. <a href="#c2">matrix</a> (size_t <i>nRow</i>, size_t <i>nCol</i>);
+3. <a href="#c3">matrix</a> (size_t <i>nRow</i>, size_t <i>nCol</i>, const T&amp; <i>e</i>);
+4. <a href="#c4">matrix</a> (size_t <i>nRow</i>, size_t <i>nCol</i>, const T* <i>Array</i>, MatArrayType <i>aType</i> = C_ARRAY);
+5. <a href="#c5">matrix</a> (size_t <i>nRow</i>, size_t <i>nCol</i>, const valarray&lt;T&gt;&amp; <i>vec</i>);
+
+6. <a href="#c6">matrix</a> (const matrix&lt;T&gt;&amp; <i>m</i>);
+7. template &lt;class X&gt; <a href="#c7">matrix</a> (const matrix&lt;X&gt;&amp; <i>m</i>);
+
+8. <a href="#c8">~matrix</a> ();
+
+</code></pre>
+
+<p>
+Constructs a matrix class object.
+</p>
+
+<h4>Parameter</h4>
+
+<p>
+<dl>
+<dt><i>nRow</i></dt>
+<dd>Number of rows in the matrix.</dd>
+
+<dt><i>nCol</i></dt>
+<dd>Number of columns in the matrix.</dd>
+
+<dt><i>e</i></dt>
+<dd>Initialization value for all matrix elements.</dd>
+
+<dt><i>Array</i></dt>
+<dd>Address of an array of type <b>T</b> to initialize the elements of the matrix. The number of elements in the array must be at least equal to the number of elements in the matrix object, i.e., nRow X nCol.</dd>
+
+<dt><i>aType</i></dt>
+<dd>Memory layout of the array, i.e., it can be of "C" style (<i>C_ARRAY</i>) or Fortran style (<i>FORTRAN_ARRAY</i>). The default value for this parameter is <i>C_ARRAY</i>.</dd>
+
+<dt><i>vec</i></dt>
+<dd>Reference to a <i>valarray</i> class object to initialize the matrix elements. The size of the <i>vec</i> must be at least equal to the number of elements in the matrix object, i.e., nRow X nCol.</dd>
+
+<dt><i>m</i></dt>
+<dd>Reference to a <i>matrix</i> object to copy from.</dd>
+
+<dt><i>m</i></dt>
+<dd>Reference to a <i>matrix</i> object of type <b>X</b> to copy from.</dd>
+</dl>
+</p>
+
+<p>
+<ol>
+
+<li><a name="c1">Constructs</a> a matrix object with zero element. This constructor is provided only for constructing array of matrix objects. The size should always be provided for single matrix object because zero size matrix object can't be used any matrix operations except assignment operator.</li><br><br>
+
+<li><a name="c2">Constructs</a> a matrix object of size <i>nRow</i> by <i>nCol</i> with uninitialized elements.</li><br><br>
+
+<li><a name="c3">Constructs</a> a matrix object of size <i>nRow</i> by <i>nCol</i> with all elements initialized to the value of <i>e</i>. </li><br><br>
+
+<li><a name="c4">Constructs</a> a matrix object of size <i>nRow</i> by <i>nCol</i> with elements initialized from the <i>Array</i>.</li><br><br>
+
+<li><a name="c5">Constructs</a> a matrix object of size <i>nRow</i> by <i>nCol</i> with elements initialized from the valarray <i>vec</i>. </li><br><br>
+
+<li><a name="c6">Constructs</a> a new matrix object by copying from an existing matrix object <i>m</i>.</li><br><br>
+
+<li><a name="c7">Constructs</a> a matrix object from an existing matrix object of type <i>X</i>. The compiler must have support for member template for this constructor to work.</li><br><br>
+
+<li><a name="c8">Destroys</a> a matrix object.</li><br><br>
+
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;float&gt;  fMatrix;
+typedef techsoft::matrix&lt;double&gt; dMatrix;
+
+typedef std::valarray&lt;float&gt;     fVector;
+typedef std::complex&lt;double&gt;     dComplex;
+
+typedef techsoft::matrix&lt;dComplex&gt; cdMatrix;
+
+dMatrix m(3,3);                  // Constructs a 3 x 3 matrix
+dMatrix m2(3,3,1.0);             // Constructs a 3 x 3 matrix with
+                                 // elements initialized to 1.0
+cdMatrix cm(4,4);                // Constructs a 4 x 4 matrix of type complex&lt;double&gt;
+
+float fv[] = { 1.34f, 2.54f, 8.23f, 
+               7.34f, -2.3f, 2.45f,
+               -1.2f, 4.50f, 7.34f };
+
+fMatrix mf( 3,3,fv);             // Constructs a matrix object from &quot;C&quot; array fv 
+fMatrix mf2( 3,3,fv,techsoft::FORTRAN_ARRAY); // Constructs a matrix object from Fortran array fv 
+fMatrix mf3 = mf;
+fVector vf( fv,9);
+fMatrix mf4( 3,3,vf);
+
+dMatrix ma[5];                   // Constructs an array of matrix objects
+for (size_t i=0; i &lt; 5; i++)
+{
+   dMatrix temp( 4,4);           // Use a temporary matrix to read 
+                                 // individual matrix elements in the array      
+   temp.rand();                  // Initialize/read the matrix
+   ma[i] = temp;                 // Copy it to a matrix element in the array
+}
+dMatrix md = mf;                 // Requires member template support
+cdMatrix cm2 = m2;               // Requires member template support
+
+</code></pre>
+
+</body>
+</html>

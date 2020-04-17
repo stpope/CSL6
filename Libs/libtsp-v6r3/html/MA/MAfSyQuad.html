@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - MAfSyQuad</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>MAfSyQuad</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double MAfSyQuad (const float *A[], const float x[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Calculate a quadratic form for a symmetric matrix
+</DL>
+<H4>Description</H4>
+This routine calculates the quadaratic form s = x'A x for vector x and
+symmetric matrix A,
+<PRE>
+      N-1 N-1
+  s = SUM SUM x(i) A(i,j) x(j) .
+      i=0 j=0
+</PRE>
+The symmetry of A is used to reduce the number of computations.  The result
+is accumulated as a double value and returned as a double value.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  double MAfSyBilin
+<DD>
+Returned value
+<DT>
+ -&gt; const float *A[]
+<DD>
+A is an array of pointers to the rows of an N by N matrix.  The matrix
+is assumed to be symmetric.  Only the lower triangular portion of the
+matrix is accessed.  Note that with ANSI C, if the actual parameter
+is not declared to have the const attribute, an explicit cast to
+(const float **) is required.
+<DT>
+ -&gt; const float x[]
+<DD>
+Input vector (N elements)
+<DT>
+ -&gt; int N
+<DD>
+Number of of elements in x and y and the size of A
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.5  2003/05/09
+<H4>See Also</H4>
+<A HREF="MAfSyBilin.html">MAfSyBilin</A>,
+<A HREF="MAfTpQuad.html">MAfTpQuad</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

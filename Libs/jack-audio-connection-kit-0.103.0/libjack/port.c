@@ -1,0 +1,1001 @@
+/*
+    Copyright (C) 2001-2003 Paul Davis
+    Copyright (C) 2005 Jussi Laako
+    
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation; either version 2.1 of the License, or
+    (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+    
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program; if not, write to the Free Software 
+    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+    $Id: port.c 998 2006-11-22 19:55:56Z joq $
+*/
+
+#include <string.h>
+#include <stdio.h>
+#include <math.h>
+
+#include <config.h>
+
+#include <jack/jack.h>
+#include <jack/types.h>
+#include <jack/internal.h>
+#include <jack/engine.h>
+#include <jack/pool.h>
+#include <jack/port.h>
+#include <jack/midiport.h>
+#include <jack/jslist.h>
+#include <jack/intsimd.h>
+
+#include "local.h"
+
+static void    jack_generic_buffer_init(void *port_buffer,
+                                      size_t buffer_size);
+
+static void    jack_audio_port_mixdown (jack_port_t *port,
+					jack_nframes_t nframes);
+
+/* These function pointers are local to each address space.  For
+ * internal clients they reside within jackd; for external clients in
+ * the application process. */
+jack_port_functions_t jack_builtin_audio_functions = {
+	.buffer_init    = jack_generic_buffer_init,
+	.mixdown = jack_audio_port_mixdown, 
+};
+
+extern jack_port_functions_t jack_builtin_midi_functions;
+
+jack_port_functions_t jack_builtin_NULL_functions = {
+	.buffer_init    = jack_generic_buffer_init,
+	.mixdown = NULL, 
+};
+
+/* Only the Audio and MIDI port types are currently built in. */
+jack_port_type_info_t jack_builtin_port_types[] = {
+	{ .type_name = JACK_DEFAULT_AUDIO_TYPE, 
+	  .buffer_scale_factor = 1,
+	},
+	{ .type_name = JACK_DEFAULT_MIDI_TYPE, 
+	  .buffer_scale_factor = 1,
+	},
+	{ .type_name = "", }
+};
+
+/* these functions have been taken from libDSP X86.c  -jl */
+
+#ifdef USE_DYNSIMD
+
+static void (*opt_copy) (float *, const float *, int);
+static void (*opt_mix) (float *, const float *, int);
+
+static void
+gen_copyf (float *dest, const float *src, int length)
+{
+	memcpy(dest, src, length * sizeof(float));
+}
+
+static void
+gen_mixf (float *dest, const float *src, int length)
+{
+	int n;
+
+	n = length;
+	while (n--)
+		*dest++ += *src++;
+	/*for (iSample = 0; iSample < iDataLength; iSample++)
+		fpDest[iSample] += fpSrc[iSample];*/
+}
+
+#ifdef ARCH_X86
+
+static void
+x86_3dnow_add2f (float *dest, const float *src, int length)
+{
+	int i, n;
+	pv2sf m64p_dest = (pv2sf) dest;
+	pv2sf m64p_src = (pv2sf) src;
+
+	n = (length >> 1);
+	for (i = 0; i < n; i++)
+	{
+		asm volatile (
+			"movq %1, %%mm0\n\t" \
+			"pfadd %2, %%mm0\n\t" \
+			"movq %%mm0, %0\n\t"
+			: "=m" (m64p_dest[i])
+			: "m0" (m64p_dest[i]),
+			  "m" (m64p_src[i])
+			: "mm0", "memory");
+	}
+	if (n & 0x1)
+	{
+		asm volatile (
+			"movd %1, %%mm0\n\t" \
+			"movd %2, %%mm1\n\t" \
+			"pfadd %%mm1, %%mm0\n\t" \
+			"movd %%mm0, %0\n\t"
+			: "=m" (dest[length - 1])
+			: "m0" (dest[length - 1]),
+			  "m" (src[length - 1])
+			: "mm0", "mm1", "memory");
+	}
+	asm volatile (
+		"femms\n\t" \
+		"sfence\n\t");
+}
+
+static void
+x86_3dnow_copyf (float *dest, const float *src, int length)
+{
+	int i, n1, n2;
+	pv2sf m64p_src = (pv2sf) src;
+	pv2sf m64p_dest = (pv2sf) dest;
+
+	n1 = (length >> 4);
+	n2 = ((length & 0xf) >> 1);
+	for (i = 0; i < n1; i++)
+	{
+		asm volatile ("movq %0, %%mm0\n\t"
+			: : "m" (*m64p_src++) : "mm0", "memory");
+		asm volatile ("movq %0, %%mm1\n\t"
+			: : "m" (*m64p_src++) : "mm1", "memory");
+		asm volatile ("movq %0, %%mm2\n\t"
+			: : "m" (*m64p_src++) : "mm2", "memory");
+		asm volatile ("movq %0, %%mm3\n\t"
+			: : "m" (*m64p_src++) : "mm3", "memory");
+		asm volatile ("movq %0, %%mm4\n\t"
+			: : "m" (*m64p_src++) : "mm4", "memory");
+		asm volatile ("movq %0, %%mm5\n\t"
+			: : "m" (*m64p_src++) : "mm5", "memory");
+		asm volatile ("movq %0, %%mm6\n\t"
+			: : "m" (*m64p_src++) : "mm6", "memory");
+		asm volatile ("movq %0, %%mm7\n\t"
+			: : "m" (*m64p_src++) : "xmm7", "memory");
+
+		asm volatile ("movq %%mm0, %0\n\t"
+			: "=m" (*m64p_dest++) : : "mm0", "memory");
+		asm volatile ("movq %%mm1, %0\n\t"
+			: "=m" (*m64p_dest++) : : "mm1", "memory");
+		asm volatile ("movq %%mm2, %0\n\t"
+			: "=m" (*m64p_dest++) : : "mm2", "memory");
+		asm volatile ("movq %%mm3, %0\n\t"
+			: "=m" (*m64p_dest++) : : "mm3", "memory");
+		asm volatile ("movq %%mm4, %0\n\t"
+			: "=m" (*m64p_dest++) : : "mm4", "memory");
+		asm volatile ("movq %%mm5, %0\n\t"
+			: "=m" (*m64p_dest++) : : "mm5", "memory");
+		asm volatile ("movq %%mm6, %0\n\t"
+			: "=m" (*m64p_dest++) : : "mm6", "memory");
+		asm volatile ("movq %%mm7, %0\n\t"
+			: "=m" (*m64p_dest++) : : "mm7", "memory");
+	}
+	for (i = 0; i < n2; i++)
+	{
+		asm volatile (
+			"movq %1, %%mm0\n\t" \
+			"movq %%mm0, %0\n\t"
+			: "=m" (*m64p_dest++)
+			: "m" (*m64p_src++)
+			: "mm0", "memory");
+	}
+	if (length & 0x1)
+	{
+		asm volatile (
+			"movd %1, %%mm0\n\t" \
+			"movd %%mm0, %0\n\t"
+			: "=m" (dest[length - 1])
+			: "m" (src[length - 1])
+			: "mm0", "memory");
+	}
+	asm volatile (
+		"femms\n\t" \
+		"sfence\n\t");
+}
+
+static void
+x86_sse_copyf (float *dest, const float *src, int length)
+{
+	int i, n1, n2, si3;
+	pv4sf m128p_src = (pv4sf) src;
+	pv4sf m128p_dest = (pv4sf) dest;
+
+	n1 = (length >> 5);
+	n2 = ((length & 0x1f) >> 2);
+	si3 = (length & ~0x3);
+	for (i = 0; i < n1; i++)
+	{
+		asm volatile ("movaps %0, %%xmm0\n\t"
+			: : "m" (*m128p_src++) : "xmm0", "memory");
+		asm volatile ("movaps %0, %%xmm1\n\t"
+			: : "m" (*m128p_src++) : "xmm1", "memory");
+		asm volatile ("movaps %0, %%xmm2\n\t"
+			: : "m" (*m128p_src++) : "xmm2", "memory");
+		asm volatile ("movaps %0, %%xmm3\n\t"
+			: : "m" (*m128p_src++) : "xmm3", "memory");
+		asm volatile ("movaps %0, %%xmm4\n\t"
+			: : "m" (*m128p_src++) : "xmm4", "memory");
+		asm volatile ("movaps %0, %%xmm5\n\t"
+			: : "m" (*m128p_src++) : "xmm5", "memory");
+		asm volatile ("movaps %0, %%xmm6\n\t"
+			: : "m" (*m128p_src++) : "xmm6", "memory");
+		asm volatile ("movaps %0, %%xmm7\n\t"
+			: : "m" (*m128p_src++) : "xmm7", "memory");
+
+		asm volatile ("movaps %%xmm0, %0\n\t"
+			: "=m" (*m128p_dest++) : : "xmm0", "memory");
+		asm volatile ("movaps %%xmm1, %0\n\t"
+			: "=m" (*m128p_dest++) : : "xmm1", "memory");
+		asm volatile ("movaps %%xmm2, %0\n\t"
+			: "=m" (*m128p_dest++) : : "xmm2", "memory");
+		asm volatile ("movaps %%xmm3, %0\n\t"
+			: "=m" (*m128p_dest++) : : "xmm3", "memory");
+		asm volatile ("movaps %%xmm4, %0\n\t"
+			: "=m" (*m128p_dest++) : : "xmm4", "memory");
+		asm volatile ("movaps %%xmm5, %0\n\t"
+			: "=m" (*m128p_dest++) : : "xmm5", "memory");
+		asm volatile ("movaps %%xmm6, %0\n\t"
+			: "=m" (*m128p_dest++) : : "xmm6", "memory");
+		asm volatile ("movaps %%xmm7, %0\n\t"
+			: "=m" (*m128p_dest++) : : "xmm7", "memory");
+	}
+	for (i = 0; i < n2; i++)
+	{
+		asm volatile (
+			"movaps %1, %%xmm0\n\t" \
+			"movaps %%xmm0, %0\n\t"
+			: "=m" (*m128p_dest++)
+			: "m" (*m128p_src++)
+			: "xmm0", "memory");
+	}
+	for (i = si3; i < length; i++)
+	{
+		asm volatile (
+			"movss %1, %%xmm0\n\t" \
+			"movss %%xmm0, %0\n\t"
+			: "=m" (dest[i])
+			: "m" (src[i])
+			: "xmm0", "memory");
+	}
+}
+
+static void
+x86_sse_add2f (float *dest, const float *src, int length)
+{
+	int i, n, si2;
+	pv4sf m128p_src = (pv4sf) src;
+	pv4sf m128p_dest = (pv4sf) dest;
+
+	if (__builtin_expect(((long) src & 0xf) || ((long) dest & 0xf), 0))
+	{
+		/*fprintf(stderr, "x86_sse_add2f(): non aligned pointers!\n");*/
+		si2 = 0;
+		goto sse_nonalign;
+	}
+	si2 = (length & ~0x3);
+	n = (length >> 2);
+	for (i = 0; i < n; i++)
+	{
+		asm volatile (
+			"movaps %1, %%xmm0\n\t" \
+			"addps %2, %%xmm0\n\t" \
+			"movaps %%xmm0, %0\n\t"
+			: "=m" (m128p_dest[i])
+			: "m0" (m128p_dest[i]),
+			  "m" (m128p_src[i])
+			: "xmm0", "memory");
+	}
+sse_nonalign:
+	for (i = si2; i < length; i++)
+	{
+		asm volatile (
+			"movss %1, %%xmm0\n\t" \
+			"addss %2, %%xmm0\n\t" \
+			"movss %%xmm0, %0\n\t"
+			: "=m" (dest[i])
+			: "m0" (dest[i]),
+			  "m" (src[i])
+			: "xmm0", "memory");
+	}
+}
+
+void jack_port_set_funcs ()
+{
+	if (ARCH_X86_HAVE_SSE2(cpu_type)) {
+		opt_copy = x86_sse_copyf;
+		opt_mix = x86_sse_add2f;
+	}
+	else if (ARCH_X86_HAVE_3DNOW(cpu_type)) {
+		opt_copy = x86_3dnow_copyf;
+		opt_mix = x86_3dnow_add2f;
+	}
+	else {
+		opt_copy = gen_copyf;
+		opt_mix = gen_mixf;
+	}
+}
+
+#else /* ARCH_X86 */
+
+void jack_port_set_funcs ()
+{
+	opt_copy = gen_copyf;
+	opt_mix = gen_mixf;
+}
+
+#endif /* ARCH_X86 */
+
+#endif /* USE_DYNSIMD */
+
+jack_port_functions_t *
+jack_get_port_functions(jack_port_type_id_t ptid)
+{
+	switch (ptid) {
+	case JACK_AUDIO_PORT_TYPE:
+		return &jack_builtin_audio_functions;
+	case JACK_MIDI_PORT_TYPE:
+		return &jack_builtin_midi_functions;
+	/* no other builtin functions */
+	default:
+		return NULL;
+	}
+}
+
+/*
+ * Fills buffer with zeroes. For audio ports, engine->silent_buffer relies on it.
+ */
+static void
+jack_generic_buffer_init(void *buffer, size_t size)
+{
+	memset(buffer, 0, size);
+}
+
+
+jack_port_t *
+jack_port_new (const jack_client_t *client, jack_port_id_t port_id,
+	       jack_control_t *control)
+{
+	jack_port_shared_t *shared = &control->ports[port_id];
+	jack_port_type_id_t ptid = shared->ptype_id;
+	jack_port_t *port = (jack_port_t *) malloc (sizeof (jack_port_t));
+
+	port->mix_buffer = NULL;
+	port->client_segment_base = NULL;
+	port->shared = shared;
+	port->type_info = &client->engine->port_types[ptid];
+	pthread_mutex_init (&port->connection_lock, NULL);
+	port->connections = 0;
+	port->tied = NULL;
+	
+	if (client->control->id == port->shared->client_id) {
+			
+		/* It's our port, so initialize the pointers to port
+		 * functions within this address space.  These builtin
+		 * definitions can be overridden by the client. 
+		 */
+		jack_port_functions_t *port_functions = jack_get_port_functions(ptid);
+		if (port_functions == NULL)
+			port_functions = &jack_builtin_NULL_functions;
+		port->fptr = *port_functions;
+		port->shared->has_mixdown = (port->fptr.mixdown ? TRUE : FALSE);
+	}
+
+	/* set up a base address so that port->offset can be used to
+	   compute the correct location. we don't store the location
+	   directly, because port->client_segment_base and/or
+	   port->offset can change if the buffer size or port counts
+	   are changed.
+	*/
+
+	port->client_segment_base =
+		(void **) &client->port_segment[ptid].attached_at;
+	
+	return port;
+}
+
+jack_port_t *
+jack_port_register (jack_client_t *client, 
+		    const char *port_name,
+		    const char *port_type,
+		    unsigned long flags,
+		    unsigned long buffer_size)
+{
+	jack_request_t req;
+	jack_port_t *port = 0;
+	int length ;
+
+	req.type = RegisterPort;
+
+	length = strlen ((const char *) client->control->name)
+		+ 1 + strlen (port_name);
+	if ( length >= sizeof (req.x.port_info.name) ) {
+	  jack_error ("\"%s:%s\" is too long to be used as a JACK port name.\n"
+		      "Please use %lu characters or less.",
+		      client->control->name , 
+		      port_name,
+		      sizeof (req.x.port_info.name) - 1);
+	  return NULL ;
+	}
+
+	strcpy ((char *) req.x.port_info.name,
+		(const char *) client->control->name);
+	strcat ((char *) req.x.port_info.name, ":");
+	strcat ((char *) req.x.port_info.name, port_name);
+
+	snprintf (req.x.port_info.type, sizeof (req.x.port_info.type),
+		  "%s", port_type);
+	req.x.port_info.flags = flags;
+	req.x.port_info.buffer_size = buffer_size;
+	req.x.port_info.client_id = client->control->id;
+
+	if (jack_client_deliver_request (client, &req)) {
+		jack_error ("cannot deliver port registration request");
+		return NULL;
+	}
+
+	if ((port = jack_port_new (client, req.x.port_info.port_id,
+				   client->engine)) == NULL) {
+		jack_error ("cannot allocate client side port structure");
+		return NULL;
+	}
+
+	client->ports = jack_slist_prepend (client->ports, port);
+
+	return port;
+}
+
+int 
+jack_port_unregister (jack_client_t *client, jack_port_t *port)
+{
+	jack_request_t req;
+
+	req.type = UnRegisterPort;
+	req.x.port_info.port_id = port->shared->id;
+	req.x.port_info.client_id = client->control->id;
+
+	return jack_client_deliver_request (client, &req);
+}
+
+int
+jack_port_lock (jack_client_t *client, jack_port_t *port)
+{
+	if (port) {
+		port->shared->locked = 1;
+		return 0;
+	}
+	return -1;
+}
+
+int
+jack_port_unlock (jack_client_t *client, jack_port_t *port)
+{
+	if (port) {
+		port->shared->locked = 0;
+		return 0;
+	}
+	return -1;
+}
+
+/* LOCAL (in-client) connection querying only */
+
+int
+jack_port_connected (const jack_port_t *port)
+{
+	return jack_slist_length (port->connections);
+}
+
+int
+jack_port_connected_to (const jack_port_t *port, const char *portname)
+{
+	JSList *node;
+	int ret = FALSE;
+
+	/* XXX this really requires a cross-process lock
+	   so that ports/connections cannot go away
+	   while we are checking for them. that's hard,
+	   and has a non-trivial performance impact
+	   for jackd.
+	*/  
+
+	pthread_mutex_lock (&((jack_port_t *) port)->connection_lock);
+
+	for (node = port->connections; node; node = jack_slist_next (node)) {
+		jack_port_t *other_port = (jack_port_t *) node->data;
+		
+		if (strcmp (other_port->shared->name, portname) == 0) {
+			ret = TRUE;
+			break;
+		}
+	}
+
+	pthread_mutex_unlock (&((jack_port_t *) port)->connection_lock);
+	return ret;
+}
+
+const char **
+jack_port_get_connections (const jack_port_t *port)
+{
+	const char **ret = NULL;
+	JSList *node;
+	unsigned int n;
+
+	/* XXX this really requires a cross-process lock
+	   so that ports/connections cannot go away
+	   while we are checking for them. that's hard,
+	   and has a non-trivial performance impact
+	   for jackd.
+	*/  
+
+	pthread_mutex_lock (&((jack_port_t *) port)->connection_lock);
+
+	if (port->connections != NULL) {
+
+		ret = (const char **)
+			malloc (sizeof (char *)
+				* (jack_slist_length (port->connections) + 1));
+		for (n = 0, node = port->connections; node;
+		     node = jack_slist_next (node), ++n) {
+			ret[n] = ((jack_port_t *) node->data)->shared->name;
+		}
+		ret[n] = NULL;
+	}
+
+	pthread_mutex_unlock (&((jack_port_t *) port)->connection_lock);
+	return ret;
+}
+
+/* SERVER-SIDE (all) connection querying */
+
+const char **
+jack_port_get_all_connections (const jack_client_t *client,
+			       const jack_port_t *port)
+{
+	const char **ret;
+	jack_request_t req;
+	jack_port_t *tmp;
+	unsigned int i;
+	int need_free = FALSE;
+
+	if (port == NULL) {
+		return NULL;
+	}
+
+	req.type = GetPortConnections;
+
+	req.x.port_info.name[0] = '\0';
+	req.x.port_info.type[0] = '\0';
+	req.x.port_info.flags = 0;
+	req.x.port_info.buffer_size = 0;
+	req.x.port_info.client_id = 0;
+	req.x.port_info.port_id = port->shared->id;
+
+	jack_client_deliver_request (client, &req);
+
+	if (req.status != 0 || req.x.port_connections.nports == 0) {
+		return NULL;
+	}
+
+	if (client->request_fd < 0) {
+		/* internal client */
+		return req.x.port_connections.ports;
+	}
+
+	ret = (const char **)
+		malloc (sizeof (char *) * (req.x.port_connections.nports + 1));
+
+	for (i = 0; i < req.x.port_connections.nports; ++i ) {
+		jack_port_id_t port_id;
+		
+		if (read (client->request_fd, &port_id, sizeof (port_id))
+		    != sizeof (port_id)) {
+			jack_error ("cannot read port id from server");
+			return 0;
+		}
+		tmp = jack_port_by_id_int (client, port_id, &need_free);
+		ret[i] = tmp->shared->name;
+		if (need_free) {
+			free (tmp);
+			need_free = FALSE;
+		}
+	}
+
+	ret[i] = NULL;
+
+	return ret;
+}
+
+jack_port_t *
+jack_port_by_id_int (const jack_client_t *client, jack_port_id_t id, int* free)
+{
+	JSList *node;
+
+	for (node = client->ports; node; node = jack_slist_next (node)) {
+		if (((jack_port_t *) node->data)->shared->id == id) {
+			*free = FALSE;
+			return (jack_port_t *) node->data;
+		}
+	}
+
+	if (id >= client->engine->port_max)
+		return NULL;
+
+	if (client->engine->ports[id].in_use) {
+		*free = TRUE;
+		return jack_port_new (client, id, client->engine);
+	}
+
+	return NULL;
+}
+
+jack_port_t *
+jack_port_by_id (jack_client_t *client, jack_port_id_t id)
+{
+	JSList *node;
+	jack_port_t* port;
+	int need_free = FALSE;
+	for (node = client->ports_ext; node; node = jack_slist_next (node)) {
+		port = node->data;
+		if (port->shared->id == id) { // Found port, return the cached structure
+			return port;
+		}
+	}
+	
+	// Otherwise possibly allocate a new port structure, keep it in the ports_ext list for later use
+	port = jack_port_by_id_int (client,id,&need_free);
+	if (port != NULL && need_free)
+		client->ports_ext =
+			jack_slist_prepend (client->ports_ext, port);
+	return port;
+}
+
+jack_port_t *
+jack_port_by_name_int (jack_client_t *client, const char *port_name)
+{
+	unsigned long i, limit;
+	jack_port_shared_t *port;
+	
+	limit = client->engine->port_max;
+	port = &client->engine->ports[0];
+	
+	for (i = 0; i < limit; i++) {
+		if (port[i].in_use && strcmp (port[i].name, port_name) == 0) {
+			return jack_port_new (client, port[i].id,
+					      client->engine);
+		}
+	}
+
+	return NULL;
+}
+
+jack_port_t *
+jack_port_by_name (jack_client_t *client,  const char *port_name)
+{
+	JSList *node;
+	jack_port_t* port;
+	for (node = client->ports_ext; node; node = jack_slist_next (node)) {
+		port = node->data;
+		if (strcmp (port->shared->name, port_name) == 0) {
+			/* Found port, return the cached structure. */
+			return port;
+		}
+	}
+	
+	/* Otherwise allocate a new port structure, keep it in the
+	 * ports_ext list for later use. */
+	port = jack_port_by_name_int (client, port_name);
+	if (port != NULL)
+		client->ports_ext =
+			jack_slist_prepend (client->ports_ext, port);
+	return port;
+}
+
+jack_nframes_t
+jack_port_get_latency (jack_port_t *port)
+{
+	return port->shared->latency;
+}
+
+jack_nframes_t
+jack_port_get_total_latency (jack_client_t *client, jack_port_t *port)
+{
+	return port->shared->total_latency;
+}
+
+void
+jack_port_set_latency (jack_port_t *port, jack_nframes_t nframes)
+{
+	port->shared->latency = nframes;
+}
+
+void *
+jack_port_get_buffer (jack_port_t *port, jack_nframes_t nframes)
+{
+	JSList *node, *next;
+
+	/* Output port.  The buffer was assigned by the engine
+	   when the port was registered.
+	*/
+	if (port->shared->flags & JackPortIsOutput) {
+		if (port->tied) {
+			return jack_port_get_buffer (port->tied, nframes);
+		}
+
+		return jack_output_port_buffer (port);
+	}
+
+	/* Input port.  Since this can only be called from the
+	   process() callback, and since no connections can be
+	   made/broken during this phase (enforced by the jack
+	   server), there is no need to take the connection lock here
+	*/
+	if ((node = port->connections) == NULL) {
+		
+		/* no connections; return a zero-filled buffer */
+		return (void *) (*(port->client_segment_base) + port->type_info->zero_buffer_offset);
+	}
+
+	if ((next = jack_slist_next (node)) == NULL) {
+
+		/* one connection: use zero-copy mode - just pass
+		   the buffer of the connected (output) port.
+		*/
+		return jack_port_get_buffer (((jack_port_t *) node->data),
+					     nframes);
+	}
+
+	/* Multiple connections.  Use a local buffer and mix the
+	   incoming data into that buffer.  We have already
+	   established the existence of a mixdown function during the
+	   connection process.
+	*/
+	if (port->mix_buffer == NULL) {
+		size_t buffer_size = 
+				port->type_info->buffer_scale_factor
+				* sizeof (jack_default_audio_sample_t)
+				* nframes;
+		port->mix_buffer = jack_pool_alloc (buffer_size);
+		port->fptr.buffer_init (port->mix_buffer, buffer_size);
+	}
+	port->fptr.mixdown (port, nframes);
+	return (void *) port->mix_buffer;
+}
+
+int
+jack_port_tie (jack_port_t *src, jack_port_t *dst)
+
+{
+	if (dst->shared->client_id != src->shared->client_id) {
+		jack_error ("cannot tie ports not owned by the same client");
+		return -1;
+	}
+
+	if (dst->shared->flags & JackPortIsOutput) {
+		jack_error ("cannot tie an input port");
+		return -1;
+	}
+
+	dst->tied = src;
+	return 0;
+}
+
+int
+jack_port_untie (jack_port_t *port)
+
+{
+	if (port->tied == NULL) {
+		jack_error ("port \"%s\" is not tied", port->shared->name);
+		return -1;
+	}
+	port->tied = NULL;
+	return 0;
+}
+
+int 
+jack_port_request_monitor (jack_port_t *port, int onoff)
+
+{
+	if (onoff) {
+		port->shared->monitor_requests++;
+	} else if (port->shared->monitor_requests) {
+		port->shared->monitor_requests--;
+	}
+
+	if ((port->shared->flags & JackPortIsOutput) == 0) {
+
+		JSList *node;
+
+		/* this port is for input, so recurse over each of the 
+		   connected ports.
+		 */
+
+		pthread_mutex_lock (&port->connection_lock);
+		for (node = port->connections; node;
+		     node = jack_slist_next (node)) {
+			
+			/* drop the lock because if there is a feedback loop,
+			   we will deadlock. XXX much worse things will
+			   happen if there is a feedback loop !!!
+			*/
+
+			pthread_mutex_unlock (&port->connection_lock);
+			jack_port_request_monitor ((jack_port_t *) node->data,
+						   onoff);
+			pthread_mutex_lock (&port->connection_lock);
+		}
+		pthread_mutex_unlock (&port->connection_lock);
+	}
+
+	return 0;
+}
+	
+int 
+jack_port_request_monitor_by_name (jack_client_t *client,
+				   const char *port_name, int onoff)
+
+{
+	jack_port_t *port;
+	unsigned long i, limit;
+	jack_port_shared_t *ports;
+
+	limit = client->engine->port_max;
+	ports = &client->engine->ports[0];
+	
+	for (i = 0; i < limit; i++) {
+		if (ports[i].in_use &&
+		    strcmp (ports[i].name, port_name) == 0) {
+			port = jack_port_new (client, ports[i].id,
+					      client->engine);
+			return jack_port_request_monitor (port, onoff);
+			free (port);
+			return 0;
+		}
+	}
+
+	return -1;
+}
+
+int
+jack_port_ensure_monitor (jack_port_t *port, int yn)
+{
+	if (yn) {
+		if (port->shared->monitor_requests == 0) {
+			port->shared->monitor_requests++;
+		}
+	} else {
+		if (port->shared->monitor_requests > 0) {
+			port->shared->monitor_requests = 0;
+		}
+	}
+
+	return 0;
+}
+
+int
+jack_port_monitoring_input (jack_port_t *port)
+{
+	return port->shared->monitor_requests > 0;
+}
+
+const char *
+jack_port_name (const jack_port_t *port)
+{
+	return port->shared->name;
+}
+
+const char *
+jack_port_short_name (const jack_port_t *port)
+{
+	/* we know there is always a colon, because we put
+	   it there ...
+	*/
+
+	return strchr (port->shared->name, ':') + 1;
+}
+
+int 
+jack_port_is_mine (const jack_client_t *client, const jack_port_t *port)
+{
+	return port->shared->client_id == client->control->id;
+}
+
+int
+jack_port_flags (const jack_port_t *port)
+{
+	return port->shared->flags;
+}
+
+const char *
+jack_port_type (const jack_port_t *port)
+{
+	return port->type_info->type_name;
+}
+
+int
+jack_port_set_name (jack_port_t *port, const char *new_name)
+{
+	char *colon;
+	int len;
+
+	colon = strchr (port->shared->name, ':');
+	len = sizeof (port->shared->name) -
+		((int) (colon - port->shared->name)) - 2;
+	snprintf (colon+1, len, "%s", new_name);
+	
+	return 0;
+}
+
+/* AUDIO PORT SUPPORT */
+
+static inline float f_max(float x, float a)
+{
+	x -= a;
+	x += fabs (x);
+	x *= 0.5;
+	x += a;
+
+	return (x);
+}
+
+static void 
+jack_audio_port_mixdown (jack_port_t *port, jack_nframes_t nframes)
+{
+	JSList *node;
+	jack_port_t *input;
+#ifndef ARCH_X86
+	jack_nframes_t n;
+	jack_default_audio_sample_t *dst, *src;
+#endif
+	jack_default_audio_sample_t *buffer;
+
+	/* by the time we've called this, we've already established
+	   the existence of more than one connection to this input
+	   port and allocated a mix_buffer.
+	*/
+
+	/* no need to take connection lock, since this is called
+	   from the process() callback, and the jack server
+	   ensures that no changes to connections happen
+	   during this time.
+	*/
+
+	node = port->connections;
+	input = (jack_port_t *) node->data;
+	buffer = port->mix_buffer;
+
+#ifndef USE_DYNSIMD
+	memcpy (buffer, jack_output_port_buffer (input),
+		sizeof (jack_default_audio_sample_t) * nframes);
+#else /* USE_DYNSIMD */
+	opt_copy (buffer, jack_output_port_buffer (input), nframes);
+#endif /* USE_DYNSIMD */
+
+	for (node = jack_slist_next (node); node;
+	     node = jack_slist_next (node)) {
+
+		input = (jack_port_t *) node->data;
+
+#ifndef USE_DYNSIMD
+		n = nframes;
+		dst = buffer;
+		src = jack_output_port_buffer (input);
+
+		while (n--) {
+			*dst++ += *src++;
+		}
+#else /* USE_DYNSIMD */
+		opt_mix (buffer, jack_output_port_buffer (input), nframes);
+#endif /* USE_DYNSIMD */
+	}
+}
+
+
+
+
+

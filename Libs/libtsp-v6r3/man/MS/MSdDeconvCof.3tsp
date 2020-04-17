@@ -1,0 +1,78 @@
+.TH MSdDeconvCof 3tsp "TSP (libtsp/MS)"
+.SH Routine
+.in +4n
+.ti -4n
+int MSdDeconvCof (const double u[], int Nu, const double v[], int Nv,
+double q[], double r[])
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Polyomial divide (deconvolve the coefficients of two vectors)
+.in -4n
+.SH Description
+This routine divides one polynomial by another.  Given polynomials U(D)
+and V(D), the polynomial division U(D)/V(D) gives quotient Q(D) and
+remainder R(D), where
+.ft CW
+.nf
+.ne 3
+  U(D) = Q(D) V(D) + R(D).
+.fi
+.ft P
+Polynomial U(D) is represented as
+.ft CW
+.nf
+.ne 3
+  U(D) = u[0] + u[1] D + u[2] D^2 + ... + u[Nu-1] D^(Nu-1).
+.fi
+.ft P
+The quotient Q(D) normally has Nu-Nv+1 terms.  The remainder R(C) normally
+has Nv-1 terms.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int MSdDeconvCof
+.br
+Number of quotient coefficients.  This is normally Nu-Nv+1.  If some of
+the higher order terms in v are zero, this may be as large as Nu.  If
+the last non-zero term in v is v[k], then the number of quotient
+coefficients is returned as Nu-k.
+.ti -4n
+ -> double u[]
+.br
+Input vector of coefficients (Nu values)
+.ti -4n
+ -> int Nu
+.br
+Number of coefficients in u
+.ti -4n
+ -> double v[]
+.br
+Input vector of coefficients (Nv values)
+.ti -4n
+ -> int Nv
+.br
+Number of coefficients in v.  If Nu < Nv, the quotient is empty and the
+remainder is equal to u.
+.ti -4n
+<-  double q[]
+.br
+Output vector of Nu coefficients representing the quotient of the
+polynomial division.  The quotient vector can be the same as the vector
+u.  If v[k] is the last non-zero coefficient of v, the last k
+coefficients of q will be zero.
+.ti -4n
+<-  double r[]
+.br
+Output vector of Nu coefficient representing the remainder of the
+polynomial division.  If r is NULL, the remainder is not calculated.
+The remainder satisfies R(D) = U(D) - Q(D) U(D).  If v[k] is the last
+nonzero coefficient of v (k can be ascertained from the function return
+value which is Nu-k), the last Nu-k terms of R(D) will be zero.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.3  2003/05/09
+.SH See Also
+libtsp

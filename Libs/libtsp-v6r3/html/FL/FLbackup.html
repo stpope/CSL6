@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - FLbackup</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>FLbackup</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void FLbackup (const char Fname[])
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Rename an existing file
+</DL>
+<H4>Description</H4>
+This subroutine backs up a file.  If a file with the given name exists, say
+xxx, that file is renamed to xxx~.  Any previous file with the name xxx~ is
+removed.
+<P>
+Only regular files are backed up.  If a backup file is created, a warning
+message indicating the new name is issued.  One use of this routine is to
+a copy of an existing file before opening a new file.
+<P>
+This routine will terminate execution if the file cannot be backed up.
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; const char Fname[]
+<DD>
+File name
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.33  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

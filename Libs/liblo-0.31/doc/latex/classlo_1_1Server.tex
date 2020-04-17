@@ -1,0 +1,189 @@
+\hypertarget{classlo_1_1Server}{\section{lo\+:\+:Server Class Reference}
+\label{classlo_1_1Server}\index{lo\+::\+Server@{lo\+::\+Server}}
+}
+
+
+Class representing a local O\+S\+C server, proxy for \hyperlink{lo__types_8h_a59067bf50cf8abb4371da6f03c9036c9}{lo\+\_\+server}.  
+
+
+
+
+Inherited by \hyperlink{classlo_1_1ServerThread}{lo\+::\+Server\+Thread}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlo_1_1Server_abf695f157836b714e1e250b47bc018b3}{Server} (\hyperlink{lo__types_8h_a59067bf50cf8abb4371da6f03c9036c9}{lo\+\_\+server} s)
+\item 
+{\footnotesize template$<$typename E $>$ }\\\hyperlink{classlo_1_1Server_a65262c3e0bebd348fe07474dfee59150}{Server} (const num\+\_\+string\+\_\+type \&port, E \&\&e)
+\item 
+{\footnotesize template$<$typename E $>$ }\\\hyperlink{classlo_1_1Server_a56985c15c0efa0c1d61ffb25bbdc47a3}{Server} (const num\+\_\+string\+\_\+type \&port, int proto, E \&\&e=0)
+\item 
+{\footnotesize template$<$typename E $>$ }\\\hyperlink{classlo_1_1Server_a93a05e892f41d45d1069c77a15a2c16d}{Server} (const string\+\_\+type \&group, const num\+\_\+string\+\_\+type \&port, const string\+\_\+type \&iface=0, const string\+\_\+type \&ip=0, E \&\&e=0)
+\item 
+\hyperlink{classlo_1_1Server_a357459bdcea45875a1485b26e9bfcfaa}{Server} (const num\+\_\+string\+\_\+type \&port, \hyperlink{lo__types_8h_aa5d2e4aa0ff9d4459fcc76e7ed5839fc}{lo\+\_\+err\+\_\+handler} err\+\_\+h=0)
+\item 
+\hyperlink{classlo_1_1Server_a499a9175c5908a9947cc413316d7fb3d}{Server} (const num\+\_\+string\+\_\+type \&port, int proto, \hyperlink{lo__types_8h_aa5d2e4aa0ff9d4459fcc76e7ed5839fc}{lo\+\_\+err\+\_\+handler} err\+\_\+h=0)
+\item 
+\hyperlink{classlo_1_1Server_a260c1a07f5a0af5057ab97b8c0efe026}{Server} (const string\+\_\+type \&group, const num\+\_\+string\+\_\+type \&port, const string\+\_\+type \&iface=\char`\"{}\char`\"{}, const string\+\_\+type \&ip=\char`\"{}\char`\"{}, \hyperlink{lo__types_8h_aa5d2e4aa0ff9d4459fcc76e7ed5839fc}{lo\+\_\+err\+\_\+handler} err\+\_\+h=0)
+\item 
+virtual \hyperlink{classlo_1_1Server_a207eee1c209e04d2fc683ecb8ce86470}{$\sim$\+Server} ()
+\item 
+\hyperlink{classlo_1_1Method}{Method} \hyperlink{classlo_1_1Server_a14113ef693e50c2b8569ae4c12d02e0f}{add\+\_\+method} (const string\+\_\+type \&path, const string\+\_\+type \&types, \hyperlink{lo__types_8h_a3b1c86c0925d05e13b5438ce8fe80a6c}{lo\+\_\+method\+\_\+handler} h, void $\ast$data) const 
+\item 
+\hyperlink{classlo_1_1Server_aadd89f1021f8437246bc640834ce7522}{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D} ((const char $\ast$, const char $\ast$, \hyperlink{unionlo__arg}{lo\+\_\+arg} $\ast$$\ast$, int),((char $\ast$) 0,(char $\ast$) 0,(\hyperlink{unionlo__arg}{lo\+\_\+arg} $\ast$$\ast$) 0,(int) 0),(path, types, argv, argc))
+\item 
+\hyperlink{classlo_1_1Server_a79293c21b7b389e32178d91f9774021f}{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D} ((const char $\ast$, \hyperlink{unionlo__arg}{lo\+\_\+arg} $\ast$$\ast$, int),((char $\ast$) 0,(\hyperlink{unionlo__arg}{lo\+\_\+arg} $\ast$$\ast$) 0,(int) 0),(types, argv, argc))
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a local O\+S\+C server, proxy for \hyperlink{lo__types_8h_a59067bf50cf8abb4371da6f03c9036c9}{lo\+\_\+server}. 
+
+Definition at line 485 of file lo\+\_\+cpp.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classlo_1_1Server_abf695f157836b714e1e250b47bc018b3}{\index{lo\+::\+Server@{lo\+::\+Server}!Server@{Server}}
+\index{Server@{Server}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{Server}]{\setlength{\rightskip}{0pt plus 5cm}lo\+::\+Server\+::\+Server (
+\begin{DoxyParamCaption}
+\item[{{\bf lo\+\_\+server}}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classlo_1_1Server_abf695f157836b714e1e250b47bc018b3}
+Constructor. 
+
+Definition at line 489 of file lo\+\_\+cpp.\+h.
+
+\hypertarget{classlo_1_1Server_a65262c3e0bebd348fe07474dfee59150}{\index{lo\+::\+Server@{lo\+::\+Server}!Server@{Server}}
+\index{Server@{Server}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{Server}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename E $>$ lo\+::\+Server\+::\+Server (
+\begin{DoxyParamCaption}
+\item[{const num\+\_\+string\+\_\+type \&}]{port, }
+\item[{E \&\&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classlo_1_1Server_a65262c3e0bebd348fe07474dfee59150}
+Constructor taking an error handler. 
+
+Definition at line 493 of file lo\+\_\+cpp.\+h.
+
+\hypertarget{classlo_1_1Server_a56985c15c0efa0c1d61ffb25bbdc47a3}{\index{lo\+::\+Server@{lo\+::\+Server}!Server@{Server}}
+\index{Server@{Server}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{Server}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename E $>$ lo\+::\+Server\+::\+Server (
+\begin{DoxyParamCaption}
+\item[{const num\+\_\+string\+\_\+type \&}]{port, }
+\item[{int}]{proto, }
+\item[{E \&\&}]{e = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classlo_1_1Server_a56985c15c0efa0c1d61ffb25bbdc47a3}
+Constructor taking a port number and error handler. 
+
+Definition at line 510 of file lo\+\_\+cpp.\+h.
+
+\hypertarget{classlo_1_1Server_a93a05e892f41d45d1069c77a15a2c16d}{\index{lo\+::\+Server@{lo\+::\+Server}!Server@{Server}}
+\index{Server@{Server}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{Server}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename E $>$ lo\+::\+Server\+::\+Server (
+\begin{DoxyParamCaption}
+\item[{const string\+\_\+type \&}]{group, }
+\item[{const num\+\_\+string\+\_\+type \&}]{port, }
+\item[{const string\+\_\+type \&}]{iface = {\ttfamily 0}, }
+\item[{const string\+\_\+type \&}]{ip = {\ttfamily 0}, }
+\item[{E \&\&}]{e = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classlo_1_1Server_a93a05e892f41d45d1069c77a15a2c16d}
+Constructor taking a multicast group, port number, interface identifier or I\+P, and error handler. 
+
+Definition at line 528 of file lo\+\_\+cpp.\+h.
+
+\hypertarget{classlo_1_1Server_a357459bdcea45875a1485b26e9bfcfaa}{\index{lo\+::\+Server@{lo\+::\+Server}!Server@{Server}}
+\index{Server@{Server}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{Server}]{\setlength{\rightskip}{0pt plus 5cm}lo\+::\+Server\+::\+Server (
+\begin{DoxyParamCaption}
+\item[{const num\+\_\+string\+\_\+type \&}]{port, }
+\item[{{\bf lo\+\_\+err\+\_\+handler}}]{err\+\_\+h = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classlo_1_1Server_a357459bdcea45875a1485b26e9bfcfaa}
+Constructor taking a port number and error handler. 
+
+Definition at line 551 of file lo\+\_\+cpp.\+h.
+
+\hypertarget{classlo_1_1Server_a499a9175c5908a9947cc413316d7fb3d}{\index{lo\+::\+Server@{lo\+::\+Server}!Server@{Server}}
+\index{Server@{Server}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{Server}]{\setlength{\rightskip}{0pt plus 5cm}lo\+::\+Server\+::\+Server (
+\begin{DoxyParamCaption}
+\item[{const num\+\_\+string\+\_\+type \&}]{port, }
+\item[{int}]{proto, }
+\item[{{\bf lo\+\_\+err\+\_\+handler}}]{err\+\_\+h = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classlo_1_1Server_a499a9175c5908a9947cc413316d7fb3d}
+Constructor taking a port number, protocol, and error handler. 
+
+Definition at line 555 of file lo\+\_\+cpp.\+h.
+
+\hypertarget{classlo_1_1Server_a260c1a07f5a0af5057ab97b8c0efe026}{\index{lo\+::\+Server@{lo\+::\+Server}!Server@{Server}}
+\index{Server@{Server}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{Server}]{\setlength{\rightskip}{0pt plus 5cm}lo\+::\+Server\+::\+Server (
+\begin{DoxyParamCaption}
+\item[{const string\+\_\+type \&}]{group, }
+\item[{const num\+\_\+string\+\_\+type \&}]{port, }
+\item[{const string\+\_\+type \&}]{iface = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const string\+\_\+type \&}]{ip = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{{\bf lo\+\_\+err\+\_\+handler}}]{err\+\_\+h = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classlo_1_1Server_a260c1a07f5a0af5057ab97b8c0efe026}
+Constructor taking a multicast group, port number, interface identifier or I\+P, and error handler. 
+
+Definition at line 561 of file lo\+\_\+cpp.\+h.
+
+\hypertarget{classlo_1_1Server_a207eee1c209e04d2fc683ecb8ce86470}{\index{lo\+::\+Server@{lo\+::\+Server}!````~Server@{$\sim$\+Server}}
+\index{````~Server@{$\sim$\+Server}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{$\sim$\+Server}]{\setlength{\rightskip}{0pt plus 5cm}virtual lo\+::\+Server\+::$\sim$\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classlo_1_1Server_a207eee1c209e04d2fc683ecb8ce86470}
+Destructor 
+
+Definition at line 570 of file lo\+\_\+cpp.\+h.
+
+
+
+References lo\+\_\+server\+\_\+free().
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classlo_1_1Server_a14113ef693e50c2b8569ae4c12d02e0f}{\index{lo\+::\+Server@{lo\+::\+Server}!add\+\_\+method@{add\+\_\+method}}
+\index{add\+\_\+method@{add\+\_\+method}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{add\+\_\+method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Method} lo\+::\+Server\+::add\+\_\+method (
+\begin{DoxyParamCaption}
+\item[{const string\+\_\+type \&}]{path, }
+\item[{const string\+\_\+type \&}]{types, }
+\item[{{\bf lo\+\_\+method\+\_\+handler}}]{h, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classlo_1_1Server_a14113ef693e50c2b8569ae4c12d02e0f}
+Add a method to handle a given path and type, with a handler and user data pointer. 
+
+Definition at line 579 of file lo\+\_\+cpp.\+h.
+
+\hypertarget{classlo_1_1Server_aadd89f1021f8437246bc640834ce7522}{\index{lo\+::\+Server@{lo\+::\+Server}!L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D@{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D}}
+\index{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D@{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D}]{\setlength{\rightskip}{0pt plus 5cm}lo\+::\+Server\+::\+L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D (
+\begin{DoxyParamCaption}
+\item[{(const char $\ast$, const char $\ast$, {\bf lo\+\_\+arg} $\ast$$\ast$, int)}]{, }
+\item[{((char $\ast$) 0,(char $\ast$) 0,({\bf lo\+\_\+arg} $\ast$$\ast$) 0,(int) 0)}]{, }
+\item[{(path, types, argv, argc)}]{}
+\end{DoxyParamCaption}
+)}}\label{classlo_1_1Server_aadd89f1021f8437246bc640834ce7522}
+Add a method to handle a given path and type, with a handler taking (argv, argc), user data. \hypertarget{classlo_1_1Server_a79293c21b7b389e32178d91f9774021f}{\index{lo\+::\+Server@{lo\+::\+Server}!L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D@{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D}}
+\index{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D@{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D}!lo\+::\+Server@{lo\+::\+Server}}
+\subsubsection[{L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D}]{\setlength{\rightskip}{0pt plus 5cm}lo\+::\+Server\+::\+L\+O\+\_\+\+A\+D\+D\+\_\+\+M\+E\+T\+H\+O\+D (
+\begin{DoxyParamCaption}
+\item[{(const char $\ast$, {\bf lo\+\_\+arg} $\ast$$\ast$, int)}]{, }
+\item[{((char $\ast$) 0,({\bf lo\+\_\+arg} $\ast$$\ast$) 0,(int) 0)}]{, }
+\item[{(types, argv, argc)}]{}
+\end{DoxyParamCaption}
+)}}\label{classlo_1_1Server_a79293c21b7b389e32178d91f9774021f}
+Add a method to handle a given path and type, with a handler taking (types, argv, argc), user data. 

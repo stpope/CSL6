@@ -1,0 +1,422 @@
+.TH "High-level OSC API" 3 "Thu Apr 16 2020" "Version 0.31" "liblo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+High-level OSC API \- 
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBlo_timetag\fP"
+.br
+.RI "\fIA structure to store OSC TimeTag values\&. \fP"
+.ti -1c
+.RI "union \fBlo_arg\fP"
+.br
+.RI "\fIUnion used to read values from incoming messages\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBLO_TT_IMMEDIATE\fP   ((\fBlo_timetag\fP){0U,1U})"
+.br
+.RI "\fIA timetag constant representing 'now'\&. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBlo_element_type\fP { \fBLO_ELEMENT_MESSAGE\fP = 1, \fBLO_ELEMENT_BUNDLE\fP = 2 }"
+.br
+.RI "\fIAn enumeration of bundle element types liblo can handle\&. \fP"
+.ti -1c
+.RI "enum \fBlo_type\fP { \fBLO_INT32\fP = 'i', \fBLO_FLOAT\fP = 'f', \fBLO_STRING\fP = 's', \fBLO_BLOB\fP = 'b', \fBLO_INT64\fP = 'h', \fBLO_TIMETAG\fP = 't', \fBLO_DOUBLE\fP = 'd', \fBLO_SYMBOL\fP = 'S', \fBLO_CHAR\fP = 'c', \fBLO_MIDI\fP = 'm', \fBLO_TRUE\fP = 'T', \fBLO_FALSE\fP = 'F', \fBLO_NIL\fP = 'N', \fBLO_INFINITUM\fP = 'I' }"
+.br
+.RI "\fIAn enumeration of the OSC types liblo can send and receive\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlo_address\fP \fBlo_address_new\fP (const char *host, const char *port)"
+.br
+.RI "\fIDeclare an OSC destination, given IP address and port number\&. Same as \fBlo_address_new_with_proto()\fP, but using UDP\&. \fP"
+.ti -1c
+.RI "\fBlo_address\fP \fBlo_address_new_with_proto\fP (int proto, const char *host, const char *port)"
+.br
+.RI "\fIDeclare an OSC destination, given IP address and port number, specifying protocol\&. \fP"
+.ti -1c
+.RI "\fBlo_address\fP \fBlo_address_new_from_url\fP (const char *url)"
+.br
+.RI "\fICreate a lo_address object from an OSC URL\&. \fP"
+.ti -1c
+.RI "void \fBlo_address_free\fP (\fBlo_address\fP t)"
+.br
+.RI "\fIFree the memory used by the lo_address object\&. \fP"
+.ti -1c
+.RI "void \fBlo_address_set_ttl\fP (\fBlo_address\fP t, int ttl)"
+.br
+.RI "\fISet the Time-to-Live value for a given target address\&. \fP"
+.ti -1c
+.RI "int \fBlo_address_get_ttl\fP (\fBlo_address\fP t)"
+.br
+.RI "\fIGet the Time-to-Live value for a given target address\&. \fP"
+.ti -1c
+.RI "int \fBlo_send\fP (\fBlo_address\fP targ, const char *path, const char *type,\&.\&.\&.)"
+.br
+.RI "\fISend a OSC formatted message to the address specified\&. \fP"
+.ti -1c
+.RI "int \fBlo_send_from\fP (\fBlo_address\fP targ, \fBlo_server\fP from, \fBlo_timetag\fP ts, const char *path, const char *type,\&.\&.\&.)"
+.br
+.RI "\fISend a OSC formatted message to the address specified, from the same socket as the specified server\&. \fP"
+.ti -1c
+.RI "int \fBlo_send_timestamped\fP (\fBlo_address\fP targ, \fBlo_timetag\fP ts, const char *path, const char *type,\&.\&.\&.)"
+.br
+.RI "\fISend a OSC formatted message to the address specified, scheduled to be dispatch at some time in the future\&. \fP"
+.ti -1c
+.RI "int \fBlo_address_errno\fP (\fBlo_address\fP a)"
+.br
+.RI "\fIReturn the error number from the last failed \fBlo_send()\fP or \fBlo_address_new()\fP call\&. \fP"
+.ti -1c
+.RI "const char * \fBlo_address_errstr\fP (\fBlo_address\fP a)"
+.br
+.RI "\fIReturn the error string from the last failed \fBlo_send()\fP or \fBlo_address_new()\fP call\&. \fP"
+.ti -1c
+.RI "\fBlo_blob\fP \fBlo_blob_new\fP (int32_t size, const void *data)"
+.br
+.RI "\fICreate a new OSC blob type\&. \fP"
+.ti -1c
+.RI "void \fBlo_blob_free\fP (\fBlo_blob\fP b)"
+.br
+.RI "\fIFree the memory taken by a blob\&. \fP"
+.ti -1c
+.RI "uint32_t \fBlo_blob_datasize\fP (\fBlo_blob\fP b)"
+.br
+.RI "\fIReturn the amount of valid data in a lo_blob object\&. \fP"
+.ti -1c
+.RI "void * \fBlo_blob_dataptr\fP (\fBlo_blob\fP b)"
+.br
+.RI "\fIReturn a pointer to the start of the blob data to allow contents to be changed\&. \fP"
+.ti -1c
+.RI "void \fBlo_version\fP (char *verstr, int verstr_size, int *major, int *minor, char *extra, int extra_size, int *lt_major, int *lt_minor, int *lt_bug)"
+.br
+.RI "\fIGet information on the version of liblo current in use\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the high-level API functions necessary to implement OSC support\&. Should be adequate for most applications, but if you require lower level control you can use the functions defined in \fBlo_lowlevel\&.h\fP 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define LO_TT_IMMEDIATE   ((\fBlo_timetag\fP){0U,1U})"
+
+.PP
+A timetag constant representing 'now'\&. 
+.PP
+Definition at line 151 of file lo_osc_types\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBlo_element_type\fP"
+
+.PP
+An enumeration of bundle element types liblo can handle\&. The element of a bundle can either be a message or an other bundle\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILO_ELEMENT_MESSAGE \fP\fP
+bundle element is a message 
+.TP
+\fB\fILO_ELEMENT_BUNDLE \fP\fP
+bundle element is a bundle 
+.PP
+Definition at line 48 of file lo_osc_types\&.h\&.
+.SS "enum \fBlo_type\fP"
+
+.PP
+An enumeration of the OSC types liblo can send and receive\&. The value of the enumeration is the typechar used to tag messages and to specify arguments with \fBlo_send()\fP\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILO_INT32 \fP\fP
+32 bit signed integer\&. 
+.TP
+\fB\fILO_FLOAT \fP\fP
+32 bit IEEE-754 float\&. 
+.TP
+\fB\fILO_STRING \fP\fP
+Standard C, NULL terminated string\&. 
+.TP
+\fB\fILO_BLOB \fP\fP
+OSC binary blob type\&. Accessed using the lo_blob_*() functions\&. 
+.TP
+\fB\fILO_INT64 \fP\fP
+64 bit signed integer\&. 
+.TP
+\fB\fILO_TIMETAG \fP\fP
+OSC TimeTag type, represented by the \fBlo_timetag\fP structure\&. 
+.TP
+\fB\fILO_DOUBLE \fP\fP
+64 bit IEEE-754 double\&. 
+.TP
+\fB\fILO_SYMBOL \fP\fP
+Standard C, NULL terminated, string\&. Used in systems which distinguish strings and symbols\&. 
+.TP
+\fB\fILO_CHAR \fP\fP
+Standard C, 8 bit, char variable\&. 
+.TP
+\fB\fILO_MIDI \fP\fP
+A 4 byte MIDI packet\&. 
+.TP
+\fB\fILO_TRUE \fP\fP
+Sybol representing the value True\&. 
+.TP
+\fB\fILO_FALSE \fP\fP
+Sybol representing the value False\&. 
+.TP
+\fB\fILO_NIL \fP\fP
+Sybol representing the value Nil\&. 
+.TP
+\fB\fILO_INFINITUM \fP\fP
+Sybol representing the value Infinitum\&. 
+.PP
+Definition at line 61 of file lo_osc_types\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "int lo_address_errno (\fBlo_address\fPa)"
+
+.PP
+Return the error number from the last failed \fBlo_send()\fP or \fBlo_address_new()\fP call\&. 
+.SS "const char* lo_address_errstr (\fBlo_address\fPa)"
+
+.PP
+Return the error string from the last failed \fBlo_send()\fP or \fBlo_address_new()\fP call\&. 
+.SS "void lo_address_free (\fBlo_address\fPt)"
+
+.PP
+Free the memory used by the lo_address object\&. 
+.SS "int lo_address_get_ttl (\fBlo_address\fPt)"
+
+.PP
+Get the Time-to-Live value for a given target address\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP An OSC address\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An integer specifying the scope of a multicast UDP message\&. 
+.RE
+.PP
+
+.SS "\fBlo_address\fP lo_address_new (const char *host, const char *port)"
+
+.PP
+Declare an OSC destination, given IP address and port number\&. Same as \fBlo_address_new_with_proto()\fP, but using UDP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhost\fP An IP address or number, or NULL for the local machine\&. 
+.br
+\fIport\fP a decimal port number or service name\&.
+.RE
+.PP
+The lo_address object may be used as the target of OSC messages\&.
+.PP
+Note: if you wish to receive replies from the target of this address, you must first create a lo_server_thread or lo_server object which will receive the replies\&. The last lo_server(_thread) object craeted will be the receiver\&. 
+.SS "\fBlo_address\fP lo_address_new_from_url (const char *url)"
+
+.PP
+Create a lo_address object from an OSC URL\&. example: \fC'osc\&.udp://localhost:4444/my/path/'\fP 
+.SS "\fBlo_address\fP lo_address_new_with_proto (intproto, const char *host, const char *port)"
+
+.PP
+Declare an OSC destination, given IP address and port number, specifying protocol\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproto\fP The protocol to use, must be one of LO_UDP, LO_TCP or LO_UNIX\&. 
+.br
+\fIhost\fP An IP address or number, or NULL for the local machine\&. 
+.br
+\fIport\fP a decimal port number or service name\&.
+.RE
+.PP
+The lo_address object may be used as the target of OSC messages\&.
+.PP
+Note: if you wish to receive replies from the target of this address, you must first create a lo_server_thread or lo_server object which will receive the replies\&. The last lo_server(_thread) object created will be the receiver\&. 
+.SS "void lo_address_set_ttl (\fBlo_address\fPt, intttl)"
+
+.PP
+Set the Time-to-Live value for a given target address\&. This is required for sending multicast UDP messages\&. A value of 1 (the usual case) keeps the message within the subnet, while 255 means a global, unrestricted scope\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP An OSC address\&. 
+.br
+\fIttl\fP An integer specifying the scope of a multicast UDP message\&. 
+.RE
+.PP
+
+.SS "void* lo_blob_dataptr (\fBlo_blob\fPb)"
+
+.PP
+Return a pointer to the start of the blob data to allow contents to be changed\&. 
+.SS "uint32_t lo_blob_datasize (\fBlo_blob\fPb)"
+
+.PP
+Return the amount of valid data in a lo_blob object\&. If you want to know the storage size, use \fBlo_arg_size()\fP\&. 
+.SS "void lo_blob_free (\fBlo_blob\fPb)"
+
+.PP
+Free the memory taken by a blob\&. 
+.SS "\fBlo_blob\fP lo_blob_new (int32_tsize, const void *data)"
+
+.PP
+Create a new OSC blob type\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP The amount of space to allocate in the blob structure\&. 
+.br
+\fIdata\fP The data that will be used to initialise the blob, should be size bytes long\&. 
+.RE
+.PP
+
+.SS "int lo_send (\fBlo_address\fPtarg, const char *path, const char *type, \&.\&.\&.)"
+
+.PP
+Send a OSC formatted message to the address specified\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItarg\fP The target OSC address 
+.br
+\fIpath\fP The OSC path the message will be delivered to 
+.br
+\fItype\fP The types of the data items in the message, types are defined in \fBlo_osc_types\&.h\fP 
+.br
+\fI\&.\&.\&.\fP The data values to be transmitted\&. The types of the arguments passed here must agree with the types specified in the type parameter\&.
+.RE
+.PP
+example: 
+.PP
+.nf
+1 lo_send(t, "/foo/bar", "ff", 0\&.1f, 23\&.0f);
+
+.fi
+.PP
+.PP
+\fBReturns:\fP
+.RS 4
+-1 on failure\&. 
+.RE
+.PP
+
+.SS "int lo_send_from (\fBlo_address\fPtarg, \fBlo_server\fPfrom, \fBlo_timetag\fPts, const char *path, const char *type, \&.\&.\&.)"
+
+.PP
+Send a OSC formatted message to the address specified, from the same socket as the specified server\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItarg\fP The target OSC address 
+.br
+\fIfrom\fP The server to send message from (can be NULL to use new socket) 
+.br
+\fIts\fP The OSC timetag timestamp at which the message will be processed (can be LO_TT_IMMEDIATE if you don't want to attach a timetag) 
+.br
+\fIpath\fP The OSC path the message will be delivered to 
+.br
+\fItype\fP The types of the data items in the message, types are defined in \fBlo_osc_types\&.h\fP 
+.br
+\fI\&.\&.\&.\fP The data values to be transmitted\&. The types of the arguments passed here must agree with the types specified in the type parameter\&.
+.RE
+.PP
+example: 
+.PP
+.nf
+1 serv = lo_server_new(NULL, err);
+2 lo_server_add_method(serv, "/reply", "ss", reply_handler, NULL);
+3 lo_send_from(t, serv, LO_TT_IMMEDIATE, "/foo/bar", "ff", 0\&.1f, 23\&.0f);
+
+.fi
+.PP
+.PP
+\fBReturns:\fP
+.RS 4
+on success, the number of bytes sent, or -1 on failure\&. 
+.RE
+.PP
+
+.SS "int lo_send_timestamped (\fBlo_address\fPtarg, \fBlo_timetag\fPts, const char *path, const char *type, \&.\&.\&.)"
+
+.PP
+Send a OSC formatted message to the address specified, scheduled to be dispatch at some time in the future\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItarg\fP The target OSC address 
+.br
+\fIts\fP The OSC timetag timestamp at which the message will be processed 
+.br
+\fIpath\fP The OSC path the message will be delivered to 
+.br
+\fItype\fP The types of the data items in the message, types are defined in \fBlo_osc_types\&.h\fP 
+.br
+\fI\&.\&.\&.\fP The data values to be transmitted\&. The types of the arguments passed here must agree with the types specified in the type parameter\&.
+.RE
+.PP
+example: 
+.PP
+.nf
+1 lo_timetag now;<br>
+2 lo_timetag_now(&now);<br>
+3 lo_send_timestamped(t, now, "/foo/bar", "ff", 0\&.1f, 23\&.0f);
+
+.fi
+.PP
+.PP
+\fBReturns:\fP
+.RS 4
+on success, the number of bytes sent, or -1 on failure\&. 
+.RE
+.PP
+
+.SS "void lo_version (char *verstr, intverstr_size, int *major, int *minor, char *extra, intextra_size, int *lt_major, int *lt_minor, int *lt_bug)"
+
+.PP
+Get information on the version of liblo current in use\&. All parameters are optional and can be given the value of 0 if that information is not desired\&. For example, to get just the version as a string, call lo_version(str, size, 0, 0, 0, 0, 0, 0, 0);
+.PP
+The 'lt' fields, called the ABI version, corresponds to libtool's versioning system for binary interface compatibility, and is not related to the library version number\&. This information is usually encoded in the filename of the shared library\&.
+.PP
+Typically the string returned in 'verstr' should correspond with $major\&.$minor$extra, e\&.g\&., '0\&.28rc'\&. If no 'extra' information is present, e\&.g\&., '0\&.28', extra will given the null string\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIverstr\fP A buffer to receive a string describing the library version\&. 
+.br
+\fIverstr_size\fP Size of the buffer pointed to by string\&. 
+.br
+\fImajor\fP Location to receive the library major version\&. 
+.br
+\fIminor\fP Location to receive the library minor version\&. 
+.br
+\fIextra\fP Location to receive the library version extra string\&. 
+.br
+\fIextra_size\fP Size of the buffer pointed to by extra\&. 
+.br
+\fIlt_major\fP Location to receive the ABI major version\&. 
+.br
+\fIlt_minor\fP Location to receive the ABI minor version\&. 
+.br
+\fIlt_bug\fP Location to receive the ABI 'bugfix' version\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for liblo from the source code\&.

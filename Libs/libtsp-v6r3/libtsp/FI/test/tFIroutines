@@ -1,0 +1,207 @@
+#!/bin/sh
+
+# Test FI routines
+#
+# $Id: tFIroutines 1.15 2005/02/01 libtsp-v6r3 $
+
+echo ""
+echo "========== tFIgdelFIR"
+tFIgdelFIR 0.0 \
+  1.329784E-01  2.926887E-01  4.639426E-01  5.486953E-01  4.872138E-01 \
+  2.954102E-01  6.165863E-02 -1.080281E-01 -1.554910E-01 -9.954859E-02 \
+ -1.051113E-02  4.596311E-02  4.941237E-02  2.444097E-02 -2.958206E-02
+tFIgdelFIR 0.25 \
+  1.329784E-01  2.926887E-01  4.639426E-01  5.486953E-01  4.872138E-01 \
+  2.954102E-01  6.165863E-02 -1.080281E-01 -1.554910E-01 -9.954859E-02 \
+ -1.051113E-02  4.596311E-02  4.941237E-02  2.444097E-02 -2.958206E-02
+tFIgdelFIR 0.0 \
+  1.850335E-02  5.776577E-02  1.200254E-01  2.023595E-01  2.929988E-01 \
+  3.744341E-01  4.267742E-01  4.340870E-01  3.892942E-01  2.978067E-01 \
+  1.764982E-01  4.998799E-02 -5.653442E-02 -1.239713E-01 -1.445678E-01 \
+ -1.230859E-01 -7.440889E-02 -1.790347E-02  2.866944E-02  5.429015E-02 \
+  5.661159E-02  4.118297E-02  1.765674E-02 -3.939240E-03 -1.709433E-02 \
+ -1.979013E-02 -1.445572E-02 -5.493177E-03  2.341368E-03  6.320348E-03 \
+  4.356788E-03 -1.395553E-03
+tFIgdelFIR 0.25 \
+  1.850335E-02  5.776577E-02  1.200254E-01  2.023595E-01  2.929988E-01 \
+  3.744341E-01  4.267742E-01  4.340870E-01  3.892942E-01  2.978067E-01 \
+  1.764982E-01  4.998799E-02 -5.653442E-02 -1.239713E-01 -1.445678E-01 \
+ -1.230859E-01 -7.440889E-02 -1.790347E-02  2.866944E-02  5.429015E-02 \
+  5.661159E-02  4.118297E-02  1.765674E-02 -3.939240E-03 -1.709433E-02 \
+ -1.979013E-02 -1.445572E-02 -5.493177E-03  2.341368E-03  6.320348E-03 \
+  4.356788E-03 -1.395553E-03
+tFIgdelFIR 0.25 \
+  0.000000E+00  1.289376E-02  2.186499E-02  2.349717E-02  1.601836E-02 \
+  0.000000E+00 -6.266473E-02 -1.114144E-01 -1.267756E-01 -9.277196E-02 \
+  0.000000E+00  2.262919E-01  4.782516E-01  7.163726E-01  9.013664E-01 \
+  1.000000E+00  9.013664E-01  7.163726E-01  4.782516E-01  2.262919E-01 \
+  0.000000E+00 -9.277196E-02 -1.267756E-01 -1.114144E-01 -6.266473E-02 \
+  0.000000E+00  1.601836E-02  2.349717E-02  2.186499E-02  1.289376E-02 \
+  0.000000E+00
+
+echo ""
+echo "========== tFIgdelIIR"
+tFIgdelIIR 0.0 \
+  9.8901377e-01 -9.8901377e-01  0.0000000e+00 -9.7802754e-01  0.0000000e+00 \
+  9.9220971e-01 -1.9843848e+00  9.9220971e-01 -1.9842706e+00  9.8453358e-01 \
+  9.9852769e-01 -1.9969764e+00  9.9852769e-01 -1.9969279e+00  9.9710379e-01
+tFIgdelIIR 0.01 \
+  9.8901377e-01 -9.8901377e-01  0.0000000e+00 -9.7802754e-01  0.0000000e+00 \
+  9.9220971e-01 -1.9843848e+00  9.9220971e-01 -1.9842706e+00  9.8453358e-01 \
+  9.9852769e-01 -1.9969764e+00  9.9852769e-01 -1.9969279e+00  9.9710379e-01
+
+
+echo ""
+echo "========== tFIxKaiserLPF"
+tFIxKaiserLPF FIdKaiserLPF 27 0.2 3.952		# Example from Antoniou
+tFIxKaiserLPF FIfKaiserLPF 27 0.2 3.952		# Example from Antoniou
+
+echo ""
+echo "========== tFIxConvol"
+tFIxConvol FIdConvol 0 0 1 1 1 // 5 5 5
+echo "----- ----- ----- -----"
+tFIxConvol FIfConvol 0 0 1 1 1 // 5 5 5
+
+echo ""
+echo "========== tFIxWinXXX"
+tFIxWinXXX FIdWinHamm 9 0.46
+tFIxWinXXX FIdWinHamm 8 0.46
+tFIxWinXXX FIdWinHamm 9 0.5
+tFIxWinXXX FIdWinHamm 5 0.0
+tFIxWinXXX FIfWinHamm 9 0.46
+tFIxWinXXX FIfWinHamm 8 0.46
+tFIxWinXXX FIfWinHamm 9 0.5
+tFIxWinXXX FIfWinHamm 5 0.0
+
+tFIxWinXXX FIfWinRCos 9 7
+tFIxWinXXX FIfWinRCos 8 6
+tFIxWinXXX FIfWinRCos 5 5
+
+tFIxWinXXX FIdWinKaiser 9 0
+tFIxWinXXX FIdWinKaiser 9 2
+tFIxWinXXX FIdWinKaiser 8 1
+tFIxWinXXX FIdWinKaiser 9 5
+tFIxWinXXX FIfWinKaiser 9 0
+tFIxWinXXX FIfWinKaiser 9 2
+tFIxWinXXX FIfWinKaiser 8 1
+tFIxWinXXX FIfWinKaiser 9 5
+
+tFIxWinXXX FIfWinHCos 24 0.46
+
+echo ""
+echo "========== tFIxReadFilt"
+cat << EoF > test.cof
+!FIR
+0.5
+1.0 1.5
+
+2.0
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof	# test ignore blank lines
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof	# test ignore blank lines
+rm -rf test.cof
+
+cat << EoF > test.cof
+!IIR
+0.5 1.0 1.5 2.0 2.5
+xx
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof 2>&1	# test too many records
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof 2>&1	# test too many records
+rm -rf test.cof
+
+cat << EoF > test.cof
+!IIRabc
+0.5 1.0 1.5 2.0 2.5
+! more comments
+
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof	# test trailing blank lines
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof
+rm -rf test.cof
+
+cat << EoF > test.cof
+!IIR
+0.5 1.0 1.5 2.0
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof 2>&1	# test invalid IIR filter
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof 2>&1
+rm -rf test.cof
+
+cat << EoF > test.cof
+!CAS
+0.5 1.0 1.5 2.0 2.0
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof 2>&1	# CAS filter
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof 2>&1
+rm -rf test.cof
+
+cat << EoF > test.cof
+0.5 1.0 1.5 2.0
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof	# test no filter type
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof
+rm -rf test.cof
+
+cat << EoF > test.cof
+!FIR
+0.5 1 0.5
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof	# FIR symmetry
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof
+rm -rf test.cof
+
+cat << EoF > test.cof
+!FIR
+0.5 1 1 0.5
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof	# FIR symmetry
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof
+rm -rf test.cof
+
+cat << EoF > test.cof
+!FIR
+0.5 0 -0.5
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof	# FIR anti-symmetry
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof
+rm -rf test.cof
+
+cat << EoF > test.cof
+!WIN
+0.5 1 0.5
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof	# WIN symmetry
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof
+rm -rf test.cof
+
+cat << EoF > test.cof
+!ALL
+0.5 1 0.5
+EoF
+echo "===== ===== ===== ======"
+tFIxReadFilt FIdReadFilt test.cof	# ALL symmetry
+echo "----- ----- ----- -----"
+tFIxReadFilt FIfReadFilt test.cof
+rm -rf test.cof
+

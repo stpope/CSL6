@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - FIgdelFIR</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>FIgdelFIR</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double FIgdelFIR (double w, const float h[], int Ncof)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Calculate the group delay for an FIR filter
+</DL>
+<H4>Description</H4>
+The group delay is calculated for the equivalent non-causal filter with
+reference point at the mid-point of the filter.  The delay to the mid-point
+is added to this figure.  The group delay in seconds at frequency f for a
+response with sampling frequency Fs can be calculated as
+<P>
+<PRE>
+  gdel = FIgdelFIR (2 * Pi * f / Fs, h, Ncof) / Fs .
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; double w
+<DD>
+Normalized radian frequency (0 to Pi).
+<DT>
+ -&gt; const float h[]
+<DD>
+Array of Ncof filter coefficients
+<DT>
+ -&gt; int Ncof
+<DD>
+Number of filter coefficients
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.4  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

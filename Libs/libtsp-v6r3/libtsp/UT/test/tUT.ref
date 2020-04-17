@@ -1,0 +1,220 @@
+
+========== tUTerror
+tUTerror: Cannot open file "XxXx.Yy"
+PRogRAM: No such file or directory
+
+========== tUTgetOption
+--
+UTgetOption - Invalid option: "-a="
+Usage: tUTgetOption [options] argA argB
+Options:
+  -d D1:D2, --delay=D1:D2  Specify a delay range.
+  -limit LIMITS, --limit=LIMITS  Limits.
+  -a, --aarg               Test option.
+  -h, --help               Print a list of options and exit.
+  -v, --version            Print the version number and exit.
+--
+UTgetOption - Invalid option: "-ba"
+Usage: tUTgetOption [options] argA argB
+Options:
+  -d D1:D2, --delay=D1:D2  Specify a delay range.
+  -limit LIMITS, --limit=LIMITS  Limits.
+  -a, --aarg               Test option.
+  -h, --help               Print a list of options and exit.
+  -v, --version            Print the version number and exit.
+Ordinary argument: xxx
+Ordinary argument: yyy
+String: -a          , Option 5  : -a           
+--
+UTgetOption - Invalid option: "-ab"
+Usage: tUTgetOption [options] argA argB
+Options:
+  -d D1:D2, --delay=D1:D2  Specify a delay range.
+  -limit LIMITS, --limit=LIMITS  Limits.
+  -a, --aarg               Test option.
+  -h, --help               Print a list of options and exit.
+  -v, --version            Print the version number and exit.
+String: -a          , Option 5  : -a           
+--
+String: --del=      , Option 2  : --d*elay=   , value:       
+--
+UTgetOption - Value expected for option "--del"
+Usage: tUTgetOption [options] argA argB
+Options:
+  -d D1:D2, --delay=D1:D2  Specify a delay range.
+  -limit LIMITS, --limit=LIMITS  Limits.
+  -a, --aarg               Test option.
+  -h, --help               Print a list of options and exit.
+  -v, --version            Print the version number and exit.
+--
+UTgetOption - Invalid option: "-lim3"
+Usage: tUTgetOption [options] argA argB
+Options:
+  -d D1:D2, --delay=D1:D2  Specify a delay range.
+  -limit LIMITS, --limit=LIMITS  Limits.
+  -a, --aarg               Test option.
+  -h, --help               Print a list of options and exit.
+  -v, --version            Print the version number and exit.
+--
+String: -limit3     , Option 3  : -lim*it#    , value: 3     
+--
+String: -limi       , Option 3  : -lim*it#    , value: 3     
+--
+String: -limits3    , Option 3  : -lim*it#    , value: s3    
+--
+String: --lim=3     , Option 4  : --lim*it*=  , value: 3     
+--
+String: --limi=3    , Option 4  : --lim*it*=  , value: 3     
+--
+String: --limits    , Option 4  : --lim*it*=  , value: 3     
+--
+UTgetOption - Value expected for option "-d"
+Usage: tUTgetOption [options] argA argB
+Options:
+  -d D1:D2, --delay=D1:D2  Specify a delay range.
+  -limit LIMITS, --limit=LIMITS  Limits.
+  -a, --aarg               Test option.
+  -h, --help               Print a list of options and exit.
+  -v, --version            Print the version number and exit.
+--
+String: --d=20      , Option 2  : --d*elay=   , value: 20    
+String: --dela=25   , Option 2  : --d*elay=   , value: 25    
+String: --delay=30  , Option 2  : --d*elay=   , value: 30    
+String: --d         , Option 2  : --d*elay=   , value: 35    
+String: --del       , Option 2  : --d*elay=   , value: 40    
+String: --delay     , Option 2  : --d*elay=   , value: 45    
+String: -d50        , Option 1  : -d#         , value: 50    
+String: -d          , Option 1  : -d#         , value: 55    
+--
+String: -d=25       , Option 1  : -d#         , value: =25   
+Stop option scan, arguments follow
+Ordinary argument: --delay
+Ordinary argument: -d30
+--
+String: -a          , Option 5  : -a           
+Ordinary argument: -
+--
+Usage: tUTgetOption [options] argA argB
+Options:
+  -d D1:D2, --delay=D1:D2  Specify a delay range.
+  -limit LIMITS, --limit=LIMITS  Limits.
+  -a, --aarg               Test option.
+  -h, --help               Print a list of options and exit.
+  -v, --version            Print the version number and exit.
+--
+tUTgetOption, V1R3 1995/01/07
+
+========== tUTbyteOrder
+Host: little-endian
+  UTbyteCode (big-endian) = big-endian
+  UTswapCode (big-endian) = swap
+  UTbyteCode (little-endian) = little-endian
+  UTswapCode (little-endian) = native
+  UTbyteCode (native) = little-endian
+  UTswapCode (native) = native
+  UTbyteCode (swap) = big-endian
+  UTswapCode (swap) = swap
+
+========== tUTcheckIEEE
+UTcheckIEEE: IEEE float representation
+
+========== tUTdecOption
+String:          Option:          stat: 1    Arg: (null)
+String:          Option: *abc     stat: 1    Arg: (null)
+String:          Option: *        stat: 1    Arg: (null)
+String:          Option: a        stat: 0    Arg: (null)
+String:          Option: abc      stat: 0    Arg: (null)
+String: a        Option:          stat: 0    Arg: (null)
+String: a        Option: a        stat: 1    Arg: (null)
+String: a        Option: a*bc     stat: 1    Arg: (null)
+String: ab       Option: a*bc     stat: 1    Arg: (null)
+String: abc      Option: a*bc     stat: 1    Arg: (null)
+String: abcd     Option: a*bc     stat: 0    Arg: (null)
+String: ab*c     Option: a*b*c    stat: 1    Arg: (null)
+
+String:          Option: #        stat: -2   Arg: (null)
+String: 33       Option: #        stat: 1    Arg: 33
+String: 33       Option: *abc#    stat: 0    Arg: (null)
+String: 33       Option: a#       stat: 0    Arg: (null)
+String: 33       Option: abc#     stat: 0    Arg: (null)
+String: a33      Option: a#       stat: 1    Arg: 33
+String: a33      Option: a*bc#    stat: 0    Arg: (null)
+String: ab33     Option: a*b#     stat: 1    Arg: 33
+String: ab33     Option: a*bc#    stat: 0    Arg: (null)
+String: abc33    Option: a*bc#    stat: 1    Arg: 33
+
+String: a=33     Option: a=       stat: 1    Arg: 33
+String: ab=33    Option: ab=      stat: 1    Arg: 33
+String: a=33     Option: ab=      stat: 0    Arg: (null)
+String: a=33     Option: a*bc=    stat: 1    Arg: 33
+String: ab=33    Option: a*bc=    stat: 1    Arg: 33
+String: a        Option: a=       stat: -2   Arg: (null)
+String: a        Option: a*bc=    stat: -2   Arg: (null)
+String: ab       Option: a*bc=    stat: -2   Arg: (null)
+
+========== tUTdate (date/time: 2006-06-06 14:09:36 UTC)
+UTdate: Tue Jun  6 10:09:36 2006
+UTdate: Tue Jun  6 10:09:36 EDT 2006
+UTdate: 2006-06-06 10:09:36 EDT
+UTdate: 2006-06-06 14:09:36 UTC
+
+========== tUTuserName
+UTuserName: pkabal@156Aldebaran
+
+========== tUTtypes
+sizeof (long int, int, short int, char): 4 4 2 1
+sizeof (long double, double, float): 12 8 4
+sizeof (uint4_t, uint2_t, uint1_t): 4 2 1
+sizeof (int4_t, int2_t): 4, 2
+sizeof (double8_t, float4_t): 8 4
+
+========== tUTctime
+UTctime: Wed Dec 31 19:00:00 1969
+UTctime: Wed Dec 31 19:00:00 EST 1969
+UTctime: 1969-12-31 19:00:00 EST
+UTctime: 1970-01-01 00:00:00 UTC
+
+UTctime: Tue May  9 02:13:20 1995
+UTctime: Tue May  9 02:13:20 EDT 1995
+UTctime: 1995-05-09 02:13:20 EDT
+UTctime: 1995-05-09 06:13:20 UTC
+
+========== tUTxIEEE80
+Input value: 0, IEEE80: 00000000000000000000
+Input value: 0, IEEE80: 00000000000000000000
+Input value: inf, IEEE80: 7fff0000000000000000
+Input value: -inf, IEEE80: ffff0000000000000000
+Input value: inf, IEEE80: 7fff0000000000000000
+Input value: -inf, IEEE80: ffff0000000000000000
+Input value: nan, IEEE80: 7fff8000000000000000
+Input value: 0.5, IEEE80: 3ffe8000000000000000
+Input value: 3.33333e-20, IEEE80: 3fbe9d6986fe79b8e800
+Input value: -3.33333e-20, IEEE80: bfbe9d6986fe79b8e800
+Input value: 2e-308, IEEE80: 3c00e61acf033d1a4000
+Input value: 8000, IEEE80: 400bfa00000000000000
+Input value: 44100, IEEE80: 400eac44000000000000
+
+========== tNaN
+inf + -inf = nan
+nan  < 1.: 0, nan <= 1.: 0,  nan == 1.: 0
+nan >= 1.: 0, nan  > 1.: 0
+nan == nan: 0
+frexp (nan): mantissa = nan, exponent = 0
+inf  < 1.: 0, inf <= 1.: 0,  inf == 1.: 0
+inf >= 1.: 1, inf  > 1.: 1
+inf == inf: 1
+frexp (inf): mantissa = inf, exponent = 0
+
+========== tcpp
+C preprocessor symbols
+
+System identifications
+  symbol: __CYGWIN__ = 1
+  symbol: __CYGWIN32__ = 1
+  symbol: __unix__ = 1
+  symbol: __unix = 1
+  symbol: unix = 1
+
+Compiler identifications:
+  symbol: __STDC__ = 1
+  symbol: __GNUC__ = 3

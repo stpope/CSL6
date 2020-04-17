@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svnroot/rtaudio/!svn/ver/44/trunk/tests
+END
+record.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/rtaudio/!svn/ver/44/trunk/tests/record.cpp
+END
+playraw.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/rtaudio/!svn/ver/37/trunk/tests/playraw.cpp
+END
+playsaw.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/rtaudio/!svn/ver/41/trunk/tests/playsaw.cpp
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/rtaudio/!svn/ver/33/trunk/tests/Makefile.in
+END
+duplex.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/rtaudio/!svn/ver/37/trunk/tests/duplex.cpp
+END
+testall.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/rtaudio/!svn/ver/37/trunk/tests/testall.cpp
+END
+audioprobe.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/rtaudio/!svn/ver/16/trunk/tests/audioprobe.cpp
+END

@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - SPdRFFT</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>SPdRFFT</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void SPdRFFT (double x[], int N, int Ifn)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Fast Fourier transform of a real sequence
+</DL>
+<H4>Description</H4>
+If Ifn is greater than zero, this routine computes the discrete Fourier
+transform of N real data points.  The first step in this process is to
+rearrange the data in-place.  Let the input real sequence be x[0], x[1], ...,
+These values are rearranged to have the even-numbered coefficients first,
+followed by the odd-numbered coefficients.  These rearranged values are
+considered to be the real and imaginary components of a complex sequence.
+This complex sequence is passed to an N/2 point fast Fourier transform.
+The final step is to post-process the output of the FFT to form the output
+values.  Let the N/2+1 complex output values be
+<PRE>
+  (ar(0),ar(0)), ... , (ar(N/2), ai(N/2))
+</PRE>
+These output values are stored as follows.
+<PRE>
+    ar(0)     &lt;-&gt;  x[0]
+    ar(1)     &lt;-&gt;  x[1]
+     ...           ...
+    ar(N/2-1) &lt;-&gt;  x[N/2-1]
+    ar(N/2)   &lt;-&gt;  x[N/2]
+    ai(1)     &lt;-&gt;  x[N/2+1]
+    ai(2)     &lt;-&gt;  x[N/2+2]
+     ...           ...
+    ai(N/2-1) &lt;-&gt;  x[N-1]
+</PRE>
+Note that ar(N/2) is stored in the place that would normally be reserved for
+ai(0).  This is possible since ai(0) (and ai(N/2)) are known a priori to be
+zero.
+<P>
+If Ifn is less than zero, this routine computes a inverse discrete Fourier
+transform that results in N real data values.  Let the N/2+1 complex input
+values be (ar(0),ai(0)), ... , (ar(N/2),ai(N/2)).  If these values are to
+result in a real sequence after the inverse discrete Fourier transform, ai(0)
+and ai(N/2) must both be zero.  The remaining N data values (N/2+1 real
+components and N/2-1 imaginary components) are stored in the array x as
+follows.
+<PRE>
+    ar(0)     &lt;-&gt;  x[0]
+    ar(1)     &lt;-&gt;  x[1]
+     ...           ...
+    ar(N/2-1) &lt;-&gt;  x[N/2-1]
+    ar(N/2)   &lt;-&gt;  x[N/2]
+    ai(1)     &lt;-&gt;  x[N/2+1]
+    ai(2)     &lt;-&gt;  x[N/2+2]
+     ...           ...
+    ai(N/2-1) &lt;-&gt;  x[N-1]
+</PRE>
+Note that ar(N/2) is stored in the place that would normally be reserved for
+ai(0).  The output of the inverse transform contains the N dreal data points
+stored sequentially in array x.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-&gt; double x[]
+<DD>
+Data array (N elements)
+<DT>
+ -&gt; int N
+<DD>
+Number of elements in x.  N must be a power of 2.
+<DT>
+ -&gt; int Ifn
+<DD>
+Parameter specifying the direction of the transform.  If Ifn &gt; 0, x is
+the time series on input and the frequency response on output.  If
+Ifn &lt; 0, x is the frequency response on input and the time series on
+output.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.3  2003/05/09
+<H4>See Also</H4>
+<A HREF="SPdCFFT.html">SPdCFFT</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,77 @@
+.TH SPfDCT 3tsp "TSP (libtsp/SP)"
+.SH Routine
+.in +4n
+.ti -4n
+void SPfDCT (float x[], int N, int Ifn)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Calculate the discrete cosine transform
+.in -4n
+.SH Description
+This routine calculates the discrete cosine transform (DCT) or the inverse
+DCT of N data values using a complex N/2 point fast Fourier transform
+algorithm.  This routine performs the calculation in place, that is the
+output data replaces the input data.  The DCT is defined as,
+.PP
+.ft CW
+.nf
+.ne 3
+              N-1            pi (2n+1) k
+  X(k) = C(k) SUM x(n) * cos(-----------) ,
+              n=0               2N
+.fi
+.ft P
+.PP
+.ft CW
+.nf
+.ne 3
+  where C(k) = 1       for k=0,
+             = sqrt(2) for k=1,2,...,N-1.
+.fi
+.ft P
+.PP
+The inverse DCT is defined as,
+.PP
+.ft CW
+.nf
+.ne 3
+         1  N-1                 pi (2n+1) k
+  x(n) = -  SUM C(k)*X(k) * cos(-----------) .
+         N  k=0                     2N
+.fi
+.ft P
+.PP
+.in +4n
+.ti -4n
+Reference:
+.br
+M. J. Narasimha and A. M. Peterson, "On the computation of the Discrete
+Cosine Transform", IEEE Trans. Communications, vol. COM-26, June 1978,
+pp. 934-936.
+.in -4n
+.SH Parameters
+.in +4n
+.ti -4n
+<-> float x[]
+.br
+For the forward transform, this is an array of data samples on input and
+the array of DCT coefficients on output.  For the inverse transform, this
+is an array of DCT coefficients on input and the data samples on output.
+.ti -4n
+ -> int N
+.br
+Number of points in the transform (a power of 2)
+.ti -4n
+ -> int Ifn
+.br
+Input parameter, equal to +1 for the DCT, equal to -1 for the inverse DCT
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.13  2003/05/09
+.SH See Also
+SPfRFFT,
+SPfCFFT,
+libtsp

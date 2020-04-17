@@ -1,0 +1,28 @@
+.TH UTuserName 3tsp "TSP (libtsp/UT)"
+.SH Routine
+.in +4n
+.ti -4n
+char *UTuserName (void)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Get the user name and host name
+.in -4n
+.SH Description
+This routine returns the user name and host name.  The returned string is of
+the form user@host, with the host or @user parts omitted if unavailable.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  char UTuserName[]
+.br
+Pointer to a character string containing the user name.  This string is
+null terminated.  This is a pointer to an internal static storage area;
+each call to this routine overlays this storage.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.34  2003/05/09
+.SH See Also
+libtsp

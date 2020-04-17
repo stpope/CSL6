@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - VRfPow10</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>VRfPow10</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void VRfPow10 (const float x[], float y[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Find 10 raised to the power of each element of an array
+</DL>
+<H4>Description</H4>
+This routine finds the anti-logarithm (base 10) for each element of an array.
+For each element in the input array, the output is given as
+<PRE>
+  y[i] = 10 ^ (x[i]),  0 &lt;= i &lt; N.
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; const float x[]
+<DD>
+Input array (N elements)
+<DT>
+&lt;-  float y[]
+<DD>
+Output array (N elements).  The output array can be the same as the input
+array.
+<DT>
+ -&gt; int N
+<DD>
+Number of elements in the arrays (may be zero)
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.8  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,49 @@
+Copyright (C) 2002 Peter Kabal
+
+The libtsp routines are provided free of charge without warranty of
+any kind.  All components are copyrighted.  They may be distributed free of
+charge provided that the recipients also acquire the right to distribute them.
+This software cannot be incorporated into a work which is sold commercially.
+However, including this software on distribution media containing other free
+software is permitted even when a distribution fee is charged.
+
+Windows MSVC project:
+  A Windows MSVC project for libtsp is in the MSVC folder.
+
+Building on Unix Systems:
+  Building on Unix systems, in the main directory,
+    % make
+  This will be create the library file lib/libtsp.a.
+
+Using the library routines:
+  To use the libtsp routines in a program you will have to link with the
+  object library libtsp.a.  Furthermore, user programs need access to the
+  header file libtsp.h.
+
+Man page files:
+  The directory man contains man pages for the top level libtsp routines.
+  These man pages have been automatically generated from the corresponding
+  file header and so contain the same information as the file header itself.
+  The extensions for the man pages are .3tsp.  On some systems, these will have
+  to be renamed to have an extension of .3 in order for the man program to
+  recognize them.
+
+html files:
+  The directory html contains html files for top level libtsp routines.  These
+  html pages have been automatically generated from the corresponding file
+  header and so contain the same information as the file header itself.
+
+Test programs:
+  Below each of the subdirectories of libtsp is a test directory containing
+  test programs that exercise the libtsp routines.  Makefile's in those
+  directories will build the test programs and compare the output with a
+  reference output.
+
+Other files:
+  A number of routines are hidden one level down in a "nucleus" directory.
+  These are internal routines usually not of interest to the end user.
+
+  A number of audio files of various formats can be found in the
+  audiofiles directory.
+
+$Id: INSTALL 1.12 2002/09/12 libtsp-v6r3 $

@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - AFsetSpeaker</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>AFsetSpeaker</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int AFsetSpeaker (const char String[])
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Set defaults for loudspeaker spacial positions
+</DL>
+<H4>Description</H4>
+This routine sets the default mapping of output channels to speaker
+positions.  The spacial positions of the loudspeakers are specified as a
+list of comma and/or white-space separated locations from the list below.
+<PRE>
+  "FL"  - Front Left
+  "FR"  - Front Right
+  "FC"  - Front Center
+  "LF"  - Low Frequency
+  "BL"  - Back Left
+  "BR"  - Back Right
+  "FLC" - Front Left of Center
+  "FRC" - Front Right of Center
+  "BC"  - Back Center
+  "SL"  - Side Left
+  "SR"  - Side Right
+  "TC"  - Top Center
+  "TFL" - Top Front Left
+  "TFC" - Top Front Center
+  "TFR" - Top Front Right
+  "TBL" - Top Back Lefty
+  "TBC" - Top Back Center
+  "TBR" - Top Back Right
+  "-"   - none
+</PRE>
+A speaker position can be associated with only one channel.  Only WAVE files
+store the speaker locations in the file header.  In the case of WAVE files,
+the subset of spacial positions must appear in the order given above.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int AFsetSpeaker
+<DD>
+Error flag, zero for no error
+<DT>
+ -&gt; const char String[]
+<DD>
+String containing the list of speaker positions
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.2  2003/05/09
+<H4>See Also</H4>
+<A HREF="AFopnWrite.html">AFopnWrite</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

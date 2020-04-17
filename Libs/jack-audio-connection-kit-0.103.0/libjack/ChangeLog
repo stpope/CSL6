@@ -1,0 +1,156 @@
+2005-04-15  Paul Davis  <paul>
+
+	* change the way threads get RT scheduling. it is now requested by
+	the thread rather than assigned by the thread's parent. in cases
+	where capabilities are used, the child is also given capabilities
+	so that it can release + re-acquire RT scheduling as needed.
+	
+	* prevent watchdog from killing anything is JACK is freewheeling.
+
+2004-12-31  Jack O'Quin  <joq@io.com>
+
+	* new header file: <jack/statistics.h>
+
+2004-12-27  Jack O'Quin  <joq@io.com>
+
+	* new API functions jack_get_max_delayed_usecs() and
+	jack_reset_max_delayed_usecs()
+
+	* add US-X2Y USB device support to ALSA backend
+
+2004-11-28  Jack O'Quin  <joq@io.com>
+
+	* removed deprecated function jack_set_server_dir().
+
+2004-11-27  Jack O'Quin  <joq@io.com>
+
+	* new API functions: jack_internal_client_handle(),
+	jack_internal_client_load(), jack_get_internal_client_name(),
+	jack_internal_client_unload().  See: <jack/intclient.h>.
+
+2004-10-14  Jack O'Quin  <joq@io.com>
+
+	* new API function: jack_get_xrun_delayed_usecs()
+
+2004-10-08  Jack O'Quin  <joq@io.com>
+
+	* new API functions: jack_client_open(), jack_get_client_name()
+
+2004-09-15  Jack O'Quin  <joq@io.com>
+
+	* new API functions from <jack/thread.h>
+
+2004-07-08  Jack O'Quin  <joq@io.com>
+
+	* add jack_ringbuffer_peek()
+
+2004-02-19  Jack O'Quin  <joq@io.com>
+
+	* new API functions:
+
+	  int jack_client_name_size(void);
+	  int jack_port_name_size(void);
+	  int jack_port_type_size(void);
+
+2004-02-16  Jack O'Quin  <joq@io.com>
+
+	* Changed JACK_PORT_NAME_SIZE from 32 to 256
+
+	This could affect some client that defines its own value.
+
+2003-10-15  Paul Davis <paul@linuxaudiosystems.com>
+
+	* new ring buffer interface: <jack/ringbuffer.h>
+
+2003-10-07  Paul Davis <paul@linuxaudiosystems.com>
+
+	* new function jack_set_freewheel().
+
+	No compatibility issues: this introduces new functionality to 
+	JACK and doesn't alter any existing functionality.
+
+2003-09-18  Jack O'Quin  <joq@io.com>
+
+	* new function jack_set_buffer_size().  
+
+	Compatibility issues: programs that rely on the buffer size but do
+	not register a callback will fail.  Cached output buffer addresses
+	are not valid after the buffer size changes.  These rules existed
+	before, but were never enforced.
+
+2003-08-26  Jack O'Quin  <joq@io.com>
+
+	* <jack/types.h> typedefs are now defined using the C99 standard
+	fixed-size integer typedefs.  These new typedefs are binary
+	compatible with 32-bit platforms, but not 64-bit machines.  
+
+	Programs using printf on these values will get GCC compiler
+	warnings.  To suppress the warnings, use the corresponding C99
+	printf specifications defined in <inttypes.h>.  That header is
+	already implicitly included by <jack/types.h>, but can also be
+	included explicitly to maintain compatibility with older versions
+	of JACK without messy #ifdef's.  Adding explicit casts will also
+	work, but may suppress future warnings you might want to see.
+
+	* jack_get_sample_rate() now returns jack_nframes_t rather than
+	unsigned long.  These are the same on 32-bit machines, but not on
+	64-bit platforms.
+
+2003-08-13  Jack O'Quin  <joq@io.com>
+
+	* Many new transport interfaces.  It would be silly to list them
+	all here.  Please see the new transport control section in the
+	JACK reference manual.
+
+	* jack_set_transport_info() and jack_engine_takeover_timebase(),
+	(the old timebase master interfaces) now do nothing.  Instead, use
+	jack_set_timebase_callback().
+
+2003-05-09  Jack O'Quin  <joq@io.com>
+
+	* Added new jack_is_realtime() function.
+
+2003-02-23  Paul Davis  <paul>
+
+	* client.c: 
+		 
+		added deliver_request().
+		removed all use of strncpy().
+		changed ClientDynamic to ClientInProcess.
+
+2003-02-10  Taybin Rutkin <trutkin@physics.clarku.edu>
+
+	* client.c (jack_client_new): Checks jack_protocol_version returned
+	from jackd.
+
+2003-02-05  Kai Vehmanen  <kai.vehmanen@wakkanet.fi>
+
+	* client.c (jack_set_buffer_size_callback): This function is now 
+	deprecated.
+
+2002-12-20  Paul Davis  <paul>
+
+	* error.h (jack_set_error_function): added
+
+2002-12-16  Paul Davis  <paul>
+
+	* jack.h: added inclusion of pthread.h
+
+2002-12-09  Paul Davis  <paul>
+	
+	* jack.h (jack_client_new_inprocess): prototype for in-process client creation (not implemented)
+
+	* jack.h (jack_client_thread_id): added so that clients can easily
+	find out the pthread_t that is running the JACK client code. this
+	turns out to be critical to handling the SIGHUP.
+
+2002-11-15  Paul Davis  <paul>
+
+	* client.c: added port alias functions. untested.
+
+2002-11-05  Kai Vehmanen  <kai.vehmanen@wakkanet.fi>
+
+	* Created this file. Current JACK version is 
+	0.39.0 and libjack interface 0:5:0. See 
+	jack/README.developers for details on how to 
+	use this file.

@@ -1,0 +1,50 @@
+.TH STcopyMax 3tsp "TSP (libtsp/ST)"
+.SH Routine
+.in +4n
+.ti -4n
+int STcopyMax (const char Si[], char So[], int Maxchar)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Copy at most Maxchar characters to a string
+.in -4n
+.SH Description
+This routine copies characters from the input string to the output string.
+Characters are copied until a null is seen in the input string or the number
+of characters copied is Maxchar.  Then a trailing null character is appended
+to the output string.  If the input string is longer than Maxchar (not
+including the null character), a string truncated warning message is printed.
+.SH Parameters
+.PP
+.ft CW
+.nf
+.ne 3
+    Number of characters in the output string
+.fi
+.ft P
+.in +4n
+.ti -4n
+ -> const char Si[]
+.br
+Input character string
+.ti -4n
+<-  char So[]
+.br
+Output character string.  This string is always null terminated, with
+at most Maxchar characters not including the terminating null character.
+If the input string is longer than Maxchar, only the first Maxchar
+characters are copied and a warning message is printed.
+.ti -4n
+ -> int Maxchar
+.br
+Maximum number of characters (not including the trailing null character)
+to be placed in So.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.17  2003/05/09
+.SH See Also
+STcatMax,
+STcopyNMax,
+libtsp

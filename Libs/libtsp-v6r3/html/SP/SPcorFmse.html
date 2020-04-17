@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - SPcorFmse</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>SPcorFmse</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double SPcorFmse (const float h[], double Ed, const float rxx[],
+const float r[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Calculate the mean-square filtering error
+</DL>
+<H4>Description</H4>
+This function calculates the mean-square error for a linear filter.  Consider
+a filter with N coefficients, with coefficient h(i) corresponding to
+lag Nd+i.  The filter output is
+<PRE>
+         N-1
+  y(k) = SUM h(i) x(k-i-Nd) ,
+         i=0
+</PRE>
+where x(i) is the input signal.  The filter error is
+<P>
+<PRE>
+  e(k) = d(k) - y(k) ,
+</PRE>
+<P>
+where d(k) is the desired signal. The mean-square filtering error is
+E[e(k)^2] or in vector-matrix notation
+<P>
+<PRE>
+  ferr = Ed - 2 h'r + h' R h ,
+</PRE>
+<P>
+The mean-square value E0, matrix R and vector p are defined as follows
+<P>
+<PRE>
+      Ed = E[d(k)^2]
+  R(i,j) = E[x(k-i-Nd) x(k-j-Nd],  for 0 &lt;= i,j &lt; N,
+    r(i) = E[d(k) x(k-i-Nd)],      for 0 &lt;= i &lt; N.
+</PRE>
+<P>
+For this routine, the matrix R must be symmetric and Toeplitz, viz.
+<P>
+<PRE>
+  R(i,j) = rxx(|i-j|).
+</PRE>
+<P>
+Linear prediction can be cast into the above form, if we let Nd=1.  Also
+for linear prediction, usually d(k)=x(k), giving r(i)=rxx(i).
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  double SPcorFmse
+<DD>
+Resultant mean-square error
+<DT>
+ -&gt; const float h[]
+<DD>
+N element vector of filter coefficients.  Coefficient h[i] is the filter
+coefficient corresponding to lag Nd+i.
+<DT>
+ -&gt; double Ed
+<DD>
+Signal energy for the desired signal.  This value is used only for the
+computation of the mean-square error.
+<DT>
+ -&gt; const float rxx[]
+<DD>
+N element vector of autocorrelation values.  Element rxx[i] is the
+autocorrelation at lag i.
+<DT>
+ -&gt; const float r[]
+<DD>
+N element vector of cross-correlation values.  Element r[i] is the
+cross-correlation at lag Nd+i.
+<DT>
+ -&gt; int N
+<DD>
+Number of elements in each of the vectors rxx, h and r.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.12  2003/05/09
+<H4>See Also</H4>
+<A HREF="SPcorFilt.html">SPcorFilt</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

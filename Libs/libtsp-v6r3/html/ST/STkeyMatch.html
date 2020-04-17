@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - STkeyMatch</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>STkeyMatch</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int STkeyMatch (const char String[], const char *KeyTable[])
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Match a string to keyword strings
+</DL>
+<H4>Description</H4>
+This subroutine searches a table for a match to a character string.  The
+table of keywords is searched for the first match.  The keyword table can
+optionally specify the minimum length for a match and a length beyond which
+characters need no longer match. The keywords are searched in order.
+<P>
+Each entry of the keyword table specifies the character string to be matched.
+An optional asterisk ('*') is used to indicate the minimum number of
+characters needed for a match.  A second asterisk can be used to indicate
+that characters after this point need not match.
+<DL>
+<DT>
+Example:
+<DD>
+Keyword table entry "abc*de*f". Input strings "abc", "abcd", "abcde", and
+"abcdex" will match this entry.  Input strings "ab", "abC" " abc" and
+"abcx" do not match this entry.
+</DL>
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int STkeyMatch
+<DD>
+Index of the matched keyword.  This value is set to -1 if no match is
+found.
+<PRE>
+  -1 - No match
+   0 - Match to the first keyword
+   1 - Match to the second keyword
+       ...
+</PRE>
+<DT>
+ -&gt; const char String[]
+<DD>
+Input character string.  If String is the NULL pointer, a no match
+condition is returned.
+<DT>
+ -&gt; const char *KeyTable[]
+<DD>
+Pointer array with pointers to the keyword strings.  The end of the
+keyword table is signalled with a NULL pointer.  Note that with ANSI C,
+if the actual parameter is not declared to have the const attribute, an
+explicit cast to (const char **) is required.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.18  2003/05/09
+<H4>See Also</H4>
+<A HREF="STfindToken.html">STfindToken</A>,
+<A HREF="STkeyXpar.html">STkeyXpar</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,51 @@
+.TH STcopyNMax 3tsp "TSP (libtsp/ST)"
+.SH Routine
+.in +4n
+.ti -4n
+int STcopyNMax (const char Si[], char So[], int N, int Maxchar)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Copy N characters characters to a string
+.in -4n
+.SH Description
+This routine is used to copy min(N, strlen(Si)) characters from the input
+input string to the output string.  If min(N, strlen(Si) is greater than
+Maxchar, a string is truncated at that point and a warning message is
+printed.
+.SH Parameters
+.PP
+.ft CW
+.nf
+.ne 3
+    Number of characters in the output string
+.fi
+.ft P
+.in +4n
+.ti -4n
+ -> const char Si[]
+.br
+Input character string
+.ti -4n
+<-  char So[]
+.br
+Output character string.  This string is always null terminated, with
+at most Maxchar characters not including the terminating null character.
+.ti -4n
+ -> int N
+.br
+Number of characters to be transferred
+.ti -4n
+ -> int Maxchar
+.br
+Maximum number of characters (not including the terminating null
+character) to be placed in So.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.20  2003/05/09
+.SH See Also
+STcatMax,
+STcopyMax,
+libtsp

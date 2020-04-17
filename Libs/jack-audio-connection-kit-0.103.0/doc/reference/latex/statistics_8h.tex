@@ -1,0 +1,43 @@
+\hypertarget{statistics_8h}{
+\section{statistics.h File Reference}
+\label{statistics_8h}\index{statistics.h@{statistics.h}}
+}
+{\tt \#include $<$jack/types.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+float \hyperlink{statistics_8h_0b5bc0fc14867f3873e43efe95c831af}{jack\_\-get\_\-max\_\-delayed\_\-usecs} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+float \hyperlink{statistics_8h_b2c91a937f3e6aef58182a850396ce5a}{jack\_\-get\_\-xrun\_\-delayed\_\-usecs} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+void \hyperlink{statistics_8h_97619c03e3aeb6ac65df4353e54299e5}{jack\_\-reset\_\-max\_\-delayed\_\-usecs} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{statistics_8h_0b5bc0fc14867f3873e43efe95c831af}{
+\index{statistics.h@{statistics.h}!jack_get_max_delayed_usecs@{jack\_\-get\_\-max\_\-delayed\_\-usecs}}
+\index{jack_get_max_delayed_usecs@{jack\_\-get\_\-max\_\-delayed\_\-usecs}!statistics.h@{statistics.h}}
+\subsubsection[jack\_\-get\_\-max\_\-delayed\_\-usecs]{\setlength{\rightskip}{0pt plus 5cm}float jack\_\-get\_\-max\_\-delayed\_\-usecs (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{statistics_8h_0b5bc0fc14867f3873e43efe95c831af}
+
+
+\begin{Desc}
+\item[Returns:]the maximum delay reported by the backend since startup or reset. When compared to the period size in usecs, this can be used to estimate the ideal period size for a given setup. \end{Desc}
+\hypertarget{statistics_8h_b2c91a937f3e6aef58182a850396ce5a}{
+\index{statistics.h@{statistics.h}!jack_get_xrun_delayed_usecs@{jack\_\-get\_\-xrun\_\-delayed\_\-usecs}}
+\index{jack_get_xrun_delayed_usecs@{jack\_\-get\_\-xrun\_\-delayed\_\-usecs}!statistics.h@{statistics.h}}
+\subsubsection[jack\_\-get\_\-xrun\_\-delayed\_\-usecs]{\setlength{\rightskip}{0pt plus 5cm}float jack\_\-get\_\-xrun\_\-delayed\_\-usecs (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{statistics_8h_b2c91a937f3e6aef58182a850396ce5a}
+
+
+\begin{Desc}
+\item[Returns:]the delay in microseconds due to the most recent XRUN occurrence. This probably only makes sense when called from a \hyperlink{types_8h_e78bd2ac540e7adb7bacf04578bd3a94}{Jack\-XRun\-Callback} defined using \hyperlink{jack_8h_324ed1195d4f2bbb2296a4f334d214ca}{jack\_\-set\_\-xrun\_\-callback()}. \end{Desc}
+\hypertarget{statistics_8h_97619c03e3aeb6ac65df4353e54299e5}{
+\index{statistics.h@{statistics.h}!jack_reset_max_delayed_usecs@{jack\_\-reset\_\-max\_\-delayed\_\-usecs}}
+\index{jack_reset_max_delayed_usecs@{jack\_\-reset\_\-max\_\-delayed\_\-usecs}!statistics.h@{statistics.h}}
+\subsubsection[jack\_\-reset\_\-max\_\-delayed\_\-usecs]{\setlength{\rightskip}{0pt plus 5cm}void jack\_\-reset\_\-max\_\-delayed\_\-usecs (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{statistics_8h_97619c03e3aeb6ac65df4353e54299e5}
+
+
+Reset the maximum delay counter. This would be useful to estimate the effect that a change to the configuration of a running system (e.g. toggling kernel preemption) has on the delay experienced by JACK, without having to restart the JACK engine. 

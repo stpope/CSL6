@@ -1,0 +1,47 @@
+.TH VRfDiffSq 3tsp "TSP (libtsp/VR)"
+.SH Routine
+.in +4n
+.ti -4n
+double VRfDiffSq (const float x1[], const float x2[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Find the sum of squares of the differences for two float arrays
+.in -4n
+.SH Description
+This routine calculates the sum of the squares of the differences between
+corresponding elements of two float arrays,
+.ft CW
+.nf
+.ne 3
+       N-1                2
+  e2 = SUM (x1[i] * x2[i]) .
+       i=0
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+<-  double VRfDiffSq
+.br
+Sum of the squares of the element differences
+.ti -4n
+ -> const float x1[]
+.br
+Input array (N elements)
+.ti -4n
+ -> const float x2[]
+.br
+Input array (N elements)
+.ti -4n
+ -> int N
+.br
+Number of elements in the arrays (may be zero)
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.7  2003/05/09
+.SH See Also
+VRfDotProd,
+libtsp

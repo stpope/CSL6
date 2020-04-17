@@ -1,0 +1,179 @@
+\hypertarget{structjack__transport__info__t}{
+\section{jack\_\-transport\_\-info\_\-t Struct Reference}
+\label{structjack__transport__info__t}\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+}
+{\tt \#include $<$transport.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__transport__info__t_74278f5e2398691cd7a0854aeeb3ae4c}{frame\_\-rate}
+\item 
+\hyperlink{types_8h_71d1a1356a36ae1f9e60b4361e21905e}{jack\_\-time\_\-t} \hyperlink{structjack__transport__info__t_edb03a0d7fde02d2a6f0470bdce6e92a}{usecs}
+\item 
+\hyperlink{transport_8h_25433447d7aa9851e5af2c1b55f8da63}{jack\_\-transport\_\-bits\_\-t} \hyperlink{structjack__transport__info__t_9f7d0ee82b6a6ca7ddeae841f3253059}{valid}
+\item 
+\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t} \hyperlink{structjack__transport__info__t_40308c8c7d6b7c0a4f8ecfcfd35e3875}{transport\_\-state}
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__transport__info__t_dcf3e36ee8115282aad46485cab6a4be}{frame}
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__transport__info__t_f992fbfb657288cf1292dd591df8fcd5}{loop\_\-start}
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__transport__info__t_02e551f8c456f2d9b65f7ca7a7c763ff}{loop\_\-end}
+\item 
+long \hyperlink{structjack__transport__info__t_3fb2f2def734ead6b273a86f1d961c72}{smpte\_\-offset}
+\item 
+float \hyperlink{structjack__transport__info__t_5bf07b5a4d5c0c7d64d3d92910f2af31}{smpte\_\-frame\_\-rate}
+\item 
+int \hyperlink{structjack__transport__info__t_37b51d194a7513e45b56f6524f2d51f2}{bar}
+\item 
+int \hyperlink{structjack__transport__info__t_ed6966981beb595bd0a50e4371805dec}{beat}
+\item 
+int \hyperlink{structjack__transport__info__t_e5e5c0754f1e26bf915455e21cf2eba5}{tick}
+\item 
+double \hyperlink{structjack__transport__info__t_221202600540df269a7b86ff7061b7eb}{bar\_\-start\_\-tick}
+\item 
+float \hyperlink{structjack__transport__info__t_95db8c9493cb07af52d4d2fe851c52af}{beats\_\-per\_\-bar}
+\item 
+float \hyperlink{structjack__transport__info__t_aa2956fbbf561096f9e38ab6350bdb20}{beat\_\-type}
+\item 
+double \hyperlink{structjack__transport__info__t_fd4513bf48d81882ed9af87dd400a9db}{ticks\_\-per\_\-beat}
+\item 
+double \hyperlink{structjack__transport__info__t_348d88736ba362cf12317ec1f8af00ea}{beats\_\-per\_\-minute}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Deprecated struct for transport position information.
+
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000004}{Deprecated}]This is for compatibility with the earlier transport interface. Use the \hyperlink{structjack__position__t}{jack\_\-position\_\-t} struct, instead. \end{Desc}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structjack__transport__info__t_37b51d194a7513e45b56f6524f2d51f2}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!bar@{bar}}
+\index{bar@{bar}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[bar]{\setlength{\rightskip}{0pt plus 5cm}int \hyperlink{structjack__transport__info__t_37b51d194a7513e45b56f6524f2d51f2}{jack\_\-transport\_\-info\_\-t::bar}}}
+\label{structjack__transport__info__t_37b51d194a7513e45b56f6524f2d51f2}
+
+
+\hypertarget{structjack__transport__info__t_221202600540df269a7b86ff7061b7eb}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!bar_start_tick@{bar\_\-start\_\-tick}}
+\index{bar_start_tick@{bar\_\-start\_\-tick}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[bar\_\-start\_\-tick]{\setlength{\rightskip}{0pt plus 5cm}double \hyperlink{structjack__transport__info__t_221202600540df269a7b86ff7061b7eb}{jack\_\-transport\_\-info\_\-t::bar\_\-start\_\-tick}}}
+\label{structjack__transport__info__t_221202600540df269a7b86ff7061b7eb}
+
+
+\hypertarget{structjack__transport__info__t_ed6966981beb595bd0a50e4371805dec}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!beat@{beat}}
+\index{beat@{beat}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[beat]{\setlength{\rightskip}{0pt plus 5cm}int \hyperlink{structjack__transport__info__t_ed6966981beb595bd0a50e4371805dec}{jack\_\-transport\_\-info\_\-t::beat}}}
+\label{structjack__transport__info__t_ed6966981beb595bd0a50e4371805dec}
+
+
+\hypertarget{structjack__transport__info__t_aa2956fbbf561096f9e38ab6350bdb20}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!beat_type@{beat\_\-type}}
+\index{beat_type@{beat\_\-type}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[beat\_\-type]{\setlength{\rightskip}{0pt plus 5cm}float \hyperlink{structjack__transport__info__t_aa2956fbbf561096f9e38ab6350bdb20}{jack\_\-transport\_\-info\_\-t::beat\_\-type}}}
+\label{structjack__transport__info__t_aa2956fbbf561096f9e38ab6350bdb20}
+
+
+\hypertarget{structjack__transport__info__t_95db8c9493cb07af52d4d2fe851c52af}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!beats_per_bar@{beats\_\-per\_\-bar}}
+\index{beats_per_bar@{beats\_\-per\_\-bar}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[beats\_\-per\_\-bar]{\setlength{\rightskip}{0pt plus 5cm}float \hyperlink{structjack__transport__info__t_95db8c9493cb07af52d4d2fe851c52af}{jack\_\-transport\_\-info\_\-t::beats\_\-per\_\-bar}}}
+\label{structjack__transport__info__t_95db8c9493cb07af52d4d2fe851c52af}
+
+
+\hypertarget{structjack__transport__info__t_348d88736ba362cf12317ec1f8af00ea}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!beats_per_minute@{beats\_\-per\_\-minute}}
+\index{beats_per_minute@{beats\_\-per\_\-minute}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[beats\_\-per\_\-minute]{\setlength{\rightskip}{0pt plus 5cm}double \hyperlink{structjack__transport__info__t_348d88736ba362cf12317ec1f8af00ea}{jack\_\-transport\_\-info\_\-t::beats\_\-per\_\-minute}}}
+\label{structjack__transport__info__t_348d88736ba362cf12317ec1f8af00ea}
+
+
+\hypertarget{structjack__transport__info__t_dcf3e36ee8115282aad46485cab6a4be}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!frame@{frame}}
+\index{frame@{frame}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[frame]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__transport__info__t_dcf3e36ee8115282aad46485cab6a4be}{jack\_\-transport\_\-info\_\-t::frame}}}
+\label{structjack__transport__info__t_dcf3e36ee8115282aad46485cab6a4be}
+
+
+\hypertarget{structjack__transport__info__t_74278f5e2398691cd7a0854aeeb3ae4c}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!frame_rate@{frame\_\-rate}}
+\index{frame_rate@{frame\_\-rate}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[frame\_\-rate]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__transport__info__t_74278f5e2398691cd7a0854aeeb3ae4c}{jack\_\-transport\_\-info\_\-t::frame\_\-rate}}}
+\label{structjack__transport__info__t_74278f5e2398691cd7a0854aeeb3ae4c}
+
+
+current frame rate (per second) \hypertarget{structjack__transport__info__t_02e551f8c456f2d9b65f7ca7a7c763ff}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!loop_end@{loop\_\-end}}
+\index{loop_end@{loop\_\-end}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[loop\_\-end]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__transport__info__t_02e551f8c456f2d9b65f7ca7a7c763ff}{jack\_\-transport\_\-info\_\-t::loop\_\-end}}}
+\label{structjack__transport__info__t_02e551f8c456f2d9b65f7ca7a7c763ff}
+
+
+\hypertarget{structjack__transport__info__t_f992fbfb657288cf1292dd591df8fcd5}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!loop_start@{loop\_\-start}}
+\index{loop_start@{loop\_\-start}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[loop\_\-start]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{structjack__transport__info__t_f992fbfb657288cf1292dd591df8fcd5}{jack\_\-transport\_\-info\_\-t::loop\_\-start}}}
+\label{structjack__transport__info__t_f992fbfb657288cf1292dd591df8fcd5}
+
+
+\hypertarget{structjack__transport__info__t_5bf07b5a4d5c0c7d64d3d92910f2af31}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!smpte_frame_rate@{smpte\_\-frame\_\-rate}}
+\index{smpte_frame_rate@{smpte\_\-frame\_\-rate}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[smpte\_\-frame\_\-rate]{\setlength{\rightskip}{0pt plus 5cm}float \hyperlink{structjack__transport__info__t_5bf07b5a4d5c0c7d64d3d92910f2af31}{jack\_\-transport\_\-info\_\-t::smpte\_\-frame\_\-rate}}}
+\label{structjack__transport__info__t_5bf07b5a4d5c0c7d64d3d92910f2af31}
+
+
+29.97, 30, 24 etc. \hypertarget{structjack__transport__info__t_3fb2f2def734ead6b273a86f1d961c72}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!smpte_offset@{smpte\_\-offset}}
+\index{smpte_offset@{smpte\_\-offset}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[smpte\_\-offset]{\setlength{\rightskip}{0pt plus 5cm}long \hyperlink{structjack__transport__info__t_3fb2f2def734ead6b273a86f1d961c72}{jack\_\-transport\_\-info\_\-t::smpte\_\-offset}}}
+\label{structjack__transport__info__t_3fb2f2def734ead6b273a86f1d961c72}
+
+
+SMPTE offset (from frame 0) \hypertarget{structjack__transport__info__t_e5e5c0754f1e26bf915455e21cf2eba5}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!tick@{tick}}
+\index{tick@{tick}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[tick]{\setlength{\rightskip}{0pt plus 5cm}int \hyperlink{structjack__transport__info__t_e5e5c0754f1e26bf915455e21cf2eba5}{jack\_\-transport\_\-info\_\-t::tick}}}
+\label{structjack__transport__info__t_e5e5c0754f1e26bf915455e21cf2eba5}
+
+
+\hypertarget{structjack__transport__info__t_fd4513bf48d81882ed9af87dd400a9db}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!ticks_per_beat@{ticks\_\-per\_\-beat}}
+\index{ticks_per_beat@{ticks\_\-per\_\-beat}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[ticks\_\-per\_\-beat]{\setlength{\rightskip}{0pt plus 5cm}double \hyperlink{structjack__transport__info__t_fd4513bf48d81882ed9af87dd400a9db}{jack\_\-transport\_\-info\_\-t::ticks\_\-per\_\-beat}}}
+\label{structjack__transport__info__t_fd4513bf48d81882ed9af87dd400a9db}
+
+
+\hypertarget{structjack__transport__info__t_40308c8c7d6b7c0a4f8ecfcfd35e3875}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!transport_state@{transport\_\-state}}
+\index{transport_state@{transport\_\-state}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[transport\_\-state]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{transport_8h_499ffea77b03cce9c647d7b5065f7338}{jack\_\-transport\_\-state\_\-t} \hyperlink{structjack__transport__info__t_40308c8c7d6b7c0a4f8ecfcfd35e3875}{jack\_\-transport\_\-info\_\-t::transport\_\-state}}}
+\label{structjack__transport__info__t_40308c8c7d6b7c0a4f8ecfcfd35e3875}
+
+
+\hypertarget{structjack__transport__info__t_edb03a0d7fde02d2a6f0470bdce6e92a}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!usecs@{usecs}}
+\index{usecs@{usecs}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[usecs]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_71d1a1356a36ae1f9e60b4361e21905e}{jack\_\-time\_\-t} \hyperlink{structjack__transport__info__t_edb03a0d7fde02d2a6f0470bdce6e92a}{jack\_\-transport\_\-info\_\-t::usecs}}}
+\label{structjack__transport__info__t_edb03a0d7fde02d2a6f0470bdce6e92a}
+
+
+monotonic, free-rolling \hypertarget{structjack__transport__info__t_9f7d0ee82b6a6ca7ddeae841f3253059}{
+\index{jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}!valid@{valid}}
+\index{valid@{valid}!jack_transport_info_t@{jack\_\-transport\_\-info\_\-t}}
+\subsubsection[valid]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{transport_8h_25433447d7aa9851e5af2c1b55f8da63}{jack\_\-transport\_\-bits\_\-t} \hyperlink{structjack__transport__info__t_9f7d0ee82b6a6ca7ddeae841f3253059}{jack\_\-transport\_\-info\_\-t::valid}}}
+\label{structjack__transport__info__t_9f7d0ee82b6a6ca7ddeae841f3253059}
+
+
+which fields are legal to read 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{transport_8h}{transport.h}\end{CompactItemize}

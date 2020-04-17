@@ -1,0 +1,1103 @@
+
+========== tSPxFFT
+SPfCFFT: Invalid transform length: 3
+SPfCFFT:
+  x:
+            1            2            3
+  y:
+            1            2            3
+SPdCFFT: Invalid transform length: 3
+SPdCFFT:
+  x:
+            1            2            3
+  y:
+            1            2            3
+SPfCFFT: Invalid transform length: 3
+SPfRFFT:
+  x:
+            1            2            3            1            2
+              3
+SPfCFFT: Invalid transform length: 0
+SPfCFFT:
+  x:
+
+  y:
+
+SPdCFFT: Invalid transform length: 0
+SPdCFFT:
+  x:
+
+  y:
+
+SPfCFFT: Invalid transform length: 0
+SPfRFFT:
+  x:
+
+SPfCFFT:
+  x:
+            1
+  y:
+            2
+  DFT x:
+            1
+  DFT y:
+            2
+  invDFT x:
+            1
+  invDFT y:
+            2
+SPdCFFT:
+  x:
+            1
+  y:
+            2
+  DFT x:
+            1
+  DFT y:
+            2
+  invDFT x:
+            1
+  invDFT y:
+            2
+SPfCFFT:
+  x:
+            2            4
+  y:
+           -2           -4
+  DFT x:
+            6           -2
+  DFT y:
+           -6            2
+  invDFT x:
+            2            4
+  invDFT y:
+           -2           -4
+SPdCFFT:
+  x:
+            2            4
+  y:
+           -2           -4
+  DFT x:
+            6           -2
+  DFT y:
+           -6            2
+  invDFT x:
+            2            4
+  invDFT y:
+           -2           -4
+SPfCFFT:
+  x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+  y:
+          -16          -15          -14          -13          -12
+            -11          -10           -9           -8           -7
+               -6           -5           -4           -3           -2
+                 -1
+  DFT x:
+          136      -48.219      -27.314      -19.973          -16
+        -13.345      -11.314      -9.5913           -8      -6.4087
+          -4.6863      -2.6546            0       3.9728       11.314
+             32.219
+  DFT y:
+         -136       32.219       11.314       3.9728            0
+        -2.6546      -4.6863      -6.4087           -8      -9.5913
+          -11.314      -13.345          -16      -19.973      -27.314
+            -48.219
+  invDFT x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+  invDFT y:
+          -16          -15          -14          -13          -12
+            -11          -10           -9           -8           -7
+               -6           -5           -4           -3           -2
+                 -1
+SPdCFFT:
+  x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+  y:
+          -16          -15          -14          -13          -12
+            -11          -10           -9           -8           -7
+               -6           -5           -4           -3           -2
+                 -1
+  DFT x:
+          136      -48.219      -27.314      -19.973          -16
+        -13.345      -11.314      -9.5913           -8      -6.4087
+          -4.6863      -2.6546            0       3.9728       11.314
+             32.219
+  DFT y:
+         -136       32.219       11.314       3.9728            0
+        -2.6546      -4.6863      -6.4087           -8      -9.5913
+          -11.314      -13.345          -16      -19.973      -27.314
+            -48.219
+  invDFT x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+  invDFT y:
+          -16          -15          -14          -13          -12
+            -11          -10           -9           -8           -7
+               -6           -5           -4           -3           -2
+                 -1
+SPfCFFT:
+  x:
+            1            2            3            4            5
+              6            7            8
+  y:
+           -8           -7           -6           -5           -4
+             -3           -2           -1
+  DFT x:
+           36      -13.657           -8      -5.6569           -4
+        -2.3431  -2.3842e-07       5.6569
+  DFT y:
+          -36       5.6569  -2.3842e-07      -2.3431           -4
+        -5.6569           -8      -13.657
+  invDFT x:
+            1            2            3            4            5
+              6            7            8
+  invDFT y:
+           -8           -7           -6           -5           -4
+             -3           -2           -1
+SPdCFFT:
+  x:
+            1            2            3            4            5
+              6            7            8
+  y:
+           -8           -7           -6           -5           -4
+             -3           -2           -1
+  DFT x:
+           36      -13.657           -8      -5.6569           -4
+        -2.3431   8.8818e-16       5.6569
+  DFT y:
+          -36       5.6569  -8.8818e-16      -2.3431           -4
+        -5.6569           -8      -13.657
+  invDFT x:
+            1            2            3            4            5
+              6            7            8
+  invDFT y:
+           -8           -7           -6           -5           -4
+             -3           -2           -1
+SPfCFFT:
+  x:
+            1            2
+  y:
+            0            0
+  DFT x:
+            3           -1
+  DFT y:
+            0            0
+  invDFT x:
+            1            2
+  invDFT y:
+            0           -0
+SPfRFFT:
+  x:
+            1            2
+  DFT x:
+            3           -1
+  DFT y:
+            0            0
+  invDFT x:
+            1            2
+SPdRFFT:
+  x:
+            1            2
+  DFT x:
+            3           -1
+  DFT y:
+            0            0
+  invDFT x:
+            1            2
+SPfCFFT:
+  x:
+            2            4           -2            4
+  y:
+            0            0            0            0
+  DFT x:
+            8            4           -8            4
+  DFT y:
+            0            0            0            0
+  invDFT x:
+            2            4           -2            4
+  invDFT y:
+            0           -0           -0           -0
+SPfRFFT:
+  x:
+            2            4           -2            4
+  DFT x:
+            8            4           -8
+  DFT y:
+            0            0            0
+  invDFT x:
+            2            4           -2            4
+SPdRFFT:
+  x:
+            2            4           -2            4
+  DFT x:
+            8            4           -8
+  DFT y:
+            0            0            0
+  invDFT x:
+            2            4           -2            4
+SPfCFFT:
+  x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+  y:
+            0            0            0            0            0
+              0            0            0            0            0
+                0            0            0            0            0
+                  0
+  DFT x:
+          136           -8           -8           -8           -8
+             -8           -8           -8           -8           -8
+               -8           -8           -8           -8           -8
+                 -8
+  DFT y:
+            0       40.219       19.314       11.973            8
+         5.3454       3.3137       1.5913            0      -1.5913
+          -3.3137      -5.3454           -8      -11.973      -19.314
+            -40.219
+  invDFT x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+  invDFT y:
+  -5.9605e-08   8.4294e-08  -2.3399e-07  -2.0288e-07   5.9605e-08
+     2.7333e-07  -6.0047e-07  -3.5536e-08  -5.9605e-08   8.4294e-08
+       2.4284e-07   7.5079e-07   5.9605e-08  -4.4192e-07   5.9162e-07
+        -5.1237e-07
+SPfRFFT:
+  x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+  DFT x:
+          136           -8           -8           -8           -8
+             -8           -8           -8           -8
+  DFT y:
+            0       40.219       19.314       11.973            8
+         5.3454       3.3137       1.5913            0
+  invDFT x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+SPdRFFT:
+  x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+  DFT x:
+          136           -8           -8           -8           -8
+             -8           -8           -8           -8
+  DFT y:
+            0       40.219       19.314       11.973            8
+         5.3454       3.3137       1.5913            0
+  invDFT x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+SPfCFFT:
+  x:
+            1            2            3            4            5
+              6            7            8
+  y:
+            0            0            0            0            0
+              0            0            0
+  DFT x:
+           36           -4           -4           -4           -4
+             -4           -4           -4
+  DFT y:
+            0       9.6569            4       1.6569            0
+        -1.6569           -4      -9.6569
+  invDFT x:
+            1            2            3            4            5
+              6            7            8
+  invDFT y:
+   5.9605e-08   1.6859e-07  -2.5376e-08  -1.6859e-07  -5.9605e-08
+    -1.6859e-07   2.5376e-08   1.6859e-07
+SPfRFFT:
+  x:
+            1            2            3            4            5
+              6            7            8
+  DFT x:
+           36           -4           -4           -4           -4
+  DFT y:
+            0       9.6569            4       1.6569            0
+  invDFT x:
+            1            2            3            4            5
+              6            7            8
+SPdRFFT:
+  x:
+            1            2            3            4            5
+              6            7            8
+  DFT x:
+           36           -4           -4           -4           -4
+  DFT y:
+            0       9.6569            4       1.6569            0
+  invDFT x:
+            1            2            3            4            5
+              6            7            8
+SPfDCT:
+  x:
+            1            2            3            4            5
+              6            7            8
+  DCT x:
+           36      -18.222            0      -1.9048            0
+       -0.56824           -0     -0.14341
+  invDCT x:
+            1            2            3            4            5
+              6            7            8
+SPfDCT:
+  x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+  DCT x:
+          136      -73.246            0      -8.0301            0
+        -2.8063            0      -1.3582            0     -0.75071
+                0     -0.42856           -0     -0.22415           -0
+          -0.069983
+  invDCT x:
+            1            2            3            4            5
+              6            7            8            9           10
+               11           12           13           14           15
+                 16
+
+========== tSPcorXXX
+SPcovFilt - Using reduced order: 0
+SPcovMXpc - Using reduced order: 0
+Data values:
+            0            0            0            0            0
+              0            0            0            0
+Autocorrelation vector:
+            0            0            0            0            0
+              0
+SPcovXpc, using autocorrelation matrix:
+            0            0            0            0            0
+mse, SPcovXpc:  0
+SPcovMXpc, using autocorrelation matrix:
+           -0           -0           -0           -0           -0
+mse, SPcovMXpc: 0
+SPcovLXpc, using autocorrelation matrix:
+           -0           -0           -0           -0           -0
+mse, SPcovLXpc: 0
+SPcovCXpc, using autocorrelation matrix:
+           -0           -0           -0           -0           -0
+mse, SPcovCXpc: 0
+SPcorFilt:
+            0            0            0            0            0
+mse, SPcorFilt:  0
+SPcorXpc:
+           -0           -0           -0           -0           -0
+mse, SPcorXpc:  0
+mse, SPcorPmse: 0
+mse, SPcorFmse: 0
+-----
+Data values:
+            0            0            0            0            0
+            196          347          389          102         -100
+Autocorrelation vector:
+   3.3055e+05   2.3247e+05        72738       -14708       -19600
+              0
+SPcovXpc, using autocorrelation matrix:
+       1.2463     -0.87046      0.30545    -0.009059    -0.025674
+mse, SPcovXpc:  108441
+SPcovMXpc, using autocorrelation matrix:
+       1.2463     -0.87046      0.30545    -0.009059    -0.025674
+mse, SPcovMXpc: 108441
+SPcovLXpc, using autocorrelation matrix:
+       1.2463     -0.87046      0.30545    -0.009059    -0.025674
+mse, SPcovLXpc: 108441
+SPcovCXpc, using autocorrelation matrix:
+       1.2463     -0.87046      0.30545   -0.0090591    -0.025674
+mse, SPcovCXpc: 108441
+SPcorFilt:
+       1.2463     -0.87046      0.30545    -0.009059    -0.025674
+mse, SPcorFilt:  108441
+SPcorXpc:
+       1.2463     -0.87046      0.30545    -0.009059    -0.025674
+mse, SPcorXpc:  108441
+mse, SPcorPmse: 108441
+mse, SPcorFmse: 108441
+-----
+Data values:
+         2201          990           21            2         -423
+              0            0            0            0            0
+Autocorrelation vector:
+   6.0039e+06    2.199e+06        39318  -4.1437e+05  -9.3102e+05
+              0
+SPcovXpc, using autocorrelation matrix:
+      0.43163     -0.16242     0.056735     -0.19087      0.12526
+mse, SPcovXpc:  4.90692e+06
+SPcovMXpc, using autocorrelation matrix:
+      0.43163     -0.16242     0.056735     -0.19087      0.12526
+mse, SPcovMXpc: 4.90692e+06
+SPcovLXpc, using autocorrelation matrix:
+      0.43163     -0.16242     0.056735     -0.19087      0.12526
+mse, SPcovLXpc: 4.90692e+06
+SPcovCXpc, using autocorrelation matrix:
+      0.43163     -0.16242     0.056735     -0.19087      0.12526
+mse, SPcovCXpc: 4.90692e+06
+SPcorFilt:
+      0.43163     -0.16242     0.056735     -0.19087      0.12526
+mse, SPcorFilt:  4.90692e+06
+SPcorXpc:
+      0.43163     -0.16242     0.056735     -0.19087      0.12526
+mse, SPcorXpc:  4.90692e+06
+mse, SPcorPmse: 4.90692e+06
+mse, SPcorFmse: 4.90692e+06
+-----
+Data values:
+         2201          990           21            2         -423
+          -1524            0            0            0            0
+                0
+Autocorrelation vector:
+   8.3265e+06   2.8436e+06        36270  -4.4637e+05  -2.4398e+06
+    -3.3543e+06
+SPcovXpc, using autocorrelation matrix:
+      0.30245     -0.13339     0.064557     -0.21329     -0.24882
+mse, SPcovXpc:  6.14505e+06
+SPcovMXpc, using autocorrelation matrix:
+      0.30245     -0.13339     0.064557     -0.21329     -0.24882
+mse, SPcovMXpc: 6.14505e+06
+SPcovLXpc, using autocorrelation matrix:
+      0.30245     -0.13339     0.064557     -0.21329     -0.24882
+mse, SPcovLXpc: 6.14505e+06
+SPcovCXpc, using autocorrelation matrix:
+      0.30245     -0.13339     0.064557     -0.21329     -0.24882
+mse, SPcovCXpc: 6.14505e+06
+SPcorFilt:
+      0.30245     -0.13339     0.064557     -0.21329     -0.24882
+mse, SPcorFilt:  6.14505e+06
+SPcorXpc:
+      0.30245     -0.13339     0.064557     -0.21329     -0.24882
+mse, SPcorXpc:  6.14505e+06
+mse, SPcorPmse: 6.14505e+06
+mse, SPcorFmse: 6.14505e+06
+-----
+Data values:
+         2201          990           21            2         -423
+          -1524        -1881            0            0            0
+                0            0
+Autocorrelation vector:
+   1.1865e+07   5.7103e+06   8.3193e+05  -4.5013e+05  -2.4793e+06
+    -5.2165e+06
+SPcovXpc, using autocorrelation matrix:
+      0.51684     -0.22897      0.08907    -0.064234     -0.31569
+mse, SPcovXpc:  7.33788e+06
+SPcovMXpc, using autocorrelation matrix:
+      0.51684     -0.22897      0.08907    -0.064234     -0.31569
+mse, SPcovMXpc: 7.33788e+06
+SPcovLXpc, using autocorrelation matrix:
+      0.51684     -0.22897      0.08907    -0.064234     -0.31569
+mse, SPcovLXpc: 7.33788e+06
+SPcovCXpc, using autocorrelation matrix:
+      0.51684     -0.22897      0.08907    -0.064234     -0.31569
+mse, SPcovCXpc: 7.33788e+06
+SPcorFilt:
+      0.51684     -0.22897      0.08907    -0.064234     -0.31569
+mse, SPcorFilt:  7.33788e+06
+SPcorXpc:
+      0.51684     -0.22897      0.08907    -0.064234     -0.31569
+mse, SPcorXpc:  7.33788e+06
+mse, SPcorPmse: 7.33788e+06
+mse, SPcorFmse: 7.33788e+06
+-----
+Data values:
+           11           86          190          197           44
+             -8          121          141          -37            8
+              400          684          812          922         1079
+               1390         1548         1595         1840         2188
+                 2355         2062         1766          995        -1117
+        -2506        -2462        -3189        -4148        -3734
+          -2683        -1970        -1281         -328          332
+              805          885          -97         -679         -347
+               -944        -2027        -1757         -942         -885
+                 -775         -155          377          698          717
+          520          556          751          503          136
+            395          611          451          407          510
+              724          817         1044         1505         1692
+               1885         2419         3049         3329         3902
+                 4692         4408         3310         -271        -4835
+        -4525        -3358        -5947        -6870        -4241
+          -1558         -235          578         1591         2828
+             3754         2602          332         -442         -880
+              -2391        -3729        -3646        -2673        -1722
+                 -885         -118         1014         2199         2201
+          990           21            2         -423        -1524
+          -1881        -1226         -416          -83           87
+              493         1074         1157          495          196
+                347          389          102         -100          400
+                  729          832          863          944         1640
+         2228         2765         2900         3777         5351
+           4937         4017        -1242        -7973        -4443
+            -1854        -7091        -7310        -3334          107
+               2626         2562         2223         3118         4587
+                 2758        -2141        -3291        -2377        -3134
+        -3811        -3503        -1721          603         1898
+           1983         1949         2794         2364           76
+            -1392        -1944        -2745        -2929        -2049
+              -1315         -451          994         1415         1093
+                 1173         1014          370         -288         -373
+         -274         -177          296          325          517
+           1078         1011          604          131          602
+             1280         1877         3068         3209         4194
+               5195         5004         3015        -5937        -8777
+                -1037        -3005        -8065        -5037        -1610
+Autocorrelation vector:
+   1.2919e+09   1.0239e+09   6.1477e+08   3.8714e+08   1.2847e+08
+    -2.2806e+08
+SPcovXpc, using autocorrelation matrix:
+       1.4014      -1.1482      0.97581     -0.54282   -0.0059609
+mse, SPcovXpc:  2.53405e+08
+SPcovMXpc, using autocorrelation matrix:
+       1.4014      -1.1482      0.97581     -0.54282   -0.0059609
+mse, SPcovMXpc: 2.53405e+08
+SPcovLXpc, using autocorrelation matrix:
+       1.4014      -1.1482      0.97581     -0.54282   -0.0059602
+mse, SPcovLXpc: 2.53405e+08
+SPcovCXpc, using autocorrelation matrix:
+       1.4014      -1.1482      0.97581     -0.54282   -0.0059602
+mse, SPcovCXpc: 2.53405e+08
+SPcorFilt:
+       1.4014      -1.1482      0.97581     -0.54282     -0.00596
+mse, SPcorFilt:  2.53405e+08
+SPcorXpc:
+       1.4014      -1.1482      0.97581     -0.54282   -0.0059596
+mse, SPcorXpc:  2.53405e+08
+mse, SPcorPmse: 2.53405e+08
+mse, SPcorFmse: 2.53405e+08
+
+========== tSPcovXXX
+SPcovFilt - Using reduced order: 4
+SPcovFilt - Using reduced order: 4
+SPcovMXpc - Using reduced order: 4
+SPcovMXpc - Using reduced order: 4
+Data values:
+            0            0            0            0            0
+            196          347          389          102         -100
+Covariance matrix:
+   3.3055e+05   2.3247e+05        72738       -14708       -19600
+              0
+   2.3247e+05   3.2055e+05   2.4267e+05   1.1164e+05        19992
+              0
+        72738   2.4267e+05   3.1015e+05     2.03e+05        76244
+              0
+       -14708   1.1164e+05     2.03e+05   1.5882e+05        68012
+              0
+       -19600        19992        76244        68012        38416
+              0
+            0            0            0            0            0
+              0
+SPcovXpc, using covariance matrix:
+       1.7704      -1.1497     -0.95795       2.5461            0
+mse, SPcovXpc:  38415.8
+mse, SPcovPmse: 38416
+mse, SPcovFmse: 38416
+SPcovMXpc, using covariance matrix:
+         1.23     -0.22398     -0.85286       0.7101           -0
+mse, SPcovMXpc: 67327.7
+mse, SPcovPmse: 67327.7
+SPcovLXpc, using covariance matrix:
+       1.4188     -0.72885     -0.55929      0.90141     -0.46279
+mse, SPcovLXpc: 55522.2
+mse, SPcovPmse: 55522.2
+SPcovCXpc, using covariance matrix:
+       1.3592     -0.75449     -0.39541      0.84169     -0.47086
+mse, SPcovCXpc: 57543.8
+mse, SPcovPmse: 57543.9
+-----
+Data values:
+         2201          990           21            2         -423
+              0            0            0            0            0
+Covariance matrix:
+            0            0            0            0            0
+              0
+            0   1.7893e+05         -846        -8883  -4.1877e+05
+    -9.3102e+05
+            0         -846   1.7893e+05         -804        -6903
+    -4.1437e+05
+            0        -8883         -804   1.7937e+05        19986
+          39318
+            0  -4.1877e+05        -6903        19986   1.1595e+06
+      2.199e+06
+            0  -9.3102e+05  -4.1437e+05        39318    2.199e+06
+     6.0039e+06
+SPcovXpc, using covariance matrix:
+            0            0            0            0            0
+mse, SPcovXpc:  0
+mse, SPcovPmse: 0
+mse, SPcovFmse: 0
+SPcovMXpc, using covariance matrix:
+           -0           -0           -0           -0           -0
+mse, SPcovMXpc: 0
+mse, SPcovPmse: 0
+SPcovLXpc, using covariance matrix:
+            0            0            0            0            0
+mse, SPcovLXpc: 0
+mse, SPcovPmse: 0
+SPcovCXpc, using covariance matrix:
+      0.77803     -0.25954    -0.055241    -0.090556      0.18457
+mse, SPcovCXpc: 92914.6
+mse, SPcovPmse: 92914.6
+-----
+Data values:
+         2201          990           21            2         -423
+          -1524            0            0            0            0
+                0
+Covariance matrix:
+   2.3226e+06   6.4465e+05        -3048       -32004  -1.5088e+06
+    -3.3543e+06
+   6.4465e+05   2.5015e+06   6.4381e+05       -11931  -4.5077e+05
+    -2.4398e+06
+        -3048   6.4381e+05   2.5015e+06   6.4385e+05        -9951
+    -4.4637e+05
+       -32004       -11931   6.4385e+05    2.502e+06   6.6464e+05
+          36270
+  -1.5088e+06  -4.5077e+05        -9951   6.6464e+05    3.482e+06
+     2.8436e+06
+  -3.3543e+06  -2.4398e+06  -4.4637e+05        36270   2.8436e+06
+     8.3265e+06
+SPcovXpc, using covariance matrix:
+     -0.14846    -0.045662     0.038506     -0.12945     -0.40476
+mse, SPcovXpc:  866374
+mse, SPcovPmse: 866374
+mse, SPcovFmse: 866374
+SPcovMXpc, using covariance matrix:
+    -0.057929    -0.012331     0.081756     -0.33486     -0.66272
+mse, SPcovMXpc: 2.02824e+06
+mse, SPcovPmse: 2.02824e+06
+SPcovLXpc, using covariance matrix:
+     0.077421    -0.051649      0.10534     -0.38594     -0.42157
+mse, SPcovLXpc: 1.30637e+06
+mse, SPcovPmse: 1.30637e+06
+SPcovCXpc, using covariance matrix:
+      0.26191    -0.097318      0.11667     -0.28339     -0.41162
+mse, SPcovCXpc: 1.41944e+06
+mse, SPcovPmse: 1.41944e+06
+-----
+Data values:
+         2201          990           21            2         -423
+          -1524        -1881            0            0            0
+                0            0
+Covariance matrix:
+   5.8607e+06   3.5113e+06   7.9262e+05       -35766  -1.5483e+06
+    -5.2165e+06
+   3.5113e+06   6.0397e+06   3.5104e+06   7.8373e+05  -4.5454e+05
+    -2.4793e+06
+   7.9262e+05   3.5104e+06   6.0397e+06   3.5105e+06   7.8571e+05
+    -4.5013e+05
+       -35766   7.8373e+05   3.5105e+06   6.0401e+06   3.5313e+06
+     8.3193e+05
+  -1.5483e+06  -4.5454e+05   7.8571e+05   3.5313e+06   7.0202e+06
+     5.7103e+06
+  -5.2165e+06  -2.4793e+06  -4.5013e+05   8.3193e+05   5.7103e+06
+     1.1865e+07
+SPcovXpc, using covariance matrix:
+       0.5906     -0.29414     0.055508      0.15148     -0.40421
+mse, SPcovXpc:  2.14803e+06
+mse, SPcovPmse: 2.14803e+06
+mse, SPcovFmse: 2.14803e+06
+SPcovMXpc, using covariance matrix:
+      0.68666     -0.34723      0.10759      0.12383     -0.53099
+mse, SPcovMXpc: 2.4638e+06
+mse, SPcovPmse: 2.4638e+06
+SPcovLXpc, using covariance matrix:
+       0.7106     -0.37289      0.13932     0.074808     -0.46621
+mse, SPcovLXpc: 2.35542e+06
+mse, SPcovPmse: 2.35542e+06
+SPcovCXpc, using covariance matrix:
+      0.71827     -0.40476      0.14593     0.042396     -0.46155
+mse, SPcovCXpc: 2.39637e+06
+mse, SPcovPmse: 2.39637e+06
+-----
+Data values:
+           11           86          190          197           44
+             -8          121          141          -37            8
+              400          684          812          922         1079
+               1390         1548         1595         1840         2188
+                 2355         2062         1766          995        -1117
+        -2506        -2462        -3189        -4148        -3734
+          -2683        -1970        -1281         -328          332
+              805          885          -97         -679         -347
+               -944        -2027        -1757         -942         -885
+                 -775         -155          377          698          717
+          520          556          751          503          136
+            395          611          451          407          510
+              724          817         1044         1505         1692
+               1885         2419         3049         3329         3902
+                 4692         4408         3310         -271        -4835
+        -4525        -3358        -5947        -6870        -4241
+          -1558         -235          578         1591         2828
+             3754         2602          332         -442         -880
+              -2391        -3729        -3646        -2673        -1722
+                 -885         -118         1014         2199         2201
+          990           21            2         -423        -1524
+          -1881        -1226         -416          -83           87
+              493         1074         1157          495          196
+                347          389          102         -100          400
+                  729          832          863          944         1640
+         2228         2765         2900         3777         5351
+           4937         4017        -1242        -7973        -4443
+            -1854        -7091        -7310        -3334          107
+               2626         2562         2223         3118         4587
+                 2758        -2141        -3291        -2377        -3134
+        -3811        -3503        -1721          603         1898
+           1983         1949         2794         2364           76
+            -1392        -1944        -2745        -2929        -2049
+              -1315         -451          994         1415         1093
+                 1173         1014          370         -288         -373
+         -274         -177          296          325          517
+           1078         1011          604          131          602
+             1280         1877         3068         3209         4194
+               5195         5004         3015        -5937        -8777
+                -1037        -3005        -8065        -5037        -1610
+Covariance matrix:
+   1.2918e+09   1.0239e+09   6.1474e+08   3.8714e+08   1.2847e+08
+    -2.2806e+08
+   1.0239e+09   1.2892e+09   1.0158e+09   6.0177e+08    3.823e+08
+      1.268e+08
+   6.1474e+08   1.0158e+09   1.2639e+09   9.7517e+08   5.8665e+08
+     3.7708e+08
+   3.8714e+08   6.0177e+08   9.7517e+08   1.1989e+09   9.5095e+08
+     5.7829e+08
+   1.2847e+08    3.823e+08   5.8665e+08   9.5095e+08   1.1899e+09
+     9.4783e+08
+  -2.2806e+08    1.268e+08   3.7708e+08   5.7829e+08   9.4783e+08
+     1.1888e+09
+SPcovXpc, using covariance matrix:
+       1.4247      -1.2053        1.085     -0.63826      0.01961
+mse, SPcovXpc:  2.40558e+08
+mse, SPcovPmse: 2.40558e+08
+mse, SPcovFmse: 2.40558e+08
+SPcovMXpc, using covariance matrix:
+       1.4246      -1.1939       1.0423     -0.60696     0.018486
+mse, SPcovMXpc: 2.40982e+08
+mse, SPcovPmse: 2.40982e+08
+SPcovLXpc, using covariance matrix:
+       1.4235      -1.1917       1.0396     -0.60434     0.017323
+mse, SPcovLXpc: 2.41e+08
+mse, SPcovPmse: 2.41e+08
+SPcovCXpc, using covariance matrix:
+       1.4329      -1.2061        1.051       -0.607     0.017245
+mse, SPcovCXpc: 2.41e+08
+mse, SPcovPmse: 2.41e+08
+
+========== tSPlpcXXdist
+Reflection coefficients (Set 1):
+         -0.8          0.7         -0.6          0.9
+Reflection coefficients (Set 2):
+         -0.8          0.7         -0.6          0.3
+Predictor coefficients - Set 1:
+         2.32      -2.8804        2.202         -0.9
+Predictor coefficients - Set 2:
+         1.96      -1.9708        1.134         -0.3
+SPlpcISdist = 2.8947
+-----
+Reflection coefficients (Set 1):
+         -0.8          0.7         -0.6          0.9
+Reflection coefficients (Set 2):
+         -0.8          0.7         -0.6          0.3
+Predictor coefficients - Set 1:
+         2.32      -2.8804        2.202         -0.9
+Predictor coefficients - Set 2:
+         1.96      -1.9708        1.134         -0.3
+SPlpcLSdist = 4.6356
+
+========== tSPfQuantX
+Decision Levels:
+            0            1            2            3
+SPfQuantL: -0.5 -> 0
+SPfQuantL: 0 -> 1
+SPfQuantL: 0.5 -> 1
+SPfQuantL: 1 -> 2
+SPfQuantL: 1.5 -> 2
+SPfQuantL: 2 -> 3
+SPfQuantL: 2.5 -> 3
+Decision Levels:
+            0            1            2
+SPfQuantU: -0.5 -> 0
+SPfQuantU: 0 -> 0
+SPfQuantU: 0.5 -> 1
+SPfQuantU: 1 -> 1
+SPfQuantU: 1.5 -> 2
+SPfQuantU: 2 -> 2
+SPfQuantU: 2.5 -> 3
+
+========== tSPxxxBWexp
+Input values:
+            1            1            1            1            1
+              1            1            1            1            1
+                1
+Output values:
+         0.99       0.9801       0.9703       0.9606      0.95099
+        0.94148      0.93207      0.92274      0.91352      0.90438
+          0.89534
+Input values:
+            1            1            1            1            1
+              1            1            1            1            1
+                1
+Output values:
+            1      0.99951      0.99803      0.99557      0.99214
+        0.98774      0.98239      0.97611      0.96891      0.96082
+          0.95185
+Input values:
+            1            1            1            1            1
+              1            1            1            1            1
+                1
+Output values:
+            1      0.99889      0.99557      0.99006      0.98239
+        0.97262      0.96082      0.94705       0.9314      0.91399
+          0.89491
+
+========== tSPxxXxx
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899
+Normalized prediction error: 0.006776
+Line spectral frequencies:
+      0.24348      0.34452       0.5555      0.73805      0.96349
+         1.8056       2.3296       2.5059
+-----
+Line spectral frequencies:
+      0.24349      0.34452      0.55549      0.73805      0.96348
+         1.8056       2.3296       2.5059
+Line spectral frequencies:
+      0.24349      0.34452      0.55549      0.73805      0.96348
+         1.8056       2.3296       2.5059
+-----
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899          0.1
+Normalized prediction error: 0.0067083
+Line spectral frequencies:
+      0.23434      0.33176      0.51485      0.70445       0.8725
+         1.3363       2.1114       2.3654       2.5776
+-----
+Line spectral frequencies:
+      0.23434      0.33177      0.51485      0.70444      0.87249
+         1.3363       2.1114       2.3654       2.5776
+Line spectral frequencies:
+      0.23434      0.33177      0.51485      0.70444      0.87249
+         1.3363       2.1114       2.3654       2.5776
+-----
+Predictor coefficients:
+       2.6292      -2.6768       1.4806      -1.2308       1.3707
+       -0.46168     -0.64676      0.76033     -0.38052       0.1045
+Line spectral frequencies:
+      0.26824      0.33713      0.39898      0.69468      0.82935
+         1.1267       1.6797       2.0844       2.1963       2.6638
+-----
+Error filter coefficients:
+            1      -1.4798       1.0973     0.066765      0.04934
+      -0.042204     0.025575   -0.0027979    0.0092505      0.15411
+         -0.21532
+Line spectral frequencies:
+      0.45487      0.75819      0.78291      0.80572      0.85477
+         1.4048       1.7271       2.1099       2.4347       2.7885
+-----
+Predictor coefficients:
+            0            0            0            0
+Line spectral frequencies:
+      0.62832       1.2566        1.885       2.5133
+-----
+Predictor coefficients:
+            0            0            0            0            0
+Line spectral frequencies:
+       0.5236       1.0472       1.5708       2.0944        2.618
+-----
+SPrcXpc - Non-minimum phase prediction error filter
+Reflection coefficients:
+           -1            1
+Normalized prediction error: 0
+Line spectral frequencies:
+   0.00017263   0.00017263
+-----
+SPrcXpc - Non-minimum phase prediction error filter
+SPpcXrc - Non-minimum phase prediction error filter
+SPpcXlsf: Failed to find all LSF's
+Reflection coefficients:
+           -1            1            1            1            1
+Normalized prediction error: 0
+-----
+Line spectral frequencies:
+       0.0766       0.1532       0.2299       0.3065       0.3831
+         0.4597       0.5364        0.613       0.6896       0.7662
+           0.8429       0.9195       0.9961       1.0727       1.1494
+              1.226       1.3026       1.3792       1.4559       1.5325
+               1.6091       1.6857       1.7624        1.839       1.9156
+       1.9922       2.0689       2.1455       2.2221       2.2987
+         2.3754        2.452       2.5286       2.6052       2.6818
+           2.7585       2.8351       2.9117       2.9883        3.065
+Predictor coefficients:
+  -3.6268e-05     0.000104    0.0001107  -4.3365e-05   0.00012506
+    -3.8274e-05   6.6663e-05   2.1853e-05   3.6977e-06   5.8801e-05
+      -2.9178e-06   3.2067e-05   5.4211e-05  -3.3346e-05   0.00012634
+        -6.7603e-05   0.00014601   9.9298e-06    8.203e-05    0.0006265
+          -3.3639e-05  -0.00012976  -0.00013166   5.6406e-05  -0.00015445
+   6.7514e-05   -0.0001011    8.041e-06  -2.8645e-05  -4.3757e-05
+    -1.8362e-06  -3.5339e-05  -4.3932e-05   2.4205e-05  -0.00011806
+       7.2998e-05  -0.00015482    3.039e-05  -0.00011011  -0.00026773
+Normalized prediction error: 1
+-----
+-----
+Autocorrelation coefficients:
+            0            0            0            0            0
+Normalized prediction error: 0
+Predictor coefficients:
+           -0           -0           -0           -0
+Normalized prediction error: 1
+-----
+SPcorXpc: Negative signal energy
+Autocorrelation coefficients:
+           -1            0            0            0            0
+-----
+SPcorXpc - Fixup for negative error energy
+Autocorrelation coefficients:
+            0            1            0            0            0
+Normalized prediction error: 0
+Predictor coefficients:
+            0            0            0            0
+Normalized prediction error: 1
+-----
+SPcorXpc - Fixup for negative error energy
+Autocorrelation coefficients:
+            1          0.5            2            0            0
+Normalized prediction error: 0.75
+Predictor coefficients:
+          0.5            0            0            0
+Normalized prediction error: 0.75
+-----
+Error filter coefficients:
+            1        -0.45         0.81            0
+Autocorrelation coefficients:
+            1      0.24862     -0.69812     -0.51554
+Normalized prediction error: 0.32264
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899
+Normalized prediction error: 0.006776
+Autocorrelation coefficients:
+            1      0.94217      0.78392      0.55975      0.31299
+       0.083233     -0.10648     -0.24746     -0.34268
+Normalized prediction error: 0.0067761
+-----
+Autocorrelation coefficients:
+            1      0.94217      0.78392      0.55975        0.313
+       0.083241     -0.10647     -0.24746     -0.34267
+Normalized prediction error: 0.0068224
+Reflection coefficients:
+     -0.94217      0.92386     -0.56214    -0.094418      0.20345
+        0.53308     -0.32343    -0.065967
+Normalized prediction error: 0.0068223
+-----
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899            0
+Normalized prediction error: 0.006776
+Autocorrelation coefficients:
+            1      0.94217      0.78392      0.55975      0.31299
+       0.083233     -0.10648     -0.24746     -0.34268     -0.39971
+Normalized prediction error: 0.0067761
+-----
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899          0.1
+Normalized prediction error: 0.0067083
+Autocorrelation coefficients:
+            1      0.94217      0.78392      0.55975      0.31299
+       0.083236     -0.10648     -0.24746     -0.34267     -0.40039
+Normalized prediction error: 0.0067083
+-----
+-----
+Error filter coefficients:
+            1        -0.45         0.81            0
+Reflection coefficients:
+     -0.24862         0.81            0
+Normalized prediction error: 0.32264
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899
+Normalized prediction error: 0.006776
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198    -0.094541      0.20218
+        0.53595     -0.32922     -0.05899
+Normalized prediction error: 0.0067761
+-----
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899
+Normalized prediction error: 0.006776
+Predictor coefficients:
+       2.3464       -1.657    0.0059881     -0.32305       1.4821
+        -1.1546      0.18966      0.05899
+Normalized prediction error: 0.0067761
+-----
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899
+Normalized prediction error: 0.006776
+Error filter coefficients:
+            1      -2.3464        1.657   -0.0059881      0.32305
+        -1.4821       1.1546     -0.18966     -0.05899
+Normalized prediction error: 0.0067761
+-----
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899          0.1
+Normalized prediction error: 0.0067083
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198    -0.094541      0.20218
+        0.53595     -0.32922     -0.05899          0.1
+Normalized prediction error: 0.0067083
+-----
+-----
+Predictor coefficients:
+          0.4          0.3
+Error filter coefficients:
+            1         -0.4         -0.3
+Normalized prediction error: 0.61286
+Error filter coefficients:
+            1         -0.5         -0.2         -0.1
+Predictor coefficients:
+          0.5          0.2          0.1
+Normalized prediction error: 0.46919
+-----
+-----
+Error filter coefficients:
+            1        -0.45         0.81            0
+Cepstral coefficients:
+            0         0.45     -0.70875     -0.33412      0.17428
+        0.22512   -0.0096877     -0.13399
+Reflection coefficients:
+     -0.94217      0.92386     -0.56198     -0.09454      0.20218
+        0.53595     -0.32922     -0.05899
+Normalized prediction error: 0.006776
+Cepstral coefficients:
+            0       2.3464       1.0959      0.42437     -0.48069
+      0.0089412     -0.14328    -0.092443      0.10007    -0.092732
+        -0.035383    -0.077171     -0.14505
+Cepstral coefficients:
+            0       2.3464       1.0959      0.42437     -0.48069
+      0.0089414     -0.14328    -0.092443      0.10007
+Reflection coefficients:
+     -0.94217      0.92386     -0.56194    -0.094487      0.20223
+        0.53604     -0.32913    -0.058955
+Normalized prediction error: 0.0067753

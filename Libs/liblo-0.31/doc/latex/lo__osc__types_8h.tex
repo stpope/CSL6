@@ -1,0 +1,49 @@
+\hypertarget{lo__osc__types_8h}{\section{lo\+\_\+osc\+\_\+types.\+h File Reference}
+\label{lo__osc__types_8h}\index{lo\+\_\+osc\+\_\+types.\+h@{lo\+\_\+osc\+\_\+types.\+h}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlo__timetag}{lo\+\_\+timetag}
+\begin{DoxyCompactList}\small\item\em A structure to store O\+S\+C Time\+Tag values. \end{DoxyCompactList}\item 
+union \hyperlink{unionlo__arg}{lo\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Union used to read values from incoming messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__liblo_gafa8cfc08b763b0c039fb64a73c4c77da}{L\+O\+\_\+\+T\+T\+\_\+\+I\+M\+M\+E\+D\+I\+A\+T\+E}~((\hyperlink{structlo__timetag}{lo\+\_\+timetag})\{0\+U,1\+U\})
+\begin{DoxyCompactList}\small\item\em A timetag constant representing \char`\"{}now\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__liblo_ga08432d01f2b8f4a32ffa58992a821f28}{lo\+\_\+element\+\_\+type} \{ \hyperlink{group__liblo_gga08432d01f2b8f4a32ffa58992a821f28aef47b7b86b453d77bc37737400a2ad64}{L\+O\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+M\+E\+S\+S\+A\+G\+E} = 1, 
+\hyperlink{group__liblo_gga08432d01f2b8f4a32ffa58992a821f28a35773b57d50789d1ac7e7e38d2b291c2}{L\+O\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+B\+U\+N\+D\+L\+E} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em An enumeration of bundle element types liblo can handle. \end{DoxyCompactList}\item 
+enum \hyperlink{group__liblo_ga11838c576b0197c255ce805fd7434736}{lo\+\_\+type} \{ \\*
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736a4ba0490216baf238719e1200325b037d}{L\+O\+\_\+\+I\+N\+T32} = 'i', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736ab3245e1b7edacde57f71d200840b0aa3}{L\+O\+\_\+\+F\+L\+O\+A\+T} = 'f', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736a6121bddbedc79af47d86a8a25af47ad2}{L\+O\+\_\+\+S\+T\+R\+I\+N\+G} = 's', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736a140f48c944b6c888846b8109ceaeb98b}{L\+O\+\_\+\+B\+L\+O\+B} = 'b', 
+\\*
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736acfabb7d6ec1d4f9d033227de24c76b30}{L\+O\+\_\+\+I\+N\+T64} = 'h', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736a0516741a260e7109d2b0ed0c92beddbe}{L\+O\+\_\+\+T\+I\+M\+E\+T\+A\+G} = 't', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736a0ca92c843dfb45f4edabdefd60cdeca6}{L\+O\+\_\+\+D\+O\+U\+B\+L\+E} = 'd', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736a4ae18ed5170672498406c36b16e7a948}{L\+O\+\_\+\+S\+Y\+M\+B\+O\+L} = 'S', 
+\\*
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736af93c0cdf731b1edf4b9d44ad7d7dba26}{L\+O\+\_\+\+C\+H\+A\+R} = 'c', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736ad295b5f7669a7220102082e20fd14ec0}{L\+O\+\_\+\+M\+I\+D\+I} = 'm', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736ace8c12ac58d6aaee426dc41cfa609009}{L\+O\+\_\+\+T\+R\+U\+E} = 'T', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736ae85a45e7bc3999069d82da7245d172f4}{L\+O\+\_\+\+F\+A\+L\+S\+E} = 'F', 
+\\*
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736a80fcaab02318c562b094ca407f81d2b3}{L\+O\+\_\+\+N\+I\+L} = 'N', 
+\hyperlink{group__liblo_gga11838c576b0197c255ce805fd7434736a9b77e96b653de1f91344549b9b9a0273}{L\+O\+\_\+\+I\+N\+F\+I\+N\+I\+T\+U\+M} = 'I'
+ \}
+\begin{DoxyCompactList}\small\item\em An enumeration of the O\+S\+C types liblo can send and receive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A liblo header defining O\+S\+C-\/related types and constants. 
+
+Definition in file \hyperlink{lo__osc__types_8h_source}{lo\+\_\+osc\+\_\+types.\+h}.
+

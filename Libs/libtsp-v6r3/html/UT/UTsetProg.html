@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - UTsetProg</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>UTsetProg</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void UTsetProg (const char Program[]);
+<DT>
+char *UTgetProg (void)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Set the program name for messages
+<DT>
+Get the program name for messages
+</DL>
+<H4>Description</H4>
+This routine sets a program name string.  This string is used by error
+reporting routines as an identifier in error message strings.
+<H4>Parameters</H4>
+<DL>
+<DT>
+UTsetProg:
+<DT>
+ -&gt; const char Program[]
+<DD>
+Program name, normally without a path
+<DT>
+UTgetProg:
+<DT>
+&lt;-  char *UTgetProg
+<DD>
+Pointer to the program name.  If the program name has not been set, this
+is a pointer to an empty string.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.12  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

@@ -1,0 +1,65 @@
+.TH STkeyMatch 3tsp "TSP (libtsp/ST)"
+.SH Routine
+.in +4n
+.ti -4n
+int STkeyMatch (const char String[], const char *KeyTable[])
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Match a string to keyword strings
+.in -4n
+.SH Description
+This subroutine searches a table for a match to a character string.  The
+table of keywords is searched for the first match.  The keyword table can
+optionally specify the minimum length for a match and a length beyond which
+characters need no longer match. The keywords are searched in order.
+.PP
+Each entry of the keyword table specifies the character string to be matched.
+An optional asterisk ('*') is used to indicate the minimum number of
+characters needed for a match.  A second asterisk can be used to indicate
+that characters after this point need not match.
+.in +4n
+.ti -4n
+Example:
+.br
+Keyword table entry "abc*de*f". Input strings "abc", "abcd", "abcde", and
+"abcdex" will match this entry.  Input strings "ab", "abC" " abc" and
+"abcx" do not match this entry.
+.in -4n
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int STkeyMatch
+.br
+Index of the matched keyword.  This value is set to -1 if no match is
+found.
+.ft CW
+.nf
+.ne 3
+  -1 - No match
+   0 - Match to the first keyword
+   1 - Match to the second keyword
+       ...
+.fi
+.ft P
+.ti -4n
+ -> const char String[]
+.br
+Input character string.  If String is the NULL pointer, a no match
+condition is returned.
+.ti -4n
+ -> const char *KeyTable[]
+.br
+Pointer array with pointers to the keyword strings.  The end of the
+keyword table is signalled with a NULL pointer.  Note that with ANSI C,
+if the actual parameter is not declared to have the const attribute, an
+explicit cast to (const char **) is required.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.18  2003/05/09
+.SH See Also
+STfindToken,
+STkeyXpar,
+libtsp

@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - VRfDiffSq</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>VRfDiffSq</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double VRfDiffSq (const float x1[], const float x2[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Find the sum of squares of the differences for two float arrays
+</DL>
+<H4>Description</H4>
+This routine calculates the sum of the squares of the differences between
+corresponding elements of two float arrays,
+<PRE>
+       N-1                2
+  e2 = SUM (x1[i] * x2[i]) .
+       i=0
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  double VRfDiffSq
+<DD>
+Sum of the squares of the element differences
+<DT>
+ -&gt; const float x1[]
+<DD>
+Input array (N elements)
+<DT>
+ -&gt; const float x2[]
+<DD>
+Input array (N elements)
+<DT>
+ -&gt; int N
+<DD>
+Number of elements in the arrays (may be zero)
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.7  2003/05/09
+<H4>See Also</H4>
+<A HREF="VRfDotProd.html">VRfDotProd</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

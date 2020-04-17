@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - VRfScale</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>VRfScale</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void VRfScale (double a, const float x[], float y[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Multiply each element of a float array by a scalar value
+</DL>
+<H4>Description</H4>
+This routine multiplies each element of a float array by a scalar value,
+<PRE>
+  y[i] = a * x[i],  0 &lt;= i &lt; N.
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; double a
+<DD>
+A scalar value
+<DT>
+ -&gt; const float x[]
+<DD>
+Input array (N elements)
+<DT>
+&lt;-  float y[]
+<DD>
+Output array (N elements).  The output array can be the same as the
+input array.
+<DT>
+ -&gt; int N
+<DD>
+Number of elements in the arrays (may be zero).
+</DL>
+<H4>Author / revision</H4>
+J. Stachurski
+/ Revision 1.9  2003/05/09
+<H4>See Also</H4>
+<A HREF="VRfMult.html">VRfMult</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

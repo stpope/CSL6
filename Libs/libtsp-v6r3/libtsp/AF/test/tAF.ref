@@ -1,0 +1,1205 @@
+========== tAFopnRead
+AFfindType - Unknown audio file type
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+ Headerless audio file: --path--/audiofiles/addf8.nh
+   Number of samples : 23808 (2.976 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+AFsetFileType - Invalid file type, "xxx"
+tAFopnRead: Error return from AFsetFileType
+AFrdAUhead - Invalid AU audio file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdWVhead - Invalid WAVE file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdAIhead - Invalid AIFF/AIFF-C file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdSPhead - Invalid NIST SPHERE audio file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdEShead - Invalid ESPS file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdSFhead - Invalid IRCAM soundfile identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdBLhead - Invalid SPPACK file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdINhead - Invalid INRS-Telecom file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdSWhead - Invalid SPW Signal file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdNShead - Invalid CSL NSP file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFrdTAhead - Invalid Text file identifier
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFsetNHread - Headerless file: Data format not specified
+AFopnRead: Error opening input audio file "../../../audiofiles/addf8.nh"
+AFreadHead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFreadHead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFreadHead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFreadHead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFreadHead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFreadHead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFreadHead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFreadHead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFrdSWhead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFreadHead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+AFrdTAhead - Unexpected end-of-file
+AFopnRead: Error opening input audio file "XxX.au"
+ AU audio file: --path--/audiofiles/addf8.afsp
+   Description: female speaker; "Add the sum ..."
+   Number of samples : 23808 (2.976 s)  1981/02/11 hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ AU audio file: --path--/audiofiles/addf8.au
+   Number of samples : 23808 (2.976 s)  1985-07-18 hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ AU audio file: --path--/audiofiles/next-8.snd
+   Number of samples : 5000 (0.2268 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 22050 Hz
+   Number of channels: 1 (8-bit integer)
+ AIFF-C sound file: --path--/audiofiles/addf8.aifc
+   Number of samples : 23808 (2.976 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ AIFF sound file: --path--/audiofiles/addf8.aiff
+   Number of samples : 23808 (2.976 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ AIFF sound file: --path--/audiofiles/aiff-8.snd
+   Number of samples : 32928 (0.7467 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 44100 Hz
+   Number of channels: 2 (8-bit integer)
+AFrdAIhead - AIFF/AIFF-C file: Fixup for invalid COMM chunk size
+ AIFF-C sound file: --path--/audiofiles/digit0v0.aiff
+   Number of samples : 4480 (0.56 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ INRS-Telecom audio file: --path--/audiofiles/addf8.aud
+   Number of samples : 23808 (2.976 s)  11-FEB-81 18:03:34
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ SPPACK file: --path--/audiofiles/addf8.d
+   Number of samples : 23808 (2.976 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ ESPS audio file: --path--/audiofiles/addf8.sd
+   Number of samples : 23808 (2.976 s)  Thu MMM dd hh:mm:ss YYYY
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ IRCAM soundfile: --path--/audiofiles/addf8.sf_mipseb
+   Number of samples : 23808 (2.976 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ IRCAM soundfile: --path--/audiofiles/addf8.sf_sun
+   Number of samples : 23808 (2.976 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ IRCAM soundfile: --path--/audiofiles/addf8.sf_vax_b
+   Number of samples : 23808 (2.976 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ WAVE file: --path--/audiofiles/addf8.wav
+   Number of samples : 23808 (2.976 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+AFrdWVhead - WAVE file: Fixup for invalid RIFF chunk size
+AFrdWVhead - WAVE file: Header stucture size mismatch
+AFsetRead - Fixup, data length greater than file length
+ WAVE file: --path--/audiofiles/riff-8-u.snd
+   Number of samples : 5588 (0.5068 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 11025 Hz
+   Number of channels: 1 (offset-binary 8-bit integer)
+ NIST SPHERE audio file: --path--/audiofiles/jg00b1ss.wav
+   Number of samples : 16384 (1.024 s)  13-May-1992
+   Sampling frequency: 16000 Hz
+   Number of channels: 1 (16-bit integer)
+ NIST SPHERE audio file: --path--/audiofiles/sw1038t_short.wav
+   Number of samples : 48000 (6 s)  910213
+   Sampling frequency: 8000 Hz
+   Number of channels: 2 (8-bit mu-law)
+ Text audio file: --path--/audiofiles/bab.dat
+   Number of samples : 51 (0.002553 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 19980 Hz
+   Number of channels: 1 (text data)
+ Comdisco SPW Signal file: --path--/audiofiles/mary-sun4.sig
+   Description: MARY HAD A LITTLE LAMB
+   Number of samples : 47611 (5.951 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (64-bit float)
+ Comdisco SPW Signal file: --path--/audiofiles/sine.sig
+   Number of samples : 2000 (2000 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 1 Hz
+   Number of channels: 1 (64-bit float)
+ Comdisco SPW Signal file: --path--/audiofiles/sineA1.ascsig
+   Number of samples : 2000 (2000 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 1 Hz
+   Number of channels: 1 (text data)
+ CSL NSP file: --path--/audiofiles/addf8.nsp
+   Number of samples : 23808 (2.976 s)  MMM dd hh:mm:ss YYYY
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+AFfindType - Unsupported audio file type: Gravis Ultrasound Patch file
+AFopnRead: Error opening input audio file "../../../audiofiles/sound.pat"
+AFfindType - Unsupported audio file type: Gold sample file
+AFopnRead: Error opening input audio file "../../../audiofiles/sound.sap"
+AFfindType - Unsupported audio file type: SampleVision file
+AFopnRead: Error opening input audio file "../../../audiofiles/sound.smp"
+AFfindType - Unsupported audio file type: sndtool file
+AFopnRead: Error opening input audio file "../../../audiofiles/sound.snd"
+AFfindType - Unsupported audio file type: Sound Blaster VOC file
+AFopnRead: Error opening input audio file "../../../audiofiles/sound.voc"
+AFfindType - Unsupported audio file type: Amiga SVX file
+AFopnRead: Error opening input audio file "../../../audiofiles/sound.svx"
+AFfindType - Unsupported audio file type: Amiga maud file
+AFopnRead: Error opening input audio file "../../../audiofiles/wood.maud"
+AFfindType - Unsupported audio file type: Psion alaw file
+AFopnRead: Error opening input audio file "../../../audiofiles/kirk.wve"
+AFfindType - Unsupported audio file type: Macintosh HCOM file
+AFopnRead: Error opening input audio file "../../../audiofiles/hcom-16.snd"
+AFfindType - Unsupported audio file type: Comdisco SPW (version 2.8.2) Signal file
+AFopnRead: Error opening input audio file "../../../audiofiles/sineA3.ascsig"
+AFfindType - Unknown audio file type
+AFopnRead: Error opening input audio file "../../../audiofiles/sound.dig"
+
+========== tAFsetRead
+AFsetRead: Ldata: -1 ==> 900, Nsamp: -1 ==> 450
+-----
+AFsetRead - Fixup, non-integer number of samples
+AFsetRead: Ldata: -1 ==> 900, Nsamp: -1 ==> 450
+-----
+AFsetRead - Error, data length greater than file length
+tAFsetRead: Error return from AFsetRead
+-----
+AFsetRead - Fixup, data length greater than file length
+AFsetRead: Ldata: 1200 ==> 900, Nsamp: -1 ==> 450
+-----
+AFsetRead: Ldata: 400 ==> 400, Nsamp: -1 ==> 200
+-----
+AFsetRead: Ldata: -1 ==> 900, Nsamp: 450 ==> 450
+-----
+AFsetRead: Ldata: -1 ==> 800, Nsamp: 400 ==> 400
+-----
+AFsetRead: Ldata: 900 ==> 900, Nsamp: 450 ==> 450
+-----
+AFsetRead: Ldata: 900 ==> 800, Nsamp: 400 ==> 400
+-----
+AFsetRead: Ldata: 800 ==> 800, Nsamp: 400 ==> 400
+-----
+AFsetRead - Fixup, no. samples less than data length
+AFsetRead: Ldata: -1 ==> 900, Nsamp: 400 ==> 450
+-----
+AFsetRead - Fixup, no. samples greater than data length
+AFsetRead: Ldata: -1 ==> 900, Nsamp: 600 ==> 450
+-----
+AFsetRead - Unable to determine number of samples
+tAFsetRead: Error return from AFsetRead
+-----
+AFsetRead - No. samples not a multiple of no. channels
+            401 samples; 2 channels
+AFsetRead: Ldata: -1 ==> 802, Nsamp: 401 ==> 401
+
+========== tAFsetNHpar
+""
+ ErrCode = 0, Format = 0, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"undefined"
+ ErrCode = 0, Format = 0, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"mu-law, 512, 10000, little, 2, 64/2"
+ ErrCode = 0, Format = 1, Start = 512, Sfreq = 10000
+   Swapb = 1, Nchan = 2, ScaleF = 32
+-----
+"A-law, 0, 9000, big, 1, 8"
+ ErrCode = 0, Format = 2, Start = 0, Sfreq = 9000
+   Swapb = 0, Nchan = 1, ScaleF = 8
+-----
+"unsigned8,,,,,default"
+ ErrCode = 0, Format = 3, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"integer8"
+ ErrCode = 0, Format = 4, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"integer"
+ ErrCode = 0, Format = 5, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"integer16"
+ ErrCode = 0, Format = 5, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"integer24"
+ ErrCode = 0, Format = 6, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"integer32"
+ ErrCode = 0, Format = 7, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"float"
+ ErrCode = 0, Format = 8, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"float64"
+ ErrCode = 0, Format = 9, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"text"
+ ErrCode = 0, Format = 10, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+"text, 25, 10000, big, , "
+ ErrCode = 0, Format = 10, Start = 25, Sfreq = 10000
+   Swapb = 0, Nchan = 1, ScaleF = -1.79769e+308
+-----
+AFsetNHpar - Invalid format keyword: "whatever"
+"whatever"
+ ErrCode = 1, Format = 0, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+-----
+AFsetNHpar - Too many parameters
+"mu-law, 512, 10000, little, 2, 32, xx"
+ ErrCode = 1, Format = 0, Start = 0, Sfreq = 8000
+   Swapb = 2, Nchan = 1, ScaleF = -1.79769e+308
+
+========== tAFreadData
+ AU audio file: --path--/audiofiles/addf8.au
+   Number of samples : 23808 (2.976 s)  1985-07-18 hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+tAFxReadData: F: Total samples: 23808
+ AU audio file: <stdin>
+   Number of samples : 23808 (2.976 s)  
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+tAFxReadData: D: Total samples: 23808
+
+========== tAFxWriteData
+=== tAFxWriteData: invalid parameters
+AFopnWrite: Error opening output audio file "XxXx/YyYy"
+UTsysMsg: No such file or directory
+-----
+AFopnWrite - Invalid output audio file type code: 6
+AFopnWrite: Error opening output audio file "temp.au"
+-----
+AFopnWrite - Invalid data format code: "12"
+AFopnWrite: Error opening output audio file "temp.au"
+-----
+AFopnWrite - Invalid output audio file type code: 0
+AFopnWrite: Error opening output audio file "temp.aud"
+
+=== tAFxWriteData: AU files
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Sampling frequency: 8000.6 Hz
+   Number of channels: 2 (8-bit mu-law)
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Number of samples : 6 (0.0007499 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000.6 Hz
+   Number of channels: 2 (8-bit mu-law)
+Readback data:
+            0           32           40           64           -8
+            -40           80           64          -88        32124
+           -32124        32124       -32124            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Sampling frequency: 10000.6 Hz
+   Number of channels: 2 (8-bit A-law)
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Number of samples : 6 (0.0006 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 10000.6 Hz
+   Number of channels: 2 (8-bit A-law)
+Readback data:
+            0           24           40           56           -8
+            -40           88           56          -88        32256
+           -32256        32256       -32256            0
+-----
+AFopnWrite - AU audio file: Unsupported data format: "offset-binary 8-bit integer"
+AFopnWrite: Error opening output audio file "temp.au"
+-----
+AFdWriteData - Output data clipped
+AFclose - 4 data values clipped
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Sampling frequency: 16000.6 Hz
+   Number of channels: 2 (8-bit integer)
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Number of samples : 6 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.6 Hz
+   Number of channels: 2 (8-bit integer)
+Readback data:
+            0            0            0            0            0
+              0          128            0         -128        16256
+           -16384        16256       -16384            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Sampling frequency: 24000.6 Hz
+   Number of channels: 2 (14/16-bit integer) [FR FL]
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Number of samples : 6 (0.00025 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 24000.6 Hz
+   Number of channels: 2 (14/16-bit integer) [FR FL]
+Readback data:
+            0           30           40           60          -10
+            -40           80           60          -90        32000
+           -32000        32767       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Sampling frequency: 10000.6 Hz
+   Number of channels: 2 (24-bit integer)
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Number of samples : 6 (0.0006 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 10000.6 Hz
+   Number of channels: 2 (24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Sampling frequency: 10100.6 Hz
+   Number of channels: 2 (32-bit integer)
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Number of samples : 6 (0.000594 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 10100.6 Hz
+   Number of channels: 2 (32-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Sampling frequency: 10200.6 Hz
+   Number of channels: 2 (32-bit float)
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Number of samples : 6 (0.0005882 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 10200.6 Hz
+   Number of channels: 2 (32-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Sampling frequency: 10300.6 Hz
+   Number of channels: 2 (64-bit float)
+ AU audio file: --path--/test/temp.au
+   Description: Test file
+   Number of samples : 6 (0.0005825 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 10300.6 Hz
+   Number of channels: 2 (64-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+AFopnWrite - AU audio file: Unsupported data format: "text data"
+AFopnWrite: Error opening output audio file "temp.au"
+
+=== tAFxWriteData: WAVE files
+AFopnWrite - Inappropriate bits/sample setting
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 8000.4 Hz
+   Number of channels: 4 (8-bit mu-law)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000.4 Hz
+   Number of channels: 4 (8-bit mu-law)
+Readback data:
+            0           32           40           64           -8
+            -40           80           64          -88        32124
+           -32124        32124       -32124            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 4 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 12000.4 Hz
+   Number of channels: 4 (offset-binary 8-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.00025 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 12000.4 Hz
+   Number of channels: 4 (offset-binary 8-bit integer)
+Readback data:
+            0            0            0            0            0
+              0          128            0         -128        16256
+           -16384        16256       -16384            0
+-----
+AFopnWrite - WAVE file: Unsupported data format: "8-bit integer"
+AFopnWrite: Error opening output audio file "temp.wav"
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.4 Hz
+   Number of channels: 2 (16-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 6 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.4 Hz
+   Number of channels: 2 (16-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80           60          -90        32000
+           -32000        32767       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 2 (24-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 6 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 2 (24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.1 Hz
+   Number of channels: 1 (32-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 12 (0.00075 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.1 Hz
+   Number of channels: 1 (32-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 2 (32-bit float)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 6 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 2 (32-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.3 Hz
+   Number of channels: 2 (64-bit float)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 6 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.3 Hz
+   Number of channels: 2 (64-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+AFopnWrite - WAVE file: Unsupported data format: "text data"
+AFopnWrite: Error opening output audio file "temp.wav"
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (20/24-bit integer) [FL FR FC LF]
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.0001875 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (20/24-bit integer) [FL FR FC LF]
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFcheckSpeakers - Duplicate loudspeaker position: "FR"
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (21/24-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.0001875 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (21/24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFwrWVhead - WAVE file: Invalid speaker order
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (21/24-bit integer) [FR FL FC LF]
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.0001875 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (21/24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (14/24-bit integer) [FL FR FC -]
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.0001875 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (14/24-bit integer) [FL FR FC -]
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFdecSpeaker - Invalid loudspeaker location: "XX"
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (23/24-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.0001875 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (23/24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+
+=== tAFxWriteData: WAVE_NOEX files
+AFopnWrite - Inappropriate bits/sample setting
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 8000.4 Hz
+   Number of channels: 4 (8-bit mu-law)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000.4 Hz
+   Number of channels: 4 (8-bit mu-law)
+Readback data:
+            0           32           40           64           -8
+            -40           80           64          -88        32124
+           -32124        32124       -32124            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 4 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 12000.4 Hz
+   Number of channels: 4 (offset-binary 8-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.00025 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 12000.4 Hz
+   Number of channels: 4 (offset-binary 8-bit integer)
+Readback data:
+            0            0            0            0            0
+              0          128            0         -128        16256
+           -16384        16256       -16384            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.4 Hz
+   Number of channels: 2 (16-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 6 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.4 Hz
+   Number of channels: 2 (16-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80           60          -90        32000
+           -32000        32767       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 2 (18/24-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 6 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 2 (18/24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFwrWVhead - WAVE file: Invalid bits/sample: 24; using 32
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.1 Hz
+   Number of channels: 1 (24/32-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 12 (0.00075 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.1 Hz
+   Number of channels: 1 (32-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 2 (32-bit float)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 6 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 2 (32-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.3 Hz
+   Number of channels: 2 (64-bit float)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 6 (0.000375 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.3 Hz
+   Number of channels: 2 (64-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+AFdecSpeaker - Invalid loudspeaker location: "XX"
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (23/24-bit integer)
+ WAVE file: --path--/test/temp.wav
+   Description: Test file
+   Number of samples : 3 (0.0001875 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 16000.2 Hz
+   Number of channels: 4 (23/24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+
+=== tAFxWriteData: AIFF-C files
+AFopnWrite - Inappropriate bits/sample setting
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 8000.7 Hz
+   Number of channels: 1 (8-bit mu-law)
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000.7 Hz
+   Number of channels: 1 (8-bit mu-law)
+Readback data:
+            0           32           40           64           -8
+            -40           80           64          -88        32124
+           -32124        32124       -32124            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 10000.7 Hz
+   Number of channels: 1 (8-bit A-law)
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0012 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 10000.7 Hz
+   Number of channels: 1 (8-bit A-law)
+Readback data:
+            0           24           40           56           -8
+            -40           88           56          -88        32256
+           -32256        32256       -32256            0
+-----
+AFopnWrite - AIFF/AIFF-C file: Unsupported data format: "offset-binary 8-bit integer"
+AFopnWrite: Error opening output audio file "temp.aif"
+-----
+AFdWriteData - Output data clipped
+AFclose - 4 data values clipped
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 12000.7 Hz
+   Number of channels: 1 (8-bit integer)
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0009999 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 12000.7 Hz
+   Number of channels: 1 (8-bit integer)
+Readback data:
+            0            0            0            0            0
+              0          128            0         -128        16256
+           -16384        16256       -16384            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 14000.7 Hz
+   Number of channels: 1 (14/16-bit integer) [FL]
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0008571 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 14000.7 Hz
+   Number of channels: 1 (14/16-bit integer) [FL]
+Readback data:
+            0           30           40           60          -10
+            -40           80           60          -90        32000
+           -32000        32767       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 14000.6 Hz
+   Number of channels: 1 (24-bit integer)
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0008571 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 14000.6 Hz
+   Number of channels: 1 (24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 14000.5 Hz
+   Number of channels: 1 (32-bit integer)
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0008571 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 14000.5 Hz
+   Number of channels: 1 (32-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 12000.7 Hz
+   Number of channels: 1 (32-bit float)
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0009999 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 12000.7 Hz
+   Number of channels: 1 (32-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 12000.7 Hz
+   Number of channels: 1 (64-bit float)
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0009999 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 12000.7 Hz
+   Number of channels: 1 (64-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+AFopnWrite - AIFF/AIFF-C file: Unsupported data format: "text data"
+AFopnWrite: Error opening output audio file "temp.aif"
+-----
+AFwrAIhead - AIFF/AIFF-C file: Non-standard loudspeaker configuration
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 14000.5 Hz
+   Number of channels: 2 (30/32-bit integer) [FR FL]
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 6 (0.0004286 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 14000.5 Hz
+   Number of channels: 2 (30/32-bit integer) [FR FL]
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFwrAIhead - AIFF/AIFF-C file: Invalid bits/sample: 23; using 32
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 14000.5 Hz
+   Number of channels: 2 (23/32-bit integer) [FL FR]
+ AIFF-C sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 6 (0.0004286 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 14000.5 Hz
+   Number of channels: 2 (32-bit integer) [FL FR]
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+
+=== tAFxWriteData: AIFF files
+AFopnWrite - AIFF/AIFF-C file: Unsupported data format: "8-bit mu-law"
+AFopnWrite: Error opening output audio file "temp.aif"
+-----
+AFopnWrite - AIFF/AIFF-C file: Unsupported data format: "8-bit A-law"
+AFopnWrite: Error opening output audio file "temp.aif"
+-----
+AFopnWrite - AIFF/AIFF-C file: Unsupported data format: "offset-binary 8-bit integer"
+AFopnWrite: Error opening output audio file "temp.aif"
+-----
+AFdWriteData - Output data clipped
+AFclose - 4 data values clipped
+ AIFF sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 12000.7 Hz
+   Number of channels: 2 (8-bit integer)
+ AIFF sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 6 (0.0005 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 12000.7 Hz
+   Number of channels: 2 (8-bit integer)
+Readback data:
+            0            0            0            0            0
+              0          128            0         -128        16256
+           -16384        16256       -16384            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 14000.7 Hz
+   Number of channels: 1 (16-bit integer)
+ AIFF sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0008571 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 14000.7 Hz
+   Number of channels: 1 (16-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80           60          -90        32000
+           -32000        32767       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 14000.6 Hz
+   Number of channels: 1 (24-bit integer)
+ AIFF sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0008571 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 14000.6 Hz
+   Number of channels: 1 (24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ AIFF sound file: --path--/test/temp.aif
+   Description: Test file
+   Sampling frequency: 14000.5 Hz
+   Number of channels: 1 (32-bit integer)
+ AIFF sound file: --path--/test/temp.aif
+   Description: Test file
+   Number of samples : 12 (0.0008571 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 14000.5 Hz
+   Number of channels: 1 (32-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFopnWrite - AIFF/AIFF-C file: Unsupported data format: "32-bit float"
+AFopnWrite: Error opening output audio file "temp.aif"
+-----
+AFopnWrite - AIFF/AIFF-C file: Unsupported data format: "64-bit float"
+AFopnWrite: Error opening output audio file "temp.aif"
+-----
+AFopnWrite - AIFF/AIFF-C file: Unsupported data format: "text data"
+AFopnWrite: Error opening output audio file "temp.aif"
+
+=== tAFxWriteData: Headerless files
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (8-bit mu-law)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (8-bit mu-law)
+Readback data:
+            0           32           40           64           -8
+            -40           80           64          -88        32124
+           -32124        32124       -32124            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (8-bit A-law)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (8-bit A-law)
+Readback data:
+            0           24           40           56           -8
+            -40           88           56          -88        32256
+           -32256        32256       -32256            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 4 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (offset-binary 8-bit integer)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (offset-binary 8-bit integer)
+Readback data:
+            0            0            0            0            0
+              0          128            0         -128        16256
+           -16384        16256       -16384            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 4 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (8-bit integer)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (8-bit integer)
+Readback data:
+            0            0            0            0            0
+              0          128            0         -128        16256
+           -16384        16256       -16384            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80           60          -90        32000
+           -32000        32767       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (24-bit integer)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (24-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (32-bit integer)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (32-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        32768       -32768            0
+-----
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (32-bit float)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (32-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (64-bit float)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (64-bit float)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (text data)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (text data)
+Readback data:
+            0           30           40           60          -10
+            -40           80        60.25       -90.25        32000
+           -32000        33000       -33000            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80           60          -90        32000
+           -32000        32767       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80           60          -90        32000
+           -32000        32767       -32768            0
+-----
+AFdWriteData - Output data clipped
+AFclose - 2 data values clipped
+ Headerless audio file: --path--/test/temp.nh
+   Description: Test file
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+ Headerless audio file: --path--/test/temp.nh
+   Number of samples : 12 (0.0015 s)  YYYY-MM-dd hh:mm:ss UTC
+   Sampling frequency: 8000 Hz
+   Number of channels: 1 (16-bit integer)
+Readback data:
+            0           30           40           60          -10
+            -40           80           60          -90        32000
+           -32000        32767       -32768            0
+
+========== tAFgetAUrec
+Returned arg |123|
+Returned arg |456|
+Returned arg |789|
+AFgetInfoRec: Error status
+Returned arg |abc:123|

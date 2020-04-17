@@ -1,0 +1,252 @@
+
+========== tFLbackup
+FLbackup - Renamed existing file to "temporaryfile~"
+temporaryfile~
+FLbackup - Renamed existing file to "temporaryfile.xxxx~"
+temporaryfile.xxxx~
+FLbackup - Renamed existing file to "tempf~"
+tempf~
+FLbackup: Error renaming file: "/bin/sh"
+tFLbackup: No such file or directory
+
+========== tFLdefName
+FLdefName: abc/def, xxx/yyy -> abc/def
+FLdefName: def, xxx/yyy -> xxx/def
+FLdefName: abc/, xxx/yyy -> abc/yyy
+FLdefName: abc, / -> /abc
+
+========== tFLexist
+FLexist: XxXxXx, status = 0
+FLexist: /dev, status = 0
+FLexist: /dev/tty, status = 0
+FLexist: Makefile, status = 1
+FLexist: tempf, status = 1
+FLexist: tempfl, status = 1
+FLexist: tempfll, status = 1
+
+========== tFLexpHome (expect system dependencies)
+FLexpHome: ~ -> /r
+FLexpHome: ~pkabal -> /r
+FLexpHome: ~pkabal/abc/def -> /r/abc/def
+FLexpHome: ~/abc/def -> /r/abc/def
+FLexpHome:  -> 
+FLexpHome: abc/def -> abc/def
+FLexpHome: ~junk -> ~junk
+FLexpHome: ~junk/abc/def -> ~junk/abc/def
+
+========== tFLxReadData
+===== ===== ===== ======
+FLdReadData:
+          0.5            1          1.5            2
+----- ----- ----- -----
+FLfReadData:
+          0.5            1          1.5            2
+----- ----- ----- -----
+===== ===== ===== ======
+STdec1val - Data format error: "xxxx"
+FLdReadTF: Data format error, line 3
+----- ----- ----- -----
+STdec1val - Data format error: "xxxx"
+FLfReadTF: Data format error, line 3
+===== ===== ===== ======
+STdecNval - Extra data ignored
+FLdReadData:
+          0.5            1          1.5            2          2.5
+----- ----- ----- -----
+STdecNval - Extra data ignored
+FLfReadData:
+          0.5            1          1.5            2          2.5
+===== ===== ===== ======
+FLdReadTF: Too many values or extra data
+----- ----- ----- -----
+FLfReadTF: Too many values or extra data
+
+========== tFLfWriteData
+===== ===== ===== ======
+FLdWriteData:
+1.1
+2.2
+3.3
+4.4
+5.5
+----- ----- ----- -----
+FLfWriteData:
+1.1
+2.2
+3.3
+4.4
+5.5
+
+========== tFLgetRec
+abc !xxxx
+FLgetRec: abc 
+abd\
+def\
+abc #xxxx
+FLgetRec: abddefabc 
+abd\def
+FLgetRec: abd\def
+FLgetRec: end-of-file
+
+abc 
+FLgetRec: abc 
+abd\
+def\
+abc 
+FLgetRec: abddefabc 
+abd\def
+FLgetRec: abd\def
+FLgetRec: end-of-file
+
+FLgetRec: abc 
+FLgetRec: abddefabc 
+FLgetRec: abd\def
+FLgetRec: end-of-file
+FLgetRec: 356
+FLgetRec:  571.3 
+FLgetRec:  	-444.2 
+FLgetRec: 563
+FLgetRec: end-of-file
+
+========== tFLfullName
+FLfullName:  -> /d/tsp/src/libtsp/FL/test
+FLfullName: /xx -> //xx
+FLfullName: /xx/yy -> //xx/yy
+FLfullName: xx -> /d/tsp/src/libtsp/FL/test/xx
+FLfullName: xx/yy -> /d/tsp/src/libtsp/FL/test/xx/yy
+FLfullName: ~pkabal/edit/..//xx -> /d/tsp/src/libtsp/FL/test/~pkabal/edit/../xx
+
+========== tFLhomeDir (expect system dependencies)
+FLhomeDir:  -> /r
+FLhomeDir: root -> ~root
+FLhomeDir: pkabal -> /r
+FLhomeDir: junk -> ~junk
+FLhomeDir: root -> ~root
+
+========== tFLpathList
+FLpathList: xxx/yyy,  -> xxx/yyy
+FLpathList: xxx/yyy, .:bin:/D/tsp/Cygwin/bin:/usr/X11R6/bin:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/d/program files/perl/bin/:/c/perl/bin/:/d/texmf/miktex/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/system32/wbem:/c/program files/ati technologies/ati control panel:/c/Program Files/MATLAB/R2006a/bin/win32:/c/program files/matlab71/bin/win32:/c/progra~1/matlab6p5/bin/win32:/d/progra~1/aspell/bin:/d/program files/cvsnt:/c/windows/dpdrv:/c/program files/quicktime/qtsystem/:/d/tsp/bin:/r/bin:/d/Progra~1/RCS/bin/win32:/d/Progra~1/cvsnt:/d/tsp/Perl -> xxx/yyy
+FLpathList: ls,  -> ls
+FLpathList: ls, xxx:zzz -> ls
+FLpathList: ls, $PLIST -> /usr/bin/ls
+
+========== tFLreadLine
+FLreadLine: line 1
+FLreadLine: line 2
+FLreadLine: end-of-file
+FLreadLine: end-of-file
+
+========== tFLseekterm
+
+-        stdin from pipe
+FLseekable (stdin): 0
+FLterm (stdin): 0
+
+--       stdout to pipe
+FLseekable (stdout): 0
+FLterm (stdout): 0
+
+---      stdin from terminal
+FLseekable (stdin): 0
+FLterm (stdin): 1
+
+----     stdout to terminal
+FLseekable (fp): 0
+FLterm (fp): 1
+
+-----    stdin redirected from file
+FLseekable (stdin): 1
+FLterm (stdin): 0
+
+------   stdout redirected to file
+FLseekable (stdout): 1
+FLterm (stdout): 0
+========== tFLxxxDate (expect time zone differences)
+FLfileDate: DS-1990-02-02-1200UTC: Fri Feb  2 07:00:00 1990
+FLfileDate: DS-1990-02-02-1200UTC: Fri Feb  2 07:00:00 EST 1990
+FLfileDate: DS-1990-02-02-1200UTC: 1990-02-02 07:00:00 EST
+FLfileDate: DS-1990-02-02-1200UTC: 1990-02-02 12:00:00 UTC
+FLdate: DS-1990-02-02-1200UTC: Fri Feb  2 07:00:00 1990
+FLdate: DS-1990-02-02-1200UTC: Fri Feb  2 07:00:00 EST 1990
+FLdate: DS-1990-02-02-1200UTC: 1990-02-02 07:00:00 EST
+FLdate: DS-1990-02-02-1200UTC: 1990-02-02 12:00:00 UTC
+FLfileDate: DS-1990-08-08-1200UTC: Wed Aug  8 09:00:00 1990
+FLfileDate: DS-1990-08-08-1200UTC: Wed Aug  8 09:00:00 EDT 1990
+FLfileDate: DS-1990-08-08-1200UTC: 1990-08-08 09:00:00 EDT
+FLfileDate: DS-1990-08-08-1200UTC: 1990-08-08 13:00:00 UTC
+FLdate: DS-1990-08-08-1200UTC: Wed Aug  8 09:00:00 1990
+FLdate: DS-1990-08-08-1200UTC: Wed Aug  8 09:00:00 EDT 1990
+FLdate: DS-1990-08-08-1200UTC: 1990-08-08 09:00:00 EDT
+FLdate: DS-1990-08-08-1200UTC: 1990-08-08 13:00:00 UTC
+
+========== tFLxxxName
+FLdirName:   -> 
+FLbaseName:  -> 
+FLpreName:   -> 
+FLextName:   -> 
+FLdirName:  xx -> 
+FLbaseName: xx -> xx
+FLpreName:  xx -> xx
+FLextName:  xx -> 
+FLdirName:  ./xx -> .
+FLbaseName: ./xx -> xx
+FLpreName:  ./xx -> xx
+FLextName:  ./xx -> 
+FLdirName:  xx/yy/ -> xx/yy
+FLbaseName: xx/yy/ -> 
+FLpreName:  xx/yy/ -> 
+FLextName:  xx/yy/ -> 
+FLdirName:  /xx/yy/ -> /xx/yy
+FLbaseName: /xx/yy/ -> 
+FLpreName:  /xx/yy/ -> 
+FLextName:  /xx/yy/ -> 
+FLdirName:  xx/yy.ex -> xx
+FLbaseName: xx/yy.ex -> yy.ex
+FLpreName:  xx/yy.ex -> yy
+FLextName:  xx/yy.ex -> .ex
+FLdirName:  xx/yy/zz -> xx/yy
+FLbaseName: xx/yy/zz -> zz
+FLpreName:  xx/yy/zz -> zz
+FLextName:  xx/yy/zz -> 
+FLdirName:  / -> /
+FLbaseName: / -> 
+FLpreName:  / -> 
+FLextName:  / -> 
+FLdirName:  /xx -> /
+FLbaseName: /xx -> xx
+FLpreName:  /xx -> xx
+FLextName:  /xx -> 
+FLdirName:  /xx/yy.ex -> /xx
+FLbaseName: /xx/yy.ex -> yy.ex
+FLpreName:  /xx/yy.ex -> yy
+FLextName:  /xx/yy.ex -> .ex
+FLdirName:  /xx/yy.ab.ex -> /xx
+FLbaseName: /xx/yy.ab.ex -> yy.ab.ex
+FLpreName:  /xx/yy.ab.ex -> yy.ab
+FLextName:  /xx/yy.ab.ex -> .ex
+FLdirName:  /xx/yy/zz -> /xx/yy
+FLbaseName: /xx/yy/zz -> zz
+FLpreName:  /xx/yy/zz -> zz
+FLextName:  /xx/yy/zz -> 
+
+========== tFLjoinNames
+FLjoinNames: , xxx/yyy -> xxx/yyy
+FLjoinNames: abc/def,  -> abc/def
+FLjoinNames: abc/def, xxx/yyy -> abc/def/xxx/yyy
+FLjoinNames: abc/def/, xxx/yyy -> abc/def/xxx/yyy
+FLjoinNames: /, xxx/yyy -> /xxx/yyy
+FLjoinNames: abc/def, /xxx/yyy -> /xxx/yyy
+FLjoinNames: abc/def/, /xxx/yyy -> /xxx/yyy
+
+========== tFLpathList (expect system dependencies)
+FLpathList: ~/.emacs,  -> /r/.emacs
+FLpathList: .emacs, ~ -> /r/.emacs
+FLpathList: ~pkabal/.emacs,  -> /r/.emacs
+FLpathList: .emacs, ~pkabal -> /r/.emacs
+
+========== tFLfileSize
+File: DS.tar, Size = 10240
+
+========== tgetpwnam
+search name: pkabal, user name: pkabal
+search name: XxXxXx, pwd NULL

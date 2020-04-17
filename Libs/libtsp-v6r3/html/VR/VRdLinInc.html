@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - VRdLinInc</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>VRdLinInc</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void VRdLinInc (double xmin, double xmax, double x[], int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Generate a linearly spaced array of values
+</DL>
+<H4>Description</H4>
+This routine generates a linearly spaced array of values
+<PRE>
+  y[i] = xmin + i*(xmax-xmin)/(N-1),  0 &lt;= i &lt; N.
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+ -&gt; double xmin
+<DD>
+Minimum value
+<DT>
+ -&gt; double xmax
+<DT>
+&lt;-  double x[]
+<DD>
+Array of doubles (N elements)
+<DT>
+ -&gt; int N
+<DD>
+Number of elements
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.3  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

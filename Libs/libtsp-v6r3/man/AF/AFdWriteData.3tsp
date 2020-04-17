@@ -1,0 +1,44 @@
+.TH AFdWriteData 3tsp "TSP (libtsp/AF)"
+.SH Routine
+.in +4n
+.ti -4n
+int AFdWriteData (AFILE *AFp, const double Dbuff[], int Nval)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Write data to an audio file (double input values)
+.in -4n
+.SH Description
+This routine writes a specified number of samples to an audio file.  The
+double input data is converted to the audio file data representation.  The
+file data representation is set on opening the file with routine AFopnWrite.
+This routine writes data sequentially to the file.  A warning message is
+printed if the input values exceed the dynamic range of the file data
+representation.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int AFdWriteData
+.br
+Number of samples written
+.ti -4n
+ -> AFILE *AFp
+.br
+Audio file pointer for an audio file opened by AFopnWrite
+.ti -4n
+ -> const double Dbuff[]
+.br
+Array of doubles with Nval samples
+.ti -4n
+ -> int Nval
+.br
+Number of samples to be written
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.3  2003/05/13
+.SH See Also
+AFfWriteData,
+AFopnWrite,
+libtsp

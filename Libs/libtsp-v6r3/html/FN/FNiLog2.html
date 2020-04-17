@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - FNiLog2</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>FNiLog2</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int FNiLog2 (int N)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Find the integer greater than or equal to log (base 2) of a given value
+</DL>
+<H4>Description</H4>
+This function returns the number of bits needed to represent N-1, where N is
+a given integer value. This routine can be used to find a suitable FFT length
+(power of two) for a sequence of length N. The FFT length is 2^m, where m is
+the value returned by this routine. The returned value is smallest m
+satisfying
+<PRE>
+  2^m &gt;= N.
+</PRE>
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int FNiLog2
+<DD>
+Returned integer value
+<DT>
+ -&gt; int N
+<DD>
+Input value (greater than zero)
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.7  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

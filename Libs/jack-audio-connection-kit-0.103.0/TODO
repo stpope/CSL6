@@ -1,0 +1,88 @@
+=======================================================================
+*** TODO - A one file mini-bugzilla for JACK developers             ***
+=======================================================================
+
+Version: $Id: TODO 924 2005-09-11 12:22:10Z kaiv $
+
+NOTE: web-based bug tracker for JACK was put online in Oct 2003. It is 
+      now the preferred way to report and track bugs and feature 
+      requests. This TODO file is now used only for tracking release 
+      issues (mapping features and other todo-items to release 
+      roadmap, etc).
+
+The new bug tracker can be found at:
+
+    http://jackit.sourceforge.net/mantis/
+
+-----------------------------------------------------------------------
+
+You can update this list directly via CVS or alternatively
+send a change request to jackit-devel mailing list.
+
+-----------------------------------------------------------------------
+
+TODO for merging Mac OS X support
+
+- clean up other header files
+  -- <sysdeps/poll.h>, fakepoll.h, etc.
+  -- <sysdeps/ipc.h>, <sys/ipc.h> in shm.c
+
+TODO before-1.0
+
+- add explanation of protocol versioning to README.developers (kaiv)
+
+TODO post-1.0
+
+- jack session handling (taybin)
+- handle mixed-mode 64bit and 32bit clients (joq)
+- first client run without jackd becomes jackd (joq)
+- TBD
+
+TODO general - no agreed timeline
+
+- better scheme for handling machine and system dependencies (joq)
+- proper handling of client return values in libjack
+- pool based malloc for rt client-local mem allocation (paul, moved back here)
+
+TO BE DECIDED - no agreed timeline
+
+- dropping the use of CAP_RESOURCE (nando)
+- support for on-the-fly sampling rate change
+- whether to default to triangular dithering for 16bit output. (swh)
+
+TO THINK ABOUT - no agreed timeline
+
+- ensure that UST/MSC pairs work for transport API
+- whether we want to support varispeed (resampling and/or changing
+  the actual rate)
+- per-block timestamping against system clock (UST stamps at driver level)
+- dynamically increase the total number of ports in the system
+
+CLOSED (date,who,comment)
+
+- don't build static libraries of drivers and ip-clients (2003/10/07,paul)
+- API to change buffer size (joq) (2003/10/07)
+- added code to enforce the 'bufsize==2^x' rule (taybin) (2003/8/28)
+- make sure that process callbacks always have nframes equal to buffersize (2003/08/27,done,kaiv)
+- add Paul's graph/subgraph explanation to the design doc (2003/08/27,done,kaiv)
+- add support for custom jackd --tmpdir in libjack (2003/05/06,done,jesse)
+- capture_client has pthread_mutex_lock() in its process() (2003/05/30,fixed,joq)
+- update at least the user-visible copyrights with year 2003 (2003/04/05,done,paul)
+- add a sane way handle situations where the unix sockets already 
+    exist when jackd is started (2003/04/05,sockets removed on startup,paul)
+- figure out how to have pools of buffers for ports by type - (2003/04/05, paul, implicit in new shm/port segment system)
+- passing args to drivers and clients? (?,done long ago,paul)
+- pool based malloc for rt client-local mem allocation (paul)
+- getting callbacks and args from dynamically loaded clients? (2003/02/25, paul, see jack/jack.h)
+- how do dynamically loaded clients (un)register ports, activate, etc. (2003/02/25, paul, see example-clients/inprocess.c)
+- server<->libjack interface version handshake (2003/02/11, trutkin, done)
+- alsa-driver parameter parsing patch (2003/02/25, joq, done)
+- jack_deactive called unconditionally in jack_client_close (2003/02/05, kaiv, fixed)
+- call time client before all others (2003/01/28, kaiv, another solution)
+- finalize discussion on transport API, and implement (2003/08/04, joq)
+- whether to hide the transport.h structs from clients (2003/08/04, joq)
+- define transport info struct contents (2003/08/13, joq)
+- resolve helper thread design question? (2003/08/31, joq)
+- get portaudio driver working under Linux (2003/10/29, joq)
+
+-----------------------------------------------------------------------

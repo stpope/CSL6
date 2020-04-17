@@ -1,0 +1,59 @@
+\hypertarget{porting-guide}{}\section{Porting JACK}\label{porting-guide}
+The \hyperlink{index_index}{JACK Audio Connection Kit} is designed to be portable to any system supporting the relevant POSIX and C language standards. It currently works with GNU/Linux and Mac OS X on several different processor architectures. This document describes the steps needed to port JACK to another platform, and the methods used to provide portability.
+
+\begin{itemize}
+\item \hyperlink{porting-guide_portrequirements}{Requirements}\item \hyperlink{porting-guide_portoverview}{Overview}\item \hyperlink{porting-guide_portopsys}{Operating System Dependencies}\item \hyperlink{porting-guide_portcpu}{Processor Dependencies}\item \hyperlink{porting-guide_portissues}{Issues Not Addressed}\end{itemize}
+\hypertarget{porting-guide_portrequirements}{}\subsection{Requirements}\label{porting-guide_portrequirements}
+\begin{itemize}
+\item Each platform should build directly from CVS or from a tarball using the GNU {\tt }./configure tools. Platform-specific toolsets can by used for development, but the GNU tools should at least work for basic distribution and configuration.\end{itemize}
+
+
+\begin{itemize}
+\item For long-term maintainability we want to minimize the use of conditional compilation in source files.\end{itemize}
+
+
+\begin{itemize}
+\item We should provide generic versions of all system-dependent headers, so platforms need only provide those they modify.\end{itemize}
+
+
+\begin{itemize}
+\item In some cases, operating system-specific information must be able to override processor-specific data.\end{itemize}
+\hypertarget{porting-guide_portoverview}{}\subsection{Overview}\label{porting-guide_portoverview}
+JACK relies on two types of platform-specific headers:
+
+\begin{itemize}
+\item \hyperlink{porting-guide_portopsys}{Operating System Dependencies}\item \hyperlink{porting-guide_portcpu}{Processor Dependencies}\end{itemize}
+
+
+OS-specific headers take precedence over CPU-specific headers.
+
+The JACK {\tt configure.host} script and its system-dependent header directories were adapted from the {\tt libstdc++-v3} component of the GNU Compiler Collective, $<$\href{http://gcc.gnu.org}{\tt http://gcc.gnu.org}$>$.\hypertarget{porting-guide_portlang}{}\subsection{C Language Dependencies}\label{porting-guide_portlang}
+JACK is written to conform with C99, as defined in International Standard ISO/IEC 9899:1999. Because many existing compilers do not fully support this standard, some new features should be avoided for portablility reasons. For example, variables should not be declared in the middle of a compound statement, because many compilers still cannot handle that language extension.\hypertarget{porting-guide_portopsys}{}\subsection{Operating System Dependencies}\label{porting-guide_portopsys}
+JACK is written for a POSIX environment compliant with IEEE Std 1003.1-2001, ISO/IEC 9945:2003, including the POSIX Threads Extension (1003.1c-1995) and the Realtime and Realtime Threads feature groups. When some needed POSIX feature is missing on a platform, the preferred solution is to provide a substitute, as with the {\tt fakepoll.c} implementation for Mac OS X.
+
+Whenever possible, OS dependencies should be auto-detected by {\tt configure}. Sometimes they can be isolated in OS-specific header files, found in subdirectories of {\tt config/os} and referenced with a {\tt $<$sysdeps/xxx}.h$>$ name.
+
+If conditional compilation must be used in mainline platform-independent code, avoid using the system name. Instead, {\tt \#define} a descriptive name in {\tt $<$config.h$>$}, and test it like this:
+
+
+
+\footnotesize\begin{verbatim}  \#ifdef JACK_USE_MACH_THREADS
+          allocate_mach_serverport(engine, client);
+          client->running = FALSE;
+  \#endif
+\end{verbatim}
+\normalsize
+
+
+Be sure to place any generic implementation alternative in the {\tt \#else} or use an {\tt \#ifndef}, so no other code needs to know your conditional labels.\hypertarget{porting-guide_portcpu}{}\subsection{Processor Dependencies}\label{porting-guide_portcpu}
+JACK uses some low-level machine operations for thread-safe updates to shared memory. A low-level implementation of {\tt $<$sysdeps/atomicity}.h$>$ is provided for every target processor architecture. There is also a generic implementation using POSIX spin locks, but that is not a good enough solution for serious use.
+
+The GCC package provides versions that work on most modern hardware. We've tried to keep things as close to the original as possible, while removing a bunch of os-specific files that didn't seem relevant. A primary goal has been to avoid changing the CPU-dependent {\tt $<$sysdeps/atomicity}.h$>$ headers.
+
+The relevant GCC documentation provides some helpful background, especially the {\tt atomicity.h} discussion at $<$\href{http://gcc.gnu.org/onlinedocs/porting/Thread-safety.html}{\tt http://gcc.gnu.org/onlinedocs/porting/Thread-safety.html}$>$.\hypertarget{porting-guide_portissues}{}\subsection{Issues Not Addressed}\label{porting-guide_portissues}
+\begin{itemize}
+\item Cross-compilation has not been tested, or even thought through in much detail. The {\em host\/} is the system on which JACK will run. This may differ from the {\em build\/} system doing the compilation. These are selected using the standard {\tt }./configure options {\tt --host} and {\tt --build}. Usually, {\tt }./config.guess can print the appropriate canonical name for any system on which it runs.\end{itemize}
+
+
+\begin{itemize}
+\item Platform-specific build tools like Apple's Project Builder are not well-supported. \end{itemize}

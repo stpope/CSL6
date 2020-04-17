@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - UTrealloc</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>UTrealloc</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+void *UTrealloc (void *ptr, int size)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Reallocate a block of memory
+</DL>
+<H4>Description</H4>
+This routine invokes the system routine realloc to reallocate a block of
+memory.  Given a pointer to a block of memory allocated by UTmalloc or
+UTrealloc, this routine returns a pointer to a (possiby moved) block of
+memory of the given size.  The contents will be unchanged up to the lesser of
+the new and old sizes.  Unlike the system routine realloc, this routine uses
+a signed value for the size of the block of memory requested.  If the size
+requested is less than or equal to zero, any previous memory allocated is
+freed up and a NULL pointer is returned.  This is not an error condition.
+However, if the system routine realloc returns an error, an error message is
+printed and execution is terminated.  The block of memory allocated can be
+freed up using UTfree.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  void *UTrealloc
+<DD>
+Pointer to the new allocated memory.  This should be cast to the
+appropriate pointer type.
+<DT>
+ -&gt; void *ptr
+<DD>
+Pointer to the old block of memory.  If ptr is NULL, this routine does
+the initial allocation.
+<DT>
+ -&gt; int size
+<DD>
+Size of the new memory block to be allocated.  This is a signed value.
+If size is less than or equal to zero, a NULL pointer is returned.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.11  2003/05/09
+<H4>See Also</H4>
+<A HREF="UTfree.html">UTfree</A>,
+<A HREF="UTmalloc.html">UTmalloc</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

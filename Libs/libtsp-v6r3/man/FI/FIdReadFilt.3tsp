@@ -1,0 +1,79 @@
+.TH FIdReadFilt 3tsp "TSP (libtsp/FI)"
+.SH Routine
+.in +4n
+.ti -4n
+int FIdReadFilt (const char Fname[], int MaxNcof, double h[], int *Ncof,
+FILE *fpinfo)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Read a filter coefficient file
+.in -4n
+.SH Description
+This procedure reads filter coefficients from a filter coefficient file.  The
+first line in the file indicates the type of filter.
+.ft CW
+.nf
+.ne 3
+  !FIR        - FIR filter, direct form
+  !IIR        - IIR filter, cascade of biquad sections
+  !ALL        - All-pole filter, direct form
+  !WIN        - Window coefficients, direct form
+  !CAS        - Cascade analog biquad sections
+.fi
+.ft P
+Subsequent lines contain filter coefficients in text form.  Data fields
+are free format, with data values separated by white-space (as defined by
+isspace).  Zero or more data values can appear in each line of input.  Commas
+can also be used to separate data values, but only within a line, i.e. a
+comma should not appear at the end of a line.  A "!" character marks the
+beginning of a comment that extends to the end of the line.
+.PP
+This routine prints an error message and halts execution on detection of an
+error.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  int FIdReadFilt
+.br
+Filter type coded as follows,
+.ft CW
+.nf
+.ne 3
+  FI_UNDEF = 0, undefined filter file identifier
+  FI_FIR   = 1, FIR filter, direct form
+  FI_IIR   = 2, IIR filter, cascade of biquad sections
+  FI_ALL   = 3, All-pole filter, direct form
+  FI_WIN   = 4, Window coefficients, direct form
+  FI_CAS   = 5  Cascade analog biquad sections
+.fi
+.ft P
+.ti -4n
+ -> const char Fname[]
+.br
+Filter file name
+.ti -4n
+ -> int MaxNcof
+.br
+Maximum number of coefficients to be returned
+.ti -4n
+<-  double h[]
+.br
+Array of Ncof output filter coefficients
+.ti -4n
+<-  int *Ncof
+.br
+Number of filter coefficients returned
+.ti -4n
+ -> FILE *fpinfo
+.br
+File pointer for printing filter file information.  If fpinfo is not
+NULL, information about the filter file is printed on the stream
+selected by fpinfo.
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.1  2005/02/01
+.SH See Also
+libtsp

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Differences in the outputs of test scripts can be obscured by differences in
+# dates and file paths.
+#
+# This script filters out date strings and file paths from the input stream
+# and replaces them with a canonical string.
+
+# Example
+#   % tFiltAudio | filter_log > new.log
+#   % diff new.log tFiltAudio.log
+
+# Editing:
+# - Remove the file paths up to a "/test/" component
+# - Remove the file paths up to a "/audiofiles/" component
+# - Remove dates of the form "1996-03-18".
+# - Remove dates of the form "1996-03-18 12:34:59".
+# - Remove dates of the form "May  3 12:34:59 1997"
+# - For all except the last form, the date string must be surrounded by
+#   blanks.
+# - Dates in the 1970's and 1980's are not modified (such dates should not
+#   occur in temporary files).
+sed 's| /.*/test/| --path--/test/|;
+     s| .:\\.*\\test\\| --path--/test/|;
+     s| /.*/audiofiles/| --path--/audiofiles/|;
+     s| .:\\.*\\audiofiles\\| --path--/audiofiles/|;
+	s| [12][90][^78][0-9][-/][ 0-1][0-9][-/][ 0-3][0-9] | YYYY-MM-dd |;
+	s| [ 0-2][0-9]:[ 0-5][0-9]:[ 0-5][0-9] | hh:mm:ss |;
+	s| [A-Z][a-z][a-z] [ 0-3][0-9] hh:mm:ss | MMM dd hh:mm:ss |;
+	s| MMM dd hh:mm:ss [12][90][^78][0-9]| MMM dd hh:mm:ss YYYY|'
+
+# $Id: filter_log 1.11 2001/03/28 libtsp-v6r3 $

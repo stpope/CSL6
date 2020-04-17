@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - SPlpcLSdist</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>SPlpcLSdist</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+double SPlpcLSdist (const float pc1[], const float pc2[], int Np, int Ncep)
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Calculate the RMS log LPC spectral distance measure
+</DL>
+<H4>Description</H4>
+This function calculates Markel and Gray's RMS log LPC spectral distance
+measure.  Consider the prediction error filter A(z),
+<P>
+<PRE>
+              Np       -k
+  A(z) = 1 - SUM p(k) z  .
+             k=1
+</PRE>
+<P>
+The power spectrum corresponding to the all-pole LPC filter is
+<P>
+<PRE>
+  S(w) = 1 / |A(w)|^2 ,
+</PRE>
+<P>
+where A(w) is short-hand notation for A(exp(jw)).  The RMS log LPC spectral
+distance measure for two filters A1(z) and A2(z) is given by
+<PRE>
+              pi
+  D = sqrt{ int (10 log[|A1(w)|^2] - 10 log[|A2(w)|^2])^2 dw } .
+             -pi
+</PRE>
+<P>
+The power spectrum is the Fourier transform of the (infinite) set of
+autocorrelation coefficients.  The cepstrum for the autocorrelation
+coefficients is given by inverse Fourier transform of the log power spectrum.
+Equivalently the cepstral coefficients are the Fourier series coefficients
+for the (periodic) log power spectrum.
+<P>
+The RMS log LPC spectral distance  measure is equivalent to the root
+mean-square difference between the cepstral coefficients corresponding to the
+two LPC filters.  This routine finds the cepstral coefficients corresponding
+to the two sets of input predictor coefficients.  Theoretically, this
+requires an infinite number of cepstral coefficients.  This routine
+calculates an approximation to the distance from two finite length sets of
+cepstral coefficients.
+<P>
+<DL>
+<DT>
+Reference:
+<DD>
+A. H. Gray, Jr. and J. D. Markel, "Distance measures for speech
+processing", IEEE Trans. Acoustics, Speech, and Signal Processing,
+vol. ASSP-24, pp. 380-391, October 1976.
+</DL>
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  double SPlpcLSdist
+<DD>
+Resultant distance measure (dB units). 0 dB corresponds to identical
+sets of predictor coefficients.
+<DT>
+ -&gt; const float pc1[]
+<DD>
+Predictor coefficients corresponding to the first spectrum
+<DT>
+ -&gt; const float pc2[]
+<DD>
+Predictor coefficients corresponding to the second spectrum
+<DT>
+ -&gt; int Np
+<DD>
+Number of predictor coefficients in each of pc1 and pc2
+<DT>
+ -&gt; int Ncep
+<DD>
+Number of cepstral coefficients used for the distance calculation
+(maximum 150).  This number does not include the zero'th cepstral
+coefficient.  A recommended number is 3*Np.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.15  2003/05/09
+<H4>See Also</H4>
+<A HREF="SPlpcISdist.html">SPlpcISdist</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

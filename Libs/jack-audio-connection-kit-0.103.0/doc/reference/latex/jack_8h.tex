@@ -1,0 +1,915 @@
+\hypertarget{jack_8h}{
+\section{jack.h File Reference}
+\label{jack_8h}\index{jack.h@{jack.h}}
+}
+{\tt \#include $<$pthread.h$>$}\par
+{\tt \#include $<$jack/types.h$>$}\par
+{\tt \#include $<$jack/transport.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ \hyperlink{jack_8h_60174a8321e2d9c4e7e444e779e78e6b}{jack\_\-client\_\-open} (const char $\ast$client\_\-name, \hyperlink{types_8h_bfea9d8c60520b8962bfbff21ec9b324}{jack\_\-options\_\-t} options, \hyperlink{types_8h_b2c415ccde58eeccb2a74f25abf7e003}{jack\_\-status\_\-t} $\ast$status,...)
+\item 
+\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ \hyperlink{jack_8h_eeecae94e45f9d7548853e66162133dd}{jack\_\-client\_\-new} (const char $\ast$client\_\-name)
+\item 
+int \hyperlink{jack_8h_61f9cf927395f5c9dd9f5e0732fc932e}{jack\_\-client\_\-close} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+int \hyperlink{jack_8h_a52218c212c1a64bb9c5cfea01749ce9}{jack\_\-client\_\-name\_\-size} (void)
+\item 
+char $\ast$ \hyperlink{jack_8h_82faa1fa5a0d09ed8161e74e2370a04f}{jack\_\-get\_\-client\_\-name} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+int \hyperlink{jack_8h_1baf4fbdc7de21679a2f26931cba2e86}{jack\_\-internal\_\-client\_\-new} (const char $\ast$client\_\-name, const char $\ast$load\_\-name, const char $\ast$load\_\-init)
+\item 
+void \hyperlink{jack_8h_013232493892e3a0eaf5f2498388118c}{jack\_\-internal\_\-client\_\-close} (const char $\ast$client\_\-name)
+\item 
+int \hyperlink{jack_8h_ea7797d9dff1521cd1529234e3014f4c}{jack\_\-is\_\-realtime} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+void \hyperlink{jack_8h_b4326381866be0c32b1330b967707eae}{jack\_\-on\_\-shutdown} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, void($\ast$function)(void $\ast$arg), void $\ast$arg)
+\item 
+int \hyperlink{jack_8h_bf570688a1c20e1e2339419339df9bbc}{jack\_\-set\_\-process\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{types_8h_7d29408cae0f836271aab41c2db20074}{Jack\-Process\-Callback} process\_\-callback, void $\ast$arg)
+\item 
+int \hyperlink{jack_8h_6b31016c48665eef8706653842d71802}{jack\_\-set\_\-thread\_\-init\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{types_8h_0695aa8ed5357cde844d6db73ec54fd7}{Jack\-Thread\-Init\-Callback} thread\_\-init\_\-callback, void $\ast$arg)
+\item 
+int \hyperlink{jack_8h_fec58438b9d27ef33be09cfe50756780}{jack\_\-set\_\-freewheel\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{types_8h_f0979883756fe8c04b837efd603ab1fb}{Jack\-Freewheel\-Callback} freewheel\_\-callback, void $\ast$arg)
+\item 
+int \hyperlink{jack_8h_b078911808f5c1a60cd74c6cba1ebab6}{jack\_\-set\_\-freewheel} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, int onoff)
+\item 
+int \hyperlink{jack_8h_e46e3c197bc19e9aabe99085c35acc9c}{jack\_\-set\_\-buffer\_\-size} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} nframes)
+\item 
+int \hyperlink{jack_8h_dabe854313f1bfc17a01994d42ddec8d}{jack\_\-set\_\-buffer\_\-size\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{types_8h_f1c94e59c710631aa33a2dee86cd5cef}{Jack\-Buffer\-Size\-Callback} bufsize\_\-callback, void $\ast$arg)
+\item 
+int \hyperlink{jack_8h_c5261b259eee957cc280835166f1c4a7}{jack\_\-set\_\-sample\_\-rate\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{types_8h_6c12926f10031285cf7b851bbd9410f2}{Jack\-Sample\-Rate\-Callback} srate\_\-callback, void $\ast$arg)
+\item 
+int \hyperlink{jack_8h_abce2b2c62131d175f02e69455f7fc04}{jack\_\-set\_\-port\_\-registration\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_35ed48b4e8b6574b35764d67165db1e6}{Jack\-Port\-Registration\-Callback} registration\_\-callback, void $\ast$arg)
+\item 
+int \hyperlink{jack_8h_ad091898ccec173ca6d3ae64b47b9bfb}{jack\_\-set\_\-graph\_\-order\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_0e57e4ff80dd55c7856c14b38bfacd96}{Jack\-Graph\-Order\-Callback} graph\_\-callback, void $\ast$)
+\item 
+int \hyperlink{jack_8h_324ed1195d4f2bbb2296a4f334d214ca}{jack\_\-set\_\-xrun\_\-callback} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_e78bd2ac540e7adb7bacf04578bd3a94}{Jack\-XRun\-Callback} xrun\_\-callback, void $\ast$arg)
+\item 
+int \hyperlink{jack_8h_c7dc9d6132b8331ab500cdb593b8de11}{jack\_\-activate} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+int \hyperlink{jack_8h_b594ce1ce2ab099bb545c234f382b219}{jack\_\-deactivate} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ \hyperlink{jack_8h_7b92816a9bfcfdcaefefd196a1945bea}{jack\_\-port\_\-register} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, const char $\ast$port\_\-name, const char $\ast$port\_\-type, unsigned long flags, unsigned long buffer\_\-size)
+\item 
+int \hyperlink{jack_8h_4541729833c01ff421c99505dc2d3b28}{jack\_\-port\_\-unregister} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$)
+\item 
+void $\ast$ \hyperlink{jack_8h_b7500f56800cb2a2ac1543f7da910041}{jack\_\-port\_\-get\_\-buffer} (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t})
+\item 
+const char $\ast$ \hyperlink{jack_8h_da70adee4d6855e75a3021dc9fb1ea6c}{jack\_\-port\_\-name} (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+const char $\ast$ \hyperlink{jack_8h_0a25230cc4fc0d0a8cbbe322790f4c9a}{jack\_\-port\_\-short\_\-name} (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+int \hyperlink{jack_8h_7377b80a581e4bcfddaa47f2c1727d08}{jack\_\-port\_\-flags} (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+const char $\ast$ \hyperlink{jack_8h_8ce090eed8b36f92a3d81c239e6e4a6d}{jack\_\-port\_\-type} (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+int \hyperlink{jack_8h_183e6ac3add0d341d0cab33b28048ee8}{jack\_\-port\_\-is\_\-mine} (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+int \hyperlink{jack_8h_140ea2a1e1fa401e26d90c9fc68dea00}{jack\_\-port\_\-connected} (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+int \hyperlink{jack_8h_d206d5aef0fc3af55001ac159f0c29d0}{jack\_\-port\_\-connected\_\-to} (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port, const char $\ast$port\_\-name)
+\item 
+const char $\ast$$\ast$ \hyperlink{jack_8h_decee03eb47d6634f550f48b86f97d3e}{jack\_\-port\_\-get\_\-connections} (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+const char $\ast$$\ast$ \hyperlink{jack_8h_3c1f84f423f73617e82343b86b8c70df}{jack\_\-port\_\-get\_\-all\_\-connections} (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+int \hyperlink{jack_8h_0254eaeb81b4cb0b5b154c4d943b61ad}{jack\_\-port\_\-tie} (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$src, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$dst)
+\item 
+int \hyperlink{jack_8h_c5a6287b0a6537488d4b875f3b5872d1}{jack\_\-port\_\-untie} (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+int \hyperlink{jack_8h_6ad255a5269f00e1988d50888de28ba6}{jack\_\-port\_\-lock} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$)
+\item 
+int \hyperlink{jack_8h_93f7218108b53dbaf99a22130c7b2016}{jack\_\-port\_\-unlock} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$)
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{jack_8h_a2d99af288cc43d5898f216b4b9e0a3e}{jack\_\-port\_\-get\_\-latency} (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{jack_8h_5197d7f9bee5df9a7704da997824c62c}{jack\_\-port\_\-get\_\-total\_\-latency} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+void \hyperlink{jack_8h_5fb0404d95c4c2e94eb99e09bea56291}{jack\_\-port\_\-set\_\-latency} (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t})
+\item 
+int \hyperlink{jack_8h_e16e0178739ae0fb41cf966c1a682eaa}{jack\_\-recompute\_\-total\_\-latencies} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)
+\item 
+int \hyperlink{jack_8h_780107fbb89102d78e67c87f01fa71bd}{jack\_\-port\_\-set\_\-name} (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port, const char $\ast$port\_\-name)
+\item 
+int \hyperlink{jack_8h_dc11de9343cd67aa82633a26b7acb0d2}{jack\_\-port\_\-request\_\-monitor} (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port, int onoff)
+\item 
+int \hyperlink{jack_8h_2459b65588daa2150c3ccca7da4e941e}{jack\_\-port\_\-request\_\-monitor\_\-by\_\-name} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, const char $\ast$port\_\-name, int onoff)
+\item 
+int \hyperlink{jack_8h_279fe3268a34bda786a88703e2b2bf8a}{jack\_\-port\_\-ensure\_\-monitor} (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port, int onoff)
+\item 
+int \hyperlink{jack_8h_e7b0caaeead93983b36783c921b2da79}{jack\_\-port\_\-monitoring\_\-input} (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$port)
+\item 
+int \hyperlink{jack_8h_e3eb9baf8f23641b20b28ec306ea2a33}{jack\_\-connect} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const char $\ast$source\_\-port, const char $\ast$destination\_\-port)
+\item 
+int \hyperlink{jack_8h_b3ecaf260eebee0c6f9a2c246b2457c7}{jack\_\-disconnect} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const char $\ast$source\_\-port, const char $\ast$destination\_\-port)
+\item 
+int \hyperlink{jack_8h_9c790701baea809c7d495771c0b49eda}{jack\_\-port\_\-disconnect} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$)
+\item 
+int \hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size} (void)
+\item 
+int \hyperlink{jack_8h_64285588c322d9d229d2297a8f5fde7f}{jack\_\-port\_\-type\_\-size} (void)
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{jack_8h_0402a9ae57b052cd8b0084f5d41eace5}{jack\_\-get\_\-sample\_\-rate} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{jack_8h_2bc7521ab43763fdbc95fe242a94639d}{jack\_\-get\_\-buffer\_\-size} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)
+\item 
+const char $\ast$$\ast$ \hyperlink{jack_8h_50ca36d27062fa58ab29c67e9e06d774}{jack\_\-get\_\-ports} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const char $\ast$port\_\-name\_\-pattern, const char $\ast$type\_\-name\_\-pattern, unsigned long flags)
+\item 
+\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ \hyperlink{jack_8h_a1a161f1d14846284475a106ea836d06}{jack\_\-port\_\-by\_\-name} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const char $\ast$port\_\-name)
+\item 
+\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ \hyperlink{jack_8h_4d44cd2c8bb5cd7485baba5c9424e976}{jack\_\-port\_\-by\_\-id} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client}, \hyperlink{types_8h_638b3ebbced47d1cb913f4b522699401}{jack\_\-port\_\-id\_\-t} port\_\-id)
+\item 
+int \hyperlink{jack_8h_fe90d892429267872e213823cbed0d84}{jack\_\-engine\_\-takeover\_\-timebase} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{jack_8h_90f456356c0005a9e3a5bd860c2f174e}{jack\_\-frames\_\-since\_\-cycle\_\-start} (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{jack_8h_60e6392e63960d400c2ca62bb601b16e}{jack\_\-frame\_\-time} (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)
+\item 
+\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} \hyperlink{jack_8h_5961158bc7f319d8352f5f31b68565f7}{jack\_\-last\_\-frame\_\-time} (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+float \hyperlink{jack_8h_cf39ae885313ebb542618c9822500795}{jack\_\-cpu\_\-load} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$\hyperlink{simple__client_8c_62608e08adc29a8d6dbc9754e659f125}{client})
+\item 
+pthread\_\-t \hyperlink{jack_8h_4baa04edf189783b8b027195d628e7e1}{jack\_\-client\_\-thread\_\-id} (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)
+\item 
+void \hyperlink{jack_8h_e87f607dbfee42156a60a2443badc639}{jack\_\-set\_\-error\_\-function} (void($\ast$func)(const char $\ast$))
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+void($\ast$ \hyperlink{jack_8h_93769fdb4ab48baa1495ba5cd68776d9}{jack\_\-error\_\-callback} )(const char $\ast$msg)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{jack_8h_c7dc9d6132b8331ab500cdb593b8de11}{
+\index{jack.h@{jack.h}!jack_activate@{jack\_\-activate}}
+\index{jack_activate@{jack\_\-activate}!jack.h@{jack.h}}
+\subsubsection[jack\_\-activate]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-activate (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{jack_8h_c7dc9d6132b8331ab500cdb593b8de11}
+
+
+Tell the Jack server that the program is ready to start processing audio.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_61f9cf927395f5c9dd9f5e0732fc932e}{
+\index{jack.h@{jack.h}!jack_client_close@{jack\_\-client\_\-close}}
+\index{jack_client_close@{jack\_\-client\_\-close}!jack.h@{jack.h}}
+\subsubsection[jack\_\-client\_\-close]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-client\_\-close (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{jack_8h_61f9cf927395f5c9dd9f5e0732fc932e}
+
+
+Disconnects an external client from a JACK server.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_a52218c212c1a64bb9c5cfea01749ce9}{
+\index{jack.h@{jack.h}!jack_client_name_size@{jack\_\-client\_\-name\_\-size}}
+\index{jack_client_name_size@{jack\_\-client\_\-name\_\-size}!jack.h@{jack.h}}
+\subsubsection[jack\_\-client\_\-name\_\-size]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-client\_\-name\_\-size (void)}}
+\label{jack_8h_a52218c212c1a64bb9c5cfea01749ce9}
+
+
+\begin{Desc}
+\item[Returns:]the maximum number of characters in a JACK client name including the final NULL character. This value is a constant. \end{Desc}
+\hypertarget{jack_8h_eeecae94e45f9d7548853e66162133dd}{
+\index{jack.h@{jack.h}!jack_client_new@{jack\_\-client\_\-new}}
+\index{jack_client_new@{jack\_\-client\_\-new}!jack.h@{jack.h}}
+\subsubsection[jack\_\-client\_\-new]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t}$\ast$ jack\_\-client\_\-new (const char $\ast$ {\em client\_\-name})}}
+\label{jack_8h_eeecae94e45f9d7548853e66162133dd}
+
+
+Attempt to become an external client of the Jack server.
+
+JACK is evolving a mechanism for automatically starting the server when needed. As a transition, \hyperlink{jack_8h_eeecae94e45f9d7548853e66162133dd}{jack\_\-client\_\-new()} only does this when \$JACK\_\-START\_\-SERVER is defined in the environment of the calling process. In the future this will become normal behavior. For full control of this feature, use \hyperlink{jack_8h_60174a8321e2d9c4e7e444e779e78e6b}{jack\_\-client\_\-open()}, instead. In either case, defining \$JACK\_\-NO\_\-START\_\-SERVER disables this feature.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client\_\-name}]of at most \hyperlink{jack_8h_a52218c212c1a64bb9c5cfea01749ce9}{jack\_\-client\_\-name\_\-size()} characters. If this name is already in use, the request fails.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Opaque client handle if successful, otherwise NULL.\end{Desc}
+\begin{Desc}
+\item[Note:]Failure generally means that the JACK server is not running. If there was some other problem, it will be reported via the \hyperlink{jack_8h_93769fdb4ab48baa1495ba5cd68776d9}{jack\_\-error\_\-callback} mechanism. Use \hyperlink{jack_8h_60174a8321e2d9c4e7e444e779e78e6b}{jack\_\-client\_\-open()} and check the {\em status\/} parameter for more detailed information. \end{Desc}
+\hypertarget{jack_8h_60174a8321e2d9c4e7e444e779e78e6b}{
+\index{jack.h@{jack.h}!jack_client_open@{jack\_\-client\_\-open}}
+\index{jack_client_open@{jack\_\-client\_\-open}!jack.h@{jack.h}}
+\subsubsection[jack\_\-client\_\-open]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t}$\ast$ jack\_\-client\_\-open (const char $\ast$ {\em client\_\-name}, \hyperlink{types_8h_bfea9d8c60520b8962bfbff21ec9b324}{jack\_\-options\_\-t} {\em options}, \hyperlink{types_8h_b2c415ccde58eeccb2a74f25abf7e003}{jack\_\-status\_\-t} $\ast$ {\em status},  {\em ...})}}
+\label{jack_8h_60174a8321e2d9c4e7e444e779e78e6b}
+
+
+Open an external client session with a JACK server. This interface is more complex but more powerful than \hyperlink{jack_8h_eeecae94e45f9d7548853e66162133dd}{jack\_\-client\_\-new()}. With it, clients may choose which of several servers to connect, and control whether and how to start the server automatically, if it was not already running. There is also an option for JACK to generate a unique client name, when necessary.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client\_\-name}]of at most \hyperlink{jack_8h_a52218c212c1a64bb9c5cfea01749ce9}{jack\_\-client\_\-name\_\-size()} characters. The name scope is local to each server. Unless forbidden by the \hyperlink{types_8h_ef3dd2cdf802563454c817f0b7772085366dd9fdfc4bce02f158ef6d3a5c4807}{Jack\-Use\-Exact\-Name} option, the server will modify this name to create a unique variant, if needed.\item[{\em options}]formed by OR-ing together \hyperlink{types_8h_ef3dd2cdf802563454c817f0b7772085}{Jack\-Options} bits. Only the \hyperlink{types_8h_b46c35ce4c556ad26c9e8ee4fc3e70e6}{Jack\-Open\-Options} bits are allowed.\item[{\em status}](if non-NULL) an address for JACK to return information from the open operation. This status word is formed by OR-ing together the relevant \hyperlink{types_8h_77121460bd9f54fb3ac3525c3c76148e}{Jack\-Status} bits.\end{description}
+\end{Desc}
+{\bf Optional parameters:} depending on corresponding \mbox{[}{\em options\/} bits\mbox{]} additional parameters may follow {\em status\/} (in this order).
+
+\begin{itemize}
+\item \mbox{[}\hyperlink{types_8h_ef3dd2cdf802563454c817f0b7772085ff94dd4ecb97fa8802285a6b53c488d3}{Jack\-Server\-Name}\mbox{]} {\em (char $\ast$) server\_\-name\/} selects from among several possible concurrent server instances. Server names are unique to each user. If unspecified, use \char`\"{}default\char`\"{} unless \$JACK\_\-DEFAULT\_\-SERVER is defined in the process environment.\end{itemize}
+\begin{Desc}
+\item[Returns:]Opaque client handle if successful. If this is NULL, the open operation failed, {\em $\ast$status\/} includes \hyperlink{types_8h_77121460bd9f54fb3ac3525c3c76148ef10c22d5a067cbc568d942ff3f181587}{Jack\-Failure} and the caller is not a JACK client. \end{Desc}
+\hypertarget{jack_8h_4baa04edf189783b8b027195d628e7e1}{
+\index{jack.h@{jack.h}!jack_client_thread_id@{jack\_\-client\_\-thread\_\-id}}
+\index{jack_client_thread_id@{jack\_\-client\_\-thread\_\-id}!jack.h@{jack.h}}
+\subsubsection[jack\_\-client\_\-thread\_\-id]{\setlength{\rightskip}{0pt plus 5cm}pthread\_\-t jack\_\-client\_\-thread\_\-id (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)}}
+\label{jack_8h_4baa04edf189783b8b027195d628e7e1}
+
+
+\begin{Desc}
+\item[Returns:]the pthread ID of the thread running the JACK client side code. \end{Desc}
+\hypertarget{jack_8h_e3eb9baf8f23641b20b28ec306ea2a33}{
+\index{jack.h@{jack.h}!jack_connect@{jack\_\-connect}}
+\index{jack_connect@{jack\_\-connect}!jack.h@{jack.h}}
+\subsubsection[jack\_\-connect]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-connect (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const char $\ast$ {\em source\_\-port}, const char $\ast$ {\em destination\_\-port})}}
+\label{jack_8h_e3eb9baf8f23641b20b28ec306ea2a33}
+
+
+Establish a connection between two ports.
+
+When a connection exists, data written to the source port will be available to be read at the destination port.
+
+\begin{Desc}
+\item[Precondition:]The port types must be identical.
+
+The \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b9744}{Jack\-Port\-Flags} of the {\em source\_\-port\/} must include \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b9744ebee5c5154713c0f5257e5d7ac45ca3b}{Jack\-Port\-Is\-Output}.
+
+The \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b9744}{Jack\-Port\-Flags} of the {\em destination\_\-port\/} must include \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b97441d848ea4dc6d0b58dc8c8f874b243fd5}{Jack\-Port\-Is\-Input}.\end{Desc}
+\begin{Desc}
+\item[Returns:]0 on success, EEXIST if the connection is already made, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_cf39ae885313ebb542618c9822500795}{
+\index{jack.h@{jack.h}!jack_cpu_load@{jack\_\-cpu\_\-load}}
+\index{jack_cpu_load@{jack\_\-cpu\_\-load}!jack.h@{jack.h}}
+\subsubsection[jack\_\-cpu\_\-load]{\setlength{\rightskip}{0pt plus 5cm}float jack\_\-cpu\_\-load (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{jack_8h_cf39ae885313ebb542618c9822500795}
+
+
+\begin{Desc}
+\item[Returns:]the current CPU load estimated by JACK. This is a running average of the time it takes to execute a full process cycle for all clients as a percentage of the real time available per cycle determined by the buffer size and sample rate. \end{Desc}
+\hypertarget{jack_8h_b594ce1ce2ab099bb545c234f382b219}{
+\index{jack.h@{jack.h}!jack_deactivate@{jack\_\-deactivate}}
+\index{jack_deactivate@{jack\_\-deactivate}!jack.h@{jack.h}}
+\subsubsection[jack\_\-deactivate]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-deactivate (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{jack_8h_b594ce1ce2ab099bb545c234f382b219}
+
+
+Tell the Jack server to remove this {\em client\/} from the process graph. Also, disconnect all ports belonging to it, since inactive clients have no port connections.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_b3ecaf260eebee0c6f9a2c246b2457c7}{
+\index{jack.h@{jack.h}!jack_disconnect@{jack\_\-disconnect}}
+\index{jack_disconnect@{jack\_\-disconnect}!jack.h@{jack.h}}
+\subsubsection[jack\_\-disconnect]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-disconnect (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const char $\ast$ {\em source\_\-port}, const char $\ast$ {\em destination\_\-port})}}
+\label{jack_8h_b3ecaf260eebee0c6f9a2c246b2457c7}
+
+
+Remove a connection between two ports.
+
+\begin{Desc}
+\item[Precondition:]The port types must be identical.
+
+The \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b9744}{Jack\-Port\-Flags} of the {\em source\_\-port\/} must include \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b9744ebee5c5154713c0f5257e5d7ac45ca3b}{Jack\-Port\-Is\-Output}.
+
+The \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b9744}{Jack\-Port\-Flags} of the {\em destination\_\-port\/} must include \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b97441d848ea4dc6d0b58dc8c8f874b243fd5}{Jack\-Port\-Is\-Input}.\end{Desc}
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_fe90d892429267872e213823cbed0d84}{
+\index{jack.h@{jack.h}!jack_engine_takeover_timebase@{jack\_\-engine\_\-takeover\_\-timebase}}
+\index{jack_engine_takeover_timebase@{jack\_\-engine\_\-takeover\_\-timebase}!jack.h@{jack.h}}
+\subsubsection[jack\_\-engine\_\-takeover\_\-timebase]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-engine\_\-takeover\_\-timebase (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)}}
+\label{jack_8h_fe90d892429267872e213823cbed0d84}
+
+
+Old-style interface to become the timebase for the entire JACK subsystem.
+
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000003}{Deprecated}]This function still exists for compatibility with the earlier transport interface, but it does nothing. Instead, see \hyperlink{transport_8h}{transport.h} and use \hyperlink{transport_8h_d1d237a74417e8b4a4bc7894afefc1cb}{jack\_\-set\_\-timebase\_\-callback()}.\end{Desc}
+\begin{Desc}
+\item[Returns:]ENOSYS, function not implemented. \end{Desc}
+\hypertarget{jack_8h_60e6392e63960d400c2ca62bb601b16e}{
+\index{jack.h@{jack.h}!jack_frame_time@{jack\_\-frame\_\-time}}
+\index{jack_frame_time@{jack\_\-frame\_\-time}!jack.h@{jack.h}}
+\subsubsection[jack\_\-frame\_\-time]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} jack\_\-frame\_\-time (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)}}
+\label{jack_8h_60e6392e63960d400c2ca62bb601b16e}
+
+
+\begin{Desc}
+\item[Returns:]an estimate of the current time in frames. This is a running counter, no significance should be attached to its value, but it can be compared to a previously returned value. \end{Desc}
+\hypertarget{jack_8h_90f456356c0005a9e3a5bd860c2f174e}{
+\index{jack.h@{jack.h}!jack_frames_since_cycle_start@{jack\_\-frames\_\-since\_\-cycle\_\-start}}
+\index{jack_frames_since_cycle_start@{jack\_\-frames\_\-since\_\-cycle\_\-start}!jack.h@{jack.h}}
+\subsubsection[jack\_\-frames\_\-since\_\-cycle\_\-start]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} jack\_\-frames\_\-since\_\-cycle\_\-start (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)}}
+\label{jack_8h_90f456356c0005a9e3a5bd860c2f174e}
+
+
+\begin{Desc}
+\item[Returns:]the time in frames that has passed since the JACK server began the current process cycle. \end{Desc}
+\hypertarget{jack_8h_2bc7521ab43763fdbc95fe242a94639d}{
+\index{jack.h@{jack.h}!jack_get_buffer_size@{jack\_\-get\_\-buffer\_\-size}}
+\index{jack_get_buffer_size@{jack\_\-get\_\-buffer\_\-size}!jack.h@{jack.h}}
+\subsubsection[jack\_\-get\_\-buffer\_\-size]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} jack\_\-get\_\-buffer\_\-size (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)}}
+\label{jack_8h_2bc7521ab43763fdbc95fe242a94639d}
+
+
+\begin{Desc}
+\item[Returns:]the current maximum size that will ever be passed to the {\em process\_\-callback\/}. It should only be used $\ast$before$\ast$ the client has been activated. This size may change, clients that depend on it must register a {\em bufsize\_\-callback\/} so they will be notified if it does.\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_dabe854313f1bfc17a01994d42ddec8d}{jack\_\-set\_\-buffer\_\-size\_\-callback()} \end{Desc}
+\hypertarget{jack_8h_82faa1fa5a0d09ed8161e74e2370a04f}{
+\index{jack.h@{jack.h}!jack_get_client_name@{jack\_\-get\_\-client\_\-name}}
+\index{jack_get_client_name@{jack\_\-get\_\-client\_\-name}!jack.h@{jack.h}}
+\subsubsection[jack\_\-get\_\-client\_\-name]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ jack\_\-get\_\-client\_\-name (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{jack_8h_82faa1fa5a0d09ed8161e74e2370a04f}
+
+
+\begin{Desc}
+\item[Returns:]pointer to actual client name. This is useful when \hyperlink{types_8h_ef3dd2cdf802563454c817f0b7772085366dd9fdfc4bce02f158ef6d3a5c4807}{Jack\-Use\-Exact\-Name} is not specified on open and \hyperlink{types_8h_77121460bd9f54fb3ac3525c3c76148e4b3acf57d2db65ea9cf56005e51f717b}{Jack\-Name\-Not\-Unique} status was returned. In that case, the actual name will differ from the {\em client\_\-name\/} requested. \end{Desc}
+\hypertarget{jack_8h_50ca36d27062fa58ab29c67e9e06d774}{
+\index{jack.h@{jack.h}!jack_get_ports@{jack\_\-get\_\-ports}}
+\index{jack_get_ports@{jack\_\-get\_\-ports}!jack.h@{jack.h}}
+\subsubsection[jack\_\-get\_\-ports]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ jack\_\-get\_\-ports (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const char $\ast$ {\em port\_\-name\_\-pattern}, const char $\ast$ {\em type\_\-name\_\-pattern}, unsigned long {\em flags})}}
+\label{jack_8h_50ca36d27062fa58ab29c67e9e06d774}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em port\_\-name\_\-pattern}]A regular expression used to select ports by name. If NULL or of zero length, no selection based on name will be carried out. \item[{\em type\_\-name\_\-pattern}]A regular expression used to select ports by type. If NULL or of zero length, no selection based on type will be carried out. \item[{\em flags}]A value used to select ports by their flags. If zero, no selection based on flags will be carried out.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]a NULL-terminated array of ports that match the specified arguments. The caller is responsible for calling free(3) any non-NULL returned value.\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()}, \hyperlink{jack_8h_64285588c322d9d229d2297a8f5fde7f}{jack\_\-port\_\-type\_\-size()} \end{Desc}
+\hypertarget{jack_8h_0402a9ae57b052cd8b0084f5d41eace5}{
+\index{jack.h@{jack.h}!jack_get_sample_rate@{jack\_\-get\_\-sample\_\-rate}}
+\index{jack_get_sample_rate@{jack\_\-get\_\-sample\_\-rate}!jack.h@{jack.h}}
+\subsubsection[jack\_\-get\_\-sample\_\-rate]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} jack\_\-get\_\-sample\_\-rate (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)}}
+\label{jack_8h_0402a9ae57b052cd8b0084f5d41eace5}
+
+
+\begin{Desc}
+\item[Returns:]the sample rate of the jack system, as set by the user when jackd was started. \end{Desc}
+\hypertarget{jack_8h_013232493892e3a0eaf5f2498388118c}{
+\index{jack.h@{jack.h}!jack_internal_client_close@{jack\_\-internal\_\-client\_\-close}}
+\index{jack_internal_client_close@{jack\_\-internal\_\-client\_\-close}!jack.h@{jack.h}}
+\subsubsection[jack\_\-internal\_\-client\_\-close]{\setlength{\rightskip}{0pt plus 5cm}void jack\_\-internal\_\-client\_\-close (const char $\ast$ {\em client\_\-name})}}
+\label{jack_8h_013232493892e3a0eaf5f2498388118c}
+
+
+Remove an internal client from a JACK server.
+
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000002}{Deprecated}]Please use \hyperlink{intclient_8h_03ffbdaae16521490f39230acbaf65c0}{jack\_\-internal\_\-client\_\-load()}. \end{Desc}
+\hypertarget{jack_8h_1baf4fbdc7de21679a2f26931cba2e86}{
+\index{jack.h@{jack.h}!jack_internal_client_new@{jack\_\-internal\_\-client\_\-new}}
+\index{jack_internal_client_new@{jack\_\-internal\_\-client\_\-new}!jack.h@{jack.h}}
+\subsubsection[jack\_\-internal\_\-client\_\-new]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-internal\_\-client\_\-new (const char $\ast$ {\em client\_\-name}, const char $\ast$ {\em load\_\-name}, const char $\ast$ {\em load\_\-init})}}
+\label{jack_8h_1baf4fbdc7de21679a2f26931cba2e86}
+
+
+Load an internal client into the Jack server.
+
+Internal clients run inside the JACK server process. They can use most of the same functions as external clients. Each internal client must declare \hyperlink{inprocess_8c_89b5a6403e3862e0c9e4fa83c5c6c914}{jack\_\-initialize()} and \hyperlink{inprocess_8c_f3db3e200607bd673b8dd39c8a4111a9}{jack\_\-finish()} entry points, called at load and unload times. See \hyperlink{inprocess_8c}{inprocess.c} for an example of how to write an internal client.
+
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]Please use \hyperlink{intclient_8h_03ffbdaae16521490f39230acbaf65c0}{jack\_\-internal\_\-client\_\-load()}.\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client\_\-name}]of at most \hyperlink{jack_8h_a52218c212c1a64bb9c5cfea01749ce9}{jack\_\-client\_\-name\_\-size()} characters.\item[{\em load\_\-name}]of a shared object file containing the code for the new client.\item[{\em load\_\-init}]an arbitary string passed to the \hyperlink{inprocess_8c_89b5a6403e3862e0c9e4fa83c5c6c914}{jack\_\-initialize()} routine of the new client (may be NULL).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if successful. \end{Desc}
+\hypertarget{jack_8h_ea7797d9dff1521cd1529234e3014f4c}{
+\index{jack.h@{jack.h}!jack_is_realtime@{jack\_\-is\_\-realtime}}
+\index{jack_is_realtime@{jack\_\-is\_\-realtime}!jack.h@{jack.h}}
+\subsubsection[jack\_\-is\_\-realtime]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-is\_\-realtime (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{jack_8h_ea7797d9dff1521cd1529234e3014f4c}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]pointer to JACK client structure.\end{description}
+\end{Desc}
+Check if the JACK subsystem is running with -R (--realtime).
+
+\begin{Desc}
+\item[Returns:]1 if JACK is running realtime, 0 otherwise \end{Desc}
+\hypertarget{jack_8h_5961158bc7f319d8352f5f31b68565f7}{
+\index{jack.h@{jack.h}!jack_last_frame_time@{jack\_\-last\_\-frame\_\-time}}
+\index{jack_last_frame_time@{jack\_\-last\_\-frame\_\-time}!jack.h@{jack.h}}
+\subsubsection[jack\_\-last\_\-frame\_\-time]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} jack\_\-last\_\-frame\_\-time (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client})}}
+\label{jack_8h_5961158bc7f319d8352f5f31b68565f7}
+
+
+\begin{Desc}
+\item[Returns:]the frame\_\-time after the last processing of the graph this is only to be used from the process callback.\end{Desc}
+This function can be used to put timestamps generated by \hyperlink{jack_8h_60e6392e63960d400c2ca62bb601b16e}{jack\_\-frame\_\-time()} in correlation to the current process cycle. \hypertarget{jack_8h_b4326381866be0c32b1330b967707eae}{
+\index{jack.h@{jack.h}!jack_on_shutdown@{jack\_\-on\_\-shutdown}}
+\index{jack_on_shutdown@{jack\_\-on\_\-shutdown}!jack.h@{jack.h}}
+\subsubsection[jack\_\-on\_\-shutdown]{\setlength{\rightskip}{0pt plus 5cm}void jack\_\-on\_\-shutdown (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, void($\ast$)(void $\ast$arg) {\em function}, void $\ast$ {\em arg})}}
+\label{jack_8h_b4326381866be0c32b1330b967707eae}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]pointer to JACK client structure. \item[{\em function}]The jack\_\-shutdown function pointer. \item[{\em arg}]The arguments for the jack\_\-shutdown function.\end{description}
+\end{Desc}
+Register a function (and argument) to be called if and when the JACK server shuts down the client thread. The function must be written as if it were an asynchonrous POSIX signal handler --- use only async-safe functions, and remember that it is executed from another thread. A typical function might set a flag or write to a pipe so that the rest of the application knows that the JACK client thread has shut down.
+
+NOTE: clients do not need to call this. It exists only to help more complex clients understand what is going on. It should be called before jack\_\-client\_\-activate(). \hypertarget{jack_8h_4d44cd2c8bb5cd7485baba5c9424e976}{
+\index{jack.h@{jack.h}!jack_port_by_id@{jack\_\-port\_\-by\_\-id}}
+\index{jack_port_by_id@{jack\_\-port\_\-by\_\-id}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-by\_\-id]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t}$\ast$ jack\_\-port\_\-by\_\-id (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{types_8h_638b3ebbced47d1cb913f4b522699401}{jack\_\-port\_\-id\_\-t} {\em port\_\-id})}}
+\label{jack_8h_4d44cd2c8bb5cd7485baba5c9424e976}
+
+
+\begin{Desc}
+\item[Returns:]address of the jack\_\-port\_\-t of a {\em port\_\-id\/}. \end{Desc}
+\hypertarget{jack_8h_a1a161f1d14846284475a106ea836d06}{
+\index{jack.h@{jack.h}!jack_port_by_name@{jack\_\-port\_\-by\_\-name}}
+\index{jack_port_by_name@{jack\_\-port\_\-by\_\-name}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-by\_\-name]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t}$\ast$ jack\_\-port\_\-by\_\-name (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const char $\ast$ {\em port\_\-name})}}
+\label{jack_8h_a1a161f1d14846284475a106ea836d06}
+
+
+\begin{Desc}
+\item[Returns:]address of the jack\_\-port\_\-t named {\em port\_\-name\/}.\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()} \end{Desc}
+\hypertarget{jack_8h_140ea2a1e1fa401e26d90c9fc68dea00}{
+\index{jack.h@{jack.h}!jack_port_connected@{jack\_\-port\_\-connected}}
+\index{jack_port_connected@{jack\_\-port\_\-connected}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-connected]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-connected (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_140ea2a1e1fa401e26d90c9fc68dea00}
+
+
+\begin{Desc}
+\item[Returns:]number of connections to or from {\em port\/}.\end{Desc}
+\begin{Desc}
+\item[Precondition:]The calling client must own {\em port\/}. \end{Desc}
+\hypertarget{jack_8h_d206d5aef0fc3af55001ac159f0c29d0}{
+\index{jack.h@{jack.h}!jack_port_connected_to@{jack\_\-port\_\-connected\_\-to}}
+\index{jack_port_connected_to@{jack\_\-port\_\-connected\_\-to}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-connected\_\-to]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-connected\_\-to (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port}, const char $\ast$ {\em port\_\-name})}}
+\label{jack_8h_d206d5aef0fc3af55001ac159f0c29d0}
+
+
+\begin{Desc}
+\item[Returns:]TRUE if the locally-owned {\em port\/} is {\bf directly} connected to the {\em port\_\-name\/}.\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()} \end{Desc}
+\hypertarget{jack_8h_9c790701baea809c7d495771c0b49eda}{
+\index{jack.h@{jack.h}!jack_port_disconnect@{jack\_\-port\_\-disconnect}}
+\index{jack_port_disconnect@{jack\_\-port\_\-disconnect}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-disconnect]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-disconnect (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$)}}
+\label{jack_8h_9c790701baea809c7d495771c0b49eda}
+
+
+Perform the same function as \hyperlink{jack_8h_b3ecaf260eebee0c6f9a2c246b2457c7}{jack\_\-disconnect()} using port handles rather than names. This avoids the name lookup inherent in the name-based version.
+
+Clients connecting their own ports are likely to use this function, while generic connection clients (e.g. patchbays) would use \hyperlink{jack_8h_b3ecaf260eebee0c6f9a2c246b2457c7}{jack\_\-disconnect()}. \hypertarget{jack_8h_279fe3268a34bda786a88703e2b2bf8a}{
+\index{jack.h@{jack.h}!jack_port_ensure_monitor@{jack\_\-port\_\-ensure\_\-monitor}}
+\index{jack_port_ensure_monitor@{jack\_\-port\_\-ensure\_\-monitor}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-ensure\_\-monitor]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-ensure\_\-monitor (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port}, int {\em onoff})}}
+\label{jack_8h_279fe3268a34bda786a88703e2b2bf8a}
+
+
+If \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b974438c12a9ceb2654edb1a1e169938031a9}{Jack\-Port\-Can\-Monitor} is set for a port, this function turns on input monitoring if it was off, and turns it off if only one request has been made to turn it on. Otherwise it does nothing.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_7377b80a581e4bcfddaa47f2c1727d08}{
+\index{jack.h@{jack.h}!jack_port_flags@{jack\_\-port\_\-flags}}
+\index{jack_port_flags@{jack\_\-port\_\-flags}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-flags]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-flags (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_7377b80a581e4bcfddaa47f2c1727d08}
+
+
+\begin{Desc}
+\item[Returns:]the \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b9744}{Jack\-Port\-Flags} of the jack\_\-port\_\-t. \end{Desc}
+\hypertarget{jack_8h_3c1f84f423f73617e82343b86b8c70df}{
+\index{jack.h@{jack.h}!jack_port_get_all_connections@{jack\_\-port\_\-get\_\-all\_\-connections}}
+\index{jack_port_get_all_connections@{jack\_\-port\_\-get\_\-all\_\-connections}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-get\_\-all\_\-connections]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ jack\_\-port\_\-get\_\-all\_\-connections (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_3c1f84f423f73617e82343b86b8c70df}
+
+
+\begin{Desc}
+\item[Returns:]a null-terminated array of full port names to which the {\em port\/} is connected. If none, returns NULL.\end{Desc}
+The caller is responsible for calling free(3) on any non-NULL returned value.
+
+This differs from \hyperlink{jack_8h_decee03eb47d6634f550f48b86f97d3e}{jack\_\-port\_\-get\_\-connections()} in two important respects:
+
+1) You may not call this function from code that is executed in response to a JACK event. For example, you cannot use it in a Graph\-Reordered handler.
+
+2) You need not be the owner of the port to get information about its connections.
+
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()} \end{Desc}
+\hypertarget{jack_8h_b7500f56800cb2a2ac1543f7da910041}{
+\index{jack.h@{jack.h}!jack_port_get_buffer@{jack\_\-port\_\-get\_\-buffer}}
+\index{jack_port_get_buffer@{jack\_\-port\_\-get\_\-buffer}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-get\_\-buffer]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ jack\_\-port\_\-get\_\-buffer (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t})}}
+\label{jack_8h_b7500f56800cb2a2ac1543f7da910041}
+
+
+This returns a pointer to the memory area associated with the specified port. For an output port, it will be a memory area that can be written to; for an input port, it will be an area containing the data from the port's connection(s), or zero-filled. if there are multiple inbound connections, the data will be mixed appropriately.
+
+FOR OUTPUT PORTS ONLY --------------------- You may cache the value returned, but only between calls to your \char`\"{}blocksize\char`\"{} callback. For this reason alone, you should either never cache the return value or ensure you have a \char`\"{}blocksize\char`\"{} callback and be sure to invalidate the cached address from there. \hypertarget{jack_8h_decee03eb47d6634f550f48b86f97d3e}{
+\index{jack.h@{jack.h}!jack_port_get_connections@{jack\_\-port\_\-get\_\-connections}}
+\index{jack_port_get_connections@{jack\_\-port\_\-get\_\-connections}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-get\_\-connections]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ jack\_\-port\_\-get\_\-connections (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_decee03eb47d6634f550f48b86f97d3e}
+
+
+\begin{Desc}
+\item[Returns:]a null-terminated array of full port names to which the {\em port\/} is connected. If none, returns NULL.\end{Desc}
+The caller is responsible for calling free(3) on any non-NULL returned value.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em port}]locally owned jack\_\-port\_\-t pointer.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()}, \hyperlink{jack_8h_3c1f84f423f73617e82343b86b8c70df}{jack\_\-port\_\-get\_\-all\_\-connections()} \end{Desc}
+\hypertarget{jack_8h_a2d99af288cc43d5898f216b4b9e0a3e}{
+\index{jack.h@{jack.h}!jack_port_get_latency@{jack\_\-port\_\-get\_\-latency}}
+\index{jack_port_get_latency@{jack\_\-port\_\-get\_\-latency}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-get\_\-latency]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} jack\_\-port\_\-get\_\-latency (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_a2d99af288cc43d5898f216b4b9e0a3e}
+
+
+\begin{Desc}
+\item[Returns:]the time (in frames) between data being available or delivered at/to a port, and the time at which it arrived at or is delivered to the \char`\"{}other side\char`\"{} of the port. E.g. for a physical audio output port, this is the time between writing to the port and when the signal will leave the connector. For a physical audio input port, this is the time between the sound arriving at the connector and the corresponding frames being readable from the port. \end{Desc}
+\hypertarget{jack_8h_5197d7f9bee5df9a7704da997824c62c}{
+\index{jack.h@{jack.h}!jack_port_get_total_latency@{jack\_\-port\_\-get\_\-total\_\-latency}}
+\index{jack_port_get_total_latency@{jack\_\-port\_\-get\_\-total\_\-latency}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-get\_\-total\_\-latency]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} jack\_\-port\_\-get\_\-total\_\-latency (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_5197d7f9bee5df9a7704da997824c62c}
+
+
+The maximum of the sum of the latencies in every connection path that can be drawn between the port and other ports with the \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b97444acc7e43759142b42084e9817ff5c86a}{Jack\-Port\-Is\-Terminal} flag set. \hypertarget{jack_8h_183e6ac3add0d341d0cab33b28048ee8}{
+\index{jack.h@{jack.h}!jack_port_is_mine@{jack\_\-port\_\-is\_\-mine}}
+\index{jack_port_is_mine@{jack\_\-port\_\-is\_\-mine}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-is\_\-mine]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-is\_\-mine (const \hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_183e6ac3add0d341d0cab33b28048ee8}
+
+
+\begin{Desc}
+\item[Returns:]TRUE if the jack\_\-port\_\-t belongs to the jack\_\-client\_\-t. \end{Desc}
+\hypertarget{jack_8h_6ad255a5269f00e1988d50888de28ba6}{
+\index{jack.h@{jack.h}!jack_port_lock@{jack\_\-port\_\-lock}}
+\index{jack_port_lock@{jack\_\-port\_\-lock}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-lock]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-lock (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$)}}
+\label{jack_8h_6ad255a5269f00e1988d50888de28ba6}
+
+
+A client may call this function to prevent other objects from changing the connection status of a port. The port must be owned by the calling client.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_e7b0caaeead93983b36783c921b2da79}{
+\index{jack.h@{jack.h}!jack_port_monitoring_input@{jack\_\-port\_\-monitoring\_\-input}}
+\index{jack_port_monitoring_input@{jack\_\-port\_\-monitoring\_\-input}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-monitoring\_\-input]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-monitoring\_\-input (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_e7b0caaeead93983b36783c921b2da79}
+
+
+\begin{Desc}
+\item[Returns:]TRUE if input monitoring has been requested for {\em port\/}. \end{Desc}
+\hypertarget{jack_8h_da70adee4d6855e75a3021dc9fb1ea6c}{
+\index{jack.h@{jack.h}!jack_port_name@{jack\_\-port\_\-name}}
+\index{jack_port_name@{jack\_\-port\_\-name}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-name]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ jack\_\-port\_\-name (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_da70adee4d6855e75a3021dc9fb1ea6c}
+
+
+\begin{Desc}
+\item[Returns:]the full name of the jack\_\-port\_\-t (including the {\em \char`\"{}client\_\-name:\char`\"{}\/} prefix).\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()}. \end{Desc}
+\hypertarget{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{
+\index{jack.h@{jack.h}!jack_port_name_size@{jack\_\-port\_\-name\_\-size}}
+\index{jack_port_name_size@{jack\_\-port\_\-name\_\-size}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-name\_\-size]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-name\_\-size (void)}}
+\label{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}
+
+
+\begin{Desc}
+\item[Returns:]the maximum number of characters in a full JACK port name including the final NULL character. This value is a constant.\end{Desc}
+A port's full name contains the owning client name concatenated with a colon (:) followed by its short name and a NULL character. \hypertarget{jack_8h_7b92816a9bfcfdcaefefd196a1945bea}{
+\index{jack.h@{jack.h}!jack_port_register@{jack\_\-port\_\-register}}
+\index{jack_port_register@{jack\_\-port\_\-register}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-register]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t}$\ast$ jack\_\-port\_\-register (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, const char $\ast$ {\em port\_\-name}, const char $\ast$ {\em port\_\-type}, unsigned long {\em flags}, unsigned long {\em buffer\_\-size})}}
+\label{jack_8h_7b92816a9bfcfdcaefefd196a1945bea}
+
+
+Create a new port for the client. This is an object used for moving data of any type in or out of the client. Ports may be connected in various ways.
+
+Each port has a short name. The port's full name contains the name of the client concatenated with a colon (:) followed by its short name. The \hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()} is the maximum length of this full name. Exceeding that will cause the port registration to fail and return NULL.
+
+All ports have a type, which may be any non-NULL and non-zero length string, passed as an argument. Some port types are built into the JACK API, currently only JACK\_\-DEFAULT\_\-AUDIO\_\-TYPE.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]pointer to JACK client structure. \item[{\em port\_\-name}]non-empty short name for the new port (not including the leading {\em \char`\"{}client\_\-name:\char`\"{}\/}). \item[{\em port\_\-type}]port type name. If longer than \hyperlink{jack_8h_64285588c322d9d229d2297a8f5fde7f}{jack\_\-port\_\-type\_\-size()}, only that many characters are significant. \item[{\em flags}]\hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b9744}{Jack\-Port\-Flags} bit mask. \item[{\em buffer\_\-size}]must be non-zero if this is not a built-in {\em port\_\-type\/}. Otherwise, it is ignored.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]jack\_\-port\_\-t pointer on success, otherwise NULL. \end{Desc}
+\hypertarget{jack_8h_dc11de9343cd67aa82633a26b7acb0d2}{
+\index{jack.h@{jack.h}!jack_port_request_monitor@{jack\_\-port\_\-request\_\-monitor}}
+\index{jack_port_request_monitor@{jack\_\-port\_\-request\_\-monitor}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-request\_\-monitor]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-request\_\-monitor (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port}, int {\em onoff})}}
+\label{jack_8h_dc11de9343cd67aa82633a26b7acb0d2}
+
+
+If \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b974438c12a9ceb2654edb1a1e169938031a9}{Jack\-Port\-Can\-Monitor} is set for this {\em port\/}, turn input monitoring on or off. Otherwise, do nothing. \hypertarget{jack_8h_2459b65588daa2150c3ccca7da4e941e}{
+\index{jack.h@{jack.h}!jack_port_request_monitor_by_name@{jack\_\-port\_\-request\_\-monitor\_\-by\_\-name}}
+\index{jack_port_request_monitor_by_name@{jack\_\-port\_\-request\_\-monitor\_\-by\_\-name}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-request\_\-monitor\_\-by\_\-name]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-request\_\-monitor\_\-by\_\-name (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, const char $\ast$ {\em port\_\-name}, int {\em onoff})}}
+\label{jack_8h_2459b65588daa2150c3ccca7da4e941e}
+
+
+If \hyperlink{types_8h_edaf361ba41ec2f8ac6e272daf4b974438c12a9ceb2654edb1a1e169938031a9}{Jack\-Port\-Can\-Monitor} is set for this {\em port\_\-name\/}, turn input monitoring on or off. Otherwise, do nothing.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code.\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()} \end{Desc}
+\hypertarget{jack_8h_5fb0404d95c4c2e94eb99e09bea56291}{
+\index{jack.h@{jack.h}!jack_port_set_latency@{jack\_\-port\_\-set\_\-latency}}
+\index{jack_port_set_latency@{jack\_\-port\_\-set\_\-latency}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-set\_\-latency]{\setlength{\rightskip}{0pt plus 5cm}void jack\_\-port\_\-set\_\-latency (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t})}}
+\label{jack_8h_5fb0404d95c4c2e94eb99e09bea56291}
+
+
+The port latency is zero by default. Clients that control physical hardware with non-zero latency should call this to set the latency to its correct value. Note that the value should include any systemic latency present \char`\"{}outside\char`\"{} the physical hardware controlled by the client. For example, for a client controlling a digital audio interface connected to an external digital converter, the latency setting should include both buffering by the audio interface $\ast$and$\ast$ the converter. \hypertarget{jack_8h_780107fbb89102d78e67c87f01fa71bd}{
+\index{jack.h@{jack.h}!jack_port_set_name@{jack\_\-port\_\-set\_\-name}}
+\index{jack_port_set_name@{jack\_\-port\_\-set\_\-name}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-set\_\-name]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-set\_\-name (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port}, const char $\ast$ {\em port\_\-name})}}
+\label{jack_8h_780107fbb89102d78e67c87f01fa71bd}
+
+
+Modify a port's short name. May be called at any time. If the resulting full name (including the {\em \char`\"{}client\_\-name:\char`\"{}\/} prefix) is longer than \hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()}, it will be truncated.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code. \end{Desc}
+\hypertarget{jack_8h_0a25230cc4fc0d0a8cbbe322790f4c9a}{
+\index{jack.h@{jack.h}!jack_port_short_name@{jack\_\-port\_\-short\_\-name}}
+\index{jack_port_short_name@{jack\_\-port\_\-short\_\-name}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-short\_\-name]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ jack\_\-port\_\-short\_\-name (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_0a25230cc4fc0d0a8cbbe322790f4c9a}
+
+
+\begin{Desc}
+\item[Returns:]the short name of the jack\_\-port\_\-t (not including the {\em \char`\"{}client\_\-name:\char`\"{}\/} prefix).\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_221b802a7fc0dacd3f30e1d725c734c3}{jack\_\-port\_\-name\_\-size()}. \end{Desc}
+\hypertarget{jack_8h_0254eaeb81b4cb0b5b154c4d943b61ad}{
+\index{jack.h@{jack.h}!jack_port_tie@{jack\_\-port\_\-tie}}
+\index{jack_port_tie@{jack\_\-port\_\-tie}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-tie]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-tie (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em src}, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em dst})}}
+\label{jack_8h_0254eaeb81b4cb0b5b154c4d943b61ad}
+
+
+A client may call this on a pair of its own ports to semi-permanently wire them together. This means that a client that wants to direct-wire an input port to an output port can call this and then no longer have to worry about moving data between them. Any data arriving at the input port will appear automatically at the output port.
+
+The 'destination' port must be an output port. The 'source' port must be an input port. Both ports must belong to the same client. You cannot use this to tie ports between clients. That is what a connection is for.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_8ce090eed8b36f92a3d81c239e6e4a6d}{
+\index{jack.h@{jack.h}!jack_port_type@{jack\_\-port\_\-type}}
+\index{jack_port_type@{jack\_\-port\_\-type}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-type]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ jack\_\-port\_\-type (const \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_8ce090eed8b36f92a3d81c239e6e4a6d}
+
+
+\begin{Desc}
+\item[Returns:]the {\em port\/} type, at most \hyperlink{jack_8h_64285588c322d9d229d2297a8f5fde7f}{jack\_\-port\_\-type\_\-size()} characters including a final NULL. \end{Desc}
+\hypertarget{jack_8h_64285588c322d9d229d2297a8f5fde7f}{
+\index{jack.h@{jack.h}!jack_port_type_size@{jack\_\-port\_\-type\_\-size}}
+\index{jack_port_type_size@{jack\_\-port\_\-type\_\-size}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-type\_\-size]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-type\_\-size (void)}}
+\label{jack_8h_64285588c322d9d229d2297a8f5fde7f}
+
+
+\begin{Desc}
+\item[Returns:]the maximum number of characters in a JACK port type name including the final NULL character. This value is a constant. \end{Desc}
+\hypertarget{jack_8h_93f7218108b53dbaf99a22130c7b2016}{
+\index{jack.h@{jack.h}!jack_port_unlock@{jack\_\-port\_\-unlock}}
+\index{jack_port_unlock@{jack\_\-port\_\-unlock}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-unlock]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-unlock (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$)}}
+\label{jack_8h_93f7218108b53dbaf99a22130c7b2016}
+
+
+This allows other objects to change the connection status of a port.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_4541729833c01ff421c99505dc2d3b28}{
+\index{jack.h@{jack.h}!jack_port_unregister@{jack\_\-port\_\-unregister}}
+\index{jack_port_unregister@{jack\_\-port\_\-unregister}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-unregister]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-unregister (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$)}}
+\label{jack_8h_4541729833c01ff421c99505dc2d3b28}
+
+
+Remove the port from the client, disconnecting any existing connections.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_c5a6287b0a6537488d4b875f3b5872d1}{
+\index{jack.h@{jack.h}!jack_port_untie@{jack\_\-port\_\-untie}}
+\index{jack_port_untie@{jack\_\-port\_\-untie}!jack.h@{jack.h}}
+\subsubsection[jack\_\-port\_\-untie]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-port\_\-untie (\hyperlink{types_8h_fcd71bfba86b3023634d3bb97a454648}{jack\_\-port\_\-t} $\ast$ {\em port})}}
+\label{jack_8h_c5a6287b0a6537488d4b875f3b5872d1}
+
+
+This undoes the effect of \hyperlink{jack_8h_0254eaeb81b4cb0b5b154c4d943b61ad}{jack\_\-port\_\-tie()}. The port should be same as the 'destination' port passed to \hyperlink{jack_8h_0254eaeb81b4cb0b5b154c4d943b61ad}{jack\_\-port\_\-tie()}.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_e16e0178739ae0fb41cf966c1a682eaa}{
+\index{jack.h@{jack.h}!jack_recompute_total_latencies@{jack\_\-recompute\_\-total\_\-latencies}}
+\index{jack_recompute_total_latencies@{jack\_\-recompute\_\-total\_\-latencies}!jack.h@{jack.h}}
+\subsubsection[jack\_\-recompute\_\-total\_\-latencies]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-recompute\_\-total\_\-latencies (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$)}}
+\label{jack_8h_e16e0178739ae0fb41cf966c1a682eaa}
+
+
+\hypertarget{jack_8h_e46e3c197bc19e9aabe99085c35acc9c}{
+\index{jack.h@{jack.h}!jack_set_buffer_size@{jack\_\-set\_\-buffer\_\-size}}
+\index{jack_set_buffer_size@{jack\_\-set\_\-buffer\_\-size}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-buffer\_\-size]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-buffer\_\-size (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{types_8h_fe9972a13782c1e282747fdb4bc46f9c}{jack\_\-nframes\_\-t} {\em nframes})}}
+\label{jack_8h_e46e3c197bc19e9aabe99085c35acc9c}
+
+
+Change the buffer size passed to the {\em process\_\-callback\/}.
+
+This operation stops the JACK engine process cycle, then calls all registered {\em bufsize\_\-callback\/} functions before restarting the process cycle. This will cause a gap in the audio flow, so it should only be done at appropriate stopping points.
+
+\begin{Desc}
+\item[See also:]\hyperlink{jack_8h_dabe854313f1bfc17a01994d42ddec8d}{jack\_\-set\_\-buffer\_\-size\_\-callback()}\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]pointer to JACK client structure. \item[{\em nframes}]new buffer size. Must be a power of two.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_dabe854313f1bfc17a01994d42ddec8d}{
+\index{jack.h@{jack.h}!jack_set_buffer_size_callback@{jack\_\-set\_\-buffer\_\-size\_\-callback}}
+\index{jack_set_buffer_size_callback@{jack\_\-set\_\-buffer\_\-size\_\-callback}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-buffer\_\-size\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-buffer\_\-size\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{types_8h_f1c94e59c710631aa33a2dee86cd5cef}{Jack\-Buffer\-Size\-Callback} {\em bufsize\_\-callback}, void $\ast$ {\em arg})}}
+\label{jack_8h_dabe854313f1bfc17a01994d42ddec8d}
+
+
+Tell JACK to call {\em bufsize\_\-callback\/} whenever the size of the the buffer that will be passed to the {\em process\_\-callback\/} is about to change. Clients that depend on knowing the buffer size must supply a {\em bufsize\_\-callback\/} before activating themselves.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]pointer to JACK client structure. \item[{\em bufsize\_\-callback}]function to call when the buffer size changes. \item[{\em arg}]argument for {\em bufsize\_\-callback\/}.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_e87f607dbfee42156a60a2443badc639}{
+\index{jack.h@{jack.h}!jack_set_error_function@{jack\_\-set\_\-error\_\-function}}
+\index{jack_set_error_function@{jack\_\-set\_\-error\_\-function}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-error\_\-function]{\setlength{\rightskip}{0pt plus 5cm}void jack\_\-set\_\-error\_\-function (void($\ast$)(const char $\ast$) {\em func})}}
+\label{jack_8h_e87f607dbfee42156a60a2443badc639}
+
+
+Set the \hyperlink{jack_8h_93769fdb4ab48baa1495ba5cd68776d9}{jack\_\-error\_\-callback} for error message display.
+
+The JACK library provides two built-in callbacks for this purpose: default\_\-jack\_\-error\_\-callback() and silent\_\-jack\_\-error\_\-callback(). \hypertarget{jack_8h_b078911808f5c1a60cd74c6cba1ebab6}{
+\index{jack.h@{jack.h}!jack_set_freewheel@{jack\_\-set\_\-freewheel}}
+\index{jack_set_freewheel@{jack\_\-set\_\-freewheel}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-freewheel]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-freewheel (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, int {\em onoff})}}
+\label{jack_8h_b078911808f5c1a60cd74c6cba1ebab6}
+
+
+Start/Stop JACK's \char`\"{}freewheel\char`\"{} mode.
+
+When in \char`\"{}freewheel\char`\"{} mode, JACK no longer waits for any external event to begin the start of the next process cycle.
+
+As a result, freewheel mode causes \char`\"{}faster than realtime\char`\"{} execution of a JACK graph. If possessed, real-time scheduling is dropped when entering freewheel mode, and if appropriate it is reacquired when stopping.
+
+IMPORTANT: on systems using capabilities to provide real-time scheduling (i.e. Linux kernel 2.4), if onoff is zero, this function must be called from the thread that originally called \hyperlink{jack_8h_c7dc9d6132b8331ab500cdb593b8de11}{jack\_\-activate()}. This restriction does not apply to other systems (e.g. Linux kernel 2.6 or OS X).
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em client}]pointer to JACK client structure \item[{\em onoff}]if non-zero, freewheel mode starts. Otherwise freewheel mode ends.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code. \end{Desc}
+\hypertarget{jack_8h_fec58438b9d27ef33be09cfe50756780}{
+\index{jack.h@{jack.h}!jack_set_freewheel_callback@{jack\_\-set\_\-freewheel\_\-callback}}
+\index{jack_set_freewheel_callback@{jack\_\-set\_\-freewheel\_\-callback}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-freewheel\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-freewheel\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{types_8h_f0979883756fe8c04b837efd603ab1fb}{Jack\-Freewheel\-Callback} {\em freewheel\_\-callback}, void $\ast$ {\em arg})}}
+\label{jack_8h_fec58438b9d27ef33be09cfe50756780}
+
+
+Tell the Jack server to call {\em freewheel\_\-callback\/} whenever we enter or leave \char`\"{}freewheel\char`\"{} mode, passing {\em arg\/} as the second argument. The first argument to the callback will be non-zero if JACK is entering freewheel mode, and zero otherwise.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code. \end{Desc}
+\hypertarget{jack_8h_ad091898ccec173ca6d3ae64b47b9bfb}{
+\index{jack.h@{jack.h}!jack_set_graph_order_callback@{jack\_\-set\_\-graph\_\-order\_\-callback}}
+\index{jack_set_graph_order_callback@{jack\_\-set\_\-graph\_\-order\_\-callback}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-graph\_\-order\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-graph\_\-order\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_0e57e4ff80dd55c7856c14b38bfacd96}{Jack\-Graph\-Order\-Callback} {\em graph\_\-callback}, void $\ast$)}}
+\label{jack_8h_ad091898ccec173ca6d3ae64b47b9bfb}
+
+
+Tell the JACK server to call {\em graph\_\-callback\/} whenever the processing graph is reordered, passing {\em arg\/} as a parameter.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_abce2b2c62131d175f02e69455f7fc04}{
+\index{jack.h@{jack.h}!jack_set_port_registration_callback@{jack\_\-set\_\-port\_\-registration\_\-callback}}
+\index{jack_set_port_registration_callback@{jack\_\-set\_\-port\_\-registration\_\-callback}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-port\_\-registration\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-port\_\-registration\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_35ed48b4e8b6574b35764d67165db1e6}{Jack\-Port\-Registration\-Callback} {\em registration\_\-callback}, void $\ast$ {\em arg})}}
+\label{jack_8h_abce2b2c62131d175f02e69455f7fc04}
+
+
+Tell the JACK server to call {\em registration\_\-callback\/} whenever a port is registered or unregistered, passing {\em arg\/} as a parameter.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_bf570688a1c20e1e2339419339df9bbc}{
+\index{jack.h@{jack.h}!jack_set_process_callback@{jack\_\-set\_\-process\_\-callback}}
+\index{jack_set_process_callback@{jack\_\-set\_\-process\_\-callback}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-process\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-process\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{types_8h_7d29408cae0f836271aab41c2db20074}{Jack\-Process\-Callback} {\em process\_\-callback}, void $\ast$ {\em arg})}}
+\label{jack_8h_bf570688a1c20e1e2339419339df9bbc}
+
+
+Tell the Jack server to call {\em process\_\-callback\/} whenever there is work be done, passing {\em arg\/} as the second argument.
+
+The code in the supplied function must be suitable for real-time execution. That means that it cannot call functions that might block for a long time.  This includes malloc, free, printf, pthread\_\-mutex\_\-lock, sleep, wait, poll, select, pthread\_\-join, pthread\_\-cond\_\-wait, etc, etc.  See \href{http://jackit.sourceforge.net/docs/design/design.html#SECTION00411000000000000000}{\tt http://jackit.sourceforge.net/docs/design/design.html\#SECTION00411000000000000000} for more information.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code, causing JACK to remove that client from the \hyperlink{simple__client_8c_ec08ae186cb5b9cb1ba57ea741d55b23}{process()} graph. \end{Desc}
+\hypertarget{jack_8h_c5261b259eee957cc280835166f1c4a7}{
+\index{jack.h@{jack.h}!jack_set_sample_rate_callback@{jack\_\-set\_\-sample\_\-rate\_\-callback}}
+\index{jack_set_sample_rate_callback@{jack\_\-set\_\-sample\_\-rate\_\-callback}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-sample\_\-rate\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-sample\_\-rate\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{types_8h_6c12926f10031285cf7b851bbd9410f2}{Jack\-Sample\-Rate\-Callback} {\em srate\_\-callback}, void $\ast$ {\em arg})}}
+\label{jack_8h_c5261b259eee957cc280835166f1c4a7}
+
+
+Tell the Jack server to call {\em srate\_\-callback\/} whenever the system sample rate changes.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+\hypertarget{jack_8h_6b31016c48665eef8706653842d71802}{
+\index{jack.h@{jack.h}!jack_set_thread_init_callback@{jack\_\-set\_\-thread\_\-init\_\-callback}}
+\index{jack_set_thread_init_callback@{jack\_\-set\_\-thread\_\-init\_\-callback}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-thread\_\-init\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-thread\_\-init\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$ {\em client}, \hyperlink{types_8h_0695aa8ed5357cde844d6db73ec54fd7}{Jack\-Thread\-Init\-Callback} {\em thread\_\-init\_\-callback}, void $\ast$ {\em arg})}}
+\label{jack_8h_6b31016c48665eef8706653842d71802}
+
+
+Tell JACK to call {\em thread\_\-init\_\-callback\/} once just after the creation of the thread in which all other callbacks will be handled.
+
+The code in the supplied function does not need to be suitable for real-time execution.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code, causing JACK to remove that client from the \hyperlink{simple__client_8c_ec08ae186cb5b9cb1ba57ea741d55b23}{process()} graph. \end{Desc}
+\hypertarget{jack_8h_324ed1195d4f2bbb2296a4f334d214ca}{
+\index{jack.h@{jack.h}!jack_set_xrun_callback@{jack\_\-set\_\-xrun\_\-callback}}
+\index{jack_set_xrun_callback@{jack\_\-set\_\-xrun\_\-callback}!jack.h@{jack.h}}
+\subsubsection[jack\_\-set\_\-xrun\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}int jack\_\-set\_\-xrun\_\-callback (\hyperlink{types_8h_44245b219e977ef0a840ee16dbd95b50}{jack\_\-client\_\-t} $\ast$, \hyperlink{types_8h_e78bd2ac540e7adb7bacf04578bd3a94}{Jack\-XRun\-Callback} {\em xrun\_\-callback}, void $\ast$ {\em arg})}}
+\label{jack_8h_324ed1195d4f2bbb2296a4f334d214ca}
+
+
+Tell the JACK server to call {\em xrun\_\-callback\/} whenever there is a xrun, passing {\em arg\/} as a parameter.
+
+\begin{Desc}
+\item[Returns:]0 on success, otherwise a non-zero error code \end{Desc}
+
+
+\subsection{Variable Documentation}
+\hypertarget{jack_8h_93769fdb4ab48baa1495ba5cd68776d9}{
+\index{jack.h@{jack.h}!jack_error_callback@{jack\_\-error\_\-callback}}
+\index{jack_error_callback@{jack\_\-error\_\-callback}!jack.h@{jack.h}}
+\subsubsection[jack\_\-error\_\-callback]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ \hyperlink{jack_8h_93769fdb4ab48baa1495ba5cd68776d9}{jack\_\-error\_\-callback})(const char $\ast$msg)}}
+\label{jack_8h_93769fdb4ab48baa1495ba5cd68776d9}
+
+
+Display JACK error message.
+
+Set via \hyperlink{jack_8h_e87f607dbfee42156a60a2443badc639}{jack\_\-set\_\-error\_\-function()}, otherwise a JACK-provided default will print {\em msg\/} (plus a newline) to stderr.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em msg}]error message text (no newline at end). \end{description}
+\end{Desc}

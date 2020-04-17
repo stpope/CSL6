@@ -1,0 +1,19 @@
+#! /bin/sh
+if (test "x$#" != "x1") ; then
+  echo "Usage: $0 [--libs | --cxxflags | --cppflags]"
+  exit;
+fi
+
+LIBRARY="-lpthread -framework CoreAudio -framework CoreFoundation"
+CXXFLAGS="-O2 -Wall"
+CPPFLAGS="  -DHAVE_GETTIMEOFDAY -D__MACOSX_CORE__"
+
+if (test "x$1" == "x--libs") ; then
+  echo "$LIBRARY"
+elif (test "x$1" == "x--cxxflags") ; then
+  echo "$CXXFLAGS"
+elif (test "x$1" == "x--cppflags") ; then
+  echo "$CPPFLAGS"
+else
+  echo "Unknown option: $1"
+fi

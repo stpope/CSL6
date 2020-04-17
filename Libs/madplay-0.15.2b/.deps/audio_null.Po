@@ -1,0 +1,10 @@
+audio_null.o: audio_null.c config.h global.h \
+  /Content/Code/CSL_Libs/libmad-0.15.1b/mad.h audio.h
+
+config.h:
+
+global.h:
+
+/Content/Code/CSL_Libs/libmad-0.15.1b/mad.h:
+
+audio.h:

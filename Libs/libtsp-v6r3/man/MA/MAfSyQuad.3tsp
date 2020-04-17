@@ -1,0 +1,54 @@
+.TH MAfSyQuad 3tsp "TSP (libtsp/MA)"
+.SH Routine
+.in +4n
+.ti -4n
+double MAfSyQuad (const float *A[], const float x[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Calculate a quadratic form for a symmetric matrix
+.in -4n
+.SH Description
+This routine calculates the quadaratic form s = x'A x for vector x and
+symmetric matrix A,
+.ft CW
+.nf
+.ne 3
+      N-1 N-1
+  s = SUM SUM x(i) A(i,j) x(j) .
+      i=0 j=0
+.fi
+.ft P
+The symmetry of A is used to reduce the number of computations.  The result
+is accumulated as a double value and returned as a double value.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  double MAfSyBilin
+.br
+Returned value
+.ti -4n
+ -> const float *A[]
+.br
+A is an array of pointers to the rows of an N by N matrix.  The matrix
+is assumed to be symmetric.  Only the lower triangular portion of the
+matrix is accessed.  Note that with ANSI C, if the actual parameter
+is not declared to have the const attribute, an explicit cast to
+(const float **) is required.
+.ti -4n
+ -> const float x[]
+.br
+Input vector (N elements)
+.ti -4n
+ -> int N
+.br
+Number of of elements in x and y and the size of A
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.5  2003/05/09
+.SH See Also
+MAfSyBilin,
+MAfTpQuad,
+libtsp

@@ -1,0 +1,34 @@
+.TH VRfMax 3tsp "TSP (libtsp/VR)"
+.SH Routine
+.in +4n
+.ti -4n
+double VRfMax (const float x[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Return the maximum value in a float array
+.in -4n
+.SH Description
+This routine finds the maximum of the values in a float array.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  double VRfMax
+.br
+Maximum of the values in x
+.ti -4n
+ -> const float x[]
+.br
+Input array (N elements)
+.ti -4n
+ -> int N
+.br
+Number of elements in the array (must be greater than zero)
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.7  2003/05/09
+.SH See Also
+VRfMin,
+libtsp

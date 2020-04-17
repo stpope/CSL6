@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - FLgetLine</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>FLgetLine</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+char *FLgetLine (FILE *fp);
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Read a line of text from a file
+</DL>
+<H4>Description</H4>
+This routine retrieves a line of input from a file.  This routine reads
+characters until a newline is encountered.  The newline is not returned.
+The return value is a pointer to the text string or NULL if end-of-file is
+encountered.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  char *FLgetLine
+<DD>
+Pointer to the text string.  This is NULL if end-of-file is encountered
+and the line is empty.  Otherwise, when end-of-file is encountered, the
+line is treated as if it were terminated with a newline.  The text string
+is in an internally allocated storage area; each call to this routine
+overlays this storage.
+<DT>
+ -&gt; FILE *fp
+<DD>
+File pointer to the file
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.15  2003/05/09
+<H4>See Also</H4>
+<A HREF="FLgetRec.html">FLgetRec</A>
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

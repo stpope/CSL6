@@ -1,0 +1,77 @@
+.TH MSdIntMC 3tsp "TSP (libtsp/MS)"
+.SH Routine
+.in +4n
+.ti -4n
+void MSdIntMC (const double x[], const double y[], int N, const double xi[],
+double yi[], int Ni)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Interpolate a table of values using a piecewise monotonic cubic interpolant
+.in -4n
+.SH Description
+This routine calculates interpolated values for a function defined by a table
+of reference data values.  The interpolated values are found by passing a
+piecewise monotonic cubic interpolant through the reference data values.  The
+monotonicity property guarantees that the interpolated data values do not go
+outside the range of the bracketing reference data values.
+.PP
+The procedure defines the cubic interpolant between any two adjacent
+reference points in terms of the values and the derivatives at the reference
+points.  The derivatives at the reference points are determined by averaging
+the inverse slopes of the straight line segments joining the reference
+points to the left and right of a given reference point.  These slope values
+are changed if necessary to guarantee that the cubic interpolants are
+monotonic between reference points.  For instance a reference point is a
+local extremum (the slopes of the straight line segments joining reference
+points on either side of it are of different sign), the slope at that
+reference point is set to zero.  The slope of end points is determined from
+the slopes of the two straight lines joining the reference points beside the
+end point.
+.PP
+.in +4n
+.ti -4n
+References:
+.br
+Subroutine PCHIM, F. N. Fritsch, Lawrence Livermore National Laboratory.
+F. N. Fritsch and J. Butland, "A method for constructing local monotone
+piecewise cubic interpolants", SIAM J. Sci. Stat. Comput., vol. 5,
+pp. 300-304, June 1984.
+.in -4n
+.SH Parameters
+.in +4n
+.ti -4n
+ -> const double x[]
+.br
+Abscissa values for the reference points.  These values must be in
+increasing order.
+.ti -4n
+ -> const double y[]
+.br
+Ordinate values for the reference points
+.ti -4n
+ -> int N
+.br
+Number of reference points
+.ti -4n
+ -> const double xi[]
+.br
+Abscissa values for the interpolated points.  These values must be
+bounded by x[0] and x[N-1].  The values xi[i] need not be in any
+particular order, although some efficiency is gained if they are in
+increasing or decreasing order.
+.ti -4n
+<-  double yi[]
+.br
+Resulting interpolated ordinate values
+.ti -4n
+ -> int Ni
+.br
+Number of interpolated values
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.5  2003/11/11
+.SH See Also
+libtsp

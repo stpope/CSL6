@@ -1,0 +1,90 @@
+.TH SPcovFmse 3tsp "TSP (libtsp/SP)"
+.SH Routine
+.in +4n
+.ti -4n
+double SPcovFmse (const float h[], double Ed, const float *R[],
+const float r[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Find the mean-square error for a filter (covariance specified)
+.in -4n
+.SH Description
+This function calculates the mean-square error for a linear estimation
+problem.  Consider a filter with N coefficients, with coefficient h(i)
+corresponding to lag D(i).  The filter output is
+.ft CW
+.nf
+.ne 3
+         N-1
+  y(k) = SUM h(i) x(k-D(i)) ,
+         i=0
+.fi
+.ft P
+where x(i) is the input signal.  The filter error is
+.PP
+.ft CW
+.nf
+.ne 3
+  e(k) = d(k) - y(k) ,
+.fi
+.ft P
+.PP
+where d(k) is the desired signal.  The mean-square filtering error can be
+expressed as
+.PP
+.ft CW
+.nf
+.ne 3
+  ferr = Ed - 2 h'r + h'R h .
+.fi
+.ft P
+.PP
+The mean-square value Ed, matrix R and vector p are defined as follows
+.PP
+.ft CW
+.nf
+.ne 3
+      Ed = E[d(k)^2]
+  R(i,j) = E[x(k-D(i)) x(k-D(j))],  for 0 <= i,j < N,
+    r(i) = E[d(k) x(k-D(i))],       for 0 <= i < N.
+.fi
+.ft P
+.PP
+The expectation operator E[.] is often replaced by a sum over k over a finite
+interval.
+.SH Parameters
+.in +4n
+.ti -4n
+<-  double SPcovFmse
+.br
+Resultant filter error energy
+.ti -4n
+ -> const float h[]
+.br
+N element vector of filter coefficients.  Coefficient h[i] is the filter
+coefficient corresponding to lag N1+i.
+.ti -4n
+ -> double Ed
+.br
+Signal energy for the desired signal
+.ti -4n
+ -> const float *R[]
+.br
+R is an array of pointers to the rows of an N by N positive definite
+correlation matrix.  Only the lower triangular portion of R is accessed.
+Note that with ANSI C, if the actual parameter is not declared to have
+the const attribute, an explicit cast to (const float **) is required.      -> const float r[]
+N element vector of cross-correlation values
+.ti -4n
+ -> int N
+.br
+Number of filter coefficients
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.5  2003/05/09
+.SH See Also
+SPcovFilt,
+libtsp

@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>TSP (libtsp) - MSdDeconvCof</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFACD">
+<H2>MSdDeconvCof</H2>
+<HR>
+<H4>Routine</H4>
+<DL>
+<DT>
+int MSdDeconvCof (const double u[], int Nu, const double v[], int Nv,
+double q[], double r[])
+</DL>
+<H4>Purpose</H4>
+<DL>
+<DT>
+Polyomial divide (deconvolve the coefficients of two vectors)
+</DL>
+<H4>Description</H4>
+This routine divides one polynomial by another.  Given polynomials U(D)
+and V(D), the polynomial division U(D)/V(D) gives quotient Q(D) and
+remainder R(D), where
+<PRE>
+  U(D) = Q(D) V(D) + R(D).
+</PRE>
+Polynomial U(D) is represented as
+<PRE>
+  U(D) = u[0] + u[1] D + u[2] D^2 + ... + u[Nu-1] D^(Nu-1).
+</PRE>
+The quotient Q(D) normally has Nu-Nv+1 terms.  The remainder R(C) normally
+has Nv-1 terms.
+<H4>Parameters</H4>
+<DL>
+<DT>
+&lt;-  int MSdDeconvCof
+<DD>
+Number of quotient coefficients.  This is normally Nu-Nv+1.  If some of
+the higher order terms in v are zero, this may be as large as Nu.  If
+the last non-zero term in v is v[k], then the number of quotient
+coefficients is returned as Nu-k.
+<DT>
+ -&gt; double u[]
+<DD>
+Input vector of coefficients (Nu values)
+<DT>
+ -&gt; int Nu
+<DD>
+Number of coefficients in u
+<DT>
+ -&gt; double v[]
+<DD>
+Input vector of coefficients (Nv values)
+<DT>
+ -&gt; int Nv
+<DD>
+Number of coefficients in v.  If Nu &lt; Nv, the quotient is empty and the
+remainder is equal to u.
+<DT>
+&lt;-  double q[]
+<DD>
+Output vector of Nu coefficients representing the quotient of the
+polynomial division.  The quotient vector can be the same as the vector
+u.  If v[k] is the last non-zero coefficient of v, the last k
+coefficients of q will be zero.
+<DT>
+&lt;-  double r[]
+<DD>
+Output vector of Nu coefficient representing the remainder of the
+polynomial division.  If r is NULL, the remainder is not calculated.
+The remainder satisfies R(D) = U(D) - Q(D) U(D).  If v[k] is the last
+nonzero coefficient of v (k can be ascertained from the function return
+value which is Nu-k), the last Nu-k terms of R(D) will be zero.
+</DL>
+<H4>Author / revision</H4>
+P. Kabal
+/ Revision 1.3  2003/05/09
+<P>
+<HR>
+Main Index <A HREF="../libtsp.html">libtsp</A>
+</BODY>
+</HTML>

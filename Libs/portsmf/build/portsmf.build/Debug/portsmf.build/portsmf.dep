@@ -1,0 +1,10 @@
+000000000000000000000000000003b8 303e59344602eccce3b3f972da512f5c ffffffffffffffffffffffffffffffff 25080 /Users/stp/Code/CSL_Libs/portsmf/build/portsmf.build/Debug/portsmf.build/Objects-normal/i386/mfmidi.o
+0000000049365fa60000000000008c47 63764e038166fc374745f29e369fdd6b ffffffffffffffffffffffffffffffff 62940 /Users/stp/Code/CSL_Libs/portsmf/build/portsmf.build/Debug/portsmf.build/Objects-normal/i386/allegrowr.o
+0000000046e7e5a60000000000003dc8 0ee95002157247b5e92e3a97031a39a9 ffffffffffffffffffffffffffffffff 65332 /Users/stp/Code/CSL_Libs/portsmf/build/portsmf.build/Debug/portsmf.build/Objects-normal/i386/allegrosmfwr.o
+000000000f0df5e60000000000008a4a ad42b7f744351888be7e1b817e15f4ed ffffffffffffffffffffffffffffffff 62804 /Users/stp/Code/CSL_Libs/portsmf/build/portsmf.build/Debug/portsmf.build/Objects-normal/i386/allegrosmfrd.o
+0000000049ffc0f80000000000000050 4613e9d4f66260947fd9eb09bf793427 ffffffffffffffffffffffffffffffff 1084 /Users/stp/Code/CSL_Libs/portsmf/build/portsmf.build/Debug/portsmf.build/Objects-normal/i386/allegroserial.o
+0000000049365fbd000000000000d938 1307ec93a56ac807e8e2270cf4ff356f ffffffffffffffffffffffffffffffff 87836 /Users/stp/Code/CSL_Libs/portsmf/build/portsmf.build/Debug/portsmf.build/Objects-normal/i386/allegrord.o
+0000000000dc4ff10000000000012fe0 a74864a5645c477481bc2c69ed5411b7 ffffffffffffffffffffffffffffffff 245304 /Users/stp/Code/CSL_Libs/portsmf/build/portsmf.build/Debug/portsmf.build/Objects-normal/i386/allegro.o
+000000000000001b0000000000003f47 a8e086bec826a8ae3c3763612be9d98f ffffffffffffffffffffffffffffffff 30016 /Users/stp/Code/CSL_Libs/portsmf/build/portsmf.build/Debug/portsmf.build/Objects-normal/i386/strparse.o
+00000000000000000000000000000000 b2e4d46bdce35cd31ad92d25744ddcf3 ffffffffffffffffffffffffffffffff 38575 /Users/stp/Code/CSL_Libs/portsmf/build/Debug/usr/local/include/allegro.h
+aa5f179e204b9dced916a9f71cfb075f d75fabee3bd30be9edb36b929e019023 ffffffffffffffffffffffffffffffff 602076 /Users/stp/Code/CSL_Libs/portsmf/build/Debug/libportsmf.a

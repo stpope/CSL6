@@ -1,0 +1,42 @@
+.TH VRfSum 3tsp "TSP (libtsp/VR)"
+.SH Routine
+.in +4n
+.ti -4n
+double VRfSum (const float x[], int N)
+.in -4n
+.SH Purpose
+.in +4n
+.ti -4n
+Calculate the sum of elements in an array of floats
+.in -4n
+.SH Description
+This routine calculates the sum of the elements in an array of floats,
+.ft CW
+.nf
+.ne 3
+      N-1
+  s = SUM x[i] .
+      i=0
+.fi
+.ft P
+.SH Parameters
+.in +4n
+.ti -4n
+<-  double VRfSum
+.br
+Sum of the elements
+.ti -4n
+ -> const float x[]
+.br
+Input array (N elements)
+.ti -4n
+ -> int N
+.br
+Number of elements in the array (may be zero)
+.in -4n
+.SH Author / revision
+P. Kabal
+/ Revision 1.5  2003/05/09
+.SH See Also
+VRfAdd,
+libtsp

@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: jack
+Description: the Jack Audio Connection Kit: a low-latency synchronous callback-based media server
+Version: @JACK_VERSION@
+Libs: -L${libdir} -ljack -lpthread @OS_LDFLAGS@
+Cflags: -I${includedir}

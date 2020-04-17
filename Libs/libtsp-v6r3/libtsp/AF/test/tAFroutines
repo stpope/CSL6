@@ -1,0 +1,519 @@
+#!/bin/sh
+
+# Test AF routines
+#
+# $Id: tAFroutines 1.59 2003/11/04 libtsp-v6r3 $
+
+AUDIODIR="../../../audiofiles"
+
+echo "========== tAFopnRead"
+# Headerless files
+AF_NOHEADER=""
+export AF_NOHEADER
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Headless not accepted
+AF_NOHEADER=integer16
+tAFopnRead ${AUDIODIR}/addf8.nh
+AF_NOHEADER=""
+
+# Invalid file ID tests
+AF_FILETYPE="xxx"
+export AF_FILETYPE
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid file type
+AF_FILETYPE="AU"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="WAVE"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="AIFF"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="SPHERE"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="ESPS"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="IRCAM"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="SPPACK"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="INRS"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="SPW"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="NSP"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="text"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+AF_FILETYPE="noheader"
+tAFopnRead ${AUDIODIR}/addf8.nh		2>&1	# Invalid ID
+
+# Unexpected End-of-File
+rm -f XxX.au
+touch XxX.au	# Empty file
+AF_FILETYPE="AU"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="WAVE"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="AIFF"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="SPHERE"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="ESPS"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="IRCAM"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="SPPACK"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="INRS"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="SPW"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="NSP"
+tAFopnRead XxX.au			2>&1
+AF_FILETYPE="text"
+tAFopnRead XxX.au			2>&1
+rm -f XxX.au
+
+AF_FILETYPE=""
+
+# AU audio files
+tAFopnRead ${AUDIODIR}/addf8.afsp
+tAFopnRead ${AUDIODIR}/addf8.au
+tAFopnRead ${AUDIODIR}/next-8.snd
+
+# AIFF / AIFF-C files
+tAFopnRead ${AUDIODIR}/addf8.aifc
+tAFopnRead ${AUDIODIR}/addf8.aiff
+tAFopnRead ${AUDIODIR}/aiff-8.snd
+tAFopnRead ${AUDIODIR}/digit0v0.aiff	2>&1	# Invalid COMM chunk
+
+# INRS-Telecom file
+tAFopnRead ${AUDIODIR}/addf8.aud
+
+# SPPACK file
+tAFopnRead ${AUDIODIR}/addf8.d
+
+# ESPS file
+tAFopnRead ${AUDIODIR}/addf8.sd
+
+# IRCAM soundfiles
+tAFopnRead ${AUDIODIR}/addf8.sf_mipseb
+tAFopnRead ${AUDIODIR}/addf8.sf_sun
+tAFopnRead ${AUDIODIR}/addf8.sf_vax_b
+
+# WAVE files
+tAFopnRead ${AUDIODIR}/addf8.wav
+tAFopnRead ${AUDIODIR}/riff-8-u.snd	2>&1	# Invalid chunk size
+
+# NIST SPHERE file
+tAFopnRead ${AUDIODIR}/jg00b1ss.wav
+tAFopnRead ${AUDIODIR}/sw1038t_short.wav
+
+# Text audio file
+tAFopnRead ${AUDIODIR}/bab.dat
+
+# Comdisco SPW Signal files
+tAFopnRead ${AUDIODIR}/mary-sun4.sig
+tAFopnRead ${AUDIODIR}/sine.sig
+tAFopnRead ${AUDIODIR}/sineA1.ascsig
+
+# CSL NSP file
+tAFopnRead ${AUDIODIR}/addf8.nsp
+
+# Unsupported files
+tAFopnRead ${AUDIODIR}/sound.pat	2>&1
+tAFopnRead ${AUDIODIR}/sound.sap	2>&1
+tAFopnRead ${AUDIODIR}/sound.smp	2>&1
+tAFopnRead ${AUDIODIR}/sound.snd	2>&1
+tAFopnRead ${AUDIODIR}/sound.voc	2>&1
+tAFopnRead ${AUDIODIR}/sound.svx	2>&1
+tAFopnRead ${AUDIODIR}/wood.maud	2>&1
+tAFopnRead ${AUDIODIR}/kirk.wve       	2>&1
+tAFopnRead ${AUDIODIR}/hcom-16.snd	2>&1
+tAFopnRead ${AUDIODIR}/sineA3.ascsig	2>&1
+
+# Unknown file
+tAFopnRead ${AUDIODIR}/sound.dig	2>&1
+
+echo ""
+echo "========== tAFsetRead"
+#	name	Nbytes	Format Dstart	Ldata	Nsamp	Fix
+tAFsetRead \
+	temp.au	1000	5	100	-1	-1	0
+rm -f temp.au
+echo "-----"
+# Non-integral number of samples, fixup
+tAFsetRead \
+	temp.au	1001	5	100	-1	-1	0	2>&1
+rm -f temp.au
+echo "-----"
+# Ldata too large, error
+tAFsetRead \
+	temp.au	1000	5	100	1200	-1	0	2>&1
+rm -f temp.au
+echo "-----"
+# Ldata too large, fixup
+tAFsetRead \
+	temp.au	1000	5	100	1200	-1	4	2>&1
+rm -f temp.au
+echo "-----"
+# Ldata small
+tAFsetRead \
+	temp.au	1000	5	100	400	-1	0
+rm -f temp.au
+echo "-----"
+# Nsamp just right
+tAFsetRead \
+	temp.au	1000	5	100	-1	450	0
+rm -f temp.au
+echo "-----"
+# Nsamp small
+tAFsetRead \
+	temp.au	1000	5	100	-1	400	0
+rm -f temp.au
+echo "-----"
+# Nsamp, Ldata just right
+tAFsetRead \
+	temp.au	1000	5	100	900	450	0
+rm -f temp.au
+echo "-----"
+# Nsamp small, Ldata just right
+tAFsetRead \
+	temp.au	1000	5	100	900	400	0
+rm -f temp.au
+echo "-----"
+# Nsamp small, Ldata small
+tAFsetRead \
+	temp.au	1000	5	100	800	400	0
+rm -f temp.au
+echo "-----"
+# Nsamp small, fixup
+tAFsetRead \
+	temp.au	1000	5	100	-1	400	2	2>&1
+rm -f temp.au
+echo "-----"
+# Nsamp small, fixup
+tAFsetRead \
+	temp.au	1000	5	100	-1	600	1	2>&1
+echo "-----"
+# Data from stdin, cannot determine number of samples
+cat temp.au | tAFsetRead \
+	-	1000	5	0	-1	-1	0	2>&1
+rm -f temp.au
+echo "-----"
+# Number of samples / channels incompatible
+tAFsetRead \
+	temp.au	1000	5	100	-1	401	0	2>&1
+rm -f temp.au
+
+echo ""
+echo "========== tAFsetNHpar"
+tAFsetNHpar ""					# default
+echo "-----"
+tAFsetNHpar "undefined"
+echo "-----"
+tAFsetNHpar "mu-law, 512, 10000, little, 2, 64/2"
+echo "-----"
+tAFsetNHpar "A-law, 0, 9000, big, 1, 8"
+echo "-----"
+tAFsetNHpar "unsigned8,,,,,default"
+echo "-----"
+tAFsetNHpar "integer8"
+echo "-----"
+tAFsetNHpar "integer"
+echo "-----"
+tAFsetNHpar "integer16"
+echo "-----"
+tAFsetNHpar "integer24"
+echo "-----"
+tAFsetNHpar "integer32"
+echo "-----"
+tAFsetNHpar "float"
+echo "-----"
+tAFsetNHpar "float64"
+echo "-----"
+tAFsetNHpar "text"
+echo "-----"
+tAFsetNHpar "text, 25, 10000, big, , "
+echo "-----"
+tAFsetNHpar "whatever"					2>&1	# Error
+echo "-----"
+tAFsetNHpar "mu-law, 512, 10000, little, 2, 32, xx"	2>&1	# Too many args
+
+echo ""
+echo "========== tAFreadData"
+tAFxReadData ${AUDIODIR}/addf8.au F
+AF_FILETYPE=AU
+dd if=${AUDIODIR}/addf8.au 2>/dev/null | tAFxReadData - D
+AF_FILETYPE=""
+
+echo ""
+echo "========== tAFxWriteData"
+FD_MULAW8=1
+FD_ALAW8=2
+FD_UINT8=3
+FD_INT8=4
+FD_INT16=5
+FD_INT24=6
+FD_INT32=7
+FD_FLOAT32=8
+FD_FLOAT64=9
+FD_TEXT=10
+
+FTW_UNDEF=0
+FTW_AU=1
+FTW_WAVE=2
+FTW_WAVE_NOEX=18
+FTW_AIFF_C=3
+FTW_NH_EB=4
+FTW_NH_EL=20
+FTW_NH_NATIVE=36
+FTW_NH_SWAP=52
+FTW_AIFF=5
+
+#               Ftype, Dformat, Nchan, Sfreq
+echo "=== tAFxWriteData: invalid parameters"
+tAFxWriteData XxXx/YyYy $FTW_AU $FD_MULAW8 1 8000		2>&1
+						# No such directory
+echo "-----"
+tAFxWriteData temp.au 6 $FD_MULAW8 1 8000			2>&1
+						# Invalid file type
+echo "-----"
+tAFxWriteData temp.au $FTW_AU 12 1 8000				2>&1
+						# Invalid data type
+
+# Undefined file type
+echo "-----"
+tAFxWriteData temp.aud $FTW_UNDEF $FD_MULAW8 1 8000		2>&1
+
+# AU file
+echo ""
+echo "=== tAFxWriteData: AU files"
+tAFxWriteData temp.au $FTW_AU $FD_MULAW8 2 8000.6		2>&1
+rm -f temp.au
+echo "-----"
+tAFxWriteData temp.au $FTW_AU $FD_ALAW8 2 10000.6		2>&1
+rm -f temp.au
+echo "-----"
+tAFxWriteData temp.au $FTW_AU $FD_UINT8 2 12000.6		2>&1
+						# uint8, invalid data format
+echo "-----"
+tAFxWriteData temp.au $FTW_AU $FD_INT8 2 16000.6		2>&1
+rm -f temp.au
+echo "-----"
+tAFxWriteData temp.au $FTW_AU $FD_INT16 2 24000.6 14 "FR FL"	2>&1
+rm -f temp.au
+echo "-----"
+tAFxWriteData temp.au $FTW_AU $FD_INT24 2 10000.6		2>&1
+rm -f temp.au
+echo "-----"
+tAFxWriteData temp.au $FTW_AU $FD_INT32 2 10100.6		2>&1
+rm -f temp.au
+echo "-----"
+tAFxWriteData temp.au $FTW_AU $FD_FLOAT32 2 10200.6
+rm -f temp.au
+echo "-----"
+tAFxWriteData temp.au $FTW_AU $FD_FLOAT64 2 10300.6
+rm -f temp.au
+echo "-----"
+tAFxWriteData temp.au $FTW_AU $FD_TEXT 2 10200.6		2>&1
+						# text, invalid data format
+
+# WAVE file
+echo ""
+echo "=== tAFxWriteData: WAVE files"
+tAFxWriteData temp.wav $FTW_WAVE $FD_MULAW8 4 8000.4 7		2>&1
+						# WAVE extensible format
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_UINT8 4 12000.4		2>&1
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_INT8 2 16000.6		2>&1
+						# int8, invalid data format
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_INT16 2 16000.4		2>&1
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_INT24 2 16000.2		2>&1
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_INT32 1 16000.1		2>&1
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_FLOAT32 2 16000.2
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_FLOAT64 2 16000.3
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_TEXT 4 16000.4		2>&1
+						# text, invalid data format
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_INT24 4 16000.2 20 "FL FR FC LF"	2>&1
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_INT24 4 16000.2 21 "FR FL FR FC"	2>&1
+rm -f temp.wav					# duplicate speaker
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_INT24 4 16000.2 21 "FR FL FC LF"	2>&1
+rm -f temp.wav					# invalid speaker order
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_INT24 4 16000.2 14 "FL FR FC -"	2>&1
+rm -f temp.wav					# invalid NbS
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE $FD_INT24 4 16000.2 23 "XX"	2>&1
+rm -f temp.wav					# invalid SpkrConfig
+
+# WAVE_NOEX file
+echo ""
+echo "=== tAFxWriteData: WAVE_NOEX files"
+tAFxWriteData temp.wav $FTW_WAVE_NOEX $FD_MULAW8 4 8000.4 7	2>&1
+						# WAVE extensible format
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE_NOEX $FD_UINT8 4 12000.4	2>&1
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE_NOEX $FD_INT16 2 16000.4	2>&1
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE_NOEX $FD_INT24 2 16000.2 18	2>&1
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE_NOEX $FD_INT32 1 16000.1 24 	2>&1
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE_NOEX $FD_FLOAT32 2 16000.2 "FL FR"
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE_NOEX $FD_FLOAT64 2 16000.3
+rm -f temp.wav
+echo "-----"
+tAFxWriteData temp.wav $FTW_WAVE_NOEX $FD_INT24 4 16000.2 23 "XX" 2>&1
+rm -f temp.wav					# invalid SpkrConfig
+
+# AIFF-C file
+echo ""
+echo "=== tAFxWriteData: AIFF-C files"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_MULAW8 1 8000.7 7	2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_ALAW8 1 10000.7		2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_UINT8 1 16000.7		2>&1
+						# uint8, invalid data format
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_INT8 1 12000.7		2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_INT16 1 14000.7 14 "FL"	2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_INT24 1 14000.6		2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_INT32 1 14000.5		2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_FLOAT32 1 12000.7
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_FLOAT64 1 12000.7
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_TEXT 1 12000.7		2>&1
+						# text, invalid data format
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_INT32 2 14000.5 30 "FR FL"	2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF_C $FD_INT32 2 14000.5 23 "FL FR FC"	2>&1
+						# invalid NbS
+rm -f temp.aif
+
+# AIFF file
+echo ""
+echo "=== tAFxWriteData: AIFF files"
+tAFxWriteData temp.aif $FTW_AIFF $FD_MULAW8 1 8000.7		2>&1
+						# mu-law, invalid data format
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF $FD_ALAW8 1 10000.7		2>&1
+						# A-law, invalid data format
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF $FD_UINT8 1 16000.7		2>&1
+						# uint8, invalid data format
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF $FD_INT8 2 12000.7		2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF $FD_INT16 1 14000.7		2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF $FD_INT24 1 14000.6		2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF $FD_INT32 1 14000.5		2>&1
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF $FD_FLOAT32 1 12000.7		2>&1
+						# float32, invalid data format
+rm -f temp.aif
+echo "-----"
+tAFxWriteData temp.aif $FTW_AIFF $FD_FLOAT64 1 12000.7		2>&1
+						# float64, invalid data format
+rm -f temp.aif
+echo "-----"
+Format=`expr $FTW_AIFF \* 256 + $FD_TEXT`
+tAFxWriteData temp.aif $FTW_AIFF $FD_TEXT 1 12000.7		2>&1
+						# text, invalid data format
+echo ""
+echo "=== tAFxWriteData: Headerless files"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_MULAW8 1  8000		2>&1
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_ALAW8 1  8000		2>&1
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_UINT8 1  8000		2>&1
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_INT8 1  8000		2>&1
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_INT16 1  8000		2>&1
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_INT24 1  8000		2>&1
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_INT32 1  8000		2>&1
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_FLOAT32 1  8000
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_FLOAT64 1 8000
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EB $FD_TEXT 1 8000
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_EL $FD_INT16 1 8000		2>&1
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_NATIVE $FD_INT16 1 8000		2>&1
+rm -f temp.nh
+echo "-----"
+tAFxWriteData temp.nh $FTW_NH_SWAP $FD_INT16 1 8000		2>&1
+rm -f temp.nh
+
+echo ""
+echo "========== tAFgetAUrec"
+tAFgetInfoRec abc: abc:123 def:456 ghi:789
+tAFgetInfoRec def: abc:123 def:456 ghi:789
+tAFgetInfoRec ghi: abc:123 def:456 ghi:789
+tAFgetInfoRec dxx abc:123 def:456 ghi:789
+tAFgetInfoRec "" abc:123 def:456 ghi:789
+
+exit 0
