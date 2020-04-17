@@ -1,8 +1,8 @@
-//
-//  Granulator.h -- CSL class for doing granular synthesis
-//
-//	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
-//
+///
+///  Granulator.h -- CSL class for doing granular synthesis
+///
+///	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
+///
 
 #ifndef CSL_GRAN_H
 #define CSL_GRAN_H

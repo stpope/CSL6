@@ -36,7 +36,7 @@ extern void runTests();					// this is the list of tests to run (see the test fi
 
 int main (int argc, const char * argv[]) {
 	printf("\n");
-	logMsg("Running CSL5 tests\n");		// print a log message
+	logMsg("Running CSL6 tests\n");		// print a log message
 	theIO = new IO_CLASS;				// create the IO object
 
 	theIO->open();						// open & start it

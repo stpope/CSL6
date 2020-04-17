@@ -121,13 +121,13 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/fft_N_6d106468.o \
   $(JUCE_OBJDIR)/FFTReal_f8205b7.o \
   $(JUCE_OBJDIR)/Test_Support_65e1c370.o \
+  $(JUCE_OBJDIR)/Test_Oscillators_3e52e774.o \
+  $(JUCE_OBJDIR)/Test_Sources_d039c2d9.o \
+  $(JUCE_OBJDIR)/Test_Envelopes_c8413944.o \
+  $(JUCE_OBJDIR)/Test_Effects_3849eb23.o \
+  $(JUCE_OBJDIR)/Test_Panners_881f34f6.o \
   $(JUCE_OBJDIR)/Test_Audio_dd04aef7.o \
   $(JUCE_OBJDIR)/Test_Control_6dfd31fe.o \
-  $(JUCE_OBJDIR)/Test_Effects_3849eb23.o \
-  $(JUCE_OBJDIR)/Test_Envelopes_c8413944.o \
-  $(JUCE_OBJDIR)/Test_Oscillators_3e52e774.o \
-  $(JUCE_OBJDIR)/Test_Panners_881f34f6.o \
-  $(JUCE_OBJDIR)/Test_Sources_d039c2d9.o \
   $(JUCE_OBJDIR)/Main_d8756245.o \
   $(JUCE_OBJDIR)/CSL_TestComponent_29c9926.o \
   $(JUCE_OBJDIR)/JCSL_Widgets_cd5f998e.o \
@@ -423,6 +423,31 @@ $(JUCE_OBJDIR)/Test_Support_65e1c370.o: ../../Src/Tests/Test_Support.cpp
 	@echo "Compiling Test_Support.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
+$(JUCE_OBJDIR)/Test_Oscillators_3e52e774.o: ../../Src/Tests/Test_Oscillators.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Oscillators.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Test_Sources_d039c2d9.o: ../../Src/Tests/Test_Sources.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Sources.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Test_Envelopes_c8413944.o: ../../Src/Tests/Test_Envelopes.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Envelopes.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Test_Effects_3849eb23.o: ../../Src/Tests/Test_Effects.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Effects.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/Test_Panners_881f34f6.o: ../../Src/Tests/Test_Panners.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling Test_Panners.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
 $(JUCE_OBJDIR)/Test_Audio_dd04aef7.o: ../../Src/Tests/Test_Audio.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Test_Audio.cpp"
@@ -431,31 +456,6 @@ $(JUCE_OBJDIR)/Test_Audio_dd04aef7.o: ../../Src/Tests/Test_Audio.cpp
 $(JUCE_OBJDIR)/Test_Control_6dfd31fe.o: ../../Src/Tests/Test_Control.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling Test_Control.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Test_Effects_3849eb23.o: ../../Src/Tests/Test_Effects.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Effects.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Test_Envelopes_c8413944.o: ../../Src/Tests/Test_Envelopes.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Envelopes.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Test_Oscillators_3e52e774.o: ../../Src/Tests/Test_Oscillators.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Oscillators.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Test_Panners_881f34f6.o: ../../Src/Tests/Test_Panners.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Panners.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/Test_Sources_d039c2d9.o: ../../Src/Tests/Test_Sources.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling Test_Sources.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/Main_d8756245.o: ../../Src/JUCE/Main.cpp
