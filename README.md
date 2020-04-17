@@ -9,7 +9,8 @@ University of California, Santa Barbara (UCSB) starting in the late 1990s.
 
 This is release 6.0, April, 2020.
 
-The home page for CSL is http://FASTLabInc.com/CSL. See the links to the screencast demos there.
+The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots and links to 
+the screencast demos there.
 
 CSL is known to work on Mac OSX, many flavors of UNIX/Linux, iPhones, Android and
 MS-Windows. To get started quickly, build the JUCE demo app (documented elsewhere)
@@ -108,7 +109,7 @@ in Sources/Spectral.h.
 
 Building CSL
 
- 	Use the JUCE projucer with the file ~/CSL6/CSL6.jucer
+ 	Use the JUCE projucer with the file CSL6.jucer to generate the build projects.
 
  	On a Mac: Builds/MacOSX/CSL6Demo.xcodeproj
  	On MS-Windows: Builds/VisualStudio2015
