@@ -1,1 +1,0 @@
-../Sources/Spectral.h
