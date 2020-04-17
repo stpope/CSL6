@@ -334,4 +334,4 @@ See the file COPYRIGHT for the list of authors and UC copy-left.
 
 stp et al. - January, 1998 - November, 2012 - April, 2020
 
-Contact: stephen@heaveneverywhere.com
+Contact: stephen _at_ heaveneverywhere _dot_ com
