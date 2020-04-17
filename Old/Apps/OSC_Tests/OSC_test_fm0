@@ -1,0 +1,19 @@
+#!/bin/csh
+#
+# Shell script to test sending OSC messages to a CSL server
+#
+# Create a convenient alias
+alias ssoo "sendOSC -h localhost 54321"
+#
+# Play a note on instrument 1
+#
+ssoo /i1/p
+sleep 5
+#
+# dur, ampl, c_fr, m_fr, ind, pos
+ssoo /i1/pn,4.0,0.9,220.0,357.4,300.0,0.8
+#
+sleep 5
+#
+ssoo /q
+#

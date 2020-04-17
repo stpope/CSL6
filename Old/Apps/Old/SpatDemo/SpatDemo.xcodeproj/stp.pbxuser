@@ -1,0 +1,224 @@
+// !$*UTF8*$!
+{
+	21D1EE6C0ABA93D700E1E46A /* SpatDemoController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {619, 834}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 461}";
+		};
+	};
+	21D1EE6D0ABA93D700E1E46A /* SpatDemoController.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {892, 880}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1301}";
+		};
+	};
+	21D1F0200ABA9EFC00E1E46A /* SpatDemoTwo */ = {
+		activeExec = 0;
+		executables = (
+			4C944EFD0B8BECE600D6814C /* SpatDemoTwo */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = 4C944EFC0B8BECE600D6814C /* SpatDemo */;
+		activeTarget = 8D1107260486CEB800E47090 /* SpatDemo */;
+		codeSenseManager = 4C944F1B0B8BECEE00D6814C /* Code sense */;
+		executables = (
+			4C944EFC0B8BECE600D6814C /* SpatDemo */,
+			4C944EFD0B8BECE600D6814C /* SpatDemoTwo */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					429,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 263949364;
+			PBXWorkspaceStateSaveDate = 263949364;
+		};
+		perUserProjectItems = {
+			4CE1E0A00FBB8C83001C8C4C /* PBXTextBookmark */ = 4CE1E0A00FBB8C83001C8C4C /* PBXTextBookmark */;
+			4CE1E0A10FBB8C83001C8C4C /* PBXTextBookmark */ = 4CE1E0A10FBB8C83001C8C4C /* PBXTextBookmark */;
+			4CE1E0A20FBB8C83001C8C4C /* PBXTextBookmark */ = 4CE1E0A20FBB8C83001C8C4C /* PBXTextBookmark */;
+			4CE1E0A30FBB8C83001C8C4C /* PBXBookmark */ = 4CE1E0A30FBB8C83001C8C4C /* PBXBookmark */;
+			4CE1E0A40FBB8C83001C8C4C /* PBXTextBookmark */ = 4CE1E0A40FBB8C83001C8C4C /* PBXTextBookmark */;
+			4CE1E0A50FBB8C83001C8C4C /* PBXTextBookmark */ = 4CE1E0A50FBB8C83001C8C4C /* PBXTextBookmark */;
+			4CE1E0A60FBB8C83001C8C4C /* PBXTextBookmark */ = 4CE1E0A60FBB8C83001C8C4C /* PBXTextBookmark */;
+			4CE1E0A70FBB8C83001C8C4C /* PBXTextBookmark */ = 4CE1E0A70FBB8C83001C8C4C /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4C944F1A0B8BECEE00D6814C /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {619, 834}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 250}";
+		};
+	};
+	32CA4F630368D1EE00C91783 /* SpatDemo_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {716, 834}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 147}";
+		};
+	};
+	4C944EFC0B8BECE600D6814C /* SpatDemo */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = SpatDemo;
+		sourceDirectories = (
+		);
+	};
+	4C944EFD0B8BECE600D6814C /* SpatDemoTwo */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = SpatDemoTwo;
+		sourceDirectories = (
+		);
+	};
+	4C944F1A0B8BECEE00D6814C /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+		scmType = "";
+	};
+	4C944F1B0B8BECEE00D6814C /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4CE1E0A00FBB8C83001C8C4C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 21D1EE6C0ABA93D700E1E46A /* SpatDemoController.h */;
+		name = "SpatDemoController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 0;
+	};
+	4CE1E0A10FBB8C83001C8C4C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* SpatDemo_Prefix.pch */;
+		name = "SpatDemo_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 147;
+		vrLoc = 0;
+	};
+	4CE1E0A20FBB8C83001C8C4C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 250;
+		vrLoc = 0;
+	};
+	4CE1E0A30FBB8C83001C8C4C /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 21D1EE6D0ABA93D700E1E46A /* SpatDemoController.mm */;
+	};
+	4CE1E0A40FBB8C83001C8C4C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 21D1EE6C0ABA93D700E1E46A /* SpatDemoController.h */;
+		name = "SpatDemoController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 0;
+	};
+	4CE1E0A50FBB8C83001C8C4C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* SpatDemo_Prefix.pch */;
+		name = "SpatDemo_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 147;
+		vrLoc = 0;
+	};
+	4CE1E0A60FBB8C83001C8C4C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 250;
+		vrLoc = 0;
+	};
+	4CE1E0A70FBB8C83001C8C4C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 21D1EE6D0ABA93D700E1E46A /* SpatDemoController.mm */;
+		name = "SpatDemoController.mm: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1301;
+		vrLoc = 0;
+	};
+	8D1107260486CEB800E47090 /* SpatDemo */ = {
+		activeExec = 0;
+		executables = (
+			4C944EFC0B8BECE600D6814C /* SpatDemo */,
+		);
+	};
+}

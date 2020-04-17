@@ -1,0 +1,892 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* CSL_iphone_testAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CSL_iphone_testAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
+		280E754E0DD40C5E005A515E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
+		280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
+		289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
+		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
+		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
+		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		4C0722C4107128A2007D4013 /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
+		4C0722C5107128A2007D4013 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
+		4C0722C6107128A2007D4013 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
+		4C0722C7107128A2007D4013 /* Piano_A5_mf_mono.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3AB5C110599DCE006877AE /* Piano_A5_mf_mono.caf */; };
+		4C0722C8107128A2007D4013 /* HRTF_1047.dat in Resources */ = {isa = PBXBuildFile; fileRef = 4CA84A3A105F386500318636 /* HRTF_1047.dat */; };
+		4C0722C9107128A2007D4013 /* splash_mono.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE50F61061A2F00041DC5F /* splash_mono.caf */; };
+		4C0722CA107128A2007D4013 /* triangle_mono.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE51031061A4F90041DC5F /* triangle_mono.caf */; };
+		4C0722CC107128A2007D4013 /* CSL_Graph.mm in Sources */ = {isa = PBXBuildFile; fileRef = CB2AE7F4103F1CC9009F7AAE /* CSL_Graph.mm */; };
+		4C0722CD107128A2007D4013 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
+		4C0722CE107128A2007D4013 /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
+		4C0722CF107128A2007D4013 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
+		4C0722D0107128A2007D4013 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		4C0722D1107128A2007D4013 /* CSL_iphone_testAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CSL_iphone_testAppDelegate.m */; };
+		4C0722D2107128A2007D4013 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		4C0722ED107128A2007D4013 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		4C0722EE107128A2007D4013 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		4C0722EF107128A2007D4013 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
+		4C0722F0107128A2007D4013 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF4007C1048A1A10023930D /* QuartzCore.framework */; };
+		4C0722F1107128A2007D4013 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF4007E1048A1A10023930D /* AudioToolbox.framework */; };
+		4C213B3A114AE5A2007D980B /* libCSL_SLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C81F7A0114AE2240059E297 /* libCSL_SLib.a */; };
+		4C2F64861065CCA9004A9B32 /* CGestalt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587CF4103E0B7100A7FDDC /* CGestalt.cpp */; };
+		4C2F64871065CCAA004A9B32 /* CSL_Core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587CF2103E0B7100A7FDDC /* CSL_Core.cpp */; };
+		4C2F64881065CCAF004A9B32 /* CPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D02103E0B7100A7FDDC /* CPoint.cpp */; };
+		4C2F64891065CCB0004A9B32 /* FFT_Wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D9D56104F7340007CD461 /* FFT_Wrapper.cpp */; };
+		4C2F648A1065CCB2004A9B32 /* FFTReal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D9D58104F7340007CD461 /* FFTReal.cpp */; };
+		4C2F648B1065CCB8004A9B32 /* BlockResizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D00103E0B7100A7FDDC /* BlockResizer.cpp */; };
+		4C2F648C1065CCB9004A9B32 /* RingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587CF8103E0B7100A7FDDC /* RingBuffer.cpp */; };
+		4C2F648D1065CCBC004A9B32 /* Variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587CF6103E0B7100A7FDDC /* Variable.cpp */; };
+		4C2F648F1065CCC0004A9B32 /* ThreadUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587CFC103E0B7100A7FDDC /* ThreadUtilities.cpp */; };
+		4C2F64901065CCC6004A9B32 /* Envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D1D103E0B7100A7FDDC /* Envelope.cpp */; };
+		4C2F64911065CCCB004A9B32 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D23103E0B7100A7FDDC /* Oscillator.cpp */; };
+		4C2F64921065CCCE004A9B32 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D1B103E0B7100A7FDDC /* Window.cpp */; };
+		4C2F64931065CCD2004A9B32 /* iphoneIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D72103E0B7100A7FDDC /* iphoneIO.cpp */; };
+		4C2F64941065CCD4004A9B32 /* SoundFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF40834104A87670023930D /* SoundFile.cpp */; };
+		4C2F64951065CCD5004A9B32 /* SoundFileCA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D9D99104F76D7007CD461 /* SoundFileCA.cpp */; };
+		4C2F64961065CCDB004A9B32 /* Ambisonic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D8C103E0B7100A7FDDC /* Ambisonic.cpp */; };
+		4C2F64971065CCDC004A9B32 /* AmbisonicPanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D8E103E0B7100A7FDDC /* AmbisonicPanner.cpp */; };
+		4C2F64981065CCDE004A9B32 /* AmbisonicUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D90103E0B7100A7FDDC /* AmbisonicUtilities.cpp */; };
+		4C2F64991065CCE0004A9B32 /* Binaural.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D95103E0B7100A7FDDC /* Binaural.cpp */; };
+		4C2F649A1065CCE1004A9B32 /* BinauralDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45F02D105A4BCB00E1999C /* BinauralDB.cpp */; };
+		4C2F649B1065CCE2004A9B32 /* DistanceSimulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D7F103E0B7100A7FDDC /* DistanceSimulator.cpp */; };
+		4C2F649C1065CCEB004A9B32 /* SpatialAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D7B103E0B7100A7FDDC /* SpatialAudio.cpp */; };
+		4C2F649D1065CCEC004A9B32 /* SpatialPanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D7D103E0B7100A7FDDC /* SpatialPanner.cpp */; };
+		4C2F649E1065CCED004A9B32 /* SpatialSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D79103E0B7100A7FDDC /* SpatialSource.cpp */; };
+		4C2F649F1065CCF2004A9B32 /* SpeakerLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB587D77103E0B7100A7FDDC /* SpeakerLayout.cpp */; };
+		4C329E2F10D6BB08004F8B5D /* Filters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C329E2C10D6BB08004F8B5D /* Filters.cpp */; };
+		4C329E3510D6C0BF004F8B5D /* Freeverb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C329E3210D6C0BF004F8B5D /* Freeverb.cpp */; };
+		4C3AB5C210599DCE006877AE /* Piano_A5_mf_mono.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3AB5C110599DCE006877AE /* Piano_A5_mf_mono.caf */; };
+		4C81F6EF114ACAFC0059E297 /* SimplePanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6EC114ACAFC0059E297 /* SimplePanner.cpp */; };
+		4C81F6F2114ACB040059E297 /* Mixer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C45F07D105A4F9400E1999C /* Mixer.cpp */; };
+		4C81F741114ADC620059E297 /* CSL_Graph.mm in Sources */ = {isa = PBXBuildFile; fileRef = CB2AE7F4103F1CC9009F7AAE /* CSL_Graph.mm */; };
+		4CA84A3B105F386500318636 /* HRTF_1047.dat in Resources */ = {isa = PBXBuildFile; fileRef = 4CA84A3A105F386500318636 /* HRTF_1047.dat */; };
+		4CDE50F71061A2F00041DC5F /* splash_mono.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE50F61061A2F00041DC5F /* splash_mono.caf */; };
+		4CDE51041061A4F90041DC5F /* triangle_mono.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE51031061A4F90041DC5F /* triangle_mono.caf */; };
+		4CF400821048A1A10023930D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF4007C1048A1A10023930D /* QuartzCore.framework */; };
+		4CF400841048A1A10023930D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF4007E1048A1A10023930D /* AudioToolbox.framework */; };
+		CB587E41103E0BC600A7FDDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* CSL_iphone_testAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSL_iphone_testAppDelegate.h; path = Classes/CSL_iphone_testAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* CSL_iphone_testAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSL_iphone_testAppDelegate.m; path = Classes/CSL_iphone_testAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* BinauralSpatializer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinauralSpatializer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
+		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		280E754C0DD40C5E005A515E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		289233A20DB2D0840083E9F9 /* FlipsideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideView.h; path = Classes/FlipsideView.h; sourceTree = "<group>"; };
+		289233A30DB2D0840083E9F9 /* FlipsideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideView.m; path = Classes/FlipsideView.m; sourceTree = "<group>"; };
+		289233A40DB2D0840083E9F9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = Classes/MainView.h; sourceTree = "<group>"; };
+		289233A50DB2D0840083E9F9 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = Classes/MainView.m; sourceTree = "<group>"; };
+		289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
+		289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideViewController.h; path = Classes/FlipsideViewController.h; sourceTree = "<group>"; };
+		289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideViewController.m; path = Classes/FlipsideViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C0722F5107128A2007D4013 /* BinauralSpatializer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinauralSpatializer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C0722F7107128A2007D4013 /* CSL_iphone_HRTF copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSL_iphone_HRTF copy.plist"; sourceTree = "<group>"; };
+		4C1653B3105B4B0F00ECF467 /* BinaryOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryOp.cpp; path = ../../CSL/Processors/BinaryOp.cpp; sourceTree = SOURCE_ROOT; };
+		4C1653B4105B4B0F00ECF467 /* BinaryOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BinaryOp.h; path = ../../CSL/Processors/BinaryOp.h; sourceTree = SOURCE_ROOT; };
+		4C2F644C1065C86C004A9B32 /* rad2fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rad2fft.c; path = Classes/fft/rad2fft.c; sourceTree = SOURCE_ROOT; };
+		4C2F644D1065C86C004A9B32 /* rad2fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rad2fft.h; path = Classes/fft/rad2fft.h; sourceTree = SOURCE_ROOT; };
+		4C2F644E1065C86C004A9B32 /* SpectrumAnalysis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpectrumAnalysis.cpp; path = Classes/fft/SpectrumAnalysis.cpp; sourceTree = SOURCE_ROOT; };
+		4C2F644F1065C86C004A9B32 /* SpectrumAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpectrumAnalysis.h; path = Classes/fft/SpectrumAnalysis.h; sourceTree = SOURCE_ROOT; };
+		4C329E2C10D6BB08004F8B5D /* Filters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Filters.cpp; path = ../../CSL/Processors/Filters.cpp; sourceTree = SOURCE_ROOT; };
+		4C329E2D10D6BB08004F8B5D /* Filters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filters.h; path = ../../CSL/Processors/Filters.h; sourceTree = SOURCE_ROOT; };
+		4C329E3210D6C0BF004F8B5D /* Freeverb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Freeverb.cpp; path = ../../CSL/Processors/Freeverb.cpp; sourceTree = SOURCE_ROOT; };
+		4C329E3310D6C0BF004F8B5D /* Freeverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Freeverb.h; path = ../../CSL/Processors/Freeverb.h; sourceTree = SOURCE_ROOT; };
+		4C3AB5C110599DCE006877AE /* Piano_A5_mf_mono.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano_A5_mf_mono.caf; path = ../../CSL_Data/Piano_A5_mf_mono.caf; sourceTree = SOURCE_ROOT; };
+		4C45F02D105A4BCB00E1999C /* BinauralDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BinauralDB.cpp; sourceTree = "<group>"; };
+		4C45F02E105A4BCB00E1999C /* BinauralDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinauralDB.h; sourceTree = "<group>"; };
+		4C45F07D105A4F9400E1999C /* Mixer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mixer.cpp; path = ../Processors/Mixer.cpp; sourceTree = "<group>"; };
+		4C45F07E105A4F9400E1999C /* Mixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mixer.h; path = ../Processors/Mixer.h; sourceTree = "<group>"; };
+		4C5D9D56104F7340007CD461 /* FFT_Wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FFT_Wrapper.cpp; path = Utilities/FFT_Wrapper.cpp; sourceTree = "<group>"; };
+		4C5D9D57104F7340007CD461 /* FFT_Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFT_Wrapper.h; path = Utilities/FFT_Wrapper.h; sourceTree = "<group>"; };
+		4C5D9D58104F7340007CD461 /* FFTReal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FFTReal.cpp; path = Utilities/FFTReal.cpp; sourceTree = "<group>"; };
+		4C5D9D59104F7340007CD461 /* FFTReal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFTReal.h; path = Utilities/FFTReal.h; sourceTree = "<group>"; };
+		4C5D9D99104F76D7007CD461 /* SoundFileCA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundFileCA.cpp; sourceTree = "<group>"; };
+		4C5D9D9A104F76D7007CD461 /* SoundFileCA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFileCA.h; sourceTree = "<group>"; };
+		4C81F6EC114ACAFC0059E297 /* SimplePanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimplePanner.cpp; sourceTree = "<group>"; };
+		4C81F6ED114ACAFC0059E297 /* SimplePanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePanner.h; sourceTree = "<group>"; };
+		4C81F737114ADB400059E297 /* CSL_Graph2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CSL_Graph2.mm; path = Classes/CSL_Graph2.mm; sourceTree = "<group>"; };
+		4C81F7A0114AE2240059E297 /* libCSL_SLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCSL_SLib.a; path = ../SyP2/libCSL_SLib.a; sourceTree = SOURCE_ROOT; };
+		4CA84A3A105F386500318636 /* HRTF_1047.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HRTF_1047.dat; path = ../../CSL_Data/IRCAM_HRTF/512_DB/HRTF_1047.dat; sourceTree = SOURCE_ROOT; };
+		4CB17B5B1054E6F400D35F8C /* Spectral.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Spectral.cpp; sourceTree = "<group>"; };
+		4CB17B5C1054E6F400D35F8C /* Spectral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spectral.h; sourceTree = "<group>"; };
+		4CDE50F61061A2F00041DC5F /* splash_mono.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = splash_mono.caf; path = ../../CSL_Data/splash_mono.caf; sourceTree = SOURCE_ROOT; };
+		4CDE51031061A4F90041DC5F /* triangle_mono.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = triangle_mono.caf; path = ../../CSL_Data/triangle_mono.caf; sourceTree = SOURCE_ROOT; };
+		4CDE51541061AE380041DC5F /* CSL_iphone_HRTF.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CSL_iphone_HRTF.plist; sourceTree = "<group>"; };
+		4CF4007C1048A1A10023930D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4CF4007E1048A1A10023930D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4CF40834104A87670023930D /* SoundFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundFile.cpp; sourceTree = "<group>"; };
+		4CF40835104A87670023930D /* SoundFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFile.h; sourceTree = "<group>"; };
+		4CF40836104A87670023930D /* SoundFileL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundFileL.cpp; sourceTree = "<group>"; };
+		4CF40837104A87670023930D /* SoundFileL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFileL.h; sourceTree = "<group>"; };
+		CB2AE7F3103F1CC9009F7AAE /* CSL_Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSL_Graph.h; path = Classes/CSL_Graph.h; sourceTree = "<group>"; };
+		CB2AE7F4103F1CC9009F7AAE /* CSL_Graph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CSL_Graph.mm; path = Classes/CSL_Graph.mm; sourceTree = "<group>"; };
+		CB587CEE103E0B7100A7FDDC /* CSL_Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSL_Types.h; sourceTree = "<group>"; };
+		CB587CEF103E0B7100A7FDDC /* CSL_Includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSL_Includes.h; path = ../Kernel/CSL_Includes.h; sourceTree = "<group>"; };
+		CB587CF0103E0B7100A7FDDC /* CSL_Exceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSL_Exceptions.h; sourceTree = "<group>"; };
+		CB587CF1103E0B7100A7FDDC /* CSL_Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSL_Core.h; sourceTree = "<group>"; };
+		CB587CF2103E0B7100A7FDDC /* CSL_Core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSL_Core.cpp; sourceTree = "<group>"; };
+		CB587CF3103E0B7100A7FDDC /* CGestalt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGestalt.h; sourceTree = "<group>"; };
+		CB587CF4103E0B7100A7FDDC /* CGestalt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CGestalt.cpp; sourceTree = "<group>"; };
+		CB587CF5103E0B7100A7FDDC /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variable.h; sourceTree = "<group>"; };
+		CB587CF6103E0B7100A7FDDC /* Variable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Variable.cpp; sourceTree = "<group>"; };
+		CB587CF7103E0B7100A7FDDC /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
+		CB587CF8103E0B7100A7FDDC /* RingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RingBuffer.cpp; sourceTree = "<group>"; };
+		CB587CFB103E0B7100A7FDDC /* ThreadUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadUtilities.h; sourceTree = "<group>"; };
+		CB587CFC103E0B7100A7FDDC /* ThreadUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadUtilities.cpp; sourceTree = "<group>"; };
+		CB587CFF103E0B7100A7FDDC /* BlockResizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockResizer.h; sourceTree = "<group>"; };
+		CB587D00103E0B7100A7FDDC /* BlockResizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlockResizer.cpp; sourceTree = "<group>"; };
+		CB587D01103E0B7100A7FDDC /* CPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPoint.h; path = Utilities/CPoint.h; sourceTree = "<group>"; };
+		CB587D02103E0B7100A7FDDC /* CPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPoint.cpp; path = Utilities/CPoint.cpp; sourceTree = "<group>"; };
+		CB587D1A103E0B7100A7FDDC /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		CB587D1B103E0B7100A7FDDC /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		CB587D1C103E0B7100A7FDDC /* Envelope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Envelope.h; sourceTree = "<group>"; };
+		CB587D1D103E0B7100A7FDDC /* Envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Envelope.cpp; sourceTree = "<group>"; };
+		CB587D1E103E0B7100A7FDDC /* Noise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Noise.h; sourceTree = "<group>"; };
+		CB587D1F103E0B7100A7FDDC /* Noise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Noise.cpp; sourceTree = "<group>"; };
+		CB587D22103E0B7100A7FDDC /* Oscillator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Oscillator.h; sourceTree = "<group>"; };
+		CB587D23103E0B7100A7FDDC /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
+		CB587D2C103E0B7100A7FDDC /* KarplusString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KarplusString.h; sourceTree = "<group>"; };
+		CB587D2D103E0B7100A7FDDC /* KarplusString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KarplusString.cpp; sourceTree = "<group>"; };
+		CB587D71103E0B7100A7FDDC /* iphoneIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iphoneIO.h; path = ../../Applications/iPhone/iphoneIO.h; sourceTree = "<group>"; };
+		CB587D72103E0B7100A7FDDC /* iphoneIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iphoneIO.cpp; path = ../../Applications/iPhone/iphoneIO.cpp; sourceTree = "<group>"; };
+		CB587D75103E0B7100A7FDDC /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix.h; path = Spatializers/matrix.h; sourceTree = "<group>"; };
+		CB587D76103E0B7100A7FDDC /* SpeakerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerLayout.h; sourceTree = "<group>"; };
+		CB587D77103E0B7100A7FDDC /* SpeakerLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpeakerLayout.cpp; sourceTree = "<group>"; };
+		CB587D78103E0B7100A7FDDC /* SpatialSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpatialSource.h; sourceTree = "<group>"; };
+		CB587D79103E0B7100A7FDDC /* SpatialSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpatialSource.cpp; sourceTree = "<group>"; };
+		CB587D7A103E0B7100A7FDDC /* SpatialAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpatialAudio.h; sourceTree = "<group>"; };
+		CB587D7B103E0B7100A7FDDC /* SpatialAudio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpatialAudio.cpp; sourceTree = "<group>"; };
+		CB587D7C103E0B7100A7FDDC /* SpatialPanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpatialPanner.h; sourceTree = "<group>"; };
+		CB587D7D103E0B7100A7FDDC /* SpatialPanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpatialPanner.cpp; sourceTree = "<group>"; };
+		CB587D7E103E0B7100A7FDDC /* DistanceSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceSimulator.h; sourceTree = "<group>"; };
+		CB587D7F103E0B7100A7FDDC /* DistanceSimulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DistanceSimulator.cpp; sourceTree = "<group>"; };
+		CB587D81103E0B7100A7FDDC /* Speaker_layout.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Speaker_layout.dat; sourceTree = "<group>"; };
+		CB587D83103E0B7100A7FDDC /* PME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PME.h; sourceTree = "<group>"; };
+		CB587D84103E0B7100A7FDDC /* PME.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PME.cpp; sourceTree = "<group>"; };
+		CB587D85103E0B7100A7FDDC /* PracticalSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticalSocket.h; sourceTree = "<group>"; };
+		CB587D86103E0B7100A7FDDC /* PracticalSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PracticalSocket.cpp; sourceTree = "<group>"; };
+		CB587D87103E0B7100A7FDDC /* VBAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBAP.h; sourceTree = "<group>"; };
+		CB587D88103E0B7100A7FDDC /* VBAP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VBAP.cpp; sourceTree = "<group>"; };
+		CB587D8B103E0B7100A7FDDC /* Ambisonic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ambisonic.h; sourceTree = "<group>"; };
+		CB587D8C103E0B7100A7FDDC /* Ambisonic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ambisonic.cpp; sourceTree = "<group>"; };
+		CB587D8D103E0B7100A7FDDC /* AmbisonicPanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbisonicPanner.h; sourceTree = "<group>"; };
+		CB587D8E103E0B7100A7FDDC /* AmbisonicPanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AmbisonicPanner.cpp; sourceTree = "<group>"; };
+		CB587D8F103E0B7100A7FDDC /* AmbisonicUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbisonicUtilities.h; sourceTree = "<group>"; };
+		CB587D90103E0B7100A7FDDC /* AmbisonicUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AmbisonicUtilities.cpp; sourceTree = "<group>"; };
+		CB587D94103E0B7100A7FDDC /* Binaural.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binaural.h; sourceTree = "<group>"; };
+		CB587D95103E0B7100A7FDDC /* Binaural.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Binaural.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				CB587E41103E0BC600A7FDDC /* CoreGraphics.framework in Frameworks */,
+				4CF400821048A1A10023930D /* QuartzCore.framework in Frameworks */,
+				4CF400841048A1A10023930D /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C0722EC107128A2007D4013 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0722ED107128A2007D4013 /* Foundation.framework in Frameworks */,
+				4C0722EE107128A2007D4013 /* UIKit.framework in Frameworks */,
+				4C0722EF107128A2007D4013 /* CoreGraphics.framework in Frameworks */,
+				4C0722F0107128A2007D4013 /* QuartzCore.framework in Frameworks */,
+				4C0722F1107128A2007D4013 /* AudioToolbox.framework in Frameworks */,
+				4C213B3A114AE5A2007D980B /* libCSL_SLib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* BinauralSpatializer.app */,
+				4C0722F5107128A2007D4013 /* BinauralSpatializer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		281C6CD70DB2D82200F60ACC /* Flipside View */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* CSL_iphone_testAppDelegate.h */,
+				1D3623250D0F684500981E51 /* CSL_iphone_testAppDelegate.m */,
+				289233A20DB2D0840083E9F9 /* FlipsideView.h */,
+				289233A30DB2D0840083E9F9 /* FlipsideView.m */,
+				289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */,
+				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */,
+			);
+			name = "Flipside View";
+			sourceTree = "<group>";
+		};
+		289233A00DB2D0730083E9F9 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				CB2AE7F3103F1CC9009F7AAE /* CSL_Graph.h */,
+				CB2AE7F4103F1CC9009F7AAE /* CSL_Graph.mm */,
+				4C81F737114ADB400059E297 /* CSL_Graph2.mm */,
+				289233A40DB2D0840083E9F9 /* MainView.h */,
+				289233A50DB2D0840083E9F9 /* MainView.m */,
+				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
+				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				CB587CEC103E0B6200A7FDDC /* CSL */,
+				289233A00DB2D0730083E9F9 /* Main View */,
+				281C6CD70DB2D82200F60ACC /* Flipside View */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4CDE51541061AE380041DC5F /* CSL_iphone_HRTF.plist */,
+				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
+				280E754B0DD40C5E005A515E /* MainView.xib */,
+				280E754C0DD40C5E005A515E /* MainWindow.xib */,
+				4C3AB5C110599DCE006877AE /* Piano_A5_mf_mono.caf */,
+				4CDE51031061A4F90041DC5F /* triangle_mono.caf */,
+				4CDE50F61061A2F00041DC5F /* splash_mono.caf */,
+				4CA84A3A105F386500318636 /* HRTF_1047.dat */,
+				4C0722F7107128A2007D4013 /* CSL_iphone_HRTF copy.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C81F7A0114AE2240059E297 /* libCSL_SLib.a */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765580DF743DE002DB57D /* CoreGraphics.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				4CF4007C1048A1A10023930D /* QuartzCore.framework */,
+				4CF4007E1048A1A10023930D /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C2F64431065C85D004A9B32 /* FFT */ = {
+			isa = PBXGroup;
+			children = (
+				4C2F644F1065C86C004A9B32 /* SpectrumAnalysis.h */,
+				4C2F644E1065C86C004A9B32 /* SpectrumAnalysis.cpp */,
+				4C2F644D1065C86C004A9B32 /* rad2fft.h */,
+				4C2F644C1065C86C004A9B32 /* rad2fft.c */,
+			);
+			name = FFT;
+			sourceTree = "<group>";
+		};
+		4C3AB43610599A36006877AE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4C2F64431065C85D004A9B32 /* FFT */,
+				4C5D9D57104F7340007CD461 /* FFT_Wrapper.h */,
+				4C5D9D56104F7340007CD461 /* FFT_Wrapper.cpp */,
+				4C5D9D59104F7340007CD461 /* FFTReal.h */,
+				4C5D9D58104F7340007CD461 /* FFTReal.cpp */,
+				CB587D01103E0B7100A7FDDC /* CPoint.h */,
+				CB587D02103E0B7100A7FDDC /* CPoint.cpp */,
+				CB587D75103E0B7100A7FDDC /* matrix.h */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		CB587CEC103E0B6200A7FDDC /* CSL */ = {
+			isa = PBXGroup;
+			children = (
+				CB587CED103E0B7100A7FDDC /* Kernel */,
+				4C3AB43610599A36006877AE /* Support */,
+				CB587CF9103E0B7100A7FDDC /* Utilities */,
+				CB587D19103E0B7100A7FDDC /* Sources */,
+				CB587D5C103E0B7100A7FDDC /* IO */,
+				CB587D73103E0B7100A7FDDC /* Spatializers */,
+			);
+			name = CSL;
+			path = ../../CSL;
+			sourceTree = "<group>";
+		};
+		CB587CED103E0B7100A7FDDC /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				CB587CEE103E0B7100A7FDDC /* CSL_Types.h */,
+				CB587CF0103E0B7100A7FDDC /* CSL_Exceptions.h */,
+				CB587CF1103E0B7100A7FDDC /* CSL_Core.h */,
+				CB587CF2103E0B7100A7FDDC /* CSL_Core.cpp */,
+				CB587CF3103E0B7100A7FDDC /* CGestalt.h */,
+				CB587CF4103E0B7100A7FDDC /* CGestalt.cpp */,
+			);
+			path = Kernel;
+			sourceTree = "<group>";
+		};
+		CB587CF9103E0B7100A7FDDC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CB587CEF103E0B7100A7FDDC /* CSL_Includes.h */,
+				CB587CF5103E0B7100A7FDDC /* Variable.h */,
+				CB587CF6103E0B7100A7FDDC /* Variable.cpp */,
+				CB587CF7103E0B7100A7FDDC /* RingBuffer.h */,
+				CB587CF8103E0B7100A7FDDC /* RingBuffer.cpp */,
+				CB587CFB103E0B7100A7FDDC /* ThreadUtilities.h */,
+				CB587CFC103E0B7100A7FDDC /* ThreadUtilities.cpp */,
+				CB587CFF103E0B7100A7FDDC /* BlockResizer.h */,
+				CB587D00103E0B7100A7FDDC /* BlockResizer.cpp */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CB587D19103E0B7100A7FDDC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4C1653B4105B4B0F00ECF467 /* BinaryOp.h */,
+				4C1653B3105B4B0F00ECF467 /* BinaryOp.cpp */,
+				CB587D1A103E0B7100A7FDDC /* Window.h */,
+				CB587D1B103E0B7100A7FDDC /* Window.cpp */,
+				CB587D1C103E0B7100A7FDDC /* Envelope.h */,
+				CB587D1D103E0B7100A7FDDC /* Envelope.cpp */,
+				CB587D1E103E0B7100A7FDDC /* Noise.h */,
+				CB587D1F103E0B7100A7FDDC /* Noise.cpp */,
+				CB587D22103E0B7100A7FDDC /* Oscillator.h */,
+				CB587D23103E0B7100A7FDDC /* Oscillator.cpp */,
+				4CB17B5C1054E6F400D35F8C /* Spectral.h */,
+				4CB17B5B1054E6F400D35F8C /* Spectral.cpp */,
+				CB587D2C103E0B7100A7FDDC /* KarplusString.h */,
+				CB587D2D103E0B7100A7FDDC /* KarplusString.cpp */,
+				4C45F07E105A4F9400E1999C /* Mixer.h */,
+				4C45F07D105A4F9400E1999C /* Mixer.cpp */,
+				4C329E2D10D6BB08004F8B5D /* Filters.h */,
+				4C329E2C10D6BB08004F8B5D /* Filters.cpp */,
+				4C329E3310D6C0BF004F8B5D /* Freeverb.h */,
+				4C329E3210D6C0BF004F8B5D /* Freeverb.cpp */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CB587D5C103E0B7100A7FDDC /* IO */ = {
+			isa = PBXGroup;
+			children = (
+				CB587D71103E0B7100A7FDDC /* iphoneIO.h */,
+				CB587D72103E0B7100A7FDDC /* iphoneIO.cpp */,
+				4CF40835104A87670023930D /* SoundFile.h */,
+				4CF40834104A87670023930D /* SoundFile.cpp */,
+				4C5D9D9A104F76D7007CD461 /* SoundFileCA.h */,
+				4C5D9D99104F76D7007CD461 /* SoundFileCA.cpp */,
+				4CF40837104A87670023930D /* SoundFileL.h */,
+				4CF40836104A87670023930D /* SoundFileL.cpp */,
+			);
+			path = IO;
+			sourceTree = "<group>";
+		};
+		CB587D73103E0B7100A7FDDC /* Spatializers */ = {
+			isa = PBXGroup;
+			children = (
+				CB587D74103E0B7100A7FDDC /* Spatializers */,
+				CB587D93103E0B7100A7FDDC /* Binaural */,
+				CB587D8A103E0B7100A7FDDC /* Ambisonic */,
+				CB587D82103E0B7100A7FDDC /* VBAP */,
+			);
+			path = Spatializers;
+			sourceTree = "<group>";
+		};
+		CB587D74103E0B7100A7FDDC /* Spatializers */ = {
+			isa = PBXGroup;
+			children = (
+				CB587D78103E0B7100A7FDDC /* SpatialSource.h */,
+				CB587D79103E0B7100A7FDDC /* SpatialSource.cpp */,
+				CB587D7A103E0B7100A7FDDC /* SpatialAudio.h */,
+				CB587D7B103E0B7100A7FDDC /* SpatialAudio.cpp */,
+				CB587D7C103E0B7100A7FDDC /* SpatialPanner.h */,
+				CB587D7D103E0B7100A7FDDC /* SpatialPanner.cpp */,
+				4C81F6ED114ACAFC0059E297 /* SimplePanner.h */,
+				4C81F6EC114ACAFC0059E297 /* SimplePanner.cpp */,
+				CB587D7E103E0B7100A7FDDC /* DistanceSimulator.h */,
+				CB587D7F103E0B7100A7FDDC /* DistanceSimulator.cpp */,
+				CB587D76103E0B7100A7FDDC /* SpeakerLayout.h */,
+				CB587D77103E0B7100A7FDDC /* SpeakerLayout.cpp */,
+				CB587D81103E0B7100A7FDDC /* Speaker_layout.dat */,
+			);
+			name = Spatializers;
+			sourceTree = "<group>";
+		};
+		CB587D82103E0B7100A7FDDC /* VBAP */ = {
+			isa = PBXGroup;
+			children = (
+				CB587D83103E0B7100A7FDDC /* PME.h */,
+				CB587D84103E0B7100A7FDDC /* PME.cpp */,
+				CB587D85103E0B7100A7FDDC /* PracticalSocket.h */,
+				CB587D86103E0B7100A7FDDC /* PracticalSocket.cpp */,
+				CB587D87103E0B7100A7FDDC /* VBAP.h */,
+				CB587D88103E0B7100A7FDDC /* VBAP.cpp */,
+			);
+			path = VBAP;
+			sourceTree = "<group>";
+		};
+		CB587D8A103E0B7100A7FDDC /* Ambisonic */ = {
+			isa = PBXGroup;
+			children = (
+				CB587D8B103E0B7100A7FDDC /* Ambisonic.h */,
+				CB587D8C103E0B7100A7FDDC /* Ambisonic.cpp */,
+				CB587D8D103E0B7100A7FDDC /* AmbisonicPanner.h */,
+				CB587D8E103E0B7100A7FDDC /* AmbisonicPanner.cpp */,
+				CB587D8F103E0B7100A7FDDC /* AmbisonicUtilities.h */,
+				CB587D90103E0B7100A7FDDC /* AmbisonicUtilities.cpp */,
+			);
+			path = Ambisonic;
+			sourceTree = "<group>";
+		};
+		CB587D93103E0B7100A7FDDC /* Binaural */ = {
+			isa = PBXGroup;
+			children = (
+				4C45F02E105A4BCB00E1999C /* BinauralDB.h */,
+				4C45F02D105A4BCB00E1999C /* BinauralDB.cpp */,
+				CB587D94103E0B7100A7FDDC /* Binaural.h */,
+				CB587D95103E0B7100A7FDDC /* Binaural.cpp */,
+			);
+			path = Binaural;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* BinauralSpatializer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BinauralSpatializer" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BinauralSpatializer;
+			productName = CSL_iphone_test;
+			productReference = 1D6058910D05DD3D006BFB54 /* BinauralSpatializer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C0722C2107128A2007D4013 /* BinauralSpatializer-with-lib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C0722F2107128A2007D4013 /* Build configuration list for PBXNativeTarget "BinauralSpatializer-with-lib" */;
+			buildPhases = (
+				4C0722C3107128A2007D4013 /* Resources */,
+				4C0722CB107128A2007D4013 /* Sources */,
+				4C0722EC107128A2007D4013 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BinauralSpatializer-with-lib";
+			productName = CSL_iphone_test;
+			productReference = 4C0722F5107128A2007D4013 /* BinauralSpatializer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BinauralSpatializer" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* BinauralSpatializer */,
+				4C0722C2107128A2007D4013 /* BinauralSpatializer-with-lib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */,
+				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
+				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
+				4C3AB5C210599DCE006877AE /* Piano_A5_mf_mono.caf in Resources */,
+				4CA84A3B105F386500318636 /* HRTF_1047.dat in Resources */,
+				4CDE50F71061A2F00041DC5F /* splash_mono.caf in Resources */,
+				4CDE51041061A4F90041DC5F /* triangle_mono.caf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C0722C3107128A2007D4013 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0722C4107128A2007D4013 /* FlipsideView.xib in Resources */,
+				4C0722C5107128A2007D4013 /* MainView.xib in Resources */,
+				4C0722C6107128A2007D4013 /* MainWindow.xib in Resources */,
+				4C0722C7107128A2007D4013 /* Piano_A5_mf_mono.caf in Resources */,
+				4C0722C8107128A2007D4013 /* HRTF_1047.dat in Resources */,
+				4C0722C9107128A2007D4013 /* splash_mono.caf in Resources */,
+				4C0722CA107128A2007D4013 /* triangle_mono.caf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
+				289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */,
+				289233A70DB2D0840083E9F9 /* MainView.m in Sources */,
+				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
+				1D3623260D0F684500981E51 /* CSL_iphone_testAppDelegate.m in Sources */,
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				4C2F64861065CCA9004A9B32 /* CGestalt.cpp in Sources */,
+				4C2F64871065CCAA004A9B32 /* CSL_Core.cpp in Sources */,
+				4C2F64881065CCAF004A9B32 /* CPoint.cpp in Sources */,
+				4C2F64891065CCB0004A9B32 /* FFT_Wrapper.cpp in Sources */,
+				4C2F648A1065CCB2004A9B32 /* FFTReal.cpp in Sources */,
+				4C2F648B1065CCB8004A9B32 /* BlockResizer.cpp in Sources */,
+				4C2F648C1065CCB9004A9B32 /* RingBuffer.cpp in Sources */,
+				4C2F648D1065CCBC004A9B32 /* Variable.cpp in Sources */,
+				4C2F648F1065CCC0004A9B32 /* ThreadUtilities.cpp in Sources */,
+				4C2F64901065CCC6004A9B32 /* Envelope.cpp in Sources */,
+				4C2F64911065CCCB004A9B32 /* Oscillator.cpp in Sources */,
+				4C2F64921065CCCE004A9B32 /* Window.cpp in Sources */,
+				4C2F64931065CCD2004A9B32 /* iphoneIO.cpp in Sources */,
+				4C2F64941065CCD4004A9B32 /* SoundFile.cpp in Sources */,
+				4C2F64951065CCD5004A9B32 /* SoundFileCA.cpp in Sources */,
+				4C2F64961065CCDB004A9B32 /* Ambisonic.cpp in Sources */,
+				4C2F64971065CCDC004A9B32 /* AmbisonicPanner.cpp in Sources */,
+				4C2F64981065CCDE004A9B32 /* AmbisonicUtilities.cpp in Sources */,
+				4C2F64991065CCE0004A9B32 /* Binaural.cpp in Sources */,
+				4C2F649A1065CCE1004A9B32 /* BinauralDB.cpp in Sources */,
+				4C2F649B1065CCE2004A9B32 /* DistanceSimulator.cpp in Sources */,
+				4C2F649C1065CCEB004A9B32 /* SpatialAudio.cpp in Sources */,
+				4C2F649D1065CCEC004A9B32 /* SpatialPanner.cpp in Sources */,
+				4C2F649E1065CCED004A9B32 /* SpatialSource.cpp in Sources */,
+				4C2F649F1065CCF2004A9B32 /* SpeakerLayout.cpp in Sources */,
+				4C329E2F10D6BB08004F8B5D /* Filters.cpp in Sources */,
+				4C329E3510D6C0BF004F8B5D /* Freeverb.cpp in Sources */,
+				4C81F6EF114ACAFC0059E297 /* SimplePanner.cpp in Sources */,
+				4C81F6F2114ACB040059E297 /* Mixer.cpp in Sources */,
+				4C81F741114ADC620059E297 /* CSL_Graph.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C0722CB107128A2007D4013 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0722CC107128A2007D4013 /* CSL_Graph.mm in Sources */,
+				4C0722CD107128A2007D4013 /* MainViewController.m in Sources */,
+				4C0722CE107128A2007D4013 /* FlipsideView.m in Sources */,
+				4C0722CF107128A2007D4013 /* MainView.m in Sources */,
+				4C0722D0107128A2007D4013 /* FlipsideViewController.m in Sources */,
+				4C0722D1107128A2007D4013 /* CSL_iphone_testAppDelegate.m in Sources */,
+				4C0722D2107128A2007D4013 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				BUILD_STYLE = Debug;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stephen Pope (9597QD93MC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stephen Pope (9597QD93MC)";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = NO;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_CW_ASM_SYNTAX = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_ASM_KEYWORD = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = Off;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CSL_iphone_HRTF_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					IPHONE,
+					USE_CASND,
+					USE_HRTF,
+					USE_FFTREAL,
+					USE_AMBISONIC,
+				);
+				GCC_THUMB_SUPPORT = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = 4.2;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				GENERATE_PROFILING_CODE = YES;
+				HEADER_SEARCH_PATHS = (
+					"~/Code/CSL/CSL/Includes",
+					"~/Code/juce",
+					/usr/local/include,
+				);
+				INFOPLIST_FILE = CSL_iphone_HRTF.plist;
+				LIBRARY_SEARCH_PATHS = (
+					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.sdk/usr/lib,
+					"\"$(SRCROOT)/build/Debug-iphoneos\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = BinauralSpatializer;
+				PROVISIONING_PROFILE = "45AE0612-1EE5-4046-A366-B0EAC5EA663F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "45AE0612-1EE5-4046-A366-B0EAC5EA663F";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos3.1.3;
+				SKIP_INSTALL = NO;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_STYLE = Release;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CSL_iphone_test_Prefix.pch;
+				INFOPLIST_FILE = "CSL_iphone_test-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Mail Downloads/juce/bin\"",
+					"\"$(SRCROOT)/build/Debug-iphoneos\"",
+				);
+				PRODUCT_NAME = CSL_iphone_test;
+			};
+			name = Release;
+		};
+		4C0722F3107128A2007D4013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				BUILD_STYLE = Debug;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stephen Pope (9597QD93MC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stephen Pope (9597QD93MC)";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = NO;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_CW_ASM_SYNTAX = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_ASM_KEYWORD = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = Off;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CSL_iphone_HRTF_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					IPHONE,
+					USE_CASND,
+					USE_HRTF,
+					USE_FFTREAL,
+					USE_AMBISONIC,
+				);
+				GCC_THUMB_SUPPORT = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = 4.2;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				GENERATE_PROFILING_CODE = YES;
+				HEADER_SEARCH_PATHS = (
+					"~/Code/CSL/CSL/Includes",
+					"~/Code/juce",
+					/usr/local/include,
+				);
+				INFOPLIST_FILE = CSL_iphone_HRTF.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				LIBRARY_SEARCH_PATHS = (
+					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.sdk/usr/lib,
+					"\\\"$(SRCROOT)/build/Debug-iphoneos\\\"",
+					"\"$(SRCROOT)/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../SyP2\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = BinauralSpatializer;
+				PROVISIONING_PROFILE = "45AE0612-1EE5-4046-A366-B0EAC5EA663F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "45AE0612-1EE5-4046-A366-B0EAC5EA663F";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos3.1.3;
+				SKIP_INSTALL = NO;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
+			};
+			name = Debug;
+		};
+		4C0722F4107128A2007D4013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_STYLE = Release;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CSL_iphone_test_Prefix.pch;
+				INFOPLIST_FILE = "CSL_iphone_HRTF copy.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\"$(SRCROOT)/../../../Library/Mail\\ Downloads/juce/bin\\\"",
+					"\\\"$(SRCROOT)/build/Debug-iphoneos\\\"",
+					"\"$(SRCROOT)/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../SyP2\"",
+				);
+				PRODUCT_NAME = CSL_iphone_test;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_STYLE = Debug;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stephen Pope (B7LGS54Z75)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stephen Pope (B7LGS54Z75)";
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					IPHONE,
+					USE_CASND,
+					USE_HRTF,
+					USE_FFTREAL,
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.sdk/usr/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "E3ED87B7-9146-485C-BF03-F0C7F2A06C66";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E3ED87B7-9146-485C-BF03-F0C7F2A06C66";
+				SDKROOT = iphonesimulator3.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_STYLE = Release;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphonesimulator3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BinauralSpatializer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C0722F2107128A2007D4013 /* Build configuration list for PBXNativeTarget "BinauralSpatializer-with-lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C0722F3107128A2007D4013 /* Debug */,
+				4C0722F4107128A2007D4013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BinauralSpatializer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

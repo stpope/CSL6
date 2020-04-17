@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="tEtsoU" name="CSL_JUCE" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="edu.ucsb.mat.CSL_JUCE" jucerVersion="3.0.0"
+              companyName="CREATE/MAT">
+  <MAINGROUP id="Tbo1oq" name="CSL_JUCE">
+    <GROUP id="{DABD5F17-401D-23FE-F70E-270650F0781A}" name="CSL">
+      <GROUP id="{ADD84D3D-449B-C12E-0B1E-40BB4D8A01C0}" name="Kernel">
+        <FILE id="hvmYPT" name="CSL_Types.h" compile="0" resource="0" file="../CSL/Kernel/CSL_Types.h"/>
+        <FILE id="gd0vqc" name="CSL_Exceptions.h" compile="0" resource="0"
+              file="../CSL/Kernel/CSL_Exceptions.h"/>
+        <FILE id="h3QFdF" name="CSL_Core.h" compile="0" resource="0" file="../CSL/Kernel/CSL_Core.h"/>
+        <FILE id="ni6jv0" name="CSL_Core.cpp" compile="1" resource="0" file="../CSL/Kernel/CSL_Core.cpp"/>
+        <FILE id="hGrekk" name="CGestalt.h" compile="0" resource="0" file="../CSL/Kernel/CGestalt.h"/>
+        <FILE id="TPrBZy" name="CGestalt.cpp" compile="1" resource="0" file="../CSL/Kernel/CGestalt.cpp"/>
+      </GROUP>
+      <GROUP id="{330C4A40-0A9F-9646-4F65-A66B8FF423A7}" name="Support">
+        <FILE id="IXPQe2" name="CSL_Includes.h" compile="0" resource="0" file="../CSL/Kernel/CSL_Includes.h"/>
+        <FILE id="qKoRv9" name="FFT_Wrapper.h" compile="0" resource="0" file="../CSL/Utilities/FFT_Wrapper.h"/>
+        <FILE id="mHKn1R" name="FFT_Wrapper.cpp" compile="1" resource="0" file="../CSL/Utilities/FFT_Wrapper.cpp"/>
+        <FILE id="ttofs7" name="FFTReal.h" compile="0" resource="0" file="../CSL/Utilities/FFTReal.h"/>
+        <FILE id="BqLA6Y" name="FFTReal.cpp" compile="1" resource="0" file="../CSL/Utilities/FFTReal.cpp"/>
+        <FILE id="wmxlxd" name="CPoint.h" compile="0" resource="0" file="../CSL/Utilities/CPoint.h"/>
+        <FILE id="Gm2dzE" name="CPoint.cpp" compile="1" resource="0" file="../CSL/Utilities/CPoint.cpp"/>
+        <FILE id="krlpGF" name="matrix.h" compile="0" resource="0" file="../CSL/Spatializers/matrix.h"/>
+      </GROUP>
+      <GROUP id="{CB655542-8A5A-2E4D-846B-3A1BFAAD6B42}" name="Utilities">
+        <FILE id="Lr7Ymm" name="Variable.h" compile="0" resource="0" file="../CSL/Utilities/Variable.h"/>
+        <FILE id="ESVmrk" name="Variable.cpp" compile="1" resource="0" file="../CSL/Utilities/Variable.cpp"/>
+        <FILE id="nyxarK" name="RingBuffer.h" compile="0" resource="0" file="../CSL/Utilities/RingBuffer.h"/>
+        <FILE id="e8jWGa" name="RingBuffer.cpp" compile="1" resource="0" file="../CSL/Utilities/RingBuffer.cpp"/>
+        <FILE id="hFbn7u" name="ThreadUtilities.h" compile="0" resource="0"
+              file="../CSL/Utilities/ThreadUtilities.h"/>
+        <FILE id="YIrYQa" name="ThreadUtilities.cpp" compile="1" resource="0"
+              file="../CSL/Utilities/ThreadUtilities.cpp"/>
+        <FILE id="mb9zvH" name="BlockResizer.h" compile="0" resource="0" file="../CSL/Utilities/BlockResizer.h"/>
+        <FILE id="Zo6DDq" name="BlockResizer.cpp" compile="1" resource="0"
+              file="../CSL/Utilities/BlockResizer.cpp"/>
+      </GROUP>
+      <GROUP id="{AAF5371A-4FDC-EF8D-000B-CF561CF5DB58}" name="Sources">
+        <FILE id="roHEVA" name="Window.h" compile="0" resource="0" file="../CSL/Sources/Window.h"/>
+        <FILE id="XXnmOp" name="Window.cpp" compile="1" resource="0" file="../CSL/Sources/Window.cpp"/>
+        <FILE id="H45d16" name="Envelope.h" compile="0" resource="0" file="../CSL/Sources/Envelope.h"/>
+        <FILE id="QjZGIv" name="Envelope.cpp" compile="1" resource="0" file="../CSL/Sources/Envelope.cpp"/>
+        <FILE id="E8EZxz" name="Noise.h" compile="0" resource="0" file="../CSL/Sources/Noise.h"/>
+        <FILE id="haAX54" name="Noise.cpp" compile="1" resource="0" file="../CSL/Sources/Noise.cpp"/>
+        <FILE id="mRblET" name="SimpleSines.h" compile="0" resource="0" file="../CSL/Sources/SimpleSines.h"/>
+        <FILE id="mr1M1J" name="SimpleSines.cpp" compile="1" resource="0" file="../CSL/Sources/SimpleSines.cpp"/>
+        <FILE id="T7TGQu" name="Oscillator.h" compile="0" resource="0" file="../CSL/Sources/Oscillator.h"/>
+        <FILE id="UCqmWw" name="Oscillator.cpp" compile="1" resource="0" file="../CSL/Sources/Oscillator.cpp"/>
+        <FILE id="YLDbbO" name="Spectral.h" compile="0" resource="0" file="../CSL/Sources/Spectral.h"/>
+        <FILE id="z5IyVh" name="Spectral.cpp" compile="1" resource="0" file="../CSL/Sources/Spectral.cpp"/>
+        <FILE id="OczGRk" name="SHARC.h" compile="0" resource="0" file="../CSL/Sources/SHARC.h"/>
+        <FILE id="V7VgWY" name="SHARC.cpp" compile="1" resource="0" file="../CSL/Sources/SHARC.cpp"/>
+        <FILE id="c5t4CK" name="KarplusString.h" compile="0" resource="0" file="../CSL/Sources/KarplusString.h"/>
+        <FILE id="DQZbiQ" name="KarplusString.cpp" compile="1" resource="0"
+              file="../CSL/Sources/KarplusString.cpp"/>
+        <FILE id="EZRxFb" name="Granulator.h" compile="0" resource="0" file="../CSL/Sources/Granulator.h"/>
+        <FILE id="oXARoX" name="Granulator.cpp" compile="1" resource="0" file="../CSL/Sources/Granulator.cpp"/>
+        <FILE id="SxuQFf" name="Lorenz.h" compile="0" resource="0" file="../CSL/Sources/Lorenz.h"/>
+        <FILE id="Q71VLE" name="Lorenz.cpp" compile="1" resource="0" file="../CSL/Sources/Lorenz.cpp"/>
+        <FILE id="jzirog" name="OscillatorBL.h" compile="0" resource="0" file="../CSL/Sources/OscillatorBL.h"/>
+        <FILE id="ZCJMRQ" name="OscillatorBL.cpp" compile="1" resource="0"
+              file="../CSL/Sources/OscillatorBL.cpp"/>
+        <FILE id="tOQihy" name="WaveShaper.h" compile="0" resource="0" file="../CSL/Sources/WaveShaper.h"/>
+        <FILE id="KWjAA3" name="WaveShaper.cpp" compile="1" resource="0" file="../CSL/Sources/WaveShaper.cpp"/>
+      </GROUP>
+      <GROUP id="{AF68793B-AA91-1610-AABF-A624B8C22E78}" name="Effects">
+        <FILE id="Ah0beV" name="BinaryOp.h" compile="0" resource="0" file="../CSL/Processors/BinaryOp.h"/>
+        <FILE id="Wjze9J" name="BinaryOp.cpp" compile="1" resource="0" file="../CSL/Processors/BinaryOp.cpp"/>
+        <FILE id="NCBvtD" name="Mixer.h" compile="0" resource="0" file="../CSL/Processors/Mixer.h"/>
+        <FILE id="uh8hG2" name="Mixer.cpp" compile="1" resource="0" file="../CSL/Processors/Mixer.cpp"/>
+        <FILE id="rydz8I" name="Filters.h" compile="0" resource="0" file="../CSL/Processors/Filters.h"/>
+        <FILE id="Dm0TV6" name="Filters.cpp" compile="1" resource="0" file="../CSL/Processors/Filters.cpp"/>
+        <FILE id="jXqbOp" name="FIR.h" compile="0" resource="0" file="../CSL/Processors/FIR.h"/>
+        <FILE id="lwGef4" name="FIR.cpp" compile="1" resource="0" file="../CSL/Processors/FIR.cpp"/>
+        <FILE id="ZgmsmO" name="Freeverb.h" compile="0" resource="0" file="../CSL/Processors/Freeverb.h"/>
+        <FILE id="rhKzCR" name="Freeverb.cpp" compile="1" resource="0" file="../CSL/Processors/Freeverb.cpp"/>
+        <FILE id="VbXAtf" name="InOut.h" compile="0" resource="0" file="../CSL/Processors/InOut.h"/>
+        <FILE id="fS0DRj" name="InOut.cpp" compile="1" resource="0" file="../CSL/Processors/InOut.cpp"/>
+        <FILE id="zdKJZI" name="Clipper.h" compile="0" resource="0" file="../CSL/Processors/Clipper.h"/>
+        <FILE id="Gsjjqq" name="Clipper.cpp" compile="1" resource="0" file="../CSL/Processors/Clipper.cpp"/>
+      </GROUP>
+      <GROUP id="{5F6EB67D-CAB6-644E-9CF8-185E9D440772}" name="Spatializers">
+        <GROUP id="{49EE0A53-59C1-B948-4C15-11662AD6631F}" name="Kernel">
+          <FILE id="CN0R24" name="SpatialSource.h" compile="0" resource="0" file="../CSL/Spatializers/SpatialSource.h"/>
+          <FILE id="F1EdA3" name="SpatialSource.cpp" compile="1" resource="0"
+                file="../CSL/Spatializers/SpatialSource.cpp"/>
+          <FILE id="lkK6WN" name="SpatialAudio.h" compile="0" resource="0" file="../CSL/Spatializers/SpatialAudio.h"/>
+          <FILE id="zzEZfp" name="SpatialAudio.cpp" compile="1" resource="0"
+                file="../CSL/Spatializers/SpatialAudio.cpp"/>
+          <FILE id="PTrDQk" name="SpatialPanner.h" compile="0" resource="0" file="../CSL/Spatializers/SpatialPanner.h"/>
+          <FILE id="bqda3G" name="SpatialPanner.cpp" compile="1" resource="0"
+                file="../CSL/Spatializers/SpatialPanner.cpp"/>
+          <FILE id="CXRcgo" name="SimplePanner.h" compile="0" resource="0" file="../CSL/Spatializers/SimplePanner.h"/>
+          <FILE id="rY6sof" name="SimplePanner.cpp" compile="1" resource="0"
+                file="../CSL/Spatializers/SimplePanner.cpp"/>
+          <FILE id="CZS2v2" name="DistanceSimulator.h" compile="0" resource="0"
+                file="../CSL/Spatializers/DistanceSimulator.h"/>
+          <FILE id="UwhMo1" name="DistanceSimulator.cpp" compile="1" resource="0"
+                file="../CSL/Spatializers/DistanceSimulator.cpp"/>
+          <FILE id="Fj0Pl5" name="SpeakerLayout.h" compile="0" resource="0" file="../CSL/Spatializers/SpeakerLayout.h"/>
+          <FILE id="BovwqA" name="SpeakerLayout.cpp" compile="1" resource="0"
+                file="../CSL/Spatializers/SpeakerLayout.cpp"/>
+          <FILE id="H05Yzr" name="4thFloorSpeakers.dat" compile="0" resource="1"
+                file="../CSL/Spatializers/4thFloorSpeakers.dat"/>
+          <FILE id="OGgS4w" name="Speaker_layout.dat" compile="0" resource="1"
+                file="../CSL/Spatializers/Speaker_layout.dat"/>
+        </GROUP>
+        <GROUP id="{6AB39B8B-5238-535E-8CA5-267BE70E801F}" name="VBAP">
+          <FILE id="uRl09C" name="PME.h" compile="0" resource="0" file="../CSL/Spatializers/VBAP/PME.h"/>
+          <FILE id="aHhajj" name="PME.cpp" compile="1" resource="0" file="../CSL/Spatializers/VBAP/PME.cpp"/>
+          <FILE id="qhx9Om" name="PracticalSocket.h" compile="0" resource="0"
+                file="../CSL/Spatializers/VBAP/PracticalSocket.h"/>
+          <FILE id="ERsVjv" name="PracticalSocket.cpp" compile="1" resource="0"
+                file="../CSL/Spatializers/VBAP/PracticalSocket.cpp"/>
+          <FILE id="IpqgTI" name="VBAP.h" compile="0" resource="0" file="../CSL/Spatializers/VBAP/VBAP.h"/>
+          <FILE id="EVYZKr" name="VBAP.cpp" compile="1" resource="0" file="../CSL/Spatializers/VBAP/VBAP.cpp"/>
+        </GROUP>
+        <GROUP id="{CE4AA21C-D239-3118-5F43-78BBFE9A15E9}" name="Ambisonic">
+          <FILE id="WKk6C2" name="Ambisonic.h" compile="0" resource="0" file="../CSL/Spatializers/Ambisonic/Ambisonic.h"/>
+          <FILE id="o6TdgI" name="Ambisonic.cpp" compile="1" resource="0" file="../CSL/Spatializers/Ambisonic/Ambisonic.cpp"/>
+          <FILE id="eYLrGg" name="AmbisonicPanner.h" compile="0" resource="0"
+                file="../CSL/Spatializers/Ambisonic/AmbisonicPanner.h"/>
+          <FILE id="IjwnFj" name="AmbisonicPanner.cpp" compile="1" resource="0"
+                file="../CSL/Spatializers/Ambisonic/AmbisonicPanner.cpp"/>
+          <FILE id="qoDMsY" name="AmbisonicUtilities.h" compile="0" resource="0"
+                file="../CSL/Spatializers/Ambisonic/AmbisonicUtilities.h"/>
+          <FILE id="qFPsWu" name="AmbisonicUtilities.cpp" compile="1" resource="0"
+                file="../CSL/Spatializers/Ambisonic/AmbisonicUtilities.cpp"/>
+        </GROUP>
+        <GROUP id="{427F4722-014D-6779-C4A3-980B6950EA74}" name="Binaural">
+          <FILE id="Th863b" name="BinauralDB.h" compile="0" resource="0" file="../CSL/Spatializers/Binaural/BinauralDB.h"/>
+          <FILE id="Zs6yC3" name="BinauralDB.cpp" compile="1" resource="0" file="../CSL/Spatializers/Binaural/BinauralDB.cpp"/>
+          <FILE id="iAs1V3" name="Binaural.h" compile="0" resource="0" file="../CSL/Spatializers/Binaural/Binaural.h"/>
+          <FILE id="ab6pwQ" name="Binaural.cpp" compile="1" resource="0" file="../CSL/Spatializers/Binaural/Binaural.cpp"/>
+        </GROUP>
+      </GROUP>
+      <GROUP id="{3883F259-A000-D87E-0005-6322C8B14F79}" name="Instruments">
+        <FILE id="XSWNma" name="Accessor.h" compile="0" resource="0" file="../CSL/Instruments/Accessor.h"/>
+        <FILE id="IYnwp3" name="Instrument.h" compile="0" resource="0" file="../CSL/Instruments/Instrument.h"/>
+        <FILE id="RbZiBa" name="Instrument.cpp" compile="1" resource="0" file="../CSL/Instruments/Instrument.cpp"/>
+        <FILE id="axKJaf" name="BasicFMInstrument.h" compile="0" resource="0"
+              file="../CSL/Instruments/BasicFMInstrument.h"/>
+        <FILE id="Nd2TlM" name="BasicFMInstrument.cpp" compile="1" resource="0"
+              file="../CSL/Instruments/BasicFMInstrument.cpp"/>
+        <FILE id="FmAMHy" name="SndFileInstrument.h" compile="0" resource="0"
+              file="../CSL/Instruments/SndFileInstrument.h"/>
+        <FILE id="FZj9Jq" name="SndFileInstrument.cpp" compile="1" resource="0"
+              file="../CSL/Instruments/SndFileInstrument.cpp"/>
+        <FILE id="yeK3cz" name="AdditiveInstrument.h" compile="0" resource="0"
+              file="../CSL/Instruments/AdditiveInstrument.h"/>
+        <FILE id="b2po06" name="AdditiveInstrument.cpp" compile="1" resource="0"
+              file="../CSL/Instruments/AdditiveInstrument.cpp"/>
+      </GROUP>
+      <GROUP id="{E30D8CA5-7BCF-AE8B-A5C2-627201E2E540}" name="IO">
+        <FILE id="AXolcI" name="FileIO.h" compile="0" resource="0" file="../CSL/IO/FileIO.h"/>
+        <FILE id="oZEwtQ" name="FileIO.cpp" compile="1" resource="0" file="../CSL/IO/FileIO.cpp"/>
+        <FILE id="RmJn1X" name="SoundFile.h" compile="0" resource="0" file="../CSL/IO/SoundFile.h"/>
+        <FILE id="mApTCy" name="SoundFile.cpp" compile="1" resource="0" file="../CSL/IO/SoundFile.cpp"/>
+        <FILE id="HbhhIn" name="SoundFileL.h" compile="0" resource="0" file="../CSL/IO/SoundFileL.h"/>
+        <FILE id="W9MTYB" name="SoundFileL.cpp" compile="0" resource="0" file="../CSL/IO/SoundFileL.cpp"/>
+        <FILE id="LQFRPL" name="SoundFileJ.h" compile="0" resource="0" file="../CSL/IO/SoundFileJ.h"/>
+        <FILE id="Yiw93N" name="SoundFileJ.cpp" compile="1" resource="0" file="../CSL/IO/SoundFileJ.cpp"/>
+        <FILE id="GfmqSP" name="SoundFileMP3.h" compile="0" resource="0" file="../CSL/IO/SoundFileMP3.h"/>
+        <FILE id="cGUxrD" name="SoundFileMP3.cpp" compile="0" resource="0"
+              file="../CSL/IO/SoundFileMP3.cpp"/>
+        <FILE id="jTac6I" name="MIDIIOJ.h" compile="0" resource="0" file="../CSL/IO/MIDIIOJ.h"/>
+        <FILE id="GpN96F" name="MIDIIOJ.cpp" compile="0" resource="0" file="../CSL/IO/MIDIIOJ.cpp"/>
+        <FILE id="RbOHyv" name="OSC_support.h" compile="0" resource="0" file="../CSL/IO/OSC_support.h"/>
+        <FILE id="ykpcIh" name="OSC_support.cpp" compile="1" resource="0" file="../CSL/IO/OSC_support.cpp"/>
+      </GROUP>
+      <GROUP id="{A97E6905-677F-F622-E711-1176603ADC5B}" name="IO2">
+        <FILE id="iEIdIl" name="SoundFileCA.h" compile="0" resource="0" file="../CSL/IO/SoundFileCA.h"/>
+        <FILE id="VaTMTi" name="SoundFileCA.cpp" compile="0" resource="0" file="../CSL/IO/SoundFileCA.cpp"/>
+        <FILE id="Nywa2q" name="PAIO.h" compile="0" resource="0" file="../CSL/IO/PAIO.h"/>
+        <FILE id="uOcK7t" name="PAIO.cpp" compile="0" resource="0" file="../CSL/IO/PAIO.cpp"/>
+        <FILE id="GrPyk0" name="JUCEIO.h" compile="0" resource="0" file="../CSL/IO/JUCEIO.h"/>
+        <FILE id="WRgWKK" name="JUCEIO.cpp" compile="0" resource="0" file="../CSL/IO/JUCEIO.cpp"/>
+        <FILE id="NRT1aN" name="iphoneIO.h" compile="0" resource="0" file="../CSL/IO/iphoneIO.h"/>
+        <FILE id="tkU8xW" name="iphoneIO.cpp" compile="0" resource="0" file="../CSL/IO/iphoneIO.cpp"/>
+        <FILE id="cey5IQ" name="VSTIO.h" compile="0" resource="0" file="../CSL/IO/VSTIO.h"/>
+        <FILE id="vcJuVZ" name="VSTIO.cpp" compile="0" resource="0" file="../CSL/IO/VSTIO.cpp"/>
+        <FILE id="aMyZgJ" name="JackIO.h" compile="0" resource="0" file="../CSL/IO/JackIO.h"/>
+        <FILE id="VMe2b9" name="JackIO.cpp" compile="0" resource="0" file="../CSL/IO/JackIO.cpp"/>
+        <FILE id="tsU8VP" name="NullIO.h" compile="0" resource="0" file="../CSL/IO/NullIO.h"/>
+        <FILE id="fXUlpJ" name="NullIO.cpp" compile="0" resource="0" file="../CSL/IO/NullIO.cpp"/>
+        <FILE id="g4E9UR" name="RemoteIO.h" compile="0" resource="0" file="../CSL/IO/RemoteIO.h"/>
+        <FILE id="p2qduw" name="RemoteIO.cpp" compile="0" resource="0" file="../CSL/IO/RemoteIO.cpp"/>
+        <FILE id="n6iB4s" name="RemoteStream.h" compile="0" resource="0" file="../CSL/IO/RemoteStream.h"/>
+        <FILE id="FYwJ6M" name="RemoteStream.cpp" compile="0" resource="0"
+              file="../CSL/IO/RemoteStream.cpp"/>
+      </GROUP>
+      <GROUP id="{D7CD6EB5-5567-2768-6FC5-4487F821E281}" name="Tests">
+        <FILE id="L2zCPD" name="Test_Support.h" compile="0" resource="0" file="../CSL/Tests/Test_Support.h"/>
+        <FILE id="l19Kv9" name="Test_Support.cpp" compile="1" resource="0"
+              file="../CSL/Tests/Test_Support.cpp"/>
+        <FILE id="JjpVpS" name="Test_Oscillators.cpp" compile="1" resource="0"
+              file="../CSL/Tests/Test_Oscillators.cpp"/>
+        <FILE id="eqdLJs" name="Test_Sources.cpp" compile="1" resource="0"
+              file="../CSL/Tests/Test_Sources.cpp"/>
+        <FILE id="HIInpp" name="Test_Envelopes.cpp" compile="1" resource="0"
+              file="../CSL/Tests/Test_Envelopes.cpp"/>
+        <FILE id="VRcNGD" name="Test_Effects.cpp" compile="1" resource="0"
+              file="../CSL/Tests/Test_Effects.cpp"/>
+        <FILE id="rn9Bji" name="Test_Panners.cpp" compile="1" resource="0"
+              file="../CSL/Tests/Test_Panners.cpp"/>
+        <FILE id="WOSkHg" name="Test_Control.cpp" compile="1" resource="0"
+              file="../CSL/Tests/Test_Control.cpp"/>
+        <FILE id="qmhOpy" name="Test_Audio.cpp" compile="1" resource="0" file="../CSL/Tests/Test_Audio.cpp"/>
+        <FILE id="k9Afk7" name="Test_OSC_Client.cpp" compile="0" resource="0"
+              file="../CSL/Tests/OSC/Test_OSC_Client.cpp"/>
+      </GROUP>
+      <GROUP id="{1A4D5497-9399-398A-B6C1-CB027264CE96}" name="GUI">
+        <FILE id="M9OHPY" name="CSL_TestComponent.h" compile="0" resource="0"
+              file="../JUCE/CSL_TestComponent.h"/>
+        <FILE id="CiO16L" name="CSL_TestComponent.cpp" compile="1" resource="0"
+              file="../JUCE/CSL_TestComponent.cpp"/>
+        <FILE id="nbJuv3" name="CSL_AbstComponent.h" compile="0" resource="0"
+              file="../JUCE/CSL_AbstComponent.h"/>
+        <FILE id="lXHGOQ" name="CSL_AbstComponent.cpp" compile="0" resource="0"
+              file="../JUCE/CSL_AbstComponent.cpp"/>
+        <FILE id="ZL60f7" name="JCSL_Widgets.h" compile="0" resource="0" file="../JUCE/JCSL_Widgets.h"/>
+        <FILE id="Vye7tV" name="JCSL_Widgets.cpp" compile="1" resource="0"
+              file="../JUCE/JCSL_Widgets.cpp"/>
+        <FILE id="ixk9QQ" name="Main.cpp" compile="1" resource="0" file="../JUCE/Main.cpp"/>
+      </GROUP>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_gui_audio" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="1"/>
+  </MODULES>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" juceFolder="/Volumes/Content/Code/juce2/modules"
+               extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND"
+               extraLinkerFlags="-lsndfile" objCExtraSuffix="uqDLjJ">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="64BitIntel"
+                       isDebug="1" optimisation="1" targetName="CSL_Demo" headerPath="/usr/local/include;../../../CSL/Includes"
+                       libraryPath="/usr/local/lib" defines="DEBUG"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="64BitIntel"
+                       isDebug="0" optimisation="3" targetName="CSL_Demo" defines=""
+                       headerPath="/usr/local/include;../../../CSL/Includes" libraryPath="/usr/local/lib"/>
+      </CONFIGURATIONS>
+    </XCODE_MAC>
+    <VS2010 targetFolder="Builds/VisualStudio2010" libraryType="1" juceFolder="..\..\..\Documents\juce\modules"
+            extraDefs="USE_JUCE USE_FFTREAL USE_JSND" userNotes="Remember to re-make the links in CSL\Includes using remake.bat.&#10;&#10;Add the libsndfile and pthreads libraries to the build by hand (not sure how to do this with IntroJucer).&#10;&#10;Delete the following (UNIX-only) files from the project:&#10;    SHARC.cpp&#10;    Spatializers: Ambisonics, Binaural, VBAP, PME&#10;    Granulator&#10;    SoundFileL&#10;&#10;I generally turn off all warnings (/W0)">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="2" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="CSL_JUCE" headerPath="..\..\..\CSL\Includes"
+                       libraryPath=""/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="CSL_JUCE" headerPath="..\..\..\CSL\Includes"
+                       libraryPath=""/>
+      </CONFIGURATIONS>
+    </VS2010>
+    <LINUX_MAKE targetFolder="Builds/Linux" juceFolder="../../JuceLibraryCode/modules"
+                extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND"
+                extraCompilerFlags="-w">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="1" optimisation="1"
+                       targetName="CSL_JUCE" headerPath="/usr/local/include;../../../CSL/Includes"
+                       defines="DEBUG"/>
+        <CONFIGURATION name="Release" libraryPath="/usr/X11R6/lib/" isDebug="0" optimisation="3"
+                       targetName="CSL_JUCE" headerPath="/usr/local/include;../../../CSL/Includes"/>
+      </CONFIGURATIONS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>

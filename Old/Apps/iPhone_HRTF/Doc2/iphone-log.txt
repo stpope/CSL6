@@ -1,0 +1,43 @@
+
+[Session started at 2009-09-10 21:37:14 -0700.]
+Switching to remote-macosx protocol
+mem 0x1000 0x3fffffff cache
+mem 0x40000000 0xffffffff none
+mem 0x00000000 0x0fff none
+run
+Running…
+[Switching to thread 11779]
+[Switching to thread 11779]
+sharedlibrary apply-load-rules all
+(gdb) continue
+
+:: Start CSL App
+
+:: Loading HRTF files from /var/mobile/Applications/4F8AA331-1C9B-4BD2-A35F-F4918A7AB045/BinauralSpatializer.app/files.txt
+:: Loaded 188 HRTF files = 24.7 MB
+
+:: Open sample file /var/mobile/Applications/4F8AA331-1C9B-4BD2-A35F-F4918A7AB045/BinauralSpatializer.app/Piano_A5_mf_mono.caf
+
+:: File: 44100 Hz, 1 ch, 2.35701 sec, 2 bytes/sample
+
+:: Playing HRTF-spatialized rotating samples
+
+:: iPhoneIO :: start
+
+::  Error: BinauralPanner::nextBuffer # frames 256 wrong for HRTF size 513 (use a block resizer).
+
+
+	az:  0.00  el:  0.00  dist:  1.50
+	az: 45.00  el:  0.00  dist:  1.50
+	az: 90.00  el:  0.00  dist:  1.50
+	az: 135.00  el:  0.00  dist:  1.50
+:: 	CPU usage: 2.86 percent.
+	az: 180.00  el:  0.00  dist:  1.50
+:: Player loop stopped
+:: iPhoneIO :: stop
+
+kill
+Current language:  auto; currently objective-c
+quit
+
+The Debugger has exited with status 0.(gdb) 
