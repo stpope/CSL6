@@ -1,5 +1,0 @@
-rtpdebug.lo: rtpdebug.cpp rtpconfig.h rtpconfig_unix.h
-
-rtpconfig.h:
-
-rtpconfig_unix.h:

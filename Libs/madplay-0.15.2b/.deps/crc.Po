@@ -1,7 +1,0 @@
-crc.o: crc.c config.h global.h crc.h
-
-config.h:
-
-global.h:
-
-crc.h:

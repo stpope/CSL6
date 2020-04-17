@@ -1,1 +1,0 @@
-#define JACK_LOCATION "/usr/local/bin"
