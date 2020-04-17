@@ -1,5 +1,5 @@
 ///
-/// CSL_Core.h -- the specification file for the core classes of CSL version 5
+/// CSL_Core.h -- the specification file for the core classes of CSL version 6
 ///
 ///	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 ///

@@ -1,13 +1,13 @@
 //
-//  CSL_Includes.h -- include all the core CSL 5.0 header files
+//  CSL_Includes.h -- include all the core CSL 6.0 header files
 //
 //	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 //
 
 // CSL Kernel
 
-#include "CSL_Core.h"			/// The core of CSL 5
-//#include "RingBuffer.h"			/// Utility circular buffer
+#include "CSL_Core.h"			/// The core of CSL 6
+//#include "RingBuffer.h"		/// Utility circular buffer
 #include "BlockResizer.h"		/// BlockResizer
 #include "CPoint.h"				/// 2D & 3D points
 //#include "ThreadUtilities.h"	/// CThread utilities

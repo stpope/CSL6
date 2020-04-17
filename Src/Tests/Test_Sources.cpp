@@ -19,7 +19,7 @@
 /// Noise tests, WhiteNoise & PinkNoise - using Scalable to protect our ears
 
 void testNoises() {
-	WhiteNoise whitey(0.2);		// amplitude, offset
+	WhiteNoise whitey(0.5);		// amplitude, offset
 //	logMsg("dumping quiet white noise...");
 //	dumpTest(whitey);
 	logMsg("playing quiet white noise...");

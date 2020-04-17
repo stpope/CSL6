@@ -1,5 +1,5 @@
 ///
-///  CGestalt.h -- the CSL 5.0 CGestalt (system utility) class specification,
+///  CGestalt.h -- the CSL 6.0 CGestalt (system utility) class specification,
 ///		system constants, logging, and utility methods; SAFE_MALLOC/SAFE_FREE macros
 ///		The logging system has a number of print methods that use the printf var-args format 
 ///		and can be filtered on verbosity.

@@ -322,7 +322,7 @@ CSLComponent::CSLComponent ()
 	displayMode = true;
 	recrding = false;
 
-	amplitudeSlider->setValue(-0.2);	// GUI settings
+	amplitudeSlider->setValue(0.8);	// GUI settings
 	scaleSlider->setValue(0.1);
 	oscilloscopeL->start();
 	oscilloscopeR->start();
@@ -556,7 +556,7 @@ void CSLComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_scaleSlider] -- add your slider handling code here..
 
-		unsigned stepValue = (unsigned) (scaleSlider->getValue() * 20.0) + 1;
+		unsigned stepValue = (unsigned) (scaleSlider->getValue() * 10.0) + 1;
 		oscilloscopeL->setSamplesToAverage(stepValue);
 		oscilloscopeR->setSamplesToAverage(stepValue);
 

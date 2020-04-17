@@ -29,7 +29,7 @@ namespace csl {
 ///
 
 class Oscillator : public UnitGenerator, public Phased, public Scalable {
-public:								/// Constructor: parameters are optional.
+public:								    /// Constructor: parameters are optional.
 	Oscillator(float frequency = 220.0, float ampl = 1.0, float offset = 0.0, float phase = 0.0);
 	Oscillator(UnitGenerator & frequency, float ampl = 1.0, float offset = 0.0, float phase = 0.0);
 	Oscillator(UnitGenerator & frequency, UnitGenerator & ampl, float offset = 0.0, float phase = 0.0);

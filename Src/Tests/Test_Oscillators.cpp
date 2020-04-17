@@ -27,13 +27,13 @@
 
 void testSweep() {
 	Osc vox;								    // wave-table oscillator
-	LineSegment gliss(5, 40, 5000);		    // freq line (dur val1, val2)
-	LineSegment swell(5, 0.000001, 0.8);	    // ampl line
+	LineSegment gliss(3, 40, 5000);		        // freq line (dur val1, val2)
+	LineSegment swell(3, 0.000001, 0.5);	    // ampl line
 	vox.setFrequency(gliss);				    // apply freq function
 	vox.setScale(swell);					    // apply ampl function
 //	vox.dump();
 	logMsg("playing swept sin with line segment...");
-	runTest(vox, 5);						    // play vox for 5 seconds
+	runTest(vox);						        // play vox for 3 seconds
 	logMsg("done.\n");
 }
 
@@ -46,7 +46,7 @@ void testSimpleSines() {
 	logMsg("playing simple sin...");
 	runTest(sineOsc);						// call the test function that runs this for a few seconds
 	logMsg("sin done.");
-	SineAsPhased sineOsc2(freq);			    // create a sine-as-phased oscillator
+	SineAsPhased sineOsc2(freq);			// create a sine-as-phased oscillator
 	sineOsc2.dump();
 	logMsg("playing sin-as-phased...");
 	runTest(sineOsc2);						// call the test function that runs this for a few seconds
@@ -258,13 +258,17 @@ void testSumOfSinesNonCached() {
 
 void testWaveTableFromFile() {
 	SoundFile fi(CGestalt::dataFolder() + "oo_table.aiff");
-	fi.openForRead();
+	fi.openForRead(true);
 	logMsg("Loading sound file %s = %d frames @ %d Hz", fi.path().c_str(), fi.duration(), fi.playbackRate());
 //	fi.seekTo(0, kPositionStart);
 	Buffer oscBuff(1, fi.duration());
 	oscBuff.setBuffer(0, fi.mWavetable.buffer(0));
-	oscBuff.mAreBuffersAllocated = true;
-	Osc wav(oscBuff);
+    oscBuff.mAreBuffersAllocated = true;
+    oscBuff.mNumAlloc = fi.duration();
+    Osc wav(oscBuff);
+//    Osc wav;
+    wav.setFrequency(440.0);                   // set freq
+    wav.setScale(0.25);                        // set ampl
 	logMsg("playing wavetable from file...");
 	runTest(wav);							// call the test function that runs this for a few seconds
 	logMsg("done.");
@@ -322,7 +326,7 @@ void test_SHARC2() {
 	Freeverb revb(mix);							// mono reverb
 	revb.setRoomSize(0.985);					// longer reverb
 	Panner pan(revb);							// stereo panner
-	logMsg("playing SHARC vector synth...");
+	logMsg("playing SHARC vector synth (oboe, tuba, viola)...");
 	env1.trigger();								// trigger envelopes
 	env2.trigger();	
 	env3.trigger();	
@@ -353,10 +357,10 @@ void runTests() {
 // test list for Juce GUI
 
 testStruct oscTestList[] = {
-	"Sweep test",				testSweep,			"Test a sine with swept freq and volume swell",
-	"Simple sines",				testSimpleSines,	"Test some simple sine oscilators",
-	"Standard waveforms",		testBasicWaves,		"Demonstrate the standard wave forms",
-	"Scaled sine",				testScaledSin,		"Play a scaled-quiet sine wave",
+	"Sweep/swell test",			testSweep,			        "Test a sine with swept freq and volume swell",
+	"Simple sines",				testSimpleSines,	        "Test some simple sine oscilators",
+	"Standard waveforms",		testBasicWaves,		        "Demonstrate the standard wave forms",
+	"Scaled sine",				testScaledSin,		        "Play a scaled-quiet sine wave",
 	"Wavetable interpolation",	testWavetableInterpolation,	"Show truncated/interpolated wave tables",
 	"AM/FM sines",				testAMFMSin,				"Play an AM and FM sine wave",
 	"Dump AM/FM sines",			dumpAMFMSin,				"Dump the graph of the AM/FM sine",

@@ -1,9 +1,9 @@
-//
-// Spectral.h -- UnitGenerator for going to/from the spectral domain
-// These classes use the CSL 5 FFT wrapper for FFTs.
-//
-// See the copyright notice and acknowledgment of authors in the file COPYRIGHT
-//
+///
+/// Spectral.h -- UnitGenerator for going to/from the spectral domain
+/// These classes use the CSL 5 FFT wrapper for FFTs.
+///
+/// See the copyright notice and acknowledgment of authors in the file COPYRIGHT
+///
 
 #ifndef CSL_Spectral_H
 #define CSL_Spectral_H

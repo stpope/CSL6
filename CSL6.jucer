@@ -162,19 +162,19 @@
       <FILE id="Vt30ed" name="Test_Support.h" compile="0" resource="0" file="Src/Tests/Test_Support.h"/>
       <FILE id="K5MgUN" name="Test_Support.cpp" compile="1" resource="0"
             file="Src/Tests/Test_Support.cpp"/>
+      <FILE id="u30nua" name="Test_Oscillators.cpp" compile="1" resource="0"
+            file="Src/Tests/Test_Oscillators.cpp"/>
+      <FILE id="OrQ6JC" name="Test_Sources.cpp" compile="1" resource="0"
+            file="Src/Tests/Test_Sources.cpp"/>
+      <FILE id="D3fDS4" name="Test_Envelopes.cpp" compile="1" resource="0"
+            file="Src/Tests/Test_Envelopes.cpp"/>
+      <FILE id="Hgqcsb" name="Test_Effects.cpp" compile="1" resource="0"
+            file="Src/Tests/Test_Effects.cpp"/>
+      <FILE id="ShaMjl" name="Test_Panners.cpp" compile="1" resource="0"
+            file="Src/Tests/Test_Panners.cpp"/>
       <FILE id="Eo0har" name="Test_Audio.cpp" compile="1" resource="0" file="Src/Tests/Test_Audio.cpp"/>
       <FILE id="rOjAsw" name="Test_Control.cpp" compile="1" resource="0"
             file="Src/Tests/Test_Control.cpp"/>
-      <FILE id="Hgqcsb" name="Test_Effects.cpp" compile="1" resource="0"
-            file="Src/Tests/Test_Effects.cpp"/>
-      <FILE id="D3fDS4" name="Test_Envelopes.cpp" compile="1" resource="0"
-            file="Src/Tests/Test_Envelopes.cpp"/>
-      <FILE id="u30nua" name="Test_Oscillators.cpp" compile="1" resource="0"
-            file="Src/Tests/Test_Oscillators.cpp"/>
-      <FILE id="ShaMjl" name="Test_Panners.cpp" compile="1" resource="0"
-            file="Src/Tests/Test_Panners.cpp"/>
-      <FILE id="OrQ6JC" name="Test_Sources.cpp" compile="1" resource="0"
-            file="Src/Tests/Test_Sources.cpp"/>
     </GROUP>
     <GROUP id="{CD46DFF1-513B-42A4-7BD9-60F397C84D06}" name="Demo_GUI">
       <FILE id="SnJWsI" name="Main.cpp" compile="1" resource="0" file="Src/JUCE/Main.cpp"/>
@@ -188,7 +188,7 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI JUCE_DEBUG"
+    <XCODE_MAC targetFolder="Builds/MacOSX" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTW USE_JSND USE_JMIDI JUCE_DEBUG"
                microphonePermissionNeeded="1" extraCompilerFlags="-I../../Src/Includes -I/usr/local/include -w"
                extraLinkerFlags="/usr/local/lib/libfftw3f.a /usr/local/lib/liblo.a">
       <CONFIGURATIONS>

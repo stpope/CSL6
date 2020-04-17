@@ -1,7 +1,7 @@
-//
-// Noise.h -- Noise Unit Generators
-//	Comprising Noise superclass, and WhiteNoise, PinkNoise subclasses 
-// 
+///
+/// Noise.h -- Noise Unit Generators
+///	Comprising Noise superclass, and WhiteNoise, PinkNoise subclasses
+/// 
 
 #ifndef INCLUDE_Noise_H
 #define INCLUDE_Noise_H

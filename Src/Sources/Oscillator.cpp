@@ -85,8 +85,11 @@ void WavetableOscillator::setWaveform(Buffer & wave, bool freBufs) {
 	mWavetable.mMonoBufferByteSize = wave.mMonoBufferByteSize;
 	mWavetable.mIsPopulated = wave.mIsPopulated;
 	mWavetable.mAreBuffersZero = wave.mAreBuffersZero;
-	mWavetable.mAreBuffersAllocated = wave.mAreBuffersAllocated;
-	mWavetable.mDidIAllocateBuffers = false;
+    mWavetable.mAreBuffersAllocated = wave.mAreBuffersAllocated;
+    mWavetable.mNumAlloc = wave.mNumAlloc;
+    mWavetable.mDidIAllocateBuffers = false;
+    mWavetable.mAreBuffersZero = false;
+    mWavetable.mIsPopulated = true;
 }
 
 //void WavetableOscillator::setWaveform(SampleBuffer samps, unsigned size) {
