@@ -18,7 +18,7 @@ is all in the Src/Tests folder. For the Mac, use the XCode project in the
 Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder. 
 Both assume JUCE 6.0 is already installed.
 
-About CSL
+## About CSL
 
 CSL is a C++ class library; to use it, you write and compile C++ programs like 
 the ones in the Src/Tests directory. These programs will generally use the CSL 
@@ -104,7 +104,7 @@ If you use FFTW (rather than FFTReal), it needs to be compiled in the way descri
 in Sources/Spectral.h.
 
 
-##CSL JUCE demo
+## CSL JUCE demo
 
 Building CSL
 
@@ -127,7 +127,7 @@ Oscillator Tests  -  Test_Oscillators.cpp
              Simple sines	Test some simple sine oscilators
        Standard waveforms	Demonstrate the standard wave forms
               Scaled sine	Play a scaled-quiet sine wave
-  Wavetable interpolation	Show truncated/interpolated wave tables
+    Wavetable interpolation	Show truncated/interpolated wave tables
               AM/FM sines	Play an AM and FM sine wave
          Dump AM/FM sines	Dump the graph of the AM/FM sine
         SumOfSines cached	Play a sum-of-sines additive oscillator
@@ -143,7 +143,7 @@ Source Tests  -  Test_Sources.cpp
               Noise tests	Test noise generators
            Plucked string	Waves of string arpeggii, stereo with reverb
      Mono Snd file player	Test playing a sound file
-   Stereo Snd file player	Play a stereo sound file
+    Stereo Snd file player	Play a stereo sound file
        Snd file transpose	Demonstrate transposing a sound file
          Sample file bank	Play a large sample bank from sound files
             FM instrument	Play the basic FM instrument
@@ -222,7 +222,7 @@ XCode/Eclipse/VisualStudio debugger and set breakpoints in the test functions
 while using the GUI.
 
 
-##CSL main() functions
+## CSL main() functions
 
 Note that there are several versions of the main() function; if you're not using
 one of the prepared project files, try compiling the library (most of the sources)
@@ -259,7 +259,7 @@ Reading the source
 	Use a syntax-coloring editor, if available.
 	Note the naming conventions.
 
-##Coding Conventions
+## Coding Conventions
 
 Naming
 
@@ -292,7 +292,7 @@ Constants
 	CSL_EXP_PER_DB, CSL_SAMPS_PER_METER, CSL_DEGS_PER_RAD
 
 
-##Compile-time options 
+## Compile-time options 
 
 (These are not set in the header files so that different apps can share the source tree.)
 
@@ -325,7 +325,7 @@ Main function to use
 	USE_JUCE - use a JUCE component for the main() function (otherwise test_main())
 
 
-##Documentation
+## Documentation
 
 See the PDF and HTML files in the Doc/ directory. (RTFM)
 
