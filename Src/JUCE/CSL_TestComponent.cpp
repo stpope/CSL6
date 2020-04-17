@@ -406,9 +406,9 @@ void CSLComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    playButton->setBounds (336, getHeight() - 39, 136, 32);
+    playButton->setBounds (380, getHeight() - 39, 136, 32);
     quitButton->setBounds (getWidth() - 8 - 176, 8, 176, 32);
-    testCombo->setBounds (152, getHeight() - 35, 176, 24);
+    testCombo->setBounds (184, getHeight() - 35, 176, 24);
     oscilloscopeL->setBounds (44, 48, getWidth() - 52, proportionOfHeight (0.4200f));
     label->setBounds (436 - (558 / 2), 10, 558, 28);
     cpuLabel->setBounds (getWidth() - 64, getHeight() - 35, 56, 24);
@@ -417,8 +417,8 @@ void CSLComponent::resized()
     VUMeterR->setBounds (24, proportionOfHeight (0.5000f), 15, roundToInt (proportionOfHeight (0.4200f) * 1.0000f));
     scaleSlider->setBounds (36, getHeight() - 60, getWidth() - 36, 24);
     amplitudeSlider->setBounds (0, 42, 20, proportionOfHeight (0.8700f));
-    loopButton->setBounds (336 + 144, getHeight() - 11 - 24, 64, 24);
-    familyCombo->setBounds (16, getHeight() - 35, 128, 24);
+    loopButton->setBounds (380 + 136 - -24, getHeight() - 11 - 24, 64, 24);
+    familyCombo->setBounds (48, getHeight() - 35, 128, 24);
     recordButton->setBounds ((getWidth() - 8 - 176) + -12 - 72, 37 - 24, 72, 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
@@ -784,13 +784,13 @@ BEGIN_JUCER_METADATA
                  initialHeight="700">
   <BACKGROUND backgroundColour="ff808080"/>
   <TEXTBUTTON name="playNote" id="ed1811e776eea99b" memberName="playButton"
-              virtualName="" explicitFocusOrder="0" pos="336 39R 136 32" buttonText="Play/Stop"
+              virtualName="" explicitFocusOrder="0" pos="380 39R 136 32" buttonText="Play/Stop"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="quitAction" id="dbaf2871fd41de83" memberName="quitButton"
               virtualName="" explicitFocusOrder="0" pos="8Rr 8 176 32" buttonText="Quit"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <COMBOBOX name="test to run" id="bd1a5c541fbc8bc7" memberName="testCombo"
-            virtualName="" explicitFocusOrder="0" pos="152 35R 176 24" editable="0"
+            virtualName="" explicitFocusOrder="0" pos="184 35R 176 24" editable="0"
             layout="33" items="" textWhenNonSelected="" textWhenNoItems="(no choices)"/>
   <GENERICCOMPONENT name="new component" id="d64c351a292a43a4" memberName="oscilloscopeL"
                     virtualName="" explicitFocusOrder="0" pos="44 48 52M 42%" class="AudioWaveformDisplay"
@@ -829,11 +829,11 @@ BEGIN_JUCER_METADATA
           textBoxEditable="0" textBoxWidth="8" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <TOGGLEBUTTON name="new toggle button" id="2322f603f1796f48" memberName="loopButton"
-                virtualName="" explicitFocusOrder="0" pos="144 11Rr 64 24" posRelativeX="ed1811e776eea99b"
+                virtualName="" explicitFocusOrder="0" pos="-24R 11Rr 64 24" posRelativeX="ed1811e776eea99b"
                 buttonText="Loop" connectedEdges="0" needsCallback="1" radioGroupId="0"
                 state="0"/>
   <COMBOBOX name="test family" id="55af3a98f2faf643" memberName="familyCombo"
-            virtualName="" explicitFocusOrder="0" pos="16 35R 128 24" editable="0"
+            virtualName="" explicitFocusOrder="0" pos="48 35R 128 24" editable="0"
             layout="33" items="Oscillators&#10;Sources&#10;Envelopes&#10;Effects&#10;Panners&#10;Controls"
             textWhenNonSelected="" textWhenNoItems="(no choices)"/>
   <TOGGLEBUTTON name="new toggle button" id="82a5a3f16d517231" memberName="recordButton"
