@@ -1,5 +1,5 @@
 
-CSL 6.0 README
+# CSL 6.0 README
 
 This directory contains the source code and documentation for the  CREATE Signal 
 Library (CSL, pronounced "sizzle," previously called the  CREATE Oscillator or CO). 
@@ -9,7 +9,7 @@ University of California, Santa Barbara (UCSB) starting in the late 1990s.
 
 This is release 6.0, April, 2020.
 
-The home page for CSL is http://FASTLabInc.com/CSL.
+The home page for CSL is http://FASTLabInc.com/CSL. See the links to the screencast demos there.
 
 CSL is known to work on Mac OSX, many flavors of UNIX/Linux, iPhones, Android and
 MS-Windows. To get started quickly, build the JUCE demo app (documented elsewhere)
@@ -238,7 +238,7 @@ Test targets
 	CSL Client_Server -- compiles 2 executables for remote c/s streaming
 
 
-##Source Code Organization
+## Source Code Organization
 
 The subdirectories of CSL are reflected in the project file categories:
 
