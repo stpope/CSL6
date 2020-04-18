@@ -3,6 +3,8 @@
 
 This directory contains the source code and documentation for the  CREATE Signal 
 Library (CSL, pronounced "sizzle," previously called the  CREATE Oscillator or CO). 
+CSL is a cross-platform C++ library for digital audio signal synthesis, analysis, 
+spatialization and interactive sound/music application support.
 CSL was developed at the Center for Research in Electronic Art Technology 
 (CREATE) and the Graduate Program in Media Arts and Technology (MAT) at the 
 University of California, Santa Barbara (UCSB) starting in the late 1990s.
@@ -10,14 +12,14 @@ University of California, Santa Barbara (UCSB) starting in the late 1990s.
 This is release 6.0, April, 2020.
 
 The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots and links to 
-the screencast demos there.
+screencast demos there.
 
 CSL is known to work on Mac OSX, many flavors of UNIX/Linux, iPhones, Android and
 MS-Windows. To get started quickly, build the JUCE demo app (documented elsewhere)
 and use the combo boxes at the bottom to select among the tests, whose source code
 is all in the Src/Tests folder. For the Mac, use the XCode project in the 
-Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder. 
-Both assume JUCE 6.0 is already installed.
+Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder;
+likewise, there's a VisualStudio solution in Builds/VisualStudio2019.
 
 ## About CSL
 
