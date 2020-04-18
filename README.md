@@ -1,35 +1,35 @@
 
 # CSL 6.0 README
 
-This directory contains the source code and documentation for the  CREATE Signal 
-Library (CSL, pronounced "sizzle," previously called the  CREATE Oscillator or CO). 
+This directory contains the source code and documentation for the CREATE Signal 
+Library (CSL, pronounced "sizzle," previously called the CREATE Oscillator or CO). 
 CSL is a cross-platform C++ library for digital audio signal synthesis, analysis, 
-spatialization and interactive sound/music application support.
+spatialization and interactive sound/music application development.
 CSL was developed at the Center for Research in Electronic Art Technology 
 (CREATE) and the Graduate Program in Media Arts and Technology (MAT) at the 
 University of California, Santa Barbara (UCSB) starting in the late 1990s.
 
 This is release 6.0, April, 2020.
 
-The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots and links to 
-screencast demos there.
+The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots,
+documentation downloads and links to screencast demos there.
 
-CSL is known to work on Mac OSX, UNIX/Linux, iOS, Android and
-MS-Windows. To get started, build the JUCE demo app (screen shot below)
-and use the combo boxes at the bottom to select among the tests, whose source code
-is all in the Src/Tests folder. For the Mac, use the XCode project in the 
+CSL is known to work on Mac OSX, Linux, iOS, Android and
+MS-Windows. To get started with CSL, build the demo app (screen shot below)
+and use the combo boxes at the bottom-left to select among the tests, whose source code
+is in the Src/Tests folder. For the Mac, use the XCode project in the 
 Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder;
 likewise, there's a VisualStudio solution in Builds/VisualStudio2019.
 
 ### Links for the impatient
 
-Basic CSL overview with code examples: http://www.fastlabinc.com/CSL/CSL_Intro.pdf
+Basic CSL overview paper with code examples: http://www.fastlabinc.com/CSL/CSL_Intro.pdf
 
-CSL presentation slides for the really impatient: http://www.fastlabinc.com/CSL/CSL_Overview.pdf
+Presentation slides for the really impatient: http://www.fastlabinc.com/CSL/CSL_Overview.pdf
 
 ## About CSL
 
-CSL is a C++ class library for sound/music spplications; to use it, you write and compile C++ programs like 
+CSL is a C++ class library for sound/music applications; to use it, you write and compile C++ programs like 
 the ones in the Src/Tests directory. These programs will use the CSL 
 class library, and may read input files or respond to in-coming MIDI or OSC 
 commands. CSL apps can run stand-alone as servers, or have interactive GUIs, or be 
@@ -44,6 +44,8 @@ The target users for CSL are C++ programmers (familiar with the
 development tools of their platforms, e.g., Xcode on the Mac, Eclipse on Linux, or 
 Visual Studio on MS-Windows) who also know some software sound synthesis language 
 such as Csound or SuperCollider (see Curtis Roads' "Computer Music Tutorial").
+It also helps to have used the JUCE library, or at least to have downloaded it and 
+compiled and run its own demo app.
 
 ![alt text](http://fastlabinc.com/CSL/classes.jpg)
 
@@ -51,8 +53,7 @@ Some of the code assumes it's installed in ~/Code/CSL6; there are some default s
 in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
 
 The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
-(2) look at the Doxygen-generated API documentation in 
-	Doc/html.zip
+(2) look at the Doxygen-generated API documentation in Doc/html.zip
 
 You can unzip this file to get the full HTML doc; you might also want to study the files,
 
@@ -70,11 +71,11 @@ or
 To compile the sources, you will need to create the links in the Src/Includes folder; 
 to do this, open a UNIX shell (terminal, or DOS prompt) and execute the commands,
 
-change to the Includes folder
+1. change to the Includes folder
 
 	cd ~/Code/CSL6/Src/Includes
 
-make symbolic links from the include files to this folder
+2. make symbolic links from the include files to this folder
 
 	./remake
 
@@ -89,8 +90,8 @@ work with a little bit of tweaking; all the really unstable code has been remove
 ## Platform Requirements (tested on these platforms)
 
 	MacOS: OSX 10.13 or newer with Xcode
-	Linux: Tested on Ubuntu 19 with X11-libs, ALSA, Freetype, etc.
-	MS-windows: Tested on Win7 with ASIO
+	Linux: Ubuntu 19 (or other recent release of a mainstream Linux distribution) with X11-libs, ALSA, Freetype, etc.
+	MS-windows: Tested on Windows10 with ASIO
 	iOS, Android: recent releases and toolchains
 	All: JUCE 6.0
 
@@ -98,11 +99,11 @@ Linking with the CSL Libraries
 
 To link CSL programs, you'll need the following packages installed on your machine:
 
- Either
+Either
 
  	JUCE: Cross-platform everything -- http://www.juce.com
 
- OR these or similar libraries
+OR these or similar libraries
 
  	Cross-platform audio I/O: PortAudio (http://www.portaudio.com) V19 or equivalent;
  	Cross-platform MIDI I/O: PortMIDI (http://www-2.cs.cmu.edu/~music/portmusic);
@@ -115,7 +116,6 @@ which is included in the Src/Libs folder.
 
 If you use FFTW (rather than FFTReal), it needs to be compiled in the way described 
 in Sources/Spectral.h.
-
 
 ## CSL JUCE demo
 
@@ -228,12 +228,10 @@ Audio Tests  -  Test_Audio.cpp
              Input panner	Stereo panner on the live input
            Input listener	Demonstrate recording input listener
 
-
-The source code for all these tests is in the Src/Tests directory (and in a"Test" 
+The source code for all these tests is in the Src/Tests directory (and in a "Test" 
 file group in the IDE); it's a good way to learn CSL to run the JUCE demo in an 
 XCode/Eclipse/VisualStudio debugger and set breakpoints in the test functions 
-while using the GUI.
-
+you're interested in while using the GUI.
 
 ## CSL main() functions
 
@@ -249,7 +247,6 @@ Test targets
 	OSC_Test -- Several; OSC tests, see OSC_main.cpp
 	MIDI_Test -- Reads MIDI in
 	CSL Client_Server -- compiles 2 executables for remote c/s streaming
-
 
 ## Source Code Organization
 
@@ -304,7 +301,6 @@ Constants
 	CSL_PI, CSL_TWOPI, CSL_PIHALF, CSL_SQRT_TWO, CSL_SPEED_OF_SOUND, 
 	CSL_EXP_PER_DB, CSL_SAMPS_PER_METER, CSL_DEGS_PER_RAD
 
-
 ## Compile-time options 
 
 These are not set in the header files so that different apps can share the source tree.
@@ -336,7 +332,6 @@ OSC API
 Main function to use
 
 	USE_JUCE - use a JUCE component for the main() function (otherwise test_main())
-
 
 ## Documentation
 
