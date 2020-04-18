@@ -29,6 +29,8 @@ class library, and may read input files or respond to in-coming MIDI or OSC
 commands. CSL apps can run stand-alone as servers, or have interactive GUIs, or be 
 plug-ins to out-board signal processing tools.
 
+![alt text](https://github.com/stpope/CSL6/blob/master/Doc/6.0DemoScreen1.jpg "CSL Demo screen shot")
+
 This means that the target users for CSL are C++ programmers (familiar with the 
 development tools of their platforms, e.g., Xcode on the Mac, Eclipse on Linux, or 
 Visual Studio on MS-Windows) who also know some software sound synthesis language 
