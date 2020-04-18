@@ -14,23 +14,23 @@ This is release 6.0, April, 2020.
 The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots and links to 
 screencast demos there.
 
-CSL is known to work on Mac OSX, many flavors of UNIX/Linux, iPhones, Android and
-MS-Windows. To get started quickly, build the JUCE demo app (screen shot below)
+CSL is known to work on Mac OSX, UNIX/Linux, iOS, Android and
+MS-Windows. To get started, build the JUCE demo app (screen shot below)
 and use the combo boxes at the bottom to select among the tests, whose source code
 is all in the Src/Tests folder. For the Mac, use the XCode project in the 
 Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder;
 likewise, there's a VisualStudio solution in Builds/VisualStudio2019.
 
-Links for the impatient
+### Links for the impatient
 
 Basic CSL overview with code examples: http://www.fastlabinc.com/CSL/CSL_Intro.pdf
 
-CSL Slides for the really impatient: http://www.fastlabinc.com/CSL/CSL_Overview.pdf
+CSL presentation slides for the really impatient: http://www.fastlabinc.com/CSL/CSL_Overview.pdf
 
 ## About CSL
 
-CSL is a C++ class library; to use it, you write and compile C++ programs like 
-the ones in the Src/Tests directory. These programs will generally use the CSL 
+CSL is a C++ class library for sound/music spplications; to use it, you write and compile C++ programs like 
+the ones in the Src/Tests directory. These programs will use the CSL 
 class library, and may read input files or respond to in-coming MIDI or OSC 
 commands. CSL apps can run stand-alone as servers, or have interactive GUIs, or be 
 plug-ins to out-board signal processing tools. CSL is frequently used together 
