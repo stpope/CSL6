@@ -50,7 +50,7 @@ in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
 
 The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
 (2) look at the Doxygen-generated API documentation in 
-
+![alt text](http://fastlabinc.com/CSL/classes.jpg)
 	Doc/html.zip
 
 You can unzip this file to get the full HTML doc; you might also want to study the files,
