@@ -45,12 +45,13 @@ development tools of their platforms, e.g., Xcode on the Mac, Eclipse on Linux, 
 Visual Studio on MS-Windows) who also know some software sound synthesis language 
 such as Csound or SuperCollider (see Curtis Roads' "Computer Music Tutorial").
 
+![alt text](http://fastlabinc.com/CSL/classes.jpg)
+
 Some of the code assumes it's installed in ~/Code/CSL6; there are some default settings 
 in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
 
 The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
 (2) look at the Doxygen-generated API documentation in 
-![alt text](http://fastlabinc.com/CSL/classes.jpg)
 	Doc/html.zip
 
 You can unzip this file to get the full HTML doc; you might also want to study the files,
