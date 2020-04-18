@@ -21,6 +21,12 @@ is all in the Src/Tests folder. For the Mac, use the XCode project in the
 Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder;
 likewise, there's a VisualStudio solution in Builds/VisualStudio2019.
 
+Links for the impatient
+
+Basic CSL overview with code examples: http://www.fastlabinc.com/CSL/CSL_Intro.pdf
+
+CSL Slides for the really impatient: http://www.fastlabinc.com/CSL/CSL_Overview.pdf
+
 ## About CSL
 
 CSL is a C++ class library; to use it, you write and compile C++ programs like 
