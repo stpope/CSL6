@@ -15,7 +15,7 @@ The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots and lin
 screencast demos there.
 
 CSL is known to work on Mac OSX, many flavors of UNIX/Linux, iPhones, Android and
-MS-Windows. To get started quickly, build the JUCE demo app (documented elsewhere)
+MS-Windows. To get started quickly, build the JUCE demo app (screen shot below)
 and use the combo boxes at the bottom to select among the tests, whose source code
 is all in the Src/Tests folder. For the Mac, use the XCode project in the 
 Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder;
@@ -27,18 +27,20 @@ CSL is a C++ class library; to use it, you write and compile C++ programs like
 the ones in the Src/Tests directory. These programs will generally use the CSL 
 class library, and may read input files or respond to in-coming MIDI or OSC 
 commands. CSL apps can run stand-alone as servers, or have interactive GUIs, or be 
-plug-ins to out-board signal processing tools.
+plug-ins to out-board signal processing tools. CSL is frequently used together 
+with JUCE, a comprehensive C++ class library for multimedia and GUI programming, 
+but it can also be used for stand-alone "head-less" apps without JUCE, or with 
+other GUI frameworks such as Qt.
 
 ![alt text](https://github.com/stpope/CSL6/blob/master/Doc/6.0DemoScreen1.jpg "CSL Demo screen shot")
 
-This means that the target users for CSL are C++ programmers (familiar with the 
+The target users for CSL are C++ programmers (familiar with the 
 development tools of their platforms, e.g., Xcode on the Mac, Eclipse on Linux, or 
 Visual Studio on MS-Windows) who also know some software sound synthesis language 
 such as Csound or SuperCollider (see Curtis Roads' "Computer Music Tutorial").
 
-Some of the code assumes it's installed in ~/Code/CSL; there are some default settings 
+Some of the code assumes it's installed in ~/Code/CSL6; there are some default settings 
 in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
-The system assumes JUCE is in ~/Code/JUCE6 (../JUCE6 from the root of the CSL hierarchy).
 
 The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
 (2) look at the Doxygen-generated API documentation in 
@@ -77,8 +79,7 @@ Note that the release contains a number of files that have not been ported to th
 newest framework; these are generally in subdirectories called "Old" and may well 
 work with a little bit of tweaking; all the really unstable code has been removed.
 
-
-Platform Requirements (tested on these platforms)
+## Platform Requirements (tested on these platforms)
 
 	MacOS: OSX 10.13 or newer with Xcode
 	Linux: Tested on Ubuntu 19 with X11-libs, ALSA, Freetype, etc.
@@ -264,7 +265,7 @@ Reading the source
 	Use a syntax-coloring editor, if available.
 	Note the naming conventions.
 
-## Coding Conventions
+Coding Conventions
 
 Naming
 
@@ -299,7 +300,7 @@ Constants
 
 ## Compile-time options 
 
-(These are not set in the header files so that different apps can share the source tree.)
+These are not set in the header files so that different apps can share the source tree.
 
 SoundFile type:
 
