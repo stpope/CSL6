@@ -45,9 +45,7 @@ development tools of their platforms, e.g., Xcode on the Mac, Eclipse on Linux, 
 Visual Studio on MS-Windows) who also know some software sound synthesis language 
 such as Csound or SuperCollider (see Curtis Roads' "Computer Music Tutorial").
 
-<center>
-![alt text](http://fastlabinc.com/CSL/classes.jpg)
-</center>
+<center>![alt text](http://fastlabinc.com/CSL/classes.jpg)</center>
 
 Some of the code assumes it's installed in ~/Code/CSL6; there are some default settings 
 in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
