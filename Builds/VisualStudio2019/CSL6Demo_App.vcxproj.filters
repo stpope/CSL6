@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="CSL6Demo\Demo_GUI">
-      <UniqueIdentifier>{246C9EF6-B7E5-FD60-3452-DC1DA17703C2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CSL6Demo\Kernel">
       <UniqueIdentifier>{C4DCE0BE-F0FC-987C-813B-88A39A79D732}</UniqueIdentifier>
     </Filter>
@@ -37,6 +34,9 @@
     </Filter>
     <Filter Include="CSL6Demo\Tests">
       <UniqueIdentifier>{DF1F5A5A-67C3-7B2F-8CF0-82A884BEF6B3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CSL6Demo\Demo_GUI">
+      <UniqueIdentifier>{246C9EF6-B7E5-FD60-3452-DC1DA17703C2}</UniqueIdentifier>
     </Filter>
     <Filter Include="CSL6Demo">
       <UniqueIdentifier>{EA74570B-347D-5E72-C251-B7031FF7DE01}</UniqueIdentifier>
@@ -445,194 +445,194 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Src\JUCE\Main.cpp">
-      <Filter>CSL6Demo\Demo_GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Src\JUCE\CSL_TestComponent.cpp">
-      <Filter>CSL6Demo\Demo_GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Src\JUCE\JCSL_Widgets.cpp">
-      <Filter>CSL6Demo\Demo_GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Src\Kernel\CGestalt.cpp">
+    <ClCompile Include="..\..\Src\Kernel\CSL_Core.cpp">
       <Filter>CSL6Demo\Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Kernel\CSL_Core.cpp">
+    <ClCompile Include="..\..\Src\Kernel\CGestalt.cpp">
       <Filter>CSL6Demo\Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\Oscillator.cpp">
+    <ClCompile Include="..\..\Src\Sources\Window.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\Window.cpp">
+    <ClCompile Include="..\..\Src\Sources\Envelope.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\Envelope.cpp">
+    <ClCompile Include="..\..\Src\Sources\Oscillator.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\Granulator.cpp">
+    <ClCompile Include="..\..\Src\Sources\Noise.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\KarplusString.cpp">
+    <ClCompile Include="..\..\Src\Sources\Spectral.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\Noise.cpp">
+    <ClCompile Include="..\..\Src\Sources\Granulator.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\OscillatorBL.cpp">
+    <ClCompile Include="..\..\Src\Sources\KarplusString.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\SHARC.cpp">
+    <ClCompile Include="..\..\Src\Sources\OscillatorBL.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\SimpleSines.cpp">
+    <ClCompile Include="..\..\Src\Sources\SHARC.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\Spectral.cpp">
+    <ClCompile Include="..\..\Src\Sources\SimpleSines.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Sources\WaveShaper.cpp">
+    <ClCompile Include="..\..\Src\Sources\WaveShaper.cpp">
       <Filter>CSL6Demo\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Processors\BinaryOp.cpp">
+    <ClCompile Include="..\..\Src\Processors\BinaryOp.cpp">
       <Filter>CSL6Demo\Processors</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Processors\Clipper.cpp">
+    <ClCompile Include="..\..\Src\Processors\InOut.cpp">
       <Filter>CSL6Demo\Processors</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Processors\Convolver.cpp">
+    <ClCompile Include="..\..\Src\Processors\Mixer.cpp">
       <Filter>CSL6Demo\Processors</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Processors\Convolver2.cpp">
+    <ClCompile Include="..\..\Src\Processors\Filters.cpp">
       <Filter>CSL6Demo\Processors</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Processors\Filters.cpp">
+    <ClCompile Include="..\..\Src\Processors\FIR.cpp">
       <Filter>CSL6Demo\Processors</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Processors\FIR.cpp">
+    <ClCompile Include="..\..\Src\Processors\Clipper.cpp">
       <Filter>CSL6Demo\Processors</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Processors\Freeverb.cpp">
+    <ClCompile Include="..\..\Src\Processors\Convolver.cpp">
       <Filter>CSL6Demo\Processors</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Processors\InOut.cpp">
+    <ClCompile Include="..\..\Src\Processors\Convolver2.cpp">
       <Filter>CSL6Demo\Processors</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Processors\Mixer.cpp">
+    <ClCompile Include="..\..\Src\Processors\Freeverb.cpp">
       <Filter>CSL6Demo\Processors</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\IO\JUCEIO.cpp">
+    <ClCompile Include="..\..\Src\IO\JUCEIO.cpp">
       <Filter>CSL6Demo\IO</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\IO\SoundFile.cpp">
+    <ClCompile Include="..\..\Src\IO\SoundFile.cpp">
       <Filter>CSL6Demo\IO</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\IO\SoundFileJ.cpp">
+    <ClCompile Include="..\..\Src\IO\SoundFileJ.cpp">
       <Filter>CSL6Demo\IO</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\IO\FileIO.cpp">
+    <ClCompile Include="..\..\Src\IO\FileIO.cpp">
       <Filter>CSL6Demo\IO</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\IO\MIDIIOJ.cpp">
+    <ClCompile Include="..\..\Src\IO\MIDIIOJ.cpp">
       <Filter>CSL6Demo\IO</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\IO\OSC_support.cpp">
+    <ClCompile Include="..\..\Src\IO\OSC_support.cpp">
       <Filter>CSL6Demo\IO</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\SimplePanner.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\SpatialAudio.cpp">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\SpatialAudio.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\SimplePanner.cpp">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\SpatialPanner.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\SpatialPanner.cpp">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\SpatialSource.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\SpatialSource.cpp">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\DistanceSimulator.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\DistanceSimulator.cpp">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\SpeakerLayout.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\SpeakerLayout.cpp">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\VBAP\VBAP.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\VBAP\VBAP.cpp">
       <Filter>CSL6Demo\Spatializers\VBAP</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\Binaural\Binaural.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\Binaural\Binaural.cpp">
       <Filter>CSL6Demo\Spatializers\Binaural</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\Binaural\BinauralDB.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\Binaural\BinauralDB.cpp">
       <Filter>CSL6Demo\Spatializers\Binaural</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\Ambisonic\Ambisonic.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\Ambisonic\Ambisonic.cpp">
       <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\Ambisonic\AmbisonicPanner.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\Ambisonic\AmbisonicPanner.cpp">
       <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Spatializers\Ambisonic\AmbisonicUtilities.cpp">
+    <ClCompile Include="..\..\Src\Spatializers\Ambisonic\AmbisonicUtilities.cpp">
       <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Instruments\Instrument.cpp">
+    <ClCompile Include="..\..\Src\Instruments\Instrument.cpp">
       <Filter>CSL6Demo\Instruments</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Instruments\AdditiveInstrument.cpp">
+    <ClCompile Include="..\..\Src\Instruments\AdditiveInstrument.cpp">
       <Filter>CSL6Demo\Instruments</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Instruments\BasicFMInstrument.cpp">
+    <ClCompile Include="..\..\Src\Instruments\BasicFMInstrument.cpp">
       <Filter>CSL6Demo\Instruments</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Instruments\SndFileInstrument.cpp">
+    <ClCompile Include="..\..\Src\Instruments\SndFileInstrument.cpp">
       <Filter>CSL6Demo\Instruments</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Utilities\Variable.cpp">
+    <ClCompile Include="..\..\Src\Utilities\Variable.cpp">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Utilities\BlockResizer.cpp">
+    <ClCompile Include="..\..\Src\Utilities\CPoint.cpp">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Utilities\CPoint.cpp">
+    <ClCompile Include="..\..\Src\Utilities\BlockResizer.cpp">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Utilities\fft_N.c">
+    <ClCompile Include="..\..\Src\Utilities\RingBuffer.cpp">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Utilities\FFT_Wrapper.cpp">
+    <ClCompile Include="..\..\Src\Utilities\ThreadUtilities.cpp">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Utilities\FFTReal.cpp">
+    <ClCompile Include="..\..\Src\Utilities\FFT_Wrapper.cpp">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Utilities\RingBuffer.cpp">
+    <ClCompile Include="..\..\Src\Utilities\fft_N.c">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Utilities\ThreadUtilities.cpp">
+    <ClCompile Include="..\..\Src\Utilities\FFTReal.cpp">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Tests\Test_Support.cpp">
+    <ClCompile Include="..\..\Src\Tests\Test_Support.cpp">
       <Filter>CSL6Demo\Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Tests\Test_Sources.cpp">
+    <ClCompile Include="..\..\Src\Tests\Test_Oscillators.cpp">
       <Filter>CSL6Demo\Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Tests\Test_Oscillators.cpp">
+    <ClCompile Include="..\..\Src\Tests\Test_Sources.cpp">
       <Filter>CSL6Demo\Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Tests\Test_Envelopes.cpp">
+    <ClCompile Include="..\..\Src\Tests\Test_Envelopes.cpp">
       <Filter>CSL6Demo\Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Tests\Test_Audio.cpp">
+    <ClCompile Include="..\..\Src\Tests\Test_Effects.cpp">
       <Filter>CSL6Demo\Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Tests\Test_Effects.cpp">
+    <ClCompile Include="..\..\Src\Tests\Test_Panners.cpp">
       <Filter>CSL6Demo\Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Tests\Test_Panners.cpp">
+    <ClCompile Include="..\..\Src\Tests\Test_Audio.cpp">
       <Filter>CSL6Demo\Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Tests\Test_Control.cpp">
+    <ClCompile Include="..\..\Src\Tests\Test_Control.cpp">
       <Filter>CSL6Demo\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\JUCE\Main.cpp">
+      <Filter>CSL6Demo\Demo_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\JUCE\CSL_TestComponent.cpp">
+      <Filter>CSL6Demo\Demo_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\JUCE\JCSL_Widgets.cpp">
+      <Filter>CSL6Demo\Demo_GUI</Filter>
     </ClCompile>
     <ClCompile Include="C:\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
       <Filter>JUCE Modules\juce_audio_basics\buffers</Filter>
@@ -2547,185 +2547,188 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Src\JUCE\CSL_TestComponent.h">
-      <Filter>CSL6Demo\Demo_GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Src\JUCE\JCSL_Widgets.h">
-      <Filter>CSL6Demo\Demo_GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Src\Kernel\CSL_Types.h">
+    <ClInclude Include="..\..\Src\Kernel\CSL_Types.h">
       <Filter>CSL6Demo\Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Kernel\CSL_Exceptions.h">
+    <ClInclude Include="..\..\Src\Kernel\CSL_Includes.h">
       <Filter>CSL6Demo\Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Kernel\CSL_Includes.h">
+    <ClInclude Include="..\..\Src\Kernel\CSL_Exceptions.h">
       <Filter>CSL6Demo\Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Kernel\CGestalt.h">
+    <ClInclude Include="..\..\Src\Kernel\CSL_Core.h">
       <Filter>CSL6Demo\Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Kernel\CSL_Core.h">
+    <ClInclude Include="..\..\Src\Kernel\CGestalt.h">
       <Filter>CSL6Demo\Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\Oscillator.h">
+    <ClInclude Include="..\..\Src\Sources\Window.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\Window.h">
+    <ClInclude Include="..\..\Src\Sources\Envelope.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\Envelope.h">
+    <ClInclude Include="..\..\Src\Sources\Oscillator.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\Granulator.h">
+    <ClInclude Include="..\..\Src\Sources\Noise.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\KarplusString.h">
+    <ClInclude Include="..\..\Src\Sources\Spectral.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\Noise.h">
+    <ClInclude Include="..\..\Src\Sources\Granulator.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\OscillatorBL.h">
+    <ClInclude Include="..\..\Src\Sources\KarplusString.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\SHARC.h">
+    <ClInclude Include="..\..\Src\Sources\OscillatorBL.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\SimpleSines.h">
+    <ClInclude Include="..\..\Src\Sources\SHARC.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\Spectral.h">
+    <ClInclude Include="..\..\Src\Sources\SimpleSines.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Sources\WaveShaper.h">
+    <ClInclude Include="..\..\Src\Sources\WaveShaper.h">
       <Filter>CSL6Demo\Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Processors\BinaryOp.h">
+    <ClInclude Include="..\..\Src\Processors\BinaryOp.h">
       <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Processors\Clipper.h">
+    <ClInclude Include="..\..\Src\Processors\InOut.h">
       <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Processors\Convolver.h">
+    <ClInclude Include="..\..\Src\Processors\Mixer.h">
       <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Processors\Convolver2.h">
+    <ClInclude Include="..\..\Src\Processors\Filters.h">
       <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Processors\Filters.h">
+    <ClInclude Include="..\..\Src\Processors\FIR.h">
       <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Processors\FIR.h">
+    <ClInclude Include="..\..\Src\Processors\Clipper.h">
       <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Processors\Freeverb.h">
+    <ClInclude Include="..\..\Src\Processors\Convolver.h">
       <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Processors\InOut.h">
+    <ClInclude Include="..\..\Src\Processors\Convolver2.h">
       <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Processors\Mixer.h">
+    <ClInclude Include="..\..\Src\Processors\Freeverb.h">
       <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\IO\JUCEIO.h">
+    <ClInclude Include="..\..\Src\IO\JUCEIO.h">
       <Filter>CSL6Demo\IO</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\IO\SoundFile.h">
+    <ClInclude Include="..\..\Src\IO\SoundFile.h">
       <Filter>CSL6Demo\IO</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\IO\SoundFileJ.h">
+    <ClInclude Include="..\..\Src\IO\SoundFileJ.h">
       <Filter>CSL6Demo\IO</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\IO\FileIO.h">
+    <ClInclude Include="..\..\Src\IO\FileIO.h">
       <Filter>CSL6Demo\IO</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\IO\MIDIIOJ.h">
+    <ClInclude Include="..\..\Src\IO\MIDIIOJ.h">
       <Filter>CSL6Demo\IO</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\IO\OSC_support.h">
+    <ClInclude Include="..\..\Src\IO\OSC_support.h">
       <Filter>CSL6Demo\IO</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\SimplePanner.h">
+    <ClInclude Include="..\..\Src\Spatializers\matrix.h">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\SpatialAudio.h">
+    <ClInclude Include="..\..\Src\Spatializers\SpatialAudio.h">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\SpatialPanner.h">
+    <ClInclude Include="..\..\Src\Spatializers\SimplePanner.h">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\SpatialSource.h">
+    <ClInclude Include="..\..\Src\Spatializers\SpatialPanner.h">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\DistanceSimulator.h">
+    <ClInclude Include="..\..\Src\Spatializers\SpatialSource.h">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\SpeakerLayout.h">
+    <ClInclude Include="..\..\Src\Spatializers\DistanceSimulator.h">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\VBAP\VBAP.h">
+    <ClInclude Include="..\..\Src\Spatializers\SpeakerLayout.h">
+      <Filter>CSL6Demo\Spatializers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Spatializers\VBAP\VBAP.h">
       <Filter>CSL6Demo\Spatializers\VBAP</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\Binaural\Binaural.h">
+    <ClInclude Include="..\..\Src\Spatializers\Binaural\Binaural.h">
       <Filter>CSL6Demo\Spatializers\Binaural</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\Binaural\BinauralDB.h">
+    <ClInclude Include="..\..\Src\Spatializers\Binaural\BinauralDB.h">
       <Filter>CSL6Demo\Spatializers\Binaural</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\Ambisonic\Ambisonic.h">
+    <ClInclude Include="..\..\Src\Spatializers\Ambisonic\Ambisonic.h">
       <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\Ambisonic\AmbisonicPanner.h">
+    <ClInclude Include="..\..\Src\Spatializers\Ambisonic\AmbisonicPanner.h">
       <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Spatializers\Ambisonic\AmbisonicUtilities.h">
+    <ClInclude Include="..\..\Src\Spatializers\Ambisonic\AmbisonicUtilities.h">
       <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Instruments\Accessor.h">
+    <ClInclude Include="..\..\Src\Instruments\Accessor.h">
       <Filter>CSL6Demo\Instruments</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Instruments\Instrument.h">
+    <ClInclude Include="..\..\Src\Instruments\Instrument.h">
       <Filter>CSL6Demo\Instruments</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Instruments\AdditiveInstrument.h">
+    <ClInclude Include="..\..\Src\Instruments\AdditiveInstrument.h">
       <Filter>CSL6Demo\Instruments</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Instruments\BasicFMInstrument.h">
+    <ClInclude Include="..\..\Src\Instruments\BasicFMInstrument.h">
       <Filter>CSL6Demo\Instruments</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Instruments\SndFileInstrument.h">
+    <ClInclude Include="..\..\Src\Instruments\SndFileInstrument.h">
       <Filter>CSL6Demo\Instruments</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Utilities\Variable.h">
+    <ClInclude Include="..\..\Src\Utilities\Variable.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Utilities\BlockResizer.h">
+    <ClInclude Include="..\..\Src\Utilities\CPoint.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Utilities\CPoint.h">
+    <ClInclude Include="..\..\Src\Utilities\BlockResizer.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Utilities\fft_N.h">
+    <ClInclude Include="..\..\Src\Utilities\RingBuffer.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Utilities\FFT_Wrapper.h">
+    <ClInclude Include="..\..\Src\Utilities\ThreadUtilities.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Utilities\FFTReal.h">
+    <ClInclude Include="..\..\Src\Utilities\FFT_Wrapper.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Utilities\RingBuffer.h">
+    <ClInclude Include="..\..\Src\Utilities\fft_N.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Utilities\ThreadUtilities.h">
+    <ClInclude Include="..\..\Src\Utilities\FFTReal.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Tests\FilterData.h">
+    <ClInclude Include="..\..\Src\Tests\FilterData.h">
       <Filter>CSL6Demo\Tests</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Tests\Test_Support.h">
+    <ClInclude Include="..\..\Src\Tests\Test_Support.h">
       <Filter>CSL6Demo\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\JUCE\CSL_TestComponent.h">
+      <Filter>CSL6Demo\Demo_GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\JUCE\JCSL_Widgets.h">
+      <Filter>CSL6Demo\Demo_GUI</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">
       <Filter>JUCE Modules\juce_audio_basics\audio_play_head</Filter>
@@ -2847,7 +2850,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\utilities\juce_SmoothedValue.h">
       <Filter>JUCE Modules\juce_audio_basics\utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_audio_basics\juce_audio_basics.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_audio_basics\juce_audio_basics.h">
       <Filter>JUCE Modules\juce_audio_basics</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_audio_devices\audio_io\juce_AudioDeviceManager.h">
@@ -2883,7 +2886,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_audio_devices\sources\juce_AudioTransportSource.h">
       <Filter>JUCE Modules\juce_audio_devices\sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_audio_devices\juce_audio_devices.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_audio_devices\juce_audio_devices.h">
       <Filter>JUCE Modules\juce_audio_devices</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\all.h">
@@ -3177,7 +3180,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_audio_formats\sampler\juce_Sampler.h">
       <Filter>JUCE Modules\juce_audio_formats\sampler</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_audio_formats\juce_audio_formats.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_audio_formats\juce_audio_formats.h">
       <Filter>JUCE Modules\juce_audio_formats</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_audio_processors\format\juce_AudioPluginFormat.h">
@@ -3459,7 +3462,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_audio_processors\utilities\juce_RangedAudioParameter.h">
       <Filter>JUCE Modules\juce_audio_processors\utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_audio_processors\juce_audio_processors.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_audio_processors\juce_audio_processors.h">
       <Filter>JUCE Modules\juce_audio_processors</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_audio_utils\audio_cd\juce_AudioCDBurner.h">
@@ -3498,7 +3501,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_audio_utils\players\juce_SoundPlayer.h">
       <Filter>JUCE Modules\juce_audio_utils\players</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_audio_utils\juce_audio_utils.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_audio_utils\juce_audio_utils.h">
       <Filter>JUCE Modules\juce_audio_utils</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_core\containers\juce_AbstractFifo.h">
@@ -3912,7 +3915,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_core\zip\juce_ZipFile.h">
       <Filter>JUCE Modules\juce_core\zip</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_core\juce_core.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_core\juce_core.h">
       <Filter>JUCE Modules\juce_core</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_cryptography\encryption\juce_BlowFish.h">
@@ -3933,7 +3936,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_cryptography\hashing\juce_Whirlpool.h">
       <Filter>JUCE Modules\juce_cryptography\hashing</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_cryptography\juce_cryptography.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_cryptography\juce_cryptography.h">
       <Filter>JUCE Modules\juce_cryptography</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_data_structures\app_properties\juce_ApplicationProperties.h">
@@ -3963,7 +3966,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_data_structures\values\juce_ValueWithDefault.h">
       <Filter>JUCE Modules\juce_data_structures\values</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_data_structures\juce_data_structures.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_data_structures\juce_data_structures.h">
       <Filter>JUCE Modules\juce_data_structures</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_events\broadcasters\juce_ActionBroadcaster.h">
@@ -4038,7 +4041,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_events\timers\juce_Timer.h">
       <Filter>JUCE Modules\juce_events\timers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_events\juce_events.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_events\juce_events.h">
       <Filter>JUCE Modules\juce_events</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_graphics\colour\juce_Colour.h">
@@ -4215,7 +4218,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_graphics\placement\juce_RectanglePlacement.h">
       <Filter>JUCE Modules\juce_graphics\placement</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_graphics\juce_graphics.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_graphics\juce_graphics.h">
       <Filter>JUCE Modules\juce_graphics</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_gui_basics\application\juce_Application.h">
@@ -4635,7 +4638,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_gui_basics\windows\juce_TopLevelWindow.h">
       <Filter>JUCE Modules\juce_gui_basics\windows</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_gui_basics\juce_gui_basics.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_gui_basics\juce_gui_basics.h">
       <Filter>JUCE Modules\juce_gui_basics</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_gui_extra\code_editor\juce_CodeDocument.h">
@@ -4719,7 +4722,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_gui_extra\native\juce_mac_CarbonViewWrapperComponent.h">
       <Filter>JUCE Modules\juce_gui_extra\native</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_gui_extra\juce_gui_extra.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_gui_extra\juce_gui_extra.h">
       <Filter>JUCE Modules\juce_gui_extra</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_opengl\geometry\juce_Draggable3DOrientation.h">
@@ -4785,7 +4788,7 @@
     <ClInclude Include="C:\JUCE\modules\juce_opengl\utils\juce_OpenGLAppComponent.h">
       <Filter>JUCE Modules\juce_opengl\utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\JUCE6\modules\juce_opengl\juce_opengl.h">
+    <ClInclude Include="..\..\..\JUCE6\modules\juce_opengl\juce_opengl.h">
       <Filter>JUCE Modules\juce_opengl</Filter>
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
