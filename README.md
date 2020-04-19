@@ -1,4 +1,4 @@
-![alt text](https://github.com/stpope/CSL6/blob/master/Doc/CSL6_Logo_tiny.jpg "CSL Logo")
+![alt text](https://github.com/stpope/CSL6/blob/master/Doc/CSL_Logo_tiny.jpg "CSL Logo")
 
 # CSL 6.0 README
 
@@ -41,7 +41,7 @@ with JUCE, a comprehensive C++ class library for multimedia and GUI programming,
 but it can also be used for stand-alone "head-less" apps without JUCE, or with 
 other GUI frameworks such as Qt.
 
-![alt text](https://github.com/stpope/CSL6/blob/master/Doc/6.0DemoScreen1.jpg "CSL Demo screen shot")
+![alt text](https://github.com/stpope/CSL6/blob/master/Doc/6.0DemoScreen2.jpg "CSL Demo screen shot")
 
 The target users for CSL are C++ programmers (familiar with the 
 development tools of their platforms, e.g., Xcode on the Mac, Eclipse on Linux, or 
