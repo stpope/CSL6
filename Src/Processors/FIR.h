@@ -25,7 +25,7 @@ class FIR; 	///< forward declaration
 class FilterSpecification {
 public:
 
-	friend class FIR;  ///< Allow the FIR to access private members of this class.
+//	friend class FIR;  ///< Allow the FIR to access private members of this class.
 
 					/// Constructors
 	FilterSpecification(unsigned numTaps = 0, unsigned numBands = 0, double *freqs = NULL, double *resps = NULL, double *weights = NULL);
@@ -41,10 +41,10 @@ public:
 	void planFilter();		///< method to plan the filter (execute the search/iterate algorithm)	
 	double * mTapData;		///< the FIR tap weights (created by the planFilter method)
 
-protected:
+//protected:
 	unsigned mNumBands;		///< length of specification
 	double * mFrequencies;	///< band edge frequencies (2 * mNumBands)
-	double * mResponses;		///< band responses (mNumBands)
+	double * mResponses;	///< band responses (mNumBands)
 	double * mWeights;		///< band error weights (mNumBands)
 
 };

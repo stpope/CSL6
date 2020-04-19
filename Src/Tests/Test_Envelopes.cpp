@@ -57,8 +57,9 @@ void testARSin() {
 	logMsg("AR env dump");
 	osc.dump();
 	logMsg("playing AR sin...");
-	a_env.trigger();	
-	runTest(osc);
+	a_env.trigger();
+    MulOp mul(osc, 0.4);                // using a MulOp with a constant
+	runTest(mul);
 	logMsg("done.\n");
 }
 
@@ -70,7 +71,8 @@ void testARSin2() {
 	a_env.setScale(osc);				// amplitude modulate the sine
 	logMsg("playing AR sin 2...");
 	a_env.trigger();	
-	runTest(a_env);
+    MulOp mul(a_env, 0.4);              // using a MulOp with a constant
+	runTest(mul);
 	logMsg("done.\n");
 }
 
@@ -87,7 +89,8 @@ void testFrequencyEnv() {
 	vox.setScale(0.3);
 	logMsg("playing sin with BP envelope on frequency");
 	env.trigger();	
-	runTest(vox);
+    MulOp mul(vox, 0.4);              // using a MulOp with a constant
+	runTest(mul);
 	logMsg("done.\n");
 }
 
@@ -103,7 +106,8 @@ void testAMFMEnvs() {
 	fflush(stdout);
 	env.trigger();	
 	env2.trigger();	
-	runTest(vox);
+    MulOp mul(vox, 0.4);              // using a MulOp with a constant
+    runTest(mul);
 	logMsg("done.\n");
 }
 
@@ -205,7 +209,8 @@ void test50RandFreqEnv() {
 #ifndef CSL_WINDOWS
 	srand(getpid());							// seed the rand generator -- UNIX SPECIFIC CODE HERE
 #endif
-	runTest(mix, duration);
+    MulOp mul(mix, 0.4);              // using a MulOp with a constant
+	runTest(mul, duration);
 	logMsg("done.\n");
 	mix.deleteInputs();							// clean up
 }
@@ -315,7 +320,7 @@ void testManyRandSOS() {
 	float duration = 20;						// total dur
 	Mixer mix(2);								// stereo mixer
 	for (unsigned i = 0; i < 100; i++)			// play a mix of SOS instruments
-		mix.addInput(sosNote(duration, fRandM(100, 300), 0.02));
+		mix.addInput(sosNote(duration, fRandM(100, 300), 0.012));
 	logMsg("playing mix of 100 random-env SOS oscs...");
 #ifndef CSL_WINDOWS
 	srand(getpid());							// seed the rand generator -- UNIX SPECIFIC CODE HERE

@@ -77,7 +77,29 @@ public:
 	unsigned data2;
 	float time;							///< timestamp in sec
 };
+    
+/// MIDILoader
 
+class MIDILoader : public juce::Timer {
+public:
+    MIDILoader() {
+        startTimer(100);
+    }
+    
+    void timerCallback() override {
+        juce::Array<juce::MidiDeviceInfo> inDevices = juce::MidiInput::getAvailableDevices();
+        for (unsigned i = 0; i < inDevices.size(); i++)
+            mInDevices.add(inDevices[i].name);
+        juce::Array<juce::MidiDeviceInfo> outDevices = juce::MidiOutput::getAvailableDevices();
+        for (unsigned i = 0; i < outDevices.size(); i++)
+            mOutDevices.add(outDevices[i].name);
+        stopTimer();
+        printf("\nFound %d MIDI ins and %d MIDI outs\n", inDevices.size(), outDevices.size());
+    }
+
+    juce::StringArray mInDevices;
+    juce::StringArray mOutDevices;
+};
 
 ///	MIDIIO class: superclass of in and out; has a message buffer and current messages
 ///		It's a model so you can observe it.
@@ -107,7 +129,8 @@ public:
 
 protected:							///< static flags to keep track of driver state
 	static bool mIsInitialized; 
-	
+    MIDILoader mLoader;
+    
 	juce::MidiMessage * mJMsg;		///< JUCE-format message
 				
 	bool mIsOpen;					///< instance status indicators

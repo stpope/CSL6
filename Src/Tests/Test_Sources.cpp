@@ -194,23 +194,28 @@ void testWaveShaper() {
 	WaveShaper wvs(110, 0);					// wave-shape 1 = clipping
 	ADSR adsr(3.0, 1, 1, 0.7, 1);
 	wvs.setScale(adsr);
+    MulOp mul(wvs, 0.4);                    // using a MulOp with a constant
 	logMsg("Playing WaveShaper 1");
 	adsr.trigger();
-	runTest(wvs, 3);
+	runTest(mul, 3);
 	logMsg("done.");
+    
 	WaveShaper wv2(110, 2);					// wave-shape 1 = clipping
 	ADSR ads2(3.0, 1, 1, 0.7, 1);
 	wv2.setScale(ads2);
+    MulOp mu2(wv2, 0.4);                    // using a MulOp with a constant
 	logMsg("Playing WaveShaper 2");
 	ads2.trigger();
-	runTest(wv2, 3);
+	runTest(mu2, 3);
 	logMsg("done.");
+    
 	WaveShaper wv3(110, 1);					// wave-shape 1 = clipping
 	ADSR ads3(3.0, 1, 1, 0.7, 1);
 	wv3.setScale(ads3);
+    MulOp mu3(wv3, 0.4);                    // using a MulOp with a constant
 	logMsg("Playing WaveShaper 3");
 	ads3.trigger();
-	runTest(wv3, 3);
+	runTest(mu3, 3);
 	logMsg("done.");
 }
 
@@ -228,7 +233,7 @@ void testFMInstrument() {
 	float * dPtr = & dur;
 	float * fPtr = & m_freq;
 	vox->setParameter(set_duration_f, 1, (void **) &dPtr, "f");
-	vox->setParameter(set_index_f, 1, (void **) &dPtr, "f");
+	vox->setParameter(set_index_f, 1, (void **) &fPtr, "f");
 	vox->setParameter(set_m_freq_f, 1, (void **) &fPtr, "f");
 	vox->play();
 	runTest(*vox, dur);
@@ -245,17 +250,17 @@ void testSOSInstrument() {
 	AdditiveInstrument * vox2 = new AdditiveInstrument(48, 1.75f);
 	AdditiveInstrument * vox3 = new AdditiveInstrument(48, 1.75f);
 	logMsg("Playing 3 SOS instruments...");
-	vox1->playMIDI(1.0f, 1, 30, 127);
+    vox1->playMIDI(1.0f, 1, 30, 80);        // MIDI msg: dur, chan, key, vel
 	runTest(*vox1, 1.0f);
-	vox2->playMIDI(1.0f, 1, 30, 127);
+	vox2->playMIDI(1.0f, 1, 30, 80);
 	runTest(*vox2, 1.0f);
-	vox3->playMIDI(1.0f, 1, 30, 127);
+	vox3->playMIDI(1.0f, 1, 30, 80);
 	runTest(*vox3, 1.0f);
-	vox1->playMIDI(1.0f, 1, 30, 127);
+	vox1->playMIDI(1.0f, 1, 30, 80);
 	runTest(*vox1, 1.0f);
-	vox2->playMIDI(1.0f, 1, 30, 127);
+	vox2->playMIDI(1.0f, 1, 30, 80);
 	runTest(*vox2, 1.0f);
-	vox3->playMIDI(1.0f, 1, 30, 127);
+	vox3->playMIDI(1.0f, 1, 30, 80);
 	runTest(*vox3, 1.0f);
 	logMsg("done.");
 	delete vox1;
@@ -268,10 +273,16 @@ void testFancyFMInstrument() {
 	logMsg("Playing fancy fm instrument...");
 	float dur = 6.0;
 	float * dPtr = & dur;
-	float freq = 220.0;
-	float * fPtr = & freq;
+    float cfreq = 220.0;
+    float mfreq = 260.0;
+    float indF = 560.0;
+    float * cPtr = & cfreq;
+    float * mPtr = & mfreq;
+    float * iPtr = & indF;
 	vox->setParameter(set_duration_f, 1, (void **) &dPtr, "f");
-	vox->setParameter(set_c_freq_f, 1, (void **) &fPtr, "f");
+    vox->setParameter(set_index_f, 1, (void **) &iPtr, "f");
+    vox->setParameter(set_c_freq_f, 1, (void **) &cPtr, "f");
+    vox->setParameter(set_m_freq_f, 1, (void **) &mPtr, "f");
 	vox->play();
 	runTest(*vox, dur);
 	logMsg("done.");
@@ -452,7 +463,7 @@ void runTests() {
 testStruct srcTestList[] = {
 	"Noise tests",				testNoises,				"Test noise generators",
 	"Plucked string",			testString,				"Waves of string arpeggii, stereo with reverb",
-	"String melodies",			testStringChorus,		"Many random string arpeggii",
+	"Random string melodies",	testStringChorus,		"Many random string arpeggii",
 	"Mono snd file player",		testMonoFilePlayer,		"Test playing a sound file",
 	"Stereo snd file player",	testStereoFilePlayer,	"Play a stereo sound file",
 #ifdef USE_MP3	
@@ -465,8 +476,8 @@ testStruct srcTestList[] = {
 	"SumOfSines instrument",	testSOSInstrument,		"Demonstrate the SumOfSines instrument",
 	"Snd file instrument",		testSndFileInstrument,	"Test the sound file instrument",
 	"WaveShaping synthesis",	testWaveShaper,			"Play 2 wave-shaper notes with envelopes",
-	"IFFT synthesis",			test_ifft,				"Make a sound with IFFT synthesis",
-	"Vector IFFT",				test_vector_ifft,		"Vector synthesis with 2 IFFTs",
+	"IFFT synthesis (buggy)",	test_ifft,				"Make a sound with IFFT synthesis",
+	"Vector IFFT (buggy)",		test_vector_ifft,		"Vector synthesis with 2 IFFTs",
 #ifndef CSL_WINDOWS
 	"Soundfile granulation",	testGrainCloud,			"Random sound file granulation example",
 #endif

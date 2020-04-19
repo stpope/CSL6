@@ -39,8 +39,7 @@ unsigned CMIDIMessage::getPitchWheel()				{ return ((unsigned) (data2 << 7) + (u
 float    CMIDIMessage::getFrequency()				{ return keyToFreq(data1); }
 float    CMIDIMessage::getVelocityFloat()			{ return ((float) data2 / 127.0f); }
 
-
-//	MIDIIO
+//    MIDIIO
 
 // static var. definition
 
@@ -55,24 +54,24 @@ int MIDIIO::countDevices() {
 
 // Made available for flexibility
 
-void MIDIIO::dumpDevices() { 
-	juce::StringArray midiDevs = juce::MidiInput::getDevices();
-	unsigned len = midiDevs.size();
-	logMsg("\n\tMIDI in devices");
+void MIDIIO::dumpDevices() {
+    MIDILoader ml;
+    sleepSec(1.0);
+	unsigned len = ml.mInDevices.size();
+	logMsg("\tMIDI in devices");
 	for (unsigned i = 0; i < len; i++)
-		logMsg("		%d = %s", i, midiDevs[i].toUTF8());
+		logMsg("		%d = %s", i, ml.mInDevices[i].toUTF8());
 	logMsg("	Def: %d", juce::MidiInput::getDefaultDeviceIndex());
-	midiDevs = juce::MidiOutput::getDevices();
-	len = midiDevs.size();
+	len = ml.mOutDevices.size();
 	logMsg("\n\tMIDI out devices");
 	for (unsigned i = 0; i < len; i++)
-		logMsg("		%d = %s", i, midiDevs[i].toUTF8());
-	logMsg("	Def: %d", juce::MidiOutput::getDefaultDeviceIndex());
+        logMsg("		%d = %s", i, ml.mOutDevices[i].toUTF8());
+	logMsg("	Def: %d\n", juce::MidiOutput::getDefaultDeviceIndex());
 }
 
 // Constructors
 
-MIDIIO::MIDIIO() {
+MIDIIO::MIDIIO() : mLoader() {
 	if( ! mIsInitialized ) {
 		mIsInitialized = true;
 	}
@@ -217,6 +216,7 @@ void MIDIIn::setBufferSize(unsigned bufferSize) {
 // open and register me as the MidiInputCallback
 void MIDIIn::open(int deviceID) {
 	mDeviceID = deviceID;
+    juce::MessageManager::getInstance()->setCurrentThreadAsMessageThread();
 	mDevice = (juce::MidiInput::openDevice(mDeviceID, this)).get();
 	if ( ! mDevice) {
 		logMsg(kLogError, "Cannot open midi in %d", mDeviceID);

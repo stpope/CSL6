@@ -108,7 +108,7 @@ void testBigPanMix() {
 		Panner * pan = new Panner(*vox, *lfo);
 		mix.addInput(*pan);
 	}
-	logMsg("playing mix of %d panning sins...", num);
+	logMsg("playing mix of %d panning sines (1 minute)...", num);
 #ifndef CSL_WINDOWS
 	srand(getpid());						// seed the rand generator -- UNIX SPECIFIC CODE HERE
 #endif
@@ -130,7 +130,7 @@ void testOscBank() {
 		Panner * pan = new Panner(* vox, * pos);
 		mix.addInput(pan);
 	}
-	logMsg("playing mix of panning sines...");
+	logMsg("playing mix of 50 panning sines (1 minute)...");
 #ifndef CSL_WINDOWS
 	srand(getpid());							// seed the rand generator so we get different results -- UNIX SPECIFIC CODE HERE
 #endif
@@ -410,11 +410,11 @@ void test_VBAP_horiz() {
 
 /// NEW (1905) Convolver
 
-//#define IR_FILE "/Content/Code/CSL/CSL_Data/impulse.aiff"
-//#define IR_FILE "/Content/Code/CSL/CSL_Data/impulse2.aiff"
-//#define IR_FILE "/Content/Code/CSL/CSL_Data/Large3.3sCathedral_mono.aiff"
-//#define IR_FILE "/Content/Code/CSL/CSL_Data/5.6s_Gothic Church.aiff"		// stereo IR
-#define IR_FILE "/Content/Code/CSL/CSL_Data/7.0s_Cathedral C.aiff"
+//#define IR_FILE "impulse.aiff"
+//#define IR_FILE "impulse2.aiff"
+//#define IR_FILE "Large3.3sCathedral_mono.aiff"
+//#define IR_FILE "5.6s_Gothic Church.aiff"		// stereo IR
+#define IR_FILE "7.0s_Cathedral C.aiff"
 
 // 400-tap 800-1200 Hz BPF
 
@@ -470,18 +470,23 @@ void test_convolution() {	// Make dual-mono soundfile chain
 							// drum rim shot as input
 	JSoundFile * sndfile1 = JSoundFile::openSndfile(string(CGestalt::dataFolder() + "rim3_L.aiff"));
 	JSoundFile * sndfile2 = JSoundFile::openSndfile(string(CGestalt::dataFolder() + "rim3_L.aiff"));
+    MulOp smul1(*sndfile1, 10.0);
+    MulOp smul2(*sndfile2, 10.0);
 #ifdef USE_SND_FILES		// read IR from a file - long reverb tail
-	Convolver2 conv1(*sndfile1, IR_FILE, 0, CGestalt::blockSize() * 2, true);
-	Convolver2 conv2(*sndfile2, IR_FILE, 1, CGestalt::blockSize() * 2, true);
+    char infn[CSL_DEF_LEN];
+    sprintf(infn, "%s%s", CGestalt::dataFolder().c_str(), IR_FILE);
+//    Convolver2(UnitGenerator & in, char * inFName, unsigned chan = 0, unsigned len = 512, bool norm = false);
+	Convolver2 conv1(smul1, &infn[0], 0, CGestalt::blockSize() * 2, true);
+	Convolver2 conv2(smul2, &infn[0], 1, CGestalt::blockSize() * 2, true);
 #else						// use a block of data (above) as the IR - narrow BP filter
 	Convolver2 conv1(*sndfile1, test_IR, 400, CGestalt::blockSize() * 2, true);
 	Convolver2 conv2(*sndfile2, test_IR, 400, CGestalt::blockSize() * 2, true);
 #endif
 	Joiner join(conv1, conv2);						// mono-to-stereo joiner
 													// loop to play transpositions
-	logMsg("playing convolved sound source...");
+	logMsg("playing convolved sound source (5 times)...");
 	theIO->setRoot(join);							// make some sound
-	for (int i = 0; i < 1000; i++) {				// play a long time...
+	for (int i = 0; i < 5; i++) {				    // play a long time...
 		sndfile1->trigger();
 		sndfile2->trigger();
 		sleepSec(6.0);
@@ -631,16 +636,16 @@ testStruct panTestList[] = {
 	"Test convolver 3",		testConvolver3,			"Test a convolver",
 #endif
 	"Osc bank",				testOscBank,			"Mix a bank of oscillators",
-	"Channel-mapped IO",	testCMapIO,				"Demonstrate channel-mapped IO",
+	"Channel-mapped IO (buggy)",	testCMapIO,				"Demonstrate channel-mapped IO",
 #ifndef CSL_WINDOWS
-	"HRTF horiz circles",	test_Binaural_horiz,	"Test the HRTF-based binaural panner",
-	"HRTF axial circles",	test_Binaural_vertAxial,"Play a HRTF-panner with axial circles",
-	"HRTF median circles",	test_Binaural_vertMedian,"Play a HRTF-panner with median circles",
+	"HRTF horiz circles (buggy)",	test_Binaural_horiz,	"Test the HRTF-based binaural panner",
+	"HRTF axial circles (buggy)",	test_Binaural_vertAxial,"Play a HRTF-panner with axial circles",
+	"HRTF median circles (buggy)",	test_Binaural_vertMedian,"Play a HRTF-panner with median circles",
 	"Ambisonics",			test_Ambi_horiz,		"Test the Ambisonic-based spatial panner",
 	"Simple",				test_SimpleP,			"Test the simple spatial panner",
-	"VBAP",					test_VBAP_horiz,		"Test the VBAP-based spatial panner",
+	"VBAP (buggy)",			test_VBAP_horiz,		"Test the VBAP-based spatial panner",
 	"Convolver",			test_convolution,		"Test a convolver",
-	"Convolver Norm",		test_convolution_files,	"Test IR normalization",
+//	"Convolver Norm",		test_convolution_files,	"Test IR normalization",
 #endif
 NULL,						NULL,			NULL
 };

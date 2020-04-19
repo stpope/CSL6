@@ -1,0 +1,34 @@
+CSL List of ThingsToDo
+
+Broken demo fcns:
+	IFFT synthesis - only works w FFTW
+	Remez FIR planning code broke
+	Multi-tap delay demo mixer?
+	Sample-avg filter
+	HRTF only works w FFTW
+	VBAP threading broken
+	MIDI I/O demos still being ported (dump works)
+	Audio I/O demos still being ported
+
+Bugs:
+	Block resizer up-sampling
+	Env as scaled
+	Moog filter
+	ADSR/AR time scaling - setDuration should not scale whole envelope
+
+Unfinished:
+	InOut channel conversion handling
+
+Improvements:
+	ExpSeg and Spline envelopes
+	Add symmetrical filter constructors (cf/bw as floats/UGens)
+	Copy constructors all around
+
+New features:
+	SampleRateConvertor and support for multiple rates in a graph
+
+Meta-issues
+	Doc, doc, and more doc (CSL tutorial?)
+
+
+12.11 - 20.04

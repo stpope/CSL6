@@ -74,7 +74,7 @@
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalOptions>-I../../Src/Includes -w %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/w44265 /w45038 /w44062 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
@@ -116,7 +116,7 @@
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalOptions>-I../../Src/Includes -w %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/w44265 /w45038 /w44062 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
@@ -190,8 +190,8 @@
     <ClCompile Include="..\..\Src\Utilities\RingBuffer.cpp"/>
     <ClCompile Include="..\..\Src\Utilities\ThreadUtilities.cpp"/>
     <ClCompile Include="..\..\Src\Utilities\FFT_Wrapper.cpp"/>
-    <ClCompile Include="..\..\Src\Utilities\fft_N.c"/>
     <ClCompile Include="..\..\Src\Utilities\FFTReal.cpp"/>
+    <ClCompile Include="..\..\Src\Utilities\fft_N.c"/>
     <ClCompile Include="..\..\Src\Tests\Test_Support.cpp"/>
     <ClCompile Include="..\..\Src\Tests\Test_Oscillators.cpp"/>
     <ClCompile Include="..\..\Src\Tests\Test_Sources.cpp"/>
@@ -1958,6 +1958,7 @@
     <ClCompile Include="C:\JUCE\modules\juce_opengl\juce_opengl.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_devices.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_formats.cpp"/>
@@ -2028,8 +2029,8 @@
     <ClInclude Include="..\..\Src\Utilities\RingBuffer.h"/>
     <ClInclude Include="..\..\Src\Utilities\ThreadUtilities.h"/>
     <ClInclude Include="..\..\Src\Utilities\FFT_Wrapper.h"/>
-    <ClInclude Include="..\..\Src\Utilities\fft_N.h"/>
     <ClInclude Include="..\..\Src\Utilities\FFTReal.h"/>
+    <ClInclude Include="..\..\Src\Utilities\fft_N.h"/>
     <ClInclude Include="..\..\Src\Tests\FilterData.h"/>
     <ClInclude Include="..\..\Src\Tests\Test_Support.h"/>
     <ClInclude Include="..\..\Src\JUCE\CSL_TestComponent.h"/>
@@ -2721,9 +2722,11 @@
     <ClInclude Include="C:\JUCE\modules\juce_opengl\opengl\juce_OpenGLTexture.h"/>
     <ClInclude Include="C:\JUCE\modules\juce_opengl\utils\juce_OpenGLAppComponent.h"/>
     <ClInclude Include="..\..\..\JUCE6\modules\juce_opengl\juce_opengl.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\BinaryData.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h"/>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Doc\CSL6_Logo.png"/>
     <None Include="C:\JUCE\modules\juce_audio_formats\codecs\flac\Flac Licence.txt"/>
     <None Include="C:\JUCE\modules\juce_audio_formats\codecs\oggvorbis\Ogg Vorbis Licence.txt"/>
     <None Include="C:\JUCE\modules\juce_audio_processors\format_types\VST3_SDK\base\LICENSE.txt"/>
@@ -2737,6 +2740,7 @@
     <None Include="C:\JUCE\modules\juce_core\native\java\README.txt"/>
     <None Include="C:\JUCE\modules\juce_graphics\image_formats\jpglib\changes to libjpeg for JUCE.txt"/>
     <None Include="C:\JUCE\modules\juce_graphics\image_formats\pnglib\libpng_readme.txt"/>
+    <None Include=".\icon.ico"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include=".\resources.rc"/>

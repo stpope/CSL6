@@ -595,10 +595,10 @@
     <ClCompile Include="..\..\Src\Utilities\FFT_Wrapper.cpp">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\Utilities\fft_N.c">
+    <ClCompile Include="..\..\Src\Utilities\FFTReal.cpp">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\Utilities\FFTReal.cpp">
+    <ClCompile Include="..\..\Src\Utilities\fft_N.c">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\Tests\Test_Support.cpp">
@@ -2506,6 +2506,9 @@
     <ClCompile Include="C:\JUCE\modules\juce_opengl\juce_opengl.mm">
       <Filter>JUCE Modules\juce_opengl</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
@@ -2712,10 +2715,10 @@
     <ClInclude Include="..\..\Src\Utilities\FFT_Wrapper.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Utilities\fft_N.h">
+    <ClInclude Include="..\..\Src\Utilities\FFTReal.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Utilities\FFTReal.h">
+    <ClInclude Include="..\..\Src\Utilities\fft_N.h">
       <Filter>CSL6Demo\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\Tests\FilterData.h">
@@ -4791,11 +4794,17 @@
     <ClInclude Include="..\..\..\JUCE6\modules\juce_opengl\juce_opengl.h">
       <Filter>JUCE Modules\juce_opengl</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\BinaryData.h">
+      <Filter>JUCE Library Code</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Doc\CSL6_Logo.png">
+      <Filter>CSL6Demo</Filter>
+    </None>
     <None Include="C:\JUCE\modules\juce_audio_formats\codecs\flac\Flac Licence.txt">
       <Filter>JUCE Modules\juce_audio_formats\codecs\flac</Filter>
     </None>
@@ -4834,6 +4843,9 @@
     </None>
     <None Include="C:\JUCE\modules\juce_graphics\image_formats\pnglib\libpng_readme.txt">
       <Filter>JUCE Modules\juce_graphics\image_formats\pnglib</Filter>
+    </None>
+    <None Include=".\icon.ico">
+      <Filter>JUCE Library Code</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

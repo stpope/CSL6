@@ -61,6 +61,10 @@
 			isa = PBXBuildFile;
 			fileRef = 08D33A2F073C00F36A852394;
 		};
+		5A01611FAF4A555E011006C6 = {
+			isa = PBXBuildFile;
+			fileRef = 80FE76EC8397C2CC56206326;
+		};
 		01A6FDBAD6FFCBF4CE3A0720 = {
 			isa = PBXBuildFile;
 			fileRef = 535ACB379D0659B944C47273;
@@ -261,13 +265,13 @@
 			isa = PBXBuildFile;
 			fileRef = FB7179CF044154FF7FD22A5C;
 		};
-		295CD70F8B2251EAB16AFE10 = {
-			isa = PBXBuildFile;
-			fileRef = CC2ECAC12F755EA8378E7E4E;
-		};
 		1EAE8B70D6C4D7C2E05D73B1 = {
 			isa = PBXBuildFile;
 			fileRef = BCB95EADF05A42B12C2C5685;
+		};
+		295CD70F8B2251EAB16AFE10 = {
+			isa = PBXBuildFile;
+			fileRef = CC2ECAC12F755EA8378E7E4E;
 		};
 		FA3A67D2194AD31BEABA1E9C = {
 			isa = PBXBuildFile;
@@ -312,6 +316,10 @@
 		6BA61C0EFB27208F351139FA = {
 			isa = PBXBuildFile;
 			fileRef = 09A769D33DC6280B37623C43;
+		};
+		3D0118AD441A60E647944DC0 = {
+			isa = PBXBuildFile;
+			fileRef = C54B4BEF7910A70BF407DE47;
 		};
 		B240DE22D92188EED64E12B1 = {
 			isa = PBXBuildFile;
@@ -806,6 +814,13 @@
 			path = "../../JuceLibraryCode/include_juce_opengl.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+		5E39F0B1AFC58C0DB19EABF8 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			name = "CSL6_Logo.png";
+			path = "../../Doc/CSL6_Logo.png";
+			sourceTree = "SOURCE_ROOT";
+		};
 		5EB46A1D0ED7F46A7C66EA57 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -911,6 +926,13 @@
 			path = ../../Src/Spatializers/Ambisonic/AmbisonicPanner.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
+		7337F8E40231E79CFEE64E33 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = BinaryData.h;
+			path = ../../JuceLibraryCode/BinaryData.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		7562F28D1E54B9668AAE9A02 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.cpp;
@@ -972,6 +994,13 @@
 			lastKnownFileType = sourcecode.cpp.cpp;
 			name = Window.cpp;
 			path = ../../Src/Sources/Window.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
+		80FE76EC8397C2CC56206326 = {
+			isa = PBXFileReference;
+			lastKnownFileType = file.icns;
+			name = Icon.icns;
+			path = Icon.icns;
 			sourceTree = "SOURCE_ROOT";
 		};
 		8166E49136B8309C750C38A2 = {
@@ -1238,6 +1267,13 @@
 			lastKnownFileType = sourcecode.c.h;
 			name = BinauralDB.h;
 			path = ../../Src/Spatializers/Binaural/BinauralDB.h;
+			sourceTree = "SOURCE_ROOT";
+		};
+		C54B4BEF7910A70BF407DE47 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = BinaryData.cpp;
+			path = ../../JuceLibraryCode/BinaryData.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
 		C5C9066F930F0C5D12A97D7A = {
@@ -1701,10 +1737,10 @@
 				157E9FD8E1412875E4F80D35,
 				F15E2557962F238BDB1AD735,
 				FB7179CF044154FF7FD22A5C,
-				CC2ECAC12F755EA8378E7E4E,
-				054FCD30A055E551DFE63576,
 				D4D6E2E9F43CC88C40D5AAD9,
 				BCB95EADF05A42B12C2C5685,
+				CC2ECAC12F755EA8378E7E4E,
+				054FCD30A055E551DFE63576,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -1750,6 +1786,7 @@
 				A61F3CDDA96146B30F07478A,
 				8493CB0E0D942C9E52C26E2D,
 				2DDC19BC2582E0339BA8688D,
+				5E39F0B1AFC58C0DB19EABF8,
 			);
 			name = CSL6Demo;
 			sourceTree = "<group>";
@@ -1777,6 +1814,8 @@
 		5AF8D33A85F72B10CD2BBBB9 = {
 			isa = PBXGroup;
 			children = (
+				C54B4BEF7910A70BF407DE47,
+				7337F8E40231E79CFEE64E33,
 				ABD9C8A3F228E3F7C0F7102D,
 				639DCB8A55DDF6D762EFDC8F,
 				5C722A5A711684123E87B80E,
@@ -1800,6 +1839,7 @@
 			children = (
 				8166E49136B8309C750C38A2,
 				08D33A2F073C00F36A852394,
+				80FE76EC8397C2CC56206326,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1863,7 +1903,7 @@
 					"USE_VBAP",
 					"USE_HRTF",
 					"USE_AMBISONIC",
-					"USE_FFTW",
+					"USE_FFTREAL",
 					"USE_JSND",
 					"USE_JMIDI",
 					"JUCE_DEBUG",
@@ -1910,7 +1950,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CPLUSPLUSFLAGS = "-I../../Src/Includes -I/usr/local/include -w";
-				OTHER_LDFLAGS = "/usr/local/lib/libfftw3f.a /usr/local/lib/liblo.a";
+				OTHER_LDFLAGS = "/usr/local/lib/liblo.a";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FASTLab.CSL6Demo;
 				PRODUCT_NAME = "CSL6Demo";
 				USE_HEADERMAP = NO;
@@ -1936,7 +1976,7 @@
 					"USE_VBAP",
 					"USE_HRTF",
 					"USE_AMBISONIC",
-					"USE_FFTW",
+					"USE_FFTREAL",
 					"USE_JSND",
 					"USE_JMIDI",
 					"JUCE_DEBUG",
@@ -1984,7 +2024,7 @@
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CPLUSPLUSFLAGS = "-I../../Src/Includes -I/usr/local/include -w";
-				OTHER_LDFLAGS = "/usr/local/lib/libfftw3f.a /usr/local/lib/liblo.a";
+				OTHER_LDFLAGS = "/usr/local/lib/liblo.a";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FASTLab.CSL6Demo;
 				PRODUCT_NAME = "CSL6Demo";
 				USE_HEADERMAP = NO;
@@ -2115,6 +2155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E060392BE09F61EF52F22B8,
+				5A01611FAF4A555E011006C6,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2172,8 +2213,8 @@
 				090FBDF518FF9C6C1E7C34C7,
 				EC674CA849D5602D7AD2F68E,
 				169C3455F7B512384EC8364B,
-				295CD70F8B2251EAB16AFE10,
 				1EAE8B70D6C4D7C2E05D73B1,
+				295CD70F8B2251EAB16AFE10,
 				FA3A67D2194AD31BEABA1E9C,
 				CACE9130AC6573A21DABFE35,
 				F3F3E92072E55249BDC13E4B,
@@ -2185,6 +2226,7 @@
 				111BB045CA1ACF15C0CB9E85,
 				38DF5E0CA96AC65BE8CEF244,
 				6BA61C0EFB27208F351139FA,
+				3D0118AD441A60E647944DC0,
 				B240DE22D92188EED64E12B1,
 				A8EBFA9DAAD47FF2A4C9E9BC,
 				392B73F68BEB04967E60A7EE,

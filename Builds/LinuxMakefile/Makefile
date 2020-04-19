@@ -118,8 +118,8 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/RingBuffer_32c156b5.o \
   $(JUCE_OBJDIR)/ThreadUtilities_4d910765.o \
   $(JUCE_OBJDIR)/FFT_Wrapper_4da98e2d.o \
-  $(JUCE_OBJDIR)/fft_N_6d106468.o \
   $(JUCE_OBJDIR)/FFTReal_f8205b7.o \
+  $(JUCE_OBJDIR)/fft_N_6d106468.o \
   $(JUCE_OBJDIR)/Test_Support_65e1c370.o \
   $(JUCE_OBJDIR)/Test_Oscillators_3e52e774.o \
   $(JUCE_OBJDIR)/Test_Sources_d039c2d9.o \
@@ -131,6 +131,7 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/Main_d8756245.o \
   $(JUCE_OBJDIR)/CSL_TestComponent_29c9926.o \
   $(JUCE_OBJDIR)/JCSL_Widgets_cd5f998e.o \
+  $(JUCE_OBJDIR)/BinaryData_ce4232d4.o \
   $(JUCE_OBJDIR)/include_juce_audio_basics_8a4e984a.o \
   $(JUCE_OBJDIR)/include_juce_audio_devices_63111d02.o \
   $(JUCE_OBJDIR)/include_juce_audio_formats_15f82001.o \
@@ -408,15 +409,15 @@ $(JUCE_OBJDIR)/FFT_Wrapper_4da98e2d.o: ../../Src/Utilities/FFT_Wrapper.cpp
 	@echo "Compiling FFT_Wrapper.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/fft_N_6d106468.o: ../../Src/Utilities/fft_N.c
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling fft_N.c"
-	$(V_AT)$(CC) $(JUCE_CFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
 $(JUCE_OBJDIR)/FFTReal_f8205b7.o: ../../Src/Utilities/FFTReal.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling FFTReal.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/fft_N_6d106468.o: ../../Src/Utilities/fft_N.c
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling fft_N.c"
+	$(V_AT)$(CC) $(JUCE_CFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/Test_Support_65e1c370.o: ../../Src/Tests/Test_Support.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
@@ -471,6 +472,11 @@ $(JUCE_OBJDIR)/CSL_TestComponent_29c9926.o: ../../Src/JUCE/CSL_TestComponent.cpp
 $(JUCE_OBJDIR)/JCSL_Widgets_cd5f998e.o: ../../Src/JUCE/JCSL_Widgets.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling JCSL_Widgets.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/BinaryData_ce4232d4.o: ../../JuceLibraryCode/BinaryData.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling BinaryData.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/include_juce_audio_basics_8a4e984a.o: ../../JuceLibraryCode/include_juce_audio_basics.cpp

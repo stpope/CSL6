@@ -595,8 +595,7 @@ protected:											// class' data members
 
 void testSAFilter() {
 	SoundFile sfile(CGestalt::dataFolder() + "sns.aiff");	// open a speak'n'spell file
-	
-	SAFliter averager(sfile);							// s-a filter
+	SAFliter averager(sfile);							    // s-a filter
 	logMsg("playing filtered snd file...");
 	runTest(averager, 5.0);
 	logMsg("done.");
@@ -622,7 +621,7 @@ void runTests() {
 
 testStruct effTestList[] = {
 	"Clipper",				testClipper,		"Demonstrate the signal clipper",
-	"FIR filter",			testFIR,			"Play an FIR band-pass filter",
+	"FIR filter (buggy)",	testFIR,			"Play an FIR band-pass filter",
 	"All filters",			testFilters,		"Test different filter types",
 	"Biquad filters",		testBiquads,		"Test biquad filter types",
 	"Filtered snd file",	testDynamicVoice,	"Dynamic BPF on a voice track",
@@ -630,7 +629,7 @@ testStruct effTestList[] = {
 	"Many dynamic filters",	testNDynamicFilters, "Many dynamic filtered-noise instruments",
 	"Reverb",				testReverb,			"Show mono reverb on impulses",
 	"Stereo-verb",			testStereoverb,		"Listen to the stereo reverb",
-	"Multi-tap delay",		testMultiTap,		"Play a multi-tap delay line",
+	"Multi-tap delay (buggy)",	testMultiTap,		"Play a multi-tap delay line",
 	"Split/Join filter",	testSplitJoin1,		"Play a splitter/joiner cross-over filter",
 	"Split/Join/Mix filter", testSplitJoin2,	"Play a splitter/joiner/mixer cross-over filter",
 	"FanOut + Mixer 1",		testFanMix1,		"Play a sound through fan-out + mixer",
@@ -638,7 +637,7 @@ testStruct effTestList[] = {
 	"Dynamic Mixer",		testDynamicMixer,	"Mix adding/dropping sources",
 	"Block up-sizer",		testBlockUpsizer,	"Test the block resizer on up-sizing",
 	"Block down-sizer",		testBlockDownsizer,	"Test the block resizer on down-sizing",
-	"Sample-avg filter",	testSAFilter,		"Demo in-line sample-average-filter class",
+	"Sample-avg filter (buggy)",testSAFilter,		"Demo in-line sample-average-filter class",
 	NULL,					NULL,				NULL
 };
 
