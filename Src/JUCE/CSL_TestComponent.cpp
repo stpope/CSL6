@@ -171,7 +171,7 @@ CSLComponent::CSLComponent ()
 
     quitButton.reset (new TextButton ("quitAction"));
     addAndMakeVisible (quitButton.get());
-    quitButton->setButtonText (TRANS("Quit"));
+    quitButton->setButtonText (TRANS("Quit App"));
     quitButton->addListener (this);
 
     testCombo.reset (new ComboBox ("test to run"));
@@ -198,10 +198,10 @@ CSLComponent::CSLComponent ()
 
     prefsButton.reset (new TextButton ("new button"));
     addAndMakeVisible (prefsButton.get());
-    prefsButton->setButtonText (TRANS("Audio Prefs"));
+    prefsButton->setButtonText (TRANS("Set Audio Prefs"));
     prefsButton->addListener (this);
 
-    prefsButton->setBounds (8, 8, 144, 32);
+    prefsButton->setBounds (8, 8, 154, 32);
 
     cpuLabel.reset (new Label ("new label",
                                TRANS("0.0%")));
@@ -262,6 +262,28 @@ CSLComponent::CSLComponent ()
     addAndMakeVisible (recordButton.get());
     recordButton->setButtonText (TRANS("Record"));
     recordButton->addListener (this);
+
+    label2.reset (new Label ("new label",
+                             TRANS("Category")));
+    addAndMakeVisible (label2.get());
+    label2->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label2->setJustificationType (Justification::centredLeft);
+    label2->setEditable (false, false, false);
+    label2->setColour (TextEditor::textColourId, Colours::black);
+    label2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label2->setBounds (24, 664, 100, 24);
+
+    label3.reset (new Label ("new label",
+                             TRANS("Demo")));
+    addAndMakeVisible (label3.get());
+    label3->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label3->setJustificationType (Justification::centredLeft);
+    label3->setEditable (false, false, false);
+    label3->setColour (TextEditor::textColourId, Colours::black);
+    label3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label3->setBounds (264, 664, 80, 24);
 
 
     //[UserPreSize]
@@ -384,6 +406,8 @@ CSLComponent::~CSLComponent()
     loopButton = nullptr;
     familyCombo = nullptr;
     recordButton = nullptr;
+    label2 = nullptr;
+    label3 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -407,19 +431,19 @@ void CSLComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    playButton->setBounds (420, getHeight() - 39, 136, 32);
+    playButton->setBounds (590, getHeight() - 39, 170, 32);
     quitButton->setBounds (getWidth() - 8 - 176, 8, 176, 32);
-    testCombo->setBounds (184, getHeight() - 35, 220, 24);
+    testCombo->setBounds (320, getHeight() - 36, 220, 24);
     oscilloscopeL->setBounds (44, 48, getWidth() - 52, proportionOfHeight (0.4200f));
-    label->setBounds (436 - (558 / 2), 10, 558, 28);
+    label->setBounds (440 - (558 / 2), 10, 558, 28);
     cpuLabel->setBounds (getWidth() - 64, getHeight() - 35, 56, 24);
     oscilloscopeR->setBounds (44, proportionOfHeight (0.5000f), getWidth() - 52, proportionOfHeight (0.4200f));
     VUMeterL->setBounds (25, 48, 15, roundToInt (proportionOfHeight (0.4200f) * 1.0000f));
     VUMeterR->setBounds (24, proportionOfHeight (0.5000f), 15, roundToInt (proportionOfHeight (0.4200f) * 1.0000f));
     scaleSlider->setBounds (36, getHeight() - 60, getWidth() - 36, 24);
     amplitudeSlider->setBounds (0, 42, 20, proportionOfHeight (0.8700f));
-    loopButton->setBounds (420 + 136 - -24, getHeight() - 11 - 24, 64, 24);
-    familyCombo->setBounds (48, getHeight() - 35, 128, 24);
+    loopButton->setBounds (590 + 170 - -54, getHeight() - 11 - 24, 64, 24);
+    familyCombo->setBounds (102, getHeight() - 35, 140, 24);
     recordButton->setBounds ((getWidth() - 8 - 176) + -12 - 72, 37 - 24, 72, 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
@@ -785,25 +809,25 @@ BEGIN_JUCER_METADATA
                  initialHeight="700">
   <BACKGROUND backgroundColour="ff808080"/>
   <TEXTBUTTON name="playNote" id="ed1811e776eea99b" memberName="playButton"
-              virtualName="" explicitFocusOrder="0" pos="420 39R 136 32" buttonText="Play/Stop"
+              virtualName="" explicitFocusOrder="0" pos="590 39R 170 32" buttonText="Play/Stop"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="quitAction" id="dbaf2871fd41de83" memberName="quitButton"
-              virtualName="" explicitFocusOrder="0" pos="8Rr 8 176 32" buttonText="Quit"
+              virtualName="" explicitFocusOrder="0" pos="8Rr 8 176 32" buttonText="Quit App"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <COMBOBOX name="test to run" id="bd1a5c541fbc8bc7" memberName="testCombo"
-            virtualName="" explicitFocusOrder="0" pos="184 35R 220 24" editable="0"
+            virtualName="" explicitFocusOrder="0" pos="320 36R 220 24" editable="0"
             layout="33" items="" textWhenNonSelected="" textWhenNoItems="(no choices)"/>
   <GENERICCOMPONENT name="new component" id="d64c351a292a43a4" memberName="oscilloscopeL"
                     virtualName="" explicitFocusOrder="0" pos="44 48 52M 42%" class="AudioWaveformDisplay"
                     params=""/>
   <LABEL name="CSL test" id="a9876f115ab3c22e" memberName="label" virtualName=""
-         explicitFocusOrder="0" pos="436c 10 558 28" textCol="fffffc00"
+         explicitFocusOrder="0" pos="440c 10 558 28" textCol="fffffc00"
          edTextCol="ff000000" edBkgCol="0" labelText="CSL 6.0 Demos - select from the menus at the lower-left"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Default serif font" fontsize="24.0" kerning="0.0" bold="1"
          italic="0" justification="36" typefaceStyle="Bold"/>
   <TEXTBUTTON name="new button" id="beeb15a1537fd4f6" memberName="prefsButton"
-              virtualName="" explicitFocusOrder="0" pos="8 8 144 32" buttonText="Audio Prefs"
+              virtualName="" explicitFocusOrder="0" pos="8 8 154 32" buttonText="Set Audio Prefs"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <LABEL name="new label" id="87d3c5b55ea75f76" memberName="cpuLabel"
          virtualName="" explicitFocusOrder="0" pos="64R 35R 56 24" edTextCol="ff000000"
@@ -830,17 +854,27 @@ BEGIN_JUCER_METADATA
           textBoxEditable="0" textBoxWidth="8" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <TOGGLEBUTTON name="new toggle button" id="2322f603f1796f48" memberName="loopButton"
-                virtualName="" explicitFocusOrder="0" pos="-24R 11Rr 64 24" posRelativeX="ed1811e776eea99b"
+                virtualName="" explicitFocusOrder="0" pos="-54R 11Rr 64 24" posRelativeX="ed1811e776eea99b"
                 buttonText="Loop" connectedEdges="0" needsCallback="1" radioGroupId="0"
                 state="0"/>
   <COMBOBOX name="test family" id="55af3a98f2faf643" memberName="familyCombo"
-            virtualName="" explicitFocusOrder="0" pos="48 35R 128 24" editable="0"
+            virtualName="" explicitFocusOrder="0" pos="102 35R 140 24" editable="0"
             layout="33" items="Oscillators&#10;Sources&#10;Envelopes&#10;Effects&#10;Panners&#10;Controls&#10;Audio"
             textWhenNonSelected="" textWhenNoItems="(no choices)"/>
   <TOGGLEBUTTON name="new toggle button" id="82a5a3f16d517231" memberName="recordButton"
                 virtualName="" explicitFocusOrder="0" pos="-12r 37r 72 24" posRelativeX="dbaf2871fd41de83"
                 buttonText="Record" connectedEdges="0" needsCallback="1" radioGroupId="0"
                 state="0"/>
+  <LABEL name="new label" id="23b1e228fb0b5e55" memberName="label2" virtualName=""
+         explicitFocusOrder="0" pos="24 664 100 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Category" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
+  <LABEL name="new label" id="5a2d4a92827c7701" memberName="label3" virtualName=""
+         explicitFocusOrder="0" pos="264 664 80 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Demo" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
