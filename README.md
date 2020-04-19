@@ -1,3 +1,4 @@
+![alt text](https://github.com/stpope/CSL6/blob/master/Doc/CSL6_Logo_tiny.jpg "CSL Logo")
 
 # CSL 6.0 README
 
@@ -26,6 +27,8 @@ likewise, there's a VisualStudio solution in Builds/VisualStudio2019.
 Basic CSL overview paper with code examples: http://www.fastlabinc.com/CSL/CSL_Intro.pdf
 
 Presentation slides for the really impatient: http://www.fastlabinc.com/CSL/CSL_Overview.pdf
+
+CSL Demo App quick start cheat sheet: https://github.com/stpope/CSL6/blob/master/Doc/6.0DemoQuickStart.pdf
 
 ## About CSL
 

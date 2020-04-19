@@ -160,6 +160,8 @@ private:
     std::unique_ptr<ToggleButton> loopButton;
     std::unique_ptr<ComboBox> familyCombo;
     std::unique_ptr<ToggleButton> recordButton;
+    std::unique_ptr<Label> label2;
+    std::unique_ptr<Label> label3;
 
 
     //==============================================================================
