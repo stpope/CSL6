@@ -1,6 +1,7 @@
-![alt text](https://github.com/stpope/CSL6/blob/master/Doc/CSL_Logo_tiny.jpg "CSL Logo")
 
 # CSL 6.0 README
+
+![alt text](https://github.com/stpope/CSL6/blob/master/Doc/CSL6_Logo_tiny.jpg "CSL Logo")
 
 This directory contains the source code and documentation for the CREATE Signal 
 Library (CSL, pronounced "sizzle," previously called the CREATE Oscillator or CO). 
