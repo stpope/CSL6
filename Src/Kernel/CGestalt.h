@@ -25,7 +25,7 @@
 #ifdef USE_JUCE
 	#include "JuceHeader.h"
 //	#include "modules/juce_core/time/juce_Time.h"
-	#include <sys/time.h>
+//	#include <sys/time.h>
 #else
 	#include <sys/time.h>
 #endif

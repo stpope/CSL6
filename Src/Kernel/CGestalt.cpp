@@ -329,9 +329,10 @@ void csl::logURL() {
 	// ToDo
 }
 
+#ifndef WIN32
 #include <unistd.h>		// for usleep
+#endif
 
-//#ifndef WIN32
 ///
 /// Global Sleep functions that work for windows and mac/unix.
 /// Note the use of the global flag gStopNow, which interrupts timers.

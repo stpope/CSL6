@@ -275,6 +275,8 @@ Reading the source
 
 Coding Conventions
 
+Note that CSL uses old-school exception signatures, so it's most compatible with the C++ 11 standard. You'll get warnings about them from 2014 or 2017 compilers.
+
 Naming
 
 	Class, member, and method names are written in "camelCase" as in 

@@ -636,14 +636,14 @@ testStruct panTestList[] = {
 	"Test convolver 3",		testConvolver3,			"Test a convolver",
 #endif
 	"Osc bank",				testOscBank,			"Mix a bank of oscillators",
-	"Channel-mapped IO (buggy)",	testCMapIO,				"Demonstrate channel-mapped IO",
+//	"Channel-mapped IO (buggy)",	testCMapIO,				"Demonstrate channel-mapped IO",
 #ifndef CSL_WINDOWS
-	"HRTF horiz circles (buggy)",	test_Binaural_horiz,	"Test the HRTF-based binaural panner",
-	"HRTF axial circles (buggy)",	test_Binaural_vertAxial,"Play a HRTF-panner with axial circles",
-	"HRTF median circles (buggy)",	test_Binaural_vertMedian,"Play a HRTF-panner with median circles",
+//    "HRTF horiz circles (buggy)",    test_Binaural_horiz,    "Test the HRTF-based binaural panner",
+//    "HRTF axial circles (buggy)",    test_Binaural_vertAxial,"Play a HRTF-panner with axial circles",
+//    "HRTF median circles (buggy)",    test_Binaural_vertMedian,"Play a HRTF-panner with median circles",
 	"Ambisonics",			test_Ambi_horiz,		"Test the Ambisonic-based spatial panner",
 	"Simple",				test_SimpleP,			"Test the simple spatial panner",
-	"VBAP (buggy)",			test_VBAP_horiz,		"Test the VBAP-based spatial panner",
+//	"VBAP (buggy)",			test_VBAP_horiz,		"Test the VBAP-based spatial panner",
 	"Convolver",			test_convolution,		"Test a convolver",
 //	"Convolver Norm",		test_convolution_files,	"Test IR normalization",
 #endif

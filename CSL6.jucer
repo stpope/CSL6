@@ -215,8 +215,7 @@
     </XCODE_MAC>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI JUCE_DEBUG"
                 extraCompilerFlags="-I../../Src/Includes -I/usr/local/include -w"
-                extraLinkerFlags="-L/usr/local/lib -lfftw3f -llo" smallIcon="n54bOd"
-                bigIcon="n54bOd">
+                extraLinkerFlags="-L/usr/local/lib -llo" smallIcon="n54bOd" bigIcon="n54bOd">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
         <CONFIGURATION isDebug="0" name="Release"/>
@@ -237,9 +236,9 @@
         <MODULEPATH id="juce_opengl" path="../../../../../Content/Code/JUCE6/modules"/>
       </MODULEPATHS>
     </LINUX_MAKE>
-    <VS2019 targetFolder="Builds/VisualStudio2019" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI JUCE_DEBUG"
-            extraCompilerFlags="/w44265 /w45038 /w44062" smallIcon="n54bOd"
-            bigIcon="n54bOd">
+    <VS2015 targetFolder="Builds/VisualStudio2015" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI USR_JTHREADS JUCE_DEBUG"
+            extraCompilerFlags="/w0 /I ..\..\Src\Includes /I ..\..\..\JUCE6\modules /I ..\..\JuceLibraryCode"
+            smallIcon="n54bOd" bigIcon="n54bOd">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
         <CONFIGURATION isDebug="0" name="Release"/>
@@ -259,7 +258,7 @@
         <MODULEPATH id="juce_audio_devices"/>
         <MODULEPATH id="juce_audio_basics"/>
       </MODULEPATHS>
-    </VS2019>
+    </VS2015>
   </EXPORTFORMATS>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>

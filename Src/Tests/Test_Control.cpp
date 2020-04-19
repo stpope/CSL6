@@ -290,11 +290,11 @@ done:
 testStruct ctrlTestList[] = {
     "Dump ports",           IO_test,        "Dump list of MIDI ports to stdout",
     "MIDI file player",     testMIDIFile,   "Play a MIDI file on an instrument library",
-    "THE REST OF THESE ARE W.I.P.", 0, "",
-	"Dump input",			input_test,		"Dump MIDI input from default device",
-	"MIDI notes",			play_test,		"Play MIDI notes (reads MIDI kbd)",
-	"MIDI output",			output_test,	"Test sending MIDI output",
-	"MIDI listener",		testListener,	"Start the MIDI listener object",
+//    "THE REST OF THESE ARE W.I.P.", 0, "",
+//    "Dump input",            input_test,        "Dump MIDI input from default device",
+//    "MIDI notes",            play_test,        "Play MIDI notes (reads MIDI kbd)",
+//    "MIDI output",            output_test,    "Test sending MIDI output",
+//    "MIDI listener",        testListener,    "Start the MIDI listener object",
 #ifdef USE_LOSC				                        	// liblo for OSC
 	"OSC client/server",	testOSCClientServer,	"OSC client/server on a library",
 	"OSC server",			testOSCServer,	"Start OSC server on a library",

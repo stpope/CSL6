@@ -10,6 +10,11 @@ Broken demo fcns:
 	MIDI I/O demos still being ported (dump works)
 	Audio I/O demos still being ported
 
+Windows issues:
+	Thread fcn in ThreadUtilities.h (int (VoidFcnPtr * func, void * args);)
+	POSIX fcns to replace: usleep, strcasestr, bzero, rindex
+	Variable-size array decl in VBAP.cpp - unsigned speakerMapping[numSpeakers];
+
 Bugs:
 	Block resizer up-sampling
 	Env as scaled

@@ -6,7 +6,9 @@
 
 #include <math.h>
 #include <stdlib.h>
+#ifndef CSL_WINDOWS
 #include <unistd.h>
+#endif
 #include <sys/stat.h>
 #include <dirent.h>
 #include <stdio.h>

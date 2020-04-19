@@ -1,5 +1,5 @@
 //
-//  JCSL_Widgets.cpp - JUCE widgets for audio by stp@heaveneverywhere.com
+//  JCSL_Widgets.cpp - JUCE widgets for audio by stephen@heaveneverywhere.com
 //	What's here:
 //		AudioWaveformDisplay - simple oscilloscope based on the JUCE AudioDemo
 //		AudioSpectrumDisplay - simple spectrogram
