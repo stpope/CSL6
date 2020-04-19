@@ -346,7 +346,7 @@ typedef struct {
 ///
 
 #ifdef CSL_WINDOWS			// Microsoft is explicit
-	#include "stdafx.h"
+//	#include "stdafx.h"
 							// Hypotenuse = complex-to-real-magnitude
 	#define hypotf(av, bv)	sqrtf((av * av) + (bv * bv))
 

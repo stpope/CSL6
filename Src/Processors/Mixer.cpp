@@ -154,7 +154,7 @@ void Mixer::nextBuffer(Buffer & outputBuffer) throw (CException) {
 	unsigned j, k, ich;
 //	unsigned ins = mSources.size();
 
-//	logMsg("Mixer %x - nxt_b %d - %d in - S %d", this, numFrames, numIns, outputBuffer.mSequence);
+    //	logMsg("Mixer %x - nxt_b %d - %d in - S %d", this, numFrames, numIns, outputBuffer.mSequence);
 	mOpBuffer.copyHeaderFrom(outputBuffer);
 	outputBuffer.zeroBuffers();							// clear output buffer
 
@@ -204,6 +204,7 @@ void Mixer::nextBuffer(Buffer & outputBuffer) throw (CException) {
 				logMsg(kLogError, "Error in mix: in = %d ch, out = %d ch\n", ich, mNumChannels);
 			}
 		}					// end of isActive()
+        mOpBuffer.mNumChannels = mNumChannels;
 	}						// end of input loop, process scale/offset
 #ifdef DO_MIX_AS_SCALABLE			// not defined at present
 	DECLARE_SCALABLE_CONTROLS;

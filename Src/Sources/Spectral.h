@@ -9,8 +9,7 @@
 #define CSL_Spectral_H
 
 #include "CSL_Core.h"
-
-#define USE_FFTW
+//#define USE_FFTW
 #include "FFT_Wrapper.h"
 
 namespace csl {

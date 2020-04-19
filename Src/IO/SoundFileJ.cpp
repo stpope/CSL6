@@ -112,6 +112,7 @@ void JSoundFile::initFromSndfile() {
 //		logMsg(kLogError, "Cannot open sound file \"%s\"", mPath.c_str());
 		return;
 	}
+    mCurrentFrame = 0;
 	if (mAFReader) {
 		mFrameRate = (unsigned) mAFReader->sampleRate;
 		mNumChannels = (unsigned) mAFReader->numChannels;

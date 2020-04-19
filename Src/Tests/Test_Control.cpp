@@ -20,7 +20,7 @@
 using namespace csl;
 
 extern juce::AudioDeviceManager * gAudioDeviceManager;	// global JUCE audio device mgr
-
+    
 // dump io names
 
 void IO_test() {
@@ -36,8 +36,8 @@ void IO_test() {
 
 void input_test() {
 	logMsg("MIDI test");
-	logMsg("Default MIDI in = %d", juce::MidiInput::getDefaultDeviceIndex());
-	logMsg("Default MIDI out = %d", juce::MidiOutput::getDefaultDeviceIndex());
+	logMsg("\tDefault MIDI in = %d", juce::MidiInput::getDefaultDeviceIndex());
+	logMsg("\tDefault MIDI out = %d", juce::MidiOutput::getDefaultDeviceIndex());
 	MIDIIn in;
 	in.open(DEFAULT_MIDI_IN);
 	in.start();
@@ -288,14 +288,15 @@ done:
 // test list for Juce GUI
 
 testStruct ctrlTestList[] = {
-	"Dump ports",			IO_test,		    "Dump list of MIDI ports to stdout",
+    "Dump ports",           IO_test,        "Dump list of MIDI ports to stdout",
+    "MIDI file player",     testMIDIFile,   "Play a MIDI file on an instrument library",
+    "THE REST OF THESE ARE W.I.P.", 0, "",
 	"Dump input",			input_test,		"Dump MIDI input from default device",
 	"MIDI notes",			play_test,		"Play MIDI notes (reads MIDI kbd)",
-	"MIDI output",			output_test,	    "Test sending MIDI output",
-	"MIDI listener",		    testListener,	"Start the MIDI listener object",
-	"MIDI file player",		testMIDIFile,	"Play a MIDI file on an instrument library",
+	"MIDI output",			output_test,	"Test sending MIDI output",
+	"MIDI listener",		testListener,	"Start the MIDI listener object",
 #ifdef USE_LOSC				                        	// liblo for OSC
-	"OSC client/server",	    testOSCClientServer,	"OSC client/server on a library",
+	"OSC client/server",	testOSCClientServer,	"OSC client/server on a library",
 	"OSC server",			testOSCServer,	"Start OSC server on a library",
 #endif
 	NULL,					NULL,			NULL

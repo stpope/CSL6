@@ -42,7 +42,7 @@ static size_t size = 0;
 void Fft_setup(size_t n) {
 	if ((cos_table) && (sin_table) && (len == n))
 		return;
-	len = n;
+	len = (unsigned) n;
 	size = (n / 2) * sizeof(CFTTYPE);
 	if (cos_table) free(cos_table);
 	cos_table = malloc(size);

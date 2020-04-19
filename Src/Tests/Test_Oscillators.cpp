@@ -64,36 +64,36 @@ void testBasicWaves() {
 	float freq = 220.0;						// choose a frequency in Hz
 	float ampl = 0.4;						// choose an amplitude scale
 
-	Sine sine(freq, ampl);					// create a computed sine oscillator
-	logMsg("playing computed sin...");
-//	sine.dump();
-	runTest(sine);							// call the test function that runs this for a few seconds
-//	dumpTest(sine);							// or just dump the graph
-	logMsg("done.\n");
-	sleepMsec(250);
+    Sine sine(freq, ampl);                    // create a computed sine oscillator
+    logMsg("playing computed sin...");
+//    sine.dump();
+    runTest(sine);                            // call the test function that runs this for a few seconds
+//    dumpTest(sine);                            // or just dump the graph
+    logMsg("done.\n");
+    sleepMsec(250);
 
-	Osc wav(freq, ampl, 0.0, 0.0);			// create a wave-table sine oscillator
-	logMsg("playing wavetable sin...");
-	runTest(wav);							// call the test function that runs this for a few seconds
-	logMsg("done.\n");
-	sleepMsec(250);
+    Osc wav(freq, ampl, 0.0, 0.0);            // create a wave-table sine oscillator
+    logMsg("playing wavetable sin...");
+    runTest(wav);                            // call the test function that runs this for a few seconds
+    logMsg("done.\n");
+    sleepMsec(250);
 
-	Sawtooth saw(freq, ampl);				// create a sawtooth oscillator
-	logMsg("playing sawtooth...");
-	runTest(saw);							// call the test function that runs this for a few seconds
-	logMsg("done.\n");
-	sleepMsec(250);
+    Sawtooth saw(freq, ampl);                // create a sawtooth oscillator
+    logMsg("playing sawtooth...");
+    runTest(saw);                            // call the test function that runs this for a few seconds
+    logMsg("done.\n");
+    sleepMsec(250);
 
-	Square square(freq, ampl);				// create a square oscillator
-	logMsg("playing square...");
-	runTest(square);						// call the test function that runs this for a few seconds
-	logMsg("done.\n");
-	sleepMsec(250);
+    Square square(freq, ampl);                // create a square oscillator
+    logMsg("playing square...");
+    runTest(square);                        // call the test function that runs this for a few seconds
+    logMsg("done.\n");
+    sleepMsec(250);
 	
-//	Impulse impulse(freq, ampl);			// create an impulse oscillator
-//	logMsg("playing impulse...");
-//	runTest(impulse);						// call the test function that runs this for a few seconds
-//	logMsg("done.");
+//    Impulse impulse(freq, ampl);            // create an impulse oscillator
+//    logMsg("playing impulse...");
+//    runTest(impulse);                        // call the test function that runs this for a few seconds
+//    logMsg("done.");
 }
 
 /// Scaled sine wave -- 3 methods: with a MulOp and using the Sine's scale input
@@ -231,10 +231,10 @@ void testSumOfSinesSteps() {
 	sos2.setFrequency(220);
 	sos2.setScale(0.2);			// make it quiet
 	logMsg("playing sum of sines loop...");
-	for (unsigned i = 3; i < 11; i++) {
+	for (unsigned i = 3; i < 10; i++) {
 		sos2.addPartial(i*2, (0.6 / i));
 //		sos2.dump();
-		runTest(sos2, 2);
+		runTest(sos2, 1);
 	}
 	logMsg("sum of sines done.");
 }
@@ -249,7 +249,7 @@ void testSumOfSinesNonCached() {
 	vox2.setFrequency(220);
 	vox2.setScale(0.5);			// make it quiet
 	
-	logMsg("playing uncached sum of sines...");
+	logMsg("playing uncached (inharmonic) sum of sines...");
 	runTest(vox2, 5);
 	logMsg("sum of sines done.");
 }
@@ -265,8 +265,9 @@ void testWaveTableFromFile() {
 	oscBuff.setBuffer(0, fi.mWavetable.buffer(0));
     oscBuff.mAreBuffersAllocated = true;
     oscBuff.mNumAlloc = fi.duration();
+    for (int i = 0; i < 200; i += 2)
+        printf("%.4f\t", fi.mWavetable.buffer(0)[i]);
     Osc wav(oscBuff);
-//    Osc wav;
     wav.setFrequency(440.0);                   // set freq
     wav.setScale(0.25);                        // set ampl
 	logMsg("playing wavetable from file...");
@@ -360,7 +361,7 @@ testStruct oscTestList[] = {
 	"Sweep/swell test",			testSweep,			        "Test a sine with swept freq and volume swell",
 	"Simple sines",				testSimpleSines,	        "Test some simple sine oscilators",
 	"Standard waveforms",		testBasicWaves,		        "Demonstrate the standard wave forms",
-	"Scaled sine",				testScaledSin,		        "Play a scaled-quiet sine wave",
+	"Scaled sine (3 ways)",		testScaledSin,		        "Play a scaled-quiet sine wave",
 	"Wavetable interpolation",	testWavetableInterpolation,	"Show truncated/interpolated wave tables",
 	"AM/FM sines",				testAMFMSin,				"Play an AM and FM sine wave",
 	"Dump AM/FM sines",			dumpAMFMSin,				"Dump the graph of the AM/FM sine",
@@ -370,8 +371,8 @@ testStruct oscTestList[] = {
 	"SumOfSines 1/f",			testSumOfSines1F,			"Play a 1/f spectrum sum-of-sines",
 	"Wavetable from file",		testWaveTableFromFile,		"Play a wave table from a sound file",
 #ifndef CSL_WINDOWS
-	"SHARC SOS",				test_SHARC,					"Load/print the SHARC timbre database, play example",
-	"Vector SHARC",				test_SHARC2,				"Show vector cross-fade of SHARC spectra",
+	"SHARC SOS (loads slow)",	test_SHARC,					"Load/print the SHARC timbre database, play example",
+	"Vector-synth SHARC",		test_SHARC2,				"Show vector cross-fade of SHARC spectra",
 #endif
 	NULL,						NULL,				NULL
 };
