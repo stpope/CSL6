@@ -104,7 +104,7 @@ work with a little bit of tweaking; all the really unstable code has been remove
 
 	MacOS: OSX 10.13 or newer with Xcode
 	Linux: Ubuntu 19 (or other recent release of a mainstream Linux distribution) with X11-libs, ALSA, Freetype, etc.
-	MS-windows: Tested on Windows10 with ASIO
+	MS-windows: Tested on Windows10 with Cygwin and ASIO
 	iOS, Android: recent releases and toolchains
 	All: JUCE 6.0
 
@@ -137,7 +137,7 @@ Building CSL
  	Use the JUCE projucer with the file CSL6.jucer to generate the build projects.
 
  	On a Mac: Builds/MacOSX/CSL6Demo.xcodeproj
- 	On MS-Windows: Builds/VisualStudio2015
+ 	On MS-Windows: Builds/MS_Windows
  	On Linux: Builds/LinuxMakefiles; make
 
 The standard way of running interactive CSL programs is using the JUCE GUI. 
@@ -284,7 +284,7 @@ Reading the source
 
 Coding Conventions
 
-Note that CSL uses old-school exception signatures, so it's most compatible with the C++ 11 standard. You'll get warnings about them from 2014 or 2017 compilers.
+Note that CSL uses old-school exception signatures, so it's most compatible with the C++ 11 standard. You'll get warnings about them from newer compilers. See the file Doc/Bugs.txt for details.
 
 Naming
 
