@@ -17,11 +17,12 @@ The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots,
 documentation downloads and links to screencast demos there.
 
 CSL is known to work on Mac OSX, Linux, iOS, Android and
-MS-Windows. To get started with CSL, build the demo app (screen shot below)
+MS-Windows (using the Cygwin environment rather than the Microsoft compiler). 
+To get started with CSL, build the demo app (screen shot below)
 and use the combo boxes at the bottom-left to select among the tests, whose source code
 is in the Src/Tests folder. For the Mac, use the XCode project in the 
 Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder;
-likewise, there's a VisualStudio solution in Builds/VisualStudio2019.
+likewise, the same makefile can be used for Cygwin on Windows computers.
 
 ### Links for the impatient
 
@@ -51,9 +52,16 @@ such as Csound or SuperCollider (see Curtis Roads' "Computer Music Tutorial").
 It also helps to have used the JUCE library, or at least to have downloaded it and 
 compiled and run its own demo app.
 
+The core classes of CSL implement a traditional computer music programming model (like
+a Music-N-family language or a modular synthesizer), with objects that represent 
+buffers and streams of audio samples,
+and unit generators that represent audio generators and processors
+connected together into graphs that produce complex dynamic sounds.
+Most typical sound synthesis and processing objects are provided, as shown in the CSL class diagram below.
+
 ![alt text](http://fastlabinc.com/CSL/classes.jpg)
 
-Some of the code assumes it's installed in ~/Code/CSL6; there are some default settings 
+Some of the code assumes that the CSL package is installed in ~/Code/CSL6; there are default settings 
 in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
 
 The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
