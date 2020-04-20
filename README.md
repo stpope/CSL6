@@ -68,8 +68,7 @@ CSL grew out of code examples developed to teach a sequence of six graduate cour
 the MAT 240 series taught at UCSB for over 10 years. Students in these courses contributed many ideas and much concrete
 code to CSL (see the doc). The course materials for these courses are all available on-line at the link, http://heaveneverywhere.com/TheBigMATBook
 
-Some of the code assumes that the CSL package is installed in ~/Code/CSL6; there are default settings 
-in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
+## CSL Coding Start-up
 
 The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
 (2) look at the Doxygen-generated API documentation in Doc/html.zip
@@ -102,9 +101,14 @@ or, on windows
 
 	remake.bat
 
+Some of the code assumes that the CSL package is installed in ~/Code/CSL6; there are default settings 
+in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
+
 Note that the release contains a number of files that have not been ported to the 
 newest framework; these are generally in subdirectories called "Old" and may well 
 work with a little bit of tweaking; all the really unstable code has been removed.
+There are also a number of demos that are turned off by default, i.e., they are not presented in the demo menus.
+Look at the files in the Src/Tests folder for details.
 
 ## Platform Requirements (tested on these platforms)
 
