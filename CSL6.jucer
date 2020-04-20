@@ -215,6 +215,7 @@
     </XCODE_MAC>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI JUCE_DEBUG"
                 extraCompilerFlags="-I../../Src/Includes -I/usr/local/include -w"
+<<<<<<< HEAD
                 extraLinkerFlags="-L/usr/local/lib -llo" smallIcon="n54bOd" bigIcon="n54bOd">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>

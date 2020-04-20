@@ -114,7 +114,7 @@ void listener_test() {
 
 testStruct audioTestList[] = {
 	"Dump audio ports",		audio_dump,		"Dump list of audio ports to stdout",
-    "THE REST OF THESE ARE W.I.P.", 0, "",
+//    "THE REST OF THESE ARE W.I.P.", 0, "",
 //    "Echo audio in",        mic_test,        "Play the microphone input back the output",
 //    "Filter input",            filt_test,        "Apply a band-pass filter to the live input",
 //    "Echo input",            echo_test,        "Add echo to the live input",
