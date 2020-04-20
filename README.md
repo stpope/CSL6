@@ -58,6 +58,8 @@ buffers and streams of audio samples,
 and unit generator objects that represent audio sources and processors (e.g., many
 kinds of oscillators and filters)
 connected together into graphs that produce complex dynamic sounds.
+The signal processing graphs (or patches) can be connected to several kinds of output
+for real-time processing or writing to files, and can be controlled via scripts or MIDI or OSC.
 Most typical sound synthesis and processing objects are provided, as shown in the CSL class diagram below.
 
 ![alt text](http://fastlabinc.com/CSL/classes.jpg)
