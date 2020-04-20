@@ -64,6 +64,10 @@ Most typical sound synthesis and processing objects are provided, as shown in th
 
 ![alt text](http://fastlabinc.com/CSL/classes.jpg)
 
+CSL grew out of code examples developed to teach a sequence of six graduate courses in digital audio programming, 
+the MAT 240 series taught at UCSB for over 10 years. Students in these courses contributed many ideas and much concrete
+code to CSL (see the doc). The course materials for these courses are all available on-line at the link, http://heaveneverywhere.com/TheBigMATBook
+
 Some of the code assumes that the CSL package is installed in ~/Code/CSL6; there are default settings 
 in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
 
