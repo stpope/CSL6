@@ -55,7 +55,8 @@ compiled and run its own demo app.
 The core classes of CSL implement a traditional computer music programming model (like
 a Music-N-family language or a modular synthesizer), with objects that represent 
 buffers and streams of audio samples,
-and unit generators that represent audio generators and processors
+and unit generator objects that represent audio sources and processors (e.g., many
+kinds of oscillators and filters)
 connected together into graphs that produce complex dynamic sounds.
 Most typical sound synthesis and processing objects are provided, as shown in the CSL class diagram below.
 
