@@ -120,7 +120,7 @@ GrainCloud::~GrainCloud() {
 // Grain creation loop: take the head item of silentGrains, fill it in based on the random ranges,
 // and put it at the head of playingGrains
 
-void * createGrains(void * theArg) {
+void createGrains(void * theArg) {
 	GrainCloud * cloud = (GrainCloud * ) theArg;
 	Grain * newGrain;
 	logMsg("Starting grain creation loop");
@@ -128,7 +128,7 @@ void * createGrains(void * theArg) {
 	while (true) {
 		if ( ! cloud->isPlaying) {
 			logMsg("Grain creation loop exits");
-			return NULL;							// exit thread
+			return;							        // exit thread
 		}
 		while (cloud->gState != kFree)				// wait until done creating samples in other thread
 			csl::sleepMsec(1);
@@ -160,18 +160,18 @@ void * createGrains(void * theArg) {
 //					newGrain, newGrain->duration, newGrain->position, newGrain->rate, newGrain->pan);
 		} else {
 			logMsg("Grain creation loop exits 2");
-			return NULL;							// exit loop
+			return;						        	// exit loop
 		}
 
 next:	cloud->gState = kFree;						// sleep for the inter-grain delay (may not be absolutely accurate)
 		csl::sleepUsec(1000000.0f / fRandB(cloud->mDensityBase, cloud->mDensityRange));
 	}
-	return NULL;									// never reached
+	return;									        // never reached
 }
 
 // Clean up completed grains, taking them off of mPlayingGrains and returning them to mSilentGrains
 
-void * reapGrains(void *theArg) {
+void reapGrains(void * theArg) {
 	GrainCloud * cloud = (GrainCloud * ) theArg;
 	Grain *prevGrain, *curGrain, *nextGrain;
 	
@@ -180,7 +180,7 @@ void * reapGrains(void *theArg) {
 	while (true) {
 		if ( ! cloud->isPlaying) {
 			logMsg("Grain culling loop exits");
-			return NULL;							// exit thread
+			return;							        // exit thread
 		}
 		while (cloud->gState != kFree)				// wait until done creating samples in other thread
 			csl::sleepMsec(10);
@@ -208,12 +208,12 @@ void * reapGrains(void *theArg) {
 			}
 		} else {
 			logMsg("Grain culling loop exits 2");
-			return NULL;							// exit thread
+			return;							        // exit thread
 		}
 next:	cloud->gState = kFree;
 		csl::sleepMsec(500);						// sleep for 1/2 sec
 	}
-	return NULL;									// never reached
+	return;									        // never reached
 }
 
 // Start the grain-creation thread
@@ -225,10 +225,10 @@ void GrainCloud::startThreads() {
 	threadOn = true; 
 	gNow = C_TIME;									// get start time
 	sampsPerTick = (float) CGestalt::frameRate() / (float) C_TIME;
-	logMsg("Starting grain creation/culling threads (%d)", C_TIME);
 	spawnerThread->createThread(createGrains, this);
+    csl::sleepMsec(20);                        // sleep for a bit
 	reaperThread->createThread(reapGrains, this);
-	csl::sleepMsec(100);						// sleep for a bit
+	csl::sleepMsec(20);						// sleep for a bit
 	logMsg("Grain threads running");
 }
 

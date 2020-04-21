@@ -21,7 +21,7 @@ extern "C" void initOSC(const char * port);
 extern "C" void setupOSCInstrLibrary(InstrumentVector library);
 
 										// OSC read/exec loop
-extern "C" void * mainOSCLoop(void *);
+extern "C" void mainOSCLoop(void *);
 
 #endif
 

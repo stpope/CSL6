@@ -41,7 +41,7 @@ protected:
 	string mPath;						// the output file name
 	SoundFile * mFile;					// the output sound file
 	CThread * mThread;					// the background thread
-	static void *threadFunction(void *); // the background thread function
+	static void threadFunction(void *); // the background thread function
 
 	Buffer mInBuffer;					// buffer we use for input
 	Buffer mOutBuffer;					// buffer we use for output

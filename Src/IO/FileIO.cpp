@@ -70,7 +70,7 @@ void FileIO::start(float seconds) throw(CException) {
 			writeNextBuffer();					// so you can't start and then trigger envelopes!
 	} else {   // Start file IO -- loop in the background
 		logMsg("Starting sound file output thread");
-		mThread->createThread(threadFunction, this);
+		mThread->createThread(&threadFunction, this);
 	}
 }
 
@@ -103,7 +103,7 @@ void FileIO::writeNextBuffer() {
 
 // Background thread function -- loop to read from the DSP graph and write to the file
 
-void * FileIO::threadFunction(void * ptr) {
+void FileIO::threadFunction(void * ptr) {
 	FileIO *me = (FileIO *)ptr;
 //	printf("D: %d\n", me->mDuration);
 	
@@ -132,5 +132,5 @@ void * FileIO::threadFunction(void * ptr) {
 				// do this to prevent a race condition
 	me->mIsThreadRunning = false;
 	logMsg("Stopping sound file output thread");
-	return 0;
+	return;
 }

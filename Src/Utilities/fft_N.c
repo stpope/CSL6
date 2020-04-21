@@ -24,13 +24,14 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "fft_N.h"
 
 // Private function prototypes
 
 static size_t reverse_bits(size_t x, int n);
-static void * memdup(const void *src, size_t n);
+//static void * memdup(const void *src, size_t n);
 
 // setup functions
 
@@ -141,9 +142,11 @@ static size_t reverse_bits(size_t x, int n) {
 	return result;
 }
 
-static void * memdup(const void *src, size_t n) {
-	void *dest = malloc(n);
-	if (n > 0 && dest != NULL)
-		memcpy(dest, src, n);
-	return dest;
-}
+// unused
+
+//static void * memdup(const void *src, size_t n) {
+//    void *dest = malloc(n);
+//    if (n > 0 && dest != NULL)
+//        memcpy(dest, src, n);
+//    return dest;
+//}

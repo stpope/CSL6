@@ -27,12 +27,15 @@ public:
 	virtual ~CThread() { };
 	static CThread * MakeThread();	///< factory method
 
-	int (VoidFcnPtr * func, void * args);
+//  int (VoidFcnPtr * func, void * args);         // OLD WAY
+    typedef void (* VoidFcnPtr)(void *);
+    
+    int createThread(VoidFcnPtr func, void * args);
 //	int createRealtimeThread(VOIDFCNPTR * func, void * args);
 	void run();
 
 protected:
-	VoidFcnPtr * mFunc;
+	VoidFcnPtr mFunc;
 	void * mArgs;
 };
 

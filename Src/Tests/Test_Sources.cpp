@@ -364,7 +364,7 @@ done:
 
 // Play a grain cloud
 
-#ifndef CSL_WINDOWS
+//#ifndef CSL_WINDOWS
 
 #include <Granulator.h>
 
@@ -399,7 +399,7 @@ void testGrainCloud() {
 	sleepSec(0.5);
 }
 
-#endif
+//#endif
 
 ///////////////// IFFT tests ////////
 

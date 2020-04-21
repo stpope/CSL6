@@ -16,8 +16,11 @@ CThread * CThread::MakeThread() {
 	return new CThread(); 
 }
 
-int CThread::createThread(VoidFcnPtr * func, void * args) {
-	(*func)(args);				// call my function
+int CThread::createThread(VoidFcnPtr func, void * args) {
+//	(*func)(args);				// call my function
+    mFunc = * func;
+    mArgs = args;
+    startThread();
 	return 0;
 }
 
@@ -29,11 +32,11 @@ int CThread::createThread(VoidFcnPtr * func, void * args) {
 //}
 
 void CThread::run() {
-	logMsg("Start thread");
+//	logMsg("Start thread");
 	(*mFunc)(mArgs);				// call my function
 }
 
-#else // PTHREADS
+#else // PTHREADS ----------------------------------------
 
 // This CThread uses pthreads
 
