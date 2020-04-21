@@ -11,9 +11,13 @@ Broken demo fcns:
 	Audio I/O demos still being ported
 
 Windows issues:
-	Thread fcn in ThreadUtilities.h (int (VoidFcnPtr * func, void * args);)
-	POSIX fcns to replace: usleep, strcasestr, bzero, rindex
-	Variable-size array decl in VBAP.cpp - unsigned speakerMapping[numSpeakers];
+	Code not accepted by MS C compiler
+		Thread fcn in ThreadUtilities.h (int (VoidFcnPtr * func, void * args);)
+		Variable-size array decl in VBAP.cpp - unsigned speakerMapping[numSpeakers];
+		POSIX fcns to replace: usleep, strcasestr, bzero, rindex
+	CodeBlocks needs flags to get around "too-big" linker errors
+		Even then, the executable produced doesn't start
+	Cygwin - maybe best idea, start w the Linux makefile
 
 Bugs:
 	Block resizer up-sampling
