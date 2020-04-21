@@ -22,7 +22,7 @@ To get started with CSL, build the demo app (screen shot below)
 and use the combo boxes at the bottom-left to select among the tests, whose source code
 is in the Src/Tests folder. For the Mac, use the XCode project in the 
 Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder.
-There are pre-compipled versions of the demo for MacOS and Linux in the ZIP file https://github.com/stpope/CSL6/blob/master/Demo.zip
+There are pre-compiled versions of the demo for MacOS and Linux in the ZIP file https://github.com/stpope/CSL6/blob/master/Demo.zip
 
 ### Links for the impatient
 
@@ -48,24 +48,24 @@ other GUI frameworks such as Qt.
 The target users for CSL are C++ programmers (familiar with the 
 development tools of their platforms, e.g., Xcode on the Mac, Eclipse on Linux, or 
 Visual Studio on MS-Windows) who also know some software sound synthesis language 
-such as Csound or SuperCollider (see Curtis Roads' "Computer Music Tutorial").
+such as Csound or SuperCollider.
 It also helps to have used the JUCE library, or at least to have downloaded it and 
 compiled and run its own demo app.
 
 The core classes of CSL implement a traditional computer music programming model (like
 a Music-N-family language or a modular synthesizer), with objects that represent 
-buffers and streams of audio samples,
-and unit generator objects that represent audio sources and processors (e.g., many
-kinds of oscillators and filters)
+buffers and streams of audio samples, and unit generator objects that represent audio 
+sources and processors (e.g., many kinds of oscillators, filters and spatial panners)
 connected together into graphs that produce complex dynamic sounds.
-The signal processing graphs (or patches) can be connected to several kinds of output
+The signal processing graphs (patches) can be connected to several kinds of output
 for real-time processing or writing to files, and can be controlled via scripts or MIDI or OSC.
 Most typical sound synthesis and processing objects are provided, as shown in the CSL class diagram below.
 
 ![alt text](http://fastlabinc.com/CSL/classes.jpg)
 
 CSL grew out of code examples developed to teach a sequence of six graduate courses in digital audio programming, 
-the MAT 240 series taught at UCSB for over 10 years. Students in these courses contributed many ideas and much concrete
+the MAT 240 series taught at UCSB (and elsewhere) for over 10 years. 
+Students in these courses contributed many ideas and much concrete
 code to CSL (see the doc). The course materials for these courses are all available on-line at the link, http://heaveneverywhere.com/TheBigMATBook
 
 ## CSL Coding Start-up
