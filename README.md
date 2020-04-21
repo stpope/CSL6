@@ -16,13 +16,12 @@ This is release 6.0, April, 2020.
 The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots,
 documentation downloads and links to screencast demos there.
 
-CSL is known to work on Mac OSX, Linux, iOS, Android and
-MS-Windows (using the Cygwin environment rather than the Microsoft compiler). 
+CSL is known to work on Mac OSX, Linux, iOS, Android, RaspberryPi and
+MS-Windows (work-in-progress; see below). 
 To get started with CSL, build the demo app (screen shot below)
 and use the combo boxes at the bottom-left to select among the tests, whose source code
 is in the Src/Tests folder. For the Mac, use the XCode project in the 
-Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder;
-likewise, the same makefile can be used for Cygwin on Windows computers.
+Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder.
 
 ### Links for the impatient
 
@@ -113,10 +112,17 @@ Look at the files in the Src/Tests folder for details.
 ## Platform Requirements (tested on these platforms)
 
 	MacOS: OSX 10.13 or newer with Xcode
-	Linux: Ubuntu 19 (or other recent release of a mainstream Linux distribution) with X11-libs, ALSA, Freetype, etc.
-	MS-windows: Tested on Windows10 with Cygwin and ASIO
-	iOS, Android: recent releases and toolchains
+	Linux: Ubuntu 19 (or other recent release of Linux) with X11-libs, ALSA, Freetype, etc.
+		X86 (PC) and ARM (RaspberryPi) platforms supported
+	iOS: recent releases and toolchains
+	Android: recent releases and toolchains
 	All: JUCE 6.0
+
+CSL has run on MS_Windows in previous versions using tool-chains with standards-compliant C++ compilers
+such as Cygwin or CodeBlocks. JUCE's current tools support CodeBlocks on WOndows, but we have not tested this.
+The source tree includes a CodeBlocks project that compiles and links, but produces a non-executable excutable.
+Another option would be using the GCC toolchain on Cygwin. There are unfortunately several places where CSL
+uses C++ idioms that the Microsoft compiler rejects. We'd love some help from a Windows development expert here...
 
 Linking with the CSL Libraries
 
