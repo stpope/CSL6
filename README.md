@@ -117,6 +117,7 @@ Look at the files in the Src/Tests folder for details.
 		X86 (PC) and ARM (RaspberryPi) platforms supported
 	iOS: recent releases and toolchains
 	Android: recent releases and toolchains
+	MS-Windows: see note below
 	All: JUCE 6.0
 
 CSL has run on MS_Windows in previous versions using tool-chains with standards-compliant C++ compilers
