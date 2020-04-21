@@ -282,16 +282,16 @@ Test targets
 
 The subdirectories of CSL are reflected in the project file categories:
 
-	- Tests - Test/demo main() driver functions
-	- Kernel - Buffers, UnitGenerators and all the other core classes
-	- Sources - Oscillators, noise, envelopes, PhysMod
-	- Processors - Operators, filters, mixers, panners
-	- IO - IO drivers and LAN streaming
-	- Utilities - Thread and buffer support classes
-	- Instruments - OSC/MIDI instrument wrappers
-	- Spatializers - Panners and spatializers
-	- Doc - published papers, Doxygen doc, etc.
-	- Data - Test sounds, HRTF data, etc.
+	Tests - Test/demo main() driver functions
+	Kernel - Buffers, UnitGenerators and all the other core classes
+	Sources - Oscillators, noise, envelopes, PhysMod
+	Processors - Operators, filters, mixers, panners
+	IO - IO drivers and LAN streaming
+	Utilities - Thread and buffer support classes
+	Instruments - OSC/MIDI instrument wrappers
+	Spatializers - Panners and spatializers
+	Doc - published papers, Doxygen doc, etc.
+	Data - Test sounds, HRTF data, etc.
 
 Reading the source
 
@@ -305,19 +305,14 @@ Note that CSL uses old-school exception signatures, so it's most compatible with
 
 Naming
 
-	Class, member, and method names are written in "camelCase" as in 
-	"UnitGenerator."
-	Data members (instance variables) are written with initial "m" followed by 
-	embedded caps as in "mOffset."
-	Enumeration constants are written with initial "k" followed by embedded caps 
-	as in "kDone."
+	Class, member, and method names are written in "camelCase" as in "UnitGenerator."
+	Data members (instance variables) are written with initial "m" followed by embedded caps as in "mOffset."
+	Enumeration constants are written with initial "k" followed by embedded caps as in "kDone."
 
 Privacy
 
-	In general data members are protected and have accessor functions where 
-	appropriate. 
-	The one exception is Buffer which is considered a record class and has public 
-	members.
+	In general data members are protected and have accessor functions where appropriate. 
+	The one exception is Buffer which is considered a record class and has public members.
 
 CORE CSL Types & Classes
 
@@ -337,13 +332,13 @@ Constants
 
 These are not set in the header files so that different apps can share the source tree.
 
-SoundFile type:
+SoundFile type (enable one):
 
 	USE_JSND - use the JUCE-based sound file class (requires only JUCE)
 	USE_LSND - use libSndFile-based sound file class (supports many file types)
 	USE_CASND - use the CoreAudio version (used on iOS)
 
-FFT implementation
+FFT implementation (enable one):
 
 	USE_FFTW - use FFTW 3 (faster but complicated to build)
 	USE_FFTREAL - use FFTReal (smaller and simpler)
