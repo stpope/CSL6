@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="App | Debug" />
+	<File name="..\..\..\JUCE6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\os.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1410" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\Kernel\CSL_Types.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="307" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\Processors\Filters.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="258" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\Utilities\CPoint.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="369" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\Tests\Test_Control.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1412" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\Tests\Test_Effects.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10807" topLine="303" />
+		</Cursor>
+	</File>
+	<File name="..\..\..\JUCE6\modules\juce_core\threads\juce_Thread.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="153" />
+		</Cursor>
+	</File>
+	<File name="..\..\..\JUCE6\modules\juce_core\threads\juce_Thread.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\IO\SoundFileJ.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5747" topLine="173" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\IO\SoundFile.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="819" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\IO\SoundFile.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="347" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\Spatializers\Binaural\BinauralDB.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8481" topLine="227" />
+		</Cursor>
+	</File>
+	<File name="..\..\..\JUCE6\modules\juce_core\native\juce_win32_Threads.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="255" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\Tests\Test_Envelopes.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4100" topLine="135" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\Instruments\Instrument.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="768" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\Src\Tests\Test_Sources.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7192" topLine="210" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

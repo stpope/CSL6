@@ -1,0 +1,5518 @@
+# depslib dependency file v1.0
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\binarydata.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_audio_basics.cpp
+	"AppConfig.h"
+	<juce_audio_basics/juce_audio_basics.cpp>
+
+1587420206 c:\users\steph\csl6\jucelibrarycode\appconfig.h
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\juce_audio_basics.cpp
+	"juce_audio_basics.h"
+	<emmintrin.h>
+	<Accelerate/Accelerate.h>
+	<arm_neon.h>
+	"buffers/juce_AudioDataConverters.cpp"
+	"buffers/juce_FloatVectorOperations.cpp"
+	"buffers/juce_AudioChannelSet.cpp"
+	"buffers/juce_AudioProcessLoadMeasurer.cpp"
+	"utilities/juce_IIRFilter.cpp"
+	"utilities/juce_LagrangeInterpolator.cpp"
+	"utilities/juce_CatmullRomInterpolator.cpp"
+	"utilities/juce_SmoothedValue.cpp"
+	"midi/juce_MidiBuffer.cpp"
+	"midi/juce_MidiFile.cpp"
+	"midi/juce_MidiKeyboardState.cpp"
+	"midi/juce_MidiMessage.cpp"
+	"midi/juce_MidiMessageSequence.cpp"
+	"midi/juce_MidiRPN.cpp"
+	"mpe/juce_MPEValue.cpp"
+	"mpe/juce_MPENote.cpp"
+	"mpe/juce_MPEZoneLayout.cpp"
+	"mpe/juce_MPEInstrument.cpp"
+	"mpe/juce_MPEMessages.cpp"
+	"mpe/juce_MPESynthesiserBase.cpp"
+	"mpe/juce_MPESynthesiserVoice.cpp"
+	"mpe/juce_MPESynthesiser.cpp"
+	"mpe/juce_MPEUtils.cpp"
+	"sources/juce_BufferingAudioSource.cpp"
+	"sources/juce_ChannelRemappingAudioSource.cpp"
+	"sources/juce_IIRFilterAudioSource.cpp"
+	"sources/juce_MemoryAudioSource.cpp"
+	"sources/juce_MixerAudioSource.cpp"
+	"sources/juce_ResamplingAudioSource.cpp"
+	"sources/juce_ReverbAudioSource.cpp"
+	"sources/juce_ToneGeneratorAudioSource.cpp"
+	"synthesisers/juce_Synthesiser.cpp"
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\juce_audio_basics.h
+	<juce_core/juce_core.h>
+	"buffers/juce_AudioDataConverters.h"
+	"buffers/juce_FloatVectorOperations.h"
+	"buffers/juce_AudioSampleBuffer.h"
+	"buffers/juce_AudioChannelSet.h"
+	"buffers/juce_AudioProcessLoadMeasurer.h"
+	"utilities/juce_Decibels.h"
+	"utilities/juce_IIRFilter.h"
+	"utilities/juce_LagrangeInterpolator.h"
+	"utilities/juce_CatmullRomInterpolator.h"
+	"utilities/juce_SmoothedValue.h"
+	"utilities/juce_Reverb.h"
+	"utilities/juce_ADSR.h"
+	"midi/juce_MidiMessage.h"
+	"midi/juce_MidiBuffer.h"
+	"midi/juce_MidiMessageSequence.h"
+	"midi/juce_MidiFile.h"
+	"midi/juce_MidiKeyboardState.h"
+	"midi/juce_MidiRPN.h"
+	"mpe/juce_MPEValue.h"
+	"mpe/juce_MPENote.h"
+	"mpe/juce_MPEZoneLayout.h"
+	"mpe/juce_MPEInstrument.h"
+	"mpe/juce_MPEMessages.h"
+	"mpe/juce_MPESynthesiserBase.h"
+	"mpe/juce_MPESynthesiserVoice.h"
+	"mpe/juce_MPESynthesiser.h"
+	"mpe/juce_MPEUtils.h"
+	"sources/juce_AudioSource.h"
+	"sources/juce_PositionableAudioSource.h"
+	"sources/juce_BufferingAudioSource.h"
+	"sources/juce_ChannelRemappingAudioSource.h"
+	"sources/juce_IIRFilterAudioSource.h"
+	"sources/juce_MemoryAudioSource.h"
+	"sources/juce_MixerAudioSource.h"
+	"sources/juce_ResamplingAudioSource.h"
+	"sources/juce_ReverbAudioSource.h"
+	"sources/juce_ToneGeneratorAudioSource.h"
+	"synthesisers/juce_Synthesiser.h"
+	"audio_play_head/juce_AudioPlayHead.h"
+
+1587417675 c:\users\steph\juce6\modules\juce_core\juce_core.h
+	"system/juce_TargetPlatform.h"
+	"native/juce_BasicNativeHeaders.h"
+	"system/juce_StandardHeader.h"
+	"memory/juce_Memory.h"
+	"maths/juce_MathsFunctions.h"
+	"memory/juce_ByteOrder.h"
+	"memory/juce_Atomic.h"
+	"text/juce_CharacterFunctions.h"
+	"text/juce_CharPointer_UTF8.h"
+	"text/juce_CharPointer_UTF16.h"
+	"text/juce_CharPointer_UTF32.h"
+	"text/juce_CharPointer_ASCII.h"
+	"text/juce_String.h"
+	"text/juce_StringRef.h"
+	"logging/juce_Logger.h"
+	"memory/juce_LeakedObjectDetector.h"
+	"memory/juce_ContainerDeletePolicy.h"
+	"memory/juce_HeapBlock.h"
+	"memory/juce_MemoryBlock.h"
+	"memory/juce_ReferenceCountedObject.h"
+	"memory/juce_ScopedPointer.h"
+	"memory/juce_OptionalScopedPointer.h"
+	"memory/juce_Singleton.h"
+	"memory/juce_WeakReference.h"
+	"threads/juce_ScopedLock.h"
+	"threads/juce_CriticalSection.h"
+	"maths/juce_Range.h"
+	"maths/juce_NormalisableRange.h"
+	"maths/juce_StatisticsAccumulator.h"
+	"containers/juce_ElementComparator.h"
+	"containers/juce_ArrayAllocationBase.h"
+	"containers/juce_ArrayBase.h"
+	"containers/juce_Array.h"
+	"containers/juce_LinkedListPointer.h"
+	"containers/juce_ListenerList.h"
+	"containers/juce_OwnedArray.h"
+	"containers/juce_ReferenceCountedArray.h"
+	"containers/juce_ScopedValueSetter.h"
+	"containers/juce_SortedSet.h"
+	"containers/juce_SparseSet.h"
+	"containers/juce_AbstractFifo.h"
+	"text/juce_NewLine.h"
+	"text/juce_StringPool.h"
+	"text/juce_Identifier.h"
+	"text/juce_StringArray.h"
+	"system/juce_SystemStats.h"
+	"memory/juce_HeavyweightLeakedObjectDetector.h"
+	"text/juce_StringPairArray.h"
+	"text/juce_TextDiff.h"
+	"text/juce_LocalisedStrings.h"
+	"text/juce_Base64.h"
+	"misc/juce_Result.h"
+	"misc/juce_Uuid.h"
+	"misc/juce_ConsoleApplication.h"
+	"containers/juce_Variant.h"
+	"containers/juce_NamedValueSet.h"
+	"containers/juce_DynamicObject.h"
+	"containers/juce_HashMap.h"
+	"time/juce_RelativeTime.h"
+	"time/juce_Time.h"
+	"streams/juce_InputStream.h"
+	"streams/juce_OutputStream.h"
+	"streams/juce_BufferedInputStream.h"
+	"streams/juce_MemoryInputStream.h"
+	"streams/juce_MemoryOutputStream.h"
+	"streams/juce_SubregionStream.h"
+	"streams/juce_InputSource.h"
+	"files/juce_File.h"
+	"files/juce_DirectoryIterator.h"
+	"files/juce_FileInputStream.h"
+	"files/juce_FileOutputStream.h"
+	"files/juce_FileSearchPath.h"
+	"files/juce_MemoryMappedFile.h"
+	"files/juce_TemporaryFile.h"
+	"files/juce_FileFilter.h"
+	"files/juce_WildcardFileFilter.h"
+	"streams/juce_FileInputSource.h"
+	"logging/juce_FileLogger.h"
+	"javascript/juce_JSON.h"
+	"javascript/juce_Javascript.h"
+	"maths/juce_BigInteger.h"
+	"maths/juce_Expression.h"
+	"maths/juce_Random.h"
+	"misc/juce_RuntimePermissions.h"
+	"misc/juce_WindowsRegistry.h"
+	"threads/juce_ChildProcess.h"
+	"threads/juce_DynamicLibrary.h"
+	"threads/juce_HighResolutionTimer.h"
+	"threads/juce_InterProcessLock.h"
+	"threads/juce_Process.h"
+	"threads/juce_SpinLock.h"
+	"threads/juce_WaitableEvent.h"
+	"threads/juce_Thread.h"
+	"threads/juce_ThreadLocalValue.h"
+	"threads/juce_ThreadPool.h"
+	"threads/juce_TimeSliceThread.h"
+	"threads/juce_ReadWriteLock.h"
+	"threads/juce_ScopedReadLock.h"
+	"threads/juce_ScopedWriteLock.h"
+	"network/juce_IPAddress.h"
+	"network/juce_MACAddress.h"
+	"network/juce_NamedPipe.h"
+	"network/juce_Socket.h"
+	"network/juce_URL.h"
+	"network/juce_WebInputStream.h"
+	"streams/juce_URLInputSource.h"
+	"time/juce_PerformanceCounter.h"
+	"unit_tests/juce_UnitTest.h"
+	"xml/juce_XmlDocument.h"
+	"xml/juce_XmlElement.h"
+	"zip/juce_GZIPCompressorOutputStream.h"
+	"zip/juce_GZIPDecompressorInputStream.h"
+	"zip/juce_ZipFile.h"
+	"containers/juce_PropertySet.h"
+	"memory/juce_SharedResourcePointer.h"
+	"native/juce_osx_ObjCHelpers.h"
+	"native/juce_win32_ComSmartPtr.h"
+	<jni.h>
+	"native/juce_android_JNIHelpers.h"
+	"unit_tests/juce_UnitTestCategories.h"
+
+1587417681 c:\users\steph\juce6\modules\juce_core\system\juce_targetplatform.h
+	<CoreFoundation/CoreFoundation.h>
+	"../native/juce_mac_ClangBugWorkaround.h"
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_mac_clangbugworkaround.h
+	<CoreFoundation/CFAvailability.h>
+
+1587417678 c:\users\steph\juce6\modules\juce_core\native\juce_basicnativeheaders.h
+	<sys/fcntl.h>
+	<sys/dir.h>
+	<sys/socket.h>
+	<sys/sysctl.h>
+	<sys/stat.h>
+	<sys/param.h>
+	<sys/mount.h>
+	<sys/utsname.h>
+	<sys/mman.h>
+	<fnmatch.h>
+	<utime.h>
+	<dlfcn.h>
+	<ifaddrs.h>
+	<net/if_dl.h>
+	<mach/mach_time.h>
+	<mach-o/dyld.h>
+	<objc/runtime.h>
+	<objc/objc.h>
+	<objc/message.h>
+	<poll.h>
+	<windows.h>
+	<shellapi.h>
+	<tchar.h>
+	<stddef.h>
+	<ctime>
+	<wininet.h>
+	<nb30.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<iphlpapi.h>
+	<mapi.h>
+	<float.h>
+	<process.h>
+	<shlobj.h>
+	<shlwapi.h>
+	<mmsystem.h>
+	<winioctl.h>
+	<basetyps.h>
+	<sys/time.h>
+	<crtdbg.h>
+	<comutil.h>
+	<arpa/inet.h>
+	<dlfcn.h>
+	<errno.h>
+	<fcntl.h>
+	<fnmatch.h>
+	<net/if.h>
+	<netdb.h>
+	<netinet/in.h>
+	<pthread.h>
+	<pwd.h>
+	<sched.h>
+	<signal.h>
+	<stddef.h>
+	<sys/dir.h>
+	<sys/file.h>
+	<sys/ioctl.h>
+	<sys/mman.h>
+	<sys/prctl.h>
+	<sys/ptrace.h>
+	<sys/socket.h>
+	<sys/stat.h>
+	<sys/sysinfo.h>
+	<sys/time.h>
+	<sys/types.h>
+	<sys/vfs.h>
+	<sys/wait.h>
+	<utime.h>
+	<poll.h>
+	<arpa/inet.h>
+	<dirent.h>
+	<dlfcn.h>
+	<errno.h>
+	<fcntl.h>
+	<fnmatch.h>
+	<net/if.h>
+	<netdb.h>
+	<netinet/in.h>
+	<pthread.h>
+	<pwd.h>
+	<sched.h>
+	<signal.h>
+	<stddef.h>
+	<sys/file.h>
+	<sys/ioctl.h>
+	<sys/mman.h>
+	<sys/mount.h>
+	<sys/ptrace.h>
+	<sys/socket.h>
+	<sys/stat.h>
+	<sys/time.h>
+	<sys/types.h>
+	<sys/wait.h>
+	<utime.h>
+	<poll.h>
+	<jni.h>
+	<pthread.h>
+	<sched.h>
+	<sys/time.h>
+	<utime.h>
+	<errno.h>
+	<fcntl.h>
+	<dlfcn.h>
+	<sys/stat.h>
+	<sys/statfs.h>
+	<sys/ptrace.h>
+	<sys/sysinfo.h>
+	<sys/mman.h>
+	<pwd.h>
+	<dirent.h>
+	<fnmatch.h>
+	<sys/wait.h>
+	<android/api-level.h>
+	<poll.h>
+	<cpu-features.h>
+
+1587417681 c:\users\steph\juce6\modules\juce_core\system\juce_standardheader.h
+	<memory>
+	<cmath>
+	<vector>
+	<iostream>
+	<functional>
+	<algorithm>
+	<limits>
+	<atomic>
+	<sstream>
+	<iomanip>
+	<map>
+	<cstddef>
+	<unordered_set>
+	<mutex>
+	<condition_variable>
+	<queue>
+	"juce_CompilerSupport.h"
+	"juce_PlatformDefs.h"
+	<intrin.h>
+	<libkern/OSAtomic.h>
+	<xlocale.h>
+	<signal.h>
+	<cstring>
+	<signal.h>
+	<ia64intrin.h>
+	<ia32intrin.h>
+	<crtdbg.h>
+	<cstring>
+	<sys/types.h>
+	<cstring>
+	<atomic>
+	<byteswap.h>
+
+1587417681 c:\users\steph\juce6\modules\juce_core\system\juce_compilersupport.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\system\juce_platformdefs.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_memory.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\maths\juce_mathsfunctions.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_byteorder.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_atomic.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_characterfunctions.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_charpointer_utf8.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_charpointer_utf16.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_charpointer_utf32.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_charpointer_ascii.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_string.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\text\juce_stringref.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\logging\juce_logger.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_leakedobjectdetector.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_containerdeletepolicy.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_heapblock.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_memoryblock.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_referencecountedobject.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_scopedpointer.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_optionalscopedpointer.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_singleton.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_weakreference.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_scopedlock.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_criticalsection.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\maths\juce_range.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\maths\juce_normalisablerange.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\maths\juce_statisticsaccumulator.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_elementcomparator.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_arrayallocationbase.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_arraybase.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_array.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_linkedlistpointer.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_listenerlist.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_ownedarray.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_referencecountedarray.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_scopedvaluesetter.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_sortedset.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_sparseset.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_abstractfifo.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_newline.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\text\juce_stringpool.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_identifier.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_stringarray.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\system\juce_systemstats.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_heavyweightleakedobjectdetector.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_stringpairarray.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\text\juce_textdiff.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_localisedstrings.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_base64.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\misc\juce_result.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\misc\juce_uuid.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\misc\juce_consoleapplication.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_variant.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_namedvalueset.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_dynamicobject.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_hashmap.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\time\juce_relativetime.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\time\juce_time.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_inputstream.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\streams\juce_outputstream.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_bufferedinputstream.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_memoryinputstream.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_memoryoutputstream.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\streams\juce_subregionstream.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_inputsource.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_file.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\files\juce_directoryiterator.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_fileinputstream.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_fileoutputstream.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_filesearchpath.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_memorymappedfile.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_temporaryfile.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_filefilter.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_wildcardfilefilter.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_fileinputsource.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\logging\juce_filelogger.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\javascript\juce_json.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\javascript\juce_javascript.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\maths\juce_biginteger.h
+
+1587417677 c:\users\steph\juce6\modules\juce_core\maths\juce_expression.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\maths\juce_random.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\misc\juce_runtimepermissions.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\misc\juce_windowsregistry.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_childprocess.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_dynamiclibrary.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_highresolutiontimer.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_interprocesslock.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_process.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_spinlock.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_waitableevent.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_thread.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_threadlocalvalue.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_threadpool.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_timeslicethread.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_readwritelock.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_scopedreadlock.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_scopedwritelock.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_ipaddress.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_macaddress.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_namedpipe.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_socket.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_url.h
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_webinputstream.h
+
+1587417681 c:\users\steph\juce6\modules\juce_core\streams\juce_urlinputsource.h
+
+1587417682 c:\users\steph\juce6\modules\juce_core\time\juce_performancecounter.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\unit_tests\juce_unittest.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\xml\juce_xmldocument.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\xml\juce_xmlelement.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\juce_gzipcompressoroutputstream.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\juce_gzipdecompressorinputstream.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\juce_zipfile.h
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_propertyset.h
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_sharedresourcepointer.h
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_osx_objchelpers.h
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_win32_comsmartptr.h
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_android_jnihelpers.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\unit_tests\juce_unittestcategories.h
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\buffers\juce_audiodataconverters.h
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\buffers\juce_floatvectoroperations.h
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\buffers\juce_audiosamplebuffer.h
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\buffers\juce_audiochannelset.h
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\buffers\juce_audioprocessloadmeasurer.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_decibels.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_iirfilter.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_lagrangeinterpolator.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_catmullrominterpolator.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_smoothedvalue.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_reverb.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_adsr.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midimessage.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midibuffer.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midimessagesequence.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midifile.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midikeyboardstate.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midirpn.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpevalue.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpenote.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpezonelayout.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpeinstrument.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpemessages.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpesynthesiserbase.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpesynthesiservoice.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpesynthesiser.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpeutils.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_audiosource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_positionableaudiosource.h
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_bufferingaudiosource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_channelremappingaudiosource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_iirfilteraudiosource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_memoryaudiosource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_mixeraudiosource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_resamplingaudiosource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_reverbaudiosource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_tonegeneratoraudiosource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\synthesisers\juce_synthesiser.h
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\audio_play_head\juce_audioplayhead.h
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\buffers\juce_audiodataconverters.cpp
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\buffers\juce_floatvectoroperations.cpp
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\buffers\juce_audiochannelset.cpp
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\buffers\juce_audioprocessloadmeasurer.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_iirfilter.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_lagrangeinterpolator.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_catmullrominterpolator.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\utilities\juce_smoothedvalue.cpp
+
+1587417650 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midibuffer.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midifile.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midikeyboardstate.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midimessage.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midimessagesequence.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\midi\juce_midirpn.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpevalue.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpenote.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpezonelayout.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpeinstrument.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpemessages.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpesynthesiserbase.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpesynthesiservoice.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpesynthesiser.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\mpe\juce_mpeutils.cpp
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_bufferingaudiosource.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_channelremappingaudiosource.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_iirfilteraudiosource.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_memoryaudiosource.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_mixeraudiosource.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_resamplingaudiosource.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_reverbaudiosource.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\sources\juce_tonegeneratoraudiosource.cpp
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_basics\synthesisers\juce_synthesiser.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_audio_devices.cpp
+	"AppConfig.h"
+	<juce_audio_devices/juce_audio_devices.cpp>
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_devices\juce_audio_devices.cpp
+	"juce_audio_devices.h"
+	<mmreg.h>
+	<windows.devices.h>
+	<windows.devices.midi.h>
+	<windows.devices.enumeration.h>
+	<wrl/event.h>
+	<robuffer.h>
+	<iasiodrv.h>
+	<alsa/asoundlib.h>
+	<jack/jack.h>
+	<Bela.h>
+	<Midi.h>
+	<SLES/OpenSLES.h>
+	<SLES/OpenSLES_Android.h>
+	<SLES/OpenSLES_AndroidConfiguration.h>
+	<oboe/Oboe.h>
+	"audio_io/juce_AudioDeviceManager.cpp"
+	"audio_io/juce_AudioIODevice.cpp"
+	"audio_io/juce_AudioIODeviceType.cpp"
+	"midi_io/juce_MidiMessageCollector.cpp"
+	"midi_io/juce_MidiDevices.cpp"
+	"sources/juce_AudioSourcePlayer.cpp"
+	"sources/juce_AudioTransportSource.cpp"
+	"native/juce_MidiDataConcatenator.h"
+	"native/juce_mac_CoreAudio.cpp"
+	"native/juce_mac_CoreMidi.cpp"
+	"native/juce_ios_Audio.cpp"
+	"native/juce_mac_CoreMidi.cpp"
+	"native/juce_win32_WASAPI.cpp"
+	"native/juce_win32_DirectSound.cpp"
+	"native/juce_win32_Midi.cpp"
+	"native/juce_win32_ASIO.cpp"
+	"native/juce_linux_ALSA.cpp"
+	"native/juce_linux_JackAudio.cpp"
+	"native/juce_linux_Bela.cpp"
+	"native/juce_linux_Midi.cpp"
+	"native/juce_android_Audio.cpp"
+	"native/juce_android_Midi.cpp"
+	"native/juce_android_OpenSL.cpp"
+	"native/juce_android_Oboe.cpp"
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_devices\juce_audio_devices.h
+	<juce_events/juce_events.h>
+	<juce_audio_basics/juce_audio_basics.h>
+	<juce_graphics/juce_graphics.h>
+	"midi_io/juce_MidiDevices.h"
+	"midi_io/juce_MidiMessageCollector.h"
+	"audio_io/juce_AudioIODevice.h"
+	"audio_io/juce_AudioIODeviceType.h"
+	"audio_io/juce_SystemAudioVolume.h"
+	"sources/juce_AudioSourcePlayer.h"
+	"sources/juce_AudioTransportSource.h"
+	"audio_io/juce_AudioDeviceManager.h"
+	"native/juce_ios_Audio.h"
+
+1587417687 c:\users\steph\juce6\modules\juce_events\juce_events.h
+	<juce_core/juce_core.h>
+	<inspectable.h>
+	<hstring.h>
+	"messages/juce_MessageManager.h"
+	"messages/juce_Message.h"
+	"messages/juce_MessageListener.h"
+	"messages/juce_CallbackMessage.h"
+	"messages/juce_DeletedAtShutdown.h"
+	"messages/juce_NotificationType.h"
+	"messages/juce_ApplicationBase.h"
+	"messages/juce_Initialisation.h"
+	"messages/juce_MountedVolumeListChangeDetector.h"
+	"broadcasters/juce_ActionBroadcaster.h"
+	"broadcasters/juce_ActionListener.h"
+	"broadcasters/juce_AsyncUpdater.h"
+	"broadcasters/juce_ChangeListener.h"
+	"broadcasters/juce_ChangeBroadcaster.h"
+	"timers/juce_Timer.h"
+	"timers/juce_MultiTimer.h"
+	"interprocess/juce_InterprocessConnection.h"
+	"interprocess/juce_InterprocessConnectionServer.h"
+	"interprocess/juce_ConnectedChildProcess.h"
+	"interprocess/juce_NetworkServiceDiscovery.h"
+	"native/juce_linux_EventLoop.h"
+	"native/juce_win32_HiddenMessageWindow.h"
+	"native/juce_win32_WinRTWrapper.h"
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_messagemanager.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_message.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_messagelistener.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_callbackmessage.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_deletedatshutdown.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_notificationtype.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_applicationbase.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_initialisation.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_mountedvolumelistchangedetector.h
+
+1587417687 c:\users\steph\juce6\modules\juce_events\broadcasters\juce_actionbroadcaster.h
+
+1587417687 c:\users\steph\juce6\modules\juce_events\broadcasters\juce_actionlistener.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\broadcasters\juce_asyncupdater.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\broadcasters\juce_changelistener.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\broadcasters\juce_changebroadcaster.h
+
+1587417689 c:\users\steph\juce6\modules\juce_events\timers\juce_timer.h
+
+1587417689 c:\users\steph\juce6\modules\juce_events\timers\juce_multitimer.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\interprocess\juce_interprocessconnection.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\interprocess\juce_interprocessconnectionserver.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\interprocess\juce_connectedchildprocess.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\interprocess\juce_networkservicediscovery.h
+
+1587417688 c:\users\steph\juce6\modules\juce_events\native\juce_linux_eventloop.h
+
+1587417689 c:\users\steph\juce6\modules\juce_events\native\juce_win32_hiddenmessagewindow.h
+
+1587417689 c:\users\steph\juce6\modules\juce_events\native\juce_win32_winrtwrapper.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\juce_graphics.h
+	<juce_core/juce_core.h>
+	<juce_events/juce_events.h>
+	"geometry/juce_AffineTransform.h"
+	"geometry/juce_Point.h"
+	"geometry/juce_Line.h"
+	"geometry/juce_Rectangle.h"
+	"geometry/juce_Parallelogram.h"
+	"placement/juce_Justification.h"
+	"geometry/juce_Path.h"
+	"geometry/juce_RectangleList.h"
+	"colour/juce_PixelFormats.h"
+	"colour/juce_Colour.h"
+	"colour/juce_ColourGradient.h"
+	"colour/juce_Colours.h"
+	"geometry/juce_BorderSize.h"
+	"geometry/juce_EdgeTable.h"
+	"geometry/juce_PathIterator.h"
+	"geometry/juce_PathStrokeType.h"
+	"placement/juce_RectanglePlacement.h"
+	"images/juce_ImageCache.h"
+	"images/juce_ImageConvolutionKernel.h"
+	"images/juce_ImageFileFormat.h"
+	"fonts/juce_Typeface.h"
+	"fonts/juce_Font.h"
+	"fonts/juce_AttributedString.h"
+	"fonts/juce_GlyphArrangement.h"
+	"fonts/juce_TextLayout.h"
+	"fonts/juce_CustomTypeface.h"
+	"contexts/juce_GraphicsContext.h"
+	"contexts/juce_LowLevelGraphicsContext.h"
+	"images/juce_Image.h"
+	"colour/juce_FillType.h"
+	"native/juce_RenderingHelpers.h"
+	"contexts/juce_LowLevelGraphicsSoftwareRenderer.h"
+	"contexts/juce_LowLevelGraphicsPostScriptRenderer.h"
+	"effects/juce_ImageEffectFilter.h"
+	"effects/juce_DropShadowEffect.h"
+	"effects/juce_GlowEffect.h"
+	"native/juce_mac_CoreGraphicsHelpers.h"
+	"native/juce_mac_CoreGraphicsContext.h"
+	"native/juce_win32_Direct2DGraphicsContext.h"
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_affinetransform.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_point.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_line.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_rectangle.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_parallelogram.h
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\placement\juce_justification.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_path.h
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_rectanglelist.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\colour\juce_pixelformats.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\colour\juce_colour.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\colour\juce_colourgradient.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\colour\juce_colours.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_bordersize.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_edgetable.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_pathiterator.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_pathstroketype.h
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\placement\juce_rectangleplacement.h
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\images\juce_imagecache.h
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\images\juce_imageconvolutionkernel.h
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\images\juce_imagefileformat.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_typeface.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_font.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_attributedstring.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_glypharrangement.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_textlayout.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_customtypeface.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\contexts\juce_graphicscontext.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\contexts\juce_lowlevelgraphicscontext.h
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\images\juce_image.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\colour\juce_filltype.h
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\native\juce_renderinghelpers.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\contexts\juce_lowlevelgraphicssoftwarerenderer.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\contexts\juce_lowlevelgraphicspostscriptrenderer.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\effects\juce_imageeffectfilter.h
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\effects\juce_dropshadoweffect.h
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\effects\juce_gloweffect.h
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_mac_coregraphicshelpers.h
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\native\juce_mac_coregraphicscontext.h
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_win32_direct2dgraphicscontext.h
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\midi_io\juce_mididevices.h
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\midi_io\juce_midimessagecollector.h
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\audio_io\juce_audioiodevice.h
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\audio_io\juce_audioiodevicetype.h
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\audio_io\juce_systemaudiovolume.h
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\sources\juce_audiosourceplayer.h
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\sources\juce_audiotransportsource.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_devices\audio_io\juce_audiodevicemanager.h
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_ios_audio.h
+
+1587417652 c:\users\steph\juce6\modules\juce_audio_devices\audio_io\juce_audiodevicemanager.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\audio_io\juce_audioiodevice.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\audio_io\juce_audioiodevicetype.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\midi_io\juce_midimessagecollector.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\midi_io\juce_mididevices.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\sources\juce_audiosourceplayer.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\sources\juce_audiotransportsource.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_mididataconcatenator.h
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_mac_coreaudio.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_mac_coremidi.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_ios_audio.cpp
+	<juce_graphics/native/juce_mac_CoreGraphicsHelpers.h>
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_win32_wasapi.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_win32_directsound.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_win32_midi.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_win32_asio.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_linux_alsa.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_linux_jackaudio.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_linux_bela.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_linux_midi.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_android_audio.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_android_midi.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_android_opensl.cpp
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_devices\native\juce_android_oboe.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_audio_formats.cpp
+	"AppConfig.h"
+	<juce_audio_formats/juce_audio_formats.cpp>
+
+1587417653 c:\users\steph\juce6\modules\juce_audio_formats\juce_audio_formats.cpp
+	"juce_audio_formats.h"
+	<AudioToolbox/AudioToolbox.h>
+	<wmsdk.h>
+	"format/juce_AudioFormat.cpp"
+	"format/juce_AudioFormatManager.cpp"
+	"format/juce_AudioFormatReader.cpp"
+	"format/juce_AudioFormatReaderSource.cpp"
+	"format/juce_AudioFormatWriter.cpp"
+	"format/juce_AudioSubsectionReader.cpp"
+	"format/juce_BufferingAudioFormatReader.cpp"
+	"sampler/juce_Sampler.cpp"
+	"codecs/juce_AiffAudioFormat.cpp"
+	"codecs/juce_CoreAudioFormat.cpp"
+	"codecs/juce_FlacAudioFormat.cpp"
+	"codecs/juce_MP3AudioFormat.cpp"
+	"codecs/juce_OggVorbisAudioFormat.cpp"
+	"codecs/juce_WavAudioFormat.cpp"
+	"codecs/juce_LAMEEncoderAudioFormat.cpp"
+	"codecs/juce_WindowsMediaAudioFormat.cpp"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\juce_audio_formats.h
+	<juce_audio_basics/juce_audio_basics.h>
+	"format/juce_AudioFormatReader.h"
+	"format/juce_AudioFormatWriter.h"
+	"format/juce_MemoryMappedAudioFormatReader.h"
+	"format/juce_AudioFormat.h"
+	"format/juce_AudioFormatManager.h"
+	"format/juce_AudioFormatReaderSource.h"
+	"format/juce_AudioSubsectionReader.h"
+	"format/juce_BufferingAudioFormatReader.h"
+	"codecs/juce_AiffAudioFormat.h"
+	"codecs/juce_CoreAudioFormat.h"
+	"codecs/juce_FlacAudioFormat.h"
+	"codecs/juce_LAMEEncoderAudioFormat.h"
+	"codecs/juce_MP3AudioFormat.h"
+	"codecs/juce_OggVorbisAudioFormat.h"
+	"codecs/juce_WavAudioFormat.h"
+	"codecs/juce_WindowsMediaAudioFormat.h"
+	"sampler/juce_Sampler.h"
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformatreader.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformatwriter.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_memorymappedaudioformatreader.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformat.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformatmanager.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformatreadersource.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audiosubsectionreader.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_bufferingaudioformatreader.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_aiffaudioformat.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_coreaudioformat.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_flacaudioformat.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_lameencoderaudioformat.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_mp3audioformat.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_oggvorbisaudioformat.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_wavaudioformat.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_windowsmediaaudioformat.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\sampler\juce_sampler.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformat.cpp
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformatmanager.cpp
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformatreader.cpp
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformatreadersource.cpp
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audioformatwriter.cpp
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_audiosubsectionreader.cpp
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\format\juce_bufferingaudioformatreader.cpp
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\sampler\juce_sampler.cpp
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_aiffaudioformat.cpp
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_coreaudioformat.cpp
+	"../../juce_audio_basics/native/juce_mac_CoreAudioLayouts.h"
+
+1587417651 c:\users\steph\juce6\modules\juce_audio_basics\native\juce_mac_coreaudiolayouts.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_flacaudioformat.cpp
+	<io.h>
+	<unistd.h>
+	<sys/types.h>
+	<inttypes.h>
+	<io.h>
+	<fcntl.h>
+	<unistd.h>
+	<utime.h>
+	<sys/utime.h>
+	<sys/types.h>
+	<utime.h>
+	<stdint.h>
+	<limits.h>
+	<stdio.h>
+	<sys/stat.h>
+	<stdarg.h>
+	<windows.h>
+	<assert.h>
+	<stdlib.h>
+	<stdio.h>
+	"flac/all.h"
+	"flac/libFLAC/bitmath.c"
+	"flac/libFLAC/bitreader.c"
+	"flac/libFLAC/bitwriter.c"
+	"flac/libFLAC/cpu.c"
+	"flac/libFLAC/crc.c"
+	"flac/libFLAC/fixed.c"
+	"flac/libFLAC/float.c"
+	"flac/libFLAC/format.c"
+	"flac/libFLAC/lpc_flac.c"
+	"flac/libFLAC/md5.c"
+	"flac/libFLAC/memory.c"
+	"flac/libFLAC/stream_decoder.c"
+	"flac/libFLAC/stream_encoder.c"
+	"flac/libFLAC/stream_encoder_framing.c"
+	"flac/libFLAC/window_flac.c"
+	<FLAC/all.h>
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\all.h
+	"export.h"
+	"assert.h"
+	"callback.h"
+	"format.h"
+	"metadata.h"
+	"ordinals.h"
+	"stream_decoder.h"
+	"stream_encoder.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\export.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\assert.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\callback.h
+	"ordinals.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\ordinals.h
+	<stdint.h>
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\format.h
+	"export.h"
+	"ordinals.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\metadata.h
+	"export.h"
+	"callback.h"
+	"format.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\stream_decoder.h
+	"export.h"
+	"format.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\stream_encoder.h
+	"export.h"
+	"format.h"
+	"stream_decoder.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\bitmath.c
+	<config.h>
+	"include/private/bitmath.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\bitmath.h
+	"../../../ordinals.h"
+	"../../../assert.h"
+	<limits.h>
+	"../../../compat.h"
+	<intrin.h>
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\compat.h
+	"win_utf8_io.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\win_utf8_io.h
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\bitreader.c
+	<config.h>
+	<stdlib.h>
+	<string.h>
+	"include/private/bitmath.h"
+	"include/private/bitreader.h"
+	"include/private/crc.h"
+	"../assert.h"
+	"../compat.h"
+	"../endswap.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\bitreader.h
+	<stdio.h>
+	"../../../ordinals.h"
+	"cpu.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\cpu.h
+	"../../../ordinals.h"
+	<config.h>
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\crc.h
+	"../../../ordinals.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\endswap.h
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\bitwriter.c
+	<config.h>
+	<stdlib.h>
+	<string.h>
+	"include/private/bitwriter.h"
+	"include/private/crc.h"
+	"../assert.h"
+	"../alloc.h"
+	"../compat.h"
+	"../endswap.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\bitwriter.h
+	<stdio.h>
+	"../../../ordinals.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\alloc.h
+	<config.h>
+	"compat.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\cpu.c
+	<config.h>
+	"include/private/cpu.h"
+	<stdlib.h>
+	<memory.h>
+	<stdio.h>
+	<signal.h>
+	<sys/param.h>
+	<sys/sysctl.h>
+	<machine/cpu.h>
+	<sys/types.h>
+	<sys/sysctl.h>
+	<sys/ucontext.h>
+	<windows.h>
+	<intrin.h>
+	<cpuid.h>
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\crc.c
+	<config.h>
+	"include/private/crc.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\fixed.c
+	<config.h>
+	<math.h>
+	<string.h>
+	"../compat.h"
+	"include/private/bitmath.h"
+	"include/private/fixed.h"
+	"../assert.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\fixed.h
+	<config.h>
+	"cpu.h"
+	"float.h"
+	"../../../format.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\float.h
+	<config.h>
+	"../../../ordinals.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\float.c
+	<config.h>
+	"../assert.h"
+	"../compat.h"
+	"include/private/float.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\format.c
+	<config.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../assert.h"
+	"../format.h"
+	"../compat.h"
+	"include/private/format.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\format.h
+	"../../../format.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\lpc_flac.c
+	<config.h>
+	<math.h>
+	"../assert.h"
+	"../format.h"
+	"../compat.h"
+	"include/private/bitmath.h"
+	"include/private/lpc.h"
+	<stdio.h>
+	<float.h>
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\lpc.h
+	<config.h>
+	"cpu.h"
+	"float.h"
+	"../../../format.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\md5.c
+	<config.h>
+	<stdlib.h>
+	<string.h>
+	"include/private/md5.h"
+	"../alloc.h"
+	"../endswap.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\md5.h
+	"../../../ordinals.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\memory.c
+	<config.h>
+	<stdint.h>
+	"include/private/memory.h"
+	"../assert.h"
+	"../alloc.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\memory.h
+	<config.h>
+	<stdlib.h>
+	"float.h"
+	"../../../ordinals.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\stream_decoder.c
+	<config.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/stat.h>
+	<sys/types.h>
+	"../compat.h"
+	"../assert.h"
+	"../alloc.h"
+	"include/protected/stream_decoder.h"
+	"include/private/bitreader.h"
+	"include/private/bitmath.h"
+	"include/private/cpu.h"
+	"include/private/crc.h"
+	"include/private/fixed.h"
+	"include/private/format.h"
+	"include/private/lpc.h"
+	"include/private/md5.h"
+	"include/private/memory.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\protected\stream_decoder.h
+	"../../../stream_decoder.h"
+	"../private/ogg_decoder_aspect.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\stream_encoder.c
+	<config.h>
+	<limits.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	"../assert.h"
+	"../stream_decoder.h"
+	"include/protected/stream_encoder.h"
+	"include/private/bitwriter.h"
+	"include/private/bitmath.h"
+	"include/private/crc.h"
+	"include/private/cpu.h"
+	"include/private/fixed.h"
+	"include/private/format.h"
+	"include/private/lpc.h"
+	"include/private/md5.h"
+	"include/private/memory.h"
+	"include/private/ogg_helper.h"
+	"include/private/ogg_mapping.h"
+	"include/private/stream_encoder.h"
+	"include/private/stream_encoder_framing.h"
+	"include/private/window.h"
+	"../alloc.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\protected\stream_encoder.h
+	"../../../stream_encoder.h"
+	"../private/ogg_encoder_aspect.h"
+	"../private/float.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\stream_encoder.h
+	<config.h>
+	"cpu.h"
+	"../../../format.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\stream_encoder_framing.h
+	"../../../format.h"
+	"bitwriter.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\include\private\window.h
+	<config.h>
+	"float.h"
+	"../../../format.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\stream_encoder_framing.c
+	<config.h>
+	<stdio.h>
+	<string.h>
+	"include/private/stream_encoder_framing.h"
+	"include/private/crc.h"
+	"../assert.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\flac\libflac\window_flac.c
+	<config.h>
+	<math.h>
+	"../assert.h"
+	"../format.h"
+	"include/private/window.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_mp3audioformat.cpp
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_oggvorbisaudioformat.cpp
+	"oggvorbis/vorbisenc.h"
+	"oggvorbis/codec.h"
+	"oggvorbis/vorbisfile.h"
+	"oggvorbis/bitwise.c"
+	"oggvorbis/framing.c"
+	"oggvorbis/libvorbis-1.3.2/lib/analysis.c"
+	"oggvorbis/libvorbis-1.3.2/lib/bitrate.c"
+	"oggvorbis/libvorbis-1.3.2/lib/block.c"
+	"oggvorbis/libvorbis-1.3.2/lib/codebook.c"
+	"oggvorbis/libvorbis-1.3.2/lib/envelope.c"
+	"oggvorbis/libvorbis-1.3.2/lib/floor0.c"
+	"oggvorbis/libvorbis-1.3.2/lib/floor1.c"
+	"oggvorbis/libvorbis-1.3.2/lib/info.c"
+	"oggvorbis/libvorbis-1.3.2/lib/lpc.c"
+	"oggvorbis/libvorbis-1.3.2/lib/lsp.c"
+	"oggvorbis/libvorbis-1.3.2/lib/mapping0.c"
+	"oggvorbis/libvorbis-1.3.2/lib/mdct.c"
+	"oggvorbis/libvorbis-1.3.2/lib/psy.c"
+	"oggvorbis/libvorbis-1.3.2/lib/registry.c"
+	"oggvorbis/libvorbis-1.3.2/lib/res0.c"
+	"oggvorbis/libvorbis-1.3.2/lib/sharedbook.c"
+	"oggvorbis/libvorbis-1.3.2/lib/smallft.c"
+	"oggvorbis/libvorbis-1.3.2/lib/synthesis.c"
+	"oggvorbis/libvorbis-1.3.2/lib/vorbisenc.c"
+	"oggvorbis/libvorbis-1.3.2/lib/vorbisfile.c"
+	"oggvorbis/libvorbis-1.3.2/lib/window.c"
+	<vorbis/vorbisenc.h>
+	<vorbis/codec.h>
+	<vorbis/vorbisfile.h>
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\vorbisenc.h
+	"codec.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\codec.h
+	"ogg.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\ogg.h
+	"os_types.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\os_types.h
+	<_G_config.h>
+	<sys/types.h>
+	<sys/types.h>
+	<inttypes.h>
+	<sys/types.h>
+	"config_types.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\config_types.h
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\vorbisfile.h
+	<stdio.h>
+	"codec.h"
+
+1587417655 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\bitwise.c
+	<string.h>
+	<stdlib.h>
+	"ogg.h"
+	<stdio.h>
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\framing.c
+	<stdlib.h>
+	<string.h>
+	"ogg.h"
+	<stdio.h>
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\analysis.c
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"registry.h"
+	"scales.h"
+	"os.h"
+	"misc.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\codec_internal.h
+	"envelope.h"
+	"codebook.h"
+	"psy.h"
+	"bitrate.h"
+	"highlevel.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\envelope.h
+	"mdct.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\mdct.h
+	"../../codec.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\codebook.h
+	"../../ogg.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\psy.h
+	"smallft.h"
+	"backends.h"
+	"envelope.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\smallft.h
+	"../../codec.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\backends.h
+	"codec_internal.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\bitrate.h
+	"../../codec.h"
+	"codec_internal.h"
+	"os.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\os.h
+	"config.h"
+	<math.h>
+	"../../os_types.h"
+	"misc.h"
+	<malloc.h>
+	<alloca.h>
+	<memory.h>
+	<emmintrin.h>
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\misc.h
+	"../../codec.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\highlevel.h
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\registry.h
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\scales.h
+	<math.h>
+	"os.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\bitrate.c
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"os.h"
+	"misc.h"
+	"bitrate.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\block.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"window.h"
+	"mdct.h"
+	"lpc.h"
+	"registry.h"
+	"misc.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\window.h
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lpc.h
+	"../../codec.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\codebook.c
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codebook.h"
+	"scales.h"
+	"misc.h"
+	"os.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\envelope.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<math.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"os.h"
+	"scales.h"
+	"envelope.h"
+	"mdct.h"
+	"misc.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\floor0.c
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"registry.h"
+	"lpc.h"
+	"lsp.h"
+	"codebook.h"
+	"scales.h"
+	"misc.h"
+	"os.h"
+	"misc.h"
+	<stdio.h>
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lsp.h
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\floor1.c
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"registry.h"
+	"codebook.h"
+	"misc.h"
+	"scales.h"
+	<stdio.h>
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\info.c
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"codebook.h"
+	"registry.h"
+	"window.h"
+	"psy.h"
+	"misc.h"
+	"os.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lpc.c
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"os.h"
+	"smallft.h"
+	"lpc.h"
+	"scales.h"
+	"misc.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lsp.c
+	<math.h>
+	<string.h>
+	<stdlib.h>
+	"lsp.h"
+	"os.h"
+	"misc.h"
+	"lookup.h"
+	"scales.h"
+	"lookup.c"
+	"lookup.c"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lookup.h
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lookup.c
+	<math.h>
+	"lookup.h"
+	"lookup_data.h"
+	"os.h"
+	"misc.h"
+	<stdio.h>
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lookup_data.h
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\mapping0.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"codebook.h"
+	"window.h"
+	"registry.h"
+	"psy.h"
+	"misc.h"
+	"os.h"
+	"lpc.h"
+	"lsp.h"
+	"envelope.h"
+	"mdct.h"
+	"psy.h"
+	"scales.h"
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\mdct.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../../codec.h"
+	"mdct.h"
+	"os.h"
+	"misc.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\psy.c
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"../../codec.h"
+	"codec_internal.h"
+	"masking.h"
+	"psy.h"
+	"os.h"
+	"lpc.h"
+	"smallft.h"
+	"scales.h"
+	"misc.h"
+	<stdio.h>
+
+1587417656 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\masking.h
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\registry.c
+	"../../codec.h"
+	"codec_internal.h"
+	"registry.h"
+	"misc.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\res0.c
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"registry.h"
+	"codebook.h"
+	"misc.h"
+	"os.h"
+	<stdio.h>
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\sharedbook.c
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"../../ogg.h"
+	"os.h"
+	"misc.h"
+	"../../codec.h"
+	"codebook.h"
+	"scales.h"
+	<stdio.h>
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\smallft.c
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"smallft.h"
+	"os.h"
+	"misc.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\synthesis.c
+	<stdio.h>
+	"../../ogg.h"
+	"../../codec.h"
+	"codec_internal.h"
+	"registry.h"
+	"misc.h"
+	"os.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\vorbisenc.c
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../../codec.h"
+	"../../vorbisenc.h"
+	"codec_internal.h"
+	"os.h"
+	"misc.h"
+	"modes/setup_44.h"
+	"modes/setup_44u.h"
+	"modes/setup_44p51.h"
+	"modes/setup_32.h"
+	"modes/setup_8.h"
+	"modes/setup_11.h"
+	"modes/setup_16.h"
+	"modes/setup_22.h"
+	"modes/setup_X.h"
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_44.h
+	"floor_all.h"
+	"residue_44.h"
+	"psych_44.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\floor_all.h
+	"../../../codec.h"
+	"../backends.h"
+	"../books/floor/floor_books.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\floor\floor_books.h
+	"../../codebook.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_44.h
+	"../../../codec.h"
+	"../backends.h"
+	"../books/coupled/res_books_stereo.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\coupled\res_books_stereo.h
+	"../../codebook.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\psych_44.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_44u.h
+	"residue_44u.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_44u.h
+	"../../../codec.h"
+	"../backends.h"
+	"../books/uncoupled/res_books_uncoupled.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\uncoupled\res_books_uncoupled.h
+	"../../codebook.h"
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_44p51.h
+	"residue_44p51.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_44p51.h
+	"../../../codec.h"
+	"../backends.h"
+	"../books/coupled/res_books_51.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\coupled\res_books_51.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_32.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_8.h
+	"psych_8.h"
+	"residue_8.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\psych_8.h
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_8.h
+	"../../../codec.h"
+	"../backends.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_11.h
+	"psych_11.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\psych_11.h
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_16.h
+	"psych_16.h"
+	"residue_16.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\psych_16.h
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_16.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_22.h
+
+1587417658 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_x.h
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\vorbisfile.c
+	<stdlib.h>
+	<stdio.h>
+	<errno.h>
+	<string.h>
+	<math.h>
+	"../../codec.h"
+	"../../vorbisfile.h"
+	"os.h"
+	"misc.h"
+
+1587417657 c:\users\steph\juce6\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\window.c
+	<stdlib.h>
+	<math.h>
+	"os.h"
+	"misc.h"
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_wavaudioformat.cpp
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_lameencoderaudioformat.cpp
+
+1587417654 c:\users\steph\juce6\modules\juce_audio_formats\codecs\juce_windowsmediaaudioformat.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_audio_processors.cpp
+	"AppConfig.h"
+	<juce_audio_processors/juce_audio_processors.cpp>
+
+1587417662 c:\users\steph\juce6\modules\juce_audio_processors\juce_audio_processors.cpp
+	"juce_audio_processors.h"
+	<juce_gui_extra/juce_gui_extra.h>
+	<Carbon/Carbon.h>
+	"../juce_gui_extra/native/juce_mac_CarbonViewWrapperComponent.h"
+	<X11/Xlib.h>
+	<X11/Xutil.h>
+	<AudioUnit/AudioUnit.h>
+	"format/juce_AudioPluginFormat.cpp"
+	"format/juce_AudioPluginFormatManager.cpp"
+	"format_types/juce_LegacyAudioParameter.cpp"
+	"processors/juce_AudioProcessor.cpp"
+	"processors/juce_AudioPluginInstance.cpp"
+	"processors/juce_AudioProcessorEditor.cpp"
+	"processors/juce_AudioProcessorGraph.cpp"
+	"processors/juce_GenericAudioProcessorEditor.cpp"
+	"processors/juce_PluginDescription.cpp"
+	"format_types/juce_LADSPAPluginFormat.cpp"
+	"format_types/juce_VSTPluginFormat.cpp"
+	"format_types/juce_VST3PluginFormat.cpp"
+	"format_types/juce_AudioUnitPluginFormat.mm"
+	"scanning/juce_KnownPluginList.cpp"
+	"scanning/juce_PluginDirectoryScanner.cpp"
+	"scanning/juce_PluginListComponent.cpp"
+	"processors/juce_AudioProcessorParameterGroup.cpp"
+	"utilities/juce_AudioProcessorParameterWithID.cpp"
+	"utilities/juce_RangedAudioParameter.cpp"
+	"utilities/juce_AudioParameterFloat.cpp"
+	"utilities/juce_AudioParameterInt.cpp"
+	"utilities/juce_AudioParameterBool.cpp"
+	"utilities/juce_AudioParameterChoice.cpp"
+	"utilities/juce_AudioProcessorValueTreeState.cpp"
+
+1587417662 c:\users\steph\juce6\modules\juce_audio_processors\juce_audio_processors.h
+	<juce_gui_basics/juce_gui_basics.h>
+	<juce_audio_basics/juce_audio_basics.h>
+	"processors/juce_AudioProcessorEditor.h"
+	"processors/juce_AudioProcessorListener.h"
+	"processors/juce_AudioProcessorParameter.h"
+	"processors/juce_AudioProcessorParameterGroup.h"
+	"processors/juce_AudioProcessor.h"
+	"processors/juce_PluginDescription.h"
+	"processors/juce_AudioPluginInstance.h"
+	"processors/juce_AudioProcessorGraph.h"
+	"processors/juce_GenericAudioProcessorEditor.h"
+	"format/juce_AudioPluginFormat.h"
+	"format/juce_AudioPluginFormatManager.h"
+	"scanning/juce_KnownPluginList.h"
+	"format_types/juce_AudioUnitPluginFormat.h"
+	"format_types/juce_LADSPAPluginFormat.h"
+	"format_types/juce_VSTMidiEventList.h"
+	"format_types/juce_VSTPluginFormat.h"
+	"format_types/juce_VST3PluginFormat.h"
+	"scanning/juce_PluginDirectoryScanner.h"
+	"scanning/juce_PluginListComponent.h"
+	"utilities/juce_AudioProcessorParameterWithID.h"
+	"utilities/juce_RangedAudioParameter.h"
+	"utilities/juce_AudioParameterFloat.h"
+	"utilities/juce_AudioParameterInt.h"
+	"utilities/juce_AudioParameterBool.h"
+	"utilities/juce_AudioParameterChoice.h"
+	"utilities/juce_AudioProcessorValueTreeState.h"
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\juce_gui_basics.h
+	<juce_graphics/juce_graphics.h>
+	<juce_data_structures/juce_data_structures.h>
+	"mouse/juce_MouseCursor.h"
+	"mouse/juce_MouseListener.h"
+	"keyboard/juce_ModifierKeys.h"
+	"mouse/juce_MouseInputSource.h"
+	"mouse/juce_MouseEvent.h"
+	"keyboard/juce_KeyPress.h"
+	"keyboard/juce_KeyListener.h"
+	"keyboard/juce_KeyboardFocusTraverser.h"
+	"components/juce_ModalComponentManager.h"
+	"components/juce_ComponentListener.h"
+	"components/juce_CachedComponentImage.h"
+	"components/juce_Component.h"
+	"layout/juce_ComponentAnimator.h"
+	"desktop/juce_Desktop.h"
+	"desktop/juce_Displays.h"
+	"layout/juce_ComponentBoundsConstrainer.h"
+	"mouse/juce_ComponentDragger.h"
+	"mouse/juce_DragAndDropTarget.h"
+	"mouse/juce_DragAndDropContainer.h"
+	"mouse/juce_FileDragAndDropTarget.h"
+	"mouse/juce_SelectedItemSet.h"
+	"mouse/juce_MouseInactivityDetector.h"
+	"mouse/juce_TextDragAndDropTarget.h"
+	"mouse/juce_TooltipClient.h"
+	"keyboard/juce_CaretComponent.h"
+	"keyboard/juce_SystemClipboard.h"
+	"keyboard/juce_TextEditorKeyMapper.h"
+	"keyboard/juce_TextInputTarget.h"
+	"commands/juce_ApplicationCommandID.h"
+	"commands/juce_ApplicationCommandInfo.h"
+	"commands/juce_ApplicationCommandTarget.h"
+	"commands/juce_ApplicationCommandManager.h"
+	"commands/juce_KeyPressMappingSet.h"
+	"buttons/juce_Button.h"
+	"buttons/juce_ArrowButton.h"
+	"buttons/juce_DrawableButton.h"
+	"buttons/juce_HyperlinkButton.h"
+	"buttons/juce_ImageButton.h"
+	"buttons/juce_ShapeButton.h"
+	"buttons/juce_TextButton.h"
+	"buttons/juce_ToggleButton.h"
+	"layout/juce_AnimatedPosition.h"
+	"layout/juce_AnimatedPositionBehaviours.h"
+	"layout/juce_ComponentBuilder.h"
+	"layout/juce_ComponentMovementWatcher.h"
+	"layout/juce_ConcertinaPanel.h"
+	"layout/juce_GroupComponent.h"
+	"layout/juce_ResizableBorderComponent.h"
+	"layout/juce_ResizableCornerComponent.h"
+	"layout/juce_ResizableEdgeComponent.h"
+	"layout/juce_ScrollBar.h"
+	"layout/juce_StretchableLayoutManager.h"
+	"layout/juce_StretchableLayoutResizerBar.h"
+	"layout/juce_StretchableObjectResizer.h"
+	"layout/juce_TabbedButtonBar.h"
+	"layout/juce_TabbedComponent.h"
+	"layout/juce_Viewport.h"
+	"menus/juce_PopupMenu.h"
+	"menus/juce_MenuBarModel.h"
+	"menus/juce_MenuBarComponent.h"
+	"positioning/juce_RelativeCoordinate.h"
+	"positioning/juce_MarkerList.h"
+	"positioning/juce_RelativePoint.h"
+	"positioning/juce_RelativeRectangle.h"
+	"positioning/juce_RelativeCoordinatePositioner.h"
+	"positioning/juce_RelativeParallelogram.h"
+	"positioning/juce_RelativePointPath.h"
+	"drawables/juce_Drawable.h"
+	"drawables/juce_DrawableShape.h"
+	"drawables/juce_DrawableComposite.h"
+	"drawables/juce_DrawableImage.h"
+	"drawables/juce_DrawablePath.h"
+	"drawables/juce_DrawableRectangle.h"
+	"drawables/juce_DrawableText.h"
+	"widgets/juce_TextEditor.h"
+	"widgets/juce_Label.h"
+	"widgets/juce_ComboBox.h"
+	"widgets/juce_ImageComponent.h"
+	"widgets/juce_ListBox.h"
+	"widgets/juce_ProgressBar.h"
+	"widgets/juce_Slider.h"
+	"widgets/juce_TableHeaderComponent.h"
+	"widgets/juce_TableListBox.h"
+	"widgets/juce_Toolbar.h"
+	"widgets/juce_ToolbarItemComponent.h"
+	"widgets/juce_ToolbarItemFactory.h"
+	"widgets/juce_ToolbarItemPalette.h"
+	"menus/juce_BurgerMenuComponent.h"
+	"buttons/juce_ToolbarButton.h"
+	"misc/juce_DropShadower.h"
+	"misc/juce_JUCESplashScreen.h"
+	"widgets/juce_TreeView.h"
+	"windows/juce_TopLevelWindow.h"
+	"windows/juce_AlertWindow.h"
+	"windows/juce_CallOutBox.h"
+	"windows/juce_ComponentPeer.h"
+	"windows/juce_ResizableWindow.h"
+	"windows/juce_DocumentWindow.h"
+	"windows/juce_DialogWindow.h"
+	"windows/juce_NativeMessageBox.h"
+	"windows/juce_ThreadWithProgressWindow.h"
+	"windows/juce_TooltipWindow.h"
+	"layout/juce_MultiDocumentPanel.h"
+	"layout/juce_SidePanel.h"
+	"filebrowser/juce_FileBrowserListener.h"
+	"filebrowser/juce_DirectoryContentsList.h"
+	"filebrowser/juce_DirectoryContentsDisplayComponent.h"
+	"filebrowser/juce_FileBrowserComponent.h"
+	"filebrowser/juce_FileChooser.h"
+	"filebrowser/juce_FileChooserDialogBox.h"
+	"filebrowser/juce_FileListComponent.h"
+	"filebrowser/juce_FilenameComponent.h"
+	"filebrowser/juce_FilePreviewComponent.h"
+	"filebrowser/juce_FileSearchPathListComponent.h"
+	"filebrowser/juce_FileTreeComponent.h"
+	"filebrowser/juce_ImagePreviewComponent.h"
+	"filebrowser/juce_ContentSharer.h"
+	"properties/juce_PropertyComponent.h"
+	"properties/juce_BooleanPropertyComponent.h"
+	"properties/juce_ButtonPropertyComponent.h"
+	"properties/juce_ChoicePropertyComponent.h"
+	"properties/juce_PropertyPanel.h"
+	"properties/juce_SliderPropertyComponent.h"
+	"properties/juce_TextPropertyComponent.h"
+	"properties/juce_MultiChoicePropertyComponent.h"
+	"application/juce_Application.h"
+	"misc/juce_BubbleComponent.h"
+	"lookandfeel/juce_LookAndFeel.h"
+	"lookandfeel/juce_LookAndFeel_V2.h"
+	"lookandfeel/juce_LookAndFeel_V1.h"
+	"lookandfeel/juce_LookAndFeel_V3.h"
+	"lookandfeel/juce_LookAndFeel_V4.h"
+	"mouse/juce_LassoComponent.h"
+	"native/juce_linux_X11.h"
+	"layout/juce_FlexItem.h"
+	"layout/juce_FlexBox.h"
+	"layout/juce_GridItem.h"
+	"layout/juce_Grid.h"
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\juce_data_structures.h
+	<juce_events/juce_events.h>
+	"undomanager/juce_UndoableAction.h"
+	"undomanager/juce_UndoManager.h"
+	"values/juce_Value.h"
+	"values/juce_ValueTree.h"
+	"values/juce_ValueTreeSynchroniser.h"
+	"values/juce_CachedValue.h"
+	"values/juce_ValueWithDefault.h"
+	"app_properties/juce_PropertiesFile.h"
+	"app_properties/juce_ApplicationProperties.h"
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\undomanager\juce_undoableaction.h
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\undomanager\juce_undomanager.h
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_value.h
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_valuetree.h
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_valuetreesynchroniser.h
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_cachedvalue.h
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_valuewithdefault.h
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\app_properties\juce_propertiesfile.h
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\app_properties\juce_applicationproperties.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mousecursor.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mouselistener.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_modifierkeys.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mouseinputsource.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mouseevent.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_keypress.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_keylistener.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_keyboardfocustraverser.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\components\juce_modalcomponentmanager.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\components\juce_componentlistener.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\components\juce_cachedcomponentimage.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\components\juce_component.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_componentanimator.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\desktop\juce_desktop.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\desktop\juce_displays.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_componentboundsconstrainer.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_componentdragger.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_draganddroptarget.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_draganddropcontainer.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_filedraganddroptarget.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_selecteditemset.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mouseinactivitydetector.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_textdraganddroptarget.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_tooltipclient.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_caretcomponent.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_systemclipboard.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_texteditorkeymapper.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_textinputtarget.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\commands\juce_applicationcommandid.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\commands\juce_applicationcommandinfo.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\commands\juce_applicationcommandtarget.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\commands\juce_applicationcommandmanager.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\commands\juce_keypressmappingset.h
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_button.h
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_arrowbutton.h
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_drawablebutton.h
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_hyperlinkbutton.h
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_imagebutton.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_shapebutton.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_textbutton.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_togglebutton.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_animatedposition.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_animatedpositionbehaviours.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_componentbuilder.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_componentmovementwatcher.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_concertinapanel.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_groupcomponent.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_resizablebordercomponent.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_resizablecornercomponent.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_resizableedgecomponent.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_scrollbar.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_stretchablelayoutmanager.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_stretchablelayoutresizerbar.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_stretchableobjectresizer.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_tabbedbuttonbar.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_tabbedcomponent.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_viewport.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\menus\juce_popupmenu.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\menus\juce_menubarmodel.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\menus\juce_menubarcomponent.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativecoordinate.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_markerlist.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativepoint.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativerectangle.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativecoordinatepositioner.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativeparallelogram.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativepointpath.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawable.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawableshape.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawablecomposite.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawableimage.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawablepath.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawablerectangle.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawabletext.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_texteditor.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_label.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_combobox.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_imagecomponent.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_listbox.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_progressbar.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_slider.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_tableheadercomponent.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_tablelistbox.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_toolbar.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_toolbaritemcomponent.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_toolbaritemfactory.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_toolbaritempalette.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\menus\juce_burgermenucomponent.h
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_toolbarbutton.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\misc\juce_dropshadower.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\misc\juce_jucesplashscreen.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_treeview.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_toplevelwindow.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_alertwindow.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_calloutbox.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_componentpeer.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_resizablewindow.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_documentwindow.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_dialogwindow.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_nativemessagebox.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_threadwithprogresswindow.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_tooltipwindow.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_multidocumentpanel.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_sidepanel.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filebrowserlistener.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_directorycontentslist.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_directorycontentsdisplaycomponent.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filebrowsercomponent.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filechooser.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filechooserdialogbox.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filelistcomponent.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filenamecomponent.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filepreviewcomponent.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filesearchpathlistcomponent.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filetreecomponent.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_imagepreviewcomponent.h
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_contentsharer.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_propertycomponent.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_booleanpropertycomponent.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_buttonpropertycomponent.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_choicepropertycomponent.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_propertypanel.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_sliderpropertycomponent.h
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_textpropertycomponent.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_multichoicepropertycomponent.h
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\application\juce_application.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\misc\juce_bubblecomponent.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel_v2.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel_v1.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel_v3.h
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel_v4.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_lassocomponent.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_linux_x11.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_flexitem.h
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_flexbox.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_griditem.h
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_grid.h
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessoreditor.h
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessorlistener.h
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessorparameter.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessorparametergroup.h
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessor.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_plugindescription.h
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioplugininstance.h
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessorgraph.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_genericaudioprocessoreditor.h
+
+1587417662 c:\users\steph\juce6\modules\juce_audio_processors\format\juce_audiopluginformat.h
+
+1587417662 c:\users\steph\juce6\modules\juce_audio_processors\format\juce_audiopluginformatmanager.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\scanning\juce_knownpluginlist.h
+
+1587417662 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_audiounitpluginformat.h
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_ladspapluginformat.h
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_vstmidieventlist.h
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_vstpluginformat.h
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_vst3pluginformat.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\scanning\juce_plugindirectoryscanner.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\scanning\juce_pluginlistcomponent.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioprocessorparameterwithid.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_rangedaudioparameter.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioparameterfloat.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioparameterint.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioparameterbool.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioparameterchoice.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioprocessorvaluetreestate.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\juce_gui_extra.h
+	<juce_gui_basics/juce_gui_basics.h>
+	"documents/juce_FileBasedDocument.h"
+	"code_editor/juce_CodeDocument.h"
+	"code_editor/juce_CodeEditorComponent.h"
+	"code_editor/juce_CodeTokeniser.h"
+	"code_editor/juce_CPlusPlusCodeTokeniser.h"
+	"code_editor/juce_CPlusPlusCodeTokeniserFunctions.h"
+	"code_editor/juce_XMLCodeTokeniser.h"
+	"code_editor/juce_LuaCodeTokeniser.h"
+	"embedding/juce_ActiveXControlComponent.h"
+	"embedding/juce_AndroidViewComponent.h"
+	"embedding/juce_NSViewComponent.h"
+	"embedding/juce_UIViewComponent.h"
+	"embedding/juce_XEmbedComponent.h"
+	"embedding/juce_ScopedDPIAwarenessDisabler.h"
+	"misc/juce_AppleRemote.h"
+	"misc/juce_BubbleMessageComponent.h"
+	"misc/juce_ColourSelector.h"
+	"misc/juce_KeyMappingEditorComponent.h"
+	"misc/juce_PreferencesPanel.h"
+	"misc/juce_PushNotifications.h"
+	"misc/juce_RecentlyOpenedFilesList.h"
+	"misc/juce_SplashScreen.h"
+	"misc/juce_SystemTrayIconComponent.h"
+	"misc/juce_WebBrowserComponent.h"
+	"misc/juce_LiveConstantEditor.h"
+	"misc/juce_AnimatedAppComponent.h"
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\documents\juce_filebaseddocument.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_codedocument.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_codeeditorcomponent.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_codetokeniser.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_cpluspluscodetokeniser.h
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_cpluspluscodetokeniserfunctions.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_xmlcodetokeniser.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_luacodetokeniser.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\embedding\juce_activexcontrolcomponent.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\embedding\juce_androidviewcomponent.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\embedding\juce_nsviewcomponent.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\embedding\juce_uiviewcomponent.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\embedding\juce_xembedcomponent.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\embedding\juce_scopeddpiawarenessdisabler.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_appleremote.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_bubblemessagecomponent.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_colourselector.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_keymappingeditorcomponent.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_preferencespanel.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_pushnotifications.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_recentlyopenedfileslist.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_splashscreen.h
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_systemtrayiconcomponent.h
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_webbrowsercomponent.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_liveconstanteditor.h
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_animatedappcomponent.h
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_mac_carbonviewwrappercomponent.h
+
+1587417662 c:\users\steph\juce6\modules\juce_audio_processors\format\juce_audiopluginformat.cpp
+
+1587417662 c:\users\steph\juce6\modules\juce_audio_processors\format\juce_audiopluginformatmanager.cpp
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_legacyaudioparameter.cpp
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessor.cpp
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioplugininstance.cpp
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessoreditor.cpp
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessorgraph.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_genericaudioprocessoreditor.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_plugindescription.cpp
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_ladspapluginformat.cpp
+	<ladspa.h>
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_vstpluginformat.cpp
+	<pluginterfaces/vst2.x/aeffect.h>
+	<pluginterfaces/vst2.x/aeffectx.h>
+	"juce_VSTCommon.h"
+	"juce_VSTMidiEventList.h"
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_vstcommon.h
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_vst3pluginformat.cpp
+	"juce_VST3Headers.h"
+	"juce_VST3Common.h"
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_vst3headers.h
+	<base/source/fstring.h>
+	<pluginterfaces/base/conststringtable.h>
+	<pluginterfaces/base/funknown.h>
+	<pluginterfaces/base/ipluginbase.h>
+	<pluginterfaces/base/ustring.h>
+	<pluginterfaces/gui/iplugview.h>
+	<pluginterfaces/gui/iplugviewcontentscalesupport.h>
+	<pluginterfaces/vst/ivstattributes.h>
+	<pluginterfaces/vst/ivstaudioprocessor.h>
+	<pluginterfaces/vst/ivstcomponent.h>
+	<pluginterfaces/vst/ivstcontextmenu.h>
+	<pluginterfaces/vst/ivsteditcontroller.h>
+	<pluginterfaces/vst/ivstevents.h>
+	<pluginterfaces/vst/ivsthostapplication.h>
+	<pluginterfaces/vst/ivstmessage.h>
+	<pluginterfaces/vst/ivstmidicontrollers.h>
+	<pluginterfaces/vst/ivstparameterchanges.h>
+	<pluginterfaces/vst/ivstplugview.h>
+	<pluginterfaces/vst/ivstprocesscontext.h>
+	<pluginterfaces/vst/vsttypes.h>
+	<pluginterfaces/vst/ivstunits.h>
+	<pluginterfaces/vst/ivstmidicontrollers.h>
+	<pluginterfaces/vst/ivstchannelcontextinfo.h>
+	<public.sdk/source/common/memorystream.h>
+	<public.sdk/source/vst/vsteditcontroller.h>
+	<public.sdk/source/vst/vstpresetfile.h>
+	<pluginterfaces/vst/vsttypes.h>
+	<base/source/baseiids.cpp>
+	<base/source/fbuffer.cpp>
+	<base/source/fdebug.cpp>
+	<base/source/fobject.cpp>
+	<base/source/fstreamer.cpp>
+	<base/source/fstring.cpp>
+	<base/thread/source/flock.cpp>
+	<pluginterfaces/base/coreiids.cpp>
+	<base/source/flock.cpp>
+	<base/source/updatehandler.cpp>
+	<pluginterfaces/base/conststringtable.cpp>
+	<pluginterfaces/base/funknown.cpp>
+	<pluginterfaces/base/ipluginbase.h>
+	<pluginterfaces/base/ustring.cpp>
+	<pluginterfaces/gui/iplugview.h>
+	<pluginterfaces/gui/iplugviewcontentscalesupport.h>
+	<pluginterfaces/vst/ivstmidicontrollers.h>
+	<pluginterfaces/vst/ivstchannelcontextinfo.h>
+	<public.sdk/source/common/memorystream.cpp>
+	<public.sdk/source/common/pluginview.cpp>
+	<public.sdk/source/vst/vsteditcontroller.cpp>
+	<public.sdk/source/vst/vstbus.cpp>
+	<public.sdk/source/vst/vstinitiids.cpp>
+	<public.sdk/source/vst/vstcomponent.cpp>
+	<public.sdk/source/vst/vstcomponentbase.cpp>
+	<public.sdk/source/vst/vstparameters.cpp>
+	<public.sdk/source/vst/vstpresetfile.cpp>
+	<public.sdk/source/vst/hosting/hostclasses.cpp>
+	<public.sdk/source/vst/hosting/pluginterfacesupport.cpp>
+	<windows.h>
+
+1587417663 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_vst3common.h
+
+1587417662 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_audiounitpluginformat.mm
+	<AudioUnit/AUCocoaUIView.h>
+	<CoreAudioKit/AUGenericView.h>
+	<AudioToolbox/AudioUnitUtilities.h>
+	<CoreMIDI/MIDIServices.h>
+	<AudioUnit/AudioUnitCarbonView.h>
+	<CoreAudioKit/AUViewController.h>
+	"../../juce_audio_basics/native/juce_mac_CoreAudioLayouts.h"
+	"../../juce_audio_devices/native/juce_MidiDataConcatenator.h"
+	"juce_AU_Shared.h"
+
+1587417662 c:\users\steph\juce6\modules\juce_audio_processors\format_types\juce_au_shared.h
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\scanning\juce_knownpluginlist.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\scanning\juce_plugindirectoryscanner.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\scanning\juce_pluginlistcomponent.cpp
+
+1587417668 c:\users\steph\juce6\modules\juce_audio_processors\processors\juce_audioprocessorparametergroup.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioprocessorparameterwithid.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_rangedaudioparameter.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioparameterfloat.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioparameterint.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioparameterbool.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioparameterchoice.cpp
+
+1587417669 c:\users\steph\juce6\modules\juce_audio_processors\utilities\juce_audioprocessorvaluetreestate.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_audio_utils.cpp
+	"AppConfig.h"
+	<juce_audio_utils/juce_audio_utils.cpp>
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\juce_audio_utils.cpp
+	"juce_audio_utils.h"
+	<juce_gui_extra/juce_gui_extra.h>
+	<imapi.h>
+	<imapierror.h>
+	"gui/juce_AudioDeviceSelectorComponent.cpp"
+	"gui/juce_AudioThumbnail.cpp"
+	"gui/juce_AudioThumbnailCache.cpp"
+	"gui/juce_AudioVisualiserComponent.cpp"
+	"gui/juce_MidiKeyboardComponent.cpp"
+	"gui/juce_AudioAppComponent.cpp"
+	"players/juce_SoundPlayer.cpp"
+	"players/juce_AudioProcessorPlayer.cpp"
+	"audio_cd/juce_AudioCDReader.cpp"
+	"native/juce_mac_BluetoothMidiDevicePairingDialogue.mm"
+	"native/juce_mac_AudioCDReader.mm"
+	"native/juce_mac_AudioCDBurner.mm"
+	"native/juce_ios_BluetoothMidiDevicePairingDialogue.mm"
+	"native/juce_android_BluetoothMidiDevicePairingDialogue.cpp"
+	"native/juce_linux_AudioCDReader.cpp"
+	"native/juce_linux_BluetoothMidiDevicePairingDialogue.cpp"
+	"native/juce_win_BluetoothMidiDevicePairingDialogue.cpp"
+	"native/juce_win32_AudioCDReader.cpp"
+	"native/juce_win32_AudioCDBurner.cpp"
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\juce_audio_utils.h
+	<juce_gui_basics/juce_gui_basics.h>
+	<juce_audio_devices/juce_audio_devices.h>
+	<juce_audio_formats/juce_audio_formats.h>
+	<juce_audio_processors/juce_audio_processors.h>
+	"gui/juce_AudioDeviceSelectorComponent.h"
+	"gui/juce_AudioThumbnailBase.h"
+	"gui/juce_AudioThumbnail.h"
+	"gui/juce_AudioThumbnailCache.h"
+	"gui/juce_AudioVisualiserComponent.h"
+	"gui/juce_MidiKeyboardComponent.h"
+	"gui/juce_AudioAppComponent.h"
+	"gui/juce_BluetoothMidiDevicePairingDialogue.h"
+	"players/juce_SoundPlayer.h"
+	"players/juce_AudioProcessorPlayer.h"
+	"audio_cd/juce_AudioCDBurner.h"
+	"audio_cd/juce_AudioCDReader.h"
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audiodeviceselectorcomponent.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audiothumbnailbase.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audiothumbnail.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audiothumbnailcache.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audiovisualisercomponent.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_midikeyboardcomponent.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audioappcomponent.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_bluetoothmididevicepairingdialogue.h
+
+1587417671 c:\users\steph\juce6\modules\juce_audio_utils\players\juce_soundplayer.h
+
+1587417671 c:\users\steph\juce6\modules\juce_audio_utils\players\juce_audioprocessorplayer.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\audio_cd\juce_audiocdburner.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\audio_cd\juce_audiocdreader.h
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audiodeviceselectorcomponent.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audiothumbnail.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audiothumbnailcache.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audiovisualisercomponent.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_midikeyboardcomponent.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\gui\juce_audioappcomponent.cpp
+
+1587417671 c:\users\steph\juce6\modules\juce_audio_utils\players\juce_soundplayer.cpp
+
+1587417671 c:\users\steph\juce6\modules\juce_audio_utils\players\juce_audioprocessorplayer.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\audio_cd\juce_audiocdreader.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_mac_bluetoothmididevicepairingdialogue.mm
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_mac_audiocdreader.mm
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_mac_audiocdburner.mm
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_ios_bluetoothmididevicepairingdialogue.mm
+	<CoreAudioKit/CoreAudioKit.h>
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_android_bluetoothmididevicepairingdialogue.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_linux_audiocdreader.cpp
+
+1587417670 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_linux_bluetoothmididevicepairingdialogue.cpp
+
+1587417671 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_win_bluetoothmididevicepairingdialogue.cpp
+
+1587417671 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_win32_audiocdreader.cpp
+
+1587417671 c:\users\steph\juce6\modules\juce_audio_utils\native\juce_win32_audiocdburner.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_core.cpp
+	"AppConfig.h"
+	<juce_core/juce_core.cpp>
+
+1587417675 c:\users\steph\juce6\modules\juce_core\juce_core.cpp
+	"juce_core.h"
+	<locale>
+	<cctype>
+	<cstdarg>
+	<sys/timeb.h>
+	<cwctype>
+	<ctime>
+	<ws2spi.h>
+	<cstdio>
+	<locale.h>
+	<Dbghelp.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/errno.h>
+	<unistd.h>
+	<netinet/in.h>
+	<stdio.h>
+	<langinfo.h>
+	<ifaddrs.h>
+	<sys/resource.h>
+	<curl/curl.h>
+	<pwd.h>
+	<fcntl.h>
+	<netdb.h>
+	<arpa/inet.h>
+	<netinet/tcp.h>
+	<sys/time.h>
+	<net/if.h>
+	<sys/ioctl.h>
+	<execinfo.h>
+	<xlocale.h>
+	<mach/mach.h>
+	<signal.h>
+	<ifaddrs.h>
+	<android/log.h>
+	"containers/juce_AbstractFifo.cpp"
+	"containers/juce_ArrayBase.cpp"
+	"containers/juce_NamedValueSet.cpp"
+	"containers/juce_OwnedArray.cpp"
+	"containers/juce_PropertySet.cpp"
+	"containers/juce_ReferenceCountedArray.cpp"
+	"containers/juce_SparseSet.cpp"
+	"files/juce_DirectoryIterator.cpp"
+	"files/juce_File.cpp"
+	"files/juce_FileInputStream.cpp"
+	"files/juce_FileOutputStream.cpp"
+	"files/juce_FileSearchPath.cpp"
+	"files/juce_TemporaryFile.cpp"
+	"logging/juce_FileLogger.cpp"
+	"logging/juce_Logger.cpp"
+	"maths/juce_BigInteger.cpp"
+	"maths/juce_Expression.cpp"
+	"maths/juce_Random.cpp"
+	"memory/juce_MemoryBlock.cpp"
+	"misc/juce_RuntimePermissions.cpp"
+	"misc/juce_Result.cpp"
+	"misc/juce_Uuid.cpp"
+	"misc/juce_ConsoleApplication.cpp"
+	"network/juce_MACAddress.cpp"
+	"network/juce_NamedPipe.cpp"
+	"network/juce_Socket.cpp"
+	"network/juce_IPAddress.cpp"
+	"streams/juce_BufferedInputStream.cpp"
+	"streams/juce_FileInputSource.cpp"
+	"streams/juce_InputStream.cpp"
+	"streams/juce_MemoryInputStream.cpp"
+	"streams/juce_MemoryOutputStream.cpp"
+	"streams/juce_SubregionStream.cpp"
+	"system/juce_SystemStats.cpp"
+	"text/juce_CharacterFunctions.cpp"
+	"text/juce_Identifier.cpp"
+	"text/juce_LocalisedStrings.cpp"
+	"text/juce_String.cpp"
+	"streams/juce_OutputStream.cpp"
+	"text/juce_StringArray.cpp"
+	"text/juce_StringPairArray.cpp"
+	"text/juce_StringPool.cpp"
+	"text/juce_TextDiff.cpp"
+	"text/juce_Base64.cpp"
+	"threads/juce_ReadWriteLock.cpp"
+	"threads/juce_Thread.cpp"
+	"threads/juce_ThreadPool.cpp"
+	"threads/juce_TimeSliceThread.cpp"
+	"time/juce_PerformanceCounter.cpp"
+	"time/juce_RelativeTime.cpp"
+	"time/juce_Time.cpp"
+	"unit_tests/juce_UnitTest.cpp"
+	"containers/juce_Variant.cpp"
+	"javascript/juce_JSON.cpp"
+	"javascript/juce_Javascript.cpp"
+	"containers/juce_DynamicObject.cpp"
+	"xml/juce_XmlDocument.cpp"
+	"xml/juce_XmlElement.cpp"
+	"zip/juce_GZIPDecompressorInputStream.cpp"
+	"zip/juce_GZIPCompressorOutputStream.cpp"
+	"zip/juce_ZipFile.cpp"
+	"files/juce_FileFilter.cpp"
+	"files/juce_WildcardFileFilter.cpp"
+	"native/juce_posix_SharedCode.h"
+	"native/juce_posix_NamedPipe.cpp"
+	"native/juce_posix_IPAddress.h"
+	"native/juce_mac_Files.mm"
+	"native/juce_mac_Network.mm"
+	"native/juce_mac_Strings.mm"
+	"native/juce_mac_SystemStats.mm"
+	"native/juce_mac_Threads.mm"
+	"native/juce_win32_Files.cpp"
+	"native/juce_win32_Network.cpp"
+	"native/juce_win32_Registry.cpp"
+	"native/juce_win32_SystemStats.cpp"
+	"native/juce_win32_Threads.cpp"
+	"native/juce_linux_CommonFile.cpp"
+	"native/juce_linux_Files.cpp"
+	"native/juce_linux_Network.cpp"
+	"native/juce_curl_Network.cpp"
+	"native/juce_linux_SystemStats.cpp"
+	"native/juce_linux_Threads.cpp"
+	"native/juce_linux_CommonFile.cpp"
+	"native/juce_android_JNIHelpers.cpp"
+	"native/juce_android_Files.cpp"
+	"native/juce_android_Misc.cpp"
+	"native/juce_android_Network.cpp"
+	"native/juce_android_SystemStats.cpp"
+	"native/juce_android_Threads.cpp"
+	"native/juce_android_RuntimePermissions.cpp"
+	"threads/juce_ChildProcess.cpp"
+	"threads/juce_HighResolutionTimer.cpp"
+	"threads/juce_WaitableEvent.cpp"
+	"network/juce_URL.cpp"
+	"network/juce_WebInputStream.cpp"
+	"streams/juce_URLInputSource.cpp"
+	"containers/juce_HashMap_test.cpp"
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_abstractfifo.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_arraybase.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_namedvalueset.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_ownedarray.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_propertyset.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_referencecountedarray.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_sparseset.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\files\juce_directoryiterator.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_file.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_fileinputstream.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_fileoutputstream.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_filesearchpath.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_temporaryfile.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\logging\juce_filelogger.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\logging\juce_logger.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\maths\juce_biginteger.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\maths\juce_expression.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\maths\juce_random.cpp
+
+1587417678 c:\users\steph\juce6\modules\juce_core\memory\juce_memoryblock.cpp
+
+1587417678 c:\users\steph\juce6\modules\juce_core\misc\juce_runtimepermissions.cpp
+
+1587417678 c:\users\steph\juce6\modules\juce_core\misc\juce_result.cpp
+
+1587417678 c:\users\steph\juce6\modules\juce_core\misc\juce_uuid.cpp
+
+1587417678 c:\users\steph\juce6\modules\juce_core\misc\juce_consoleapplication.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_macaddress.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_namedpipe.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_socket.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_ipaddress.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_bufferedinputstream.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_fileinputsource.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_inputstream.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_memoryinputstream.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_memoryoutputstream.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\streams\juce_subregionstream.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\system\juce_systemstats.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_characterfunctions.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_identifier.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_localisedstrings.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_string.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\streams\juce_outputstream.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_stringarray.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_stringpairarray.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\text\juce_stringpool.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\text\juce_textdiff.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\text\juce_base64.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_readwritelock.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_thread.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_threadpool.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_timeslicethread.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\time\juce_performancecounter.cpp
+
+1587417683 c:\users\steph\juce6\modules\juce_core\time\juce_relativetime.cpp
+
+1587417683 c:\users\steph\juce6\modules\juce_core\time\juce_time.cpp
+
+1587417683 c:\users\steph\juce6\modules\juce_core\unit_tests\juce_unittest.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_variant.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\javascript\juce_json.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\javascript\juce_javascript.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_dynamicobject.cpp
+
+1587417683 c:\users\steph\juce6\modules\juce_core\xml\juce_xmldocument.cpp
+
+1587417683 c:\users\steph\juce6\modules\juce_core\xml\juce_xmlelement.cpp
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\juce_gzipdecompressorinputstream.cpp
+	"zlib/zlib.h"
+	"zlib/adler32.c"
+	"zlib/compress.c"
+	"zlib/crc32.c"
+	"zlib/deflate.c"
+	"zlib/inffast.c"
+	"zlib/inflate.c"
+	"zlib/inftrees.c"
+	"zlib/trees.c"
+	"zlib/zutil.c"
+
+1587417684 c:\users\steph\juce6\modules\juce_core\zip\zlib\zlib.h
+	"zconf.h"
+
+1587417684 c:\users\steph\juce6\modules\juce_core\zip\zlib\zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\adler32.c
+	"zlib.h"
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\compress.c
+	"zlib.h"
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1587417684 c:\users\steph\juce6\modules\juce_core\zip\zlib\zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\crc32.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\deflate.c
+	"deflate.h"
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\deflate.h
+	"zutil.h"
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1587417684 c:\users\steph\juce6\modules\juce_core\zip\zlib\inftrees.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\inflate.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\inffast.h
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\zlib\inffixed.h
+
+1587417684 c:\users\steph\juce6\modules\juce_core\zip\zlib\inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1587417684 c:\users\steph\juce6\modules\juce_core\zip\zlib\trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+1587417684 c:\users\steph\juce6\modules\juce_core\zip\zlib\trees.h
+
+1587417684 c:\users\steph\juce6\modules\juce_core\zip\zlib\zutil.c
+	"zutil.h"
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\juce_gzipcompressoroutputstream.cpp
+
+1587417683 c:\users\steph\juce6\modules\juce_core\zip\juce_zipfile.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_filefilter.cpp
+
+1587417677 c:\users\steph\juce6\modules\juce_core\files\juce_wildcardfilefilter.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_posix_sharedcode.h
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_posix_namedpipe.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_posix_ipaddress.h
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_mac_files.mm
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_mac_network.mm
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_mac_strings.mm
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_mac_systemstats.mm
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_mac_threads.mm
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_win32_files.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_win32_network.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_win32_registry.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_win32_systemstats.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_win32_threads.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_linux_commonfile.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_linux_files.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_linux_network.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_curl_network.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_linux_systemstats.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_linux_threads.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_android_jnihelpers.cpp
+
+1587417678 c:\users\steph\juce6\modules\juce_core\native\juce_android_files.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_android_misc.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_android_network.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_android_systemstats.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_android_threads.cpp
+
+1587417679 c:\users\steph\juce6\modules\juce_core\native\juce_android_runtimepermissions.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_childprocess.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_highresolutiontimer.cpp
+
+1587417682 c:\users\steph\juce6\modules\juce_core\threads\juce_waitableevent.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_url.cpp
+
+1587417680 c:\users\steph\juce6\modules\juce_core\network\juce_webinputstream.cpp
+
+1587417681 c:\users\steph\juce6\modules\juce_core\streams\juce_urlinputsource.cpp
+
+1587417676 c:\users\steph\juce6\modules\juce_core\containers\juce_hashmap_test.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_cryptography.cpp
+	"AppConfig.h"
+	<juce_cryptography/juce_cryptography.cpp>
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\juce_cryptography.cpp
+	"juce_cryptography.h"
+	"encryption/juce_BlowFish.cpp"
+	"encryption/juce_Primes.cpp"
+	"encryption/juce_RSAKey.cpp"
+	"hashing/juce_MD5.cpp"
+	"hashing/juce_SHA256.cpp"
+	"hashing/juce_Whirlpool.cpp"
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\juce_cryptography.h
+	<juce_core/juce_core.h>
+	"encryption/juce_BlowFish.h"
+	"encryption/juce_Primes.h"
+	"encryption/juce_RSAKey.h"
+	"hashing/juce_MD5.h"
+	"hashing/juce_SHA256.h"
+	"hashing/juce_Whirlpool.h"
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\encryption\juce_blowfish.h
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\encryption\juce_primes.h
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\encryption\juce_rsakey.h
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\hashing\juce_md5.h
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\hashing\juce_sha256.h
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\hashing\juce_whirlpool.h
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\encryption\juce_blowfish.cpp
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\encryption\juce_primes.cpp
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\encryption\juce_rsakey.cpp
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\hashing\juce_md5.cpp
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\hashing\juce_sha256.cpp
+
+1587417684 c:\users\steph\juce6\modules\juce_cryptography\hashing\juce_whirlpool.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_data_structures.cpp
+	"AppConfig.h"
+	<juce_data_structures/juce_data_structures.cpp>
+
+1587417684 c:\users\steph\juce6\modules\juce_data_structures\juce_data_structures.cpp
+	"juce_data_structures.h"
+	"values/juce_Value.cpp"
+	"values/juce_ValueTree.cpp"
+	"values/juce_ValueTreeSynchroniser.cpp"
+	"values/juce_CachedValue.cpp"
+	"values/juce_ValueWithDefault.cpp"
+	"undomanager/juce_UndoManager.cpp"
+	"app_properties/juce_ApplicationProperties.cpp"
+	"app_properties/juce_PropertiesFile.cpp"
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_value.cpp
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_valuetree.cpp
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_valuetreesynchroniser.cpp
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_cachedvalue.cpp
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\values\juce_valuewithdefault.cpp
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\undomanager\juce_undomanager.cpp
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\app_properties\juce_applicationproperties.cpp
+
+1587417685 c:\users\steph\juce6\modules\juce_data_structures\app_properties\juce_propertiesfile.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_events.cpp
+	"AppConfig.h"
+	<juce_events/juce_events.cpp>
+
+1587417687 c:\users\steph\juce6\modules\juce_events\juce_events.cpp
+	"juce_events.h"
+	<unistd.h>
+	"messages/juce_ApplicationBase.cpp"
+	"messages/juce_DeletedAtShutdown.cpp"
+	"messages/juce_MessageListener.cpp"
+	"messages/juce_MessageManager.cpp"
+	"broadcasters/juce_ActionBroadcaster.cpp"
+	"broadcasters/juce_AsyncUpdater.cpp"
+	"broadcasters/juce_ChangeBroadcaster.cpp"
+	"timers/juce_MultiTimer.cpp"
+	"timers/juce_Timer.cpp"
+	"interprocess/juce_InterprocessConnection.cpp"
+	"interprocess/juce_InterprocessConnectionServer.cpp"
+	"interprocess/juce_ConnectedChildProcess.cpp"
+	"interprocess/juce_NetworkServiceDiscovery.cpp"
+	"native/juce_osx_MessageQueue.h"
+	"native/juce_mac_MessageManager.mm"
+	"native/juce_ios_MessageManager.mm"
+	"native/juce_win32_Messaging.cpp"
+	"native/juce_win32_WinRTWrapper.cpp"
+	"native/juce_linux_Messaging.cpp"
+	"native/juce_android_Messaging.cpp"
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_applicationbase.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_deletedatshutdown.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_messagelistener.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\messages\juce_messagemanager.cpp
+
+1587417687 c:\users\steph\juce6\modules\juce_events\broadcasters\juce_actionbroadcaster.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\broadcasters\juce_asyncupdater.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\broadcasters\juce_changebroadcaster.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_events\timers\juce_multitimer.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_events\timers\juce_timer.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\interprocess\juce_interprocessconnection.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\interprocess\juce_interprocessconnectionserver.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\interprocess\juce_connectedchildprocess.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\interprocess\juce_networkservicediscovery.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_events\native\juce_osx_messagequeue.h
+
+1587417689 c:\users\steph\juce6\modules\juce_events\native\juce_mac_messagemanager.mm
+
+1587417688 c:\users\steph\juce6\modules\juce_events\native\juce_ios_messagemanager.mm
+
+1587417689 c:\users\steph\juce6\modules\juce_events\native\juce_win32_messaging.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_events\native\juce_win32_winrtwrapper.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_events\native\juce_linux_messaging.cpp
+
+1587417688 c:\users\steph\juce6\modules\juce_events\native\juce_android_messaging.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_graphics.cpp
+	"AppConfig.h"
+	<juce_graphics/juce_graphics.cpp>
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\juce_graphics.cpp
+	"juce_graphics.h"
+	<d2d1.h>
+	<dwrite.h>
+	<malloc.h>
+	<cstdio>
+	<unordered_map>
+	"native/freetype/FreeTypeAmalgam.h"
+	<ft2build.h>
+	"colour/juce_Colour.cpp"
+	"colour/juce_ColourGradient.cpp"
+	"colour/juce_Colours.cpp"
+	"colour/juce_FillType.cpp"
+	"geometry/juce_AffineTransform.cpp"
+	"geometry/juce_EdgeTable.cpp"
+	"geometry/juce_Path.cpp"
+	"geometry/juce_PathIterator.cpp"
+	"geometry/juce_PathStrokeType.cpp"
+	"placement/juce_RectanglePlacement.cpp"
+	"contexts/juce_GraphicsContext.cpp"
+	"contexts/juce_LowLevelGraphicsPostScriptRenderer.cpp"
+	"contexts/juce_LowLevelGraphicsSoftwareRenderer.cpp"
+	"images/juce_Image.cpp"
+	"images/juce_ImageCache.cpp"
+	"images/juce_ImageConvolutionKernel.cpp"
+	"images/juce_ImageFileFormat.cpp"
+	"image_formats/juce_GIFLoader.cpp"
+	"image_formats/juce_JPEGLoader.cpp"
+	"image_formats/juce_PNGLoader.cpp"
+	"fonts/juce_AttributedString.cpp"
+	"fonts/juce_Typeface.cpp"
+	"fonts/juce_CustomTypeface.cpp"
+	"fonts/juce_Font.cpp"
+	"fonts/juce_GlyphArrangement.cpp"
+	"fonts/juce_TextLayout.cpp"
+	"effects/juce_DropShadowEffect.cpp"
+	"effects/juce_GlowEffect.cpp"
+	"native/juce_freetype_Fonts.cpp"
+	"native/juce_mac_Fonts.mm"
+	"native/juce_mac_CoreGraphicsContext.mm"
+	"native/juce_mac_IconHelpers.cpp"
+	"native/juce_win32_DirectWriteTypeface.cpp"
+	"native/juce_win32_DirectWriteTypeLayout.cpp"
+	"native/juce_win32_Fonts.cpp"
+	"native/juce_win32_IconHelpers.cpp"
+	"native/juce_win32_Direct2DGraphicsContext.cpp"
+	"native/juce_linux_Fonts.cpp"
+	"native/juce_linux_IconHelpers.cpp"
+	"native/juce_android_GraphicsContext.cpp"
+	"native/juce_android_Fonts.cpp"
+	"native/juce_android_IconHelpers.cpp"
+	"native/freetype/FreeTypeAmalgam.c"
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\colour\juce_colour.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\colour\juce_colourgradient.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\colour\juce_colours.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\colour\juce_filltype.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_affinetransform.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_edgetable.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_path.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_pathiterator.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\geometry\juce_pathstroketype.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\placement\juce_rectangleplacement.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\contexts\juce_graphicscontext.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\contexts\juce_lowlevelgraphicspostscriptrenderer.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\contexts\juce_lowlevelgraphicssoftwarerenderer.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\images\juce_image.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\images\juce_imagecache.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\images\juce_imageconvolutionkernel.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\images\juce_imagefileformat.cpp
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\juce_gifloader.cpp
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\juce_jpegloader.cpp
+	"jpglib/jpeglib.h"
+	"jpglib/jcapimin.c"
+	"jpglib/jcapistd.c"
+	"jpglib/jccoefct.c"
+	"jpglib/jccolor.c"
+	"jpglib/jcdctmgr.c"
+	"jpglib/jchuff.c"
+	"jpglib/jcinit.c"
+	"jpglib/jcmainct.c"
+	"jpglib/jcmarker.c"
+	"jpglib/jcmaster.c"
+	"jpglib/jcomapi.c"
+	"jpglib/jcparam.c"
+	"jpglib/jcphuff.c"
+	"jpglib/jcprepct.c"
+	"jpglib/jcsample.c"
+	"jpglib/jctrans.c"
+	"jpglib/jdapistd.c"
+	"jpglib/jdapimin.c"
+	"jpglib/jdatasrc.c"
+	"jpglib/jdcoefct.c"
+	"jpglib/jdcolor.c"
+	"jpglib/jddctmgr.c"
+	"jpglib/jdhuff.c"
+	"jpglib/jdinput.c"
+	"jpglib/jdmainct.c"
+	"jpglib/jdmarker.c"
+	"jpglib/jdmaster.c"
+	"jpglib/jdmerge.c"
+	"jpglib/jdphuff.c"
+	"jpglib/jdpostct.c"
+	"jpglib/jdsample.c"
+	"jpglib/jdtrans.c"
+	"jpglib/jfdctflt.c"
+	"jpglib/jfdctint.c"
+	"jpglib/jfdctfst.c"
+	"jpglib/jidctflt.c"
+	"jpglib/jidctfst.c"
+	"jpglib/jidctint.c"
+	"jpglib/jidctred.c"
+	"jpglib/jmemmgr.c"
+	"jpglib/jmemnobs.c"
+	"jpglib/jquant1.c"
+	"jpglib/jquant2.c"
+	"jpglib/jutils.c"
+	"jpglib/transupp.c"
+	<jpeglib.h>
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jpeglib.h
+	"jconfig.h"
+	"jmorecfg.h"
+	"jpegint.h"
+	"jerror.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jconfig.h
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jmorecfg.h
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jpegint.h
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jerror.h
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcapimin.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jinclude.h
+	"jconfig.h"
+	<stddef.h>
+	<stdlib.h>
+	<sys/types.h>
+	<stdio.h>
+	<strings.h>
+	<string.h>
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcapistd.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jccoefct.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jccolor.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcdctmgr.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdct.h
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jchuff.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jchuff.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jchuff.h
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcinit.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcmainct.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcmarker.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcmaster.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcomapi.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcparam.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcphuff.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jchuff.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcprepct.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jcsample.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jctrans.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdapistd.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdapimin.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdatasrc.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jerror.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdcoefct.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdcolor.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jddctmgr.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdhuff.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdhuff.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdhuff.h
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdinput.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdmainct.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdmarker.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdmaster.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdmerge.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdphuff.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdhuff.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdpostct.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdsample.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jdtrans.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jfdctflt.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jfdctint.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jfdctfst.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jidctflt.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jidctfst.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jidctint.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+1587417692 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jidctred.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jmemmgr.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jmemsys.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jmemsys.h
+	<Files.h>
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jmemnobs.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jmemsys.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jquant1.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jquant2.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\jutils.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\transupp.c
+	"jinclude.h"
+	"jpeglib.h"
+	"transupp.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\jpglib\transupp.h
+
+1587417691 c:\users\steph\juce6\modules\juce_graphics\image_formats\juce_pngloader.cpp
+	"../../juce_core/zip/zlib/zlib.h"
+	<setjmp.h>
+	"pnglib/png.h"
+	"pnglib/pngconf.h"
+	"pnglib/png.c"
+	"pnglib/pngerror.c"
+	"pnglib/pngget.c"
+	"pnglib/pngmem.c"
+	"pnglib/pngread.c"
+	"pnglib/pngpread.c"
+	"pnglib/pngrio.c"
+	"pnglib/pngrtran.c"
+	"pnglib/pngrutil.c"
+	"pnglib/pngset.c"
+	"pnglib/pngtrans.c"
+	"pnglib/pngwio.c"
+	"pnglib/pngwrite.c"
+	"pnglib/pngwtran.c"
+	"pnglib/pngwutil.c"
+	<png.h>
+	<pngconf.h>
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\png.h
+	"pnglibconf.h"
+	"pngconf.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngconf.h
+	<limits.h>
+	<stddef.h>
+	<stdio.h>
+	<setjmp.h>
+	<time.h>
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\png.c
+	"pngpriv.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngpriv.h
+	<stdlib.h>
+	<string.h>
+	<config.h>
+	"pnglibconf.h"
+	"pngprefix.h"
+	"pngusr.h"
+	"png.h"
+	<float.h>
+	<fp.h>
+	<math.h>
+	<m68881.h>
+	<mem.h>
+	<alloc.h>
+	<windows.h>
+	"pngstruct.h"
+	"pnginfo.h"
+	"pngdebug.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngstruct.h
+	"zlib.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pnginfo.h
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngdebug.h
+	<crtdbg.h>
+	<stdio.h>
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngerror.c
+	"pngpriv.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngget.c
+	"pngpriv.h"
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngmem.c
+	"pngpriv.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngread.c
+	"pngpriv.h"
+	<errno.h>
+
+1587417693 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngpread.c
+	"pngpriv.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngrio.c
+	"pngpriv.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngrtran.c
+	"pngpriv.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngrutil.c
+	"pngpriv.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngset.c
+	"pngpriv.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngtrans.c
+	"pngpriv.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngwio.c
+	"pngpriv.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngwrite.c
+	"pngpriv.h"
+	<errno.h>
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngwtran.c
+	"pngpriv.h"
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\image_formats\pnglib\pngwutil.c
+	"pngpriv.h"
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_attributedstring.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_typeface.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_customtypeface.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_font.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_glypharrangement.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\fonts\juce_textlayout.cpp
+
+1587417689 c:\users\steph\juce6\modules\juce_graphics\effects\juce_dropshadoweffect.cpp
+
+1587417690 c:\users\steph\juce6\modules\juce_graphics\effects\juce_gloweffect.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\native\juce_freetype_fonts.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_mac_fonts.mm
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_mac_coregraphicscontext.mm
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_mac_iconhelpers.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_win32_directwritetypeface.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_win32_directwritetypelayout.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_win32_fonts.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_win32_iconhelpers.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_graphics\native\juce_win32_direct2dgraphicscontext.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\native\juce_linux_fonts.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\native\juce_linux_iconhelpers.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\native\juce_android_graphicscontext.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\native\juce_android_fonts.cpp
+
+1587417694 c:\users\steph\juce6\modules\juce_graphics\native\juce_android_iconhelpers.cpp
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_gui_extra.cpp
+	"AppConfig.h"
+	<juce_gui_extra/juce_gui_extra.cpp>
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\juce_gui_extra.cpp
+	"juce_gui_extra.h"
+	"native/juce_mac_PushNotifications.cpp"
+	"native/juce_ios_PushNotifications.cpp"
+	"native/juce_android_PushNotifications.cpp"
+	<windowsx.h>
+	<vfw.h>
+	<commdlg.h>
+	<exdisp.h>
+	<exdispid.h>
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<X11/Xutil.h>
+	<unistd.h>
+	<fcntl.h>
+	<sys/wait.h>
+	<gtk/gtk.h>
+	<gtk/gtkx.h>
+	<glib-unix.h>
+	<webkit2/webkit2.h>
+	"documents/juce_FileBasedDocument.cpp"
+	"code_editor/juce_CodeDocument.cpp"
+	"code_editor/juce_CodeEditorComponent.cpp"
+	"code_editor/juce_CPlusPlusCodeTokeniser.cpp"
+	"code_editor/juce_XMLCodeTokeniser.cpp"
+	"code_editor/juce_LuaCodeTokeniser.cpp"
+	"misc/juce_BubbleMessageComponent.cpp"
+	"misc/juce_ColourSelector.cpp"
+	"misc/juce_KeyMappingEditorComponent.cpp"
+	"misc/juce_PreferencesPanel.cpp"
+	"misc/juce_PushNotifications.cpp"
+	"misc/juce_RecentlyOpenedFilesList.cpp"
+	"misc/juce_SplashScreen.cpp"
+	"misc/juce_SystemTrayIconComponent.cpp"
+	"misc/juce_LiveConstantEditor.cpp"
+	"misc/juce_AnimatedAppComponent.cpp"
+	"native/juce_mac_NSViewComponent.mm"
+	"native/juce_mac_AppleRemote.mm"
+	"native/juce_mac_SystemTrayIcon.cpp"
+	"native/juce_ios_UIViewComponent.mm"
+	"native/juce_mac_WebBrowserComponent.mm"
+	"native/juce_win32_ActiveXComponent.cpp"
+	"native/juce_win32_WebBrowserComponent.cpp"
+	"native/juce_win32_SystemTrayIcon.cpp"
+	"native/juce_linux_XEmbedComponent.cpp"
+	"native/juce_linux_X11_WebBrowserComponent.cpp"
+	"native/juce_linux_X11_SystemTrayIcon.cpp"
+	"native/juce_AndroidViewComponent.cpp"
+	"native/juce_android_WebBrowserComponent.cpp"
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_mac_pushnotifications.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_ios_pushnotifications.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_android_pushnotifications.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\documents\juce_filebaseddocument.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_codedocument.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_codeeditorcomponent.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_cpluspluscodetokeniser.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_xmlcodetokeniser.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\code_editor\juce_luacodetokeniser.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_bubblemessagecomponent.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_colourselector.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_keymappingeditorcomponent.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_preferencespanel.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_pushnotifications.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_recentlyopenedfileslist.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_splashscreen.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_systemtrayiconcomponent.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_liveconstanteditor.cpp
+
+1587417705 c:\users\steph\juce6\modules\juce_gui_extra\misc\juce_animatedappcomponent.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_mac_nsviewcomponent.mm
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_mac_appleremote.mm
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_mac_systemtrayicon.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_ios_uiviewcomponent.mm
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_mac_webbrowsercomponent.mm
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_win32_activexcomponent.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_win32_webbrowsercomponent.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_win32_systemtrayicon.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_linux_xembedcomponent.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_linux_x11_webbrowsercomponent.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_linux_x11_systemtrayicon.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_androidviewcomponent.cpp
+
+1587417706 c:\users\steph\juce6\modules\juce_gui_extra\native\juce_android_webbrowsercomponent.cpp
+
+1587420207 source:c:\users\steph\csl6\jucelibrarycode\include_juce_opengl.cpp
+	"AppConfig.h"
+	<juce_opengl/juce_opengl.cpp>
+
+1587417706 c:\users\steph\juce6\modules\juce_opengl\juce_opengl.cpp
+	"juce_opengl.h"
+	<windowsx.h>
+	<GL/glx.h>
+	<OpenGL/CGLCurrent.h>
+	<OpenGL/OpenGL.h>
+	<GLES3/gl3.h>
+	<GLES2/gl2ext.h>
+	<GLES2/gl2.h>
+	"opengl/juce_OpenGLFrameBuffer.cpp"
+	"opengl/juce_OpenGLGraphicsContext.cpp"
+	"opengl/juce_OpenGLHelpers.cpp"
+	"opengl/juce_OpenGLImage.cpp"
+	"opengl/juce_OpenGLPixelFormat.cpp"
+	"opengl/juce_OpenGLShaderProgram.cpp"
+	"opengl/juce_OpenGLTexture.cpp"
+	"native/juce_OpenGL_osx.h"
+	"native/juce_OpenGL_ios.h"
+	"native/juce_OpenGL_win32.h"
+	"native/juce_OpenGL_linux_X11.h"
+	"native/juce_OpenGL_android.h"
+	"opengl/juce_OpenGLContext.cpp"
+	"utils/juce_OpenGLAppComponent.cpp"
+
+1587417706 c:\users\steph\juce6\modules\juce_opengl\juce_opengl.h
+	<juce_gui_extra/juce_gui_extra.h>
+	<GL/gl.h>
+	<gl/GL.h>
+	<GL/gl.h>
+	<OpenGLES/ES3/gl.h>
+	<OpenGLES/ES2/gl.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<android/native_window.h>
+	<android/native_window_jni.h>
+	<GLES3/gl3.h>
+	<GLES2/gl2.h>
+	<EGL/egl.h>
+	"geometry/juce_Vector3D.h"
+	"geometry/juce_Matrix3D.h"
+	"geometry/juce_Quaternion.h"
+	"geometry/juce_Draggable3DOrientation.h"
+	"native/juce_MissingGLDefinitions.h"
+	"opengl/juce_OpenGLHelpers.h"
+	"opengl/juce_OpenGLPixelFormat.h"
+	"native/juce_OpenGLExtensions.h"
+	"opengl/juce_OpenGLRenderer.h"
+	"opengl/juce_OpenGLContext.h"
+	"opengl/juce_OpenGLFrameBuffer.h"
+	"opengl/juce_OpenGLGraphicsContext.h"
+	"opengl/juce_OpenGLImage.h"
+	"opengl/juce_OpenGLShaderProgram.h"
+	"opengl/juce_OpenGLTexture.h"
+	"utils/juce_OpenGLAppComponent.h"
+
+1587417706 c:\users\steph\juce6\modules\juce_opengl\geometry\juce_vector3d.h
+
+1587417706 c:\users\steph\juce6\modules\juce_opengl\geometry\juce_matrix3d.h
+
+1587417706 c:\users\steph\juce6\modules\juce_opengl\geometry\juce_quaternion.h
+
+1587417706 c:\users\steph\juce6\modules\juce_opengl\geometry\juce_draggable3dorientation.h
+
+1587417706 c:\users\steph\juce6\modules\juce_opengl\native\juce_missinggldefinitions.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglhelpers.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglpixelformat.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\native\juce_openglextensions.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglrenderer.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglcontext.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglframebuffer.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglgraphicscontext.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglimage.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglshaderprogram.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_opengltexture.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\utils\juce_openglappcomponent.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglframebuffer.cpp
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglgraphicscontext.cpp
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglhelpers.cpp
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglimage.cpp
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglpixelformat.cpp
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglshaderprogram.cpp
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_opengltexture.cpp
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\native\juce_opengl_osx.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\native\juce_opengl_ios.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\native\juce_opengl_win32.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\native\juce_opengl_linux_x11.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\native\juce_opengl_android.h
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\opengl\juce_openglcontext.cpp
+
+1587417707 c:\users\steph\juce6\modules\juce_opengl\utils\juce_openglappcomponent.cpp
+
+1587419519 source:c:\users\steph\csl6\src\instruments\additiveinstrument.cpp
+	"AdditiveInstrument.h"
+
+1587419519 c:\users\steph\csl6\src\instruments\additiveinstrument.h
+	"Instrument.h"
+	"Mixer.h"
+
+1587419519 c:\users\steph\csl6\src\instruments\instrument.h
+	"CSL_Includes.h"
+	"Accessor.h"
+
+1587419520 c:\users\steph\csl6\src\includes\csl_includes.h
+	"CSL_Core.h"
+	"BlockResizer.h"
+	"CPoint.h"
+	"Variable.h"
+	"Envelope.h"
+	"Window.h"
+	"Oscillator.h"
+	"Noise.h"
+	"WaveShaper.h"
+	"BinaryOp.h"
+	"Filters.h"
+	"FIR.h"
+	"InOut.h"
+	"Mixer.h"
+	"Freeverb.h"
+	"FFT_Wrapper.h"
+	"Spectral.h"
+	"FFT_Wrapper.h"
+	"Spectral.h"
+	"SoundFileJ.h"
+	"SoundFileL.h"
+	"SoundFileCA.h"
+	"MIDIIOJ.h"
+	"MIDIIOP.h"
+
+1587419520 c:\users\steph\csl6\src\includes\csl_core.h
+	"CSL_Types.h"
+	"CSL_Exceptions.h"
+	"CGestalt.h"
+	<sys/time.h>
+	<Winsock2.h>
+	<winsock.h>
+	<time.h>
+
+1587435206 c:\users\steph\csl6\src\includes\csl_types.h
+	<vector>
+	<string>
+	<map>
+
+1587419520 c:\users\steph\csl6\src\includes\csl_exceptions.h
+	<exception>
+	<string>
+
+1587419520 c:\users\steph\csl6\src\includes\cgestalt.h
+	"CSL_Types.h"
+	"CSL_Exceptions.h"
+	<stdarg.h>
+	<string>
+	"JuceHeader.h"
+	<sys/time.h>
+
+1587420206 c:\users\steph\csl6\jucelibrarycode\juceheader.h
+	"AppConfig.h"
+	<juce_audio_basics/juce_audio_basics.h>
+	<juce_audio_devices/juce_audio_devices.h>
+	<juce_audio_formats/juce_audio_formats.h>
+	<juce_audio_processors/juce_audio_processors.h>
+	<juce_audio_utils/juce_audio_utils.h>
+	<juce_core/juce_core.h>
+	<juce_cryptography/juce_cryptography.h>
+	<juce_data_structures/juce_data_structures.h>
+	<juce_events/juce_events.h>
+	<juce_graphics/juce_graphics.h>
+	<juce_gui_basics/juce_gui_basics.h>
+	<juce_gui_extra/juce_gui_extra.h>
+	<juce_opengl/juce_opengl.h>
+	"BinaryData.h"
+
+1587420206 c:\users\steph\csl6\jucelibrarycode\binarydata.h
+
+1587419523 c:\users\steph\csl6\src\includes\blockresizer.h
+	"CSL_Core.h"
+
+1587419523 c:\users\steph\csl6\src\includes\cpoint.h
+	"CSL_Types.h"
+	<stdio.h>
+	<math.h>
+
+1587419523 c:\users\steph\csl6\src\includes\variable.h
+	"CSL_Core.h"
+	"newran/newran.h"
+
+1587419521 c:\users\steph\csl6\src\includes\envelope.h
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419521 c:\users\steph\csl6\src\includes\window.h
+	"CSL_Core.h"
+
+1587419521 c:\users\steph\csl6\src\includes\oscillator.h
+	"CSL_Core.h"
+	<stdarg.h>
+
+1587419521 c:\users\steph\csl6\src\includes\noise.h
+	"CSL_Core.h"
+
+1587419521 c:\users\steph\csl6\src\includes\waveshaper.h
+	"Oscillator.h"
+
+1587419520 c:\users\steph\csl6\src\includes\binaryop.h
+	"CSL_Core.h"
+
+1587419520 c:\users\steph\csl6\src\includes\filters.h
+	"CSL_Core.h"
+
+1587419520 c:\users\steph\csl6\src\includes\fir.h
+	"CSL_Core.h"
+
+1587419521 c:\users\steph\csl6\src\includes\inout.h
+	"CSL_Core.h"
+	<stdarg.h>
+
+1587419521 c:\users\steph\csl6\src\includes\mixer.h
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419521 c:\users\steph\csl6\src\includes\freeverb.h
+	"CSL_Core.h"
+
+1587434328 c:\users\steph\csl6\src\includes\fft_wrapper.h
+	"CSL_Core.h"
+	"FFTReal.h"
+
+1587419523 c:\users\steph\csl6\src\includes\fftreal.h
+
+1587419521 c:\users\steph\csl6\src\includes\spectral.h
+	"CSL_Core.h"
+	"FFT_Wrapper.h"
+
+1587419519 c:\users\steph\csl6\src\includes\soundfilej.h
+	"SoundFile.h"
+	"../JuceLibraryCode/JuceHeader.h"
+
+1587419519 c:\users\steph\csl6\src\includes\soundfile.h
+	"CSL_Core.h"
+	"Oscillator.h"
+	<string.h>
+
+1587419519 c:\users\steph\csl6\src\includes\soundfilel.h
+	"SoundFile.h"
+	<sndfile.h>
+	<sndfile.h>
+	<string.h>
+
+1587419519 c:\users\steph\csl6\src\includes\soundfileca.h
+	"SoundFile.h"
+
+1587419518 c:\users\steph\csl6\src\includes\midiioj.h
+	"CSL_Types.h"
+	"CGestalt.h"
+	"ThreadUtilities.h"
+	"Instrument.h"
+	"JuceHeader.h"
+
+1587419523 c:\users\steph\csl6\src\includes\threadutilities.h
+	"CSL_Types.h"
+	"JuceHeader.h"
+	<pthread.h>
+	<pthread.h>
+
+1587419519 c:\users\steph\csl6\src\includes\instrument.h
+	"CSL_Includes.h"
+	"Accessor.h"
+
+1587419519 c:\users\steph\csl6\src\includes\accessor.h
+
+1587419518 c:\users\steph\csl6\src\includes\midiiop.h
+	"CSL_Types.h"
+	"CGestalt.h"
+	"math.h"
+	"portmidi.h"
+	"porttime.h"
+
+1587419519 c:\users\steph\csl6\src\instruments\accessor.h
+
+1587419519 source:c:\users\steph\csl6\src\instruments\basicfminstrument.cpp
+	"BasicFMInstrument.h"
+
+1587419519 c:\users\steph\csl6\src\instruments\basicfminstrument.h
+	"Instrument.h"
+	"Mixer.h"
+
+1587419519 source:c:\users\steph\csl6\src\instruments\instrument.cpp
+	"Instrument.h"
+
+1587419519 source:c:\users\steph\csl6\src\instruments\sndfileinstrument.cpp
+	"SndFileInstrument.h"
+
+1587419519 c:\users\steph\csl6\src\instruments\sndfileinstrument.h
+	"Instrument.h"
+	"SoundFile.h"
+
+1587419518 source:c:\users\steph\csl6\src\io\fileio.cpp
+	"FileIO.h"
+
+1587419518 c:\users\steph\csl6\src\io\fileio.h
+	"CSL_Includes.h"
+	"ThreadUtilities.h"
+
+1587419518 source:c:\users\steph\csl6\src\io\juceio.cpp
+	"JUCEIO.h"
+
+1587419518 c:\users\steph\csl6\src\io\juceio.h
+	"CSL_Core.h"
+
+1587419518 source:c:\users\steph\csl6\src\io\midiioj.cpp
+	"MIDIIOJ.h"
+
+1587419518 c:\users\steph\csl6\src\io\midiioj.h
+	"CSL_Types.h"
+	"CGestalt.h"
+	"ThreadUtilities.h"
+	"Instrument.h"
+	"JuceHeader.h"
+
+1587419520 source:c:\users\steph\csl6\src\juce\csl_testcomponent.cpp
+	"CSL_TestComponent.h"
+
+1587419520 c:\users\steph\csl6\src\juce\csl_testcomponent.h
+	"CSL_Includes.h"
+	"JuceHeader.h"
+	"JCSL_Widgets.h"
+
+1587419520 c:\users\steph\csl6\src\juce\jcsl_widgets.h
+	"JuceHeader.h"
+	"CSL_Types.h"
+
+1587419520 source:c:\users\steph\csl6\src\juce\jcsl_widgets.cpp
+	"JCSL_Widgets.h"
+	<math.h>
+
+1587419520 source:c:\users\steph\csl6\src\juce\main.cpp
+	"JuceHeader.h"
+
+1587419520 source:c:\users\steph\csl6\src\kernel\cgestalt.cpp
+	"CGestalt.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<crtdbg.h>
+	<unistd.h>
+
+1587419520 c:\users\steph\csl6\src\kernel\cgestalt.h
+	"CSL_Types.h"
+	"CSL_Exceptions.h"
+	<stdarg.h>
+	<string>
+	"JuceHeader.h"
+	<sys/time.h>
+
+1587432787 c:\users\steph\csl6\src\kernel\csl_types.h
+	<vector>
+	<string>
+	<map>
+
+1587419520 c:\users\steph\csl6\src\kernel\csl_exceptions.h
+	<exception>
+	<string>
+
+1587419520 source:c:\users\steph\csl6\src\kernel\csl_core.cpp
+	"CSL_Core.h"
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	"SoundFileJ.h"
+	"SoundFileL.h"
+	<samplerate.h>
+	"SoundFileCA.h"
+	<libtsp.h>
+
+1587419520 c:\users\steph\csl6\src\kernel\csl_core.h
+	"CSL_Types.h"
+	"CSL_Exceptions.h"
+	"CGestalt.h"
+	<sys/time.h>
+	<Winsock2.h>
+	<winsock.h>
+	<time.h>
+
+1587419520 source:c:\users\steph\csl6\src\processors\binaryop.cpp
+	"BinaryOp.h"
+	"CGestalt.h"
+
+1587419520 c:\users\steph\csl6\src\processors\binaryop.h
+	"CSL_Core.h"
+
+1587419520 source:c:\users\steph\csl6\src\processors\clipper.cpp
+	"Clipper.h"
+	<math.h>
+
+1587419520 c:\users\steph\csl6\src\processors\clipper.h
+	"CSL_Core.h"
+
+1587419520 source:c:\users\steph\csl6\src\processors\fir.cpp
+	"FIR.h"
+	<stdlib.h>
+	<math.h>
+	<string.h>
+
+1587419520 c:\users\steph\csl6\src\processors\fir.h
+	"CSL_Core.h"
+
+1587419521 source:c:\users\steph\csl6\src\processors\freeverb.cpp
+	"Freeverb.h"
+
+1587419521 c:\users\steph\csl6\src\processors\freeverb.h
+	"CSL_Core.h"
+
+1587419521 source:c:\users\steph\csl6\src\processors\inout.cpp
+	"InOut.h"
+	<math.h>
+	<stdlib.h>
+	<string.h>
+
+1587419521 c:\users\steph\csl6\src\processors\inout.h
+	"CSL_Core.h"
+	<stdarg.h>
+
+1587419521 source:c:\users\steph\csl6\src\processors\mixer.cpp
+	"Mixer.h"
+	<stdlib.h>
+	<math.h>
+	<stdio.h>
+
+1587419521 c:\users\steph\csl6\src\processors\mixer.h
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419521 source:c:\users\steph\csl6\src\sources\envelope.cpp
+	"Envelope.h"
+	<stdlib.h>
+	<iostream>
+	<math.h>
+
+1587419521 c:\users\steph\csl6\src\sources\envelope.h
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587433891 source:c:\users\steph\csl6\src\io\soundfile.cpp
+	"SoundFile.h"
+	<taglib/fileref.h>
+	<taglib/tag.h>
+	"SoundFileJ.h"
+	"SoundFileL.h"
+	"SoundFileCA.h"
+
+1587433645 c:\users\steph\csl6\src\io\soundfile.h
+	"CSL_Core.h"
+	"Oscillator.h"
+	<strings.h>
+
+1587419519 c:\users\steph\csl6\src\io\soundfilej.h
+	"SoundFile.h"
+	"../JuceLibraryCode/JuceHeader.h"
+
+1587419519 c:\users\steph\csl6\src\io\soundfilel.h
+	"SoundFile.h"
+	<sndfile.h>
+	<sndfile.h>
+	<string.h>
+
+1587419519 c:\users\steph\csl6\src\io\soundfileca.h
+	"SoundFile.h"
+
+1587419521 source:c:\users\steph\csl6\src\sources\granulator.cpp
+	"Granulator.h"
+
+1587419521 c:\users\steph\csl6\src\sources\granulator.h
+	"CSL_Core.h"
+	"ThreadUtilities.h"
+
+1587434144 source:c:\users\steph\csl6\src\processors\convolver.cpp
+	"Convolver.h"
+	"SoundFileJ.h"
+	"fft_N.h"
+
+1587419520 c:\users\steph\csl6\src\processors\convolver.h
+	"CSL_Core.h"
+
+1587419524 c:\users\steph\csl6\src\includes\fft_n.h
+	<stdbool.h>
+	<stddef.h>
+
+1587433959 source:c:\users\steph\csl6\src\processors\filters.cpp
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"Filters.h"
+
+1587419520 c:\users\steph\csl6\src\processors\filters.h
+	"CSL_Core.h"
+
+1587419521 source:c:\users\steph\csl6\src\sources\karplusstring.cpp
+	"KarplusString.h"
+
+1587419521 c:\users\steph\csl6\src\sources\karplusstring.h
+	"CSL_Core.h"
+	"Noise.h"
+
+1587419521 c:\users\steph\csl6\src\sources\noise.h
+	"CSL_Core.h"
+
+1587419521 source:c:\users\steph\csl6\src\sources\noise.cpp
+	"Noise.h"
+	<time.h>
+
+1587419521 source:c:\users\steph\csl6\src\sources\oscillator.cpp
+	"Oscillator.h"
+	<math.h>
+	"SHARC.h"
+
+1587419521 c:\users\steph\csl6\src\sources\oscillator.h
+	"CSL_Core.h"
+	<stdarg.h>
+
+1587419521 c:\users\steph\csl6\src\sources\sharc.h
+	"CSL_Core.h"
+	"Oscillator.h"
+
+1587419521 source:c:\users\steph\csl6\src\sources\oscillatorbl.cpp
+	"OscillatorBL.h"
+	<math.h>
+
+1587419521 c:\users\steph\csl6\src\sources\oscillatorbl.h
+	"Oscillator.h"
+
+1587419521 source:c:\users\steph\csl6\src\sources\sharc.cpp
+	"SHARC.h"
+	<math.h>
+	<stdlib.h>
+	<unistd.h>
+	<sys/stat.h>
+	<dirent.h>
+	<stdio.h>
+	<string.h>
+
+1587419521 source:c:\users\steph\csl6\src\sources\simplesines.cpp
+	"SimpleSines.h"
+	<math.h>
+
+1587419521 c:\users\steph\csl6\src\sources\simplesines.h
+	"CSL_Core.h"
+
+1587419521 source:c:\users\steph\csl6\src\sources\spectral.cpp
+	"Spectral.h"
+	"Window.h"
+	<stdlib.h>
+	<math.h>
+	<string.h>
+
+1587419521 c:\users\steph\csl6\src\sources\spectral.h
+	"CSL_Core.h"
+	"FFT_Wrapper.h"
+
+1587419521 c:\users\steph\csl6\src\sources\window.h
+	"CSL_Core.h"
+
+1587419521 source:c:\users\steph\csl6\src\sources\waveshaper.cpp
+	"WaveShaper.h"
+
+1587419521 c:\users\steph\csl6\src\sources\waveshaper.h
+	"Oscillator.h"
+
+1587434337 source:c:\users\steph\csl6\src\io\soundfilej.cpp
+	"SoundFileJ.h"
+
+1587419521 source:c:\users\steph\csl6\src\sources\window.cpp
+	"Window.h"
+	<math.h>
+
+1587419522 source:c:\users\steph\csl6\src\spatializers\ambisonic\ambisonic.cpp
+	"Ambisonic.h"
+	"AmbisonicUtilities.h"
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<iostream>
+
+1587419522 c:\users\steph\csl6\src\spatializers\ambisonic\ambisonic.h
+	"CSL_Core.h"
+	"CPoint.h"
+	"SpatialSource.h"
+	"SpeakerLayout.h"
+
+1587419522 c:\users\steph\csl6\src\includes\spatialsource.h
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419522 c:\users\steph\csl6\src\includes\speakerlayout.h
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419522 c:\users\steph\csl6\src\spatializers\ambisonic\ambisonicutilities.h
+	"CSL_Core.h"
+	"Ambisonic.h"
+
+1587419522 source:c:\users\steph\csl6\src\spatializers\ambisonic\ambisonicpanner.cpp
+	"AmbisonicPanner.h"
+
+1587419522 c:\users\steph\csl6\src\spatializers\ambisonic\ambisonicpanner.h
+	"CSL_Core.h"
+	"SpatialPanner.h"
+	"Ambisonic.h"
+	"AmbisonicUtilities.h"
+	"SpeakerLayout.h"
+
+1587419522 c:\users\steph\csl6\src\includes\spatialpanner.h
+	"SpeakerLayout.h"
+	"SpatialSource.h"
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419522 source:c:\users\steph\csl6\src\spatializers\ambisonic\ambisonicutilities.cpp
+	"AmbisonicUtilities.h"
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+
+1587419522 source:c:\users\steph\csl6\src\spatializers\binaural\binaural.cpp
+	"Binaural.h"
+
+1587419522 c:\users\steph\csl6\src\spatializers\binaural\binaural.h
+	"BinauralDB.h"
+
+1587419522 c:\users\steph\csl6\src\spatializers\binaural\binauraldb.h
+	"CSL_Core.h"
+	"SpatialPanner.h"
+	"FFT_Wrapper.h"
+	"SoundFileJ.h"
+	"SoundFileL.h"
+	"SoundFileCA.h"
+
+1587419521 source:c:\users\steph\csl6\src\spatializers\distancesimulator.cpp
+	"DistanceSimulator.h"
+
+1587419521 c:\users\steph\csl6\src\spatializers\distancesimulator.h
+	"SpatialSource.h"
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419522 c:\users\steph\csl6\src\spatializers\spatialsource.h
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419522 source:c:\users\steph\csl6\src\spatializers\simplepanner.cpp
+	"SimplePanner.h"
+
+1587419522 c:\users\steph\csl6\src\spatializers\simplepanner.h
+	"CSL_Includes.h"
+	"SpatialPanner.h"
+
+1587419522 c:\users\steph\csl6\src\spatializers\spatialpanner.h
+	"SpeakerLayout.h"
+	"SpatialSource.h"
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419522 c:\users\steph\csl6\src\spatializers\speakerlayout.h
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587419522 source:c:\users\steph\csl6\src\spatializers\spatialaudio.cpp
+	"SpatialAudio.h"
+	"SimplePanner.h"
+	"VBAP.h"
+	"AmbisonicPanner.h"
+	"Binaural.h"
+	"WFS.h"
+
+1587419522 c:\users\steph\csl6\src\spatializers\spatialaudio.h
+	"SpatialPanner.h"
+	"DistanceSimulator.h"
+
+1587419523 c:\users\steph\csl6\src\includes\vbap.h
+	"CSL_Core.h"
+	"SpatialPanner.h"
+	<iostream>
+	"matrix.h"
+
+1587419522 c:\users\steph\csl6\src\includes\matrix.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<iostream.h>
+	<string.h>
+	<string.h>
+	<cmath>
+	<cstdio>
+	<cstdlib>
+	<string>
+	<iostream>
+	<stdexcept>
+	<stdexcpt.h>
+	<stdexcept>
+	<stdexcept>
+	<stdexcep>
+
+1587419522 c:\users\steph\csl6\src\includes\ambisonicpanner.h
+	"CSL_Core.h"
+	"SpatialPanner.h"
+	"Ambisonic.h"
+	"AmbisonicUtilities.h"
+	"SpeakerLayout.h"
+
+1587419522 c:\users\steph\csl6\src\includes\ambisonic.h
+	"CSL_Core.h"
+	"CPoint.h"
+	"SpatialSource.h"
+	"SpeakerLayout.h"
+
+1587419522 c:\users\steph\csl6\src\includes\ambisonicutilities.h
+	"CSL_Core.h"
+	"Ambisonic.h"
+
+1587419522 c:\users\steph\csl6\src\includes\binaural.h
+	"BinauralDB.h"
+
+1587419522 c:\users\steph\csl6\src\includes\binauraldb.h
+	"CSL_Core.h"
+	"SpatialPanner.h"
+	"FFT_Wrapper.h"
+	"SoundFileJ.h"
+	"SoundFileL.h"
+	"SoundFileCA.h"
+
+1587419522 source:c:\users\steph\csl6\src\spatializers\spatialpanner.cpp
+	"SpatialPanner.h"
+
+1587419522 source:c:\users\steph\csl6\src\spatializers\spatialsource.cpp
+	"SpatialSource.h"
+	<stdlib.h>
+	<iostream>
+
+1587419522 source:c:\users\steph\csl6\src\spatializers\speakerlayout.cpp
+	<stdlib.h>
+	<math.h>
+	<iostream>
+	<fstream>
+	<string.h>
+	"SpeakerLayout.h"
+
+1587419523 source:c:\users\steph\csl6\src\spatializers\vbap\vbap.cpp
+	"VBAP.h"
+
+1587419523 c:\users\steph\csl6\src\spatializers\vbap\vbap.h
+	"CSL_Core.h"
+	"SpatialPanner.h"
+	<iostream>
+	"matrix.h"
+
+1587419523 source:c:\users\steph\csl6\src\tests\test_audio.cpp
+	"Test_Support.h"
+	"JuceHeader.h"
+	"Test_Support.cpp"
+
+1587419523 c:\users\steph\csl6\src\tests\test_support.h
+	"CSL_Includes.h"
+	"CAIO.h"
+	"PAIO.h"
+	"FileIO.h"
+
+1587419518 c:\users\steph\csl6\src\includes\caio.h
+	"CSL_Core.h"
+	<AudioUnit/AudioUnit.h>
+
+1587419519 c:\users\steph\csl6\src\includes\paio.h
+	"CSL_Core.h"
+	"portaudio.h"
+
+1587419518 c:\users\steph\csl6\src\includes\fileio.h
+	"CSL_Includes.h"
+	"ThreadUtilities.h"
+
+1587419523 c:\users\steph\csl6\src\tests\test_support.cpp
+	"Test_Support.h"
+	<stdlib.h>
+
+1587419523 source:c:\users\steph\csl6\src\tests\test_panners.cpp
+	"Test_Support.h"
+	"Test_Support.cpp"
+	"Convolver.h"
+	"Convolver2.h"
+	<unistd.h>
+	"InOut.h"
+	"SpatialAudio.h"
+	"Binaural.h"
+
+1587419520 c:\users\steph\csl6\src\includes\convolver.h
+	"CSL_Core.h"
+
+1587419520 c:\users\steph\csl6\src\includes\convolver2.h
+	"CSL_Core.h"
+	"FFT_Wrapper.h"
+
+1587419522 c:\users\steph\csl6\src\includes\spatialaudio.h
+	"SpatialPanner.h"
+	"DistanceSimulator.h"
+
+1587419521 c:\users\steph\csl6\src\includes\distancesimulator.h
+	"SpatialSource.h"
+	"CSL_Core.h"
+	"CPoint.h"
+
+1587435465 source:c:\users\steph\csl6\src\spatializers\binaural\binauraldb.cpp
+	"BinauralDB.h"
+	<strings.h>
+
+1587435472 source:c:\users\steph\csl6\src\tests\test_control.cpp
+	"Test_Support.h"
+	"Test_Support.cpp"
+	"MIDIIOJ.h"
+	<iostream>
+	<AdditiveInstrument.h>
+	<BasicFMInstrument.h>
+	"lo/lo.h"
+	"OSC_support.h"
+
+1587419519 c:\users\steph\csl6\src\includes\additiveinstrument.h
+	"Instrument.h"
+	"Mixer.h"
+
+1587419519 c:\users\steph\csl6\src\includes\basicfminstrument.h
+	"Instrument.h"
+	"Mixer.h"
+
+1587419519 c:\users\steph\csl6\src\includes\osc_support.h
+	"CSL_Includes.h"
+	"Instrument.h"
+
+1587435469 source:c:\users\steph\csl6\src\tests\test_envelopes.cpp
+	"Test_Support.cpp"
+	"Test_Support.h"
+	<unistd.h>
+
+1587419523 source:c:\users\steph\csl6\src\tests\test_oscillators.cpp
+	"Test_Support.h"
+	"Test_Support.cpp"
+	"SoundFileJ.h"
+	"SoundFileL.h"
+	"SimpleSines.h"
+	<SHARC.h>
+
+1587419521 c:\users\steph\csl6\src\includes\simplesines.h
+	"CSL_Core.h"
+
+1587419521 c:\users\steph\csl6\src\includes\sharc.h
+	"CSL_Core.h"
+	"Oscillator.h"
+
+1587435559 source:c:\users\steph\csl6\src\tests\test_effects.cpp
+	"Test_Support.cpp"
+	"Test_Support.h"
+	"RingBuffer.h"
+	"Clipper.h"
+	"FIR.h"
+	"InOut.h"
+	<unistd.h>
+
+1587419523 c:\users\steph\csl6\src\includes\ringbuffer.h
+	"CSL_Core.h"
+
+1587419520 c:\users\steph\csl6\src\includes\clipper.h
+	"CSL_Core.h"
+
+1587435559 source:c:\users\steph\csl6\src\tests\test_sources.cpp
+	"Test_Support.cpp"
+	"Test_Support.h"
+	"KarplusString.h"
+	<BasicFMInstrument.h>
+	<AdditiveInstrument.h>
+	<SndFileInstrument.h>
+	<Granulator.h>
+
+1587419521 c:\users\steph\csl6\src\includes\karplusstring.h
+	"CSL_Core.h"
+	"Noise.h"
+
+1587419519 c:\users\steph\csl6\src\includes\sndfileinstrument.h
+	"Instrument.h"
+	"SoundFile.h"
+
+1587419521 c:\users\steph\csl6\src\includes\granulator.h
+	"CSL_Core.h"
+	"ThreadUtilities.h"
+
+1587419523 source:c:\users\steph\csl6\src\tests\test_support.cpp
+	"Test_Support.h"
+	<stdlib.h>
+
+1587419523 source:c:\users\steph\csl6\src\utilities\blockresizer.cpp
+	"BlockResizer.h"
+	<string.h>
+
+1587419523 c:\users\steph\csl6\src\utilities\blockresizer.h
+	"CSL_Core.h"
+
+1587419523 source:c:\users\steph\csl6\src\utilities\cpoint.cpp
+	"CPoint.h"
+
+1587419523 c:\users\steph\csl6\src\utilities\cpoint.h
+	"CSL_Types.h"
+	<stdio.h>
+	<math.h>
+
+1587419524 source:c:\users\steph\csl6\src\utilities\fft_n.c
+	<math.h>
+	<stddef.h>
+	<stdint.h>
+	<stdlib.h>
+	<string.h>
+	"fft_N.h"
+
+1587419524 c:\users\steph\csl6\src\utilities\fft_n.h
+	<stdbool.h>
+	<stddef.h>
+
+1587419523 source:c:\users\steph\csl6\src\utilities\fft_wrapper.cpp
+	"FFT_Wrapper.h"
+	"math.h"
+	<string.h>
+
+1587419523 c:\users\steph\csl6\src\utilities\fft_wrapper.h
+	"CSL_Core.h"
+	<fftw3.h>
+	"FFTReal.h"
+	<kiss_fft.h>
+
+1587419523 c:\users\steph\csl6\src\utilities\fftreal.h
+
+1587419523 source:c:\users\steph\csl6\src\utilities\fftreal.cpp
+	"FFTReal.h"
+	<cassert>
+	<cmath>
+
+1587419523 source:c:\users\steph\csl6\src\utilities\ringbuffer.cpp
+	"RingBuffer.h"
+	<string.h>
+
+1587419523 c:\users\steph\csl6\src\utilities\ringbuffer.h
+	"CSL_Core.h"
+
+1587419523 source:c:\users\steph\csl6\src\utilities\threadutilities.cpp
+	"ThreadUtilities.h"
+	"CGestalt.h"
+	<mach/mach.h>
+
+1587419523 c:\users\steph\csl6\src\utilities\threadutilities.h
+	"CSL_Types.h"
+	"JuceHeader.h"
+	<pthread.h>
+	<pthread.h>
+
+1587419523 source:c:\users\steph\csl6\src\utilities\variable.cpp
+	"Variable.h"
+	<iostream>
+
+1587419523 c:\users\steph\csl6\src\utilities\variable.h
+	"CSL_Core.h"
+	"newran/newran.h"
+
+1587420208 source:c:\users\steph\csl6\builds\codeblockswindows\resources.rc
+	<windows.h>
+
+1587420206 source:c:\users\steph\csl6\jucelibrarycode\include_juce_gui_basics.cpp
+	"AppConfig.h"
+	<juce_gui_basics/juce_gui_basics.cpp>
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\juce_gui_basics.cpp
+	"juce_gui_basics.h"
+	<windowsx.h>
+	<vfw.h>
+	<commdlg.h>
+	<exdisp.h>
+	<exdispid.h>
+	<imm.h>
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<X11/Xresource.h>
+	<X11/Xutil.h>
+	<X11/Xmd.h>
+	<X11/keysym.h>
+	<X11/XKBlib.h>
+	<X11/cursorfont.h>
+	<unistd.h>
+	<X11/extensions/Xrandr.h>
+	<X11/extensions/Xinerama.h>
+	<X11/extensions/XShm.h>
+	<sys/shm.h>
+	<sys/ipc.h>
+	<X11/extensions/Xrender.h>
+	<X11/extensions/Xcomposite.h>
+	<X11/Xcursor/Xcursor.h>
+	<set>
+	"components/juce_Component.cpp"
+	"components/juce_ComponentListener.cpp"
+	"mouse/juce_MouseInputSource.cpp"
+	"desktop/juce_Displays.cpp"
+	"desktop/juce_Desktop.cpp"
+	"components/juce_ModalComponentManager.cpp"
+	"mouse/juce_ComponentDragger.cpp"
+	"mouse/juce_DragAndDropContainer.cpp"
+	"mouse/juce_MouseCursor.cpp"
+	"mouse/juce_MouseEvent.cpp"
+	"mouse/juce_MouseInactivityDetector.cpp"
+	"mouse/juce_MouseListener.cpp"
+	"keyboard/juce_CaretComponent.cpp"
+	"keyboard/juce_KeyboardFocusTraverser.cpp"
+	"keyboard/juce_KeyListener.cpp"
+	"keyboard/juce_KeyPress.cpp"
+	"keyboard/juce_ModifierKeys.cpp"
+	"buttons/juce_ArrowButton.cpp"
+	"buttons/juce_Button.cpp"
+	"buttons/juce_DrawableButton.cpp"
+	"buttons/juce_HyperlinkButton.cpp"
+	"buttons/juce_ImageButton.cpp"
+	"buttons/juce_ShapeButton.cpp"
+	"buttons/juce_TextButton.cpp"
+	"buttons/juce_ToggleButton.cpp"
+	"buttons/juce_ToolbarButton.cpp"
+	"drawables/juce_Drawable.cpp"
+	"drawables/juce_DrawableComposite.cpp"
+	"drawables/juce_DrawableImage.cpp"
+	"drawables/juce_DrawablePath.cpp"
+	"drawables/juce_DrawableRectangle.cpp"
+	"drawables/juce_DrawableShape.cpp"
+	"drawables/juce_DrawableText.cpp"
+	"drawables/juce_SVGParser.cpp"
+	"filebrowser/juce_DirectoryContentsDisplayComponent.cpp"
+	"filebrowser/juce_DirectoryContentsList.cpp"
+	"filebrowser/juce_FileBrowserComponent.cpp"
+	"filebrowser/juce_FileChooser.cpp"
+	"filebrowser/juce_FileChooserDialogBox.cpp"
+	"filebrowser/juce_FileListComponent.cpp"
+	"filebrowser/juce_FilenameComponent.cpp"
+	"filebrowser/juce_FileSearchPathListComponent.cpp"
+	"filebrowser/juce_FileTreeComponent.cpp"
+	"filebrowser/juce_ImagePreviewComponent.cpp"
+	"filebrowser/juce_ContentSharer.cpp"
+	"layout/juce_ComponentAnimator.cpp"
+	"layout/juce_ComponentBoundsConstrainer.cpp"
+	"layout/juce_ComponentBuilder.cpp"
+	"layout/juce_ComponentMovementWatcher.cpp"
+	"layout/juce_ConcertinaPanel.cpp"
+	"layout/juce_GroupComponent.cpp"
+	"layout/juce_MultiDocumentPanel.cpp"
+	"layout/juce_ResizableBorderComponent.cpp"
+	"layout/juce_ResizableCornerComponent.cpp"
+	"layout/juce_ResizableEdgeComponent.cpp"
+	"layout/juce_ScrollBar.cpp"
+	"layout/juce_SidePanel.cpp"
+	"layout/juce_StretchableLayoutManager.cpp"
+	"layout/juce_StretchableLayoutResizerBar.cpp"
+	"layout/juce_StretchableObjectResizer.cpp"
+	"layout/juce_TabbedButtonBar.cpp"
+	"layout/juce_TabbedComponent.cpp"
+	"layout/juce_Viewport.cpp"
+	"lookandfeel/juce_LookAndFeel.cpp"
+	"lookandfeel/juce_LookAndFeel_V2.cpp"
+	"lookandfeel/juce_LookAndFeel_V1.cpp"
+	"lookandfeel/juce_LookAndFeel_V3.cpp"
+	"lookandfeel/juce_LookAndFeel_V4.cpp"
+	"menus/juce_MenuBarComponent.cpp"
+	"menus/juce_BurgerMenuComponent.cpp"
+	"menus/juce_MenuBarModel.cpp"
+	"menus/juce_PopupMenu.cpp"
+	"positioning/juce_MarkerList.cpp"
+	"positioning/juce_RelativeCoordinate.cpp"
+	"positioning/juce_RelativeCoordinatePositioner.cpp"
+	"positioning/juce_RelativeParallelogram.cpp"
+	"positioning/juce_RelativePoint.cpp"
+	"positioning/juce_RelativePointPath.cpp"
+	"positioning/juce_RelativeRectangle.cpp"
+	"properties/juce_BooleanPropertyComponent.cpp"
+	"properties/juce_ButtonPropertyComponent.cpp"
+	"properties/juce_ChoicePropertyComponent.cpp"
+	"properties/juce_PropertyComponent.cpp"
+	"properties/juce_PropertyPanel.cpp"
+	"properties/juce_SliderPropertyComponent.cpp"
+	"properties/juce_TextPropertyComponent.cpp"
+	"properties/juce_MultiChoicePropertyComponent.cpp"
+	"widgets/juce_ComboBox.cpp"
+	"widgets/juce_ImageComponent.cpp"
+	"widgets/juce_Label.cpp"
+	"widgets/juce_ListBox.cpp"
+	"widgets/juce_ProgressBar.cpp"
+	"widgets/juce_Slider.cpp"
+	"widgets/juce_TableHeaderComponent.cpp"
+	"widgets/juce_TableListBox.cpp"
+	"widgets/juce_TextEditor.cpp"
+	"widgets/juce_ToolbarItemComponent.cpp"
+	"widgets/juce_Toolbar.cpp"
+	"widgets/juce_ToolbarItemPalette.cpp"
+	"widgets/juce_TreeView.cpp"
+	"windows/juce_AlertWindow.cpp"
+	"windows/juce_CallOutBox.cpp"
+	"windows/juce_ComponentPeer.cpp"
+	"windows/juce_DialogWindow.cpp"
+	"windows/juce_DocumentWindow.cpp"
+	"windows/juce_ResizableWindow.cpp"
+	"windows/juce_ThreadWithProgressWindow.cpp"
+	"windows/juce_TooltipWindow.cpp"
+	"windows/juce_TopLevelWindow.cpp"
+	"commands/juce_ApplicationCommandInfo.cpp"
+	"commands/juce_ApplicationCommandManager.cpp"
+	"commands/juce_ApplicationCommandTarget.cpp"
+	"commands/juce_KeyPressMappingSet.cpp"
+	"application/juce_Application.cpp"
+	"misc/juce_BubbleComponent.cpp"
+	"misc/juce_DropShadower.cpp"
+	"misc/juce_JUCESplashScreen.cpp"
+	"layout/juce_FlexBox.cpp"
+	"layout/juce_GridItem.cpp"
+	"layout/juce_Grid.cpp"
+	"native/juce_MultiTouchMapper.h"
+	"native/juce_ios_UIViewComponentPeer.mm"
+	"native/juce_ios_Windowing.mm"
+	"native/juce_ios_FileChooser.mm"
+	"native/juce_ios_ContentSharer.cpp"
+	"native/juce_mac_NSViewComponentPeer.mm"
+	"native/juce_mac_Windowing.mm"
+	"native/juce_mac_MainMenu.mm"
+	"native/juce_mac_FileChooser.mm"
+	"native/juce_mac_MouseCursor.mm"
+	"native/juce_win32_Windowing.cpp"
+	"native/juce_win32_DragAndDrop.cpp"
+	"native/juce_win32_FileChooser.cpp"
+	"native/juce_linux_X11.cpp"
+	"native/juce_linux_X11_Clipboard.cpp"
+	"native/juce_linux_X11_Windowing.cpp"
+	"native/juce_linux_FileChooser.cpp"
+	"native/juce_android_Windowing.cpp"
+	"native/juce_common_MimeTypes.cpp"
+	"native/juce_android_FileChooser.cpp"
+	"native/juce_android_ContentSharer.cpp"
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\components\juce_component.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\components\juce_componentlistener.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mouseinputsource.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\desktop\juce_displays.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\desktop\juce_desktop.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\components\juce_modalcomponentmanager.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_componentdragger.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_draganddropcontainer.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mousecursor.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mouseevent.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mouseinactivitydetector.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\mouse\juce_mouselistener.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_caretcomponent.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_keyboardfocustraverser.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_keylistener.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_keypress.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\keyboard\juce_modifierkeys.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_arrowbutton.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_button.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_drawablebutton.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_hyperlinkbutton.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_imagebutton.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_shapebutton.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_textbutton.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_togglebutton.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\buttons\juce_toolbarbutton.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawable.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawablecomposite.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawableimage.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawablepath.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawablerectangle.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawableshape.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_drawabletext.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\drawables\juce_svgparser.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_directorycontentsdisplaycomponent.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_directorycontentslist.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filebrowsercomponent.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filechooser.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filechooserdialogbox.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filelistcomponent.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filenamecomponent.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filesearchpathlistcomponent.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_filetreecomponent.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_imagepreviewcomponent.cpp
+
+1587417697 c:\users\steph\juce6\modules\juce_gui_basics\filebrowser\juce_contentsharer.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_componentanimator.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_componentboundsconstrainer.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_componentbuilder.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_componentmovementwatcher.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_concertinapanel.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_groupcomponent.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_multidocumentpanel.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_resizablebordercomponent.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_resizablecornercomponent.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_resizableedgecomponent.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_scrollbar.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_sidepanel.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_stretchablelayoutmanager.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_stretchablelayoutresizerbar.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_stretchableobjectresizer.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_tabbedbuttonbar.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_tabbedcomponent.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_viewport.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel_v2.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel_v1.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel_v3.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\lookandfeel\juce_lookandfeel_v4.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\menus\juce_menubarcomponent.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\menus\juce_burgermenucomponent.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\menus\juce_menubarmodel.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\menus\juce_popupmenu.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_markerlist.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativecoordinate.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativecoordinatepositioner.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativeparallelogram.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativepoint.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativepointpath.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\positioning\juce_relativerectangle.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_booleanpropertycomponent.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_buttonpropertycomponent.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_choicepropertycomponent.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_propertycomponent.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_propertypanel.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_sliderpropertycomponent.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_textpropertycomponent.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\properties\juce_multichoicepropertycomponent.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_combobox.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_imagecomponent.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_label.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_listbox.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_progressbar.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_slider.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_tableheadercomponent.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_tablelistbox.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_texteditor.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_toolbaritemcomponent.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_toolbar.cpp
+
+1587417703 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_toolbaritempalette.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\widgets\juce_treeview.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_alertwindow.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_calloutbox.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_componentpeer.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_dialogwindow.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_documentwindow.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_resizablewindow.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_threadwithprogresswindow.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_tooltipwindow.cpp
+
+1587417704 c:\users\steph\juce6\modules\juce_gui_basics\windows\juce_toplevelwindow.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\commands\juce_applicationcommandinfo.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\commands\juce_applicationcommandmanager.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\commands\juce_applicationcommandtarget.cpp
+
+1587417696 c:\users\steph\juce6\modules\juce_gui_basics\commands\juce_keypressmappingset.cpp
+
+1587417695 c:\users\steph\juce6\modules\juce_gui_basics\application\juce_application.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\misc\juce_bubblecomponent.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\misc\juce_dropshadower.cpp
+
+1587417700 c:\users\steph\juce6\modules\juce_gui_basics\misc\juce_jucesplashscreen.cpp
+
+1587417698 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_flexbox.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_griditem.cpp
+
+1587417699 c:\users\steph\juce6\modules\juce_gui_basics\layout\juce_grid.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_multitouchmapper.h
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_ios_uiviewcomponentpeer.mm
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_ios_windowing.mm
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_ios_filechooser.mm
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_ios_contentsharer.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_mac_nsviewcomponentpeer.mm
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_mac_windowing.mm
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_mac_mainmenu.mm
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_mac_filechooser.mm
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_mac_mousecursor.mm
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_win32_windowing.cpp
+	<juce_audio_plugin_client/AAX/juce_AAX_Modifier_Injector.h>
+	<juce_gui_extra/embedding/juce_ScopedDPIAwarenessDisabler.h>
+
+1587417659 c:\users\steph\juce6\modules\juce_audio_plugin_client\aax\juce_aax_modifier_injector.h
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_win32_draganddrop.cpp
+
+1587417702 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_win32_filechooser.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_linux_x11.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_linux_x11_clipboard.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_linux_x11_windowing.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_linux_filechooser.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_android_windowing.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_common_mimetypes.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_android_filechooser.cpp
+
+1587417701 c:\users\steph\juce6\modules\juce_gui_basics\native\juce_android_contentsharer.cpp
+
