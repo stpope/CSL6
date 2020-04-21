@@ -22,6 +22,7 @@ To get started with CSL, build the demo app (screen shot below)
 and use the combo boxes at the bottom-left to select among the tests, whose source code
 is in the Src/Tests folder. For the Mac, use the XCode project in the 
 Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder.
+There are pre-compipled versions of the demo for MacOS and Linux in the ZIP file https://github.com/stpope/CSL6/blob/master/Demo.zip
 
 ### Links for the impatient
 
