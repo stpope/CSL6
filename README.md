@@ -120,29 +120,30 @@ Look at the files in the Src/Tests folder for details.
 	All: JUCE 6.0
 
 CSL has run on MS_Windows in previous versions using tool-chains with standards-compliant C++ compilers
-such as Cygwin or CodeBlocks. JUCE's current tools support CodeBlocks on WOndows, but we have not tested this.
+such as Cygwin or CodeBlocks. JUCE's current tools support CodeBlocks on Windows, but we have not succeeded in
+making this work.
 The source tree includes a CodeBlocks project that compiles and links, but produces a non-executable excutable.
-Another option would be using the GCC toolchain on Cygwin. There are unfortunately several places where CSL
-uses C++ idioms that the Microsoft compiler rejects. We'd love some help from a Windows development expert here...
+Another option would be using the GCC toolchain in Cygwin. There are unfortunately several places where CSL
+uses C++ idioms that the Microsoft compiler rejects (see the file Doc/Bugs.txt). 
+We'd love some help from a Windows development expert here...
 
 Linking with the CSL Libraries
 
 To link CSL programs, you'll need the following packages installed on your machine:
 
-Either
+Either,
 
  	JUCE: Cross-platform everything -- http://www.juce.com
 
-OR these or similar libraries
+OR these or similar libraries:
 
- 	Cross-platform audio I/O: PortAudio (http://www.portaudio.com) V19 or equivalent;
+ 	Cross-platform audio I/O: PortAudio (http://www.portaudio.com) V19 or rtaudio;
  	Cross-platform MIDI I/O: PortMIDI (http://www-2.cs.cmu.edu/~music/portmusic);
  	Cross-platform sound file I/O: libsndfile 
  		(http://www.zip.com.au/~erikd/libsndfile) V1.04 or newer; 
- 	Fast Fourier Transform: FFTW (http://www.fftw.org) package V3.X;
-
-To use OpenSoundControl (OSC) with CSL, you'll need liblo (http://liblo.sourceforge.net/), 
-which is included in the Src/Libs folder.
+ 	OpenSoundControl support: liblo (http://liblo.sourceforge.net);
+	Fast Fourier Transform: FFTW (http://www.fftw.org) package V3.X; and
+	Graphics and GUI support such as Qt.
 
 If you use FFTW (rather than FFTReal), it needs to be compiled in the way described 
 in Sources/Spectral.h.
