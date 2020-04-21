@@ -58,12 +58,17 @@ buffers and streams of audio samples,
 and unit generator objects that represent audio sources and processors (e.g., many
 kinds of oscillators and filters)
 connected together into graphs that produce complex dynamic sounds.
+The signal processing graphs (or patches) can be connected to several kinds of output
+for real-time processing or writing to files, and can be controlled via scripts or MIDI or OSC.
 Most typical sound synthesis and processing objects are provided, as shown in the CSL class diagram below.
 
 ![alt text](http://fastlabinc.com/CSL/classes.jpg)
 
-Some of the code assumes that the CSL package is installed in ~/Code/CSL6; there are default settings 
-in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
+CSL grew out of code examples developed to teach a sequence of six graduate courses in digital audio programming, 
+the MAT 240 series taught at UCSB for over 10 years. Students in these courses contributed many ideas and much concrete
+code to CSL (see the doc). The course materials for these courses are all available on-line at the link, http://heaveneverywhere.com/TheBigMATBook
+
+## CSL Coding Start-up
 
 The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
 (2) look at the Doxygen-generated API documentation in Doc/html.zip
@@ -96,15 +101,20 @@ or, on windows
 
 	remake.bat
 
+Some of the code assumes that the CSL package is installed in ~/Code/CSL6; there are default settings 
+in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
+
 Note that the release contains a number of files that have not been ported to the 
 newest framework; these are generally in subdirectories called "Old" and may well 
 work with a little bit of tweaking; all the really unstable code has been removed.
+There are also a number of demos that are turned off by default, i.e., they are not presented in the demo menus.
+Look at the files in the Src/Tests folder for details.
 
 ## Platform Requirements (tested on these platforms)
 
 	MacOS: OSX 10.13 or newer with Xcode
 	Linux: Ubuntu 19 (or other recent release of a mainstream Linux distribution) with X11-libs, ALSA, Freetype, etc.
-	MS-windows: Tested on Windows10 with ASIO
+	MS-windows: Tested on Windows10 with Cygwin and ASIO
 	iOS, Android: recent releases and toolchains
 	All: JUCE 6.0
 
@@ -137,7 +147,7 @@ Building CSL
  	Use the JUCE projucer with the file CSL6.jucer to generate the build projects.
 
  	On a Mac: Builds/MacOSX/CSL6Demo.xcodeproj
- 	On MS-Windows: Builds/VisualStudio2015
+ 	On MS-Windows: Builds/MS_Windows
  	On Linux: Builds/LinuxMakefiles; make
 
 The standard way of running interactive CSL programs is using the JUCE GUI. 
@@ -284,7 +294,7 @@ Reading the source
 
 Coding Conventions
 
-Note that CSL uses old-school exception signatures, so it's most compatible with the C++ 11 standard. You'll get warnings about them from 2014 or 2017 compilers.
+Note that CSL uses old-school exception signatures, so it's most compatible with the C++ 11 standard. You'll get warnings about them from newer compilers. See the file Doc/Bugs.txt for details.
 
 Naming
 
