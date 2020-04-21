@@ -34,8 +34,8 @@ CSL Demo App quick start cheat sheet: https://github.com/stpope/CSL6/blob/master
 
 ## About CSL
 
-CSL is a C++ class library for sound/music applications; to use it, you write and compile C++ programs like 
-the ones in the Src/Tests directory. These programs will use the CSL 
+CSL is a C++ class library for sound/music applications; to use it, you write and compile 
+C++ programs like the ones in the Src/Tests directory. These programs will use the CSL 
 class library, and may read input files or respond to in-coming MIDI or OSC 
 commands. CSL apps can run stand-alone as servers, or have interactive GUIs, or be 
 plug-ins to out-board signal processing tools. CSL is frequently used together 
@@ -124,6 +124,7 @@ CSL has run on MS_Windows in previous versions using tool-chains with standards-
 such as Cygwin or CodeBlocks. JUCE's current tools support CodeBlocks on Windows, but we have not succeeded in
 making this work.
 The source tree includes a CodeBlocks project that compiles and links, but produces a non-executable excutable.
+The included VisualStudio19 project starts to compile, but fails to parse the thread function signatures.
 Another option would be using the GCC toolchain in Cygwin. There are unfortunately several places where CSL
 uses C++ idioms that the Microsoft compiler rejects (see the file Doc/Bugs.txt). 
 We'd love some help from a Windows development expert here...
