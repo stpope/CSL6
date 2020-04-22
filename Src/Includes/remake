@@ -1,3 +1,0 @@
-rm *.h
-ln -s ../*/*.h .
-ln -s ../Spatializers/*/*.h .

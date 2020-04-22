@@ -1,6 +1,0 @@
-src_evaluate-calc_snr.o src_evaluate-calc_snr.o: calc_snr.c \
-  ../src/config.h util.h
-
-../src/config.h:
-
-util.h:

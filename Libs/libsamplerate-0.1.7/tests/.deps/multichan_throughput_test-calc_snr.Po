@@ -1,6 +1,0 @@
-multichan_throughput_test-calc_snr.o multichan_throughput_test-calc_snr.o:  \
- calc_snr.c ../src/config.h util.h
-
-../src/config.h:
-
-util.h:

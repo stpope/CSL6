@@ -1,6 +1,0 @@
-varispeed_test-calc_snr.o varispeed_test-calc_snr.o: calc_snr.c \
-  ../src/config.h util.h
-
-../src/config.h:
-
-util.h:

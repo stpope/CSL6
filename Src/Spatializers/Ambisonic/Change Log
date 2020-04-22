@@ -1,5 +1,0 @@
-CHANGE LOG
-
-• Updated the destructor of the HOA_SpeakerLayout, HOA_Encoder, classes, taking care of some previously allocated memory.
-Jorge Castellanos		10-01-05
-
