@@ -10,6 +10,10 @@
 #include <taglib/tag.h>
 #endif
 
+#ifdef CSL_WINDOWS
+#define strcasestr(x, y)   strstr(x, y)
+#endif
+
 using namespace csl;
 
 SoundFileMetadata::SoundFileMetadata() { }

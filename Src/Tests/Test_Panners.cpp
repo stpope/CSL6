@@ -20,7 +20,9 @@
 #include "Convolver2.h"				// FFT-based convolver
 #endif
 
+#ifndef CSL_WINDOWS
 #include <unistd.h>
+#endif
 
 /////////////////////// Here are the actual unit tests ////////////////////
 

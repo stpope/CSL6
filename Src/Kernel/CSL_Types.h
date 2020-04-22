@@ -63,6 +63,8 @@
 
 #ifdef WIN32								// M$_Windows
 	#define CSL_WINDOWS
+	#define rindex(x, y)        strrchr(x, y)
+	#define strcasestr(x, y)    strstr(x, y)
 #endif
 
 #if defined __APPLE__						// Mac OSX
@@ -341,6 +343,10 @@ typedef struct {
 #define CSL_SAMPS_PER_METER		133.63636363636364f
 #define CSL_DEGS_PER_RAD		57.295779513082321f
 
+#ifndef M_PI
+	#define M_PI 3.14159265358979323846
+#endif
+
 ///
 /// Typedefs for basic types that differ across platforms
 ///
@@ -364,4 +370,5 @@ typedef struct {
 
 } // end of namespace
 
-#endif // _CSLTypes_H
+#endif
+// _CSLTypes_H

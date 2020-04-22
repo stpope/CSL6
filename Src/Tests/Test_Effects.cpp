@@ -21,7 +21,10 @@
 #include "Clipper.h"
 #include "FIR.h"
 #include "InOut.h"
+
+#ifndef CSL_WINDOWS
 #include <unistd.h>
+#endif
 
 using namespace csl;	// this is the namespace, dummy!
 

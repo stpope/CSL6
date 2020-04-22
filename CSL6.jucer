@@ -189,7 +189,7 @@
     <FILE id="n54bOd" name="CSL6_Logo.png" compile="0" resource="1" file="Doc/CSL6_Logo.png"/>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI JUCE_DEBUG"
+    <XCODE_MAC targetFolder="Builds/MacOSX" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI USE_JTHREADS JUCE_DEBUG"
                microphonePermissionNeeded="1" extraCompilerFlags="-I../../Src/Includes -I/usr/local/include -w"
                extraLinkerFlags="/usr/local/lib/liblo.a" smallIcon="n54bOd"
                bigIcon="n54bOd">
@@ -236,8 +236,8 @@
         <MODULEPATH id="juce_opengl" path="../../../../../Content/Code/JUCE6/modules"/>
       </MODULEPATHS>
     </LINUX_MAKE>
-    <VS2015 targetFolder="Builds/VisualStudio2015" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI USR_JTHREADS JUCE_DEBUG"
-            extraCompilerFlags="/w0 /I ..\..\Src\Includes /I ..\..\..\JUCE6\modules /I ..\..\JuceLibraryCode"
+    <VS2019 targetFolder="Builds/VisualStudio2019" extraDefs="USE_JUCE USE_VBAP USE_HRTF USE_AMBISONIC USE_FFTREAL USE_JSND USE_JMIDI USE_JTHREADS JUCE_DEBUG"
+            extraCompilerFlags="/I ..\..\Src\Includes /I ..\..\JuceLibraryCode /I ..\..\..\JUCE6\modules"
             smallIcon="n54bOd" bigIcon="n54bOd">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
@@ -258,7 +258,7 @@
         <MODULEPATH id="juce_audio_devices"/>
         <MODULEPATH id="juce_audio_basics"/>
       </MODULEPATHS>
-    </VS2015>
+    </VS2019>
   </EXPORTFORMATS>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>

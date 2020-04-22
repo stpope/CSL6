@@ -331,6 +331,8 @@ void csl::logURL() {
 
 #ifndef WIN32
 #include <unistd.h>		// for usleep
+#else
+#define usleep(t)    std::this_thread::sleep_for(std::chrono::microseconds(t))
 #endif
 
 ///

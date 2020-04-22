@@ -12,7 +12,10 @@
 #else
 #include "Test_Support.h"
 #endif
+
+#ifndef CSL_WINDOWS
 #include <unistd.h>
+#endif
 
 /////////////////////// Here are the actual unit tests ////////////////////
 

@@ -2,7 +2,7 @@
 //  SpeakerLayout.h -- Class for loading and parsing loudspeaker position information used 
 //		by the Spatializer and Auralizer classes.
 //	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
-//	Created by Jorge Castellanos on 6/16/06. Hacked 8/09 by STP.
+//	Created by Jorge Castellanos in 6/06. Hacked 8/09 by STP.
 //
 
 #ifndef SPEAKERLAYOUT_H
@@ -110,7 +110,7 @@ public:
 	~Speaker() { };
 	
 	CPoint position()	{ return mPosition; }; // Return the position of the speaker.
-	float azimuth()	{ return mPosition.theta(); };
+	float azimuth()		{ return mPosition.theta(); };
 	float elevation()	{ return mPosition.ele(); };
 	float radius()		{ return mPosition.r(); };
 	void setRadius(float radius); ///< Specify the distance from the center of the coordinate space to the speaker.
