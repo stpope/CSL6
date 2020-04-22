@@ -77,14 +77,8 @@ You can unzip this file to get the full HTML doc; you might also want to study t
 
 	Src/Kernel/CSL_Types.h (note the system defaults here)
 	Src/Kernel/CSL_Core.h (the kernel classes are here)
-
-and 
-
 	Src/Sources/SimpleSines.{h,cpp} (a tutorial for writing unit generators)
-
-or
-
-	Src/Tests/TestSources.cpp (or any of the other tests)
+	Src/Tests/TestSources.cpp (or any of the other test sources in that folder)
 
 To compile the sources, you will need to create the links in the Src/Includes folder; 
 to do this, open a UNIX shell (terminal, or DOS prompt) and execute the commands,
