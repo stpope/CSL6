@@ -89,11 +89,7 @@ to do this, open a UNIX shell (terminal, or DOS prompt) and execute the commands
 
 2. make symbolic links from the include files to this folder
 
-	./remake
-
-or, on windows
-
-	remake.bat
+	./remake (or use the .bat file for MS-Windows)
 
 Some of the code assumes that the CSL package is installed in ~/Code/CSL6; there are default settings 
 in Src/Kernel/CSL_Types.h that have to be changed if you put it somewhere else.
