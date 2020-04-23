@@ -17,7 +17,7 @@ The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots,
 documentation downloads and links to screencast demos there.
 
 CSL is known to work on Mac OSX, Linux, iOS, Android, RaspberryPi and
-MS-Windows (work-in-progress; see below). 
+MS-Windows (with some limitations, see below). 
 To get started with CSL, build the demo app (screen shot below)
 and use the combo boxes at the bottom-left to select among the tests, whose source code
 is in the Src/Tests folder. For the Mac, use the XCode project in the 
