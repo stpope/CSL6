@@ -111,9 +111,9 @@ Look at the files in the Src/Tests folder for details.
 	MS-Windows: Windows 10 with VisualStudio 2019 (see note below)
 	All: JUCE 6.0
 
-There are several places where CSL uses C++ idioms that the Microsoft 
-compiler rejects (see the file Doc/Bugs.txt).  As a result of this, a few of the 
-demonstrations are disabled on MS-Windows, including convolution and the spatializers.
+A few of the demonstrations are disabled on MS-Windows; the convolution and spatializers 
+haven't been tested (I'd love a Windows user to run these), and the SHARC code is 
+UNIX-specific (use of dirent enumeration and popen()).
 
 ## Linking with the CSL Libraries
 
