@@ -17,12 +17,12 @@ The home page for CSL is http://FASTLabInc.com/CSL. See the screen shots,
 documentation downloads and links to screencast demos there.
 
 CSL is known to work on Mac OSX, Linux, iOS, Android, RaspberryPi and
-MS-Windows (work-in-progress; see below). 
+MS-Windows (with some limitations, see below). 
 To get started with CSL, build the demo app (screen shot below)
 and use the combo boxes at the bottom-left to select among the tests, whose source code
 is in the Src/Tests folder. For the Mac, use the XCode project in the 
 Builds/MacOSX folder; for Linux, use the makefile in the Builds/LinuxMakefile folder.
-There are pre-compiled versions of the demo for MacOS and Linux in the ZIP file https://github.com/stpope/CSL6/blob/master/Demo.zip
+There are pre-compiled versions of the demo for MacOS, Linux and MS-Windows in the ZIP file https://github.com/stpope/CSL6/blob/master/Demo.zip
 
 ### Links for the impatient
 
@@ -107,6 +107,7 @@ Look at the files in the Src/Tests folder for details.
 		X86 (PC) and ARM (RaspberryPi) platforms supported
 	iOS: recent releases and toolchains
 	Android: recent releases and toolchains
+	RaspberryPi and Beaglebone: recent Debian releases and toolchains
 	MS-Windows: Windows 10 with VisualStudio 2019 (see note below)
 	All: JUCE 6.0
 
@@ -114,7 +115,7 @@ There are several places where CSL uses C++ idioms that the Microsoft
 compiler rejects (see the file Doc/Bugs.txt).  As a result of this, a few of the 
 demonstrations are disabled on MS-Windows, including convolution and the spatializers.
 
-Linking with the CSL Libraries
+## Linking with the CSL Libraries
 
 To link CSL programs, you'll need the following packages installed on your machine:
 
@@ -357,3 +358,9 @@ See the file COPYRIGHT for the list of authors and UC copy-left.
 stp et al. - January, 1998 - November, 2012 - April, 2020
 
 Contact: stephen _at_ heaveneverywhere _dot_ com
+
+## Whose fault is all this?
+
+The substantive contributors to CSL include (in chronological order) Stephen Travis Pope, 
+Chandrasekhar Ramakrishnan, Xavier Amatriain, Brent Lehman, Doug McCoy, Lance Putnam, 
+Jorge Castellanos, Graham Wakefield, Will Wolcott and Charlie Roberts.
