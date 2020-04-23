@@ -32,6 +32,12 @@ Presentation slides for the really impatient: http://www.fastlabinc.com/CSL/CSL_
 
 CSL Demo App quick start cheat sheet: https://github.com/stpope/CSL6/blob/master/Doc/6.0DemoQuickStart.pdf
 
+### CSL Video Demos ("The CSL Show")
+
+A Tour of CSL (22 min): https://vimeo.com/409028476
+
+CSL Internals (4:20 min): https://vimeo.com/409027546
+	    
 ## About CSL
 
 CSL is a C++ class library for sound/music applications; to use it, you write and compile 
