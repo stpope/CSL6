@@ -363,4 +363,4 @@ Contact: stephen _at_ heaveneverywhere _dot_ com
 
 The substantive contributors to CSL include (in chronological order) Stephen Travis Pope, 
 Chandrasekhar Ramakrishnan, Xavier Amatriain, Brent Lehman, Doug McCoy, Lance Putnam, 
-Jorge Castellanos, Graham Wakefield, Will Wolcott and Charlie Roberts.
+Jorge Castellanos, Graham Wakefield, Florian Hollerweger, Will Wolcott and Charlie Roberts.
