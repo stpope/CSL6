@@ -107,6 +107,7 @@ Look at the files in the Src/Tests folder for details.
 		X86 (PC) and ARM (RaspberryPi) platforms supported
 	iOS: recent releases and toolchains
 	Android: recent releases and toolchains
+	RaspberryPi and Beaglebone: recent Debian releases and toolchains
 	MS-Windows: Windows 10 with VisualStudio 2019 (see note below)
 	All: JUCE 6.0
 
@@ -114,7 +115,7 @@ There are several places where CSL uses C++ idioms that the Microsoft
 compiler rejects (see the file Doc/Bugs.txt).  As a result of this, a few of the 
 demonstrations are disabled on MS-Windows, including convolution and the spatializers.
 
-Linking with the CSL Libraries
+## Linking with the CSL Libraries
 
 To link CSL programs, you'll need the following packages installed on your machine:
 
