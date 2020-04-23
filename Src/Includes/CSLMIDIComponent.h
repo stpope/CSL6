@@ -1,1 +1,0 @@
-../JUCE/CSLMIDIComponent.h
