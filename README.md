@@ -358,3 +358,9 @@ See the file COPYRIGHT for the list of authors and UC copy-left.
 stp et al. - January, 1998 - November, 2012 - April, 2020
 
 Contact: stephen _at_ heaveneverywhere _dot_ com
+
+## Whose fault is all this?
+
+The substantive contributors to CSL include (in chronological order) Stephen Travis Pope, 
+Chandrasekhar Ramakrishnan, Xavier Amatriain, Brent Lehman, Doug McCoy, Lance Putnam, 
+Jorge Castellanos, Graham Wakefield, Will Wolcott and Charlie Roberts.
