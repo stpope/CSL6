@@ -169,12 +169,14 @@ void SpeakerSetLayout::findSpeakerPairs() throw(CException) {
 
 	unsigned numSpeakers = mSpeakerLayout->numSpeakers();
 	unsigned j, index;
-	unsigned speakerMapping[numSpeakers]; // To map unordered speakers into an ordered set.
-	float speakerAngles[numSpeakers];
+	unsigned * speakerMapping; // To map unordered speakers into an ordered set.
+	float * speakerAngles;
 	float indexAngle;
 	
 	logMsg("VBAP::finding loudspeaker pairs");
-	
+	SAFE_MALLOC(speakerMapping, unsigned, numSpeakers);
+	SAFE_MALLOC(speakerAngles, float, numSpeakers);
+
 	// Build a map to the speakers, that points to speaker indexes.
 	for (unsigned i = 0; i < numSpeakers; i++) {
 		speakerAngles[i] = mSpeakerLayout->speakerAtIndex(i)->azimuth(); 

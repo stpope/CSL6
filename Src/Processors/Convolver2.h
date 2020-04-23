@@ -12,7 +12,7 @@
 #define INCLUDE_CONVOLUTION2_H
 
 #include "CSL_Core.h"
-#define USE_FFTW							// use FFTW (faster but complicated to build)
+//#define USE_FFTW							// use FFTW (faster but complicated to build)
 #include "FFT_Wrapper.h"
 
 namespace csl {

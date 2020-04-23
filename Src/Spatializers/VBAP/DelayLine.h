@@ -13,7 +13,7 @@
 namespace csl {
 
 // The delay line takes its input and write a delayed output
-class DelayLine : public UnitGenerator, public Effect {
+class DelayLine : public Effect {
 public:
 	DelayLine(unsigned maxDelayInSamples);
 

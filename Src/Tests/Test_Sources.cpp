@@ -478,9 +478,7 @@ testStruct srcTestList[] = {
 	"WaveShaping synthesis",	testWaveShaper,			"Play 2 wave-shaper notes with envelopes",
 //    "IFFT synthesis (buggy)",    test_ifft,                "Make a sound with IFFT synthesis",
 //    "Vector IFFT (buggy)",        test_vector_ifft,        "Vector synthesis with 2 IFFTs",
-#ifndef CSL_WINDOWS
 	"Soundfile granulation",	testGrainCloud,			"Random sound file granulation example",
-#endif
 	NULL,						NULL,					NULL
 };
 

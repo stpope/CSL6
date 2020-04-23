@@ -373,8 +373,10 @@ void AmbisonicDecoder::initialize(UnitGenerator &input, AmbisonicDecoderMethod m
 	mNumChannels = orderToChannels(decodingOrder); // how many input ambisonic channels needed at this order
 	// how many channels it would need *if* it was a uniform order (hOrder == vOrder)
 	unsigned numChannelsGreaterOrder = orderToChannels(greaterOrder(decodingOrder));
-	unsigned channelIndex[numChannelsGreaterOrder];
-	unsigned invChannelIndex[numChannelsGreaterOrder];
+	unsigned * channelIndex;
+	unsigned * invChannelIndex;
+	SAFE_MALLOC(channelIndex, unsigned, numChannelsGreaterOrder);
+	SAFE_MALLOC(invChannelIndex, unsigned, numChannelsGreaterOrder);
 
 	// The invChannelIndexer doesn't go thru all channels, so make sure to set others to zero.
 	memset(invChannelIndex , 0, numChannelsGreaterOrder * sizeof(unsigned));

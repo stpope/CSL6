@@ -196,11 +196,7 @@ void JSoundFile::openForWrite(SoundFileFormat tformat, unsigned tchannels, unsig
 	mMode = kSoundFileWrite;
 	juce::String fname(mPath.c_str());
 	mIOFile = new juce::File(fname);					    // create a JUCE file object
-#ifdef CSL_WINDOWS
-    mOutStream = mIOFile->createOutputStream(); // .get();
-#else
     mOutStream = mIOFile->createOutputStream().get();
-#endif
 	juce::StringPairArray metaDict;
 	juce::AiffAudioFormat afmt;
 	juce::WavAudioFormat wfmt;

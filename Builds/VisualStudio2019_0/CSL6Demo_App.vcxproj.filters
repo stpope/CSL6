@@ -2400,6 +2400,33 @@
     <ClCompile Include="..\..\Src\Spatializers\SpeakerLayout.cpp">
       <Filter>CSL6Demo\Spatializers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Spatializers\SpatialAudio.cpp">
+      <Filter>CSL6Demo\Spatializers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Spatializers\VBAP\VBAP.cpp">
+      <Filter>CSL6Demo\Spatializers\VBAP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Spatializers\VBAP\DelayLine.cpp">
+      <Filter>CSL6Demo\Spatializers\VBAP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Spatializers\Ambisonic\Ambisonic.cpp">
+      <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Spatializers\Ambisonic\AmbisonicPanner.cpp">
+      <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Spatializers\Ambisonic\AmbisonicUtilities.cpp">
+      <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Spatializers\Binaural\Binaural.cpp">
+      <Filter>CSL6Demo\Spatializers\Binaural</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Spatializers\Binaural\BinauralDB.cpp">
+      <Filter>CSL6Demo\Spatializers\Binaural</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Processors\Convolver2.cpp">
+      <Filter>CSL6Demo\Processors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Kernel\CSL_Types.h">
@@ -4621,6 +4648,33 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Spatializers\SpeakerLayout.h">
       <Filter>CSL6Demo\Spatializers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Spatializers\SpatialAudio.h">
+      <Filter>CSL6Demo\Spatializers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Spatializers\VBAP\VBAP.h">
+      <Filter>CSL6Demo\Spatializers\VBAP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Spatializers\VBAP\DelayLine.h">
+      <Filter>CSL6Demo\Spatializers\VBAP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Spatializers\Ambisonic\Ambisonic.h">
+      <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Spatializers\Ambisonic\AmbisonicPanner.h">
+      <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Spatializers\Ambisonic\AmbisonicUtilities.h">
+      <Filter>CSL6Demo\Spatializers\Ambisonic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Spatializers\Binaural\Binaural.h">
+      <Filter>CSL6Demo\Spatializers\Binaural</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Spatializers\Binaural\BinauralDB.h">
+      <Filter>CSL6Demo\Spatializers\Binaural</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Processors\Convolver2.h">
+      <Filter>CSL6Demo\Processors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -236,7 +236,7 @@ void testConvolver3() {
 
 #endif
 
-#ifndef CSL_WINDOWS
+//#ifndef CSL_WINDOWS
 
 /// Spatializer with HRTF
 
@@ -601,7 +601,7 @@ void test_convolution_files() {
 //	0.101001
 //	0.125591
 
-#endif // CSL_WINDOWS
+//#endif // CSL_WINDOWS
 
 //////// RUN_TESTS Function ////////
 
@@ -639,7 +639,6 @@ testStruct panTestList[] = {
 #endif
 	"Osc bank",				testOscBank,			"Mix a bank of oscillators",
 //	"Channel-mapped IO (buggy)",	testCMapIO,				"Demonstrate channel-mapped IO",
-#ifndef CSL_WINDOWS
 //    "HRTF horiz circles (buggy)",    test_Binaural_horiz,    "Test the HRTF-based binaural panner",
 //    "HRTF axial circles (buggy)",    test_Binaural_vertAxial,"Play a HRTF-panner with axial circles",
 //    "HRTF median circles (buggy)",    test_Binaural_vertMedian,"Play a HRTF-panner with median circles",
@@ -648,7 +647,6 @@ testStruct panTestList[] = {
 //	"VBAP (buggy)",			test_VBAP_horiz,		"Test the VBAP-based spatial panner",
 	"Convolver",			test_convolution,		"Test a convolver",
 //	"Convolver Norm",		test_convolution_files,	"Test IR normalization",
-#endif
 NULL,						NULL,			NULL
 };
 

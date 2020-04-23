@@ -64,7 +64,8 @@
 #ifdef WIN32								// M$_Windows
 	#define CSL_WINDOWS
 	#define rindex(x, y)        strrchr(x, y)
-	#define strcasestr(x, y)    strstr(x, y)
+	#define strcasestr(x, y)    strstr(x, y)			// not really the same
+	#define bzero(ptr, len)		memset(ptr, 0, len)
 #endif
 
 #if defined __APPLE__						// Mac OSX

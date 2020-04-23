@@ -9,12 +9,12 @@
 using namespace csl;
 
 // DelayLine implementation
-DelayLine :: DelayLine(unsigned maxDelayInSamples) : UnitGenerator(), Effect() {
+DelayLine :: DelayLine(unsigned maxDelayInSamples) : Effect() {
 	// add a little bit of wiggle room to the delay length this is necessary to make setDelayLength work
 	mMaxDelayInSamples = maxDelayInSamples;
 	mTotalDelayInSamples = maxDelayInSamples + CGestalt::maxBufferFrames();
 	mRingBuffer.mBuffer.setSize(CGestalt::numOutChannels(), mTotalDelayInSamples); // Prepare the buffer to be used for storage.
-	mRingBuffer.mBuffer.allocateMonoBuffers(); // Allocate memory for my buffer.
+	mRingBuffer.mBuffer.allocateBuffers(); // Allocate memory for my buffer.
 }
 
 unsigned DelayLine::delayLength() {
@@ -48,8 +48,9 @@ float DelayLine::setDelayTime(float delayInMiliseconds) {
 }
 
 // The next_buffer call writes, then reads
-void DelayLine::nextBuffer(Buffer& output) throw(Exception) {
-	getInput(output);
+void DelayLine::nextBuffer(Buffer& output) throw(CException) {
+	Effect::pullInput(output.mNumFrames);					// get some input
+//	sample* inputPtr = mInputPtr;
 	mRingBuffer.writeBuffer(output);
 	mRingBuffer.nextBuffer(output);
 	return;

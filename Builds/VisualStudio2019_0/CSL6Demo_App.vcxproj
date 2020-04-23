@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Src\Kernel\CSL_Core.cpp" />
     <ClCompile Include="..\..\Src\Kernel\CGestalt.cpp" />
+    <ClCompile Include="..\..\Src\Processors\Convolver2.cpp" />
     <ClCompile Include="..\..\Src\Sources\Window.cpp" />
     <ClCompile Include="..\..\Src\Sources\Envelope.cpp" />
     <ClCompile Include="..\..\Src\Sources\Oscillator.cpp" />
@@ -158,15 +159,23 @@
     <ClCompile Include="..\..\Src\IO\FileIO.cpp" />
     <ClCompile Include="..\..\Src\IO\MIDIIOJ.cpp" />
     <ClCompile Include="..\..\Src\IO\OSC_support.cpp" />
+    <ClCompile Include="..\..\Src\Spatializers\Ambisonic\Ambisonic.cpp" />
+    <ClCompile Include="..\..\Src\Spatializers\Ambisonic\AmbisonicPanner.cpp" />
+    <ClCompile Include="..\..\Src\Spatializers\Ambisonic\AmbisonicUtilities.cpp" />
+    <ClCompile Include="..\..\Src\Spatializers\Binaural\Binaural.cpp" />
+    <ClCompile Include="..\..\Src\Spatializers\Binaural\BinauralDB.cpp" />
     <ClCompile Include="..\..\Src\Spatializers\SimplePanner.cpp" />
     <ClCompile Include="..\..\Src\Spatializers\DistanceSimulator.cpp" />
     <ClCompile Include="..\..\Src\Instruments\Instrument.cpp" />
     <ClCompile Include="..\..\Src\Instruments\AdditiveInstrument.cpp" />
     <ClCompile Include="..\..\Src\Instruments\BasicFMInstrument.cpp" />
     <ClCompile Include="..\..\Src\Instruments\SndFileInstrument.cpp" />
+    <ClCompile Include="..\..\Src\Spatializers\SpatialAudio.cpp" />
     <ClCompile Include="..\..\Src\Spatializers\SpatialPanner.cpp" />
     <ClCompile Include="..\..\Src\Spatializers\SpatialSource.cpp" />
     <ClCompile Include="..\..\Src\Spatializers\SpeakerLayout.cpp" />
+    <ClCompile Include="..\..\Src\Spatializers\VBAP\DelayLine.cpp" />
+    <ClCompile Include="..\..\Src\Spatializers\VBAP\VBAP.cpp" />
     <ClCompile Include="..\..\Src\Utilities\Variable.cpp" />
     <ClCompile Include="..\..\Src\Utilities\CPoint.cpp" />
     <ClCompile Include="..\..\Src\Utilities\BlockResizer.cpp" />
@@ -1962,6 +1971,7 @@
     <ClInclude Include="..\..\Src\Kernel\CSL_Exceptions.h" />
     <ClInclude Include="..\..\Src\Kernel\CSL_Core.h" />
     <ClInclude Include="..\..\Src\Kernel\CGestalt.h" />
+    <ClInclude Include="..\..\Src\Processors\Convolver2.h" />
     <ClInclude Include="..\..\Src\Sources\Window.h" />
     <ClInclude Include="..\..\Src\Sources\Envelope.h" />
     <ClInclude Include="..\..\Src\Sources\Oscillator.h" />
@@ -1985,6 +1995,11 @@
     <ClInclude Include="..\..\Src\IO\FileIO.h" />
     <ClInclude Include="..\..\Src\IO\MIDIIOJ.h" />
     <ClInclude Include="..\..\Src\IO\OSC_support.h" />
+    <ClInclude Include="..\..\Src\Spatializers\Ambisonic\Ambisonic.h" />
+    <ClInclude Include="..\..\Src\Spatializers\Ambisonic\AmbisonicPanner.h" />
+    <ClInclude Include="..\..\Src\Spatializers\Ambisonic\AmbisonicUtilities.h" />
+    <ClInclude Include="..\..\Src\Spatializers\Binaural\Binaural.h" />
+    <ClInclude Include="..\..\Src\Spatializers\Binaural\BinauralDB.h" />
     <ClInclude Include="..\..\Src\Spatializers\matrix.h" />
     <ClInclude Include="..\..\Src\Spatializers\SimplePanner.h" />
     <ClInclude Include="..\..\Src\Spatializers\DistanceSimulator.h" />
@@ -1993,9 +2008,12 @@
     <ClInclude Include="..\..\Src\Instruments\AdditiveInstrument.h" />
     <ClInclude Include="..\..\Src\Instruments\BasicFMInstrument.h" />
     <ClInclude Include="..\..\Src\Instruments\SndFileInstrument.h" />
+    <ClInclude Include="..\..\Src\Spatializers\SpatialAudio.h" />
     <ClInclude Include="..\..\Src\Spatializers\SpatialPanner.h" />
     <ClInclude Include="..\..\Src\Spatializers\SpatialSource.h" />
     <ClInclude Include="..\..\Src\Spatializers\SpeakerLayout.h" />
+    <ClInclude Include="..\..\Src\Spatializers\VBAP\DelayLine.h" />
+    <ClInclude Include="..\..\Src\Spatializers\VBAP\VBAP.h" />
     <ClInclude Include="..\..\Src\Utilities\Variable.h" />
     <ClInclude Include="..\..\Src\Utilities\CPoint.h" />
     <ClInclude Include="..\..\Src\Utilities\BlockResizer.h" />
