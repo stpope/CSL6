@@ -1,0 +1,85 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Eigen value and eigen vector</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="matutil.htm">Prev</a> |
+<a href="manual.htm">Up</a> |
+<a href="matfunc.htm">Next</a>
+</h6>
+
+<p style="color:red;font-size:14px;">Notice: These methods are no longer supported as the algorithm used here is not always converging for medium to large size matrices.</p>
+
+<h2>Eigen value and eigen vector</h2>
+
+<p>
+The following methods are available to evaluate the eigen values and corresponding eigen vectors of a matrix.
+</p>
+
+<pre><code>1. bool <a href="#e1">eigen</a> (valarray&lt;T&gt;&amp; reival) const;
+2. bool <a href="#e2">eigen</a> (valarray&lt;T&gt;&amp; reival, matrix&lt;T&gt;&amp; eivec) const;
+
+3. bool <a href="#e3">eigen</a> (valarray&lt;T&gt;&amp; reival, valarray&lt;T&gt;&amp; ieival) const;
+4. bool <a href="#e4">eigen</a> (valarray&lt;T&lt;&amp; reival, valarray&lt;T&gt;&amp; ieival, matrix&lt;T&gt;&amp; eivec) const;
+
+</code></pre>
+
+<h4>Parameter</h4>
+
+<p>
+<dl>
+<dt><i>reival</i></dt>
+<dd>Reference to a <i>valarray</i> class object to receive the real eigen values of a matrix.</dd>
+
+<dt><i>ieival</i></dt>
+<dd>Reference to a <i>valarray</i> class object to receive the imaginary eigen values of a matrix.</dd>
+
+<dt><i>eivec</i></dt>
+<dd>Reference to a <i>matrix</i> class object to receive the eigen vectors of a matrix.</dd>
+</dl>
+</p>
+
+<p>
+<ol>
+<li><a name="e1"></a>Finds the eigen values of a symmetric matrix. If successful, the eigen values are copied into the <i>valarray</i> class object <i>reival</i>, and this method returns <i>true</i>, otherwise, it returns <i>false</i>.</li><br><br>
+
+<li><a name="e2"></a>Finds the eigen values and eigen vectors of a symmetric matrix. If successful, the eigen values are copied into the <i>valarray</i> class object <i>reival</i> and corresponding eigen vectors into matrix <i>eivec</i>, and this method returns <i>true</i>, otherwise, it returns <i>false</i>.</li><br><br>
+
+<li><a name="e3"></a>Finds the eigen values of a general square matrix. If successful, the real eigen values are copied into <i>reival</i> and imaginary eigen values into <i>ieival</i>, and this method returns <i>true</i>, otherwise, it returns <i>false</i>.</li><br><br>
+
+<li><a name="e4"></a>Finds the eigen values and eigen vectors of a general square matrix. If successful, the real eigen values are copied into <i>reival</i>, imaginary eigen values into <i>ieival</i>, and corresponding eigen vectors into <i>eivec</i>, and this method returns <i>true</i>, otherwise, it returns <i>false</i>.</li><br><br>
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;double&gt; Matrix;
+typedef std::valarray&lt;double&gt; Vector;
+
+using techsoft::gmslice;
+using techsoft::LTRIANG;
+using techsoft::UTRIANG;
+
+size_t n = 4;
+Matrix a(n,n), ev(n,n);
+Vector d(n), e(n);
+bool ret;
+
+a.rand();
+a = a[gmslice(UTRIANG)];
+a[gmslice(LTRIANG)] = ~a;       // a is now a symmetric matrix
+
+ret = a.eigen( d);              // Finds the eigen values
+ret = a.eigen( d, ev);          // Finds both eigen values and eigen vectors
+
+a.rand();
+ret = a.eigen( d, e);           // Finds real and imaginary eigen values
+ret = a.eigen( d, e, ev);       // Finds real and imaginary eigen values and eigen vectors
+
+</code></pre>
+
+</body>
+</html>

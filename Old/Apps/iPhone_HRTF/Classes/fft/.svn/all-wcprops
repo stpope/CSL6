@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/imagineresearch/AME0/!svn/ver/26/CSL/Applications/iPhone_HRTF/Classes/fft
+END
+SpectrumAnalysis.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/imagineresearch/AME0/!svn/ver/26/CSL/Applications/iPhone_HRTF/Classes/fft/SpectrumAnalysis.cpp
+END
+rad2fft.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/imagineresearch/AME0/!svn/ver/26/CSL/Applications/iPhone_HRTF/Classes/fft/rad2fft.c
+END
+SpectrumAnalysis.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/imagineresearch/AME0/!svn/ver/26/CSL/Applications/iPhone_HRTF/Classes/fft/SpectrumAnalysis.h
+END
+rad2fft.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/imagineresearch/AME0/!svn/ver/26/CSL/Applications/iPhone_HRTF/Classes/fft/rad2fft.h
+END

@@ -1,0 +1,17 @@
+% This is a data file used to describe the layout of LSpeakers of the VBAP classes.
+% It is meant to be used by the VBAP::read_layout_file("filename" ) method of the VBAP classes developed by
+% Doug McCoy for his Master's thesis at UCSB. 
+% all lines with a '%' character are treated as comments from the '%' to the end of the line
+% Syntax:
+
+mode: 3					% (either 2 or 3) if 2, second column is ignored
+speaker:	30		0		% azimuth  is measured from the x axis within the x/y plane (-180 < azi <= 180)
+						% elevation is measured perpendicularly from the x/y plane  (-90 < ele <= 90)
+						% all points are assumed to be unit length from the origin
+speaker:	-30		0
+speaker:	-90		0
+speaker:	-150		0
+speaker:	150		0
+speaker:	90		0
+speaker:	0		90
+speaker:	0		-90

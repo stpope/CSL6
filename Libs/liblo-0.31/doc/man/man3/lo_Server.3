@@ -1,0 +1,105 @@
+.TH "lo::Server" 3 "Thu Apr 16 2020" "Version 0.31" "liblo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lo::Server \- 
+.PP
+Class representing a local OSC server, proxy for \fBlo_server\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBlo::ServerThread\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBServer\fP (\fBlo_server\fP s)"
+.br
+.ti -1c
+.RI "template<typename E > \fBServer\fP (const num_string_type &port, E &&e)"
+.br
+.ti -1c
+.RI "template<typename E > \fBServer\fP (const num_string_type &port, int proto, E &&e=0)"
+.br
+.ti -1c
+.RI "template<typename E > \fBServer\fP (const string_type &group, const num_string_type &port, const string_type &iface=0, const string_type &ip=0, E &&e=0)"
+.br
+.ti -1c
+.RI "\fBServer\fP (const num_string_type &port, \fBlo_err_handler\fP err_h=0)"
+.br
+.ti -1c
+.RI "\fBServer\fP (const num_string_type &port, int proto, \fBlo_err_handler\fP err_h=0)"
+.br
+.ti -1c
+.RI "\fBServer\fP (const string_type &group, const num_string_type &port, const string_type &iface='', const string_type &ip='', \fBlo_err_handler\fP err_h=0)"
+.br
+.ti -1c
+.RI "virtual \fB~Server\fP ()"
+.br
+.ti -1c
+.RI "\fBMethod\fP \fBadd_method\fP (const string_type &path, const string_type &types, \fBlo_method_handler\fP h, void *data) const "
+.br
+.ti -1c
+.RI "\fBLO_ADD_METHOD\fP ((const char *, const char *, \fBlo_arg\fP **, int),((char *) 0,(char *) 0,(\fBlo_arg\fP **) 0,(int) 0),(path, types, argv, argc))"
+.br
+.ti -1c
+.RI "\fBLO_ADD_METHOD\fP ((const char *, \fBlo_arg\fP **, int),((char *) 0,(\fBlo_arg\fP **) 0,(int) 0),(types, argv, argc))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class representing a local OSC server, proxy for \fBlo_server\fP\&. 
+.PP
+Definition at line 485 of file lo_cpp\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "lo::Server::Server (\fBlo_server\fPs)\fC [inline]\fP"
+Constructor\&. 
+.PP
+Definition at line 489 of file lo_cpp\&.h\&.
+.SS "template<typename E > lo::Server::Server (const num_string_type &port, E &&e)\fC [inline]\fP"
+Constructor taking an error handler\&. 
+.PP
+Definition at line 493 of file lo_cpp\&.h\&.
+.SS "template<typename E > lo::Server::Server (const num_string_type &port, intproto, E &&e = \fC0\fP)\fC [inline]\fP"
+Constructor taking a port number and error handler\&. 
+.PP
+Definition at line 510 of file lo_cpp\&.h\&.
+.SS "template<typename E > lo::Server::Server (const string_type &group, const num_string_type &port, const string_type &iface = \fC0\fP, const string_type &ip = \fC0\fP, E &&e = \fC0\fP)\fC [inline]\fP"
+Constructor taking a multicast group, port number, interface identifier or IP, and error handler\&. 
+.PP
+Definition at line 528 of file lo_cpp\&.h\&.
+.SS "lo::Server::Server (const num_string_type &port, \fBlo_err_handler\fPerr_h = \fC0\fP)\fC [inline]\fP"
+Constructor taking a port number and error handler\&. 
+.PP
+Definition at line 551 of file lo_cpp\&.h\&.
+.SS "lo::Server::Server (const num_string_type &port, intproto, \fBlo_err_handler\fPerr_h = \fC0\fP)\fC [inline]\fP"
+Constructor taking a port number, protocol, and error handler\&. 
+.PP
+Definition at line 555 of file lo_cpp\&.h\&.
+.SS "lo::Server::Server (const string_type &group, const num_string_type &port, const string_type &iface = \fC''\fP, const string_type &ip = \fC''\fP, \fBlo_err_handler\fPerr_h = \fC0\fP)\fC [inline]\fP"
+Constructor taking a multicast group, port number, interface identifier or IP, and error handler\&. 
+.PP
+Definition at line 561 of file lo_cpp\&.h\&.
+.SS "virtual lo::Server::~Server ()\fC [inline]\fP, \fC [virtual]\fP"
+Destructor 
+.PP
+Definition at line 570 of file lo_cpp\&.h\&.
+.PP
+References lo_server_free()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBMethod\fP lo::Server::add_method (const string_type &path, const string_type &types, \fBlo_method_handler\fPh, void *data) const\fC [inline]\fP"
+Add a method to handle a given path and type, with a handler and user data pointer\&. 
+.PP
+Definition at line 579 of file lo_cpp\&.h\&.
+.SS "lo::Server::LO_ADD_METHOD ((const char *, const char *, \fBlo_arg\fP **, int), ((char *) 0,(char *) 0,(\fBlo_arg\fP **) 0,(int) 0), (path, types, argv, argc))"
+Add a method to handle a given path and type, with a handler taking (argv, argc), user data\&. 
+.SS "lo::Server::LO_ADD_METHOD ((const char *, \fBlo_arg\fP **, int), ((char *) 0,(\fBlo_arg\fP **) 0,(int) 0), (types, argv, argc))"
+Add a method to handle a given path and type, with a handler taking (types, argv, argc), user data\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for liblo from the source code\&.

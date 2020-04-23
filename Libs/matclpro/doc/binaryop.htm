@@ -1,0 +1,96 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Binary operators</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="unaryop.htm">Prev</a> |
+<a href="manual.htm">Up</a> |
+<a href="logicop.htm">Next</a>
+</h6>
+
+<h2>Binary operators</h2>
+
+<p>
+The following non-member binary operators are available for the matrix class objects. If the sizes of the matrices do not conform and range checking is enabled, i.e., the constant <i>RANGE_CHECK_</i> is defined, these operators may throw <i>invalid_argument</i> exception; otherwise, the behavior is undefined.
+</p>
+
+<pre><code>1. matrix&lt;T&gt; <a href="#b1">operator+</a> (const matrix&lt;T&gt;&amp; <i>m1</i>, const matrix&lt;T&gt;&amp; <i>m2</i>);
+2. matrix&lt;T&gt; <a href="#b2">operator-</a> (const matrix&lt;T&gt;&amp; <i>m1</i>, const matrix&lt;T&gt;&amp; <i>m2</i>);
+
+3. matrix&lt;T&gt; <a href="#b3">operator*</a> (const matrix&lt;T&gt;&amp; <i>m1</i>, const matrix&lt;T&gt;&amp; <i>m2</i>);
+4. matrix&lt;T&gt; <a href="#b4">operator*</a> (const matrix&lt;T&gt;&amp; <i>m</i>, const T&amp; <i>e</i>);
+5. matrix&lt;T&gt; <a href="#b5">operator*</a> (const T&amp; <i>e</i>, const matrix&lt;T&gt;&amp; <i>m</i>);
+
+6. matrix&lt;T&gt; <a href="#b6">operator/</a> (const matrix&lt;T&gt;&amp; <i>m1</i>, const matrix&lt;T&gt;&amp; <i>m2</i>);
+7. matrix&lt;T&gt; <a href="#b7">operator/</a> (const matrix&lt;T&gt;&amp; <i>m</i>, const T&amp; <i>e</i>);
+8. matrix&lt;T&gt; <a href="#b8">operator/</a> (const T&amp; <i>e</i>, const matrix&lt;T&gt;&amp; <i>m</i>);
+
+9. valarray&lt;T&gt; <a href="#b9">operator*</a> (const matrix&lt;T&gt;&amp; <i>m</i>, const valarray&lt;T&gt;&amp; <i>v</i>);
+10. valarray&lt;T&gt; <a href="#b10">operator*</a> (const valarray&lt;T&gt;&amp; <i>v</i>, const matrix&lt;T&gt;&amp; <i>m</i>);
+
+11. valarray&lt;T&gt; <a href="#b11">operator/</a> (const matrix&lt;T&gt;&amp; <i>m</i>, const valarray&lt;T&gt;&amp; <i>v</i>);
+12. valarray&lt;T&gt; <a href="#b12">operator/</a> (const valarray&lt;T&gt;&amp; <i>v</i>, const matrix&lt;T&gt;&amp; <i>m</i>);
+
+</code></pre>
+
+<p>
+<ol>
+<li><a name="b1"></a>Adds the matrix <i>m1</i> and <i>m2</i> and returns the resultant matrix.</li><br><br>
+
+<li><a name="b2"></a>Subtracts the matrix <i>m2</i> from <i>m1</i> and returns the resultant matrix.</li><br><br>
+
+<li><a name="b3"></a>Multiplies the matrix <i>m1</i> by <i>m2</i> and returns the resultant matrix.</li><br><br>
+
+<li><a name="b4"></a>Multiplies the matrix <i>m</i> by <i>e</i> and returns the resultant matrix.</li><br><br>
+
+<li><a name="b5"></a>Multiplies the matrix <i>m</i> by <i>e</i> and returns the resultant matrix.</li><br><br>
+
+<li><a name="b6"></a>Performs a simulated division by multiplying the matrix <i>m1</i> by the inverse of matrix <i>m2</i>, and returns the resultant matrix.</li><br><br>
+
+<li><a name="b7"></a>Divides the matrix <i>m</i> by <i>e</i> and returns the resultant matrix.</li><br><br>
+
+<li><a name="b8"></a>Performs a simulated division by multiplying the inverse of matrix <i>m</i> by <i>e</i>, and returns the resultant matrix.</li><br><br>
+
+<li><a name="b9"></a>Multiplies the matrix <i>m</i> by the vector <i>v</i> and returns the resultant vector.</li><br><br>
+
+<li><a name="b10"></a>Multiplies the matrix <i>m</i> by the vector <i>v</i> and returns the resultant vector.</li><br><br>
+
+<li><a name="b11"></a>Performs a simulated division by multiplying the matrix <i>m</i> by the inverse of vector <i>v</i>, and returns the resultant vector.</li><br><br>
+
+<li><a name="b12"></a>Performs a simulated division by multiplying the inverse of matrix <i>m</i> by the vector <i>v</i>, and returns the resultant vector.</li>
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;double&gt; Matrix;
+typedef std::valarray&lt;double&gt;    Vector;
+
+Matrix A(5,5), B(5,5);
+
+A.rand();
+B = A;
+
+A += B;
+B -= A;
+B *= A;         
+B /= A;         // B *= !A;
+
+A *= 1.234;
+B /= 2.34;
+
+Matrix C = A * B - B;
+
+Vector V(5), V2(5);
+
+V = B[0];
+V2 = V * A;
+V2 = B / V;
+
+</code></pre>
+
+</body>
+</html>

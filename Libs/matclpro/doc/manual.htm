@@ -1,0 +1,63 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Matrix TCL Pro Reference Manual</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="overview.htm">Prev</a> |
+<a href="index.htm">Up</a> |
+<a href="usage.htm">Next</a>
+</h6>
+
+<center>
+  <h1>Matrix TCL Pro Reference Manual</h1>
+</center>
+
+<p>
+The matrix class is declared as template in a separate namespace, named &quot;<b>techsoft</b>&quot;, in the header file &lt;<b>cmatrix</b>&gt;.
+</p>
+
+<pre><code>template &lt;typename T&gt;
+class matrix;
+
+</pre></code>
+
+<p>
+To use Matrix TCL in your program, include the header file &lt;<b>cmatrix</b>&gt; in your program source file. You may want use a <b><i>typedef</i></b> statement to simplify the declaration of matrix objects in your program.
+</p>
+
+<pre><code>#include &lt;cmatrix&gt;
+
+typedef techsoft::matrix&lt;double&gt; Matrix;
+
+typedef std::complex&lt;double&gt; dComplex;
+typedef techsoft::matrix&lt;dComplex&gt; CMatrix;
+
+Matrix A(4,4), B(4,4), C(4,4);
+CMatrix CA(4,4), CB(4,4), CC(4,4);
+
+</pre></code>
+
+<p>
+The matrix class is documented in the following sections:
+</p>
+
+<p>
+<ul>
+  <li><a href="const.htm">Matrix constructors and destructor</a></li>
+  <li><a href="submat.htm">Subscript and sub-matrix operations</a></li>
+  <li><a href="assignop.htm">Assignment and computed assignment operators</a></li>
+  <li><a href="unaryop.htm">Unary operators</a></li>
+  <li><a href="binaryop.htm">Binary operators</a></li>
+  <li><a href="logicop.htm">Boolean Operations</a></li>
+  <li><a href="matdcmp.htm">Matrix decompositions</a></li>
+  <li><a href="matutil.htm">Utility methods</a></li>
+  <li><a href="matfunc.htm">Non-member functions</a></li>
+  <li><a href="matio.htm">I/O operations</a></li>
+</ul>
+</p>
+
+</body>
+</html>

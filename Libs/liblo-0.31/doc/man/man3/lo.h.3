@@ -1,0 +1,84 @@
+.TH "lo.h" 3 "Thu Apr 16 2020" "Version 0.31" "liblo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lo.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlo_address\fP \fBlo_address_new\fP (const char *host, const char *port)"
+.br
+.RI "\fIDeclare an OSC destination, given IP address and port number\&. Same as \fBlo_address_new_with_proto()\fP, but using UDP\&. \fP"
+.ti -1c
+.RI "\fBlo_address\fP \fBlo_address_new_with_proto\fP (int proto, const char *host, const char *port)"
+.br
+.RI "\fIDeclare an OSC destination, given IP address and port number, specifying protocol\&. \fP"
+.ti -1c
+.RI "\fBlo_address\fP \fBlo_address_new_from_url\fP (const char *url)"
+.br
+.RI "\fICreate a lo_address object from an OSC URL\&. \fP"
+.ti -1c
+.RI "void \fBlo_address_free\fP (\fBlo_address\fP t)"
+.br
+.RI "\fIFree the memory used by the lo_address object\&. \fP"
+.ti -1c
+.RI "void \fBlo_address_set_ttl\fP (\fBlo_address\fP t, int ttl)"
+.br
+.RI "\fISet the Time-to-Live value for a given target address\&. \fP"
+.ti -1c
+.RI "int \fBlo_address_get_ttl\fP (\fBlo_address\fP t)"
+.br
+.RI "\fIGet the Time-to-Live value for a given target address\&. \fP"
+.ti -1c
+.RI "int \fBlo_send\fP (\fBlo_address\fP targ, const char *path, const char *type,\&.\&.\&.)"
+.br
+.RI "\fISend a OSC formatted message to the address specified\&. \fP"
+.ti -1c
+.RI "int \fBlo_send_from\fP (\fBlo_address\fP targ, \fBlo_server\fP from, \fBlo_timetag\fP ts, const char *path, const char *type,\&.\&.\&.)"
+.br
+.RI "\fISend a OSC formatted message to the address specified, from the same socket as the specified server\&. \fP"
+.ti -1c
+.RI "int \fBlo_send_timestamped\fP (\fBlo_address\fP targ, \fBlo_timetag\fP ts, const char *path, const char *type,\&.\&.\&.)"
+.br
+.RI "\fISend a OSC formatted message to the address specified, scheduled to be dispatch at some time in the future\&. \fP"
+.ti -1c
+.RI "int \fBlo_address_errno\fP (\fBlo_address\fP a)"
+.br
+.RI "\fIReturn the error number from the last failed \fBlo_send()\fP or \fBlo_address_new()\fP call\&. \fP"
+.ti -1c
+.RI "const char * \fBlo_address_errstr\fP (\fBlo_address\fP a)"
+.br
+.RI "\fIReturn the error string from the last failed \fBlo_send()\fP or \fBlo_address_new()\fP call\&. \fP"
+.ti -1c
+.RI "\fBlo_blob\fP \fBlo_blob_new\fP (int32_t size, const void *data)"
+.br
+.RI "\fICreate a new OSC blob type\&. \fP"
+.ti -1c
+.RI "void \fBlo_blob_free\fP (\fBlo_blob\fP b)"
+.br
+.RI "\fIFree the memory taken by a blob\&. \fP"
+.ti -1c
+.RI "uint32_t \fBlo_blob_datasize\fP (\fBlo_blob\fP b)"
+.br
+.RI "\fIReturn the amount of valid data in a lo_blob object\&. \fP"
+.ti -1c
+.RI "void * \fBlo_blob_dataptr\fP (\fBlo_blob\fP b)"
+.br
+.RI "\fIReturn a pointer to the start of the blob data to allow contents to be changed\&. \fP"
+.ti -1c
+.RI "void \fBlo_version\fP (char *verstr, int verstr_size, int *major, int *minor, char *extra, int extra_size, int *lt_major, int *lt_minor, int *lt_bug)"
+.br
+.RI "\fIGet information on the version of liblo current in use\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The liblo main headerfile and high-level API functions\&. 
+.PP
+Definition in file \fBlo\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for liblo from the source code\&.

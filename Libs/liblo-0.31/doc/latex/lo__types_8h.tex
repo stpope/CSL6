@@ -1,0 +1,253 @@
+\hypertarget{lo__types_8h}{\section{lo\+\_\+types.\+h File Reference}
+\label{lo__types_8h}\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{lo__types_8h_a2562ddc2c52b4309936ce00c2885e43f}{L\+O\+\_\+\+D\+I\+S\+A\+B\+L\+E}~0
+\begin{DoxyCompactList}\small\item\em Disable a boolean option. \end{DoxyCompactList}\item 
+\#define \hyperlink{lo__types_8h_a61eb74c036c28379c5bf7d97441ef9aa}{L\+O\+\_\+\+E\+N\+A\+B\+L\+E}~1
+\begin{DoxyCompactList}\small\item\em Enable a boolean option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_abf9b53223467de596b89e1377b0f3f3d}{lo\+\_\+address}
+\begin{DoxyCompactList}\small\item\em A reference to an O\+S\+C service. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_a8e780f8c09e3e4dd737fe249f11d16fc}{lo\+\_\+blob}
+\begin{DoxyCompactList}\small\item\em A object to store an opaque binary data object. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_ad126083c98d941f00eb72d1690b38d63}{lo\+\_\+message}
+\begin{DoxyCompactList}\small\item\em A low-\/level object used to represent messages passed over O\+S\+C. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_a96254950ad34e9cfbf8a6613fc74025b}{lo\+\_\+bundle}
+\begin{DoxyCompactList}\small\item\em A low-\/level object used to represent bundles of messages passed over O\+S\+C. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_a66faedf5da13231d8c0166870477dce5}{lo\+\_\+method}
+\begin{DoxyCompactList}\small\item\em An object representing an method on a server. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_a59067bf50cf8abb4371da6f03c9036c9}{lo\+\_\+server}
+\begin{DoxyCompactList}\small\item\em An object representing an instance of an O\+S\+C server. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{lo__types_8h_a09996ffb6bde21b8fb6106897b88feae}{lo\+\_\+server\+\_\+thread}
+\begin{DoxyCompactList}\small\item\em An object representing a thread containing an O\+S\+C server. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{lo__types_8h_aa5d2e4aa0ff9d4459fcc76e7ed5839fc}{lo\+\_\+err\+\_\+handler} )(int num, const char $\ast$msg, const char $\ast$where)
+\begin{DoxyCompactList}\small\item\em A callback function to receive notification of an error in a server or server thread. \end{DoxyCompactList}\item 
+typedef int($\ast$ \hyperlink{lo__types_8h_a3b1c86c0925d05e13b5438ce8fe80a6c}{lo\+\_\+method\+\_\+handler} )(const char $\ast$path, const char $\ast$types, \hyperlink{unionlo__arg}{lo\+\_\+arg} $\ast$$\ast$argv, int argc, \hyperlink{lo__types_8h_ad126083c98d941f00eb72d1690b38d63}{lo\+\_\+message} msg, void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em A callback function to receive notification of matching message arriving in the server or server thread. \end{DoxyCompactList}\item 
+typedef int($\ast$ \hyperlink{lo__types_8h_a40484ab2ebc1413ffe465558a638d329}{lo\+\_\+bundle\+\_\+start\+\_\+handler} )(\hyperlink{structlo__timetag}{lo\+\_\+timetag} time, void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em A callback function to receive notification of a bundle being dispatched by the server or server thread. \end{DoxyCompactList}\item 
+typedef int($\ast$ \hyperlink{lo__types_8h_a3074807a4e7379c1b101c303567b7e42}{lo\+\_\+bundle\+\_\+end\+\_\+handler} )(void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em A callback function to receive notification of a bundle dispatch being completed by the server or server thread. \end{DoxyCompactList}\item 
+typedef int($\ast$ \hyperlink{lo__types_8h_a7686daba989edab6324cb2957f9f1333}{lo\+\_\+server\+\_\+thread\+\_\+init\+\_\+callback} )(\hyperlink{lo__types_8h_a09996ffb6bde21b8fb6106897b88feae}{lo\+\_\+server\+\_\+thread} s, void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em A callback function to perform initialization when the server thread is started. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{lo__types_8h_a79a141110b391d4a8c62a3cd397de175}{lo\+\_\+server\+\_\+thread\+\_\+cleanup\+\_\+callback} )(\hyperlink{lo__types_8h_a09996ffb6bde21b8fb6106897b88feae}{lo\+\_\+server\+\_\+thread} s, void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em A callback function to perform cleanup when the server thread is started. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The liblo headerfile defining types used by this A\+P\+I. 
+
+Definition in file \hyperlink{lo__types_8h_source}{lo\+\_\+types.\+h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{lo__types_8h_a2562ddc2c52b4309936ce00c2885e43f}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!L\+O\+\_\+\+D\+I\+S\+A\+B\+L\+E@{L\+O\+\_\+\+D\+I\+S\+A\+B\+L\+E}}
+\index{L\+O\+\_\+\+D\+I\+S\+A\+B\+L\+E@{L\+O\+\_\+\+D\+I\+S\+A\+B\+L\+E}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{L\+O\+\_\+\+D\+I\+S\+A\+B\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+\_\+\+D\+I\+S\+A\+B\+L\+E~0}}\label{lo__types_8h_a2562ddc2c52b4309936ce00c2885e43f}
+
+
+Disable a boolean option. 
+
+
+
+Definition at line 37 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a61eb74c036c28379c5bf7d97441ef9aa}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!L\+O\+\_\+\+E\+N\+A\+B\+L\+E@{L\+O\+\_\+\+E\+N\+A\+B\+L\+E}}
+\index{L\+O\+\_\+\+E\+N\+A\+B\+L\+E@{L\+O\+\_\+\+E\+N\+A\+B\+L\+E}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{L\+O\+\_\+\+E\+N\+A\+B\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+\_\+\+E\+N\+A\+B\+L\+E~1}}\label{lo__types_8h_a61eb74c036c28379c5bf7d97441ef9aa}
+
+
+Enable a boolean option. 
+
+
+
+Definition at line 38 of file lo\+\_\+types.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{lo__types_8h_abf9b53223467de596b89e1377b0f3f3d}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+address@{lo\+\_\+address}}
+\index{lo\+\_\+address@{lo\+\_\+address}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+address}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf lo\+\_\+address}}}\label{lo__types_8h_abf9b53223467de596b89e1377b0f3f3d}
+
+
+A reference to an O\+S\+C service. 
+
+Created by calls to \hyperlink{group__liblo_gae5af61a02ab08871d3ea070c8f770cfe}{lo\+\_\+address\+\_\+new()} or \hyperlink{group__liblo_ga1af2cb3c80393cba838f64dfcdc35620}{lo\+\_\+address\+\_\+new\+\_\+from\+\_\+url()}. 
+
+Definition at line 45 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a8e780f8c09e3e4dd737fe249f11d16fc}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+blob@{lo\+\_\+blob}}
+\index{lo\+\_\+blob@{lo\+\_\+blob}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+blob}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf lo\+\_\+blob}}}\label{lo__types_8h_a8e780f8c09e3e4dd737fe249f11d16fc}
+
+
+A object to store an opaque binary data object. 
+
+Can be passed over O\+S\+C using the 'b' type. Created by calls to \hyperlink{group__liblo_gaffb2348c70cb0e1214fd50bdc7574c39}{lo\+\_\+blob\+\_\+new()}. 
+
+Definition at line 52 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a96254950ad34e9cfbf8a6613fc74025b}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+bundle@{lo\+\_\+bundle}}
+\index{lo\+\_\+bundle@{lo\+\_\+bundle}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+bundle}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf lo\+\_\+bundle}}}\label{lo__types_8h_a96254950ad34e9cfbf8a6613fc74025b}
+
+
+A low-\/level object used to represent bundles of messages passed over O\+S\+C. 
+
+Created by calls to \hyperlink{group__liblolowlevel_ga330a4a4e6227b185b3ec6219ff3e2859}{lo\+\_\+bundle\+\_\+new()}, messages can be added with calls to \hyperlink{group__liblolowlevel_ga1cc5e2eb20ce567a694f343764e25bb7}{lo\+\_\+bundle\+\_\+add\+\_\+message()}. 
+
+Definition at line 69 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a3074807a4e7379c1b101c303567b7e42}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+bundle\+\_\+end\+\_\+handler@{lo\+\_\+bundle\+\_\+end\+\_\+handler}}
+\index{lo\+\_\+bundle\+\_\+end\+\_\+handler@{lo\+\_\+bundle\+\_\+end\+\_\+handler}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+bundle\+\_\+end\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ lo\+\_\+bundle\+\_\+end\+\_\+handler)(void $\ast$user\+\_\+data)}}\label{lo__types_8h_a3074807a4e7379c1b101c303567b7e42}
+
+
+A callback function to receive notification of a bundle dispatch being completed by the server or server thread. 
+
+If installed with lo\+\_\+server\+\_\+add\+\_\+bundle\+\_\+handlers, this callback will be called after all the messages of a bundle have been dispatched with {\itshape user\+\_\+data} set to the user\+\_\+data parameter passed to lo\+\_\+server\+\_\+add\+\_\+bundle\+\_\+handlers. 
+
+Definition at line 166 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a40484ab2ebc1413ffe465558a638d329}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+bundle\+\_\+start\+\_\+handler@{lo\+\_\+bundle\+\_\+start\+\_\+handler}}
+\index{lo\+\_\+bundle\+\_\+start\+\_\+handler@{lo\+\_\+bundle\+\_\+start\+\_\+handler}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+bundle\+\_\+start\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ lo\+\_\+bundle\+\_\+start\+\_\+handler)({\bf lo\+\_\+timetag} time, void $\ast$user\+\_\+data)}}\label{lo__types_8h_a40484ab2ebc1413ffe465558a638d329}
+
+
+A callback function to receive notification of a bundle being dispatched by the server or server thread. 
+
+This callback allows applications to be aware of incoming bundles and preserve ordering and atomicity of messages in bundles.
+
+If installed with lo\+\_\+server\+\_\+add\+\_\+bundle\+\_\+handlers, this callback will be called with {\itshape time} set to the time tag of the bundle, and {\itshape user\+\_\+data} set to the user\+\_\+data parameter passed to lo\+\_\+server\+\_\+add\+\_\+bundle\+\_\+handlers.
+
+Note that bundles may be nested, in which case calls to the bundle start and end handlers will also be nested. The application can keep track of nested bundles in a stack-\/like manner by treating the start handler as \char`\"{}push\char`\"{} and the end handler as \char`\"{}pop\char`\"{}. For example, a bundle containing two bundles would fire 6 callbacks\+: begin, begin, end, begin, end, end. 
+
+Definition at line 155 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_aa5d2e4aa0ff9d4459fcc76e7ed5839fc}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+err\+\_\+handler@{lo\+\_\+err\+\_\+handler}}
+\index{lo\+\_\+err\+\_\+handler@{lo\+\_\+err\+\_\+handler}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+err\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ lo\+\_\+err\+\_\+handler)(int num, const char $\ast$msg, const char $\ast$where)}}\label{lo__types_8h_aa5d2e4aa0ff9d4459fcc76e7ed5839fc}
+
+
+A callback function to receive notification of an error in a server or server thread. 
+
+On callback the parameters will be set to the following values\+:
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & An error number that can be used to identify this condition. \\
+\hline
+{\em msg} & An error message describing the condidtion. \\
+\hline
+{\em where} & A string describing the place the error occured -\/ typically either a function call or method path. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_ad126083c98d941f00eb72d1690b38d63}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+message@{lo\+\_\+message}}
+\index{lo\+\_\+message@{lo\+\_\+message}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf lo\+\_\+message}}}\label{lo__types_8h_ad126083c98d941f00eb72d1690b38d63}
+
+
+A low-\/level object used to represent messages passed over O\+S\+C. 
+
+Created by calls to \hyperlink{group__liblolowlevel_ga1e938ecc9160a194424423b400019410}{lo\+\_\+message\+\_\+new()}, arguments can be added with calls to lo\+\_\+message\+\_\+add\+\_\+$\ast$(). 
+
+Definition at line 60 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a66faedf5da13231d8c0166870477dce5}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+method@{lo\+\_\+method}}
+\index{lo\+\_\+method@{lo\+\_\+method}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+method}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf lo\+\_\+method}}}\label{lo__types_8h_a66faedf5da13231d8c0166870477dce5}
+
+
+An object representing an method on a server. 
+
+Returned by calls to \hyperlink{lo__serverthread_8h_af500729c76fd5bb4798d350b6307adc1}{lo\+\_\+server\+\_\+thread\+\_\+add\+\_\+method()} and \hyperlink{group__liblolowlevel_ga56c5f1d587c215c27e92e6436e12b1a3}{lo\+\_\+server\+\_\+add\+\_\+method()}. 
+
+Definition at line 77 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a3b1c86c0925d05e13b5438ce8fe80a6c}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+method\+\_\+handler@{lo\+\_\+method\+\_\+handler}}
+\index{lo\+\_\+method\+\_\+handler@{lo\+\_\+method\+\_\+handler}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+method\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ lo\+\_\+method\+\_\+handler)(const char $\ast$path, const char $\ast$types, {\bf lo\+\_\+arg} $\ast$$\ast$argv, int argc, {\bf lo\+\_\+message} msg, void $\ast$user\+\_\+data)}}\label{lo__types_8h_a3b1c86c0925d05e13b5438ce8fe80a6c}
+
+
+A callback function to receive notification of matching message arriving in the server or server thread. 
+
+The return value tells the method dispatcher whether this handler has dealt with the message correctly\+: a return value of 0 indicates that it has been handled, and it should not attempt to pass it on to any other handlers, non-\/0 means that it has not been handled and the dispatcher will attempt to find more handlers that match the path and types of the incoming message.
+
+On callback the paramters will be set to the following values\+:
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & That path that the incoming message was sent to \\
+\hline
+{\em types} & If you specided types in your method creation call then this will match those and the incoming types will have been coerced to match, otherwise it will be the types of the arguments of the incoming message. \\
+\hline
+{\em argv} & An array of \hyperlink{unionlo__arg}{lo\+\_\+arg} types containing the values, e.\+g. if the first argument of the incoming message is of type 'f' then the value will be found in argv\mbox{[}0\mbox{]}-\/$>$f. \\
+\hline
+{\em argc} & The number of arguments received. \\
+\hline
+{\em msg} & A structure containing the original raw message as received. No type coercion will have occured and the data will be in O\+S\+C byte order (bigendian). \\
+\hline
+{\em user\+\_\+data} & This contains the user\+\_\+data value passed in the call to lo\+\_\+server\+\_\+thread\+\_\+add\+\_\+method. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a59067bf50cf8abb4371da6f03c9036c9}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+server@{lo\+\_\+server}}
+\index{lo\+\_\+server@{lo\+\_\+server}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+server}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf lo\+\_\+server}}}\label{lo__types_8h_a59067bf50cf8abb4371da6f03c9036c9}
+
+
+An object representing an instance of an O\+S\+C server. 
+
+Created by calls to \hyperlink{group__liblolowlevel_ga78cfb23346e44465695293d4393447ae}{lo\+\_\+server\+\_\+new()}. If you wish to have the server operate in a background thread, use lo\+\_\+server\+\_\+thread instead. 
+
+Definition at line 85 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a09996ffb6bde21b8fb6106897b88feae}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+server\+\_\+thread@{lo\+\_\+server\+\_\+thread}}
+\index{lo\+\_\+server\+\_\+thread@{lo\+\_\+server\+\_\+thread}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+server\+\_\+thread}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf lo\+\_\+server\+\_\+thread}}}\label{lo__types_8h_a09996ffb6bde21b8fb6106897b88feae}
+
+
+An object representing a thread containing an O\+S\+C server. 
+
+Created by calls to \hyperlink{lo__serverthread_8h_abe3e0c31189adfd7624de6c507b610ba}{lo\+\_\+server\+\_\+thread\+\_\+new()}. 
+
+Definition at line 92 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a79a141110b391d4a8c62a3cd397de175}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+server\+\_\+thread\+\_\+cleanup\+\_\+callback@{lo\+\_\+server\+\_\+thread\+\_\+cleanup\+\_\+callback}}
+\index{lo\+\_\+server\+\_\+thread\+\_\+cleanup\+\_\+callback@{lo\+\_\+server\+\_\+thread\+\_\+cleanup\+\_\+callback}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+server\+\_\+thread\+\_\+cleanup\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ lo\+\_\+server\+\_\+thread\+\_\+cleanup\+\_\+callback)({\bf lo\+\_\+server\+\_\+thread} s, void $\ast$user\+\_\+data)}}\label{lo__types_8h_a79a141110b391d4a8c62a3cd397de175}
+
+
+A callback function to perform cleanup when the server thread is started. 
+
+If installed with lo\+\_\+server\+\_\+thread\+\_\+set\+\_\+callbacks, this callback will be called in the server thread, after the server have stopped listening and processing events, before it quits. {\itshape user\+\_\+data} is set to the user\+\_\+data parameter passed to lo\+\_\+server\+\_\+thread\+\_\+add\+\_\+functions. 
+
+Definition at line 192 of file lo\+\_\+types.\+h.
+
+\hypertarget{lo__types_8h_a7686daba989edab6324cb2957f9f1333}{\index{lo\+\_\+types.\+h@{lo\+\_\+types.\+h}!lo\+\_\+server\+\_\+thread\+\_\+init\+\_\+callback@{lo\+\_\+server\+\_\+thread\+\_\+init\+\_\+callback}}
+\index{lo\+\_\+server\+\_\+thread\+\_\+init\+\_\+callback@{lo\+\_\+server\+\_\+thread\+\_\+init\+\_\+callback}!lo\+\_\+types.\+h@{lo\+\_\+types.\+h}}
+\subsubsection[{lo\+\_\+server\+\_\+thread\+\_\+init\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ lo\+\_\+server\+\_\+thread\+\_\+init\+\_\+callback)({\bf lo\+\_\+server\+\_\+thread} s, void $\ast$user\+\_\+data)}}\label{lo__types_8h_a7686daba989edab6324cb2957f9f1333}
+
+
+A callback function to perform initialization when the server thread is started. 
+
+If installed with lo\+\_\+server\+\_\+thread\+\_\+set\+\_\+callbacks, this callback will be called in the server thread, just before the server starts listening for events. {\itshape user\+\_\+data} is set to the user\+\_\+data parameter passed to lo\+\_\+server\+\_\+thread\+\_\+add\+\_\+functions.
+
+If the return value is non-\/zero, the thread start will be aborted. 
+
+Definition at line 179 of file lo\+\_\+types.\+h.
+

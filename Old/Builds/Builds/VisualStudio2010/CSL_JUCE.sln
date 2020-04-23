@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{9931714E-6CEE-F756-5EBA-F355557A06AA}") = "CSL_JUCE", "CSL_JUCE.vcxproj", "{618D75FC-3C86-31ED-1BFD-EA8A3BCEAD7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{618D75FC-3C86-31ED-1BFD-EA8A3BCEAD7D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{618D75FC-3C86-31ED-1BFD-EA8A3BCEAD7D}.Debug|Win32.Build.0 = Debug|Win32
+		{618D75FC-3C86-31ED-1BFD-EA8A3BCEAD7D}.Release|Win32.ActiveCfg = Release|Win32
+		{618D75FC-3C86-31ED-1BFD-EA8A3BCEAD7D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

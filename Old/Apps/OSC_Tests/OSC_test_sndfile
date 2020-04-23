@@ -1,0 +1,42 @@
+#!/bin/csh
+#
+# Shell script to test sending OSC messages to a CSL server
+#
+# Create a convenient alias
+alias ssoo "sendOSC -h localhost 54321"
+#
+# set a variable for the base directory of CSL
+setenv CSL_DATA /Users/stp/Code/CSL/Data
+#
+# load some sound files
+#
+ssoo /i5/fi,"$CSL_DATA/moon.snd"
+ssoo /i6/fi,"$CSL_DATA/wet.snd"
+ssoo /i7/fi,"$CSL_DATA/round.snd"
+ssoo /i8/fi,"$CSL_DATA/shine.snd"
+sleep 1
+#
+# now play some sampled sounds
+#
+ssoo /i8/p
+sleep 1
+ssoo /i6/p
+ssoo /i5/p
+sleep 1
+ssoo /i7/p
+ssoo /i6/p
+sleep 1
+#// 	ampl, pos
+#// 	ampl, pos, rate
+#// 	ampl, pos, start, stop
+#// 	ampl, pos, rate, start, stop
+#
+ssoo /i6/pn,1.0,1.0
+sleep 1
+#
+ssoo /i8/pn,1.0,1.0,15000,20000
+sleep 1
+#
+# now quit
+#
+ssoo /q

@@ -1,0 +1,91 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Boolean Operations</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="binaryop.htm">Prev</a> |
+<a href="manual.htm">Up</a> |
+<a href="matdcmp.htm">Next</a>
+</h6>
+
+<h2>Boolean Operations</h2>
+
+<p>
+The following boolean operators and methods are available in the matrix class.
+</p>
+
+<pre><code>1. bool <a href="#b1">operator==</a> (const matrix&lt;T&gt;&amp; <i>m1</i>, const matrix&lt;T&gt;&amp; <i>m2</i>);
+2. bool <a href="#b2">operator!=</a> (const matrix&lt;T&gt;&amp; <i>m1</i>, const matrix&lt;T&gt;&amp; <i>m2</i>);
+
+3. bool <a href="#b3">isSquare</a> () const;
+4. bool <a href="#b4">isSingular</a> () const;
+5. bool <a href="#b5">isDiagonal</a> () const;
+6. bool <a href="#b6">isScalar</a> () const;
+7. bool <a href="#b7">isUnit</a> () const;
+8. bool <a href="#b8">isNull</a> () const;
+9. bool <a href="#b9">isSymmetric</a> () const;
+10. bool <a href="#b10">isSkewSymmetric</a> () const;
+11. bool <a href="#b11">isUpperTriangular</a> () const;
+12. bool <a href="#b12">isLowerTriangular</a> () const;
+13. bool <a href="#b13">isRowOrthogonal</a> () const;
+14. bool <a href="#b14">isColOrthogonal</a> () const;
+
+</code></pre>
+
+<p>
+<ol>
+<li><a name="b1"></a>Compares the matrix <i>m1</i> and <i>m2</i>, and returns <i>true</i> if they are equal; otherwise, it returns <i>false</i>.
+</li><br><br>
+
+<li><a name="b2"></a>Compares the matrix <i>m1</i> and <i>m2</i>, and returns <i>true</i> if they are not equal; otherwise, it returns <i>false</i>.</li><br><br>
+
+<li><a name="b3"></a>Returns <i>true</i> if the matrix is a square matrix;
+otherwise, it returns <i>false</i>.</li><br><br>
+
+<li><a name="b4"></a>Returns <i>true</i> if the matrix is singular; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b5"></a>Returns <i>true</i> if the matrix is diagonal; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b6"></a>Returns <i>true</i> if the matrix is a scalar matrix; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b7"></a>Returns <i>true</i> if the matrix is a unit matrix; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b8"></a>Returns <i>true</i> if the matrix is a null matrix; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b9"></a>Returns <i>true</i> if the matrix is symmetric; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b10"></a>Returns <i>true</i> if the matrix is skew-symmetric; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b11"></a>Returns <i>true</i> if the matrix is upper triangular; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b12"></a>Returns <i>true</i> if the matrix is lower triangular; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b13"></a>Returns <i>true</i> if the matrix is row orthogonal; otherwise, it returns <i>false</i></li><br><br>
+
+<li><a name="b14"></a>Returns <i>true</i> if the matrix is column orthogonal; otherwise, it returns <i>false</i></li><br><br>
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;double&gt; Matrix;
+
+Matrix A(5,5);
+
+A.rand();
+const Matrix B = A;
+
+bool bVal = A == B;
+
+bVal = B.isSingular(); 
+bVal = B.isSymmetric();
+bVal = B.isLowerTriangular();
+bVal = B.isRowOrthogonal();
+
+</code></pre>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+.TH "lo_types.h" 3 "Thu Apr 16 2020" "Version 0.31" "liblo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lo_types.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBLO_DISABLE\fP   0"
+.br
+.RI "\fIDisable a boolean option\&. \fP"
+.ti -1c
+.RI "#define \fBLO_ENABLE\fP   1"
+.br
+.RI "\fIEnable a boolean option\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef void * \fBlo_address\fP"
+.br
+.RI "\fIA reference to an OSC service\&. \fP"
+.ti -1c
+.RI "typedef void * \fBlo_blob\fP"
+.br
+.RI "\fIA object to store an opaque binary data object\&. \fP"
+.ti -1c
+.RI "typedef void * \fBlo_message\fP"
+.br
+.RI "\fIA low-level object used to represent messages passed over OSC\&. \fP"
+.ti -1c
+.RI "typedef void * \fBlo_bundle\fP"
+.br
+.RI "\fIA low-level object used to represent bundles of messages passed over OSC\&. \fP"
+.ti -1c
+.RI "typedef void * \fBlo_method\fP"
+.br
+.RI "\fIAn object representing an method on a server\&. \fP"
+.ti -1c
+.RI "typedef void * \fBlo_server\fP"
+.br
+.RI "\fIAn object representing an instance of an OSC server\&. \fP"
+.ti -1c
+.RI "typedef void * \fBlo_server_thread\fP"
+.br
+.RI "\fIAn object representing a thread containing an OSC server\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBlo_err_handler\fP )(int num, const char *msg, const char *where)"
+.br
+.RI "\fIA callback function to receive notification of an error in a server or server thread\&. \fP"
+.ti -1c
+.RI "typedef int(* \fBlo_method_handler\fP )(const char *path, const char *types, \fBlo_arg\fP **argv, int argc, \fBlo_message\fP msg, void *user_data)"
+.br
+.RI "\fIA callback function to receive notification of matching message arriving in the server or server thread\&. \fP"
+.ti -1c
+.RI "typedef int(* \fBlo_bundle_start_handler\fP )(\fBlo_timetag\fP time, void *user_data)"
+.br
+.RI "\fIA callback function to receive notification of a bundle being dispatched by the server or server thread\&. \fP"
+.ti -1c
+.RI "typedef int(* \fBlo_bundle_end_handler\fP )(void *user_data)"
+.br
+.RI "\fIA callback function to receive notification of a bundle dispatch being completed by the server or server thread\&. \fP"
+.ti -1c
+.RI "typedef int(* \fBlo_server_thread_init_callback\fP )(\fBlo_server_thread\fP s, void *user_data)"
+.br
+.RI "\fIA callback function to perform initialization when the server thread is started\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBlo_server_thread_cleanup_callback\fP )(\fBlo_server_thread\fP s, void *user_data)"
+.br
+.RI "\fIA callback function to perform cleanup when the server thread is started\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The liblo headerfile defining types used by this API\&. 
+.PP
+Definition in file \fBlo_types\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define LO_DISABLE   0"
+
+.PP
+Disable a boolean option\&. 
+.PP
+Definition at line 37 of file lo_types\&.h\&.
+.SS "#define LO_ENABLE   1"
+
+.PP
+Enable a boolean option\&. 
+.PP
+Definition at line 38 of file lo_types\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef void* \fBlo_address\fP"
+
+.PP
+A reference to an OSC service\&. Created by calls to \fBlo_address_new()\fP or \fBlo_address_new_from_url()\fP\&. 
+.PP
+Definition at line 45 of file lo_types\&.h\&.
+.SS "typedef void* \fBlo_blob\fP"
+
+.PP
+A object to store an opaque binary data object\&. Can be passed over OSC using the 'b' type\&. Created by calls to \fBlo_blob_new()\fP\&. 
+.PP
+Definition at line 52 of file lo_types\&.h\&.
+.SS "typedef void* \fBlo_bundle\fP"
+
+.PP
+A low-level object used to represent bundles of messages passed over OSC\&. Created by calls to \fBlo_bundle_new()\fP, messages can be added with calls to \fBlo_bundle_add_message()\fP\&. 
+.PP
+Definition at line 69 of file lo_types\&.h\&.
+.SS "typedef int(* lo_bundle_end_handler)(void *user_data)"
+
+.PP
+A callback function to receive notification of a bundle dispatch being completed by the server or server thread\&. If installed with lo_server_add_bundle_handlers, this callback will be called after all the messages of a bundle have been dispatched with \fIuser_data\fP set to the user_data parameter passed to lo_server_add_bundle_handlers\&. 
+.PP
+Definition at line 166 of file lo_types\&.h\&.
+.SS "typedef int(* lo_bundle_start_handler)(\fBlo_timetag\fP time, void *user_data)"
+
+.PP
+A callback function to receive notification of a bundle being dispatched by the server or server thread\&. This callback allows applications to be aware of incoming bundles and preserve ordering and atomicity of messages in bundles\&.
+.PP
+If installed with lo_server_add_bundle_handlers, this callback will be called with \fItime\fP set to the time tag of the bundle, and \fIuser_data\fP set to the user_data parameter passed to lo_server_add_bundle_handlers\&.
+.PP
+Note that bundles may be nested, in which case calls to the bundle start and end handlers will also be nested\&. The application can keep track of nested bundles in a stack-like manner by treating the start handler as 'push' and the end handler as 'pop'\&. For example, a bundle containing two bundles would fire 6 callbacks: begin, begin, end, begin, end, end\&. 
+.PP
+Definition at line 155 of file lo_types\&.h\&.
+.SS "typedef void(* lo_err_handler)(int num, const char *msg, const char *where)"
+
+.PP
+A callback function to receive notification of an error in a server or server thread\&. On callback the parameters will be set to the following values:
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\fP An error number that can be used to identify this condition\&. 
+.br
+\fImsg\fP An error message describing the condidtion\&. 
+.br
+\fIwhere\fP A string describing the place the error occured - typically either a function call or method path\&. 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file lo_types\&.h\&.
+.SS "typedef void* \fBlo_message\fP"
+
+.PP
+A low-level object used to represent messages passed over OSC\&. Created by calls to \fBlo_message_new()\fP, arguments can be added with calls to lo_message_add_*()\&. 
+.PP
+Definition at line 60 of file lo_types\&.h\&.
+.SS "typedef void* \fBlo_method\fP"
+
+.PP
+An object representing an method on a server\&. Returned by calls to \fBlo_server_thread_add_method()\fP and \fBlo_server_add_method()\fP\&. 
+.PP
+Definition at line 77 of file lo_types\&.h\&.
+.SS "typedef int(* lo_method_handler)(const char *path, const char *types, \fBlo_arg\fP **argv, int argc, \fBlo_message\fP msg, void *user_data)"
+
+.PP
+A callback function to receive notification of matching message arriving in the server or server thread\&. The return value tells the method dispatcher whether this handler has dealt with the message correctly: a return value of 0 indicates that it has been handled, and it should not attempt to pass it on to any other handlers, non-0 means that it has not been handled and the dispatcher will attempt to find more handlers that match the path and types of the incoming message\&.
+.PP
+On callback the paramters will be set to the following values:
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP That path that the incoming message was sent to 
+.br
+\fItypes\fP If you specided types in your method creation call then this will match those and the incoming types will have been coerced to match, otherwise it will be the types of the arguments of the incoming message\&. 
+.br
+\fIargv\fP An array of \fBlo_arg\fP types containing the values, e\&.g\&. if the first argument of the incoming message is of type 'f' then the value will be found in argv[0]->f\&. 
+.br
+\fIargc\fP The number of arguments received\&. 
+.br
+\fImsg\fP A structure containing the original raw message as received\&. No type coercion will have occured and the data will be in OSC byte order (bigendian)\&. 
+.br
+\fIuser_data\fP This contains the user_data value passed in the call to lo_server_thread_add_method\&. 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file lo_types\&.h\&.
+.SS "typedef void* \fBlo_server\fP"
+
+.PP
+An object representing an instance of an OSC server\&. Created by calls to \fBlo_server_new()\fP\&. If you wish to have the server operate in a background thread, use lo_server_thread instead\&. 
+.PP
+Definition at line 85 of file lo_types\&.h\&.
+.SS "typedef void* \fBlo_server_thread\fP"
+
+.PP
+An object representing a thread containing an OSC server\&. Created by calls to \fBlo_server_thread_new()\fP\&. 
+.PP
+Definition at line 92 of file lo_types\&.h\&.
+.SS "typedef void(* lo_server_thread_cleanup_callback)(\fBlo_server_thread\fP s, void *user_data)"
+
+.PP
+A callback function to perform cleanup when the server thread is started\&. If installed with lo_server_thread_set_callbacks, this callback will be called in the server thread, after the server have stopped listening and processing events, before it quits\&. \fIuser_data\fP is set to the user_data parameter passed to lo_server_thread_add_functions\&. 
+.PP
+Definition at line 192 of file lo_types\&.h\&.
+.SS "typedef int(* lo_server_thread_init_callback)(\fBlo_server_thread\fP s, void *user_data)"
+
+.PP
+A callback function to perform initialization when the server thread is started\&. If installed with lo_server_thread_set_callbacks, this callback will be called in the server thread, just before the server starts listening for events\&. \fIuser_data\fP is set to the user_data parameter passed to lo_server_thread_add_functions\&.
+.PP
+If the return value is non-zero, the thread start will be aborted\&. 
+.PP
+Definition at line 179 of file lo_types\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for liblo from the source code\&.

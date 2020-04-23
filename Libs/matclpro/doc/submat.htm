@@ -1,0 +1,195 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Subscript and sub-matrix operations</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="const.htm">Prev</a> |
+<a href="manual.htm">Up</a> |
+<a href="assignop.htm">Next</a>
+</h6>
+
+<h2>Subscript and sub-matrix operations</h2>
+
+<p>
+Use the following metods and operators to access/modify elements within a matrix object. Most of the subscript and sub-matrix operators are implemented using temporary class object for efficiency and usability reasons. These temporary classes are not shown in this document for simplicity as you do not need to create them. To know exactly how they work, please refer to the Matrix TCL Pro source code. For invalid row and column values, these methods/operators will throw <i>out_of_range</i> exception only if the <i>RANGE_CHECK_</i> constant is defined; otherwise the behavior is undefined.
+</p>
+
+<pre><code>1. valarray&lt;T&gt;&amp; <a href="#s1">row</a> (size_t <i>i</i>);
+2. valarray&lt;T&gt; <a href="#s2">row</a> (size_t <i>i</i>) const;
+3. valarray&lt;T&gt;&amp; <a href="#s3">column</a> (size_t <i>i</i>);
+4. valarray&lt;T&gt; <a href="#s4">column</a> (size_t <i>i</i>) const;
+5. valarray&lt;T&gt;&amp; <a href="#s5">diag</a> (int <i>i</i>=0);
+6. valarray&lt;T&gt; <a href="#s6">diag</a> (int <i>i</i>=0) const;
+
+7. valarray&lt;T&gt;&amp; <a href="#s7">operator[]</a> (size_t <i>i</i>);
+8. valarray&lt;T&gt; <a href="#s8">operator[]</a> (size_t <i>i</i>) const;
+
+9. valarray&lt;T&gt;&amp; <a href="#s9">operator()</a> (size_t <i>i</i>);
+10. valarray&lt;T&gt; <a href="#s10">operator()</a> (size_t <i>i</i>) const;
+
+11. T&amp; <a href="#s11">operator[][]</a> (size_t <i>i</i>, size_t <i>j</i>);
+12. T <a href="#s12">operator[][]</a> (size_t <i>i</i>, size_t <i>j</i>) const;
+
+13. T&amp; <a href="#s13">operator()</a> (size_t <i>i</i>, size_t <i>j</i>);
+14. T <a href="#s14">operator()</a> (size_t <i>i</i>, size_t <i>j</i>) const;
+
+15. matrix&lt;T&gt;&amp; <a href="#s15">operator[]</a> (mslice <i>ms</i>);
+16. matrix&lt;T&gt; <a href="#s16">operator[]</a> (mslice <i>ms</i>) const;
+
+17. matrix&lt;T&gt;&amp; <a href="#s17">operator[]</a> (gmslice <i>gms</i>);
+18. matrix&lt;T&gt; <a href="#s18">operator[]</a> (gmslice <i>gms</i>) const;
+
+enum MATIRX_TYPE { DIAGONAL, TRIDIAGONAL, UTRIANG, LTRIANG };
+
+class mslice;
+class gmslice;
+
+mslice (size_t <i>StartRow</i>, size_t <i>StartCol</i>, size_t <i>NoOfRows</i>, size_t <i>NoOfCols</i>);
+gmslice (MATIRX_TYPE <i>mtype</i>);
+gmslice (size_t <i>nCol</i>, const valarray&lt;size_t&gt;&amp; <i>sRow</i>, const valarray&lt;size_t&gt;&amp; <i>nRow</i>);
+
+</code></pre>
+
+<h4>Parameter</h4>
+
+<p>
+<dl>
+<dt><i>i</i></dt>
+<dd>The i <sup>th</sup> row or column of the matrix. The index starts from zero.</dd>
+
+<dt><i>j</i></dt>
+<dd>The j <sup>th</sup> row or column of the matrix. The index starts from zero.</dd>
+
+<dt><i>ms</i></dt>
+<dd>An object of type mslice</dd>
+
+<dt><i>gms</i></dt>
+<dd>An object of type gmslice</dd>
+</dl>
+</p>
+
+<p>
+<ol>
+
+<li><a name="s1">Returns the <i>i</i> <sup>th</sup> row of a matrix object. You can use it as both <i>R</i>-value and <i>L</i>-value in further matrix operations.
+</li><br><br>
+
+<li><a name="s2">Returns the <i>i</i> <sup>th</sup> row of a constant matrix object. You can use it as <i>R</i>-value in further matrix operations.</li><br><br>
+
+<li><a name="s3">Returns the <i>i</i> <sup>th</sup> column of a matrix object. You can use it as both <i>R</i>-value and <i>L</i>-value in further matrix operations.
+</li><br><br>
+
+<li><a name="s4">Returns the <i>i</i> <sup>th</sup> column of a constant matrix object. You can use it as <i>R</i>-value in further matrix operations.
+</li><br><br>
+
+<li><a name="s5">Returns the <i>i</i> <sup>th</sup> diagonal of a matrix object. The default diagonal is the main diagonal of the matrix. Use negative index to get the diagonals below the main diagonal, and positive index for diagonals above the main diagonal of the matrix. You can use the return as both <i>R</i>-value and <i>L</i>-value in further matrix operations.</li><br><br>
+
+<li><a name="s6">Returns the <i>i</i> <sup>th</sup> diagonal of a constant matrix object. The default diagonal is the main diagonal of the matrix. Use negative index to get the diagonals below the main diagonal, and positive index for diagonals above the main diagonal of the matrix. The return value can be used as <i>R</i>-value in further matrix operations.</li><br><br>
+
+<li><a name="s7">Returns the <i>i</i> <sup>th</sup> row of a matrix object. The return value can be used as both <i>R</i>-value and <i>L</i>-value in further matrix operations.</li><br><br>
+
+<li><a name="s8">Returns the <i>i</i> <sup>th</sup> row of a constant matrix object. The return value can be used as <i>R</i>-value in further matrix operations.</li><br><br>
+
+<li><a name="s9">Returns the <i>i</i> <sup>th</sup> column of a matrix object. The return value can be used as both <i>R</i>-value and <i>L</i>-value in further matrix operations.</li><br><br>
+
+<li><a name="s10">Returns the <i>i</i> <sup>th</sup> column of a constant matrix object. The return value can be used as <i>R</i>-value in further matrix operations.</li><br><br>
+
+<li><a name="s11">Returns the <i>i,j</i> <sup>th</sup> element of a matrix object. The return value can be used as both <i>R</i>-value and <i>L</i>-value in further mathematical operations.</li><br><br>
+
+<li><a name="s12">Returns the <i>i,j</i> <sup>th</sup> element of a constant matrix object. The return value can be used as <i>R</i>-value in further mathematical operations.</li><br><br>
+
+<li><a name="s13">Returns the <i>i,j</i> <sup>th</sup> element of a matrix object. The return value can be used as both R-value and <i>L</i>-value in further mathematical operations. This might be slightly more efficient than the double operator[][].</li><br><br>
+
+<li><a name="s14">Returns the <i>i,j</i> <sup>th</sup> element of a constant matrix object. The return value can be used as <i>R</i>-value in further mathematical operations. This might be slightly more efficient than the double operator[][].
+</li><br><br>
+
+<li><a name="s15">Returns a sub-matrix from a matrix object as defined by the <i>mslice</i> parameter. You need to provide starting row, starting column, row number, and column number to construct the <i>mslice</i> object. The return matrix can be used as both <i>R</i>-value and <i>L</i>-value to construct/assign to a new matrix, or to change the existing matrix when used as <i>L</i>-value.
+</li><br><br>
+
+<li><a name="s16">Returns a sub-matrix from a matrix object as defined by the <i>mslice</i> parameter. You need to provide starting row, starting column, row number, and column number to construct the mslice object. The return matrix can be used as <i>R</i>-value to construct a new matrix or assign to different matrix.</li><br><br>
+
+<li><a name="s17">Returns a sub-matrix from a matrix object as defined by the <i>gmslice</i> parameter. You can either use <i>MATIRX_TYPE</i> constants, e.g., <i>DIAGONAL</i>, <i>TRIDIAGONAL</i>, <i>UTRIANG</i>, or <i>LTRIANG</i>, or provide starting column and number of elements in each row of the matrix to construct a <i>gmslice</i> object. The return matrix can be used as both <i>R</i>-value and <i>L</i>-value to construct a new matrix or assign to different matrix.</li><br><br>
+
+<li><a name="s18">Returns a sub-matrix from a matrix object as defined by the <i>gmslice</i> parameter. You can either use <i>MATIRX_TYPE</i> constants, e.g., <i>DIAGONAL</i>, <i>TRIDIAGONAL</i>, <i>UTRIANG</i>, or <i>LTRIANG</i>, or provide starting column and number of elements in each row of the matrix to construct a <i>gmslice</i> object. The return matrix can be used as <i>R</i>-value to construct a new matrix or assign to different matrix.</li><br><br>
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;double&gt; Matrix;
+typedef std::valarray&lt;double&gt; Vector;
+
+using techsoft::mslice;
+using techsoft::gmslice;
+using techsoft::DIAGONAL;
+using techsoft::UTRIANG;
+using techsoft::LTRIANG;
+using techsoft::TRIDIAGONAL;
+
+Matrix A(5,5);
+double x,y;
+size_t i=0,j=0;
+
+A.rand();
+const Matrix B = A;
+
+x = B[i][j];            // Gets the element B<small><sub>(i,j)</sub></small>
+A[i+1][j+1] = x;        
+
+x = A(i,j)--;
+y = ++A(i,j);
+
+x = A[i][j]  * B[i+1][j+1];
+y = x * A[i][j];
+
+A[i][j] += B[i+1][j+1];
+A[i][j] /= -B[i+1][j+1];
+
+double *pA = &A[0][0];  // Gets the address of the first element of A
+
+Vector V = B[4];        // Gets 4th row of matrix B
+A(1) = V;               // Assigns the vector V to 1st column of matrix A
+
+A[i] += V;
+A[j] *= V;
+A[i] = 1.0;             // Sets the i th row to 1.0
+
+V = B.diag();           // Gets the diagonal elements of B
+A.diag() = V;
+
+Vector V2 = B.diag(-1); // Gets the diagonal just below the main diagonal
+A.diag(1) = V2;         // Assigns the vector just above the main diagonal
+A.diag() = 1.0;         // Sets the elements of main diagonal to 1.0
+A.diag(-2)[1] = 0.0;
+
+Matrix SA = B[mslice(1,1,3,3)];
+A[mslice(1,1,3,3)] = SA;
+A[mslice(2,2,1,2)] = B[mslice(2,2,1,2)];
+
+A[mslice(1,0,2,3)] *= 10.0;
+A[mslice(1,0,2,3)] /= 10.0;
+A[mslice(1,0,2,3)] = 1.0;
+
+A[mslice(1,0,2,3)] += B[mslice(1,0,2,3)];
+A[mslice(1,0,2,3)] -= B[mslice(1,0,2,3)];
+
+Matrix C = A[gmslice(DIAGONAL)];  
+C = A[gmslice(TRIDIAGONAL)];
+C = A[gmslice(UTRIANG)];
+C = A[gmslice(LTRIANG)];
+
+C[gmslice(DIAGONAL)] += B;   
+C[gmslice(TRIDIAGONAL)] -= B;      
+C[gmslice(UTRIANG)] *= 12.0;
+C[gmslice(LTRIANG)] /= 12.0;
+
+A = A[gmslice(UTRIANG)];
+A[gmslice(LTRIANG)] = ~A;       // Gets a symmetric matrix
+
+</code></pre>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+.TH "lo_timetag" 3 "Thu Apr 16 2020" "Version 0.31" "liblo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lo_timetag \- 
+.PP
+A structure to store OSC TimeTag values\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBsec\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBfrac\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A structure to store OSC TimeTag values\&. 
+.PP
+Definition at line 35 of file lo_osc_types\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "uint32_t lo_timetag::frac"
+The fractions of a second offset from above, expressed as 1/2^32nds of a second 
+.PP
+Definition at line 40 of file lo_osc_types\&.h\&.
+.SS "uint32_t lo_timetag::sec"
+The number of seconds since Jan 1st 1900 in the UTC timezone\&. 
+.PP
+Definition at line 37 of file lo_osc_types\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for liblo from the source code\&.

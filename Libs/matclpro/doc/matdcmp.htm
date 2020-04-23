@@ -1,0 +1,164 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Matrix Decomposition Methods</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="logicop.htm">Prev</a> |
+<a href="manual.htm">Up</a> |
+<a href="matutil.htm">Next</a>
+</h6>
+
+<h2>Matrix Decomposition Methods</h2>
+
+<p>
+The following methods are available for matrix decompositions and solution of simultaneous linear equations.
+</p>
+
+<pre><code>1. T <a href="#u1">lud</a> (valarray&lt;size_t&gt;&amp; <i>ri</i>, T* <i>pDet</i> = NULL);
+2. void <a href="#u2">lubksb</a> (const valarray&lt;size_t&gt;&amp; <i>ri</i>, const valarray&lt;T&gt;&amp; <i>v</i>, valarray&lt;T&gt;&amp; <i>s</i>) const;
+3. void <a href="#u3">lumpove</a> (const matrix&lt;T&gt;&amp; <i>ludm</i>, const valarray&lt;size_t&gt;&amp; <i>ri</i>, const valarray&lt;T&gt;&amp; <i>v</i>, valarray&lt;T&gt;&amp; <i>s</i>) const;
+4. bool <a href="#u4">solve_lu</a> (const valarray&lt;T&gt;&amp; <i>v</i>, valarray&lt;T&gt;&amp; <i>s</i>) const;
+
+5. bool <a href="#u5">svd</a> (matrix&lt;T&gt;&amp; <i>z</i>, valarray&lt;T&gt;&amp; <i>w</i>);
+6. void <a href="#u6">svbksb</a> (const matrix&lt;T&gt;&amp; <i>z</i>, const valarray&lt;T&gt;&amp; <i>w</i>, const valarray&lt;T&gt;&amp; <i>v</i>, valarray&lt;T&gt;&amp; <i>s</i>) const;
+7. bool <a href="#u7">solve_sv</a> (const valarray&lt;T&gt;&amp; v, valarray&lt;T&gt;&amp; s) const;
+   
+8. void <a href="#u8">qrd</a> (matrix&lt;T&gt;&amp; <i>r</i>);
+9. void <a href="#u9">qrbksb</a> (const matrix&lt;T&gt;&amp; <i>r</i>, const valarray&lt;T&gt;&amp; <i>v</i>, valarray&lt;T&gt;&amp; <i>s</i>) const;
+10. bool <a href="#u10">solve_qr</a> (const valarray&lt;T&gt;&amp; v, valarray&lt;T&gt;&amp; s) const;
+
+11. bool <a href="#u11">chold</a> ();
+12. void <a href="#u12">cholbksb</a> (const valarray&lt;T&gt;&amp; <i>v</i>, valarray&lt;T&gt;&amp; <i>s</i>) const;
+13. bool <a href="#u13">solve_chol</a> (const valarray&lt;T&gt;&amp; v, valarray&lt;T&gt;&amp; s) const;
+
+14. bool <a href="#u14">inv</a> ();
+15. bool <a href="#u15">inv_lu</a> ();
+16. bool <a href="#u16">inv_sv</a> ();
+17. bool <a href="#u17">inv_qr</a> ();
+   
+18. bool <a href="#u18">solve</a> (const valarray&lt;T&gt;&amp; <i>v</i>, valarray&lt;T&gt;&amp; <i>s</i>) const;
+19. bool <a href="#u19">solve</a> (const matrix&lt;T&gt;&amp; <i>v</i>, matrix&lt;T&gt;&amp; <i>s</i>) const;
+
+</code></pre>
+
+<p>
+<ol>
+<li><a name="u1"></a>Performs LU decomposition on a square matrix, i.e., the matrix A is decomposed as,
+<center><h4>
+A = L . U
+</h4></center>
+Where L is a lower triangular matrix and U is an upper triangular matrix. On decomposition, the matrix A is replaced by both L and U. The new changed row index is returned in the valarray <i>ri</i> for performing the back substitution later. It can also optionally copy the determinant of the matrix in the variable pointed to by <i>pDet</i>.
+It returns <i>true</i> on successful decomposition, and <i>false</i> if the matrix is non-square or singular.
+</li><br><br>
+
+<li><a name="u2"></a>Performs forward and back substitution on a LU decomposed matrix to find out the solution vector for a linear set of equations. Here, <i>v</i> is the right hand side input vector and <i>ri</i> is the row index as returned by <i>lud</i> method. The solution vector will be returned in the vector <i>s</i>.
+</li><br><br>
+
+<li><a name="u3"></a>The <i>lumpove</i> method can be used to improve an imperfect solutions found by LU decomposition method earlier. This method must be applied to the original matrix. Here, <i>ludm</i> is the LU decomposition of the original matrix, <i>v</i> is the right hand side vector and <i>ri</i> is the row index. The improved solution will be returned in the vector <i>s</i>.
+</li><br><br>
+
+<li><a name="u4"></a>The <i>solve_lu</i> method solves a set of linear equations using LU decomposition method. Here <i>v</i> is the right hand side vector, and <i>s</i> is the reference to a valarray object to receive the solution vector <i>s</i>. Returns <i>true</i> if successful; otherwise, it returns <i>false</i>.
+</li><br><br>
+
+<li><a name="u5"></a>Performs Singular Value decomposition on a matrix, i.e., any M x N matrix A, where M &gt;= N, is decomposed as,
+<center><h4>
+A = U . W . Z<small><sup><i>T</i></sup></small>
+</h4></center>
+Where <b>U</b> is an M x N column-orthogonal matrix, <b>W</b> is a diagonal matrix, and <b>Z</b> is an N x N orthogonal matrix. After successful decomposition, the original matrix A is replaced by <b>U</b>, the diagonal matrix is returned in the vector <i>w</i>, and the orthogonal matrix in <i>z</i>. Returns <i>true</i> on successful decomposition, and <i>false</i> if there is no convergence after 30 iterations.
+</li><br><br>
+
+<li><a name="u6"></a>The <b>svbksb</b> method performs back substitution on a SV decomposed matrix to find out the solution vector for a linear set of equations. Here the matrix <i>z</i> and vector <i>w</i> are as returned by the <b>svd</b> method, <i>v</i> is the right hand side vector, and <i>s</i> is the solution vector to be returned by this method.
+</li><br><br>
+
+<li><a name="u7"></a>The <i>solve_sv</i> method solves a set of linear equations using SV decomposition method. Here <i>v</i> is the right hand side vector, and <i>s</i> is the reference to a valarray object to receive the solution vector <i>s</i>. Returns <i>true</i> if successful; otherwise, it returns <i>false</i>.
+</li><br><br>
+
+<li><a name="u8"></a>The QR decomposition method decomposes an M-by-N matrix A, where M &gt;= N, into an M-by-N orthogonal matrix Q and an N-by-N upper triangular matrix R, i.e.,
+<center><h4>
+A = Q . R
+</h4></center>
+After successful decomposition, the original matrix A is replaced by the orthogonal matrix <b>Q</b>, and the upper triangular matrix <i>R</i> is returned in <i>r</i>.
+</li><br><br>
+
+<li><a name="u9"></a>Finds the solution vector for a QR decomposed matrix. Here <i>r</i> is the upper triangular matrix returned by the <b>qrd</b> method, <i>v</i> is the right hand side vector, and <i>s</i> is the reference to a valarray class object to receive the solution vector.
+</li><br><br>
+
+<li><a name="u10"></a>The <i>solve_qr</i> method solves a set of linear equations using QR decomposition method. Here <i>v</i> is the right hand side vector, and <i>s</i> is the reference to a valarray object to receive the solution vector <i>s</i>. Returns <i>true</i> if successful; otherwise, it returns <i>false</i>.
+</li><br><br>
+
+<li><a name="u11"></a>The Cholesky decomposition method <b>chold</b> decomposes a symmetric, positive definite matrix A, into a lower triangular matrix L so that
+<center><h4>
+A = L . L<small><sup><i>T</i></sup></small>
+</h4></center>
+Returns <i>true</i> on success. If the matrix is not symmetric and positive definite, or singular, it returns <i>false</i>.
+</li><br><br>
+
+<li><a name="u12"></a>The <b>cholbksb</b> method performs back substitution on a Cholesky decomposed matrix to find out the solution vector for a set of linear equations. Here <i>v</i> is the right hand side vector, and <i>s</i> is the reference to <i>valarray</i> object to receive the solution vector.</li><br><br>
+
+<li><a name="u13"></a>The <i>solve_chol</i> solves a set of linear equations using Cholesky decomposition method. Here <i>v</i> is the right hand side vector, and <i>s</i> is the reference to a valarray object to receive the solution vector <i>s</i>. Returns <i>true</i> if successful; otherwise, it returns <i>false</i>.
+</li><br><br>
+
+<li><a name="u14"></a>Inverts the matrix. The matrix is inverted in-place using minimum memory, i.e., the original matrix is replaced by its inverse. </li><br><br>
+
+<li><a name="u15"></a>Inverts the matrix. The matrix is inverted using LU decomposition method. The original matrix is replaced by its inverse. This method uses more memory than <b>inv</b> and is also slightly slower. </li><br><br>
+
+<li><a name="u16"></a>Inverts the matrix. The matrix is inverted using SV decomposition method. The original matrix is replaced by its inverse.
+</li><br><br>
+
+<li><a name="u17"></a>Inverts the matrix. The matrix is inverted using QR decomposition method. The original matrix is replaced by its inverse.
+</li><br><br>
+
+<li><a name="u18"></a>Solves a set of linear equations using LU decomposition method. Here <i>v</i> is the right hand side vector, and <i>s</i> is the reference to <i>valarray</i> object to receive the solution vector. Returns <i>true</i> is successful; otherwise, it  returns <i>false</i>.
+</li><br><br>
+
+<li><a name="u19"></a>Solves a set of linear equations using LU decomposition method. The matrix <i>v</i> may contain more than one the right hand side vector as column. For each right hand side vector, the solution vector is returned in the corresponding column of the matrix <i>s</i>. Returns <i>true</i> is successful; otherwise, it  returns <i>false</i>.
+</li><br><br>
+
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;double&gt; Matrix;
+typedef std::valarray&lt;double&gt; Vector;
+
+using techsoft::gmslice;
+using techsoft::LTRIANG;
+
+Matrix A(5,5), Z(5,5);
+Vector V(5), S(5), W(5);
+std::valarray&lt;size_t&gt; ri;
+
+std::cin &gt;&gt; A;          // Reads the matrix from stdin
+std::cin &gt;&gt; Z[0];       // Reads the vector from stdin
+V = Z[0];
+
+A.lud( ri);
+A.lubksb( ri, V, S);
+
+A = B;
+A.svd( Z, W);
+A.svbksb( Z, W, V, S);
+
+A = B;
+A.qrd( Z);
+A.qrbksb( Z, V, S);
+
+A = B[gmslice(LTRIANG)];
+A[gmslice(LTRIANG)] = ~A;       // A is now a symmetric matrix
+A.chold();
+A.cholbksb( V, S);
+
+A = B;
+A.inv();                        // Inverts the matrix
+
+A = B;
+A.solve( V, S);
+
+</code></pre>
+
+</body>
+</html>

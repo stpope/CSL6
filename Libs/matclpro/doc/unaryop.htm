@@ -1,0 +1,56 @@
+<html>
+<head>
+  <link rel=stylesheet href="styles.css" type="text/css">
+  <title>Unary operators</title>
+</head>
+<body>
+
+<h6 align=right>
+<a href="assignop.htm">Prev</a> |
+<a href="manual.htm">Up</a> |
+<a href="binaryop.htm">Next</a>
+</h6>
+
+<h2>Unary operators</h2>
+
+<p>
+The following unary operators are available for the matrix class objects.
+</p>
+
+<pre><code>1. matrix&lt;T&gt; <a href="#u1">operator+</a> () const;
+2. matrix&lt;T&gt; <a href="#u2">operator-</a> () const;
+3. matrix&lt;T&gt; <a href="#u3">operator~</a> () const;
+4. matrix&lt;T&gt; <a href="#u4">operator!</a> () const;
+
+</code></pre>
+
+<p>
+<ol>
+<li><a name="u1"></a>Returns the same matrix object.</li><br><br>
+
+<li><a name="u2"></a>Returns a new matrix object constructed after applying the negative operator on all of the matrix elements.</li><br><br>
+
+<li><a name="u1"></a>Returns the transpose of the matrix object.
+</li><br><br>
+
+<li><a name="u1"></a>Returns the inverse of the matrix object.</li><br><br>
+</ol>
+</p>
+
+<h5>Examples</h5>
+
+<pre><code>typedef techsoft::matrix&lt;double&gt; Matrix;
+
+Matrix A(5,5), B(5,5);
+
+A.rand();
+
+B = +A;
+B = -A;
+B = ~A;         // Returns the transpose of A
+B = !A;         // Returns the inverse of A
+
+</code></pre>
+
+</body>
+</html>

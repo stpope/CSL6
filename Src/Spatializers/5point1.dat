@@ -1,0 +1,9 @@
+// speaker layout, 5.1 channels with some elevation
+
+//azimuth	elevation	radius
+
+330	0	1
+0	45	1
+30	0	1
+110	-45	1
+250	-45	1
