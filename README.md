@@ -97,10 +97,10 @@ given unit generator for the specified time.
     }
 
 If you compile this into a main() function and link it with the CSL library, you'll have a stand-alone 
-program that plays frequency sweeps (thrilling, right?).  
-CSL gets interesting when you add the functionality to: (1) read in-coming 
-audio and process it (as in an audio plug-in); (2) read and respond to in-coming MIDI and/or OSC messages 
-to create sounds (as in a soft-synth); and (3) respond to mesages from a GUI (as in apps and games).
+program that plays frequency sweeps (thrilling, right?). CSL gets interesting when you add the functionality 
+to: (1) read in-coming audio and process it (as in an audio plug-in); (2) read and respond to in-coming 
+MIDI and/or OSC messages to create sounds (as in a soft-synth); and (3) respond to mesages from a 
+GUI (as in apps and games).
 
 ## CSL Coding Start-up
 
