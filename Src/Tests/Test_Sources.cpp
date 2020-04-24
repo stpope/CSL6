@@ -404,8 +404,8 @@ void testGrainCloud() {
 ///////////////// IFFT tests ////////
 
 void test_ifft() {
-	IFFT vox;									// use default IFFT parameters
-	vox.setBinMagPhase(2, 0.25, 0);				// set a few harmonics
+	IFFT vox;									    // use default IFFT parameters
+	vox.setBinMagPhase(2, 0.25, 0);				    // set a few harmonics
 	vox.setBinMagPhase(4, 0.08, 0);
 	vox.setBinMagPhase(6, 0.04, 0);
 	vox.setBinMagPhase(8, 0.02, 0);
@@ -423,15 +423,15 @@ void test_vector_ifft() {
 	
 	vox1.setBinMagPhase(4, 0.25, 0);			    // set different harmonics
 	vox1.setBinMagPhase(6, 0.25, 0);
-	LineSegment env1(dur, 1, 0.0001);
-	MulOp mul1(vox1, env1);						// use a MulOp
+	LineSegment env1(dur, 0.5, 0.0001);
+	MulOp mul1(vox1, env1);						    // use a MulOp
 
 	vox2.setBinMagPhase(5, 0.25, 0);			    // for the 2nd IFFT
 	vox2.setBinMagPhase(9, 0.25, 0);
-	LineSegment env2(dur, 0.0001, 1);
+	LineSegment env2(dur, 0.0001, 0.5);
 	MulOp mul2(vox2, env2);
 
-	AddOp add(mul1, mul2);						// sum the MulOps
+	AddOp add(mul1, mul2);						    // sum the MulOps
 
 	logMsg("playing IFFT crossfade...");
 	runTest(add, dur);
@@ -476,8 +476,8 @@ testStruct srcTestList[] = {
 	"SumOfSines instrument",	testSOSInstrument,		"Demonstrate the SumOfSines instrument",
 	"Snd file instrument",		testSndFileInstrument,	"Test the sound file instrument",
 	"WaveShaping synthesis",	testWaveShaper,			"Play 2 wave-shaper notes with envelopes",
-//    "IFFT synthesis (buggy)",    test_ifft,                "Make a sound with IFFT synthesis",
-//    "Vector IFFT (buggy)",        test_vector_ifft,        "Vector synthesis with 2 IFFTs",
+    "IFFT synthesis (buggy)",   test_ifft,              "Make a sound with IFFT synthesis",
+    "Vector IFFT (buggy)",      test_vector_ifft,       "Vector synthesis with 2 IFFTs",
 	"Soundfile granulation",	testGrainCloud,			"Random sound file granulation example",
 	NULL,						NULL,					NULL
 };

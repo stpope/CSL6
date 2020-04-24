@@ -39,7 +39,7 @@ void input_test() {
 	logMsg("\tDefault MIDI in = %d", juce::MidiInput::getDefaultDeviceIndex());
 	logMsg("\tDefault MIDI out = %d", juce::MidiOutput::getDefaultDeviceIndex());
 	MIDIIn in;
-	in.open(DEFAULT_MIDI_IN);
+	in.open(juce::MidiInput::getDefaultDeviceIndex());
 	in.start();
 
 	try {
@@ -156,7 +156,8 @@ void testMIDIFile() {
 //	for (unsigned i = 0; i < lib.size(); i++) {
 //		logMsg("IL %d: %d", i, lib[i].size());
 //	}
-	Stereoverb rev(mix);		// stereo reverb
+    MulOp mult(mix, 0.4);       // use a MulOp to scale down
+	Stereoverb rev(mult);		// stereo reverb
 	rev.setRoomSize(0.8);		// medium-length reverb
 	
 	logMsg("Load MIDI score");
@@ -291,13 +292,13 @@ testStruct ctrlTestList[] = {
     "Dump ports",           IO_test,        "Dump list of MIDI ports to stdout",
     "MIDI file player",     testMIDIFile,   "Play a MIDI file on an instrument library",
 //    "THE REST OF THESE ARE W.I.P.", 0, "",
-//    "Dump input",            input_test,        "Dump MIDI input from default device",
-//    "MIDI notes",            play_test,        "Play MIDI notes (reads MIDI kbd)",
-//    "MIDI output",            output_test,    "Test sending MIDI output",
-//    "MIDI listener",        testListener,    "Start the MIDI listener object",
+//    "Dump input",           input_test,     "Dump MIDI input from default device",
+//    "MIDI notes",           play_test,      "Play MIDI notes (reads MIDI kbd)",
+//    "MIDI output",          output_test,    "Test sending MIDI output",
+//    "MIDI listener",        testListener,   "Start the MIDI listener object",
 #ifdef USE_LOSC				                        	// liblo for OSC
 	"OSC client/server",	testOSCClientServer,	"OSC client/server on a library",
-	"OSC server",			testOSCServer,	"Start OSC server on a library",
+	"OSC server",			testOSCServer,	        "Start OSC server on a library",
 #endif
 	NULL,					NULL,			NULL
 };

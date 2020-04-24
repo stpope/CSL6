@@ -23,12 +23,14 @@
 
 using namespace csl;
 
-Spatializer::Spatializer(PannerType panMode, SpeakerLayout *speakerLayout) 
+Spatializer::Spatializer(PannerType panMode, SpeakerLayout * speakerLayout)
 			: UnitGenerator(), mPanner(NULL), mSpeakerLayout(speakerLayout) {
 	setCopyPolicy(kIgnore);		// This is needed so the default kCopy doesn't overide
 								// the multiple channel panning done here.
 	setNumChannels(2);
 	setPanningMode(panMode);
+    if (mSpeakerLayout == NULL)
+        mSpeakerLayout = SpeakerLayout::defaultSpeakerLayout();
 }
 
 Spatializer::~Spatializer() {
@@ -63,7 +65,7 @@ void Spatializer::removeSource(SpatialSource &soundSource) {
 }
 
 void Spatializer::update(void * arg) {
-
+    // TO DO HERE?
 }
 
 void Spatializer::setPanningMode(PannerType panType) {

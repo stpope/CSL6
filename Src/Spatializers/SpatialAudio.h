@@ -30,7 +30,7 @@ typedef enum {
 
 class Spatializer : public UnitGenerator, public Observer {
 public:
-	Spatializer(PannerType panMode = kAutomatic, SpeakerLayout *speakerLayout = SpeakerLayout::defaultSpeakerLayout());
+	Spatializer(PannerType panMode = kAutomatic, SpeakerLayout * speakerLayout = NULL);
 	~Spatializer();
 
 	void addSource(SpatialSource &s);		///< Add a sound souce to the list of inputs to be processed.
@@ -102,9 +102,6 @@ can initialize the "geometer" to any desired one."
 //PANNER AND WILL PASS IT THE NEW CREATED DISTANCE SIMULATOR. 
 //IN THE NEXT BUFFER OF THE SPATIALIZER, THIS WILL CALL NEXT BUFFER OF THE PANNER, WHICH IN TURN WILL CALL NEXT BUFFER OF EACH SOURCE, MEANING EACH DISTANCE SIMULATOR
 //WHICH IN TURN IT'LL CAL THE NEXT BUFFER OF EACH PASSED SOURCE.
-//
-//
-//
 //
 //*/
 

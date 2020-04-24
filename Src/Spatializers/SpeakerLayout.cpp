@@ -13,7 +13,7 @@
 
 #include "SpeakerLayout.h"
 
-#define INV_SQRT2 (1/1.414213562)
+#define INV_SQRT2 (1/1.414213562f)
 
 using std::cout;
 using std::endl;
@@ -21,13 +21,12 @@ using namespace csl;
 
 // A static private member that holds the default layout.
 
-SpeakerLayout *SpeakerLayout::sDefaultSpeakerLayout = 0;
+SpeakerLayout * SpeakerLayout::sDefaultSpeakerLayout = 0;
 
 /// Returns a reference to the default layout.
 /// If no layout has been set, it creates a stereo speaker layout.
 
-SpeakerLayout *SpeakerLayout::defaultSpeakerLayout() {
-					// if being used for the first time, create a new layout and set it as default.
+SpeakerLayout * SpeakerLayout::defaultSpeakerLayout() {
 	if (sDefaultSpeakerLayout == 0)
 		sDefaultSpeakerLayout = new StereoSpeakerLayout();
 	return sDefaultSpeakerLayout;
@@ -68,15 +67,17 @@ Examples of parsable speaker layout files are provided with the code (.dat files
 
 */
 SpeakerLayout::SpeakerLayout(const char *filePath) : mDimensions(2) {
-	readSpeakerFile(filePath);
+    mSpeakerDistanceDeltas = 0;
+	if (filePath != NULL)
+        readSpeakerFile(filePath);
 }
 
 SpeakerLayout::~SpeakerLayout() {
 	for (unsigned i = 0; i < mSpeakers.size(); ++i)
 		delete mSpeakers[i];
-//	if (mSpeakerDistanceDeltas != NULL)
-//		delete[] mSpeakerDistanceDeltas;
-//	mSpeakerDistanceDeltas = 0;
+    if (mSpeakerDistanceDeltas != NULL)
+        delete[] mSpeakerDistanceDeltas;
+    mSpeakerDistanceDeltas = 0;
 }
 
 // load in a config file
@@ -85,7 +86,7 @@ void SpeakerLayout::readSpeakerFile(const char *filePath){
 	if (filePath != NULL) {
 		char testChar;
 		char lineBuffer[1024]; // a space for reading lines of text into - arbitrary maximum length of 1023 characters
-		char *file = (char *) malloc(strlen(filePath));
+		char * file = (char *) malloc(strlen(filePath));
 		strcpy(file, filePath);
 		const char *cartesian = "CARTESIAN";
 		const char *degrees = "SPHERICAL-DEGREES";
@@ -126,20 +127,18 @@ void SpeakerLayout::readSpeakerFile(const char *filePath){
 				}
 			}
 		}
-		
-		//	if (isCartesian) {
-		//		// conversion of cartesian to sperical (using radians)
-		//		cartesianToSphericalRadians();
-		//	} else if (isDegrees) {	
-		//		double degreeInRadians = CSL_PI/180.0;
-		//		// conversion from degrees to radians
-		//		for (unsigned i = 0; i < mNumSpeakers; i++) {
-		//			mSpeakers[i]->coord1 *= degreeInRadians;
-		//			mSpeakers[i]->coord3 *= degreeInRadians;
-		//			mSpeakers[i]->coord3 = fabs(mSpeakers[mNumSpeakers]->coord3);
-		//		}
-		//	}
-		
+    //	if (isCartesian) {
+    //		// conversion of cartesian to sperical (using radians)
+    //		cartesianToSphericalRadians();
+    //	} else if (isDegrees) {
+    //		double degreeInRadians = CSL_PI/180.0;
+    //		// conversion from degrees to radians
+    //		for (unsigned i = 0; i < mNumSpeakers; i++) {
+    //			mSpeakers[i]->coord1 *= degreeInRadians;
+    //			mSpeakers[i]->coord3 *= degreeInRadians;
+    //			mSpeakers[i]->coord3 = fabs(mSpeakers[mNumSpeakers]->coord3);
+    //		}
+    //	}
 		dump();
 		free(file);
 	}

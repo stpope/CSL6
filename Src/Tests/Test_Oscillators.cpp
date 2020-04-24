@@ -23,19 +23,19 @@
 
 /////////////////////// Here are the actual unit tests ////////////////////
 
-/// Apply a glissando and swell to a sine oscillator with LineSegments
+    /// Apply a glissando and swell to a sine oscillator with LineSegments
 
-void testSweep() {
-	Osc vox;								    // wave-table oscillator
-	LineSegment gliss(3, 40, 5000);		        // freq line (dur val1, val2)
-	LineSegment swell(3, 0.000001, 0.5);	    // ampl line
-	vox.setFrequency(gliss);				    // apply freq function
-	vox.setScale(swell);					    // apply ampl function
-//	vox.dump();
-	logMsg("playing swept sin with line segment...");
-	runTest(vox);						        // play vox for 3 seconds
-	logMsg("done.\n");
-}
+    void testSweep() {
+        Osc vox;								    // wave-table oscillator
+        LineSegment gliss(3, 40, 5000);		        // freq line (dur val1, val2)
+        LineSegment swell(3, 0.000001, 0.5);	    // ampl line
+        vox.setFrequency(gliss);				    // apply freq function
+        vox.setScale(swell);					    // apply ampl function
+    //	vox.dump();
+        logMsg("playing swept sin with line segment...");
+        runTest(vox);						        // play vox for 3 seconds
+        logMsg("done.\n");
+    }
 
 /// Simplest sine wave tests using the tutorial example classes
 
@@ -355,7 +355,7 @@ void runTests() {
 
 #else
 
-// test list for Juce GUI
+// test list for Juce GUI (loaded in CSL_TestComponent)
 
 testStruct oscTestList[] = {
 	"Sweep/swell test",			testSweep,			        "Test a sine with swept freq and volume swell",
@@ -370,7 +370,7 @@ testStruct oscTestList[] = {
 	"SumOfSines build",			testSumOfSinesSteps,		"Build up a harmonic series on a sum-of-sines",
 	"SumOfSines 1/f",			testSumOfSines1F,			"Play a 1/f spectrum sum-of-sines",
 	"Wavetable from file",		testWaveTableFromFile,		"Play a wave table from a sound file",
-#ifndef CSL_WINDOWS
+#ifndef CSL_WINDOWS                     // SHARC has UNIX-specific code
 	"SHARC SOS (loads slow)",	test_SHARC,					"Load/print the SHARC timbre database, play example",
 	"Vector-synth SHARC",		test_SHARC2,				"Show vector cross-fade of SHARC spectra",
 #endif

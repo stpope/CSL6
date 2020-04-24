@@ -9,7 +9,9 @@
 #define CSL_Spectral_H
 
 #include "CSL_Core.h"
-//#define USE_FFTW
+#include "Window.h"
+
+//#define USE_FFTW              // you might want to hard-wire this...
 #include "FFT_Wrapper.h"
 
 namespace csl {
@@ -37,10 +39,11 @@ protected:
 	FFT_Wrapper mWrapper;				///< actual FFT wrapper object
 	Buffer mInBuf;						///< input buffer
 	SampleBuffer mWindowBuffer;			///< Buffer to store window
+    csl::HammingWindow * mWindow;       ///< the window itself
 };
 
 ///
-/// Inverse FFT
+/// Inverse FFT is a generator
 ///
 
 class IFFT : public UnitGenerator {

@@ -506,8 +506,8 @@
 				FF49256E7088CD6F73EFF0BD /* Test_Envelopes.cpp */,
 				D42491BECE205A37F66FD9EF /* Test_Effects.cpp */,
 				E8C1307E505B830BA9478F72 /* Test_Panners.cpp */,
-				D9E8BA9D1B3EEE4459AE0B9C /* Test_Audio.cpp */,
 				D556F333BF85F136B1272B7D /* Test_Control.cpp */,
+				D9E8BA9D1B3EEE4459AE0B9C /* Test_Audio.cpp */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -844,6 +844,7 @@
 					"JUCE_STANDALONE_APPLICATION=1",
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = (
 					../../JuceLibraryCode,
 					/Content/Code/JUCE6/modules,
@@ -923,6 +924,7 @@
 					"JUCE_STANDALONE_APPLICATION=1",
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = (
 					../../JuceLibraryCode,
 					/Content/Code/JUCE6/modules,

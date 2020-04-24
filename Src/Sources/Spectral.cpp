@@ -4,7 +4,6 @@
 //
 
 #include "Spectral.h"
-#include "Window.h"
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
@@ -20,31 +19,31 @@ FFT::FFT(UnitGenerator & in, int size, CSL_FFTType type)
 			: Effect(in), mFFTSize(size), 
 			  mWrapper(size, type, CSL_FFT_FORWARD), mInBuf(1, size), mWindowBuffer(0) {  
 //	mSampleBuffer = (SampleBuffer) fftwf_malloc(sizeof(SampleBuffer) * mFFTSize);
-	HammingWindow * window = new HammingWindow(mFFTSize);
-	mWindowBuffer = window->window();	///< Buffer to store samples
-	free(window);
+	mWindow = new HammingWindow(mFFTSize);  ///< Window to scale input
+	mWindowBuffer = mWindow->window();	///< ptr to window buffer
 	mOverwriteOutput = false;			// leave the spectrum in the buffer by default
 	mInBuf.allocateBuffers();
 }
 
 FFT::~FFT() {
-	free(mWindowBuffer);
+    free(mWindow);
+    free(mWindowBuffer);
 }
 
 // nextBuffer does the FFT -- note that we override the higher-level version of this method
 
 void FFT::nextBuffer(Buffer& outputBuffer) throw (CException) {
 	unsigned numFrames = outputBuffer.mNumFrames;	// get buffer length
-	
+
 	pullInput(numFrames);							// get the input samples via Effect
 													// Copy the input data into the buffer 
 	memcpy(mInBuf.buffer(0), mInputPtr, numFrames * sizeof(sample));
-	
+
 	SampleBuffer bufPtr = mInBuf.buffer(0);			// apply signal window to buffer
 	SampleBuffer winPtr = mWindowBuffer;	
 	for (int i = 0; i < mFFTSize; i++)
 		*bufPtr++ *= *winPtr++;
-		
+
 	mWrapper.nextBuffer(mInBuf, outputBuffer);		// execute the FFT
 
 	outputBuffer.mType = kSpectra;					// set the type flag of the output buffer
@@ -107,10 +106,10 @@ void IFFT::setBins(SampleBuffer cmplxSpectrum) {
 	}
 }
 
-void IFFT::setBins(int lower, int upper, float* real, float* imag) {
-	if (lower <0 || lower >= mFFTSize ) { return; } // It should throw an "out of range" exception.
-	if (upper <0 || upper >= mFFTSize ) { return; }
-	if (upper <lower ) { return; }
+void IFFT::setBins(int lower, int upper, float * real, float * imag) {
+	if (lower < 0 || lower >= mFFTSize ) { return; } // It should throw an "out of range" exception, right?
+	if (upper < 0 || upper >= mFFTSize ) { return; }
+	if (upper < lower ) { return; }
 
 	for (int i = lower; i < upper; i++) {
 		cx_r(mSpectrum[i]) = real[i];
@@ -120,8 +119,8 @@ void IFFT::setBins(int lower, int upper, float* real, float* imag) {
 
 void IFFT::setBinMagPhase(int binNumber, float mag, float phase) {
 	float myReal, myComplex;
-	myReal = mag*cos(phase);
-	myComplex = mag*sin(phase);
+	myReal = mag * cos(phase);
+	myComplex = mag * sin(phase);
 	setBin(binNumber, myReal, myComplex);
 }
 
@@ -145,7 +144,5 @@ void IFFT::nextBuffer(Buffer & outputBuffer) throw (CException) {
 	mInBuf.setBuffer(0, (SampleBuffer) mSpectrum);
 
 	mWrapper.nextBuffer(mInBuf, outputBuffer);			// execute the IFFT via the wrapper
-
 	return;
 }
-

@@ -1,25 +1,24 @@
 CSL List of ThingsToDo
 
 Broken demo fcns:
-	IFFT synthesis - only works w FFTW
+	IFFT synthesis - works the first time; some destructor bug...
 	Remez FIR planning code broke
 	Multi-tap delay demo mixer?
-	Sample-avg filter
-	HRTF only works w FFTW
+	testEnvScale has clicks(?)
+	Sample-avg filter no-go
+	HRTF pretty crappy, crashes (space leak?)
 	VBAP threading broken
-	MIDI I/O demos still being ported (dump works)
-	Audio I/O demos still being ported
+	MIDI I/O demos busted (dump works)
+	Audio I/O demos busted (no input)
 
 Windows issues:
-	Some code not accepted by MS C compiler:
-		Variable-size array decl in VBAP.cpp
-		e.g., unsigned speakerMapping[numSpeakers];
-		ToDo: re-write these to use ptrs and malloc.
+	FFT/IFFT untested
+	SHARC uses UNIX-specific code.
 
 Bugs:
 	Block resizer up-sampling
-	Env as scaled
-	Moog filter
+	Env as scaled has clicks
+	Moog filter untested
 	ADSR/AR time scaling - setDuration should not scale whole envelope
 
 Unfinished:

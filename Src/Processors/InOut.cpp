@@ -88,10 +88,10 @@ void InOut::nextBuffer(Buffer & outputBuffer) throw (CException) {
 	}
 
 	switch (mFlags) {
-		case kNoProc:
-			for (unsigned i = 0; i < mOutChans; i++)
-				memcpy(outputBuffer.buffer(i), inputBuffer->buffer(i % mInChans), outputBuffer.mMonoBufferByteSize);
-			break;
+//        case kNoProc:
+//            for (unsigned i = 0; i < mOutChans; i++)
+//                memcpy(outputBuffer.buffer(i), inputBuffer->buffer(i % mInChans), outputBuffer.mMonoBufferByteSize);
+//            break;
 		case kLR2M:
 			for (unsigned i = 0; i < mOutChans; i++) {
 				sample * outPtr =  outputBuffer.buffer(i);

@@ -154,17 +154,18 @@ void testADSR_FM() {
 //	ADSR i_env(3, 0.0001, 0.1, 0, 0);
 	Osc car(BASE_FREQ);							// init the 2 oscillators (fc = fm)
 	Osc mod(BASE_FREQ*1.414);
-//	i_env.setScale(BASE_FREQ);				// scale the index envelope by the mod. freq
+//	i_env.setScale(BASE_FREQ);				    // scale the index envelope by the mod. freq
 	i_env.setScale(BASE_FREQ);
 	mod.setScale(i_env);
 	mod.setOffset(BASE_FREQ);
 	car.setFrequency(mod);
 	car.setScale(a_env);
+    MulOp mul(car, 0.5);                        // using a MulOp with a constant
 	i_env.trigger();	
 	a_env.trigger();	
 	logMsg("playing ADSR FM\n");
-//	car.dump();
-	runTest(car);
+//	mul();
+	runTest(mul);
 	logMsg("done.\n");
 }
 
@@ -212,7 +213,7 @@ void test50RandFreqEnv() {
 #ifndef CSL_WINDOWS
 	srand(getpid());							// seed the rand generator -- UNIX SPECIFIC CODE HERE
 #endif
-    MulOp mul(mix, 0.4);              // using a MulOp with a constant
+    MulOp mul(mix, 0.7);                        // using a MulOp with a constant
 	runTest(mul, duration);
 	logMsg("done.\n");
 	mix.deleteInputs();							// clean up
@@ -366,7 +367,7 @@ testStruct envTestList[] = {
 	"ADSR FM",				testADSR_FM,		    "Dual-envelope FM example",
 	"Rand Freq envelope",   testRandFreqEnv,		"Play a random-walk frequency envelope",
 	"50 Rand F/A envs",		test50RandFreqEnv,		"Test 50 random frequency envelope players",
-//	"Envelope scaling",		testEnvScale,			"",
+	"Envelope scaling",		testEnvScale,			"Test using an envelope as VCA (clicks)",
 	"Fancy FM",				testFancy_FM,			"Play a fancy FM note",
 	"Complex envelope",		testComplexEnvelope,    "Play a note with a complex amplitude envelope",
 	"Many random SOS",		testManyRandSOS,		"Layer many SumOfSines instruments with envelopes",

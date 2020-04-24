@@ -80,7 +80,6 @@ protected:
 
 class HammingWindow : public Window {
 public:
-
 	HammingWindow() : Window() { }
 	HammingWindow(unsigned windowSize) : Window(windowSize) { }
 	HammingWindow(unsigned windowSize, float gain) : Window(windowSize, gain) { }

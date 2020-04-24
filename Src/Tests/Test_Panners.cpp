@@ -272,6 +272,7 @@ void test_Binaural_horiz() {
 		sndfile.trigger();
 		sleepSec(0.8);
 	}
+    sleepSec(0.8);
 	theIO->clearRoot();
 	logMsg("done.");
 }
@@ -283,6 +284,11 @@ void test_Binaural_vertAxial() {
 				// Open a mono soundfile
 	SoundFile sndfile(CGestalt::dataFolder() + "guanno_mono.aiff");
 	sndfile.dump();
+
+    char folder[CSL_NAME_LEN];                        // create HRTF data location
+    strcpy(folder, CGestalt::dataFolder().c_str());    // CSL data folder location
+    strcat(folder, "IRCAM_HRTF/512_DB/HRTF_1047.dat");    // HRTF data location
+    HRTFDatabase::Reload(folder);                    // Load the HRTF data
 				// make the sound "Positionable"
 	SpatialSource source(sndfile);
 				// Create a spatializer.
@@ -311,6 +317,11 @@ void test_Binaural_vertMedian() {
 	sndfile.openForRead(true);
 	sndfile.dump();
 	sndfile.setToEnd();
+
+    char folder[CSL_NAME_LEN];                          // create HRTF data location
+    strcpy(folder, CGestalt::dataFolder().c_str());     // CSL data folder location
+    strcat(folder, "IRCAM_HRTF/512_DB/HRTF_1047.dat");  // HRTF data location
+    HRTFDatabase::Reload(folder);                       // Load the HRTF data
 				// make the sound "Positionable"
 	SpatialSource source(sndfile);
 				// Create a spatializer.
@@ -394,7 +405,7 @@ void test_VBAP_horiz() {
 		// make the sound "Positionable"
 	SpatialSource source(sndfile);
 		// Create a spatializer.
-	Spatializer panner(kVBAP);
+	Spatializer panner(kVBAP, SpeakerLayout::defaultSpeakerLayout());
 		// Add the sound source to it
 	panner.addSource(source);
 		// loop to play transpositions
@@ -638,13 +649,13 @@ testStruct panTestList[] = {
 	"Test convolver 3",		testConvolver3,			"Test a convolver",
 #endif
 	"Osc bank",				testOscBank,			"Mix a bank of oscillators",
-//	"Channel-mapped IO (buggy)",	testCMapIO,				"Demonstrate channel-mapped IO",
-//    "HRTF horiz circles (buggy)",    test_Binaural_horiz,    "Test the HRTF-based binaural panner",
-//    "HRTF axial circles (buggy)",    test_Binaural_vertAxial,"Play a HRTF-panner with axial circles",
-//    "HRTF median circles (buggy)",    test_Binaural_vertMedian,"Play a HRTF-panner with median circles",
+//	"Channel-mapped IO (buggy)",	 testCMapIO,	"Demonstrate channel-mapped IO",
+    "HRTF horiz circles (buggy)",    test_Binaural_horiz,       "Test the HRTF-based binaural panner",
+    "HRTF axial circles (buggy)",    test_Binaural_vertAxial,   "Play a HRTF-panner with axial circles",
+    "HRTF median circles (buggy)",   test_Binaural_vertMedian,  "Play a HRTF-panner with median circles",
 	"Ambisonics",			test_Ambi_horiz,		"Test the Ambisonic-based spatial panner",
 	"Simple",				test_SimpleP,			"Test the simple spatial panner",
-//	"VBAP (buggy)",			test_VBAP_horiz,		"Test the VBAP-based spatial panner",
+	"VBAP (buggy)",			test_VBAP_horiz,		"Test the VBAP-based spatial panner",
 	"Convolver",			test_convolution,		"Test a convolver",
 //	"Convolver Norm",		test_convolution_files,	"Test IR normalization",
 NULL,						NULL,			NULL

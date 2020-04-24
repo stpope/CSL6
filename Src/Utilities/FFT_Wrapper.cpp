@@ -16,6 +16,8 @@ using namespace csl;
 
 //-------------------------------------------------------------------------------------------------//
 
+#pragma mark FFTW
+
 #ifdef USE_FFTW			// the FFTW-based version
 
 // FFTW_Wrapper = FFTW-based concrete implementation
@@ -45,21 +47,21 @@ FFTW_Wrapper::~FFTW_Wrapper() {
 /// run the transform
 
 void FFTW_Wrapper::nextBuffer(Buffer & in, Buffer & out) throw (CException) {	
-	
+
 	if (mDirection == CSL_FFT_FORWARD) {			// mDirection == CSL_FFT_FORWARD
 													// copy input into sample buffer
 		memcpy(mSampBuf, in.buffer(0), mSize * sizeof(sample));
 //		printf("\t%x  -  %x\n", in.buffer(0), out.buffer(0));
-		
+
 		fftwf_execute(mPlan);						//// GO ////
-		
+
 		SampleBuffer ioPtr = out.buffer(0);			// out buffer
 		fftwf_complex * spPtr = mSpectBuf;			// spectrum ptr
-		
+
 		if (mType == CSL_FFT_REAL) {				// real: write magnitude to mono output
 			for (unsigned j = 0; j < mCSize; j++, spPtr++)
 				*ioPtr++ = hypotf((*spPtr)[0], (*spPtr)[0]);
-				
+
 		} else if (mType == CSL_FFT_COMPLEX) {		// copy complex ptr to output
 			memcpy(out.buffer(0), mSpectBuf + 1, (mSize * sizeof(sample)));
 //			memcpy(out.buffer(0), mSpectBuf, (mCSize * sizeof(fftwf_complex)));
@@ -93,6 +95,8 @@ void FFTW_Wrapper::nextBuffer(Buffer & in, Buffer & out) throw (CException) {
 #endif // FFTW
 
 //-------------------------------------------------------------------------------------------------//
+
+#pragma mark FFTREAL
 
 #ifdef USE_FFTREAL		// the FFTReal-based version
 
@@ -164,7 +168,7 @@ void FFTR_Wrapper::nextBuffer(Buffer & in, Buffer & out) throw (CException) {
 			SampleComplexPtr ioPtr = (SampleComplexPtr) in.buffer(0);
 			SampleBuffer rPtr = mTempBuf;			// copy data to FFTReal format
 			SampleBuffer iPtr = mTempBuf + (mSize / 2);
-			
+
 			for (unsigned j = 0; j < mSize / 2; j++) {	// loop to unpack complex array
 				SampleBuffer cplx = ioPtr[j];
 				*rPtr++ = cx_r(cplx);
@@ -189,7 +193,6 @@ void FFTR_Wrapper::nextBuffer(Buffer & in, Buffer & out) throw (CException) {
 //				 f [0...length(x)/2] = real values,
 //				 f [length(x)/2+1...length(x)] = imaginary values of coeff 1...length(x)-1.
 //			- x: pointer on the destination array (time).
-
 	}
 }
 
@@ -197,6 +200,7 @@ void FFTR_Wrapper::nextBuffer(Buffer & in, Buffer & out) throw (CException) {
 
 //-------------------------------------------------------------------------------------------------//
 
+#pragma mark KISSFFT
 
 #ifdef USE_KISSFFT
 
