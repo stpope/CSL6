@@ -32,7 +32,7 @@ Presentation slides for the really impatient: http://www.fastlabinc.com/CSL/CSL_
 
 CSL Demo App quick start cheat sheet: https://github.com/stpope/CSL6/blob/master/Doc/6.0DemoQuickStart.pdf
 
-### CSL Video Demos ("The CSL Show")
+### CSL Video Demos ("The CSL Show," 2012)
 
 A Tour of CSL (22 min): https://vimeo.com/409028476
 
