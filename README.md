@@ -74,6 +74,27 @@ the MAT 240 series taught at UCSB (and elsewhere) for over 10 years.
 Students in these courses contributed many ideas and much concrete
 code to CSL (see the doc). The course materials for these courses are all available on-line at the link, http://heaveneverywhere.com/TheBigMATBook
 
+### Show me some code!
+
+CSL code is procedural C++ using the unit generator model. To make a sine oscillator with a
+crescendo (getting louder) and a glissando (getting higher in frequency) over 5 seconds,
+you could write the following; The runTest() function is a test aid that simply plays the 
+given unit generator for the specified time (default = 3 seconds).
+
+    /// Apply a glissando and swell to a sine oscillator with LineSegments
+
+    void testSweep() {
+        Osc vox;                                    // wave-table oscillator
+        LineSegment gliss(3, 40, 5000);             // freq line (dur val1, val2)
+        LineSegment swell(3, 0.000001, 0.5);        // ampl line
+        vox.setFrequency(gliss);                    // apply freq function
+        vox.setScale(swell);                        // apply ampl function
+    //  vox.dump();                                 // print out the internals of the oscillator
+        logMsg("playing swept sin with line segment...");
+        runTest(vox);                               // play vox for 3 seconds
+        logMsg("done.\n");
+    }
+
 ## CSL Coding Start-up
 
 The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
