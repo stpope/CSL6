@@ -95,7 +95,10 @@ given unit generator for the specified time (default = 3 seconds).
         logMsg("done.\n");
     }
 
-If you complied this into a main() function, you'd have a stand-alone programs that plays frequency sweeps.
+If you compiled this into a main() function and linked it with the CSL library, you'd have a stand-alone 
+program that plays frequency sweeps.  CSL gets interesting when you add the functionality to (1) read in-coming 
+audio and process it (as in an audio plug-in), and (2) read and respond to in-coming MIDI and/or OSC messages 
+to create sounds (as in a soft-synth).
 
 ## CSL Coding Start-up
 
