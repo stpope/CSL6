@@ -82,22 +82,23 @@ crescendo (getting louder) and a glissando (getting higher in frequency) over 3 
 you could write the following. The runTest() function is a test aid that simply plays the 
 given unit generator for the specified time.
 
-    /// Apply a glissando and swell to a sine oscillator with LineSegments
+    /// Apply a glissando and swell to a sine oscillator with LineSegments ///
 
     void testSweep() {
-        Osc vox;                                    // Create a wave-table oscillator
-        LineSegment gliss(3, 40, 5000);             // Create 2 line-segmentsl first the freq line (dur, val1, val2)
-        LineSegment swell(3, 0.000001, 0.5);        // the ampl line gets louder
-        vox.setFrequency(gliss);                    // apply freq function to vox
-        vox.setScale(swell);                        // apply ampl function to vox
-    //  vox.dump();                                 // print out the internals of the oscillator
-        logMsg("playing swept sin with line segment...");   // print a message
-        runTest(vox, 3);                            // play vox for 3 seconds
-        logMsg("done.\n");
+        Osc vox;                                    // Create an oscillator (defaults to a sine)
+        LineSegment gliss(3, 40, 5000);             // Create the freq line-segment (dur, val1, val2)
+        LineSegment swell(3, 0.000001, 0.5);        // The ampl line-segment gets louder
+        vox.setFrequency(gliss);                    // Apply freq function to vox
+        vox.setScale(swell);                        // Apply ampl function to vox
+    //  vox.dump();                                 // Print out the internals of the oscillator
+        logMsg("playing swept sin with swell...");  // Print a message
+        runTest(vox, 3);                            // Play vox for 3 seconds
+        logMsg("done.\n");                          // Print a message
     }
 
-If you compiled this into a main() function and linked it with the CSL library, you'd have a stand-alone 
-program that plays frequency sweeps.  CSL gets interesting when you add the functionality to: (1) read in-coming 
+If you compile this into a main() function and link it with the CSL library, you'll have a stand-alone 
+program that plays frequency sweeps (thrilling, right?).  
+CSL gets interesting when you add the functionality to: (1) read in-coming 
 audio and process it (as in an audio plug-in); (2) read and respond to in-coming MIDI and/or OSC messages 
 to create sounds (as in a soft-synth); and (3) respond to mesages from a GUI (as in apps and games).
 
