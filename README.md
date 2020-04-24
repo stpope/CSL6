@@ -76,29 +76,30 @@ code to CSL (see the doc). The course materials for these courses are all availa
 
 ### Show me some code!
 
-CSL code is procedural C++ using the unit generator model. To make a sine oscillator with a
-crescendo (getting louder) and a glissando (getting higher in frequency) over 5 seconds,
+CSL code is procedural C++ using the unit generator model. As a near-trivial example, to make a sine 
+oscillator with a
+crescendo (getting louder) and a glissando (getting higher in frequency) over 3 seconds,
 you could write the following. The runTest() function is a test aid that simply plays the 
-given unit generator for the specified time (default = 3 seconds).
+given unit generator for the specified time.
 
     /// Apply a glissando and swell to a sine oscillator with LineSegments
 
     void testSweep() {
         Osc vox;                                    // Create a wave-table oscillator
-        LineSegment gliss(3, 40, 5000);             // Create 2 line-segments, the freq line (dur val1, val2)
+        LineSegment gliss(3, 40, 5000);             // Create 2 line-segmentsl first the freq line (dur, val1, val2)
         LineSegment swell(3, 0.000001, 0.5);        // the ampl line gets louder
         vox.setFrequency(gliss);                    // apply freq function to vox
         vox.setScale(swell);                        // apply ampl function to vox
     //  vox.dump();                                 // print out the internals of the oscillator
         logMsg("playing swept sin with line segment...");   // print a message
-        runTest(vox);                               // play vox for 3 seconds
+        runTest(vox, 3);                            // play vox for 3 seconds
         logMsg("done.\n");
     }
 
 If you compiled this into a main() function and linked it with the CSL library, you'd have a stand-alone 
-program that plays frequency sweeps.  CSL gets interesting when you add the functionality to (1) read in-coming 
-audio and process it (as in an audio plug-in), and (2) read and respond to in-coming MIDI and/or OSC messages 
-to create sounds (as in a soft-synth).
+program that plays frequency sweeps.  CSL gets interesting when you add the functionality to: (1) read in-coming 
+audio and process it (as in an audio plug-in); (2) read and respond to in-coming MIDI and/or OSC messages 
+to create sounds (as in a soft-synth); and (3) respond to mesages from a GUI (as in apps and games).
 
 ## CSL Coding Start-up
 
