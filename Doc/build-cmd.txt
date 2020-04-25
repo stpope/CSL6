@@ -1,3 +1,5 @@
+MacOS build command example
+
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 -x c++
 -arch x86_64
@@ -115,3 +117,8 @@
 --serialize-diagnostics /Content/Code/CSL6/Builds/MacOSX_0/DerivedData/CSL6Demo/Build/Intermediates.noindex/CSL6Demo.build/Debug/CSL6Demo\ -\ App.build/Objects-normal/x86_64/CSL_Core.dia
 -c /Content/Code/CSL6/Src/Kernel/CSL_Core.cpp
 -o /Content/Code/CSL6/Builds/MacOSX_0/DerivedData/CSL6Demo/Build/Intermediates.noindex/CSL6Demo.build/Debug/CSL6Demo\ -\ App.build/Objects-normal/x86_64/CSL_Core.o
+
+
+Linux
+
+g++  -MMD "-DLINUX=1" "-DDEBUG=1" "-D_DEBUG=1" "-DUSE_JUCE" "-DUSE_VBAP" "-DUSE_HRTF" "-DUSE_AMBISONIC" "-DUSE_FFTREAL" "-DUSE_JSND" "-DUSE_JMIDI" "-DUSE_JTHREADS" "-DJUCE_DEBUG" "-DJUCER_LINUX_MAKE_6D53C8B4=1" "-DJUCE_APP_VERSION=6.0" "-DJUCE_APP_VERSION_HEX=0x60000" "-DJUCE_DISPLAY_SPLASH_SCREEN=0" "-DJUCE_USE_DARK_SPLASH_SCREEN=0" "-DJUCE_PROJUCER_VERSION=0x60000" "-DJUCE_MODULE_AVAILABLE_juce_audio_basics=1" "-DJUCE_MODULE_AVAILABLE_juce_audio_devices=1" "-DJUCE_MODULE_AVAILABLE_juce_audio_formats=1" "-DJUCE_MODULE_AVAILABLE_juce_audio_processors=1" "-DJUCE_MODULE_AVAILABLE_juce_audio_utils=1" "-DJUCE_MODULE_AVAILABLE_juce_core=1" "-DJUCE_MODULE_AVAILABLE_juce_cryptography=1" "-DJUCE_MODULE_AVAILABLE_juce_data_structures=1" "-DJUCE_MODULE_AVAILABLE_juce_events=1" "-DJUCE_MODULE_AVAILABLE_juce_graphics=1" "-DJUCE_MODULE_AVAILABLE_juce_gui_basics=1" "-DJUCE_MODULE_AVAILABLE_juce_gui_extra=1" "-DJUCE_MODULE_AVAILABLE_juce_opengl=1" "-DJUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1" "-DJUCE_STRICT_REFCOUNTEDPOINTER=1" "-DJUCE_STANDALONE_APPLICATION=1" -pthread -I/usr/include/x86_64-linux-gnu -I/usr/include/webkitgtk-4.0 -I/usr/include/gtk-3.0 -I/usr/include/libsoup-2.4 -I/usr/include/libxml2 -I/usr/include/webkitgtk-4.0 -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/libdrm -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -pthread -I../../JuceLibraryCode -I/home/stp/JUCE/modules   -I../../../JUCE6/modules  -g -ggdb -O0 -I../../Src/Includes -I/usr/local/include -w -fpermissive  -std=c++11  "-DJucePlugin_Build_VST=0" "-DJucePlugin_Build_VST3=0" "-DJucePlugin_Build_AU=0" "-DJucePlugin_Build_AUv3=0" "-DJucePlugin_Build_RTAS=0" "-DJucePlugin_Build_AAX=0" "-DJucePlugin_Build_Standalone=0" "-DJucePlugin_Build_Unity=0"  -o "build/intermediate/Debug/BasicFMInstrument_f98e6023.o" -c "../../Src/Instruments/BasicFMInstrument.cpp"
