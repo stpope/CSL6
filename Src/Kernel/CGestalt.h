@@ -135,8 +135,9 @@ public:												// Accessor (getter/setter) methods
 // Safe free and matrix version
 
 #define SAFE_FREE(ptr)									\
-	if (ptr)											\
-		delete[] ptr
+if (ptr) {											    \
+        delete[] ptr;                                   \
+        ptr = 0; }
 
 #define SAFE_MATFREE(ptr, num)							\
 	for (unsigned i = 0; i < num; i++) {				\

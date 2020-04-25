@@ -404,11 +404,11 @@ void testGrainCloud() {
 ///////////////// IFFT tests ////////
 
 void test_ifft() {
-	IFFT vox;									    // use default IFFT parameters
-	vox.setBinMagPhase(2, 0.25, 0);				    // set a few harmonics
-	vox.setBinMagPhase(4, 0.08, 0);
-	vox.setBinMagPhase(6, 0.04, 0);
-	vox.setBinMagPhase(8, 0.02, 0);
+	IFFT vox(CGestalt::blockSize() /* * 2 */ );		// use default IFFT parameters
+	vox.setBinMagPhase(2, 0.25, 0);				    // set a few harmonics (not in-phase)
+	vox.setBinMagPhase(4, 0.08, 1);
+	vox.setBinMagPhase(6, 0.04, 2);
+	vox.setBinMagPhase(8, 0.02, 3);
 //	vox.setBinMagPhase(5, 0.1, 0);				    // 5th bin = 440 Hz?
 	logMsg("playing IFFT...");
 	runTest(vox);

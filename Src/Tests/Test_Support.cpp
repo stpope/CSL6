@@ -52,10 +52,9 @@ int main (int argc, const char * argv[]) {
 // Test the given DSP graph for the given amount of time
 
 void runTest(UnitGenerator & vox, double dur) {
-//	theIO = new IO_CLASS;				// create the IO object
-	theIO->setRoot(vox);				// make some sound
+	theIO->setRoot(vox);				// plug into the IO to make some sound
 	sleepSec(dur);						// sleep for the desired duration
-	theIO->clearRoot();					// make some silence
+	theIO->clearRoot();					// clear the IO's root to make silence
 	sleepSec(0.1);						// wait for it to stop
 }
 

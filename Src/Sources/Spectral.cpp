@@ -55,14 +55,17 @@ void FFT::nextBuffer(Buffer& outputBuffer) throw (CException) {
 //// InvFFT = synthesis
 //
 
-IFFT::IFFT(int size, CSL_FFTType type) 
-			: UnitGenerator(), mFFTSize(size),
-			  mWrapper(size, type, CSL_FFT_INVERSE) {
-	SAFE_MALLOC(mSpectrum, SampleComplex, mFFTSize);
+IFFT::IFFT(int size, CSL_FFTType type) : UnitGenerator(),
+              mFFTSize(size),
+			  mWrapper(size, type, CSL_FFT_INVERSE),
+              mInBuf() {
+	SAFE_MALLOC(mSpectrum, SampleComplex, mFFTSize * 2);
+//    logMsg("Alloc IFFT");
 }
 
 IFFT::~IFFT() { 
 	SAFE_FREE(mSpectrum);
+//    logMsg("Free IFFT");
 }
 
 void IFFT::binValue(int binNumber, float * outRealPart, float * outImagPart) {
@@ -119,8 +122,8 @@ void IFFT::setBins(int lower, int upper, float * real, float * imag) {
 
 void IFFT::setBinMagPhase(int binNumber, float mag, float phase) {
 	float myReal, myComplex;
-	myReal = mag * cos(phase);
-	myComplex = mag * sin(phase);
+	myReal = mag * cosf(phase);
+	myComplex = mag * sinf(phase);
 	setBin(binNumber, myReal, myComplex);
 }
 
@@ -144,5 +147,10 @@ void IFFT::nextBuffer(Buffer & outputBuffer) throw (CException) {
 	mInBuf.setBuffer(0, (SampleBuffer) mSpectrum);
 
 	mWrapper.nextBuffer(mInBuf, outputBuffer);			// execute the IFFT via the wrapper
+    
+    if (outputBuffer.mNumChannels > 1) {
+        for (unsigned i = 1; i < outputBuffer.mNumChannels; i++)
+        memcpy(outputBuffer.buffer(i), outputBuffer.buffer(0), outputBuffer.mMonoBufferByteSize);
+    }
 	return;
 }

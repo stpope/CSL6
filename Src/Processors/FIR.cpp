@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include "CGestalt.h"
 
 using namespace csl;
 
@@ -89,7 +90,7 @@ void FilterSpecification::planFilter() {
 			mFrequencies[i]  = mFrequencies[i] / CGestalt::frameRateF();
 						// now call the iterative design function
 //	remez(double h[], int numtaps, int numband, double bands[], double des[], double weight[], int type)
-	remez(mTapData, mNumTaps, mNumBands, mFrequencies, mResponses, mWeights, DIFFERENTIATOR);
+	remez(mTapData, mNumTaps, mNumBands, mFrequencies, mResponses, mWeights, BANDPASS);
 }
 
 // FIR class
@@ -200,6 +201,8 @@ void FIR::nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw (CException
 	return;
 }
 
+#pragma mark Parks-McClellan FIR algorithm
+
 ///////////////////////////////////////////////////////////////////////////////////
 
 /**************************************************************************
@@ -223,12 +226,12 @@ void FIR::nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw (CException
  *
  *************************************************************************/
 
-#define NEGATIVE	0
-#define POSITIVE 	1
+#define NEGATIVE	    0
+#define POSITIVE 	    1
 
-#define Pi		3.1415926535897932
-#define Pi2		6.2831853071795865
-#define GRIDDENSITY	16
+#define Pi		        3.1415926535897932
+#define Pi2		        6.2831853071795865
+#define GRIDDENSITY	    16
 #define MAXITERATIONS	40
 
 /*******************
@@ -257,9 +260,9 @@ void FIR::nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw (CException
  * double W[]        - Weight function on the dense grid [gridsize]
  *******************/
 
-void CreateDenseGrid(int r, int numtaps, int numband, double bands[],
-                     double des[], double weight[], int *gridsize,
-                     double Grid[], double D[], double W[],
+void CreateDenseGrid(int r, int numtaps, int numband, double * bands,
+                     double * des, double * weight, int *gridsize,
+                     double * Grid, double * D, double * W,
                      int symmetry)
 {
    int i, j, k, band;
@@ -322,7 +325,7 @@ void CreateDenseGrid(int r, int numtaps, int numband, double bands[],
  * int Ext[]    - Extremal indexes to dense frequency grid [r+1]
  ********************/
 
-void InitialGuess(int r, int Ext[], int gridsize)
+void InitialGuess(int r, int * Ext, int gridsize)
 {
    int i;
 
@@ -351,8 +354,8 @@ void InitialGuess(int r, int Ext[], int gridsize)
  * double y[]    - 'C' in Oppenheim & Schafer [r+1]
  ***********************/
 
-void CalcParms(int r, int Ext[], double Grid[], double D[], double W[],
-                double ad[], double x[], double y[])
+void CalcParms(int r, int * Ext, double * Grid, double * D, double * W,
+                double * ad, double * x, double * y)
 {
    int i, j, k, ld;
    double sign, xi, delta, denom, numer;
@@ -428,7 +431,7 @@ void CalcParms(int r, int Ext[], double Grid[], double D[], double W[],
  * Returns double value of A[freq]
  *********************/
 
-double ComputeA(double freq, int r, double ad[], double x[], double y[])
+double ComputeA(double freq, int r, double * ad, double * x, double * y)
 {
    int i;
    double xc, c, denom, numer;
@@ -476,9 +479,9 @@ double ComputeA(double freq, int r, double ad[], double x[], double y[])
  * double E[]    - Error function on dense grid [gridsize]
  ************************/
 
-void CalcError(int r, double ad[], double x[], double y[],
-               int gridsize, double Grid[],
-               double D[], double W[], double E[])
+void CalcError(int r, double * ad, double * x, double * y,
+               int gridsize, double * Grid,
+               double * D, double * W, double * E)
 {
    int i;
    double A;
@@ -515,8 +518,8 @@ void CalcError(int r, double ad[], double x[], double y[],
  * int    Ext[]    - New indexes to extremal frequencies [r+1]
  ************************/
 
-void Search(int r, int Ext[],
-            int gridsize, double E[])
+void Search(int r, int * Ext,
+            int gridsize, double * E)
 {
    int i, j, k, l, extra;     /* Counters */
    int up, alt;
@@ -629,7 +632,7 @@ void Search(int r, int Ext[],
  * -------
  * double h[] - Impulse Response of final filter [N]
  *********************/
-void FreqSample(int N, double A[], double h[], int symm)
+void FreqSample(int N, double * A, double * h, int symm)
 {
    int n, k;
    double x, val, M;
@@ -705,13 +708,12 @@ void FreqSample(int N, double A[], double h[], int symm)
  * Returns 0 if the result has not converged
  ********************/
 
-short isDone(int r, int Ext[], double E[])
+short isFDone(int r, int * Ext, double * E)
 {
-	int i;
 	double min, max, current;
 	
 	min = max = fabs(E[Ext[0]]);
-	for (i=1; i<=r; i++)
+	for (int i = 1; i <= r; i++)
 	{
 		int off = Ext[i];
 		current = fabs(E[off]);
@@ -720,7 +722,7 @@ short isDone(int r, int Ext[], double E[])
 		if (current > max)
 			max = current;
 	}
-	if (((max-min)/max) < 0.0001)
+	if (((max - min) / max) < 0.0001)
 		return 1;
 	return 0;
 }
@@ -747,8 +749,8 @@ short isDone(int r, int Ext[], double E[])
  * double h[]      - Impulse response of final filter [numtaps]
  ********************/
 
-void remez(double h[], int numtaps,
-           int numband, double bands[], double des[], double weight[],
+void remez(double * h, int numtaps,
+           int numband, double * bands, double * des, double * weight,
            int type)
 {
    double *Grid, *W, *D, *E;
@@ -783,15 +785,24 @@ void remez(double h[], int numtaps,
 /*
  * Dynamically allocate memory for arrays with proper sizes
  */
-   Grid = (double *)malloc(gridsize * sizeof(double));
-   D = (double *)malloc(gridsize * sizeof(double));
-   W = (double *)malloc(gridsize * sizeof(double));
-   E = (double *)malloc(gridsize * sizeof(double));
-   Ext = (int *)malloc((r+1) * sizeof(int));
-   taps = (double *)malloc((r+1) * sizeof(double));
-   x = (double *)malloc((r+1) * sizeof(double));
-   y = (double *)malloc((r+1) * sizeof(double));
-   ad = (double *)malloc((r+1) * sizeof(double));
+//   Grid = (double *)malloc(gridsize * sizeof(double));
+//   D = (double *)malloc(gridsize * sizeof(double));
+//   W = (double *)malloc(gridsize * sizeof(double));
+//   E = (double *)malloc(gridsize * sizeof(double));
+//   Ext = (int *)malloc((r+1) * sizeof(int));
+//   taps = (double *)malloc((r+1) * sizeof(double));
+//   x = (double *)malloc((r+1) * sizeof(double));
+//   y = (double *)malloc((r+1) * sizeof(double));
+//   ad = (double *)malloc((r+1) * sizeof(double));
+    SAFE_MALLOC(Grid, double, gridsize); // (ptr, type, len)
+    SAFE_MALLOC(D, double, gridsize);
+    SAFE_MALLOC(W, double, gridsize);
+    SAFE_MALLOC(E, double, gridsize);
+    SAFE_MALLOC(Ext, int, (r+1));
+    SAFE_MALLOC(taps, double, (r+1));
+    SAFE_MALLOC(x, double, (r+1));
+    SAFE_MALLOC(y, double, (r+1));
+    SAFE_MALLOC(ad, double, (r+1));
 
 /*
  * Create dense frequency grid
@@ -859,7 +870,7 @@ void remez(double h[], int numtaps,
       CalcParms(r, Ext, Grid, D, W, ad, x, y);
       CalcError(r, ad, x, y, gridsize, Grid, D, W, E);
       Search(r, Ext, gridsize, E);
-      if (isDone(r, Ext, E))
+      if (isFDone(r, Ext, E))
          break;
    }
    if (iter == MAXITERATIONS)
@@ -901,12 +912,20 @@ void remez(double h[], int numtaps,
 /*
  * Delete allocated memory
  */
-   free(Grid);
-   free(W);
-   free(D);
-   free(E);
-   free(Ext);
-   free(x);
-   free(y);
-   free(ad);
+//    free(Grid);
+//    free(W);
+//    free(D);
+//    free(E);
+//    free(Ext);
+//    free(x);
+//    free(y);
+//    free(ad);
+    SAFE_FREE(Grid);
+    SAFE_FREE(W);
+    SAFE_FREE(D);
+    SAFE_FREE(E);
+    SAFE_FREE(Ext);
+    SAFE_FREE(x);
+    SAFE_FREE(y);
+    SAFE_FREE(ad);
 }

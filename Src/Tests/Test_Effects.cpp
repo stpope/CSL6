@@ -56,24 +56,24 @@ void testFIR() {
 //	double weight[] = { 5, 50 };						// weights for error (ripple) in the 2 bands
 //	FilterSpecification fs(40, 2, freq, resp, weight);	// 40 taps, 3 bands
 					// BPF test
-	double resp[] = { 0., 1., 0. };					       // amplitudes in the 3 freq bands (i.e., band-pass)
-	double freq[] = { 0., 200., 250., 500., 600., 44100. };  // corner freqs of the pass and stop bands
-	double weight[] = { 10., 2., 10. };					   // weights for error (ripple) in the 3 bands
-	FilterSpecification fs(70, 3, freq, resp, weight);      // 70 taps (70-step IR), 3 bands
+	double resp[] = { 0.0, 1.0, 0.0 };					// amplitudes in the 3 freq bands (i.e., band-pass)
+	double freq[] = { 0., 200.0, 250.0, 500.0, 600.0, 22050.0 };  // corner freqs of the pass and stop bands
+	double weight[] = { 10.0, 2.0, 10.0 };				// weights for error (ripple) in the 3 bands
+	FilterSpecification fs(70, 3, freq, resp, weight);  // 70 taps (70-step IR), 3 bands
 
-//	double resp[] = { 0, 1, 0, 1, 0 };					        // amplitudes in the 5 freq bands (i.e., band-pass)
+//	double resp[] = { 0, 1, 0, 1, 0 };					// amplitudes in the 5 freq bands (i.e., band-pass)
 //	double freq[] = { 0, 200, 250, 500, 600, 1000, 1200, 2000, 2400, 22050 };	// corner freqs of the pass and stop bands
-//	double weight[] = { 10, 5, 10, 5, 10 };			        // weights for error (ripple) in the 3 bands
-//	FilterSpecification fs(200, 5, freq, resp, weight);	        // 200 taps (64-step IR), 5 bands
+//	double weight[] = { 10, 5, 10, 5, 10 };			    // weights for error (ripple) in the 3 bands
+//	FilterSpecification fs(200, 5, freq, resp, weight);	// 200 taps (64-step IR), 5 bands
 
 	PinkNoise noise;								    // the sound source
-	FIR vox(noise, fs);								// create the filter
-	vox.print_taps();								// print the filter taps
+	FIR vox(noise, fs);								    // create the filter
+	vox.print_taps();								    // print the filter taps
 
 //	Butter butter1(noise, BW_HIGH_PASS, 800.0);
 //	Butter vox(butter1, BW_LOW_PASS, 800.0);
 
-	MulOp mul(vox, 10);							// scale it back up
+	MulOp mul(vox, 10);							        // scale it back up
 	logMsg("playing FIR filtered noise...");
 	runTest(mul);
 	logMsg("FIR done.");
@@ -624,7 +624,7 @@ void runTests() {
 
 testStruct effTestList[] = {
 	"Clipper",				testClipper,		"Demonstrate the signal clipper",
-//	"FIR filter (buggy)",	testFIR,			"Play an FIR band-pass filter",
+//	"FIR filter (buggy)",	testFIR,			"Play a narrow FIR band-pass filter",
 	"All filters",			testFilters,		"Test different filter types",
 	"Biquad filters",		testBiquads,		"Test biquad filter types",
 	"Filtered snd file",	testDynamicVoice,	"Dynamic BPF on a voice track",

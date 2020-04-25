@@ -1,8 +1,8 @@
 CSL List of ThingsToDo
 
 Broken demo fcns:
-	IFFT synthesis - works the first time; some destructor bug...
-	Remez FIR planning code broke
+	IFFT synthesis demos works sometimes...
+	Remez FIR planning code broken (malloc issues?)
 	Multi-tap delay demo mixer?
 	testEnvScale has clicks(?)
 	Sample-avg filter no-go

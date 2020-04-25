@@ -1397,7 +1397,7 @@ IO::IO(unsigned s_rate, unsigned b_size, int in_device, int out_device,
 		  mNumInChannels(in_chans), mNumOutChannels(out_chans), 
 		  mNumRealInChannels(in_chans), mNumRealOutChannels(out_chans),
 		  mStatus(kIONew), mInterleaved(false) {
-	logMsg("Create IO: %d s @ %d Hz; %d i %d o", b_size, s_rate, in_chans, out_chans);
+	logMsg("\nCreate IO: %d s @ %d Hz; %d i %d o", b_size, s_rate, in_chans, out_chans);
 }
 
 // set/clear the root generator

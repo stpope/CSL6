@@ -1,6 +1,6 @@
 ///
 /// Spectral.h -- UnitGenerator for going to/from the spectral domain
-/// These classes use the CSL 5 FFT wrapper for FFTs.
+/// These classes use the CSL FFT wrapper for FFTs.
 ///
 /// See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 ///
@@ -11,7 +11,7 @@
 #include "CSL_Core.h"
 #include "Window.h"
 
-//#define USE_FFTW              // you might want to hard-wire this...
+//#define USE_FFTW              // you might want to hard-wire this to overrule the cmd-line option
 #include "FFT_Wrapper.h"
 
 namespace csl {
@@ -58,14 +58,14 @@ public:
 	void binValue(int binNumber, float * outRealPart, float * outComplexPart);
 	void binValueMagPhase(int binNumber, float * outMag, float * outPhase);
 		
-										// set the values in the specified bin
+										/// set the values in the specified bin
 	void setBin(int binNumber, float realPart, float imagPart);
 	void setBins(float * real, float * imag);
 	void setBins(SampleComplexVector cmplxSpectrum);
 	void setBins(SampleBuffer cmplxSpectrum);
-	void setBins(int lower, int upper, float* real, float* imag);
+	void setBins(int lower, int upper, float * real, float * imag);
 	void setBinMagPhase(int binNumber, float mag, float phase);
-	void setBinsMagPhase(float* mags, float* phases);
+	void setBinsMagPhase(float * mags, float * phases);
 	
 	void nextBuffer(Buffer & outputBuffer) throw (CException);
 
@@ -73,7 +73,7 @@ protected:
 	int mFFTSize;						///< This should be unsigned, but is signed for compatability with FFTW
 	FFT_Wrapper mWrapper;				///< actual FFT wrapper object
 	Buffer mInBuf;						///< input buffer
-	SampleComplexPtr mSpectrum;			///< spectral data I accumulate
+	SampleComplexPtr mSpectrum;			///< spectral data I accumulate (vector of complex)
 };
 
 }

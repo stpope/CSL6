@@ -97,7 +97,7 @@ protected:
 	void resetDLine();		///< zero-out mDline and reallocate memory if necessary;
 	
 							/// Parks-McClellan/Remez FIR filter design algorithm
-	void remez(double h[], int numtaps, int numband, double bands[], double des[], double weight[], int type);
+	void remez(double * h, int numtaps, int numband, double * bands, double * des, double * weight, int type);
 
 };
 

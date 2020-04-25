@@ -31,7 +31,7 @@ static unsigned mNumOutChannels = 2;							///< stereo outputs
 
 static unsigned mFrameRate = CSL_mFrameRate;					///< default sample rate (tested up to 96000)
 static float mFrameRateF = (float) CSL_mFrameRate;				///< default sample rate (tested up to 96000)
-static csl::sample mFramePeriod = 1.0f / mFrameRateF;				///< 1 / default sample rate
+static csl::sample mFramePeriod = 1.0f / mFrameRateF;			///< 1 / default sample rate
 static unsigned mBlockSize = CSL_mBlockSize;					///< typical block size (can be as small as 128 in real usage)
 static unsigned mMaxBufferFrames = CSL_mMaxBufferFrames;		///< max block size (set large for zooming scopes)
 static unsigned mSndFileFrames = CSL_mSndFileFrames;			///< max block size (set large for zooming scopes)

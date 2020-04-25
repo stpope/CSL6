@@ -98,7 +98,7 @@
 	#define CSL_mMaxBufferFrames 256		///< max block size
 	#define CSL_mSndFileFrames 2000000		///< default file cache size = 2 MB
 	#define CSL_mMaxSndFileFrames 2000000	///< max file cache size = 2 MB
-#else										///  normal hosts
+#else									///  normal hosts
 	#define CSL_mBlockSize 512				///< I/O block size (set to 64-2048 in typical usage)
 	#define CSL_mMaxBufferFrames 8192		///< max block size (set large for zooming scopes)
 	#define CSL_mSndFileFrames 20480000		///< default file cache size = 20 MFrames (~ 2 min)
@@ -157,23 +157,23 @@
 //// Which MIDI IO port class to use? 
 //// (define here or choose with a compiler option, e.g., -DUSE_PMIDI)
 
-//#define USE_JMIDI						// this is now a compile-time option, like the FFT and sndfile libs
+//#define USE_JMIDI						    // this is now a compile-time option, like the FFT and sndfile libs
 #define DEFAULT_MIDI_IN 0
 #define DEFAULT_MIDI_OUT 0
 
 //// Use an OSC API?
 
-#ifndef CSL_WINDOWS						// works on Mac & Linux
+#ifndef CSL_WINDOWS						    // works on Mac & Linux
 	#define USE_LOSC						// liblo for OSC
 #endif
 
 //// Which default "Osc" class to use -- WavetableOscillator (table-lookup) or Sine (computed)?
 
-#define Osc WavetableOscillator			// default "Osc" -- or use Sine?
+#define Osc WavetableOscillator			    // default "Osc" -- or use Sine?
 
 // Which FFT wrapper class to use? (choose with a compiler option, -DUSE_FFTREAL)
 
-//#define USE_FFTW						// use FFTW (faster but complicated to build, also MIT license)
+//#define USE_FFTW						    // use FFTW (faster but complicated to build, also MIT license)
 //#define USE_FFTREAL						// use FFTReal (smaller and simpler, also public domain)
 
 ////////////////////////// Core CSL Typedefs //////////////////////////////////////////////
@@ -181,6 +181,7 @@
 #include <vector>							///< we use the STL vector, map, and string classes
 #include <string>	
 #include <map>
+#include <complex.h>
 
 namespace csl {							///< All of CSL takes place within the "csl" namespace
 
@@ -196,10 +197,10 @@ typedef float Sample;						///< the same, written upper-case
 
 typedef sample* SampleBuffer;				///< 1-channel buffer data type, vector of (sample)
 typedef SampleBuffer* SampleBufferVector;	///< Multi-channel buffer data type, vector of (SampleBuffer)
-typedef SampleBuffer* SampleBufferArray;		///< Multi-channel buffer data type
+typedef SampleBuffer* SampleBufferArray;	///< Multi-channel buffer data type
 
-typedef sample SampleComplex[2];				///< array-of-2 complex # type (like FFTW)
-#define cx_r(val) val[0]						///< complex # accesor macros
+typedef sample SampleComplex[2];			///< array-of-2 complex # type (like FFTW)
+#define cx_r(val) val[0]					///< complex # accesor macros
 #define cx_i(val) val[1]
 #define ComplexPtr SampleBuffer				///< shorthand
 typedef SampleComplex * SampleComplexVector;	///< complex vector
@@ -210,10 +211,10 @@ typedef SampleComplexPtr * SampleComplexMatrix;	///< complex 2D matrix
 //typedef struct { sample re; sample im; } SampleComplex;	///< alternate Complex # struct
 //#define cx_r(val) val.re					/// complex # accesor macros
 //#define cx_i(val) val.im
-//#define ComplexPtr SampleComplex				///< shorthand
+//#define ComplexPtr SampleComplex			///< shorthand
 
 typedef SampleComplex* SampleComplexVector;	///< complex vector
-typedef SampleComplex* SampleComplexPtr;		///< complex pointer
+typedef SampleComplex* SampleComplexPtr;	///< complex pointer
  
 class CPoint;								///< Forward declaration
 typedef std::vector <CPoint *> PointVector;	///< A vector of points
@@ -229,13 +230,13 @@ typedef unsigned uint;
 //// I/O and control port map types ------------------------------------------
 
 class Buffer;								///< Forward declaration to Buffer (in CSL_Core.h)
-class UnitGenerator;							///< Forward declaration to UnitGenerator (in CSL_Core.h)
+class UnitGenerator;						///< Forward declaration to UnitGenerator (in CSL_Core.h)
 class Port;									///< Forward declaration to Port
 class IODevice;								///< Forward declaration to IO Device model
 class Instrument;							///< Forward declaration to Instrument
 class Observer;								///< Forward declaration
 
-typedef unsigned CSL_MAP_KEY;					///< the type I use for map keys (could also be a string)
+typedef unsigned CSL_MAP_KEY;				///< the type I use for map keys (could also be a string)
                                             ///< PortMap: a map between a name/key and a port object
                                             ///< (used for control and audio inputs)
 typedef std::map <CSL_MAP_KEY, Port *> PortMap;
