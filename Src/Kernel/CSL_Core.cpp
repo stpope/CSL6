@@ -284,7 +284,7 @@ void Buffer::copySamplesFrom(Buffer & source) throw (RunTimeError) {
 }
 
 void Buffer::copyOnlySamplesFrom(Buffer & source) throw (RunTimeError) {
-	if ((source.mNumChannels > mNumChannels) || (source.mNumFrames > mNumAlloc)) {
+	if ( /* (source.mNumChannels > mNumChannels) || */ (source.mNumFrames > mNumAlloc)) {
 		logMsg(kLogError, "Buffer::copyOnlySamplesFrom(ch %d %d, fr %d %d)", 
 				mNumChannels, source.mNumChannels, mNumFrames, source.mNumFrames);
 		throw RunTimeError("Can't reallocate buffers at run-time");
@@ -712,7 +712,7 @@ bool UnitGenerator::checkFanOut(Buffer & outputBuffer) throw (CException) {
 
 void UnitGenerator::handleFanOut(Buffer & outputBuffer) throw (CException) {
 	if (mNumOutputs > 1)					// if we're doing auto-fan-out and this is the first time
-		mOutputCache->copySamplesFrom(outputBuffer);			// store it in the buffer
+		mOutputCache->copyOnlySamplesFrom(outputBuffer);			// store it in the buffer
 	mSequence = csl_max(mSequence, outputBuffer.mSequence);		// remember my seq #
 //	this->changed((void *) & outputBuffer);						// signal dependents (if any) of my change
 }

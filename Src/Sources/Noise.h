@@ -48,14 +48,9 @@ public:										/// Constructors
 	WhiteNoise() : Noise() { };
 	WhiteNoise(double ampl, double offset = 0.0) : Noise(ampl, offset) { }; 
 	WhiteNoise(int seed, double ampl = 1.0, double offset = 0.0) : Noise(seed, ampl, offset) { };
-	~WhiteNoise() { };										///< Destructor
-	
-/********* THIS FUNCTION WAS PROTECTED, BUT IT'S NEEDED TO BE PUBLIC BECAUSE 
-			OTHER UGENS MIGHT CALL IT DURING A NEXT BUFFER CALL . . . *********/
+	~WhiteNoise() { };									///< Destructor
 														/// the noise generator DSP function
 	void nextBuffer(Buffer& outputBuffer, unsigned outBufNum) throw (CException);
-	
-protected:
 
 };
 
@@ -71,9 +66,8 @@ public:
 	PinkNoise(int seed, double ampl = 1.f, double offset = 0.f);
 	~PinkNoise() { };									///< Destructor
 	
-									/// the monoNextBuffer method is where the DSP takes place
+									    /// the nextBuffer method is where the DSP takes place
 	void nextBuffer(Buffer & outputBuffer, unsigned outBufNum) throw (CException);
-	
 	sample nextPink();					///< returns the next pink noise sample
 	
 protected:
@@ -90,18 +84,16 @@ protected:
 // inline functions have to be declared in the header file to avoid linker problems
 
 inline int Noise::generateRandomNumber() {
-	// Calculate pseudo-random 32 bit number based on linear congruential method
+                        // Calculate pseudo-random 32 bit number based on linear congruential method
 	mSeed = (mSeed * 196314165) + 907633515;
 	return mSeed;
-
 }	
 
 inline float Noise::generateNormalizedRandomNumber() {
-	// Calculate pseudo-random 32 bit number based on linear congruential method
+                        // Calculate pseudo-random 32 bit number based on linear congruential method
 	mSeed = (mSeed * 196314165) + 907633515;
 	return (float) mSeed / (float) 0x7fffffff; // dividing by INT_MAX
 }
-
 
 } // namespace csl
 

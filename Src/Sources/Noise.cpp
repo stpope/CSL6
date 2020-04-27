@@ -11,7 +11,6 @@ using namespace csl;
 ///
 /// Abstract Noise class
 ///
-
 /// Constructors call UnitGenerator & Scalable constructors
 /// Noise defaults to expansion copy policy (i.e. distinct noise per channel)
 /// if no seed is specified, current clock time is used
@@ -19,7 +18,7 @@ using namespace csl;
 Noise::Noise() : 
 	UnitGenerator(), 
 	Scalable(1.f, 0.f), 
-	//mCopyPolicy(kExpand), 
+	//  mCopyPolicy(kExpand),
 	mSeed(time(NULL)), 
 	mDivisor(1.0f / (float) 0x7fffffff) {
 	setCopyPolicy(kExpand);
@@ -28,7 +27,7 @@ Noise::Noise() :
 Noise::Noise(double ampl, double offset) : 
 	UnitGenerator(), 
 	Scalable((float)ampl, (float)offset), 
-	//mCopyPolicy(kExpand), 
+	//  mCopyPolicy(kExpand),
 	mSeed(time(NULL)), 
 	mDivisor(1.0f / (float) 0x7fffffff) {
 	setCopyPolicy(kExpand);
@@ -37,7 +36,7 @@ Noise::Noise(double ampl, double offset) :
 Noise::Noise(int seed, double ampl, double offset) : 
 	UnitGenerator(), 
 	Scalable((float)ampl, (float)offset), 
-	//mCopyPolicy(kExpand),
+	//  mCopyPolicy(kExpand),
 	mSeed(seed),
 	mDivisor(1.0f / (float) 0x7fffffff) {
 	setCopyPolicy(kExpand);
@@ -54,16 +53,16 @@ void Noise::dump() {
 ///
 
 void WhiteNoise::nextBuffer(Buffer & outputBuffer, unsigned outBufNum) throw (CException) {
-	sample* out = outputBuffer.buffer(outBufNum);	// get ptr to output channel
+	sample* out = outputBuffer.buffer(outBufNum);	        // get ptr to output channel
 	unsigned numFrames = outputBuffer.mNumFrames;			// get buffer length
 
-	DECLARE_SCALABLE_CONTROLS;				// declare the scale/offset buffers and values
+	DECLARE_SCALABLE_CONTROLS;				                // declare the scale/offset buffers and values
 	LOAD_SCALABLE_CONTROLS;
 #ifdef CSL_DEBUG
 	logMsg("WhiteNoise nextBuffer");
 #endif			
-	for (unsigned i = 0; i < numFrames; i++) {					// sample loop	
-		// call generate_random_number and do the division myself
+	for (unsigned i = 0; i < numFrames; i++) {				// sample loop
+                                                            // call generate_random_number and do the division myself
 		*out++ = ((((float) generateRandomNumber()) * mDivisor) * scaleValue) + offsetValue;		
 		UPDATE_SCALABLE_CONTROLS;							// update the dynamic scale/offset
 	}

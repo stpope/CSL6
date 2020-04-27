@@ -46,36 +46,48 @@ void testClipper() {
 
 void testFIR() {
 					// HPF test
-//	double resp[] = { 0.000001, 1 };					// amplitudes in the 2 freq bands (i.e., hi-pass)
-//	double freq[] = { 0, 800, 1200, 22050 };			// corner freqs of the pass, transition and stop bands
-//	double weight[] = { 5, 10 };						// weights for error (ripple) in the 2 bands
-//	FilterSpecification fs(33, 2, freq, resp, weight);	// 33 taps, 2 bands
+    double resp[] = { 0, 1 };                         // amplitudes in the 2 freq bands (i.e., hi-pass)
+    double freq[] = { 0, 2500, 3500, 22050 };           // corner freqs of the pass, transition and stop bands
+    double weight[] = { 50, 1 };                        // weights for error (ripple) in the 2 bands
+    FilterSpecification fs_hpf(33, 2, freq, resp, weight);      // 33 taps, 2 bands
 					// LPF test
-//	double resp[] = { 1, 0 };							// amplitudes in the 2 freq bands (i.e., lo-pass)
-//	double freq[] = { 0, 800, 1200, 22050 };			// corner freqs of the pass, transition and stop bands
-//	double weight[] = { 5, 50 };						// weights for error (ripple) in the 2 bands
-//	FilterSpecification fs(40, 2, freq, resp, weight);	// 40 taps, 3 bands
+    double resp2[] = { 1, 0 };                           // amplitudes in the 2 freq bands (i.e., lo-pass)
+    double freq2[] = { 0, 800, 1200, 22050 };            // corner freqs of the pass, transition and stop bands
+    double weight2[] = { 1, 50 };                        // weights for error (ripple) in the 2 bands
+    FilterSpecification fs_lpf(40, 2, freq2, resp2, weight2);   // 40 taps, 3 bands
 					// BPF test
-	double resp[] = { 0.0, 1.0, 0.0 };					// amplitudes in the 3 freq bands (i.e., band-pass)
-	double freq[] = { 0., 200.0, 250.0, 500.0, 600.0, 22050.0 };  // corner freqs of the pass and stop bands
-	double weight[] = { 10.0, 2.0, 10.0 };				// weights for error (ripple) in the 3 bands
-	FilterSpecification fs(70, 3, freq, resp, weight);  // 70 taps (70-step IR), 3 bands
+//    double resp[] = { 0.0, 1.0, 0.0 };                    // amplitudes in the 3 freq bands (i.e., band-pass)
+//    double freq[] = { 0., 200.0, 250.0, 500.0, 600.0, 22050.0 };  // corner freqs of the pass and stop bands
+//    double weight[] = { 10.0, 2.0, 10.0 };              // weights for error (ripple) in the 3 bands
+//    FilterSpecification fs(70, 3, freq, resp, weight);  // 70 taps (70-step IR), 3 bands
 
-//	double resp[] = { 0, 1, 0, 1, 0 };					// amplitudes in the 5 freq bands (i.e., band-pass)
+//	double resp[] = { 0, 1, 0, 1, 0 };					// amplitudes in the 5 freq bands (i.e., multi-band-pass)
 //	double freq[] = { 0, 200, 250, 500, 600, 1000, 1200, 2000, 2400, 22050 };	// corner freqs of the pass and stop bands
 //	double weight[] = { 10, 5, 10, 5, 10 };			    // weights for error (ripple) in the 3 bands
 //	FilterSpecification fs(200, 5, freq, resp, weight);	// 200 taps (64-step IR), 5 bands
 
-	PinkNoise noise;								    // the sound source
-	FIR vox(noise, fs);								    // create the filter
-	vox.print_taps();								    // print the filter taps
+//	PinkNoise noise(0.1);								// the sound source (pink's broken)
+    WhiteNoise noise1(0.5);                             // not sure why fan-out's broken
+    WhiteNoise noise2(0.5);
+    WhiteNoise noise3(0.5);
+
+    FIR vox1(noise1, fs_hpf);                           // create the filter
+    MulOp mul1(vox1, 2);                                // scale it back up
+    vox1.print_taps();                                  // print the filter taps
+    
+    FIR vox2(noise2, fs_lpf);                           // create the filter
+    MulOp mul2(vox2, 8);                                // scale it back up
+    vox2.print_taps();                                  // print the filter taps
 
 //	Butter butter1(noise, BW_HIGH_PASS, 800.0);
 //	Butter vox(butter1, BW_LOW_PASS, 800.0);
 
-	MulOp mul(vox, 10);							        // scale it back up
-	logMsg("playing FIR filtered noise...");
-	runTest(mul);
+    logMsg("playing unfiltered noise...");
+    runTest(noise3);
+    logMsg("playing FIR HPF filtered noise...");
+    runTest(mul1);
+    logMsg("playing FIR LPF filtered noise...");
+    runTest(mul2);
 	logMsg("FIR done.");
 }
 
@@ -624,7 +636,7 @@ void runTests() {
 
 testStruct effTestList[] = {
 	"Clipper",				testClipper,		"Demonstrate the signal clipper",
-//	"FIR filter (buggy)",	testFIR,			"Play a narrow FIR band-pass filter",
+	"FIR filter (buggy)",	testFIR,			"Play a narrow FIR band-pass filter",
 	"All filters",			testFilters,		"Test different filter types",
 	"Biquad filters",		testBiquads,		"Test biquad filter types",
 	"Filtered snd file",	testDynamicVoice,	"Dynamic BPF on a voice track",

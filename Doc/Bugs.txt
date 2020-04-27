@@ -1,8 +1,6 @@
 CSL List of ThingsToDo
 
 Broken demo fcns:
-	IFFT synthesis demos works sometimes...
-	Remez FIR planning code broken (malloc issues?)
 	Multi-tap delay demo mixer?
 	testEnvScale has clicks(?)
 	Sample-avg filter no-go
@@ -16,6 +14,8 @@ Windows issues:
 	SHARC uses UNIX-specific code.
 
 Bugs:
+	Multi-out fan-out broken (see FIR demo)
+	Pink noise silent
 	Block resizer up-sampling
 	Env as scaled has clicks
 	Moog filter untested

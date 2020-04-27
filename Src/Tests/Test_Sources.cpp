@@ -403,13 +403,20 @@ void testGrainCloud() {
 
 ///////////////// IFFT tests ////////
 
+#define prt_ifft(b, m, p)                        \
+    { vox.binValueMagPhase(b, &m, &p);           \
+    logMsg("\tBn %d = %.4f @ %.4f", b, m, p); }
+
 void test_ifft() {
 	IFFT vox(CGestalt::blockSize() /* * 2 */ );		// use default IFFT parameters
 	vox.setBinMagPhase(2, 0.25, 0);				    // set a few harmonics (not in-phase)
-	vox.setBinMagPhase(4, 0.08, 1);
-	vox.setBinMagPhase(6, 0.04, 2);
-	vox.setBinMagPhase(8, 0.02, 3);
+	vox.setBinMagPhase(4, 0.08, 0);
+	vox.setBinMagPhase(6, 0.04, 0);
+	vox.setBinMagPhase(8, 0.02, 0);
 //	vox.setBinMagPhase(5, 0.1, 0);				    // 5th bin = 440 Hz?
+    float mag, phs;
+//    for (int i = 0; i < 10; i++)
+//        prt_ifft(i, mag, phs)
 	logMsg("playing IFFT...");
 	runTest(vox);
 	logMsg("IFFT done.");
@@ -476,8 +483,8 @@ testStruct srcTestList[] = {
 	"SumOfSines instrument",	testSOSInstrument,		"Demonstrate the SumOfSines instrument",
 	"Snd file instrument",		testSndFileInstrument,	"Test the sound file instrument",
 	"WaveShaping synthesis",	testWaveShaper,			"Play 2 wave-shaper notes with envelopes",
-    "IFFT synthesis (buggy)",   test_ifft,              "Make a sound with IFFT synthesis",
-    "Vector IFFT (buggy)",      test_vector_ifft,       "Vector synthesis with 2 IFFTs",
+    "IFFT synthesis",           test_ifft,              "Make a sound with IFFT synthesis",
+    "Vector IFFT",              test_vector_ifft,       "Vector synthesis with 2 IFFTs",
 	"Soundfile granulation",	testGrainCloud,			"Random sound file granulation example",
 	NULL,						NULL,					NULL
 };
