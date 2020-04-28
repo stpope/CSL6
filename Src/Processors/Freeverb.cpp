@@ -19,7 +19,7 @@ const int	kNumCombs		= 8;
 const int	kNumAllpasses	= 4;
 const float	kMuted			= 0.0f;
 const float	kFixedGain		= 0.015f;
-//const float kFixedGain   = 1.0f;
+// const float kFixedGain   = 1.0f;
 const float kScaleWet		= 3.0f;
 const float kScaleDry		= 2.0f;
 const float kScaleDamp		= 0.4f;
@@ -189,15 +189,18 @@ void Freeverb::nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw (CExce
 	for (i = 0; i < numFrames; i++) {
 		out = 0;
 		input = inputBuf[i] * mGain;
+        
 					// Accumulate comb filters in parallel
 		std::vector<Comb*>::iterator iComb = mCombFilters.begin();
 		for (; iComb != mCombFilters.end(); ++iComb) 
 			out += (*iComb)->process(input);
+        
 					// Feed through allpasses in series
 		std::vector<FAllpass*>::iterator iAllpass = mAllpassFilters.begin();
-		for (; iAllpass != mAllpassFilters.end(); ++iAllpass) 
-			out = (*iAllpass)->process(out);
-		*fp++ = out * mWetLevel + inputBuf[i] * mDryLevel; // Calculate output REPLACING anything already there
+        for (; iAllpass != mAllpassFilters.end(); ++iAllpass)
+			out += (*iAllpass)->process(out);
+        
+		*fp++ = (out * mWetLevel) + (inputBuf[i] * mDryLevel); // Calculate output REPLACING anything already there
 	}
 }
 

@@ -1,5 +1,5 @@
 //
-//  JUCEIO.cpp -- DAC IO using JACK
+//  JUCEIO.cpp -- DAC IO using JUCE
 //	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 //
 
@@ -16,46 +16,50 @@ JUCEIO::JUCEIO(unsigned s_rate, unsigned b_size,
 												// initialise the device manager with no settings
 												// so that it picks a default device to use.
 //	printf("Audio IO startup\n"); 
-	const juce::String errorMsg (audioDeviceManager.initialise(
+	const juce::String errorMsg (mAudioDeviceManager.initialise(
 									(int) in_chans,		/* number of input channels */
 									(int) out_chans,	/* number of output channels */
-									0,					/* no XML settings.. */
-									true));				/* select default device on failure */
+									nullptr,			/* no XML settings.. */
+									true, {}, nullptr));/* select default device on failure */
 	if (errorMsg.isNotEmpty()) {
 		printf("JUCEIO error: %s\n", (char *) errorMsg.toRawUTF8());
+        mDevice = 0;
 //		AlertWindow::showMessageBox (AlertWindow::WarningIcon,
 //									 String("CSL Test"),
 //									 String("Couldn't open an output device!\n\n") + errorMsg);
+        return;
 	}
-//	audioDeviceManager.setAudioCallback(0);		// start the IO device callback later
-	
-	juce::AudioIODevice * dev = audioDeviceManager.getCurrentAudioDevice();
-	printf("Audio IO rate %g; block size %d\n", dev->getCurrentSampleRate(), 
-				dev->getDefaultBufferSize());
-
+    mDevice = mAudioDeviceManager.getCurrentAudioDevice();
+//  printf("Audio IO rate %g; block size %d\n", mDevice->getCurrentSampleRate(), mDevice->getDefaultBufferSize());
 }
 
 JUCEIO::~JUCEIO() {
-	audioDeviceManager.removeAudioCallback(this);
+    IO::stop();
+    IO::close();
+//	mDevice->removeAudioCallback(this);
 }
 
 ///< open/close start/stop methods
 
 void JUCEIO::open() throw(CException) {
-
+    IO::open();
 }
 
 void JUCEIO::close() throw(CException) {
-
+    IO::close();
 }
 
 void JUCEIO::start() throw(CException) {
-	audioDeviceManager.addAudioCallback(this);
-
+    IO::open();
+    IO::start();
+    mAudioDeviceManager.addAudioCallback(this);
+    mDevice->start(this);
 }
 
 void JUCEIO::stop() throw(CException) {
-	audioDeviceManager.removeAudioCallback(this);
+    IO::stop();
+    mDevice->stop();
+//	mDevice->removeAudioCallback(this);
 }
 
 // Audio playback callback & utilities
@@ -63,10 +67,11 @@ void JUCEIO::stop() throw(CException) {
 void JUCEIO::audioDeviceIOCallback (const float** inData, int numIns,
 							float** outData, int numOuts, 
 							int numSamples) {
+    logMsg("JUCEIO::audioDeviceIOCallback");
 	if ((mStatus != kIORunning) || (mGraph == 0)) {	// if we're off or there's no input graph,
 													//  just play silence...
 		for (unsigned i = 0; i < mNumInChannels; i++)
-			memset(outData[i], 0, (numSamples * sizeof(sample)));
+			bzero(outData[i], (numSamples * sizeof(sample)));
 		return;
 	}
 	if (mNumInChannels > 0) {						// if any input
@@ -91,10 +96,8 @@ void JUCEIO::audioDeviceIOCallback (const float** inData, int numIns,
 		pullInput(mOutputBuffer, NULL);
 		mNumFramesPlayed += numSamples;
 	}
-	return;	
-
+	return;
 }
-
 
 //void JUCEIO::audioDeviceAboutToStart (AudioIODevice * dev) {
 //

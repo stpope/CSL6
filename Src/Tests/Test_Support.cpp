@@ -28,7 +28,7 @@ using namespace csl;
 
 IO_CLASS * theIO = 0;					// Here's the global IO instance
 
-#ifdef USE_TEST_MAIN					// use the generic main() function here
+#ifdef USE_TEST_MAIN					// use the generic main() function here (otherwise we use a GUI component)
 
 extern void runTests();					// this is the list of tests to run (see the test files)
 

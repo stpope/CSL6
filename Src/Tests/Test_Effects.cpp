@@ -301,7 +301,7 @@ void testReverb() {
 	mChiffEnv.setScale(10);						// scale chiff envelope
 	mChFilter.setScale(mChiffEnv);				// apply chiff envelope
 	Freeverb mReverb(mChFilter);				// stereo reverb
-	mReverb.setRoomSize(0.95);					// longer reverb
+	mReverb.setRoomSize(0.95);					// long reverb time
 
 	mChiffEnv.trigger();	
 	logMsg("playing Reverb test\n");

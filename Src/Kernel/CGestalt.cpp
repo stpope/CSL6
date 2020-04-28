@@ -26,7 +26,7 @@ using namespace std;
 /// The actual start-up values are defined in CSL_Types.h
 ///
 
-static unsigned mNumInChannels = 2;								///< stereo inputs by default
+static unsigned mNumInChannels = 0;								///< no input by default
 static unsigned mNumOutChannels = 2;							///< stereo outputs
 
 static unsigned mFrameRate = CSL_mFrameRate;					///< default sample rate (tested up to 96000)

@@ -38,6 +38,7 @@ class InOut : public Effect {
 public:
 						/// Constructor with IO, number of channels in & out, and processing
 	InOut(IO * anIO, unsigned inChans, unsigned outChans, InOutFlags f = kNoProc);
+                        /// var-args c'tor takes list of channel gains
 	InOut(IO * anIO, unsigned inChans, unsigned outChans, InOutFlags f, ...);
 	InOut(UnitGenerator & myInput, unsigned inChans, unsigned outChans, InOutFlags f = kNoProc);
 	InOut(UnitGenerator & myInput, unsigned inChans, unsigned outChans, InOutFlags, ...);
@@ -45,7 +46,7 @@ public:
 
 	void setInChan(unsigned chan) { mInChans = chan; };			///< set # in/out chans
 	void setOutChan(unsigned chan) { mOutChans = chan; };
-	unsigned getInChan(void) { return mInChans; };					///< get # in/out chans
+	unsigned getInChan(void) { return mInChans; };				///< get # in/out chans
 	unsigned getOutChan(void) { return mOutChans; };	
 
 	void setChanMap(unsigned * chans);				///< set channel map
@@ -59,7 +60,7 @@ private:
 	BufferCMap mMap;		///< the mapped buffer pointers for the output channels
 	unsigned mInChans;		///< # in chans
 	unsigned mOutChans;		///< # out chans
-	InOutFlags mFlags;		//< copy/process flag
+	InOutFlags mFlags;		///< copy/process flag
 	float *mGains;			///< amplitude scales
 };
 

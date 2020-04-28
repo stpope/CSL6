@@ -13,8 +13,9 @@
 #endif
 
 #ifdef USE_JUCEIO
-//	#include "JUCEIO.h"			// JUCE IO (default)
-	#define IO_CLASS IO
+//    #include "JUCEIO.h"            // JUCE IO (default)
+//    #define IO_CLASS csl::JUCEIO   //
+    #define IO_CLASS IO
 #endif
 
 #ifdef USE_CAIO

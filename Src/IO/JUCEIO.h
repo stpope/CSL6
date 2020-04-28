@@ -12,7 +12,7 @@
 namespace csl {
 
 ///
-/// JUCEIO is an IO that runs as a JUCE
+/// JUCEIO is an IO that runs as a JUCE client
 ///
 
 class JUCEIO : public IO, public juce::AudioIODeviceCallback {
@@ -31,14 +31,14 @@ public:
 											///< Audio playback callback & utilities
 	void audioDeviceIOCallback (const float** inputChannelData, int totalNumInputChannels,
 									  float** outputChannelData, int totalNumOutputChannels,
-									  int numSamples);
+									  int numSamples) override;
 											/// JUCE methods
 	void audioDeviceAboutToStart (juce::AudioIODevice*) { };
 	void audioDeviceStopped() { };
 
 protected:
-    juce::AudioDeviceManager audioDeviceManager;	///< JUCE AudioDeviceManager
-
+    juce::AudioDeviceManager mAudioDeviceManager;	///< JUCE AudioDeviceManager
+    juce::AudioIODevice * mDevice;                  ///< JUCE audio IO device ptr
 };
 
 }	// end of namespace

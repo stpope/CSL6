@@ -38,8 +38,8 @@ void mic_test() {
 	CGestalt::setNumInChannels(2);
 									// set up InOut UGen to copy input to effect
 	InOut mio(theIO, 2, 2);			// stereo i/o
-	logMsg("playing mic in unaltered...");
-	runTest(mio, 10);				// 10 sec
+	logMsg("playing mic in for 5 secs...");
+	runTest(mio, 5);				// 5 sec
 	logMsg("done.\n");
 }
 
@@ -60,7 +60,7 @@ void reverb_test() {
     CGestalt::setNumInChannels(2);
 	InOut mio(theIO, 2, 2);			// stereo i/o
 	Stereoverb mReverb(mio);		// stereo reverb
-	mReverb.setRoomSize(0.988);		// long reverb time
+	mReverb.setRoomSize(0.95);		// long reverb time
 	logMsg("playing echo on mic in...");
 	runTest(mReverb, 10);			// 10 sec
 	logMsg("done.\n");
@@ -118,10 +118,10 @@ void listener_test() {
 testStruct audioTestList[] = {
 	"Dump audio ports",		audio_dump,     "Dump list of audio ports to stdout",
 //    "THE REST OF THESE ARE W.I.P.", 0, "",
-//    "Echo audio in",        mic_test,       "Play the microphone input back the output",
-//    "Filter input",         filt_test,      "Apply a band-pass filter to the live input",
-//    "Echo input",           reverb_test,      "Add echo to the live input",
-//    "Input panner",         panner_test,    "Stereo panner on the live input",
+    "Echo audio in",        mic_test,       "Play the microphone input back the output",
+    "Filter input",         filt_test,      "Apply a band-pass filter to the live input",
+    "Reverb on input",      reverb_test,    "Add echo to the live input",
+    "Input panner",         panner_test,    "Stereo panner on the live input",
 //    "Input listener",       listener_test,  "Demonstrate recording input listener",
 	NULL,					NULL,			NULL
 };

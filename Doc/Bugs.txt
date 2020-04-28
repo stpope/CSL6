@@ -1,12 +1,14 @@
 CSL List of ThingsToDo
 
 Broken demo fcns:
-	Multi-tap delay demo mixer?
-	testEnvScale has clicks(?)
-	Sample-avg filter no-go
+	Multi-tap delay demo mixer
+	testEnvScale has clicks
+	Sample-avg filter
 	HRTF pretty crappy, crashes (space leak?)
 	VBAP threading broken
-	Audio I/O demos busted (no input)
+	FIR filter design breaks for complex filters
+	MIDI input hard-wired to device 0 and is very verbose
+	Audio input works, but mic processing is dodgy
 
 Windows issues:
 	FFT/IFFT untested

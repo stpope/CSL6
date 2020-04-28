@@ -298,8 +298,10 @@ void Buffer::copyOnlySamplesFrom(Buffer & source) throw (RunTimeError) {
 ///< same with write offset
 
 void Buffer::copySamplesFromTo(Buffer & source, unsigned offset) throw (RunTimeError) {
+    if ((offset + source.mNumFrames) > mNumAlloc)
+        offset = 0;
 	if ((source.mNumChannels > mNumChannels) || ((offset + source.mNumFrames) > mNumAlloc)) {
-		logMsg(kLogError, "Buffer::copyOnlySamplesFrom(ch %d %d, fr %d %d)", 
+		logMsg(kLogError, "Buffer::copySamplesFromTo(ch %d %d, fr %d %d)", 
 			   mNumChannels, source.mNumChannels, mNumFrames, source.mNumFrames);
 		throw RunTimeError("Can't reallocate buffers at run-time");
 	} 
@@ -736,8 +738,8 @@ void UnitGenerator::nextBuffer(Buffer & outputBuffer) throw (CException) {
 	default:
 	case kCopy:								// compute 1 channel and copy it
 		this->nextBuffer(outputBuffer, 0);	// this is where most of the work gets done in CSL
-		for (unsigned i = 1; i < numOutputChannels; i += mNumChannels)
-			memcpy (outputBuffer.buffer(i), buffer0, bufferByteSize);
+        for (unsigned i = 1; i < numOutputChannels; i += mNumChannels)
+            memcpy (outputBuffer.buffer(i), buffer0, bufferByteSize);
 		break;
 	case kExpand:							// loop through the requested output channels
 		for (unsigned i = 0; i < numOutputChannels; i += mNumChannels)
@@ -1392,9 +1394,9 @@ vector < IODevice *> gIODevices;
 
 IO::IO(unsigned s_rate, unsigned b_size, int in_device, int out_device, 
 				unsigned in_chans, unsigned out_chans)
-		: mGraph(NULL), mInputBuffer(0, 0), mOutputBuffer(0, 0), mCaptureBuffer(0, 0),
-		  mNumFramesPlayed(0), mSequence(0), mLoggingPeriod(CGestalt::loggingPeriod()),
-		  mNumInChannels(in_chans), mNumOutChannels(out_chans), 
+		: mGraph(NULL), mInputBuffer(in_chans, b_size), mOutputBuffer(out_chans, b_size),
+          mCaptureBuffer(0, 0), mNumFramesPlayed(0), mSequence(0),
+          mLoggingPeriod(CGestalt::loggingPeriod()), mNumInChannels(in_chans), mNumOutChannels(out_chans), 
 		  mNumRealInChannels(in_chans), mNumRealOutChannels(out_chans),
 		  mStatus(kIONew), mInterleaved(false) {
 	logMsg("\nCreate IO: %d s @ %d Hz; %d i %d o", b_size, s_rate, in_chans, out_chans);
@@ -1441,7 +1443,9 @@ void IO::pullInput(Buffer & outBuffer, SampleBuffer out) throw(CException) {
 			if (mCaptureBuffer.mNumFrames > 0) {
 				mCaptureBuffer.copySamplesFromTo(outBuffer, mOffset);
 				mOffset += outBuffer.mNumFrames;
-			}
+            } else if (CGestalt::numInChannels() > 0) {
+                outBuffer.copyOnlySamplesFrom(mInputBuffer);
+            }
 		} catch (CException ex) {
 							// handler: log error and play silence
 			logMsg(kLogError, "An error occured in the CSL nextBuffer method: %s\n", 

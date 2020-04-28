@@ -22,6 +22,8 @@ InOut::InOut(IO * anIO, unsigned inChans, unsigned outChans, InOutFlags f)
 	mGains = (float *) malloc(mOutChans * sizeof(float));
 }
 
+// var-args c'tor takes list of channel gains
+
 InOut::InOut(IO * anIO, unsigned inChans, unsigned outChans, InOutFlags f, ...) 
 		: mIO(anIO), mMap(outChans,  CGestalt::blockSize()),
 			mInChans(inChans), mOutChans(outChans), 
@@ -88,10 +90,10 @@ void InOut::nextBuffer(Buffer & outputBuffer) throw (CException) {
 	}
 
 	switch (mFlags) {
-//        case kNoProc:
-//            for (unsigned i = 0; i < mOutChans; i++)
-//                memcpy(outputBuffer.buffer(i), inputBuffer->buffer(i % mInChans), outputBuffer.mMonoBufferByteSize);
-//            break;
+        case kNoProc:
+            for (unsigned i = 0; i < mOutChans; i++)
+                memcpy(outputBuffer.buffer(i % outputBuffer.mNumChannels), inputBuffer->buffer(i % mInChans), outputBuffer.mMonoBufferByteSize);
+            break;
 		case kLR2M:
 			for (unsigned i = 0; i < mOutChans; i++) {
 				sample * outPtr =  outputBuffer.buffer(i);

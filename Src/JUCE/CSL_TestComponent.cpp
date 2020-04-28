@@ -19,6 +19,8 @@
 
 //[Headers] You can add your own extra header files here...
 
+#include "Test_Support.h"
+
 //[/Headers]
 
 #include "CSL_TestComponent.h"
@@ -111,16 +113,16 @@ void dumpTestList() {
 
 // Globals are here
 
-extern IO * theIO;							// global IO object accessed by other threads
+extern IO_CLASS * theIO;						// global IO object accessed by other threads
 juce::Label* gCPULabel;							// CPU % label...
 juce::AudioDeviceManager * gAudioDeviceManager;	// global JUCE audio device mgr
-unsigned argCnt;							// globals for argc/v from cmd-line
+unsigned argCnt;							    // globals for argc/v from cmd-line
 const char **argVals;
 
-#define WRITE_TO_FILE						// support file recording
+#define WRITE_TO_FILE						    // support file recording
 #ifdef WRITE_TO_FILE
-	Buffer * gFileBuffer = 0;				// global buffer for file cache
-	int gSampIndex = 0;						// write index into out buffer
+	Buffer * gFileBuffer = 0;				    // global buffer for file cache
+	int gSampIndex = 0;						    // write index into out buffer
 #endif
 
 //
@@ -128,24 +130,24 @@ const char **argVals;
 //
 
 void LThread::run() {
-	while (1) {								// endless loop
-		if (thr->isThreadRunning())			// sleep some
-			if (csl::sleepMsec(250))		// interruptable sleep, check for failure
+	while (1) {								    // endless loop
+		if (thr->isThreadRunning())			    // sleep some
+			if (csl::sleepMsec(250))		    // interruptable sleep, check for failure
 				goto turn_off;
-		if (this->threadShouldExit())		// check flag
+		if (this->threadShouldExit())		    // check flag
 			goto turn_off;
-		if ( ! thr->isThreadRunning()) {	// if off
+		if ( ! thr->isThreadRunning()) {	    // if off
 			if (loop)
-				thr->startThread();			// restart if looping
+				thr->startThread();			    // restart if looping
 			else {
-turn_off:		if (CGestalt::stopNow()) {			// if a timer was interrupted
-					CGestalt::clearStopNow();		// clear the global flag
+turn_off:		if (CGestalt::stopNow()) {		// if a timer was interrupted
+					CGestalt::clearStopNow();   // clear the global flag
 					thr->signalThreadShouldExit();
 				}
 				comp->playing = false;
 				const juce::MessageManagerLock mmLock;	// create a lock to call the GUI thread here
 				if (comp->isTimerRunning())
-					comp->stopTimer();				// nasty to do this from here, but it freezes the GUI
+					comp->stopTimer();				    // nasty to do this from here, but it freezes the GUI
 //				if (comp->playButton)
 //					comp->playButton->setButtonText(T("Play"));
 				if (comp->recrding)
@@ -293,24 +295,25 @@ CSLComponent::CSLComponent ()
 
     setSize (1000, 700);
 
+#pragma mark set-up
 
     //[Constructor] You can add your own custom stuff here..
 
 ////////////////////////////// Here we go! //////////////////////////////////////////
-					// CSL Code starts here
-//	dumpTestList();					// print out the demo/test menu
+					// CSL code starts here
+//	dumpTestList();					    // print out the demo/test menu
 
 					// initiali[zs]e the device manager so it picks a default device to use.
-	const juce::String error (mAudioDeviceManager.initialise (0,	/* no input */
-													   2,	/* stereo output  */
-													   0,	/* no XML defaults */
-													   true /* select default device */));
+	const juce::String error (mAudioDeviceManager.initialise(2,	    // stereo input
+													   2,	        // stereo output
+													   0,	        // no XML defaults
+													   true ));     // select default device
 	if (error.isNotEmpty())
 		juce::AlertWindow::showMessageBox (juce::AlertWindow::WarningIcon,
 									 "CSL Demo",
 									 "Couldn't open an output device!\n\n" + error);
 										// get the audio device
-	juce::AudioIODevice* audioIO = mAudioDeviceManager.getCurrentAudioDevice();
+	juce::AudioIODevice * audioIO = mAudioDeviceManager.getCurrentAudioDevice();
 
 #ifdef READ_IO_PROPS					// overwrite the system frame rate and block size from the
 										//  selected hardware interface at startup time
@@ -326,17 +329,17 @@ CSLComponent::CSLComponent ()
 	setup.bufferSize = CGestalt::blockSize();
 	setup.sampleRate = CGestalt::frameRate();
 	mAudioDeviceManager.setAudioDeviceSetup(setup,true);
-										// set up CSL IO
-	theIO = new csl::IO(CGestalt::frameRate(),
+										// set up IO
+	theIO = new IO_CLASS(CGestalt::frameRate(),
 					CGestalt::blockSize(),
 					-1, -1,				// use default I/O devices
-					CGestalt::numInChannels(),
-					CGestalt::numOutChannels());
+					2,                  // stereo I/O by default
+					2);
 #endif
 	theIO->start();						// start IO and register callback
 	mAudioDeviceManager.addAudioCallback(this);
 
-	gCPULabel = cpuLabel.get();				// component settings
+	gCPULabel = cpuLabel.get();			// component settings
 	gAudioDeviceManager = & mAudioDeviceManager;
 	playThread = 0;
 	loopThread = 0;
@@ -345,7 +348,7 @@ CSLComponent::CSLComponent ()
 	displayMode = true;
 	recrding = false;
 
-	amplitudeSlider->setValue(0.8);	// GUI settings
+	amplitudeSlider->setValue(0.8);	    // GUI settings
 	scaleSlider->setValue(0.0);
 	oscilloscopeL->start();
 	oscilloscopeR->start();
@@ -354,15 +357,15 @@ CSLComponent::CSLComponent ()
     loopButton->setToggleState (false, false);
 //	spectrogam->setVisible(false);
 
-	int whichSuite = 1;				// set default suite/test
+	int whichSuite = 1;				    // set default suite/test
 	int whichTest = 1;
-									// try to read init file
+									    // try to read init file
 	string initMsg(CGestalt::initFileText('T'));
 	if (initMsg.size() > 0) {
 		sscanf(initMsg.c_str(), "%d %d", & whichSuite, & whichTest);
 		printf("Select suite %d, test %d\n", whichSuite, whichTest);
 	}
-//	if (argCnt > 1)					// cmd-line args select test suite and test
+//	if (argCnt > 1)					    // cmd-line args select test suite and test
 //		whichSuite = atoi(argVals[1]);
 //	if (argCnt > 2)
 //		whichTest = atoi(argVals[2]);
@@ -614,9 +617,8 @@ void CSLComponent::audioDeviceIOCallback (const float** inputChannelData,
 							int totalNumOutputChannels,
 							int numSamples) {
 								// put silence in the output buffers
-	for (unsigned i = 0; i < totalNumOutputChannels; i++)
-		memset(outputChannelData[i], 0, numSamples * sizeof(float));
-
+    for (unsigned i = 0; i < totalNumOutputChannels; i++)
+        bzero(outputChannelData[i], numSamples * sizeof(float));
 	if ( ! playing)				// if off
 		return;
 	if (CGestalt::stopNow())	// if being interrupted
@@ -625,13 +627,21 @@ void CSLComponent::audioDeviceIOCallback (const float** inputChannelData,
 	if (theIO->mGraph) {
 		outBuffer.setSize(totalNumOutputChannels, numSamples);
 		outBuffer.mAreBuffersAllocated = true;
-
 								// copy JUCE data ptrs into outBuffer
 		for (unsigned i = 0; i < totalNumOutputChannels; i++)
 			outBuffer.setBuffer(i, outputChannelData[i]);
-
+        outBuffer.mAreBuffersAllocated = true;
+        outBuffer.mNumAlloc = numSamples;
+                                // copy over the input data
+        if (CGestalt::numInChannels() > 0) {
+            for (unsigned i = 0; i < CGestalt::numInChannels(); i++) {
+                float * inDPtr = (float *) inputChannelData[i];
+                theIO->mInputBuffer.setBuffer(i, inDPtr);
+        } }
+        theIO->mInputBuffer.mAreBuffersAllocated = true;
+        theIO->mInputBuffer.mNumAlloc = numSamples;
 		try {					//////
-								// Tell the IO to call its graph
+								// Tell the IO to call its graph ------------------
 								//////
 			theIO->pullInput(outBuffer);
 			outBuffer.mIsPopulated = true;

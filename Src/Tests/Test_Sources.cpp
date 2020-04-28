@@ -125,7 +125,7 @@ void testMonoFilePlayer() {
 
 	sfile.dump();														// print snd file info
 
-//	float * left = sfile.mWavetable.buffer(0);						// dump the first few samples
+//	float * left = sfile.mWavetable.buffer(0);						    // dump the first few samples
 //	for (unsigned j = 0; j < 1000; j += 4)								// 0 to 1000 by 4
 //		printf("\t\t%5.3f\n", left[j]);
 
@@ -140,7 +140,7 @@ void testStereoFilePlayer() {
 	SoundFile sfile(CGestalt::dataFolder() + "piano-tones.aiff");		// load a piano note
 	sfile.dump();														// print snd file info
 
-//	float * left = sfile.mSampleBuffer.buffer(0);					// dump the first few samples
+//	float * left = sfile.mSampleBuffer.buffer(0);					    // dump the first few samples
 //	float * rite = sfile.mSampleBuffer.buffer(1);
 //	for (unsigned j = 0; j < 1000; j++)
 //		printf("\t\t%5.3f : %5.3f\n", *left++, *rite++);
@@ -156,7 +156,7 @@ void testStereoFilePlayer() {
 /// Test the MP3 file reader
 
 void testMP3FilePlayer() {
-	MP3File sfile(CGestalt::dataFolder(), "Piano_B4_096.mp3", true);			// convert and play an MP3 file
+	MP3File sfile(CGestalt::dataFolder(), "Piano_B4_096.mp3", true);	// convert and play an MP3 file
 //	MP3File sfile("/Users/stp/Code/FMAK/music/Rock/Hard/LZ/02 - The Rain Song.mp3", true);
 	fi.log();							// print snd file info
 	logMsg("Playing sound file...");
@@ -439,9 +439,12 @@ void test_vector_ifft() {
 	MulOp mul2(vox2, env2);
 
 	AddOp add(mul1, mul2);						    // sum the MulOps
-
+    ADSR adsr(dur, 0.02, 0.04, 0.4, 1);
+    MulOp summ(add, adsr);
+    adsr.trigger();
+    
 	logMsg("playing IFFT crossfade...");
-	runTest(add, dur);
+	runTest(summ, dur);
 	logMsg("IFFT crossfade done.");
 }
 
