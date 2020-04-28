@@ -1,5 +1,5 @@
 //
-//  MIDIIOJ.cpp -- MIDI IO using JUCE
+//  MIDIIOJ.cpp -- MIDI IO for CSL using JUCE
 //
 //	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 //
@@ -39,6 +39,8 @@ unsigned CMIDIMessage::getPitchWheel()				{ return ((unsigned) (data2 << 7) + (u
 float    CMIDIMessage::getFrequency()				{ return keyToFreq(data1); }
 float    CMIDIMessage::getVelocityFloat()			{ return ((float) data2 / 127.0f); }
 
+#pragma mark MIDIIO
+
 //    MIDIIO
 
 // static var. definition
@@ -54,29 +56,45 @@ int MIDIIO::countDevices() {
 
 // Made available for flexibility
 
+void MIDIIO::timerCallback() {
+    juce::Array<juce::MidiDeviceInfo> inDevices = juce::MidiInput::getAvailableDevices();
+    for (unsigned i = 0; i < inDevices.size(); i++) {
+        mInNames.add(inDevices[i].name);
+        mInDevices.add(new MidiDeviceListEntry(inDevices[i]));
+    }
+    juce::Array<juce::MidiDeviceInfo> outDevices = juce::MidiOutput::getAvailableDevices();
+    for (unsigned i = 0; i < outDevices.size(); i++) {
+        mOutNames.add(outDevices[i].name);
+        mOutDevices.add(new MidiDeviceListEntry(outDevices[i]));
+    }
+    open(0);
+    stopTimer();
+    printf("\nFound %d MIDI ins and %d MIDI outs\n", inDevices.size(), outDevices.size());
+}
+
 void MIDIIO::dumpDevices() {
-    MIDILoader ml;
-    sleepSec(1.0);
-	unsigned len = ml.mInDevices.size();
+	unsigned len = mInDevices.size();
 	logMsg("\tMIDI in devices");
 	for (unsigned i = 0; i < len; i++)
-		logMsg("		%d = %s", i, ml.mInDevices[i].toUTF8());
+		logMsg("		%d = %s", i, mInNames[i].toUTF8());
 	logMsg("	Def: %d", juce::MidiInput::getDefaultDeviceIndex());
-	len = ml.mOutDevices.size();
+	len = mOutDevices.size();
 	logMsg("\n\tMIDI out devices");
 	for (unsigned i = 0; i < len; i++)
-        logMsg("		%d = %s", i, ml.mOutDevices[i].toUTF8());
+        logMsg("		%d = %s", i, mOutNames[i].toUTF8());
 	logMsg("	Def: %d\n", juce::MidiOutput::getDefaultDeviceIndex());
 }
 
 // Constructors
 
-MIDIIO::MIDIIO() : mLoader() {
+MIDIIO::MIDIIO() {
 	if( ! mIsInitialized ) {
 		mIsInitialized = true;
 	}
 	mIsOpen = false;
 	mMsg.message = kNone;
+    startTimer(50);
+    logMsg("Start MIDI I/O");
 }
 
 MIDIIO::~MIDIIO() {
@@ -127,7 +145,7 @@ void MIDIIO::copyMessage(const juce::MidiMessage& source, CMIDIMessage& dest) {
 	const unsigned char * data = (unsigned char *) source.getRawData();
 	unsigned char cmd = (data[0] & 0xf0) >> 4;
 	dest.command = cmd;
-	switch(cmd) {
+	switch (cmd) {
 			case kNoteOn:
 				if (source.getVelocity() > 0) {
 					dest.message = kNoteOn;
@@ -195,6 +213,15 @@ void MIDIIO::handleError(CException * err) {
 	logMsg(kLogError, "An error occured in MIDIIO: %s", err->what());
 }
 
+juce::ReferenceCountedObjectPtr<MidiDeviceListEntry> MIDIIO::findDevice (juce::MidiDeviceInfo device, bool isInputDevice) {
+    const juce::ReferenceCountedArray<MidiDeviceListEntry>& midiDevices = isInputDevice ? mInDevices : mOutDevices;
+    for (auto& d : midiDevices)
+        if (d->deviceInfo == device)
+            return d;
+    return nullptr;
+}
+
+#pragma mark MIDIIn
 
 //	MIDIIn
 
@@ -214,26 +241,30 @@ void MIDIIn::setBufferSize(unsigned bufferSize) {
 }
 
 // open and register me as the MidiInputCallback
+
 void MIDIIn::open(int deviceID) {
 	mDeviceID = deviceID;
-    juce::MessageManager::getInstance()->setCurrentThreadAsMessageThread();
-	mDevice = (juce::MidiInput::openDevice(mDeviceID, this)).get();
+    juce::MidiDeviceInfo def_ind = mInDevices[deviceID].get()->deviceInfo;
+    juce::String descr = def_ind.identifier;
+    mDevice = (juce::MidiInput::openDevice(descr, this));
 	if ( ! mDevice) {
 		logMsg(kLogError, "Cannot open midi in %d", mDeviceID);
 		return;
 	}
+    mDevice->start();
 	logMsg("Open midi input %s", mDevice->getName().toUTF8());
 	if (gAudioDeviceManager)
-		gAudioDeviceManager->setMidiInputEnabled(mDevice->getName(), true);
+		gAudioDeviceManager->setMidiInputEnabled(mDevice->getIdentifier(), true);
 	mIsOpen = true;
 }
 
 ///< start MIDI stream
 
 void MIDIIn::start() {
-	mStartTime = juce::Time::getMillisecondCounter() / 1000.0;
+	mStartTime = juce::Time::getMillisecondCounter() * 0.001;
 	if (mDevice)
 		mDevice->start();
+    mKeyboardState.addListener (this);
 }
 
 ///< stop MIDI stream
@@ -241,21 +272,61 @@ void MIDIIn::start() {
 void MIDIIn::stop() {
 	if (mDevice)
 		mDevice->stop();
+    mKeyboardState.removeListener (this);
 }
 
-/// implement inherited MidiInputCallback
+void MIDIIn::handleIncomingMidiMessage (juce::MidiInput* /*source*/, const juce::MidiMessage& message) {
+                    // This is called on the MIDI thread
+    const juce::ScopedLock sl (midiMonitorLock);
+    incomingMessages.add(message);
+    triggerAsyncUpdate();
+}
 
-void MIDIIn::handleIncomingMidiMessage(juce::MidiInput * source, const juce::MidiMessage & message) {
-	if (mMsg.message == kNone) {
-		copyMessage(message, mMsg);					// copy the message
-		mMsg.time = message.getTimeStamp() - mStartTime;
-		this->changed((void *) &mMsg);				// FLAG CHANGE TO OBSERVERS
-	} else {										// paste msg to buffer
-		mBuffer.addEvent(message, timeNow());
-		copyMessage(message, mMsg2);				// copy the message
-		mMsg2.time = message.getTimeStamp() - mStartTime;
-		this->changed((void *) &mMsg2);				// FLAG CHANGE TO OBSERVERS
-	}
+void MIDIIn::handleNoteOn (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) {
+    juce::MidiMessage m (juce::MidiMessage::noteOn (midiChannel, midiNoteNumber, velocity));
+    m.setTimeStamp ((juce::Time::getMillisecondCounterHiRes() * 0.001) - mStartTime);
+    logMsg("\tMIDI note on  C %d K %d V %d", midiChannel, midiNoteNumber, (int) (velocity * 127.0f));
+    copyMessage(m, mMsg);               // copy the message
+    this->changed((void *) &m);
+}
+
+void MIDIIn::handleNoteOff (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) {
+    juce::MidiMessage m (juce::MidiMessage::noteOff (midiChannel, midiNoteNumber, velocity));
+    m.setTimeStamp ((juce::Time::getMillisecondCounterHiRes() * 0.001) - mStartTime);
+    logMsg("\tMIDI note off C %d K %d V %d", midiChannel, midiNoteNumber, (int) (velocity * 127.0f));
+    copyMessage(m, mMsg);               // copy the message
+    this->changed((void *) &m);
+}
+
+void MIDIIn::handleAsyncUpdate() {              // This is called on the message loop
+    juce::Array<juce::MidiMessage> messages;
+    {
+        const juce::ScopedLock sl (midiMonitorLock);
+        messages.swapWith (incomingMessages);
+    }
+    juce::String messageText;
+    for (auto& m : messages) {                    // "Note on E6 Velocity 25 Channel 1"
+        auto data = m.getRawData();
+        unsigned cmd = (data[0] & 0xf0) >> 4;
+        unsigned ch = (data[0] & 0x0f) + 1;
+        switch (cmd) {
+            case kNoteOn: {
+                unsigned nt = data[1] & 0x7f;
+                unsigned vl = data[2] & 0x7f;
+                float vf = ((float)vl) / 127.0;
+                handleNoteOn(0, ch, nt, vf); }
+                break;
+            case kNoteOff: {
+                unsigned nt = data[1] & 0x7f;
+                unsigned vl = data[2] & 0x7f;
+                float vf = ((float)vl) / 127.0;
+                handleNoteOff(0, ch, nt, vf); }
+                break;
+          default:
+                messageText << "\t" << m.getDescription() << "\n";
+        }
+    }
+    logMsgNN(messageText.toRawUTF8());
 }
 
 // quick poll

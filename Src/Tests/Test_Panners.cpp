@@ -246,16 +246,14 @@ void testConvolver3() {
 /// Repeat a short test file moving in circles around the horizontal plane
 
 void test_Binaural_horiz() {
+
+    char folder[CSL_NAME_LEN];                       // create HRTF data location
+    sprintf(folder, "%sIRCAM_HRTF/512_DB/HRTF_1047.dat", CGestalt::dataFolder().c_str());
+    HRTFDatabase::Reload(folder);                    // Load the HRTF data
+    HRTFDatabase::Database()->dump();
 				// Open a mono soundfile
 	SoundFile sndfile(CGestalt::dataFolder() + "splash_mono.aiff");
 	sndfile.dump();
-
-	char folder[CSL_NAME_LEN];						// create HRTF data location
-	strcpy(folder, CGestalt::dataFolder().c_str());	// CSL data folder location
-	strcat(folder, "IRCAM_HRTF/512_DB/HRTF_1047.dat");	// HRTF data location
-	HRTFDatabase::Reload(folder);					// Load the HRTF data
-	HRTFDatabase::Database()->dump();
-
 				// make the sound "Positionable"
 	SpatialSource source(sndfile);
 				// Create a spatializer.
@@ -266,8 +264,8 @@ void test_Binaural_horiz() {
 	logMsg("playing HRTF-spatialized rotating sound source (horizontal plane)...");
 	theIO->setRoot(panner);							// make some sound
 
-	for (int i = 0; i < 30; i++) {
-		source.setPosition('s', (float) (i * 24), 0.0f, 2.0f);	// rotate in small steps
+	for (float i = 0.0f; i < 30.0f; i++) {
+		source.setPositionP(i * 24.0f, 0.0f, 3.0f);	// rotate in small steps
 		source.dump();
 		sndfile.trigger();
 		sleepSec(0.8);
@@ -347,7 +345,7 @@ void test_Ambi_horiz() {
 				// Open a mono soundfile
 	SoundFile sndfile(CGestalt::dataFolder() + "triangle_mono.aiff");
 	sndfile.dump();
-					// make the sound "Positionable"
+                // make the sound "Positionable"
 	SpatialSource source(sndfile);
 				// Create a spatializer.
 	Spatializer panner(kAmbisonic);
@@ -356,8 +354,8 @@ void test_Ambi_horiz() {
 				// loop to play transpositions
 	logMsg("playing Ambisonic-spatialized rotating sound source (horizontal plane)...");
 	theIO->setRoot(panner);					// make some sound
-	for (int i = 0; i < 30; i++) {
-		source.setPosition('s', (float) (i * 24), 0.0f, 2.0f);	// rotate in small steps
+	for (float i = 0.0f; i < 30.0f; i++) {
+		source.setPositionP(i * 24.0f, 0.0f, 3.0f);	// rotate in small steps
 		source.dump();
 		sndfile.trigger();
 		sleepSec(0.8);
@@ -383,9 +381,9 @@ void test_SimpleP() {
 	Mixer mix(2);
 	mix.addInput(panner);
 	theIO->setRoot(mix);					// make some sound
-	for (int i = 0; i < 30; i++) {
+	for (float i = 0.0f; i < 30.0f; i++) {
 				// rotate in small steps, getting farther away
-		source.setPosition('s', (float) (i * 24.0f), 0.0f, (2.0f + (i * 0.15f)));
+		source.setPositionP(i * 24.0f, 0.0f, (2.0f + (i * 0.75f)));
 		source.dump();
 		sndfile.trigger();
 		sleepSec(0.9);

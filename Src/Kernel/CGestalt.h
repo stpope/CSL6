@@ -103,7 +103,8 @@ public:												// Accessor (getter/setter) methods
 #define SAFE_MALLOC(ptr, type, len)						\
 	ptr = new type[len];								\
 	if ((char *) ptr == NULL)							\
-		throw MemoryError("can't allocate buffer")
+        throw MemoryError("can't allocate buffer");     \
+    bzero(ptr, sizeof(type) * len)
 
 /// Matrix allocate
 ///	SAFE_MATMALLOC(mRealSpectrum, FloatArray, mNumFrames, float, mWinSize);

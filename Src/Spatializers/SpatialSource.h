@@ -33,13 +33,16 @@ public:
 	virtual ~SpatialSource();
 										/// Set the sound source position in cartesian coordinates.
 	virtual void setPosition(CPoint pos); 
-	virtual void setPosition(float x = 0., float y = 0., float z = 0.); 
-	virtual void setPosition(double x = 0., double y = 0., double z = 0.); 
+    virtual void setPosition(float x = 0., float y = 0., float z = 0.);
+	virtual void setPosition(double x = 0., double y = 0., double z = 0.);
 
 										/// Set the sound source position in spherical coordinates (degrees).
-	virtual void setPosition(char s, float azi = 0, float ele = 0, float dist = 1.0) ;
+    virtual void setPosition(char s, float azi = 0, float ele = 0, float dist = 1.0) ;
 	virtual void setPosition(char s, double azi = 0, double ele = 0, double dist = 1.0) ;
 	CPoint & getPosition() { return (* mPosition); };
+    
+    void setPositionC(float x = 0., float y = 0., float z = 0.) { this->setPosition(x, y, z); };
+    void setPositionP(float azi = 0, float ele = 0, float dist = 1.0)  { this->setPosition('c', azi, ele, dist); };
 
 #ifdef DIRECTIONAL_SOURCES
 										/// Specify what direction is the object facing

@@ -27,10 +27,10 @@ Spatializer::Spatializer(PannerType panMode, SpeakerLayout * speakerLayout)
 			: UnitGenerator(), mPanner(NULL), mSpeakerLayout(speakerLayout) {
 	setCopyPolicy(kIgnore);		// This is needed so the default kCopy doesn't overide
 								// the multiple channel panning done here.
-	setNumChannels(2);
-	setPanningMode(panMode);
     if (mSpeakerLayout == NULL)
         mSpeakerLayout = SpeakerLayout::defaultSpeakerLayout();
+	setNumChannels(2);
+	setPanningMode(panMode);
 }
 
 Spatializer::~Spatializer() {

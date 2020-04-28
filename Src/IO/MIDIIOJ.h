@@ -1,5 +1,5 @@
 ///
-///  MIDIIOJ.h -- MIDI IO using JUCE
+///  MIDIIOJ.h -- MIDI IO for CSL using JUCE
 ///
 ///	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 ///
@@ -12,12 +12,6 @@
 #include "ThreadUtilities.h"
 #include "Instrument.h"
 #include "JuceHeader.h"
-//#include "src/juce_appframework/audio/midi/juce_MidiBuffer.h"
-//#include "src/juce_appframework/audio/midi/juce_MidiFile.h"
-//#include "src/juce_appframework/audio/midi/juce_MidiMessage.h"
-//#include "src/juce_appframework/audio/midi/juce_MidiMessageSequence.h"
-//#include "src/juce_appframework/audio/devices/juce_MidiInput.h"
-//#include "src/juce_appframework/audio/devices/juce_MidiOutput.h"
 
 namespace csl {
 	
@@ -77,41 +71,58 @@ public:
 	unsigned data2;
 	float time;							///< timestamp in sec
 };
-    
-/// MIDILoader
 
-class MIDILoader : public juce::Timer {
-public:
-    MIDILoader() {
-        startTimer(100);
-    }
+///
+/// MidiDeviceListEntry is used for managing MIDI device lists
+///
     
-    void timerCallback() override {
-        juce::Array<juce::MidiDeviceInfo> inDevices = juce::MidiInput::getAvailableDevices();
-        for (unsigned i = 0; i < inDevices.size(); i++)
-            mInDevices.add(inDevices[i].name);
-        juce::Array<juce::MidiDeviceInfo> outDevices = juce::MidiOutput::getAvailableDevices();
-        for (unsigned i = 0; i < outDevices.size(); i++)
-            mOutDevices.add(outDevices[i].name);
-        stopTimer();
-        printf("\nFound %d MIDI ins and %d MIDI outs\n", inDevices.size(), outDevices.size());
-    }
-
-    juce::StringArray mInDevices;
-    juce::StringArray mOutDevices;
+struct MidiDeviceListEntry : juce::ReferenceCountedObject {
+    MidiDeviceListEntry (juce::MidiDeviceInfo info) : deviceInfo (info) {}
+    
+    juce::MidiDeviceInfo deviceInfo;
+    std::unique_ptr<juce::MidiInput> inDevice;
+    std::unique_ptr<juce::MidiOutput> outDevice;
+    
+    using Ptr = juce::ReferenceCountedObjectPtr<MidiDeviceListEntry>;
 };
+
+/// MIDILoader loads the tables of MIDI devices
+
+//class MIDILoader : public juce::Timer {
+//public:
+//    MIDILoader() {
+//        startTimer(100);
+//    }
+//
+//    void timerCallback() override {
+//        juce::Array<juce::MidiDeviceInfo> inDevices = juce::MidiInput::getAvailableDevices();
+//        for (unsigned i = 0; i < inDevices.size(); i++)
+//            mInDevices.add(inDevices[i].name);
+//        juce::Array<juce::MidiDeviceInfo> outDevices = juce::MidiOutput::getAvailableDevices();
+//        for (unsigned i = 0; i < outDevices.size(); i++)
+//            mOutDevices.add(outDevices[i].name);
+//        stopTimer();
+//        printf("\nFound %d MIDI ins and %d MIDI outs\n", inDevices.size(), outDevices.size());
+//    }
+//
+//    juce::StringArray mInDevices;
+//    juce::StringArray mOutDevices;
+//    juce::ReferenceCountedArray<MidiDeviceListEntry> mMidiInputs, mMidiOutputs;
+//
+//};
 
 ///	MIDIIO class: superclass of in and out; has a message buffer and current messages
 ///		It's a model so you can observe it.
 ///		Uses mMsg.CMIDIMessageType as a status flag.
 	
-class MIDIIO: public Model {		///< It's a model & sends itself "changed"
+class MIDIIO: public Model,        ///< It's a model & sends itself "changed"
+        public juce::Timer {
 public:	
 	MIDIIO();
 	virtual ~MIDIIO();
 	
-	static int countDevices();
-	static void dumpDevices();		///< printing device info for all devices.
+	int countDevices();
+	void dumpDevices();		        ///< printing device info for all devices.
 
 	void open();					///< open the abstract 
 	virtual void open(int devID) = 0;	///< open a device
@@ -128,29 +139,35 @@ public:
 	juce::MidiBuffer mBuffer;		///< I/O buffer
 
 protected:							///< static flags to keep track of driver state
-	static bool mIsInitialized; 
-    MIDILoader mLoader;
-    
+	static bool mIsInitialized;
 	juce::MidiMessage * mJMsg;		///< JUCE-format message
-				
+
 	bool mIsOpen;					///< instance status indicators
 	long mBufferSize;
 	long mFilterFlag;
 									///  error handler
 	void handleError(CException * err);
-	
+    void timerCallback() override;  /// timer loads device list once
+            
+    juce::ReferenceCountedObjectPtr<MidiDeviceListEntry> findDevice(juce::MidiDeviceInfo device, bool isInputDevice);
+    juce::StringArray mInNames;
+    juce::StringArray mOutNames;
+    juce::ReferenceCountedArray<MidiDeviceListEntry> mInDevices, mOutDevices;
+
 									/// copy csl::CMIDIMessage <--> juce::MidiMessage
 	void copyMessage(CMIDIMessage& source, CMIDIMessage& dest);
 	void copyMessage(CMIDIMessage& source, juce::MidiMessage* dest);
 	void copyMessage(const juce::MidiMessage& source, CMIDIMessage& dest);
 };
 
-
 ///
 ///	MIDIIn class is-a MidiInputCallback too, and an "input-ready" flag
 ///
 
-class MIDIIn : public MIDIIO, public juce::MidiInputCallback {
+class MIDIIn : public MIDIIO,
+            public juce::MidiKeyboardStateListener,
+            public juce::MidiInputCallback,
+            public juce::AsyncUpdater {
 public:
 	MIDIIn();	
 	
@@ -164,11 +181,19 @@ public:
 	virtual void stop();				///< stop MIDI stream
 	int evaluate(void * arg);			///< evaluate answers the message command
 
-										/// implement inherited MidiInputCallback
-	void handleIncomingMidiMessage(juce::MidiInput * source, const juce::MidiMessage & message);
-	
-	juce::MidiInput * mDevice;			///< my device ptr
+	std::unique_ptr<juce::MidiInput> mDevice;     ///< my device ptr
 	double mStartTime;					///< the time I was started
+                
+                                        /// implement inherited MidiInputCallbacks
+    void handleIncomingMidiMessage(juce::MidiInput * source, const juce::MidiMessage & message);
+    void handleNoteOn(juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
+    void handleNoteOff(juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
+    void handleAsyncUpdate() override;
+                
+    juce::CriticalSection midiMonitorLock;
+    juce::Array<juce::MidiMessage> incomingMessages;
+    juce::MidiKeyboardState mKeyboardState;
+
 };
 
 
@@ -187,13 +212,13 @@ public:
 	void write(CMIDIMessage & msg);
 	void writeNoteOn(unsigned channel, unsigned pitch, unsigned velocity );		///< MIDINote#, [0, 127]
 	void writeNoteOn(unsigned channel, float frequency, float amplitude );		///< [Hz], [0.0 1.0];
-	void writeNoteOff(unsigned channel, unsigned pitch, unsigned velocity );		///< MIDINote#, [0, 127]
+	void writeNoteOff(unsigned channel, unsigned pitch, unsigned velocity );	///< MIDINote#, [0, 127]
 	void writeNoteOff(unsigned channel, float frequency, float amplitude );		///< [Hz], [0.0 1.0];
 	void writePolyTouch(unsigned channel, unsigned pitch, unsigned amount );
 	void writeControlChange(unsigned channel, unsigned function, unsigned value );
 	void writeProgramChange(unsigned channel, unsigned programNum );
-	void writeAftertouch(unsigned channel, unsigned amount );						///< [0, 127]
-	void writePitchWheel(unsigned channel, unsigned amount );						///< [0, 16384] 
+	void writeAftertouch(unsigned channel, unsigned amount );					///< [0, 127]
+	void writePitchWheel(unsigned channel, unsigned amount );					///< [0, 16384]
 	void writeSysEX(long when, unsigned char *msg );
 
 protected:

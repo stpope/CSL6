@@ -24,7 +24,10 @@ extern juce::AudioDeviceManager * gAudioDeviceManager;	// global JUCE audio devi
 // dump io names
 
 void IO_test() {
-	MIDIIO::dumpDevices();
+    logMsg("MIDI device dump test");
+    MIDIIn in;
+    sleepMsec(500);
+    in.dumpDevices();
 }
 
 // echo 10 events of input
@@ -35,11 +38,11 @@ void IO_test() {
 // Run the IO_test, then edit these
 
 void input_test() {
-	logMsg("MIDI test");
-	logMsg("\tDefault MIDI in = %d", juce::MidiInput::getDefaultDeviceIndex());
-	logMsg("\tDefault MIDI out = %d", juce::MidiOutput::getDefaultDeviceIndex());
-	MIDIIn in;
-	in.open(juce::MidiInput::getDefaultDeviceIndex());
+	logMsg("MIDI input test");
+    MIDIIn in;
+    sleepMsec(500);                     // wait for the timer callback to load MIDI devices
+//    in.dumpDevices();
+//	in.open(0);
 	in.start();
 
 	try {
@@ -60,8 +63,9 @@ void input_test() {
 // play simple notes
 
 void play_test() {
+    logMsg("MIDI synth test");
 	MIDIIn in;
-	in.open(DEFAULT_MIDI_IN);
+    sleepMsec(500);                     // wait for the timer callback to load MIDI devices
 	in.start();
 
 	SumOfSines osc(kFrequency, 6,   0.4, 0.3, 0.2, 0.08, 0.05, 0.02);	// create an osc + env patch
@@ -72,17 +76,16 @@ void play_test() {
 	rev.setRoomSize(0.92);				// longer reverb
 
 	theIO->setRoot(rev);
-	logMsg("testing MIDIIn playback");
 
 	while(1) {								// here's the poll/play loop
-		if(in.poll()) {
-			if(in.mMsg.isNoteOn()) {
+		if (in.poll()) {
+			if (in.mMsg.isNoteOn()) {
 				logMsg("MIDI note %d  vel. %d", in.mMsg.getNote(), in.mMsg.getVelocity());
 				osc.setFrequency(in.mMsg.getFrequency());
 				env.scaleValues(in.mMsg.getVelocityFloat() / 2.0f );
 				env.trigger();
 			}
-			if(in.mMsg.isNoteOff()) {
+			if (in.mMsg.isNoteOff()) {
 				env.release();
 			}
 			in.clear();						// clear input
@@ -291,9 +294,8 @@ done:
 testStruct ctrlTestList[] = {
     "Dump ports",           IO_test,        "Dump list of MIDI ports to stdout",
     "MIDI file player",     testMIDIFile,   "Play a MIDI file on an instrument library",
-//    "THE REST OF THESE ARE W.I.P.", 0, "",
-//    "Dump input",           input_test,     "Dump MIDI input from default device",
-//    "MIDI notes",           play_test,      "Play MIDI notes (reads MIDI kbd)",
+    "Dump input",           input_test,     "Dump MIDI input from default device",
+    "MIDI notes",           play_test,      "Play MIDI notes (reads MIDI kbd)",
 //    "MIDI output",          output_test,    "Test sending MIDI output",
 //    "MIDI listener",        testListener,   "Start the MIDI listener object",
 #ifdef USE_LOSC				                        	// liblo for OSC

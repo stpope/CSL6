@@ -6,7 +6,6 @@ Broken demo fcns:
 	Sample-avg filter no-go
 	HRTF pretty crappy, crashes (space leak?)
 	VBAP threading broken
-	MIDI I/O demos busted (dump works)
 	Audio I/O demos busted (no input)
 
 Windows issues:

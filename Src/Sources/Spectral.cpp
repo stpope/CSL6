@@ -60,7 +60,6 @@ IFFT::IFFT(int size, CSL_FFTType type) : UnitGenerator(),
 			  mWrapper(size, type, CSL_FFT_INVERSE),
               mInBuf() {
 	SAFE_MALLOC(mSpectrum, SampleComplex, mFFTSize * 2);
-                  memset (mSpectrum, 0, sizeof(SampleComplex) * mFFTSize * 2);
 //    logMsg("Alloc IFFT");
 }
 
