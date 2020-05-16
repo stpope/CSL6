@@ -408,6 +408,27 @@ float Buffer::normalize(float maxVal, float from, float to) {
 	return maxSamp;
 }
 
+// normalize the buffer(s) so that the average per-channel is 0.0
+
+void Buffer::removeDC() {
+    float * bbuffer = NULL;
+    unsigned outBufNum, i;
+    unsigned numChans = mNumChannels;
+    unsigned numFrames = mNumFrames;
+    float sSum;
+												// channel loop
+    for (outBufNum = 0; outBufNum < numChans; outBufNum++) {
+        bbuffer = mBuffers[outBufNum];
+        sSum = 0.0f;
+        for (i = 0; i < numFrames; i++)			// sum samples
+            sSum += *bbuffer++;
+        sSum /= numFrames;						// scale
+        bbuffer = mBuffers[outBufNum];
+        for (i = 0; i < numFrames; i++)
+            *bbuffer++ -= sSum;					// normalize
+    }
+}
+
 #ifdef USE_SRC // sample-rate conversion methods
 
 // convert the sample rate using libSampleRate

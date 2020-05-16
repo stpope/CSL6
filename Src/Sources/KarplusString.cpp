@@ -11,13 +11,9 @@ using namespace csl;
 
 // Trivial constructors
 
-KarplusString::KarplusString() : Scalable(), Phased() {
-	mIndex = 0;
-	mEnergy = 0;
-}
-
 KarplusString::KarplusString(float frequency) : Scalable(), Phased(frequency) {
 	mIndex = 0;
+	mEnergy = 0;
 	mDelayLength = (int) (CGestalt::frameRate() / frequency);
 	mFrequency = frequency;
 	this->initDelayLine();
@@ -28,12 +24,14 @@ KarplusString::KarplusString(float frequency) : Scalable(), Phased(frequency) {
 void KarplusString::trigger() {
 	WhiteNoise noise;
 	noise.nextBuffer(mDelayLine, 0);	// write noise into the delay line
+	mDelayLine.removeDC();
 										// estimate decay time for freq
 	mEnergy = 600 * (5 - (freqToKey(mFrequency) / 25));
+//	logMsg("\tKarplusString::trigger @ %5.2f Hz", mFrequency);
 }
 
 void KarplusString::dump() {
-	logMsg("a KarplusString: %d Hz", 400);
+	logMsg("a KarplusString @ %5.2f Hz", mFrequency);
 	Scalable::dump();
 }
 

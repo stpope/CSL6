@@ -5,6 +5,15 @@
 
 #include "CSL_Includes.h"		// include all of CSL core
 
+// Instruments
+
+#include <AdditiveInstrument.h>
+#include <BasicFMInstrument.h>
+#include <StringInstrument.h>
+#include <SndFileInstrument.h>
+
+//#include "JackIO.h"			// JACK IO
+
 #ifdef USE_JUCE
 	#define USE_JUCEIO  		// uncomment this to use the JUCE IO
 #else
@@ -13,8 +22,6 @@
 #endif
 
 #ifdef USE_JUCEIO
-//    #include "JUCEIO.h"            // JUCE IO (default)
-//    #define IO_CLASS csl::JUCEIO   //
     #define IO_CLASS IO
 #endif
 
@@ -28,15 +35,14 @@
 	#define IO_CLASS PAIO
 #endif
 
-//#include "JackIO.h"			// JACK IO
-
 #ifdef USE_FILEIO				// File tests
 	#include "FileIO.h"			// SndFile IO
 	#define IO_CLASS FileIO
 #endif
 
 #ifndef IO_CLASS
-	#define IO_CLASS JUCEIO		// this is the new default
+	234523pp4509762o8e76452		// flag error
+	#define IO_CLASS IO			// this is the new default
 #endif
 
 using namespace csl;
@@ -66,3 +72,4 @@ void runTest(UnitGenerator & vox);
 // dump-test -- good for debugging
 
 void dumpTest(UnitGenerator & vox);
+

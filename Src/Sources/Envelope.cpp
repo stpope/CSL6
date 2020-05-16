@@ -353,9 +353,9 @@ void Envelope::nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw (CExce
 			}
 		}		
 	}
-	logMsg(kLogError, "Envelope nextBuffer: it shouldn't get here %f", rate);
-	this->dump();
-	return;			// shouldn't ever get here (THROW AN EXCEPTION IF CONTROL GETS HERE!)
+//	logMsg(kLogError, "Envelope nextBuffer: it shouldn't get here %6.0f", rate);
+//	this->dump();
+//	return;			// shouldn't ever get here (THROW AN EXCEPTION IF CONTROL GETS HERE!)
 }
 
 /// ~~~~~~~ Atack / Decay / Sustain / Release Envelope ~~~~~~~~~~~

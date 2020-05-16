@@ -7,10 +7,10 @@
 // CSL Kernel
 
 #include "CSL_Core.h"			/// The core of CSL 6
-//#include "RingBuffer.h"		/// Utility circular buffer
+#include "RingBuffer.h"			/// Utility circular buffer
 #include "BlockResizer.h"		/// BlockResizer
 #include "CPoint.h"				/// 2D & 3D points
-//#include "ThreadUtilities.h"	/// CThread utilities
+//#include "ThreadUtilities.h"	/// CThread utilities (or use JUCE threads)
 #include "Variable.h"			/// Static/dynamic variables
 
 // Sources
@@ -20,6 +20,7 @@
 #include "Oscillator.h"			/// All the oscillator classes
 #include "Noise.h"				/// Noise generators
 #include "WaveShaper.h"			/// WaveShaper oscillator
+#include "KarplusString.h"      /// Karplus-Strong string model class
 
 // Effects
 

@@ -33,33 +33,56 @@
 namespace csl  {
 
 ///
-/// Sound file player instrument
+/// Sound file player instruments w & w/out envelopes, playback-rate and inset positions
 ///
 
-class SndFileInstrument : public Instrument {
+/// SndFileInstrument0 is the simple version
+	
+class SndFileInstrument0 : public Instrument {
 public:
-	SndFileInstrument(string path, int start = -1, int stop = -1);
-	SndFileInstrument(string folder, string path, int start = -1, int stop = -1);
-	~SndFileInstrument();
-
-								/// Plug functions
+	SndFileInstrument0(string path);
+	SndFileInstrument0(string folder, string path);
+	~SndFileInstrument0();
+	
+						/// Plug functions
 	void setParameter(unsigned selector, int argc, void **argv, const char *types);
-								/// play note
-	void play();		
-	void playOSC(int argc, void **argv, const char *types);		
-	void playNote(float ampl = 1, float rate = 1, float pos = 0, int start = -1, int stop = -1, 
-				float attack = 0.0, float decay = 0.0);
-	void playMIDI(int chan, int key, int vel);	
+						/// play note
+	void play();
+	void playOSC(int argc, void **argv, const char *types);
+	void playNote(float ampl = 1, float pos = 0);
+	void playMIDI(int chan, int key, int vel);
 
-								///< These are the UGens of the DSP graph (i.e., the sndfile player instrument)
-	SoundFile mPlayer;					///< sample player
-	AR mEnvelope;						///< AR envelope
+						/// These are the UGens of the DSP graph (i.e., the sndfile player instrument)
+	BufferStream mPlayer;				///< sndfile (buffer) player
 	Panner mPanner;						///< stereo panner
+protected:
+	void initialize(string path);
+	SoundFile * mFile;					///< the sound file I read from
+};
+
+#ifdef STILL_TO_DO
+
+class SndFileInstrument1 : public SndFileInstrument0 {
+public:
+	SndFileInstrument1(string path, int start = -1, int stop = -1);
+	SndFileInstrument1(string folder, string path, int start = -1, int stop = -1);
+	~SndFileInstrument1();
+	
+	/// Plug functions
+	void setParameter(unsigned selector, int argc, void **argv, const char *types);
+	/// play note
+	void play();
+	void playOSC(int argc, void **argv, const char *types);
+	void playNote(float ampl = 1, float rate = 1, float pos = 0, int start = -1, int stop = -1,
+				  float attack = 0.0, float decay = 0.0);
+	void playMIDI(int chan, int key, int vel);
+	
+	/// These are the UGens of the DSP graph (i.e., the sndfile player instrument)
+	AR mEnvelope;						///< AR envelope
 	StaticVariable mRate;				///< plugs playback rate (ignored for now)
 	int mStart, mStop;					///< start/stop sample indices
-protected:	
+protected:
 	void initialize(string path);
-
 };
 
 //class SampleFile : public SoundFile {
@@ -76,10 +99,10 @@ protected:
 //	double ratioForPitch(int desiredMIDI);
 
 ///
-/// Sample bank player instrument
+/// Sample bank player instrument (untested)
 ///
 
-class SampleBankInstrument : public SndFileInstrument {
+class SampleBankInstrument : public SndFileInstrument1 {
 public:
 	SampleBankInstrument();
 	~SampleBankInstrument();
@@ -95,6 +118,8 @@ protected:
 //	SampleBank mBank;					///< sample bank map
 
 };
+	
+#endif // STILL_TO_DO
 
 }
 

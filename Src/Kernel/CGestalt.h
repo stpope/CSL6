@@ -152,30 +152,46 @@ if (ptr) {											    \
 /// Logging functions are standard C functions
 ///
 
-#ifdef CSL_ENUMS
-typedef enum {					///< Enumeration for log message severity level
-	kLogInfo,					///< you can filter on this.
-	kLogWarning,
-	kLogError,
-	kLogFatal
-} LogLevel;
-#else
-	#define kLogInfo 0
-	#define kLogWarning 1
-	#define kLogError 2
-	#define kLogFatal 3
-	typedef int LogLevel;
-#endif
 
 ///
 /// These are the public logging messages
 ///
+
+// #define LOG_W_PRINTF			// this doesn't work the way I want it to...
+	
+#ifdef LOG_W_PRINTF
+	#define kLogInfo
+	#define kLogWarning
+	#define kLogError
+	#define kLogFatal 
+	#define logMsg(...) { printf(__VA_ARGS__); printf("\n"); }
+	#define logMsg(...) { printf(__VA_ARGS__); printf("\n"); }
+	#define logMsgNN(...) { printf(__VA_ARGS__); }
+	#define logMsgNN(...) { printf(__VA_ARGS__); }
+#else
+	
+#ifdef CSL_ENUMS
+	typedef enum {					///< Enumeration for log message severity level
+		kLogInfo,					///< you can filter on this.
+		kLogWarning,
+		kLogError,
+		kLogFatal
+	} LogLevel;
+#else
+#define kLogInfo 0
+#define kLogWarning 1
+#define kLogError 2
+#define kLogFatal 3
+	typedef int LogLevel;
+#endif
 
 void logMsg(const char * format, ...);		///< default is kLogInfo severity
 void logMsg(LogLevel level, const char* format, ...);
     
 void logMsgNN(const char * format, ...);	///< no-newline versions
 void logMsgNN(LogLevel level, const char* format, ...);
+
+#endif
 
 void logLine();								///< Log the file & line #
 void logURL();								///< log file/line as a URL

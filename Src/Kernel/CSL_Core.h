@@ -160,7 +160,8 @@ public:									/// Constructor: default is mono and default-size
 
 	float normalize(float maxVal);			///< normalize the buffer(s) to the given max; answer the prior max
 	float normalize(float maxVal, float from, float to);	///< normalize the given region only
-	
+    void removeDC();                        ///< normalize the buffer(s) so that the average is 0.0
+    
 /// Buffer Sample Processing (optional).
 /// One could also easily add Buffer operators, such as (Buffer + Buffer) or (Buffer * Buffer)
 
@@ -753,7 +754,7 @@ class IO : public Model  {											/// superclass = Model
 public:
 	IO(unsigned s_rate = 44100, unsigned b_size = CSL_mBlockSize,
 		int in_device = -1, int out_device = -1,
-		unsigned in_chans = 2, unsigned out_chans = 2);				/// default is stereo input & output
+		unsigned in_chans = 0, unsigned out_chans = 2);				/// default is stereo output & no output
 	virtual ~IO() { };
 							// Control methods
 	virtual void open() throw(CException) { mStatus = kIOOpen; };	///< open/close start/stop methods

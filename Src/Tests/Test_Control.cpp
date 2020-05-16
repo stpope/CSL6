@@ -143,9 +143,6 @@ void testListener() {
 
 // MIDI file player uses instrument library
 
-#include <AdditiveInstrument.h>
-#include <BasicFMInstrument.h>
-
 void testMIDIFile() {
 	InstrumentLibrary lib;		// create the instrument library map
 	Mixer mix(2);				// Create the main stereo output mixer
@@ -233,20 +230,18 @@ void testOSCClientServer() {
 	Mixer mix(2);				// Create the main stereo output mixer
 								// Now add 16  instruments 
 	for (unsigned i = 0; i < 16; i++) {
-		AdditiveInstrument * in = new AdditiveInstrument;
+//      AdditiveInstrument * in = new AdditiveInstrument;	// if you change this, change the OSC type string below
+        StringInstrument * in = new StringInstrument(0.2f, 400.0f, 0.75f);
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
 	Stereoverb rev(mix);		// stereo reverb
-	rev.setRoomSize(0.8);		// medium-length reverb
+	rev.setRoomSize(0.9);		// medium-length reverb
 	theIO->setRoot(rev);		// plug the mixer in as the IO client
 	theIO->open();				// open the IO
 	theIO->start();				// start the IO
-
-	char pNam[CSL_WORD_LEN];	// string for port number
-	sprintf(pNam, "%d", CGestalt::outPort());
 	
-	initOSC(pNam);				// Set up OSC address space root
+	initOSC(CSL_mOSCPort);		// Set up OSC address space root
 	setupOSCInstrLibrary(lib);	// add the instrument library OSC
 
 								// make a thread for the OSC server
@@ -255,22 +250,24 @@ void testOSCClientServer() {
 	osc->createThread(mainOSCLoop, NULL);
 	sleepSec(0.5);				/// wait for it to start
 	
+								// ----------------------------------------------------
 								// now we're the OSC client
 								// set up a port to write to the server thread
-	lo_address ad = lo_address_new(NULL, pNam);
-	logMsg("Sending OSC note cmds");
+	lo_address ad = lo_address_new(NULL, CSL_mOSCPort);
+	logMsg("\nSending OSC note cmds");
 //	if (lo_send(ad, "/i1/p", "") == -1) {		// send a test note command
 //		logMsg(kLogError, "OSC error1 %d: %s\n", lo_address_errno(ad), lo_address_errstr(ad));
 //		goto done;
 //	}
 //	sleepSec(0.5);
+	char pNam[8];
 	for (unsigned i = 0; i < 64; i++) {			// note loop
 		sprintf(pNam, "/i%d/pn", (i % 16)+1);	// OSC cmd: /iX/pn, "ffff", dur ampl freq pos
-		float dur = fRandM(0.15f, 1.5f);
-		float ampl = fRandM(0.2, 0.8);
+//		float dur = fRandM(0.15f, 1.5f);
+		float ampl = fRandM(0.2, 0.7);
 		float freq = fRandM(60, 500);
 		float pos = fRand1();
-		if (lo_send(ad, pNam, "ffff", dur, ampl, freq, pos) == -1) {
+		if (lo_send(ad, pNam, "fff", ampl, freq, pos) == -1) {			// assumes 3-arg note (plucked string)
 			logMsg(kLogError, "OSC error2 %d: %s\n", lo_address_errno(ad), lo_address_errstr(ad));
 		}
 		sleepSec(fRandM(0.06, 0.3));			// sleep a bit

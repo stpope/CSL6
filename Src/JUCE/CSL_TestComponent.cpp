@@ -114,10 +114,10 @@ void dumpTestList() {
 // Globals are here
 
 extern IO_CLASS * theIO;						// global IO object accessed by other threads
-juce::Label* gCPULabel;							// CPU % label...
+juce::Label * gCPULabel;						// CPU % label...
 juce::AudioDeviceManager * gAudioDeviceManager;	// global JUCE audio device mgr
 unsigned argCnt;							    // globals for argc/v from cmd-line
-const char **argVals;
+const char ** argVals;
 
 #define WRITE_TO_FILE						    // support file recording
 #ifdef WRITE_TO_FILE
@@ -312,10 +312,10 @@ CSLComponent::CSLComponent ()
 		juce::AlertWindow::showMessageBox (juce::AlertWindow::WarningIcon,
 									 "CSL Demo",
 									 "Couldn't open an output device!\n\n" + error);
-										// get the audio device
-	juce::AudioIODevice * audioIO = mAudioDeviceManager.getCurrentAudioDevice();
 
 #ifdef READ_IO_PROPS					// overwrite the system frame rate and block size from the
+										// get the audio device
+	juce::AudioIODevice * audioIO = mAudioDeviceManager.getCurrentAudioDevice();
 										//  selected hardware interface at startup time
 	unsigned sRate = (unsigned) audioIO->getCurrentSampleRate();
 	unsigned bufSize = audioIO->getCurrentBufferSizeSamples();
@@ -324,17 +324,16 @@ CSLComponent::CSLComponent ()
 					CGestalt::numOutChannels());
 
 #else									// reset the HW frame rate & block size to the CSL definition
-	juce::AudioDeviceManager::AudioDeviceSetup setup;
-	mAudioDeviceManager.getAudioDeviceSetup(setup);
-	setup.bufferSize = CGestalt::blockSize();
-	setup.sampleRate = CGestalt::frameRate();
-	mAudioDeviceManager.setAudioDeviceSetup(setup,true);
+//	juce::AudioDeviceManager::AudioDeviceSetup setup;
+//	mAudioDeviceManager.getAudioDeviceSetup(setup);
+//	setup.bufferSize = CGestalt::blockSize();
+//	setup.sampleRate = CGestalt::frameRate();
+//	mAudioDeviceManager.setAudioDeviceSetup(setup, true);
 										// set up IO
 	theIO = new IO_CLASS(CGestalt::frameRate(),
 					CGestalt::blockSize(),
 					-1, -1,				// use default I/O devices
-					2,                  // stereo I/O by default
-					2);
+					2, 2);              // stereo I/O by default
 #endif
 	theIO->start();						// start IO and register callback
 	mAudioDeviceManager.addAudioCallback(this);

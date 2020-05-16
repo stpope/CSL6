@@ -39,8 +39,8 @@ namespace csl  {
 ///
 class FMInstrument : public Instrument {
 public:
-	FMInstrument();			///< Constructor
-	FMInstrument(FMInstrument&);							///< copy constructor
+	FMInstrument();				///< Constructor
+	FMInstrument(FMInstrument&);///< copy constructor
 	~FMInstrument();
 								/// Plug functions
 	virtual void setParameter(unsigned selector, int argc, void **argv, const char *types);

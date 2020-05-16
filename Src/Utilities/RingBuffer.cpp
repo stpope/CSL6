@@ -325,19 +325,19 @@ void BufferStream::nextBuffer(Buffer & outputBuffer) throw(CException) {
 
 void BufferStream::writeBuffer(Buffer &inputBuffer) throw(CException) {
 	Writeable::writeBuffer(inputBuffer);
-	mCurrentWriteFrame = mTempCurrentWriteFrame; // remember state
+	mCurrentFrame = mTempCurrentWriteFrame; // remember state
 	return;
 }
 
 void BufferStream::nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw(CException) {
-						// get everything into registers
+										// get everything into registers
 	unsigned numFrames = outputBuffer.mNumFrames;
 	unsigned currentFrame = mCurrentFrame;
 	unsigned bufferEndFrame = mBuffer->mNumFrames;
 	unsigned currentBufNum = outBufNum % (mBuffer->mNumChannels);
 	SampleBuffer outputBufferPtr = outputBuffer.buffer(outBufNum);
 	
-	// if we are past the end
+										// if we are past the end
 	if (currentFrame > bufferEndFrame) {
 		memset(outputBufferPtr, 0, numFrames);
 		return;
@@ -352,7 +352,7 @@ void BufferStream::nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw(CE
 	if (framesWritten < numFrames) {
 		outputBufferPtr += framesWritten;
 		memset(outputBufferPtr, 0, numFrames - framesWritten);
-	}						// remember the state
+	}									// remember the state
 	mTempCurrentFrame = currentFrame;
 	return;
 }
@@ -360,14 +360,14 @@ void BufferStream::nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw(CE
 void BufferStream::writeBuffer(Buffer &inputBuffer, unsigned bufNum) throw(CException) {
 						// get everything into registers
 	unsigned numFrames = inputBuffer.mNumFrames;
-	unsigned currentFrame = mCurrentWriteFrame;
+	unsigned currentFrame = mCurrentFrame;
 	unsigned bufferEndFrame = mBuffer->mNumFrames;
 
 	if (currentFrame > bufferEndFrame) {
 		logMsg(kLogError, "Attempt to write into a buffer, past the end");
 		return;
 	}
-		
+
 	unsigned currentBufNum = bufNum % mBuffer->mNumChannels;
 	SampleBuffer currentBufPtr = mBuffer->buffer(currentBufNum) + currentFrame;
 	SampleBuffer inputBufferPtr = inputBuffer.buffer(bufNum);

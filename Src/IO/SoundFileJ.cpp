@@ -153,7 +153,8 @@ void JSoundFile::openForRead(bool load) throw (CException) {
 //		logMsg("Read sound file \"%s\" %d frames %g sec %d channels", 
 //				mPath.c_str(), duration(), durationInSecs(), channels());
 		unsigned numFrames = (unsigned) mAFReader->lengthInSamples;
-
+		mCurrentFrame = 0;
+		mWavetable.zeroBuffers();
 		this->readBufferFromFile(numFrames);				// read entire file
 
 		mCurrentFrame = mStart;

@@ -57,7 +57,6 @@ FMInstrument::FMInstrument() :	// initializers for the UGens
 	mAccessors.push_back(new Accessor("ir", set_irelease_f, CSL_FLOAT_TYPE));
 }
 
-
 // copy constructor
 
 FMInstrument::FMInstrument(FMInstrument& in) :
@@ -201,7 +200,6 @@ void FMInstrument::playNote(float dur, float ampl, float c_fr, float m_fr, float
 	mIEnv.setRelease(i_rel);
 	this->play();
 }
-
 
 void FMInstrument::playMIDI(float dur, int chan, int key, int vel) {
 	mAEnv.setDuration(dur);

@@ -1,5 +1,5 @@
 //
-//  JUCEIO.cpp -- DAC IO using JUCE
+//  JUCEIO.cpp -- CSL audio IO using JUCE call-backs directly
 //	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 //
 
@@ -30,7 +30,7 @@ JUCEIO::JUCEIO(unsigned s_rate, unsigned b_size,
         return;
 	}
     mDevice = mAudioDeviceManager.getCurrentAudioDevice();
-//  printf("Audio IO rate %g; block size %d\n", mDevice->getCurrentSampleRate(), mDevice->getDefaultBufferSize());
+  	logMsg("JUCEIO rate %g; block size %d", mDevice->getCurrentSampleRate(), mDevice->getDefaultBufferSize());
 }
 
 JUCEIO::~JUCEIO() {
@@ -65,35 +65,40 @@ void JUCEIO::stop() throw(CException) {
 // Audio playback callback & utilities
 
 void JUCEIO::audioDeviceIOCallback (const float** inData, int numIns,
-							float** outData, int numOuts, 
-							int numSamples) {
-    logMsg("JUCEIO::audioDeviceIOCallback");
-	if ((mStatus != kIORunning) || (mGraph == 0)) {	// if we're off or there's no input graph,
-													//  just play silence...
-		for (unsigned i = 0; i < mNumInChannels; i++)
-			bzero(outData[i], (numSamples * sizeof(sample)));
+									float** outData, int numOuts,
+									int numSamples) {
+//    logMsg("JUCEIO::audioDeviceIOCallback");
+
+	for (unsigned i = 0; i < mNumInChannels; i++)	//  fill the buffers with silence...
+		bzero(outData[i], (numSamples * sizeof(sample)));
+	if ((mStatus != kIORunning) || (mGraph == 0))	// if we're off or there's no input graph,
 		return;
-	}
 	if (mNumInChannels > 0) {						// if any input
 		if (mNumInChannels != numIns) {
-			logMsg(kLogError, "Wrong # in channels: expected %d got %d", 
-					mNumInChannels, numIns);
+			logMsg(kLogError, "Wrong # in channels: expected %d got %d", mNumInChannels, numIns);
 			return;
 		}
 		for (unsigned i = 0; i < mNumInChannels; i++)
 			mInputBuffer.setBuffer(i, (SampleBuffer) inData[i]);
+		mInputBuffer.mAreBuffersAllocated = true;
 		mInputBuffer.mNumFrames = numSamples;
 	}
-	if (mNumOutChannels > 0) {
+	if (mNumOutChannels > 0) {						// process output
 		if (mNumOutChannels != numOuts) {
-			logMsg(kLogError, "Wrong # out channels: expected %d got %d", 
-					mNumOutChannels, numOuts);
+			logMsg(kLogError, "Wrong # out channels: expected %d got %d", mNumOutChannels, numOuts);
 			return;
 		}
-		for (unsigned i = 0; i < numOuts; i++)
+		mOutputBuffer.setSize(numOuts, numSamples);
+		mOutputBuffer.mAreBuffersAllocated = true;
+		for (unsigned i = 0; i < numOuts; i++)		// plug in output pointers
 			mOutputBuffer.setBuffer(i, (SampleBuffer) outData[i]);
-		mOutputBuffer.mNumFrames = numSamples;	
-		pullInput(mOutputBuffer, NULL);
+		try {					//////
+								// Tell the IO to call its graph ------------------
+								//////
+			pullInput(mOutputBuffer, NULL);
+		} catch (csl::CException e) {
+			logMsg(kLogError, "Error running CSL: graph: %s\n", e.what());
+		}
 		mNumFramesPlayed += numSamples;
 	}
 	return;

@@ -36,8 +36,6 @@ void testNoises() {
 
 /// Plucked string simulation
 
-#include "KarplusString.h"
-
 void testString() {
 	KarplusString pluck(fRandM(80, 1024));	// rand freq range
 	pluck.setScale(0.6);					// quiet
@@ -243,8 +241,6 @@ void testFMInstrument() {
 
 /// Test SOS instrument - play 3 different timbres
 
-#include <AdditiveInstrument.h>
-
 void testSOSInstrument() {
 	AdditiveInstrument * vox1 = new AdditiveInstrument(48, 1.75f);
 	AdditiveInstrument * vox2 = new AdditiveInstrument(48, 1.75f);
@@ -294,7 +290,7 @@ void testFancyFMInstrument() {
 #include <SndFileInstrument.h>
 
 void testSndFileInstrument() {
-	SndFileInstrument vox(CGestalt::dataFolder(), "round.aiff");
+	SndFileInstrument0 vox(CGestalt::dataFolder(), "round.aiff");
 	logMsg("Playing sound file instrument...");
 	vox.play();
 	runTest(vox);

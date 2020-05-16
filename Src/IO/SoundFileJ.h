@@ -48,13 +48,13 @@ public:												/// C'tors
 	void writeBuffer(Buffer &inB, unsigned fromFrame, unsigned toFrame)
 			throw (CException);
 
-	juce::AudioFormatReader * mAFReader;					///< my reader
-	juce::AudioFormatWriter * mAFWriter;					///< and my writer
-	juce::File * mIOFile;								///< my JUCE file
+	juce::AudioFormatReader * mAFReader;			///< my reader
+	juce::AudioFormatWriter * mAFWriter;			///< and my writer
+	juce::File * mIOFile;							///< my JUCE file
 	juce::FileOutputStream * mOutStream;
 
 protected:
-	void initFromSndfile();						    	///< read SF header
+	void initFromSndfile();						    ///< read SF header
 //	void convertFormat(unsigned num, unsigned start);
 	
 };

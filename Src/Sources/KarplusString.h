@@ -1,18 +1,14 @@
 //
-//  KarplusString.h -- the simplest possible "physical model" string class
+//  KarplusString.h -- the simplest possible "physical model," a Karplus-Strong string class
 //	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 //
 
 /* TODO:
 	Jorge . . . November 2005
-	1) Add a dump() function.
-	2) implement exceptions
-	3) add DEBUG print code.
-	4) make it scalable . . .
-	5) allow for dynamic frequency . . . ? do we want that?
-	6) add a trigger function . . . (do we need an envelope?)
+	1) implement exceptions
+	2) add DEBUG print code.
+	3) allow for dynamic frequency . . . ? do we want that?
 */
-
 
 #ifndef CSL_KARPLUSSTRING_H
 #define CSL_KARPLUSSTRING_H
@@ -31,8 +27,7 @@ namespace csl {					// my namespace
 class KarplusString : public UnitGenerator, public Scalable, public Phased {
 
 public:
-	KarplusString();
-	KarplusString(float frequency);
+	KarplusString(float frequency = 220.0f);
 	void setFrequency(float frequency);
 	void trigger();					///< reset internal buffers to re-pluck the string.
 	void dump();					///< print debugging info.
@@ -54,4 +49,3 @@ protected:
 }		// end of namespace
 
 #endif
-

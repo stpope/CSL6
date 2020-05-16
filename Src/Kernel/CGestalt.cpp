@@ -249,8 +249,10 @@ void csl::vlogMsg(bool cz, LogLevel level, const char * format, va_list args) {
 #ifdef RoCoCo
 	gLogStream->write(message, len);
 #endif
-	fprintf(stderr, message);
-	fflush(stderr);
+	printf(message);
+	fflush(stdout);
+//	fprintf(stderr, message);
+//	fflush(stderr);
 	if (level == kLogFatal)
 		exit(1);
 }

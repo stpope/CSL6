@@ -93,13 +93,13 @@
 
 #define CSL_mFrameRate 44100				///< default sample rate (tested up to 96000)
 
-#ifdef IPHONE
+#ifdef IPHONE								///  for iOS hosts
 	#define CSL_mBlockSize 256				///< I/O block size (set to 64-2048 in typical usage)
 	#define CSL_mMaxBufferFrames 256		///< max block size
 	#define CSL_mSndFileFrames 2000000		///< default file cache size = 2 MB
 	#define CSL_mMaxSndFileFrames 2000000	///< max file cache size = 2 MB
-#else									///  normal hosts
-	#define CSL_mBlockSize 512				///< I/O block size (set to 64-2048 in typical usage)
+#else										///  for normal hosts
+	#define CSL_mBlockSize 1024				///< I/O block size (set to 64-2048 in typical usage)
 	#define CSL_mMaxBufferFrames 8192		///< max block size (set large for zooming scopes)
 	#define CSL_mSndFileFrames 20480000		///< default file cache size = 20 MFrames (~ 2 min)
 	#define CSL_mMaxSndFileFrames 64000000	///< max file cache size = 64 MB (set to a large value)
@@ -117,7 +117,7 @@
 // #define CSL_LOG_PREFIX "\nCSL: "			///< verbose logging tags
 
 #define CSL_mOutPort 57123					///< RFS output port
-#define CSL_mOSCPort 54321					///< OSC input port
+#define CSL_mOSCPort "54321"				///< OSC input port
 
 #define CSL_WORD_LEN 32						///< default short string length 
 #define CSL_DEF_LEN 128						///< default medium string length 

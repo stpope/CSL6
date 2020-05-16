@@ -92,8 +92,10 @@ protected:
 
 class BufferStream : public UnitGenerator, public Seekable, public Writeable {
 public:
-	BufferStream(Buffer &buffer) : UnitGenerator(), Seekable(), Writeable(), mBuffer(&buffer), 
-					mCurrentWriteFrame(0), mTempCurrentFrame(0), mTempCurrentWriteFrame(0) { };
+	BufferStream() : UnitGenerator(), Seekable(), Writeable(), 
+			mCurrentFrame(0), mTempCurrentFrame(0), mTempCurrentWriteFrame(0) { };
+	BufferStream(Buffer &buffer) : UnitGenerator(), Seekable(), Writeable(), mBuffer(&buffer),
+			mCurrentFrame(0), mTempCurrentFrame(0), mTempCurrentWriteFrame(0) { };
 	~BufferStream() { };
 	void dump() { };
 
@@ -107,10 +109,11 @@ public:
 
 	unsigned seekTo(int position, SeekPosition whence) throw(CException);
 	unsigned duration() { return mBuffer->mNumFrames; };
-
+	void trigger() { mCurrentFrame = 0; };
+	
 protected:
 	Buffer *mBuffer;
-	unsigned mCurrentWriteFrame;
+	unsigned mCurrentFrame;
 	unsigned mTempCurrentFrame; 		///< a little hack necessary to track info
 	unsigned mTempCurrentWriteFrame;	///< a little hack necessary to track info
 };

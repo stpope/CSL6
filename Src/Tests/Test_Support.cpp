@@ -38,11 +38,10 @@ int main (int argc, const char * argv[]) {
 	printf("\n");
 	logMsg("Running CSL6 tests\n");		// print a log message
 	theIO = new IO_CLASS;				// create the IO object
-
 	theIO->open();						// open & start it
 	theIO->start();
 	runTests();							// call the function with the list of unit tests
-	theIO->stop();						// stop & close PortAudio
+	theIO->stop();						// stop & close the IO
 	theIO->close();	
 	exit(0);
 }
@@ -89,74 +88,19 @@ void dumpTest(UnitGenerator & vox) {
 //				float value = atof(str)'
 //
 
-int find_option(int argc, const char ** argv, char flag, unsigned * datum) {
-	for (int i = 1; i < argc; i++ ) 	{
-		if ((argv[i]) && (argv[i][0] == '-')) {		// linear search, slow, but simple
-			if (argv[i][1] == flag) {				// if flag found
-				if ((i + 1) == argc) {				// if it's the last cmd-line option
-					datum = NULL;
-					return 0;
-				 } else {							// else of there's a possible follow-on arg
-					*datum = i+1;
-					return 1;
-				}
-			}
-		}
-	}
-	return -1;			// if not found
-}
-
-//
-// READ_CSL_OPTS macro -- Parse the standard CSL cmd-line options and set globals based on their values
-//
-
-#define READ_CSL_OPTS										\
-	unsigned val;											\
-	if (find_option(argc, argv, 'r', &val) > 0) {			\
-		CGestalt::setFrameRate(atoi(argv[val]));			\
-		printf("Setting frame rate to: %d\n",				\
-				CGestalt::frameRate()); }					\
-	if (find_option(argc, argv, 'b', &val) > 0) {			\
-		CGestalt::setBlockSize(atoi(argv[val]));			\
-		printf("Setting block size to: %d\n",				\
-				CGestalt::blockSize()); }					\
-	if (find_option(argc, argv, 'o', &val) > 0) {			\
-		CGestalt::setNumOutChannels(atoi(argv[val]));		\
-		printf("Setting numOutChannels to: %d\n",			\
-				CGestalt::numOutChannels()); }				\
-	if (find_option(argc, argv, 'i', &val) > 0) {			\
-		CGestalt::setNumInChannels(atoi(argv[val]));		\
-		printf("Setting numInChannels to: %d\n",			\
-				CGestalt::numInChannels()); }				\
-	if (find_option(argc, argv, 'l', &val) > 0) {			\
-		CGestalt::setLoggingPeriod(atoi(argv[val]));		\
-		printf("Setting loggingPeriod to: %d\n",			\
-				CGestalt::loggingPeriod()); }				\
-	if (find_option(argc, argv, 'p', &val) > 0) {			\
-		CGestalt::setOutPort(atoi(argv[val]));				\
-		printf("Setting outPort to: %d\n",					\
-				CGestalt::outPort()); }						\
-	if ((find_option(argc, argv, 'u', &val) >= 0) ||		\
-		(find_option(argc, argv, 'h', &val) >= 0)) {		\
-		usage(argv[0]);										\
-		exit(0); }											\
-	if (find_option(argc, argv, 'v', &val) > 0)				\
-		if (argv[val][0] == '-')							\
-			CGestalt::setVerbosity(2);						\
-		else												\
-			CGestalt::setVerbosity(atoi(argv[val]))
-
-// Usage function
-
-void usage(const char * name) {
-	printf("\n%s: %s\n\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\n", name,
-			"-r srate -b blksiz -o noch -i nich -v verbosity -l logperiod -p outport",
-			"-r srate	set frame rate to srate Hz",
-			"-b blksiz	set buffer block size to blksiz",
-			"-o nch		set # of output channels to nch",
-			"-i nch		set # of input channels to nch",
-			"-v verbos	set verbosity level to 0-3",
-			"-l logpd	set logging period to logpd seconds",
-			"-p pt		set the output port to pt");
-	exit(0);
-}
+//int find_option(int argc, const char ** argv, char flag, unsigned * datum) {
+//	for (int i = 1; i < argc; i++ ) 	{
+//		if ((argv[i]) && (argv[i][0] == '-')) {		// linear search, slow, but simple
+//			if (argv[i][1] == flag) {				// if flag found
+//				if ((i + 1) == argc) {				// if it's the last cmd-line option
+//					datum = NULL;
+//					return 0;
+//				 } else {							// else of there's a possible follow-on arg
+//					*datum = i+1;
+//					return 1;
+//				}
+//			}
+//		}
+//	}
+//	return -1;			// if not found
+//}
