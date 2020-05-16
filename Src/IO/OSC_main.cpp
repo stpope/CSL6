@@ -64,13 +64,17 @@
 #include "AdditiveInstrument.h"
 #include "StringInstrument.h"
 
+#ifndef CSL_WINDOWS
+	#include <SHARC.h>
+#endif
+
 using namespace csl;
 
 IO_CLASS * theIO = 0;							// Here's the global IO instance
 
 juce::AudioDeviceManager gAudioDeviceManager;	// global JUCE audio device mgr
 
-///////////////////////// MAIN with 16 voices each of plucked string, snd-file sampler and 8 FM voices
+///////////////////////// MAIN with 16 voices each of plucked string, snd-file sampler + 8 FM voices + 8 SOS x-fade voices
 
 #ifdef CSL_OSC_SERVER2
 
@@ -84,22 +88,44 @@ int main(int argc, const char * argv[]) {
 	
 	printf("Setting up string + sampler library\n");
 	Mixer mix(2);							// Create the main stereo output mixer
+	
 	for (unsigned i = 0; i < 16; i++) {		// 16 plucked strings
 		StringInstrument * in = new StringInstrument(0.2f, 400.0f, 0.75f);
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
+	
 	char *names[] = { "moon.snd", "wet.snd", "round.snd", "shine.snd"};
 	for (unsigned i = 16; i < 32; i++) {	// 16 sound files
 		SndFileInstrument0 * in = new SndFileInstrument0(CGestalt::dataFolder(), names[i % 4]);
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
+	
 	for (unsigned i = 32; i < 40; i++) {
 		FMInstrument * in = new FMInstrument();
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
+#ifndef CSL_WINDOWS						// load spectra from the SHARC library
+	SHARCLibrary::loadDefault();
+	SHARCLibrary * sharcLib = SHARCLibrary::library();
+	std::vector<SHARCSpectrum *> sharcSpectra;
+	sharcSpectra.push_back(sharcLib->spectrum("oboe", 50));
+	sharcSpectra.push_back(sharcLib->spectrum("tuba", 36));
+	sharcSpectra.push_back(sharcLib->spectrum("viola_vibrato", 40));
+	sharcSpectra.push_back(sharcLib->spectrum("bass_clarinet", 28));
+	sharcSpectra.push_back(sharcLib->spectrum("violinensemb", 46));
+	sharcSpectra.push_back(sharcLib->spectrum("Eb_clarinet", 48));
+	sharcSpectra.push_back(sharcLib->spectrum("alto_trombone", 55));
+	sharcSpectra.push_back(sharcLib->spectrum("French_horn", 32));
+	sharcSpectra.push_back(sharcLib->spectrum("oboe", 50));
+	for (unsigned i = 40; i < 48; i++) {
+		VAdditiveInstrument * in = new VAdditiveInstrument(sharcSpectra[i - 40], sharcSpectra[i - 39]);
+		lib.push_back(in);
+		mix.addInput(*in);
+	}
+#endif
 	Stereoverb rev(mix);			// stereo reverb
 	rev.setRoomSize(0.9);			// medium-length reverb
 	

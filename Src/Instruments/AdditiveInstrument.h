@@ -54,7 +54,6 @@ public:
 	ADSR mAEnv;					///< amplitude envelope
    	SumOfSines mSOS;			///< sum-of-sine oscillator
 	Panner mPanner;				///< stereo panner
-	
 protected:
 	void init();
 };
@@ -69,24 +68,26 @@ protected:
 
 class VAdditiveInstrument : public Instrument {
 public:
-	VAdditiveInstrument();			///< Constructor
-	VAdditiveInstrument(SumOfSines & sos1, SumOfSines & sos2);
-	VAdditiveInstrument(VAdditiveInstrument&);		///< copy constructor
+//	VAdditiveInstrument();		///< Constructor
+	VAdditiveInstrument(SHARCSpectrum * spect1, SHARCSpectrum * spect2);
 	~VAdditiveInstrument();
 								/// Plug functions
 	void setParameter(unsigned selector, int argc, void **argv, const char *types);
 								/// Play functions
 	void playOSC(int argc, void **argv, const char *types);	
 	
-	void playNote(float dur = 1, float ampl = 1, 
+	void playNote(float dur = 2, float ampl = 1,
 				float c_fr = 110, float pos = 0,
-				float att = 0.05, float dec = 0.05, float sus = 0.5, float rel = 0.5);
+				float att = 0.1, float dec = 0.1, float sus = 0.75, float rel = 0.2);
 	void playMIDI(float dur, int chan, int key, int vel);	
 
-	ADSR mAEnv;					///< amplitude envelope
-	AR mXEnv;					///< cross-fade envelope, AR with init delay
+	ADSR mAEnv1, mAEnv2;		///< amplitude envelope
+	LineSegment mXEnv1, mXEnv2;	///< cross-fade envelopes = line segs
    	SumOfSines mSOS1, mSOS2;	///< 2 sum-of-sine oscillators
+	Mixer mMix;
 	Panner mPanner;				///< stereo panner
+protected:
+	void init();
 };
 
 }

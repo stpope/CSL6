@@ -35,8 +35,9 @@
 namespace csl  {
 
 ///
-/// FMInstrument
+/// FMInstrument - the simple one with 2 ADSR envelopes
 ///
+	
 class FMInstrument : public Instrument {
 public:
 	FMInstrument();				///< Constructor

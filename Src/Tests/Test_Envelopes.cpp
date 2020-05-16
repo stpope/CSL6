@@ -120,9 +120,9 @@ void testAMFMEnvs() {
 /// Demonstrate an ADSR
 
 void testADSR2() {
-	float duration = 3.0;	// total dur
+	float duration = 3.0;		// total dur
 	float attack = 0.02;		// att time
-	float decay = 0.03;		// dec time
+	float decay = 0.03;			// dec time
 	float sustain = 0.1;		// sust value
 	float release = 1.5;		// release time
 	ADSR adsr(duration, attack, decay, sustain, release);		// constructor
@@ -149,7 +149,7 @@ void testADSR2() {
 void testADSR_FM() {
 	ADSR a_env(3, 0.1, 0.1, 0.5, 1);			// set up 2 standard ADSRs (3-sec duration)
 	ADSR i_env(3, 1.5, 0, 1, 0.4);
-				// percussive envelopes
+									// percussive envelopes
 //	ADSR a_env(3, 0.02, 0.1, 0.05, 2);			// set up 2 standard ADSRs (3-sec duration)
 //	ADSR i_env(3, 0.0001, 0.1, 0, 0);
 	Osc car(BASE_FREQ);							// init the 2 oscillators (fc = fm)

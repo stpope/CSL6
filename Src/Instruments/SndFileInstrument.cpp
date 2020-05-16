@@ -27,10 +27,7 @@ SndFileInstrument0::SndFileInstrument0(string folder, string path) :
 }
 
 void SndFileInstrument0::initialize(string path) {
-	mName = path;
-	mNumChannels = 2;						// I'm stereo.
-	mGraph = & mPanner;						// Store the root of the graph as the inst var _graph
-	if (path.size() > 0) {
+	if (path.size() > 0) {				// load the file
 		try {
 			mFile = new SoundFile(path);
 			mFile->openForRead(true);
@@ -40,6 +37,10 @@ void SndFileInstrument0::initialize(string path) {
 			return;
 		}
 	}
+	mPlayer.seekTo(0, kPositionEnd);		// set snd file to end
+	mName = path;
+	mNumChannels = 2;						// I'm stereo.
+	mGraph = & mPanner;						// Store the root of the graph as the inst var mGraph
 	mUGens["Panner"] = & mPanner;			// add ugens that can be monitored to the map
 	mUGens["Player"] = & mPlayer;
 	mEnvelopes.push_back(& mPlayer);		// list envelopes for retrigger

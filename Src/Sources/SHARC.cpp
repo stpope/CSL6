@@ -54,7 +54,7 @@ bool SHARCSpectrum::SHARCSpectrum::read_from_file(char * folder, char * name) {
 	pclose(inp);
 	unsigned len = strlen(f_name);
 	if ((retC == NULL) || (len < 2)) {
-		printf("\tError finding file %s\n", cmd);
+//		printf("\tError finding file %s\n", cmd);
 		return false;
 	}
 	if (f_name[len - 1] == '\n')
