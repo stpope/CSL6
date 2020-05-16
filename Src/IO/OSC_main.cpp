@@ -86,28 +86,28 @@ int main(int argc, const char * argv[]) {
 	printf("OSC server listening to port %s\n", CSL_mOSCPort);
 	initOSC(CSL_mOSCPort);			// Set up OSC address space root
 	
-	printf("Setting up string + sampler library\n");
+	printf("Setting up [string, sampler, FM, V_SOS] library\n");
 	Mixer mix(2);							// Create the main stereo output mixer
 	
-	for (unsigned i = 0; i < 16; i++) {		// 16 plucked strings
+	for (unsigned i = 0; i < 16; i++) {		//---- 16 plucked strings
 		StringInstrument * in = new StringInstrument(0.2f, 400.0f, 0.75f);
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
 	
 	char *names[] = { "moon.snd", "wet.snd", "round.snd", "shine.snd"};
-	for (unsigned i = 16; i < 32; i++) {	// 16 sound files
+	for (unsigned i = 16; i < 32; i++) {	//---- 16 sound files
 		SndFileInstrument0 * in = new SndFileInstrument0(CGestalt::dataFolder(), names[i % 4]);
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
 	
-	for (unsigned i = 32; i < 40; i++) {
+	for (unsigned i = 32; i < 40; i++) {	//---- 8 FM voices
 		FMInstrument * in = new FMInstrument();
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
-#ifndef CSL_WINDOWS						// load spectra from the SHARC library
+#ifndef CSL_WINDOWS							// load spectra from the SHARC library
 	SHARCLibrary::loadDefault();
 	SHARCLibrary * sharcLib = SHARCLibrary::library();
 	std::vector<SHARCSpectrum *> sharcSpectra;
@@ -120,7 +120,8 @@ int main(int argc, const char * argv[]) {
 	sharcSpectra.push_back(sharcLib->spectrum("alto_trombone", 55));
 	sharcSpectra.push_back(sharcLib->spectrum("French_horn", 32));
 	sharcSpectra.push_back(sharcLib->spectrum("oboe", 50));
-	for (unsigned i = 40; i < 48; i++) {
+
+	for (unsigned i = 40; i < 48; i++) {	//---- 8 Vector SOS voices
 		VAdditiveInstrument * in = new VAdditiveInstrument(sharcSpectra[i - 40], sharcSpectra[i - 39]);
 		lib.push_back(in);
 		mix.addInput(*in);

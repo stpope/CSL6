@@ -30,7 +30,6 @@
 #define INCLUDE_Basic_FM_Instrument_H
 
 #include "Instrument.h"
-#include "Mixer.h"
 
 namespace csl  {
 
@@ -65,6 +64,7 @@ public:
 /// FancyFMInstrument - FM with vibrato (with AR-envelope), attack chiff (filtered noise with AR-envelope), 
 ///		and random freq. drift and ampl. swell envelopes
 ///
+	
 class FancyFMInstrument : public FMInstrument {
 public:
 	FancyFMInstrument();			///< Constructor

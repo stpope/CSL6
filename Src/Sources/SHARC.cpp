@@ -309,7 +309,7 @@ void SHARCLibrary::dump_stats() {
 		spect_c += inst->count_spectra();
 		part_c += inst->count_partials();
 	}
-	logMsg("Loaded SHARC library = %d instruments, %d spectra, %d partials\n", inst_c, spect_c, part_c);
+	logMsg("\tLoaded SHARC library = %d instruments, %d spectra, %d partials", inst_c, spect_c, part_c);
 }
 
 // Dump an example spectrum

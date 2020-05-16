@@ -9,21 +9,18 @@
 
 using namespace csl;
 
-#define BASE_FREQ 110.0
+#define BASE_FREQ 70.0
 
 // The constructor initializes the DSP graph's UGens
 
-//	ADSR mAEnv, mIEnv;			///< amplitude & modulation index envelopes
-//   	Osc mCar, mMod;			///< 2 sine oscillators, carrier and modulator
-//	Panner mPanner;				///< stereo panner
-
-FMInstrument::FMInstrument() :	// initializers for the UGens
+FMInstrument::FMInstrument() :		// initializers for the UGens
 		Instrument(),						// inherited constructor
-		mAEnv(0.25, 0.05, 0.05, 0.5, 0.14),	// set up 2 standard ADSRs
-		mIEnv(0.25, 0.1, 0.0, 1.0, 0.1), 
+		mAEnv(4.0, 0.2, 0.05, 0.5, 0.5),	// set up 2 standard ADSRs
+		mIEnv(4.0, 1.95, 0.1, 0.9, 1.95),
 		mMod(BASE_FREQ),					// modulator osc
 		mPanner(mCar, 0.0) {				// init the panner
-	mIEnv.scaleValues(BASE_FREQ);			// scale the index envelope by the mod. freq
+	mIEnv.scaleValues(BASE_FREQ / 3);		// scale the index envelope by the mod. freq
+//	mIEnv.setScale(0.5);
 	mMod.setScale(mIEnv);
 	mMod.setOffset(BASE_FREQ);
 	mCar.setFrequency(mMod);
@@ -141,6 +138,7 @@ void FMInstrument::parseArgs(int argc, void **argv, const char *types) {
 		nargs = 14;
 	else {
 		logMsg(kLogError, "Invalid type string in OSC message, expected \"ff...ff\" got \"%s\"\n", types);
+		mAEnv.scaleValues(0.0f);
 		return;
 	}
 	mAEnv.setDuration(*fargs[0]);

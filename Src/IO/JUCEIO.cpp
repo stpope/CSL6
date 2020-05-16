@@ -30,7 +30,7 @@ JUCEIO::JUCEIO(unsigned s_rate, unsigned b_size,
         return;
 	}
     mDevice = mAudioDeviceManager.getCurrentAudioDevice();
-  	logMsg("JUCEIO rate %g; block size %d", mDevice->getCurrentSampleRate(), mDevice->getDefaultBufferSize());
+//  	logMsg("JUCEIO rate %g; block size %d", mDevice->getCurrentSampleRate(), mDevice->getDefaultBufferSize());
 }
 
 JUCEIO::~JUCEIO() {

@@ -115,7 +115,7 @@ extern "C" void initOSC(const char * thePort) {
 // Main OSC loop -- select - read - dispatch
 
 extern "C" void mainOSCLoop(void * arg) {
-	logMsg("mainOSCLoop starting");
+//	logMsg("mainOSCLoop starting");
 	lo_server_thread_start(sSrvThrd);					// start lo!
 	done = 0;
 	while (!done)
