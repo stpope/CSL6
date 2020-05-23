@@ -4,18 +4,49 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "2"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "malloc_error_break"
+            moduleName = "">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "malloc_error_break"
+                  moduleName = "libsystem_malloc.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../JUCE6/modules/juce_events/messages/juce_MessageManager.cpp"
-            timestampString = "609720005.03743"
+            filePath = "../../Src/Sources/Envelope.cpp"
+            timestampString = "611319430.126826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-            landmarkName = "MessageManager::setCurrentThreadAsMessageThread()"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
+            landmarkName = "Envelope::nextBuffer(Buffer &amp;outputBuffer, unsigned outBufNum)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +56,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Src/IO/JUCEIO.cpp"
-            timestampString = "609799795.78721"
+            filePath = "../../Src/Instruments/BasicFMInstrument.cpp"
+            timestampString = "611319430.1269031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "JUCEIO::audioDeviceIOCallback (const float** inData, int numIns, float** outData, int numOuts, int numSamples)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "FMInstrument::setParameter(unsigned selector, int argc, void **argv, const char *types)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +72,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Src/Kernel/CSL_Core.cpp"
-            timestampString = "609807473.737591"
+            filePath = "../../Src/Instruments/BasicFMInstrument.cpp"
+            timestampString = "611319430.1273299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
-            landmarkName = "Buffer::copyOnlySamplesFrom(Buffer &amp; source)"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "FMInstrument::playNote(float dur, float ampl, float c_fr, float m_fr, float ind, float pos, float att, float dec, float sus, float rel, float i_att, float i_dec, float i_sus, float i_rel)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

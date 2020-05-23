@@ -37,9 +37,9 @@ void testNoises() {
 /// Plucked string simulation
 
 void testString() {
-	KarplusString pluck(fRandM(80, 1024));	// rand freq range
-	pluck.setScale(0.6);					// quiet
-	pluck.trigger();						// srart it
+	KarplusString pluck(fRandM(80, 800));			// rand freq range
+	pluck.setScale(0.6);							// loud
+	pluck.trigger();								// srart it
 	logMsg("playing plucked string...");
 	runTest(pluck, 5);
 	logMsg("done.");
@@ -50,10 +50,10 @@ void testString() {
 /// and position increment, and a duration; the inner loop then creates notes and sleeps.
 
 void testStringChorus() {
-	unsigned numStrings = 64;				// # strings
-	Mixer mix(2);							// stereo mix
-	UGenVector strings;						// vector of strings
-	UGenVector pans;						// vector of panners
+	unsigned numStrings = 64;						// # strings
+	Mixer mix(2);									// stereo mix
+	UGenVector strings;								// vector of strings
+	UGenVector pans;								// vector of panners
 	
 	for (int i = 0; i < numStrings; i++) {			// loop to create strings/panners
 		KarplusString * plk = new KarplusString();	// create string sources
@@ -63,45 +63,45 @@ void testStringChorus() {
 		pans.push_back(pan);						// add panners to the vector
 		mix.addInput(*pan);							// add panners to the mixer
 	}
-	theIO->setRoot(mix);					// send mix to IO
+	theIO->setRoot(mix);							// send mix to IO
 	logMsg("playing 64-string chorus...");
-	unsigned cnt = 0;						// string cnt
+	unsigned cnt = 0;								// string cnt
 	
-	while(1) {								// loop for string arpeggio phrases
-		int numN = iRandM(3, 10);			// pick # notes to play
-		int pit1 = iRandM(30, 84);			// pick start pitch (in MIDI)
-		int pitX = iRandM(1, 4);			// pick pitch step
-		if (coin())							// pick step up or down
+	while(1) {										// loop for string arpeggio phrases
+		int numN = iRandM(3, 10);					// pick # notes to play
+		int pit1 = iRandM(30, 84);					// pick start pitch (in MIDI)
+		int pitX = iRandM(1, 4);					// pick pitch step
+		if (coin())									// pick step up or down
 			pitX = 0 - pitX;
-		float pos1 = fRandZ();				// pick starting pos (0 - 1)
+		float pos1 = fRandZ();						// pick starting pos (0 - 1)
 		if (pos1 == 0)
 			pos1 = 0.1;
-		pos1 = sqrtf(pos1);					// sqrt of starting pos (moves it away from 0)
-		if (coin())							// pick pos L or R
+		pos1 = sqrtf(pos1);							// sqrt of starting pos (moves it away from 0)
+		if (coin())									// pick pos L or R
 			pos1 = 0.0f - pos1;
-		float posX = (pos1 > 0) 			// calc pan step
+		float posX = (pos1 > 0) 					// calc pan step
 					? ((0.0f - ((pos1 + 1.0f) / (float)numN))) 
 					: ((1.0f - pos1) / (float)numN);
-		float dela = fRandM(0.08, 0.25);	// calc delay
+		float dela = fRandM(0.08, 0.25);			// calc delay
 		logMsg("n: %d  p: %d/%d  \tx: %5.2f/%5.2f  \td:%5.2f", numN, pit1, pitX, pos1, posX, dela);
-											// note loop
-		for (int i = 0; i < numN; i++) {	// loop to create string gliss
+													// note loop
+		for (int i = 0; i < numN; i++) {			// loop to create string gliss
 //			logMsg("\t\ts: %d  p: %d  x: %5.2f", cnt, pit1, pos1);
-											// set freq to MIDI pitch
+													// set freq to MIDI pitch
 			((KarplusString *)strings[cnt])->setFrequency(keyToFreq(pit1));
 			pit1 += pitX;
-											// set pan
+													// set pan
 			((Panner *)pans[cnt])->setPosition(pos1);
 			pos1 += posX;
-											// trigger
+													// trigger
 			((KarplusString *)strings[cnt])->trigger();
-			if (sleepSec(dela))				// sleep
-				goto done;					// exit if sleep was interrupted
-			cnt++;							// pick next string
-			if (cnt == numStrings)			// should I check ifthe string is still active?
-				cnt = 0;					// reset string counter
+			if (sleepSec(dela))						// sleep
+				goto done;							// exit if sleep was interrupted
+			cnt++;									// pick next string
+			if (cnt == numStrings)					// should I check ifthe string is still active?
+				cnt = 0;							// reset string counter
 		}
-		sleepSec(fRandM(0.02, 0.2));		// sleep a bit between sets
+		sleepSec(fRandM(0.02, 0.2));				// sleep a bit between sets
 	}
 done:
 	logMsg("done.");

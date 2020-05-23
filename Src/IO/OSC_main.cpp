@@ -128,7 +128,7 @@ int main(int argc, const char * argv[]) {
 	}
 #endif
 	Stereoverb rev(mix);			// stereo reverb
-	rev.setRoomSize(0.9);			// medium-length reverb
+	rev.setRoomSize(0.98);			// medium-length reverb
 	
 	setupOSCInstrLibrary(lib);		// add the instrument library OSC
 
@@ -138,7 +138,7 @@ int main(int argc, const char * argv[]) {
 //	setup.bufferSize = CGestalt::blockSize();
 //	setup.sampleRate = CGestalt::frameRate();
 //	gAudioDeviceManager.setAudioDeviceSetup(setup, true);
-	
+
 	theIO = new IO_CLASS(CGestalt::frameRate(),			// create the IO object
 						 CGestalt::blockSize(),
 						 -1, -1,	// use default I/O devices

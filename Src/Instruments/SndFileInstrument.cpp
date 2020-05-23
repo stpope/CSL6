@@ -105,7 +105,7 @@ void SndFileInstrument0::play() {
 	mPlayer.trigger();
 };
 
-#ifdef STILL_TO_DO
+#ifdef SndFileInstrument1 // -----------------------------------------------------------
 
 #pragma mark SndFileInstrument1
 
