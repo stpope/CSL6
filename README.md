@@ -37,6 +37,8 @@ CSL Demo App quick start cheat sheet: https://github.com/stpope/CSL6/blob/master
 A Tour of CSL (22 min): https://vimeo.com/409028476
 
 CSL Internals (4:20 min): https://vimeo.com/409027546
+
+NEW DEMO (May, 2020) CSL + Siren Integrated (32 min): https://vimeo.com/421319630
 	    
 ## About CSL
 
