@@ -40,24 +40,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Src/Sources/Envelope.cpp"
-            timestampString = "611319430.126826"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "357"
-            endingLineNumber = "357"
-            landmarkName = "Envelope::nextBuffer(Buffer &amp;outputBuffer, unsigned outBufNum)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../../Src/Instruments/BasicFMInstrument.cpp"
-            timestampString = "611319430.1269031"
+            timestampString = "616431751.366128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -73,7 +57,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Src/Instruments/BasicFMInstrument.cpp"
-            timestampString = "611319430.1273299"
+            timestampString = "616431751.366204"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "184"

@@ -156,7 +156,7 @@ void FMInstrument::parseArgs(int argc, void **argv, const char *types) {
 		mPanner.setPosition(*fargs[5]);
 	}
 	if (nargs == 14) {
-		printf("\t\ta %g d %g s %g r %g\t\ta %g d %g s %g r %g\n", 
+		printf("\t\ta %.3f d %.3f s %.3f r %.3f\ta %.3f d %.3f s %.3f r %.3f\n",
 				*fargs[6], *fargs[7], *fargs[8], *fargs[9], *fargs[10], *fargs[11], *fargs[12], *fargs[13]);
 		mAEnv.setAttack(*fargs[6]);
 		mAEnv.setDecay(*fargs[7]);

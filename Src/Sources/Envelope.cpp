@@ -261,14 +261,14 @@ void Envelope::scaleValues(float s) {
 /// Pretty-printer
 
 void Envelope::dump() {
-	logMsg("Envelope Duration = %g", mDuration);
+	logMsg("Envelope: dur = %5.3f  curr = %5.3f", mDuration, mCurrentMark);
 	fprintf(stderr, "\tat 0 seconds  \t\t");
 	mSegments[0]->dump();
 	for (unsigned i = 1; i < mSize; i++) {
-		fprintf(stderr, "\tat %g seconds  \t\t", mValues[i-1]);
+		fprintf(stderr, "\tat %5.3f seconds  \t\t", mValues[i-1]);
 		mSegments[i]->dump();
 	}
-	Scalable::dump();
+//	Scalable::dump();
 }
 
 /// Reset time to 0.0 to restart envelope
@@ -353,8 +353,9 @@ void Envelope::nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw (CExce
 			}
 		}		
 	}
-	logMsg(kLogError, "Envelope nextBuffer: it shouldn't get here %6.0f", rate);
-	this->dump();
+					// OK to play past end
+//	logMsg(kLogError, "Envelope nextBuffer: it shouldn't get here %.0f", rate);
+//	this->dump();
 //	return;			// shouldn't ever get here (THROW AN EXCEPTION IF CONTROL GETS HERE!)
 }
 
