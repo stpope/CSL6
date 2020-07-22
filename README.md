@@ -1,7 +1,7 @@
 
 # CSL 6.0 README
 
-![alt text](https://github.com/stpope/CSL6/blob/master/Doc/CSL6_Logo_tiny.jpg "CSL Logo")
+![CSL Logo](https://github.com/stpope/CSL6/blob/master/Doc/CSL6_Logo_tiny.jpg "CSL Logo")
 
 This directory contains the source code and documentation for the CREATE Signal 
 Library (CSL, pronounced "sizzle," previously called the CREATE Oscillator or CO). 
@@ -51,7 +51,7 @@ with JUCE, a comprehensive C++ class library for multimedia and GUI programming,
 but it can also be used for stand-alone "head-less" apps without JUCE, or with 
 other GUI frameworks such as Qt.
 
-![alt text](https://github.com/stpope/CSL6/blob/master/Doc/6.0DemoScreen2.jpg "CSL Demo screen shot")
+![CSL Demo screen shot](https://github.com/stpope/CSL6/blob/master/Doc/6.0DemoScreen2.jpg "CSL Demo screen shot")
 
 The target users for CSL are C++ programmers (familiar with the 
 development tools of their platforms, e.g., Xcode on the Mac, Eclipse on Linux, or 
@@ -69,7 +69,7 @@ The signal processing graphs (patches) can be connected to several kinds of outp
 for real-time processing or writing to files, and can be controlled via scripts or MIDI or OSC.
 Most typical sound synthesis and processing objects are provided, as shown in the CSL class diagram below.
 
-![alt text](http://fastlabinc.com/CSL/classes.jpg)
+![CSL Classes](http://fastlabinc.com/CSL/classes.jpg)
 
 CSL grew out of code examples developed to teach a sequence of six graduate courses in digital audio programming, 
 the MAT 240 series taught at UCSB (and elsewhere) for over 10 years. 
@@ -109,9 +109,9 @@ server that responds to MIDI and OpenSoundControl commands. The red texts highli
 CoreAudio system callback function through the JUCE audio framework into the nextBuffer() methods of a complex CSL instrument 
 library. In this case (reading from the bottom up), an FM oscillator is playing through a mixer, panner and stereo reverb, 
 with the reverb being the "root" of the graph that's called by the IO process. The intermediate calls illustrate the CSL
-utility clases like Effect, Controllable and Joiner.
+utility clases like Effect, Controllable and Joiner. CLick on the file to zoom-in.
 
-![alt text](http://fastlabinc.com/CSL/csl-trace.jpg)
+![CSL stack trace](http://fastlabinc.com/CSL/csl-stack.jpg)
 
 ## CSL Coding Start-up
 
