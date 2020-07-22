@@ -104,6 +104,15 @@ to: (1) read in-coming audio and process it (as in an audio plug-in); (2) read a
 MIDI and/or OSC messages to create sounds (as in a soft-synth); and (3) respond to mesages from a 
 GUI (as in apps and games).
 
+The figure below shows the call stack for a more complex example in action. In this case, we're running the CSL software synthesis 
+server that responds to MIDI and OpenSoundControl commands. The red texts highlight the process of getting from the top-level 
+CoreAudio system callback function through the JUCE audio framework into the nextBuffer() methods of a complex CSL instrument 
+library. In this case (reading from the bottom up), an FM oscillator is playing through a mixer, panner and stereo reverb, 
+with the reverb being the "root" of the graph that's called by the IO process. The intermediate calls illustrate the CSL
+utility clases like Effect, Controllable and Joiner.
+
+![alt text](http://fastlabinc.com/CSL/csl-trace.jpg)
+
 ## CSL Coding Start-up
 
 The best way to get started is to (1) read some of the PDF papers in the Doc folder, and 
