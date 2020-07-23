@@ -109,7 +109,7 @@ server that responds to MIDI and OpenSoundControl commands. The red texts highli
 CoreAudio system callback function through the JUCE audio framework into the nextBuffer() methods of a complex CSL instrument 
 library. In this case (reading from the bottom up), an FM oscillator is playing through a mixer, panner and stereo reverb, 
 with the reverb being the "root" of the graph that's called by the IO process. The intermediate calls illustrate the CSL
-utility clases like Effect, Controllable and Joiner. CLick on the file to zoom-in.
+utility clases like Effect, Controllable and Joiner. Click on the file to zoom-in.
 
 ![CSL stack trace](http://fastlabinc.com/CSL/csl-stack.jpg)
 
