@@ -92,7 +92,7 @@ void SndFileInstrument0::playOSC(int argc, void **argv, const char *types) {
 			}
 			mPanner.setScale(*fargs[0]);
 			mPanner.setPosition(*fargs[1]);
-//			printf("\tSndFileInstr: PN: %5.3f %5.3f\n", *fargs[0], *fargs[1]);
+			printf("\tSnd: a %5.3f  p %5.3f\n", *fargs[0], *fargs[1]);
 			break;
 		default:
 			logMsg(kLogError, "Invalid type string in OSC message: \"%s\"", types);

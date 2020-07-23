@@ -122,6 +122,9 @@ void FMInstrument::setParameter(unsigned selector, int argc, void **argv, const 
 // 	dur, ampl, fr, pos
 // 	dur, ampl, c_fr, m_fr, ind, pos
 // 	dur, ampl, c_fr, m_fr, ind, pos, att, dec, sus, rel, i_att, i_dec, i_sus, i_rel
+// Example
+// 				 dur,  ampl, c_fr,   m_fr,   ind,    pos,  att,   dec,   sus,  rel,  i_att, i_dec, i_sus, i_rel
+// OSC: /i37/pn  0.323 0.499 204.123 257.099 193.352 0.120 0.0431 0.0426 0.560 0.119 0.070  0.005  1.0    0.1
 
 void FMInstrument::parseArgs(int argc, void **argv, const char *types) {
 	float ** fargs = (float **) argv;
@@ -134,9 +137,12 @@ void FMInstrument::parseArgs(int argc, void **argv, const char *types) {
 		nargs = 6;
 		printf("\tFM: d %g   a %g c %g m %g i %g   p %g\n", 
 			*fargs[0], *fargs[1], *fargs[2], *fargs[3], *fargs[4], *fargs[5]);
-	} else if (strcmp(types, "ffffffffffffff") == 0)
+	} else if (strcmp(types, "ffffffffffffff") == 0) {
 		nargs = 14;
-	else {
+		printf("\tFM: d %.3f p %.3f i %.3f - a %.3f d %.3f s %.3f r %.3f - a %.3f d %.3f s %.3f r %.3f\n",
+			   *fargs[0], *fargs[2], *fargs[8], *fargs[6], *fargs[7], *fargs[8], *fargs[9],
+			   *fargs[10], *fargs[11], *fargs[12], *fargs[13]);
+	} else {
 		logMsg(kLogError, "Invalid type string in OSC message, expected \"ff...ff\" got \"%s\"\n", types);
 		mAEnv.scaleValues(0.0f);
 		return;
@@ -156,8 +162,9 @@ void FMInstrument::parseArgs(int argc, void **argv, const char *types) {
 		mPanner.setPosition(*fargs[5]);
 	}
 	if (nargs == 14) {
-		printf("\t\ta %.3f d %.3f s %.3f r %.3f\ta %.3f d %.3f s %.3f r %.3f\n",
-				*fargs[6], *fargs[7], *fargs[8], *fargs[9], *fargs[10], *fargs[11], *fargs[12], *fargs[13]);
+		mMod.setFrequency(*fargs[3]);
+		mIEnv.setScale(*fargs[4] * *fargs[2]);
+		mPanner.setPosition(*fargs[5]);
 		mAEnv.setAttack(*fargs[6]);
 		mAEnv.setDecay(*fargs[7]);
 		mAEnv.setSustain(*fargs[8]);

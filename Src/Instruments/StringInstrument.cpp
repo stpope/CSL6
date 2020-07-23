@@ -97,7 +97,7 @@ void StringInstrument::playOSC(int argc, void **argv, const char *types) {
 		logMsg(kLogError, "Invalid type string in OSC message, expected \"fff\" got \"%s\"\n", types);
 		return;
 	}
-//	printf("\tString: a %5.3f   f %5.1f   p %5.3f\n", *fargs[0], *fargs[1], *fargs[2]);
+	printf("\tString: a %5.3f   f %5.1f   p %5.3f\n", *fargs[0], *fargs[1], *fargs[2]);
 //	mAEnv.setDuration(*fargs[0]);           // dur ignored
 	mString.setScale(*fargs[0]);
 	mString.setFrequency(*fargs[1]);
