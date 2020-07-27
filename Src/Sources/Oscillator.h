@@ -33,6 +33,8 @@ public:								    /// Constructor: parameters are optional.
 	Oscillator(float frequency = 220.0, float ampl = 1.0, float offset = 0.0, float phase = 0.0);
 	Oscillator(UnitGenerator & frequency, float ampl = 1.0, float offset = 0.0, float phase = 0.0);
 	Oscillator(UnitGenerator & frequency, UnitGenerator & ampl, float offset = 0.0, float phase = 0.0);
+	Oscillator(UnitGenerator & frequency, UnitGenerator & ampl, UnitGenerator & offset, float phase = 0.0);
+	Oscillator(float frequency, UnitGenerator & ampl, UnitGenerator & offset, float phase);
 	virtual ~Oscillator();				///< Destructor
 	
 	void dump();						///< print the receiver for debugging

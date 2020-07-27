@@ -809,10 +809,7 @@ Port::Port(float value) :
 				mValuePtr(& mValue),
 				mPtrIncrement(0) { }
 
-Port::~Port() {
-
-
-}
+Port::~Port() { }
 
 // check the port's buffer and allocate it if needed
 

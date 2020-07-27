@@ -77,6 +77,7 @@ public:
 						/// Operations
 	void setPosition(UnitGenerator &pan);						///< set the position to a UGen
 	void setPosition(float pan);								///< set the position to a float
+	float position();											///< get the position to a float
 
 	virtual unsigned numChannels() const { return 2; };			///< I'm stereo!
 

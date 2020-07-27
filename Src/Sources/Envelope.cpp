@@ -32,6 +32,8 @@ LineSegment::LineSegment(float d, float s, float e, LineMode mode) :
 //			logMsg("End value can't be '0' for exponential segments. Corrected to be 0.00001.");
 		}	
 	}
+	mCurrentValue = mEnd;
+	mCurrentFrame = mEnd;
 }
 
 /// Reset method
@@ -82,16 +84,16 @@ void LineSegment::nextBuffer(Buffer &outputBuffer, unsigned outBufNum, Port * sc
 	switch(mMode) {
 		case kLine:
 			increment = (mEnd - mStart) / (mDuration * rate);
-			for (i = 0; i < numFramesToCalc; i++) {			///< Generate the interpolated frames
-				CHECK_UPDATE_SCALABLE_CONTROLS;		// update the dynamic scale/offset
+			for (i = 0; i < numFramesToCalc; i++) {			// Generate the interpolated frames
+				CHECK_UPDATE_SCALABLE_CONTROLS;				// update the dynamic scale/offset
 				*outPtr++ = (currentValue * scaleValue) + offsetValue;
 				currentValue += increment;
 			}
 			break;
 		case kExpon:
 			increment = pow(mEnd / mStart, 1/(mDuration * rate));
-			for (i = 0; i < numFramesToCalc; i++) {			///< Generate the interpolated frames
-				CHECK_UPDATE_SCALABLE_CONTROLS;		// update the dynamic scale/offset
+			for (i = 0; i < numFramesToCalc; i++) {			// Generate the interpolated frames
+				CHECK_UPDATE_SCALABLE_CONTROLS;				// update the dynamic scale/offset
 				*outPtr++ = (currentValue * scaleValue) + offsetValue;
 				currentValue *= increment;
 			}

@@ -9,7 +9,7 @@
 
 using namespace csl;
 
-#define BASE_FREQ 70.0
+#define BASE_FREQ 70.0f
 
 // The constructor initializes the DSP graph's UGens
 
@@ -218,6 +218,8 @@ void FMInstrument::playMIDI(float dur, int chan, int key, int vel) {
 
 ///////////////////////////////////////////////////
 
+#pragma mark FancyFMInstrument
+
 // FancyFMInstrument
 
 //	Envelope mVibEnv;				///< vibrato envelope
@@ -309,4 +311,160 @@ void FancyFMInstrument::playMIDI(float dur, int chan, int key, int vel) {
 	mChiffEnv.setAttack(0.05 * fRandZ());
 	mChiffEnv.setDecay(0.05 * fRandZ());
 	this->play();
+}
+
+///////////////////////////////////////////////////
+
+#pragma mark FMBell
+
+///< Constructor
+
+FMBell::FMBell() :							// initializers for the UGens
+		Instrument(),						// inherited constructor
+		mAEnv(4.0f, 0.5f, 0.00001f, kExpon),// set up 3 exp-segs
+		mIEnv(4.0f, 100.0f, 1.0f, kExpon),
+		mGliss(4.0f, BASE_FREQ, BASE_FREQ*0.9f, kExpon),
+		mPanner(mCar, 0.0) {				// init the panner
+	mNumChannels = 2;
+	carFr = BASE_FREQ;
+	glRatio = 0.9;
+	modRatio = BASE_FREQ;
+
+	mMod.setFrequency(BASE_FREQ);			// plug together envs and oscs
+	mMod.setScale(mIEnv);
+	mMod.setOffset(mGliss);
+	mCar.setFrequency(mMod);
+	mCar.setScale(mAEnv);
+
+	mName = "FM_Bell";
+	mGraph = & mPanner;						// store the root of the graph as the inst var _graph
+	mUGens["Carrier"] = & mCar;				// add ugens that can be monitored to the map
+	mUGens["Modulator"] = & mMod;
+	mUGens["A env"] = & mAEnv;
+	mUGens["Panner"] = & mPanner;
+	mUGens["Gliss"] = & mPanner;
+
+	mEnvelopes.push_back(& mAEnv);			// list envelopes for retrigger
+	mEnvelopes.push_back(& mIEnv);
+	mEnvelopes.push_back(& mGliss);
+											// set up accessor vector
+	mAccessors.push_back(new Accessor("du", set_duration_f, CSL_FLOAT_TYPE));
+	mAccessors.push_back(new Accessor("am", set_amplitude_f, CSL_FLOAT_TYPE));
+	mAccessors.push_back(new Accessor("cf", set_c_freq_f, CSL_FLOAT_TYPE));
+	mAccessors.push_back(new Accessor("fr", set_cm_freq_r, CSL_FLOAT_TYPE));
+	mAccessors.push_back(new Accessor("gl", set_gliss_r, CSL_FLOAT_TYPE));
+	mAccessors.push_back(new Accessor("po", set_position_f, CSL_FLOAT_TYPE));
+}
+
+FMBell::FMBell(FMBell& in)  :
+		Instrument(in),
+		mAEnv(in.mAEnv),
+		mIEnv(in.mIEnv),
+		mGliss(in.mGliss),
+		mCar(in.mCar),
+		mMod(in.mMod),
+		mPanner(in.mPanner)
+	{ }
+
+FMBell::~FMBell() { }
+	
+void FMBell::setParameter(unsigned selector, int argc, void **argv, const char *types) {
+	if (argc == 1) {
+		float d = * (float *) argv[0];
+		if (types[0] == 'i')
+			d = (float) (* (int *) argv[0]);
+		switch (selector) {					// switch on which parameter is being set
+			case set_duration_f:
+				mAEnv.setDuration(d);
+				mIEnv.setDuration(d);
+				mGliss.setDuration(d);
+				break;
+			case set_amplitude_f:
+				mAEnv.setStart(d); break;
+			case set_index_f:
+				mInd = d * carFr;
+				mIEnv.setStart(mInd); break;
+			case set_c_freq_f:
+				carFr = d;
+				mGliss.setStart(carFr);
+				mGliss.setEnd(glRatio * carFr);
+				mMod.setFrequency(modRatio * carFr); break;
+				break;
+			case set_cm_freq_r:
+				modRatio = d;
+				mMod.setFrequency(modRatio * carFr); break;
+			case set_gliss_r:
+				glRatio = d;
+				mGliss.setStart(carFr);
+				mGliss.setEnd(glRatio * carFr); break;
+				break;
+			case set_position_f:
+				mPanner.setPosition(d);
+				break;
+			default:
+				logMsg(kLogError, "Unknown selector in FMInstrument set_parameter selector: %d\n", selector);
+		}
+	} else {			// multiple args
+		logMsg(kLogError, "Unknown multi-arg (%d) setter in FMInstrument: %s\n", argc, types);
+	}
+}
+
+// Example
+// 				 dur, ampl, fr0,  gliss, rat,  ind,  pos
+// OSC: /i37/pn  4.0  0.49  204.1 1.0    1.933 2.0   0.0
+//				 0    1     2     3      4     5     6
+
+void FMBell::parseArgs(int argc, void **argv, const char *types) {
+	float ** fargs = (float **) argv;
+//	if (strcmp(types, "fffffff") == 0)
+//		printf("\tFM_Bell: d %.3f a %.3f f %.3f g %.3f r %.3f i %.3f p %.3f\n",
+//			   *fargs[0], *fargs[1], *fargs[2], *fargs[3], *fargs[4], *fargs[5], *fargs[6]);
+	if (strcmp(types, "fffffff") != 0) {
+		logMsg(kLogError, "Invalid type string in OSC message, expected \"fffffff\" got \"%s\"\n", types);
+		mAEnv.setStart(0.0f);
+		return;
+	}
+	mAEnv.setDuration(*fargs[0]);
+	mIEnv.setDuration(*fargs[0]);
+	mGliss.setDuration(*fargs[0]);
+	mAEnv.setStart(*fargs[1]);
+	mGliss.setStart(*fargs[2]);
+	mGliss.setEnd(*fargs[2] * *fargs[3]);
+	mIEnv.setStart(*fargs[5] * *fargs[2]);
+	mMod.setFrequency(*fargs[2] * *fargs[3]);
+	mPanner.setPosition(*fargs[6]);
+}
+
+void FMBell::playOSC(int argc, void **argv, const char *types) {
+	this->parseArgs(argc, argv, types);
+	this->play();
+}
+	
+void FMBell::playNote(float dur, float ampl,
+					  float fr, float gliss, float rat, float ind, float pos) {
+	mAEnv.setDuration(dur);
+	mIEnv.setDuration(dur);
+	mGliss.setDuration(dur);
+	mAEnv.setStart(ampl);
+	mGliss.setStart(fr);
+	mGliss.setEnd(fr * rat);
+	mMod.setOffset(fr);
+	mMod.setFrequency(fr);
+	mIEnv.setStart(ind * fr);
+	mPanner.setPosition(pos);
+	this->play();
+}
+
+void FMBell::playMIDI(float dur, int chan, int key, int vel) {
+	mAEnv.setDuration(dur);
+	mIEnv.setDuration(dur);
+	mAEnv.setStart(sqrtf((float) vel / 128.0f));
+	mMod.setOffset(keyToFreq(key));
+	mMod.setFrequency(keyToFreq(key));
+	this->play();
+}
+
+void FMBell::dump() {
+	printf("\tFM_Bell: d %.3f a %.3f f %.3f g %.3f r %.3f i %.3f p %.3f\n",
+		   mAEnv.duration(), mAEnv.start(), mGliss.start(), glRatio, mInd, mPanner.position());
 }

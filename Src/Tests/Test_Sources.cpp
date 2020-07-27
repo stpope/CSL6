@@ -269,20 +269,77 @@ void testFancyFMInstrument() {
 	logMsg("Playing fancy fm instrument...");
 	float dur = 6.0;
 	float * dPtr = & dur;
-    float cfreq = 220.0;
-    float mfreq = 260.0;
-    float indF = 560.0;
-    float * cPtr = & cfreq;
-    float * mPtr = & mfreq;
-    float * iPtr = & indF;
+	float cfreq = 220.0;
+	float mfreq = 260.0;
+	float indF = 560.0;
+	float * cPtr = & cfreq;
+	float * mPtr = & mfreq;
+	float * iPtr = & indF;
 	vox->setParameter(set_duration_f, 1, (void **) &dPtr, "f");
-    vox->setParameter(set_index_f, 1, (void **) &iPtr, "f");
-    vox->setParameter(set_c_freq_f, 1, (void **) &cPtr, "f");
-    vox->setParameter(set_m_freq_f, 1, (void **) &mPtr, "f");
+	vox->setParameter(set_index_f, 1, (void **) &iPtr, "f");
+	vox->setParameter(set_c_freq_f, 1, (void **) &cPtr, "f");
+	vox->setParameter(set_m_freq_f, 1, (void **) &mPtr, "f");
 	vox->play();
 	runTest(*vox, dur);
 	logMsg("done.");
 	delete vox;
+}
+
+void testFMBellInstrument() {
+	unsigned numBells = 16;							// # bells
+	Mixer mix(2);									// stereo mix
+	UGenVector bells;								// vector of strings
+	UGenVector pans;								// vector of panners
+	float dur = 6.0f;
+	float ampl = 0.5f;
+	float * dPtr = & dur;
+	float * aPtr = & ampl;
+
+	for (int i = 0; i < numBells; i++) {			// loop to create bells/panners
+		FMBell * bell = new FMBell();				// create bells sources
+		bell->setParameter(set_amplitude_f, 1, (void **) &aPtr, "f");
+		bell->setParameter(set_duration_f, 1, (void **) &dPtr, "f");
+		bells.push_back(bell);						// add bell to the vector of bells
+		mix.addInput(*bell);						// add panners to the mixer
+	}
+	Stereoverb rev(mix);							// stereo reverb
+	rev.setRoomSize(0.94);							// medium-length reverb
+	theIO->setRoot(rev);							// send mix to IO
+	logMsg("playing 16-bell chorus...");
+	
+	float cfreq, frRat, indF, pos, gliss;			// params and ptrs
+	float * cPtr = & cfreq;
+	float * rPtr = & frRat;
+	float * iPtr = & indF;
+	float * pPtr = & pos;
+	float * gPtr = & gliss;
+
+	unsigned cnt = 0;								// string cnt
+	while(1) {										// loop for string arpeggio phrases
+		cfreq = fRandM(140.0f, 400.0f);
+		frRat = fRandM(0.5f, 2.0f);
+		indF = fRandM(1.0f, 12.0f);
+		pos = fRandM(0.0f, 1.0f);
+		gliss = fRandM(0.5f, 2.0f);
+
+		FMBell * vox = ((FMBell *)bells[cnt]);
+		vox->setParameter(set_index_f, 1, (void **) &iPtr, "f");
+		vox->setParameter(set_c_freq_f, 1, (void **) &cPtr, "f");
+		vox->setParameter(set_cm_freq_r, 1, (void **) &iPtr, "f");
+		vox->setParameter(set_gliss_r, 1, (void **) &gPtr, "f");
+		vox->setParameter(set_position_f, 1, (void **) &pPtr, "f");
+		vox->dump();							// print it
+		vox->play();							// trigger
+		cnt++;									// pick next bell
+		if (cnt == numBells)					// should I check if the bell is still active?
+			cnt = 0;							// reset string counter
+		sleepSec(fRandM(1.0f, 2.0f));			// sleep a bit between bells
+	}
+done:
+	logMsg("done.");
+	for (int i = 0; i < numBells; i++) {			// loop to create strings/panners
+		delete bells[i];
+	}
 }
 
 /// Test SoundFile instrument
@@ -479,6 +536,7 @@ testStruct srcTestList[] = {
 	"Sample file bank",			testSndFileBank,		"Play a large sample bank from sound files",
 	"FM instrument",			testFMInstrument,		"Play the basic FM instrument",
 	"Fancy FM instrument",		testFancyFMInstrument,	"FM note with attack chiff and vibrato",
+	"FM bell instrument",		testFMBellInstrument,	"FM bell with glissando",
 	"SumOfSines instrument",	testSOSInstrument,		"Demonstrate the SumOfSines instrument",
 	"Snd file instrument",		testSndFileInstrument,	"Test the sound file instrument",
 	"WaveShaping synthesis",	testWaveShaper,			"Play 2 wave-shaper notes with envelopes",

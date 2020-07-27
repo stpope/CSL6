@@ -45,7 +45,8 @@
 
 // There are several main() functions with different instrument libraries and OSC address spaces
 
-#define CSL_OSC_SERVER2				// 16 file, 16 KS string - only this test has been updated to the CSL6 methods
+//#define CSL_OSC_SERVER2				// 16 file, 16 KS string - only these tests have been updated to the CSL6 methods
+#define CSL_OSC_SERVER3				// 32 fm bells for booh
 
 //#define CSL_OSC_FM_SndFile		// 4 voices of FM, 4 of SndFiles, and 1 bell
 //#define CSL_OSC_SAMPLER			// 16 voices of file playback
@@ -80,7 +81,7 @@ juce::AudioDeviceManager gAudioDeviceManager;	// global JUCE audio device mgr
 
 int main(int argc, const char * argv[]) {
 	InstrumentVector lib;			// instrument library
-	printf("CSL running...\n");
+	printf("CSL lib server running...\n");
 //	CGestalt::setVerbosity(3);
 //	READ_CSL_OPTS;					// load the standard CSL options:
 	printf("OSC server listening to port %s\n", CSL_mOSCPort);
@@ -154,6 +155,43 @@ int main(int argc, const char * argv[]) {
 }
 
 #endif
+
+// -----------------------------------------------------------------------------------------------
+
+#ifdef CSL_OSC_SERVER3				// 32 FM bells
+
+int main(int argc, const char * argv[]) {
+	InstrumentVector lib;			// instrument library
+	printf("CSL booh server running...\n");
+	printf("OSC server listening to port %s\n", CSL_mOSCPort);
+	initOSC(CSL_mOSCPort);			// Set up OSC address space root
+	printf("Setting up bell library\n");
+	Mixer mix(2);					// Create the main stereo output mixer
+	
+	for (unsigned i = 0; i < 32; i++) {	//---- 32 FM bells
+		FMBell * in = new FMBell();
+		lib.push_back(in);
+		mix.addInput(*in);
+	}
+	Stereoverb rev(mix);			// stereo reverb
+	rev.setRoomSize(0.94);			// medium-length reverb
+	setupOSCInstrLibrary(lib);		// add the instrument library OSC
+	theIO = new IO_CLASS(CGestalt::frameRate(),			// create the IO object
+						 CGestalt::blockSize(),
+						 -1, -1,	// use default I/O devices
+						 0, 2);     // stereo out by default
+	theIO->setRoot(mix);			// plug the mixer in as the IO client
+//	theIO->setRoot(rev);			// plug the mixer in as the IO client
+	theIO->open();					// open the IO
+	theIO->start();					// start the IO
+	printf("Starting OSC loop\n");
+	mainOSCLoop(NULL);				// Run the main loop function (returns on quit)
+	theIO->stop();
+	theIO->close();
+}
+
+#endif
+
 
 // The rest of these need to be ported to match the example above ----------------------------------
 

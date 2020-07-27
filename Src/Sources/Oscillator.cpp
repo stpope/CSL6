@@ -22,12 +22,22 @@ Oscillator::Oscillator(UnitGenerator & frequency, float ampl, float offset, floa
 			: UnitGenerator(), 
 			Phased(frequency, phase), 
 			Scalable(ampl, offset) { /* no-op */ }
-			
+
 Oscillator::Oscillator(UnitGenerator & frequency, UnitGenerator & ampl, float offset, float phase)
-			: UnitGenerator(), 
-			Phased(frequency, phase), 
-			Scalable(ampl, offset) { /* no-op */ }
-			
+		: UnitGenerator(),
+		Phased(frequency, phase),
+		Scalable(ampl, offset) { /* no-op */ }
+
+Oscillator::Oscillator(UnitGenerator & frequency, UnitGenerator & ampl, UnitGenerator & offset, float phase)
+		: UnitGenerator(),
+		Phased(frequency, phase),
+		Scalable(ampl, offset) { /* no-op */ }
+
+Oscillator::Oscillator(float frequency, UnitGenerator & ampl, UnitGenerator & offset, float phase)
+		: UnitGenerator(),
+		Phased(frequency, phase),
+		Scalable(ampl, offset) { /* no-op */ }
+
 Oscillator::~Oscillator() { }
 
 void Oscillator::dump() {
@@ -122,7 +132,7 @@ void WavetableOscillator::fillSine() {
 		}
 	}
 	mWavetable.setSize(1, DEFAULT_WTABLE_SIZE);
-	mWavetable.setBuffer(0, sSineTable->buffer(0));		// point to the shared sine waveform
+	mWavetable.setBuffer(0, sSineTable->buffer(0));			// point to the shared sine waveform
 	mWavetable.mAreBuffersAllocated = true;					// fib a bit
 	mWavetable.mDidIAllocateBuffers = false;
 }
@@ -155,9 +165,9 @@ void WavetableOscillator::nextBuffer(Buffer & outputBuffer, unsigned outBufNum) 
 		for (unsigned i = 0; i < numFrames; i++) {			// sample loop
 			while (phase >= tableLength)					// wrap-around phase
 				phase -= tableLength;
-			while (phase < 0)					// wrap-around phase
+			while (phase < 0)								// wrap-around phase
 				phase += tableLength;
-			index = (unsigned int) floorf(phase);					// truncate phase to an integer
+			index = (unsigned int) floorf(phase);			// truncate phase to an integer
 			samp1 = waveform[index];						//// WAVE TABLE ACCESS ////
 			*buffer++ = (samp1 * scaleValue) + offsetValue;	// get and scale the table item (truncating look-up)
 			phase += (freqValue * rateRecip);

@@ -22,31 +22,33 @@
 #define set_position_f	103			// position as a float or a point
 #define set_position_p	104
 
-#define set_attack_f	105			// ADSR envelope
-#define set_decay_f		106
-#define set_sustain_f	107
-#define set_release_f	108
+#define set_attack_f	115			// ADSR envelope
+#define set_decay_f		116
+#define set_sustain_f	117
+#define set_release_f	118
 
-#define set_iattack_f	110			// 2nd ADSR envelope (index, mod)
-#define set_idecay_f	111
-#define set_isustain_f	112
-#define set_irelease_f	113
+#define set_iattack_f	120			// 2nd ADSR envelope (index, mod)
+#define set_idecay_f	121
+#define set_isustain_f	122
+#define set_irelease_f	123
 
-#define set_index_f		114			// Various frequencies
-#define set_c_freq_f	115
-#define set_m_freq_f	116
+#define set_index_f		134			// Various frequencies
+#define set_c_freq_f	135
+#define set_m_freq_f	136
+#define set_cm_freq_r	137			// c:m freq ratio
+#define set_gliss_r		138			// gliss freq ratio
 
-#define set_vib_depth_f	120			// Vibrato, attack-chiff
-#define set_chiff_amt_f	121
-#define set_chiff_time_f 122
+#define set_vib_depth_f	140			// Vibrato, attack-chiff
+#define set_chiff_amt_f	141
+#define set_chiff_time_f 142
 
-#define set_rate_f		125			// Sampler file, start, stop, rate
-#define set_file_f		126
-#define set_start_f		127
-#define set_stop_f		128
+#define set_rate_f		155			// Sampler file, start, stop, rate
+#define set_file_f		156
+#define set_start_f		157
+#define set_stop_f		158
 
-#define set_partial_f	130			// SumOfSines partial and partial list
-#define set_partials_f	131
+#define set_partial_f	160			// SumOfSines partial and partial list
+#define set_partials_f	161
 
 namespace csl  {
 

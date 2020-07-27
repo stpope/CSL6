@@ -277,6 +277,11 @@ Panner::Panner(UnitGenerator &input, float position, float amp) : Effect(input),
 Panner::~Panner(void) {
 }
 
+// get the position to a float
+float Panner::position() {
+	return this->getPort(CSL_POSITION)->mValue;
+}
+								   
 void Panner::setPosition(UnitGenerator &pan) {
 	this->addInput(CSL_POSITION, pan);
 }
@@ -309,12 +314,13 @@ void Panner::nextBuffer(Buffer &outputBuffer) throw (CException) {
 	float posValue = posPort->nextValue() * 0.5;				// get and scale the first position value
 	
 	for (unsigned i = 0; i < numFrames; i++) {
-		*out1++ = (*inpp) * (0.5 - posValue) * scaleValue;		// L sample
-		*out2++ = (*inpp++) * (posValue + 0.5) * scaleValue;	// R sample
+		float val = (*inpp++) * scaleValue;
+		*out1++ = val * (0.5 - posValue);						// L sample
+		*out2++ = val * (posValue + 0.5);						// R sample
 		UPDATE_SCALABLE_CONTROLS;								// update the dynamic scale/offset
 		posValue = (posPort->nextValue()) * 0.5;
 	}
-	handleFanOut(outputBuffer);				// process possible fan-out
+	handleFanOut(outputBuffer);						// process possible fan-out
 }
 
 // NtoMPanner -- Many variations on the constructor
