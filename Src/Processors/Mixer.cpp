@@ -182,7 +182,7 @@ void Mixer::nextBuffer(Buffer & outputBuffer) throw (CException) {
 							*out1++ += *opp++;			// summing samples into the output buffer
 					} else {
 						for (k = 0; k < numFrames; k++)	// k loops through sample buffers
-							*out1++ += (*opp++ * scal);	// summing samples into the output buffer
+							*out1++ += (*opp++ * scal);	// summing scaled samples into the output buffer
 					}
 				}
 			}											// special case: mix mono to stereo
@@ -197,19 +197,19 @@ void Mixer::nextBuffer(Buffer & outputBuffer) throw (CException) {
 					}
 				else
 					for (k = 0; k < numFrames; k++) {	// k loops through sample buffers
-						*out1++ += *opp * scal;				// sum mono-to-stereo
+						*out1++ += *opp * scal;			// sum mono-to-stereo
 						*out2++ += *opp++ * scal;
 					}
 			} else {									// ??? -- channel # mismatch
 				logMsg(kLogError, "Error in mix: in = %d ch, out = %d ch\n", ich, mNumChannels);
 			}
-		}					// end of isActive()
+		}												// end of isActive()
         mOpBuffer.mNumChannels = mNumChannels;
-	}						// end of input loop, process scale/offset
-#ifdef DO_MIX_AS_SCALABLE			// not defined at present
+	}													// end of input loop, process scale/offset
+#ifdef DO_MIX_AS_SCALABLE								// not defined at present
 	DECLARE_SCALABLE_CONTROLS;
 	LOAD_SCALABLE_CONTROLS;
-	sample samp;			// loop through output buffer per-channel applying scale/offset
+	sample samp;										// loop through output buffer per-channel applying scale/offset
 	for (j = 0; j < mNumChannels; j++) {
 		out1 = outputBuffer.buffer(j];
 		for (k = 0; k < numFrames; k++)	 {
@@ -225,7 +225,6 @@ void Mixer::nextBuffer(Buffer & outputBuffer) throw (CException) {
 	}
 #endif
 	mOpBuffer.mAreBuffersZero = false;
-
 }
 
 // print info about this instance

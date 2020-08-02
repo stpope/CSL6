@@ -22,6 +22,7 @@
 #include "AdditiveInstrument.h"
 
 using namespace csl;
+extern bool gVerbose;
 
 // The constructor initializes the DSP graph's UGens
 
@@ -348,7 +349,8 @@ void VAdditiveInstrument::playOSC(int argc, void **argv, const char *types) {
 		logMsg(kLogError, "Invalid type string in OSC message, expected \"ff...ff\" got \"%s\"\n", types);
 		return;
 	}
-	printf("\tV_Add: d %5.2f   a %5.2f   f %7.1f   p %5.2f\n", *fargs[0], *fargs[1], *fargs[2], *fargs[3]);
+	if (gVerbose)
+		printf("\tV_Add: d %5.2f   a %5.2f   f %7.1f   p %5.2f\n", *fargs[0], *fargs[1], *fargs[2], *fargs[3]);
 	mAEnv1.setDuration(*fargs[0]);
 	mAEnv2.setDuration(*fargs[0]);
 	mXEnv1.setDuration(*fargs[0]);

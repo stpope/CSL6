@@ -10,6 +10,7 @@
 using namespace csl;
 
 #define BASE_FREQ 70.0f
+extern bool gVerbose;
 
 // The constructor initializes the DSP graph's UGens
 
@@ -416,9 +417,10 @@ void FMBell::setParameter(unsigned selector, int argc, void **argv, const char *
 
 void FMBell::parseArgs(int argc, void **argv, const char *types) {
 	float ** fargs = (float **) argv;
-//	if (strcmp(types, "fffffff") == 0)
-//		printf("\tFM_Bell: d %.3f a %.3f f %.3f g %.3f r %.3f i %.3f p %.3f\n",
-//			   *fargs[0], *fargs[1], *fargs[2], *fargs[3], *fargs[4], *fargs[5], *fargs[6]);
+	if (strcmp(types, "fffffff") == 0)
+		if (gVerbose)
+			printf("\tFM_Bell: d %.3f a %.3f f %.3f g %.3f r %.3f i %.3f p %.3f\n",
+			   *fargs[0], *fargs[1], *fargs[2], *fargs[3], *fargs[4], *fargs[5], *fargs[6]);
 	if (strcmp(types, "fffffff") != 0) {
 		logMsg(kLogError, "Invalid type string in OSC message, expected \"fffffff\" got \"%s\"\n", types);
 		mAEnv.setStart(0.0f);

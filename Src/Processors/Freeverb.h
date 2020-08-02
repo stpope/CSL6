@@ -26,35 +26,39 @@ public:
 	Freeverb(UnitGenerator &input);
 	~Freeverb();
 
-	float roomSize();
 	void setRoomSize(float size);	///< Setting the room size makes longer tails. The value has a range from 0 to 1.
-	float dampening();	
+	float roomSize();
+
+	float dampening();
 	void setDampening(float damp);	///< Specified in percentage (from 0 to 100%).
-	float wetLevel();
-	void setWetLevel(float level);	///< Amount of wet (reverberation) in the mixed output.
-	float dryLevel();
-	void setDryLevel(float level);	///< Amount of the original "dry" signal in the output.
-	float width();
-	void setWidth(float width);		///< Currently not used, as this reverb became mono in/out.
 	
+	void setWetLevel(float level);	///< Amount of wet (reverberation) in the mixed output.
+	float wetLevel();
+
+	void setDryLevel(float level);	///< Amount of the original "dry" signal in the output.
+	float dryLevel();
+
+	void setWidth(float width);		///< Currently not used, as this reverb became mono in/out.
+	float width();
+
+									/// nextBuffer() runs the reverb DSP network
 	void nextBuffer(Buffer &outputBuffer, unsigned outBufNum) throw (CException);
 
-protected:			// accessable parameters
+protected:			// parameters accessable via getter/setter methods above
 	float mRoomSize;
 	float mDampening;	
 	float mWetLevel;
 	float mDryLevel;
 	float mWidth;
-					// internal parameters	
+					// internal parameters
 	float mGain;
+	std::vector <Comb *> mCombFilters;			///< vector of combs
+	std::vector <FAllpass *> mAllpassFilters;	///< vector of all-pass filters
 
-	std::vector <Comb *> mCombFilters;
-	std::vector <FAllpass *> mAllpassFilters;
-
-	SampleBufferVector mCombBuffers;
+	SampleBufferVector mCombBuffers;			///< summing buffers
 	SampleBufferVector mAllpassBuffers;	
 
-	void constructReverbGraph();
+	void constructReverbGraph();				//< utility methods
 	void updateParameters();
 };
 
@@ -107,7 +111,7 @@ private:
 	int		mBufIdx;
 };
 
-// Big to inline - but crucial for speed
+// Big methods to inline - but crucial for speed
 
 inline float Comb::process(float input) {
 	float output = mBufferPtr[mBufIdx];

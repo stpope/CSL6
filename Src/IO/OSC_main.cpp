@@ -45,8 +45,9 @@
 
 // There are several main() functions with different instrument libraries and OSC address spaces
 
-//#define CSL_OSC_SERVER2				// 16 file, 16 KS string - only these tests have been updated to the CSL6 methods
-#define CSL_OSC_SERVER3				// 32 fm bells for booh
+// only these tests have been updated to the CSL6 methods
+#define CSL_OSC_SERVER2				// 64 instruments: KS strings, snmd-files, vector SOS & 2 FM variations
+//#define CSL_OSC_SERVER3			// 32 fm bells for booh
 
 //#define CSL_OSC_FM_SndFile		// 4 voices of FM, 4 of SndFiles, and 1 bell
 //#define CSL_OSC_SAMPLER			// 16 voices of file playback
@@ -72,14 +73,21 @@
 using namespace csl;
 
 IO_CLASS * theIO = 0;							// Here's the global IO instance
-
 juce::AudioDeviceManager gAudioDeviceManager;	// global JUCE audio device mgr
+bool gVerbose = false;
 
-///////////////////////// MAIN with 16 voices each of plucked string, snd-file sampler + 8 FM voices + 8 SOS x-fade voices
+///////////////////////// MAIN with 16 voices of plucked string, 8 of snd-file sampler + 16 FM voices, 16 FM bells + 8 SOS x-fade voices
 
 #ifdef CSL_OSC_SERVER2
 
 int main(int argc, const char * argv[]) {
+	for (int i = 1; i < argc; i++ ) 				// check the command line - so far only -v is handled
+		if (argv[i] && (argv[i][0] == '-') && (strlen(argv[i]) > 1))
+			if (argv[i][1] == 'v')					// verbose flag
+				gVerbose = true;
+			else
+				printf("Unknown cmd-line option: \"%s\" ignored\n", argv[i]);
+
 	InstrumentVector lib;			// instrument library
 	printf("CSL lib server running...\n");
 //	CGestalt::setVerbosity(3);
@@ -87,7 +95,7 @@ int main(int argc, const char * argv[]) {
 	printf("OSC server listening to port %s\n", CSL_mOSCPort);
 	initOSC(CSL_mOSCPort);			// Set up OSC address space root
 	
-	printf("Setting up [string, sampler, FM, V_SOS] library\n");
+	printf("Setting up  library with 12 strings, 8 samplers, 16 FMs, 16 Bells, 8 V_SOS\n");
 	Mixer mix(2);							// Create the main stereo output mixer
 	
 	for (unsigned i = 0; i < 16; i++) {		//---- 16 plucked strings
@@ -95,16 +103,19 @@ int main(int argc, const char * argv[]) {
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
-	
 	char *names[] = { "moon.snd", "wet.snd", "round.snd", "shine.snd"};
-	for (unsigned i = 16; i < 32; i++) {	//---- 16 sound files
+	for (unsigned i = 16; i < 24; i++) {	//---- 8 sound files
 		SndFileInstrument0 * in = new SndFileInstrument0(CGestalt::dataFolder(), names[i % 4]);
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
-	
-	for (unsigned i = 32; i < 40; i++) {	//---- 8 FM voices
+	for (unsigned i = 24; i < 40; i++) {	//---- 16 FM voices
 		FMInstrument * in = new FMInstrument();
+		lib.push_back(in);
+		mix.addInput(*in);
+	}
+	for (unsigned i = 40; i < 56; i++) {	//---- 16 FM bells
+		FMBell * in = new FMBell();
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
@@ -122,8 +133,8 @@ int main(int argc, const char * argv[]) {
 	sharcSpectra.push_back(sharcLib->spectrum("French_horn", 32));
 	sharcSpectra.push_back(sharcLib->spectrum("oboe", 50));
 
-	for (unsigned i = 40; i < 48; i++) {	//---- 8 Vector SOS voices
-		VAdditiveInstrument * in = new VAdditiveInstrument(sharcSpectra[i - 40], sharcSpectra[i - 39]);
+	for (unsigned i = 56; i < 64; i++) {	//---- 8 Vector SOS voices
+		VAdditiveInstrument * in = new VAdditiveInstrument(sharcSpectra[i - 56], sharcSpectra[i - 55]);
 		lib.push_back(in);
 		mix.addInput(*in);
 	}
@@ -174,9 +185,9 @@ int main(int argc, const char * argv[]) {
 		mix.addInput(*in);
 	}
 	Stereoverb rev(mix);			// stereo reverb
-	rev.setRoomSize(0.94);			// medium-length reverb
+	rev.setRoomSize(0.96);			// medium-length reverb
 	setupOSCInstrLibrary(lib);		// add the instrument library OSC
-	theIO = new IO_CLASS(CGestalt::frameRate(),			// create the IO object
+	theIO = new IO_CLASS(CGestalt::frameRate(),	// create the IO object
 						 CGestalt::blockSize(),
 						 -1, -1,	// use default I/O devices
 						 0, 2);     // stereo out by default
