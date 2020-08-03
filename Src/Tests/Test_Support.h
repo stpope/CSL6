@@ -8,7 +8,7 @@
 // Instruments
 
 #include <AdditiveInstrument.h>
-#include <BasicFMInstrument.h>
+#include <FMInstrument.h>
 #include <StringInstrument.h>
 #include <SndFileInstrument.h>
 

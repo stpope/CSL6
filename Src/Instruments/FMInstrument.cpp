@@ -1,17 +1,21 @@
 //
-// BasicFMInstrument.cpp -- Simple FM example instrument class.
+// FMInstrument.cpp -- Simple FM example instrument class.
 //	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 // 
 // Implementation of the 2-envelope FM example as an instrument class.
 // This example shows how to create an instrument class from a DSP graph and set up its accessors for use with OSC.
 
-#include "BasicFMInstrument.h"
+#include "FMInstrument.h"
 
 using namespace csl;
 
 #define BASE_FREQ 70.0f
 extern bool gVerbose;
 
+#ifdef WET_DRY_MIX
+extern Mixer * gIMix;									// stereo instrument mixer
+extern Mixer * gOMix;									// stereo output mixer
+#endif
 // The constructor initializes the DSP graph's UGens
 
 FMInstrument::FMInstrument() :		// initializers for the UGens
@@ -314,7 +318,7 @@ void FancyFMInstrument::playMIDI(float dur, int chan, int key, int vel) {
 	this->play();
 }
 
-///////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma mark FMBell
 
@@ -355,6 +359,8 @@ FMBell::FMBell() :							// initializers for the UGens
 	mAccessors.push_back(new Accessor("fr", set_cm_freq_r, CSL_FLOAT_TYPE));
 	mAccessors.push_back(new Accessor("gl", set_gliss_r, CSL_FLOAT_TYPE));
 	mAccessors.push_back(new Accessor("po", set_position_f, CSL_FLOAT_TYPE));
+	mAccessors.push_back(new Accessor("wd", wet_dry_f, CSL_FLOAT_TYPE));
+			
 }
 
 FMBell::FMBell(FMBell& in)  :
@@ -402,6 +408,12 @@ void FMBell::setParameter(unsigned selector, int argc, void **argv, const char *
 			case set_position_f:
 				mPanner.setPosition(d);
 				break;
+#ifdef WET_DRY_MIX
+			case wet_dry_f:
+				gIMix->scaleInput(*this, 1.0f - d);
+				gOMix->scaleInput(*this, d);
+				break;
+#endif
 			default:
 				logMsg(kLogError, "Unknown selector in FMInstrument set_parameter selector: %d\n", selector);
 		}
@@ -411,21 +423,33 @@ void FMBell::setParameter(unsigned selector, int argc, void **argv, const char *
 }
 
 // Example
-// 				 dur, ampl, fr0,  gliss, rat,  ind,  pos
-// OSC: /i37/pn  4.0  0.49  204.1 1.0    1.933 2.0   0.0
-//				 0    1     2     3      4     5     6
+// 				 dur, ampl, fr0,  gliss, rat,  ind,  pos    wet/dry
+// OSC: /i37/pn  4.0  0.49  204.1 1.0    1.933 2.0   0.0    1.0
+//				 0    1     2     3      4     5     6      7
 
 void FMBell::parseArgs(int argc, void **argv, const char *types) {
 	float ** fargs = (float **) argv;
+#ifdef WET_DRY_MIX
+	if (strcmp(types, "ffffffff") == 0)
+		if (gVerbose)
+			printf("\tFM_Bell: d %.3f a %.3f f %.3f g %.3f r %.3f i %.3f p %.3f w %.3f\n",
+				   *fargs[0], *fargs[1], *fargs[2], *fargs[3], *fargs[4], *fargs[5], *fargs[6], *fargs[7]);
+	if (strcmp(types, "ffffffff") != 0) {
+		logMsg(kLogError, "Invalid type string in OSC message, expected \"ffffffff\" got \"%s\"\n", types);
+		mAEnv.setStart(0.0f);
+		return;
+	}
+#else
 	if (strcmp(types, "fffffff") == 0)
 		if (gVerbose)
 			printf("\tFM_Bell: d %.3f a %.3f f %.3f g %.3f r %.3f i %.3f p %.3f\n",
-			   *fargs[0], *fargs[1], *fargs[2], *fargs[3], *fargs[4], *fargs[5], *fargs[6]);
+				   *fargs[0], *fargs[1], *fargs[2], *fargs[3], *fargs[4], *fargs[5], *fargs[6]);
 	if (strcmp(types, "fffffff") != 0) {
 		logMsg(kLogError, "Invalid type string in OSC message, expected \"fffffff\" got \"%s\"\n", types);
 		mAEnv.setStart(0.0f);
 		return;
 	}
+#endif
 	mAEnv.setDuration(*fargs[0]);
 	mIEnv.setDuration(*fargs[0]);
 	mGliss.setDuration(*fargs[0]);
@@ -435,15 +459,20 @@ void FMBell::parseArgs(int argc, void **argv, const char *types) {
 	mIEnv.setStart(*fargs[5] * *fargs[2]);
 	mMod.setFrequency(*fargs[2] * *fargs[3]);
 	mPanner.setPosition(*fargs[6]);
+#ifdef WET_DRY_MIX
+	float wet = *fargs[7];
+	float wetS = sqrtf(wet);			// square-root it for a more equal-loudness cross-fade
+	gOMix->scaleInput(*this, 1.0f - wetS);
+	gIMix->scaleInput(*this, wetS);
+#endif
 }
 
 void FMBell::playOSC(int argc, void **argv, const char *types) {
 	this->parseArgs(argc, argv, types);
 	this->play();
 }
-	
-void FMBell::playNote(float dur, float ampl,
-					  float fr, float gliss, float rat, float ind, float pos) {
+
+void FMBell::playNote(float dur, float ampl, float fr, float gliss, float rat, float ind, float pos, float direct) {
 	mAEnv.setDuration(dur);
 	mIEnv.setDuration(dur);
 	mGliss.setDuration(dur);
@@ -454,6 +483,8 @@ void FMBell::playNote(float dur, float ampl,
 	mMod.setFrequency(fr);
 	mIEnv.setStart(ind * fr);
 	mPanner.setPosition(pos);
+	gIMix->scaleInput(*this, 1.0f - direct);
+	gOMix->scaleInput(*this, direct);
 	this->play();
 }
 
@@ -470,3 +501,5 @@ void FMBell::dump() {
 	printf("\tFM_Bell: d %.3f a %.3f f %.3f g %.3f r %.3f i %.3f p %.3f\n",
 		   mAEnv.duration(), mAEnv.start(), mGliss.start(), glRatio, mInd, mPanner.position());
 }
+
+

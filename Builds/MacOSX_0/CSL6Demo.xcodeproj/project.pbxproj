@@ -19,7 +19,6 @@
 		1EAE8B70D6C4D7C2E05D73B1 /* FFTReal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BCB95EADF05A42B12C2C5685 /* FFTReal.cpp */; };
 		1FE495D314EE34149FFAEF52 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4609E2F0F740AD8A60C98D99 /* Cocoa.framework */; };
 		26231D2311D585F72E78396A /* Test_Control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D556F333BF85F136B1272B7D /* Test_Control.cpp */; };
-		280239A5C035A16A9B0E461F /* BasicFMInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B07C4229C11BA6799FD1B0FE /* BasicFMInstrument.cpp */; };
 		295CD70F8B2251EAB16AFE10 /* fft_N.c in Sources */ = {isa = PBXBuildFile; fileRef = CC2ECAC12F755EA8378E7E4E /* fft_N.c */; };
 		2CC1F2B127EBC30CE15A4B22 /* Binaural.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A202D9C7359A25BFAAFE45A6 /* Binaural.cpp */; };
 		2D86E707C7FAF31DA261ECBD /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E56B23D986120B56D617A269 /* Oscillator.cpp */; };
@@ -68,7 +67,6 @@
 		4C39B6FD246E086B00AB7D0B /* OSC_support.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E30B8F6448BF5B7D2338778 /* OSC_support.cpp */; };
 		4C39B6FF246E087D00AB7D0B /* Instrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7DA19736136564102AD653 /* Instrument.cpp */; };
 		4C39B700246E087D00AB7D0B /* AdditiveInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAB96B3ECFFAA25EDD39B9FC /* AdditiveInstrument.cpp */; };
-		4C39B701246E087D00AB7D0B /* BasicFMInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B07C4229C11BA6799FD1B0FE /* BasicFMInstrument.cpp */; };
 		4C39B702246E087D00AB7D0B /* SndFileInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98CBC4C32E842367D35F76B3 /* SndFileInstrument.cpp */; };
 		4C39B703246E087D00AB7D0B /* StringInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C39B6D5246DF9B300AB7D0B /* StringInstrument.cpp */; };
 		4C39B704246E088D00AB7D0B /* Variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47AE14F6C872B45927934713 /* Variable.cpp */; };
@@ -106,6 +104,8 @@
 		4C39B725246E141500AB7D0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD6642C50315556A5BB77F2 /* QuartzCore.framework */; };
 		4C39B726246E141500AB7D0B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F885EB41ED6A7C57BC7B554 /* WebKit.framework */; };
 		4C39B728246EFD9F00AB7D0B /* OSC_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C39B6D7246E069800AB7D0B /* OSC_main.cpp */; };
+		4C7B26C324D7850C00C060C5 /* FMInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B26C224D7850C00C060C5 /* FMInstrument.cpp */; };
+		4C7B26C424D7850C00C060C5 /* FMInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B26C224D7850C00C060C5 /* FMInstrument.cpp */; };
 		4E060392BE09F61EF52F22B8 /* RecentFilesMenuTemplate.nib in Resources */ = {isa = PBXBuildFile; fileRef = 08D33A2F073C00F36A852394 /* RecentFilesMenuTemplate.nib */; };
 		4FC6144587A4E3301DD80AA5 /* Variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47AE14F6C872B45927934713 /* Variable.cpp */; };
 		548DFDEFB122E34227381C2F /* WaveShaper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28D562426F43595DB17FDB27 /* WaveShaper.cpp */; };
@@ -208,7 +208,6 @@
 		20C65FF2DCE70A00A48096CA /* juce_cryptography */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_cryptography; path = /Content/Code/JUCE6/modules/juce_cryptography; sourceTree = "<absolute>"; };
 		2152F8A36DACBC7F96A95F6F /* BlockResizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BlockResizer.cpp; path = ../../Src/Utilities/BlockResizer.cpp; sourceTree = SOURCE_ROOT; };
 		2593432D0029D936E59BAAA7 /* OscillatorBL.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = OscillatorBL.cpp; path = ../../Src/Sources/OscillatorBL.cpp; sourceTree = SOURCE_ROOT; };
-		268497D7A59BD29CD1C366CF /* BasicFMInstrument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BasicFMInstrument.h; path = ../../Src/Instruments/BasicFMInstrument.h; sourceTree = SOURCE_ROOT; };
 		28D562426F43595DB17FDB27 /* WaveShaper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WaveShaper.cpp; path = ../../Src/Sources/WaveShaper.cpp; sourceTree = SOURCE_ROOT; };
 		2F15A7E3A3B9841DBE673EBD /* VBAP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VBAP.h; path = ../../Src/Spatializers/VBAP/VBAP.h; sourceTree = SOURCE_ROOT; };
 		2F885EB41ED6A7C57BC7B554 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -233,6 +232,8 @@
 		4C39B6D7246E069800AB7D0B /* OSC_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = OSC_main.cpp; path = ../../Src/IO/OSC_main.cpp; sourceTree = "<group>"; };
 		4C39B6DC246E082200AB7D0B /* osc_synth_server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = osc_synth_server; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C39B729246F469F00AB7D0B /* osc_client.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = osc_client.c; path = ../../Src/Tests/osc_client.c; sourceTree = "<group>"; };
+		4C7B26C124D7850B00C060C5 /* FMInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMInstrument.h; path = ../../Src/Instruments/FMInstrument.h; sourceTree = "<group>"; };
+		4C7B26C224D7850C00C060C5 /* FMInstrument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FMInstrument.cpp; path = ../../Src/Instruments/FMInstrument.cpp; sourceTree = "<group>"; };
 		4D7877366D78D5E3E2CDC492 /* SHARC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SHARC.h; path = ../../Src/Sources/SHARC.h; sourceTree = SOURCE_ROOT; };
 		4E5D1FE291AF9E5A9E78BDEA /* Test_Support.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Test_Support.cpp; path = ../../Src/Tests/Test_Support.cpp; sourceTree = SOURCE_ROOT; };
 		517085578779FD29A6F316B2 /* CPoint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CPoint.cpp; path = ../../Src/Utilities/CPoint.cpp; sourceTree = SOURCE_ROOT; };
@@ -302,7 +303,6 @@
 		AB7DF230EFB2BFCBDB52EB63 /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
 		ABD9C8A3F228E3F7C0F7102D /* include_juce_audio_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_basics.mm; path = ../../JuceLibraryCode/include_juce_audio_basics.mm; sourceTree = SOURCE_ROOT; };
 		AEF89AD73BDD596D7F5FEB49 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		B07C4229C11BA6799FD1B0FE /* BasicFMInstrument.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BasicFMInstrument.cpp; path = ../../Src/Instruments/BasicFMInstrument.cpp; sourceTree = SOURCE_ROOT; };
 		B16EA9337D32DB9380E62323 /* BinaryOp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryOp.cpp; path = ../../Src/Processors/BinaryOp.cpp; sourceTree = SOURCE_ROOT; };
 		B306C2273080F25566A567FC /* Granulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Granulator.cpp; path = ../../Src/Sources/Granulator.cpp; sourceTree = SOURCE_ROOT; };
 		BCAD993B813764FDFE3C30FA /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = /Content/Code/JUCE6/modules/juce_events; sourceTree = "<absolute>"; };
@@ -658,8 +658,8 @@
 				CF7DA19736136564102AD653 /* Instrument.cpp */,
 				C350B5483F87EEEC99389D29 /* AdditiveInstrument.h */,
 				DAB96B3ECFFAA25EDD39B9FC /* AdditiveInstrument.cpp */,
-				268497D7A59BD29CD1C366CF /* BasicFMInstrument.h */,
-				B07C4229C11BA6799FD1B0FE /* BasicFMInstrument.cpp */,
+				4C7B26C124D7850B00C060C5 /* FMInstrument.h */,
+				4C7B26C224D7850C00C060C5 /* FMInstrument.cpp */,
 				5EB46A1D0ED7F46A7C66EA57 /* SndFileInstrument.h */,
 				98CBC4C32E842367D35F76B3 /* SndFileInstrument.cpp */,
 				4C39B6D4246DF9B300AB7D0B /* StringInstrument.h */,
@@ -849,6 +849,7 @@
 				4C39B70F246E0CF000AB7D0B /* include_juce_audio_formats.mm in Sources */,
 				4C39B6F8246E085600AB7D0B /* Freeverb.cpp in Sources */,
 				4C39B6F2246E085600AB7D0B /* Mixer.cpp in Sources */,
+				4C7B26C424D7850C00C060C5 /* FMInstrument.cpp in Sources */,
 				4C39B6ED246E084800AB7D0B /* SHARC.cpp in Sources */,
 				4C39B707246E088D00AB7D0B /* RingBuffer.cpp in Sources */,
 				4C39B6E4246E083B00AB7D0B /* CGestalt.cpp in Sources */,
@@ -867,7 +868,6 @@
 				4C39B714246E0CF000AB7D0B /* include_juce_data_structures.mm in Sources */,
 				4C39B6EF246E084800AB7D0B /* WaveShaper.cpp in Sources */,
 				4C39B6E9246E084800AB7D0B /* Spectral.cpp in Sources */,
-				4C39B701246E087D00AB7D0B /* BasicFMInstrument.cpp in Sources */,
 				4C39B717246E0CF000AB7D0B /* include_juce_gui_basics.mm in Sources */,
 				4C39B6F1246E085600AB7D0B /* InOut.cpp in Sources */,
 				4C39B711246E0CF000AB7D0B /* include_juce_audio_utils.mm in Sources */,
@@ -908,6 +908,7 @@
 				BF03B4DB2B38C61FF6A2FC10 /* KarplusString.cpp in Sources */,
 				4388E13A046F95FB8BB8F633 /* OscillatorBL.cpp in Sources */,
 				3A7F95B7AD856658E8771EB7 /* SHARC.cpp in Sources */,
+				4C7B26C324D7850C00C060C5 /* FMInstrument.cpp in Sources */,
 				D1B513A171725E7C89AF04BB /* SimpleSines.cpp in Sources */,
 				548DFDEFB122E34227381C2F /* WaveShaper.cpp in Sources */,
 				9766627A4ADFC0D132C7FCC2 /* BinaryOp.cpp in Sources */,
@@ -939,7 +940,6 @@
 				B923BFCBC4FD7FC9789E5DDF /* AmbisonicUtilities.cpp in Sources */,
 				AF62395D7ACFBF91419487F9 /* Instrument.cpp in Sources */,
 				D3A57C3A1BD9983678C8B19F /* AdditiveInstrument.cpp in Sources */,
-				280239A5C035A16A9B0E461F /* BasicFMInstrument.cpp in Sources */,
 				4C39B6D6246DF9B300AB7D0B /* StringInstrument.cpp in Sources */,
 				B364CA50801F2AE94F1E3E8B /* SndFileInstrument.cpp in Sources */,
 				4FC6144587A4E3301DD80AA5 /* Variable.cpp in Sources */,

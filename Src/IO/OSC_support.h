@@ -45,7 +45,7 @@ if ((find_option(argc, argv, 'u', &val) >= 0) ||		\
 		usage(argv[0]);									\
 		exit(0); }
 
-//if (find_option(argc, argv, 'v', &val) > 0)				\
+//if (find_option(argc, argv, 'v', &val) > 0)			\
 //	printf("Setting CSL verbosity\n");					\
 //	if (argv[val][0] == '-')							\
 //		CGestalt::setVerbosity(2);						\

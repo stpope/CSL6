@@ -1,5 +1,5 @@
 ///
-/// BasicFMInstrument.h -- Simple and fancy FM example instrument classes.
+/// FMInstrument.h -- Simple and fancy FM example instrument classes.
 ///	See the copyright notice and acknowledgment of authors in the file COPYRIGHT
 /// 
 /// This instrument implements single-operator FM with ADSR envelopes for the
@@ -97,17 +97,19 @@ public:
 	virtual void playOSC(int argc, void **argv, const char *types);
 	
 	void playNote(float dur = 1, float ampl = 1,
-				  float fr0 = 110, float fr1 = 110, float rat = 1.414, float ind = 1, float pos = 0);
+				  float fr0 = 110, float fr1 = 110, float rat = 1.414, float ind = 1,
+				  float pos = 0, float direct = 1.0);
 	void playMIDI(float dur, int chan, int key, int vel);
 	void dump();
-	
+
 									///< These are the UGens of the DSP graph (i.e., the FM instrument)
 	LineSegment mAEnv, mIEnv, mGliss;	///< amplitude, index & glissando exp-segs
 	Osc mMod, mCar;						///< 2 sine oscillators, carrier and modulator
 	Panner mPanner;						///< stereo panner
+	Mixer * mDirect;					///< direct output
 	
-private:								/// private floats for the carrier freq, gliss ratio, c:m frq ratio and mod index
-	float carFr, glRatio, modRatio, mInd;
+private:								/// private floats for the carrier freq, gliss ratio, c:m frq ratio, mod index * direct/reflected ratio
+	float carFr, glRatio, modRatio, mInd, mDirRatio;
 	
 };
 

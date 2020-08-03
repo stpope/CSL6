@@ -12,6 +12,8 @@
 #include "CSL_Includes.h"
 #include "Accessor.h"
 
+#define WET_DRY_MIX					// instruments support wet/dry reverb controls via global mixers
+
 ///
 /// Keys for setParameter selector (default parameters for all notes)
 ///
@@ -49,6 +51,8 @@
 
 #define set_partial_f	160			// SumOfSines partial and partial list
 #define set_partials_f	161
+
+#define wet_dry_f		170			// wet/dry reverb mix
 
 namespace csl  {
 

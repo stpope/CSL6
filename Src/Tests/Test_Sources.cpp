@@ -221,7 +221,7 @@ void testWaveShaper() {
 
 /// Test basic FM instrument
 
-#include <BasicFMInstrument.h>
+#include <FMInstrument.h>
 
 void testFMInstrument() {
 	FMInstrument * vox = new FMInstrument;
